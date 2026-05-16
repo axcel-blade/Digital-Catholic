@@ -256,8 +256,13 @@ main {
 	max-width: 48rem;
 }
 
-.page-content--home {
+.page-content--home,
+.page-content--catalog {
 	max-width: var(--page-width);
+}
+
+.page-content--catalog .catalog-hero {
+	max-width: 40rem;
 }
 
 .home-hero {
@@ -677,9 +682,51 @@ p {
 }
 
 @media (min-width: 40rem) {
-	.blog-grid:not(.blog-grid--sacraments) {
+	.blog-grid:not(.blog-grid--sacraments):not(.blog-grid--catalog) {
 		grid-template-columns: repeat(2, 1fr);
 	}
+}
+
+.blog-grid--catalog {
+	margin-top: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+	.blog-grid--catalog {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 64rem) {
+	.blog-grid--catalog {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.blog-grid--catalog .blog-card__link {
+	height: 100%;
+}
+
+.blog-grid--catalog .blog-card__body {
+	flex: 1;
+	min-height: 100%;
+}
+
+.blog-grid--catalog .blog-card__title {
+	font-size: 1.15rem;
+	line-height: 1.35;
+	hyphens: auto;
+	overflow-wrap: break-word;
+}
+
+.blog-grid--catalog .blog-card__excerpt {
+	flex: 1;
+	margin-bottom: 0;
+}
+
+.blog-grid--catalog .blog-card__read {
+	margin-top: auto;
+	padding-top: 0.75rem;
 }
 
 .blog-grid--sacraments {
@@ -835,19 +882,30 @@ p {
 	max-width: none;
 }
 
+.page-back,
 .article__back {
 	margin: 0 0 1.5rem;
 	font-size: 0.95rem;
 }
 
+.page-back a,
 .article__back a {
 	text-decoration: none;
 	font-weight: 500;
 	color: var(--color-muted);
 }
 
+.page-back a:hover,
 .article__back a:hover {
 	color: var(--color-accent);
+}
+
+.article--text-only {
+	max-width: var(--page-width);
+}
+
+.article--text-only .article__body {
+	max-width: var(--max-width);
 }
 
 .article__category {

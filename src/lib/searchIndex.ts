@@ -7,6 +7,8 @@ import {
 	rosaryMysterySchedule,
 	rosaryPrayers,
 } from '../data/rosary';
+import { miracles, miraclesIntro } from '../data/miracles';
+import { parables, parablesIntro } from '../data/parables';
 import { sacraments } from '../data/sacraments';
 import { saints } from '../data/saints';
 import { withBase } from './paths';
@@ -74,6 +76,20 @@ export function buildSearchIndex(): SearchEntry[] {
 			['baptism confirmation eucharist penance orders matrimony anointing'],
 		),
 		entry(
+			'Miracles of Jesus',
+			withBase('/miracles'),
+			'Miracles',
+			miraclesIntro,
+			[miraclesIntro, ...miracles.map((m) => joinParts(m.title, m.excerpt, m.gospelReference, m.category))],
+		),
+		entry(
+			'Parables of Jesus',
+			withBase('/parables'),
+			'Parables',
+			parablesIntro,
+			[parablesIntro, ...parables.map((p) => joinParts(p.title, p.excerpt, p.gospelReference, p.category))],
+		),
+		entry(
 			'Ten Commandments',
 			withBase('/commandments'),
 			'Commandments',
@@ -115,6 +131,30 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Sacrament',
 				sacrament.excerpt,
 				[sectionsText(sacrament.sections)]
+			)
+		);
+	}
+
+	for (const miracle of miracles) {
+		items.push(
+			entry(
+				miracle.title,
+				withBase(`/miracles/${miracle.slug}`),
+				'Miracle',
+				miracle.excerpt,
+				[miracle.gospelReference, miracle.category, sectionsText(miracle.sections)]
+			)
+		);
+	}
+
+	for (const parable of parables) {
+		items.push(
+			entry(
+				parable.title,
+				withBase(`/parables/${parable.slug}`),
+				'Parable',
+				parable.excerpt,
+				[parable.gospelReference, parable.category, sectionsText(parable.sections)]
 			)
 		);
 	}

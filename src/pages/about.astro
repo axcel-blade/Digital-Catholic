@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageBack from '../components/PageBack.astro';
+import { withBase } from '../lib/paths';
 
 const currentPath = Astro.url.pathname;
 ---
@@ -10,6 +12,7 @@ const currentPath = Astro.url.pathname;
 	currentPath={currentPath}
 >
 	<div class="page-content page-content--wide">
+		<PageBack href={withBase('/')} />
 		<h1>About Digital Catholic</h1>
 		<p class="lead">
 			Digital Catholic is a learning site dedicated to sharing the riches of the Catholic

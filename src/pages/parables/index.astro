@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import { parables, parablesIntro } from '../../data/parables';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Parables of Jesus"
+	description="The parables of Jesus Christ in the Gospels of Matthew, Mark, Luke, and John—stories of the Kingdom that call us to faith and conversion."
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--catalog">
+		<PageBack href={withBase('/')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Gospels</p>
+			<h1>Parables of Jesus Christ</h1>
+			<p class="lead">{parablesIntro}</p>
+		</div>
+
+		<ul class="blog-grid blog-grid--catalog">
+			{parables.map((parable) => (
+				<li class="blog-card">
+					<a class="blog-card__link" href={withBase(`/parables/${parable.slug}`)}>
+						<div class="blog-card__body">
+							<span class="blog-card__category">{parable.category}</span>
+							<h2 class="blog-card__title">{parable.title}</h2>
+							<p class="blog-card__meta">{parable.gospelReference}</p>
+							<p class="blog-card__excerpt">{parable.excerpt}</p>
+							<span class="blog-card__read">Read article →</span>
+						</div>
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+</BaseLayout>

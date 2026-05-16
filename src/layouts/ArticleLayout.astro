@@ -57,7 +57,7 @@ const articleJsonLd = {
 	ogType="article"
 	jsonLd={articleJsonLd}
 >
-	<article class:list={['article', hasImage && 'article--with-image']}>
+	<article class:list={['article', hasImage ? 'article--with-image' : 'article--text-only']}>
 		<p class="article__back">
 			<a href={backHref}>← {backLabel}</a>
 		</p>

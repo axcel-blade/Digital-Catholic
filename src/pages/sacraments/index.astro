@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
 import {
 	sacraments,
 	getSacramentImageSrc,
@@ -16,6 +17,7 @@ const currentPath = Astro.url.pathname;
 	currentPath={currentPath}
 >
 	<div class="page-content page-content--wide">
+		<PageBack href={withBase('/')} />
 		<p class="hero__tagline">Sacraments</p>
 		<h1>The Seven Sacraments</h1>
 		<p class="lead">

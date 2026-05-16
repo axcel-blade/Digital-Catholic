@@ -18,6 +18,8 @@ function refreshRoutesOnDataChange() {
 				'src/pages/saints/[slug].astro',
 				'src/pages/sacraments/[slug].astro',
 				'src/pages/rosary/[slug].astro',
+				'src/pages/miracles/[slug].astro',
+				'src/pages/parables/[slug].astro',
 			];
 
 			const invalidated = [];

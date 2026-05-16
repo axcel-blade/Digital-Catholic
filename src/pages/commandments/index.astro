@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
 import { commandments, commandmentsIntro } from '../../data/commandments';
+import { withBase } from '../../lib/paths';
 
 const currentPath = Astro.url.pathname;
 ---
@@ -11,6 +13,7 @@ const currentPath = Astro.url.pathname;
 	currentPath={currentPath}
 >
 	<div class="page-content page-content--wide">
+		<PageBack href={withBase('/')} />
 		<p class="hero__tagline">Faith & Moral Life</p>
 		<h1>The Ten Commandments</h1>
 		<p class="lead">{commandmentsIntro}</p>
