@@ -2,9 +2,9 @@ name: CI - Digital Catholic
 
 on:
   push:
-    branches: [main]
+    branches: [main, contribution]
   pull_request:
-    branches: [main]
+    branches: [contribution, main]
 
 jobs:
   build:
