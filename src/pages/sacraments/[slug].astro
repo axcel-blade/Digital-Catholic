@@ -1,20 +1,26 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import {
-	sacraments,
+	getSacrament,
 	getSacramentImageSrc,
 	getSacramentImageAlt,
+	sacraments,
 } from '../../data/sacraments';
 import { withBase } from '../../lib/paths';
 
 export function getStaticPaths() {
 	return sacraments.map((sacrament) => ({
 		params: { slug: sacrament.slug },
-		props: { sacrament },
 	}));
 }
 
-const { sacrament } = Astro.props;
+const slug = Astro.params.slug ?? '';
+const sacrament = getSacrament(slug);
+
+if (!sacrament) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
 const currentPath = Astro.url.pathname;
 ---
 

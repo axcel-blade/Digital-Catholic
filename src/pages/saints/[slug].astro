@@ -1,16 +1,21 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { saints, getSaintImageSrc, getSaintImageAlt } from '../../data/saints';
+import { saints, getSaint, getSaintImageSrc, getSaintImageAlt } from '../../data/saints';
 import { withBase } from '../../lib/paths';
 
 export function getStaticPaths() {
 	return saints.map((saint) => ({
 		params: { slug: saint.slug },
-		props: { saint },
 	}));
 }
 
-const { saint } = Astro.props;
+const slug = Astro.params.slug ?? '';
+const saint = getSaint(slug);
+
+if (!saint) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
 const currentPath = Astro.url.pathname;
 ---
 
