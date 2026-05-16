@@ -36,17 +36,17 @@ const { primary, exploreGroup } = Astro.props;
 <script>
 	const toggle = document.getElementById('site-header-menu-toggle');
 	const menu = document.getElementById('site-header-menu');
-	const exploreToggle = document.getElementById('site-nav-explore-toggle');
-	const exploreGroup = document.getElementById('site-nav-explore-group');
 
-	if (!toggle || !menu) throw new Error('Site header menu elements not found');
+	if (!menu) throw new Error('Site header menu panel not found');
 
 	const desktopQuery = window.matchMedia('(min-width: 52rem)');
 
 	function setMenuOpen(open) {
 		const isOpen = open && !desktopQuery.matches;
-		toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-		toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+		if (toggle) {
+			toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+			toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+		}
 		if (isOpen) {
 			menu.classList.add('is-open');
 		} else {
@@ -58,66 +58,32 @@ const { primary, exploreGroup } = Astro.props;
 		setMenuOpen(false);
 	}
 
-	function setExploreOpen(open) {
-		if (!exploreToggle || !exploreGroup) return;
-		const isOpen = open && desktopQuery.matches;
-		exploreToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-		exploreGroup.classList.toggle('is-open', isOpen);
-	}
-
-	function closeExplore() {
-		setExploreOpen(false);
-	}
-
-	toggle.addEventListener('click', () => {
+	toggle?.addEventListener('click', () => {
 		setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true');
 	});
 
-	if (exploreToggle && exploreGroup) {
-		exploreToggle.addEventListener('click', (event) => {
-			event.stopPropagation();
-			setExploreOpen(exploreToggle.getAttribute('aria-expanded') !== 'true');
-		});
-	}
-
 	menu.querySelectorAll('a').forEach((link) => {
-		link.addEventListener('click', () => {
-			closeMenu();
-			closeExplore();
-		});
-	});
-
-	exploreGroup?.querySelectorAll('a').forEach((link) => {
-		link.addEventListener('click', closeExplore);
+		link.addEventListener('click', closeMenu);
 	});
 
 	document.addEventListener('click', (event) => {
+		if (desktopQuery.matches) return;
 		const target = event.target;
 		if (!(target instanceof Node)) return;
-
-		if (!desktopQuery.matches) {
-			if (toggle.contains(target) || menu.contains(target)) return;
-			closeMenu();
-			return;
-		}
-
-		if (exploreGroup && !exploreGroup.contains(target)) {
-			closeExplore();
-		}
+		if (toggle?.contains(target) || menu.contains(target)) return;
+		closeMenu();
 	});
 
 	document.addEventListener('keydown', (event) => {
 		if (event.key === 'Escape') {
 			closeMenu();
-			closeExplore();
 		}
 	});
 
 	desktopQuery.addEventListener('change', () => {
-		closeExplore();
 		if (desktopQuery.matches) {
 			menu.classList.remove('is-open');
-			toggle.setAttribute('aria-expanded', 'false');
+			toggle?.setAttribute('aria-expanded', 'false');
 		} else {
 			closeMenu();
 		}

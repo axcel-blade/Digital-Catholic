@@ -67,6 +67,9 @@ a:hover {
 }
 
 .site-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
 	border-bottom: 1px solid var(--color-border);
 	background: var(--color-surface);
 }
@@ -115,6 +118,7 @@ a:hover {
 	min-width: 0;
 	justify-content: flex-end;
 	order: 2;
+	overflow: visible;
 }
 
 .site-header__toolbar {
@@ -357,54 +361,72 @@ a:hover {
 		border-bottom-color: var(--color-accent);
 	}
 
+	.site-header__toolbar,
+	.site-header__explore {
+		overflow: visible;
+	}
+
 	.site-header__explore .site-nav__dropdown {
+		display: none;
 		position: absolute;
 		top: calc(100% + 0.35rem);
 		right: 0;
 		left: auto;
 		transform: none;
-		min-width: 13.5rem;
+		min-width: 16rem;
+		margin: 0;
 		padding: 0.35rem 0;
+		list-style: none;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius);
 		background: var(--color-surface);
 		box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
-		transition:
-			opacity 0.15s ease,
-			visibility 0.15s ease;
-		z-index: 50;
+		z-index: 200;
+	}
+
+	.site-header__explore .site-nav__dropdown li {
+		margin: 0;
+		padding: 0;
 	}
 
 	.site-header__explore.is-open .site-nav__dropdown,
 	.site-header__explore:hover .site-nav__dropdown,
 	.site-header__explore:focus-within .site-nav__dropdown {
-		opacity: 1;
-		visibility: visible;
-		pointer-events: auto;
+		display: block;
 	}
 
-	@media (hover: hover) {
-		.site-header__explore:hover .site-nav__group-chevron,
-		.site-header__explore:focus-within .site-nav__group-chevron {
-			transform: rotate(180deg);
-		}
-	}
-
-	.site-nav__dropdown a {
+	.site-header__explore .site-nav__dropdown a {
 		display: block;
 		padding: 0.5rem 1rem;
 		font-size: 0.92rem;
+		font-weight: 500;
+		line-height: 1.4;
+		color: var(--color-text);
+		text-decoration: none;
 		border-bottom: none;
 		white-space: nowrap;
+		transition:
+			color 0.15s ease,
+			background-color 0.15s ease;
 	}
 
-	.site-nav__dropdown a:hover,
-	.site-nav__dropdown a[aria-current='page'] {
+	.site-header__explore .site-nav__dropdown a:hover {
+		color: var(--color-accent);
+		text-decoration: none;
 		background: var(--color-accent-soft);
-		border-bottom-color: transparent;
+	}
+
+	.site-header__explore .site-nav__dropdown a[aria-current='page'] {
+		color: var(--color-accent);
+		text-decoration: none;
+		background: var(--color-accent-soft);
+	}
+}
+
+@media (min-width: 52rem) and (hover: hover) {
+	.site-header__explore:hover .site-nav__group-chevron,
+	.site-header__explore:focus-within .site-nav__group-chevron {
+		transform: rotate(180deg);
 	}
 }
 

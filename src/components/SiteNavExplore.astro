@@ -46,3 +46,49 @@ const { exploreGroup } = Astro.props;
 		))}
 	</ul>
 </div>
+
+<script>
+	const exploreToggle = document.getElementById('site-nav-explore-toggle');
+	const exploreGroup = document.getElementById('site-nav-explore-group');
+
+	if (!exploreToggle || !exploreGroup) {
+		throw new Error('Site nav explore elements not found');
+	}
+
+	const desktopQuery = window.matchMedia('(min-width: 52rem)');
+
+	function setExploreOpen(open) {
+		const isOpen = open && desktopQuery.matches;
+		exploreToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+		exploreGroup.classList.toggle('is-open', isOpen);
+	}
+
+	function closeExplore() {
+		setExploreOpen(false);
+	}
+
+	exploreToggle.addEventListener('click', (event) => {
+		event.stopPropagation();
+		setExploreOpen(exploreToggle.getAttribute('aria-expanded') !== 'true');
+	});
+
+	exploreGroup.querySelectorAll('a').forEach((link) => {
+		link.addEventListener('click', closeExplore);
+	});
+
+	document.addEventListener('click', (event) => {
+		if (!desktopQuery.matches) return;
+		const target = event.target;
+		if (target instanceof Node && !exploreGroup.contains(target)) {
+			closeExplore();
+		}
+	});
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') {
+			closeExplore();
+		}
+	});
+
+	desktopQuery.addEventListener('change', closeExplore);
+</script>
