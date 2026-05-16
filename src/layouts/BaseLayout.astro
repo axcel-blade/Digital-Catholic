@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import { withBase, stripBase } from '../lib/paths';
+import { withBase } from '../lib/paths';
+import { buildSiteNav } from '../lib/siteNav';
 import SEOHead from '../components/SEOHead.astro';
 import SiteSearch from '../components/SiteSearch.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
@@ -31,28 +32,7 @@ const {
 	jsonLd,
 } = Astro.props;
 
-const routePath = stripBase(currentPath);
-
-function isNavActive(href: string, path: string): boolean {
-	const route = stripBase(href);
-	if (route === '/') return path === '/';
-	return path === route || path.startsWith(`${route}/`);
-}
-
-const navItems = [
-	{ href: withBase('/'), label: 'Home' },
-	{ href: withBase('/about'), label: 'About' },
-	{ href: withBase('/saints'), label: 'Saints' },
-	{ href: withBase('/sacraments'), label: 'Sacraments' },
-	{ href: withBase('/miracles'), label: 'Miracles' },
-	{ href: withBase('/eucharistic-miracles'), label: 'Eucharistic' },
-	{ href: withBase('/parables'), label: 'Parables' },
-	{ href: withBase('/commandments'), label: 'Commandments' },
-	{ href: withBase('/rosary'), label: 'Rosary' },
-].map((item) => ({
-	...item,
-	isActive: isNavActive(item.href, routePath),
-}));
+const { primary: primaryNav, exploreGroup } = buildSiteNav(currentPath);
 
 const pageTitle = formatPageTitle(title);
 const canonicalURL = getCanonicalUrl(Astro.url);
@@ -98,7 +78,7 @@ const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
 					<SiteSearch />
 					<ThemeToggle />
 				</div>
-				<SiteHeaderMenu items={navItems} />
+				<SiteHeaderMenu primary={primaryNav} exploreGroup={exploreGroup} />
 			</div>
 		</header>
 

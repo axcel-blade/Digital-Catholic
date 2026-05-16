@@ -1,15 +1,12 @@
 ---
-interface NavItem {
-	href: string;
-	label: string;
-	isActive: boolean;
-}
+import type { ResolvedNavGroup, ResolvedNavItem } from '../lib/siteNav';
 
 interface Props {
-	items: NavItem[];
+	primary: ResolvedNavItem[];
+	exploreGroup: ResolvedNavGroup;
 }
 
-const { items } = Astro.props;
+const { primary, exploreGroup } = Astro.props;
 ---
 
 <button
@@ -51,13 +48,61 @@ const { items } = Astro.props;
 <div class="site-header__menu" id="site-header-menu">
 	<nav class="site-header__nav" aria-label="Main">
 		<ul class="site-nav">
-			{items.map((item) => (
+			{primary.map((item) => (
 				<li>
 					<a href={item.href} aria-current={item.isActive ? 'page' : undefined}>
 						{item.label}
 					</a>
 				</li>
 			))}
+			<li class="site-nav__explore-heading">
+				<span>{exploreGroup.label}</span>
+			</li>
+			{exploreGroup.items.map((item) => (
+				<li class="site-nav__explore-item">
+					<a href={item.href} aria-current={item.isActive ? 'page' : undefined}>
+						{item.label}
+					</a>
+				</li>
+			))}
+			<li
+				class:list={['site-nav__group', exploreGroup.isActive && 'is-active']}
+				id="site-nav-explore-group"
+			>
+				<button
+					type="button"
+					class="site-nav__group-toggle"
+					id="site-nav-explore-toggle"
+					aria-expanded="false"
+					aria-controls="site-nav-explore-dropdown"
+					aria-haspopup="true"
+				>
+					{exploreGroup.label}
+					<svg
+						class="site-nav__group-chevron"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<path d="M6 9l6 6 6-6"></path>
+					</svg>
+				</button>
+				<ul class="site-nav__dropdown" id="site-nav-explore-dropdown" role="list">
+					{exploreGroup.items.map((item) => (
+						<li>
+							<a href={item.href} aria-current={item.isActive ? 'page' : undefined}>
+								{item.label}
+							</a>
+						</li>
+					))}
+				</ul>
+			</li>
 		</ul>
 	</nav>
 </div>
@@ -65,6 +110,8 @@ const { items } = Astro.props;
 <script>
 	const toggle = document.getElementById('site-header-menu-toggle');
 	const menu = document.getElementById('site-header-menu');
+	const exploreToggle = document.getElementById('site-nav-explore-toggle');
+	const exploreGroup = document.getElementById('site-nav-explore-group');
 
 	if (!toggle || !menu) throw new Error('Site header menu elements not found');
 
@@ -85,27 +132,59 @@ const { items } = Astro.props;
 		setMenuOpen(false);
 	}
 
+	function setExploreOpen(open) {
+		if (!exploreToggle || !exploreGroup) return;
+		const isOpen = open && desktopQuery.matches;
+		exploreToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+		exploreGroup.classList.toggle('is-open', isOpen);
+	}
+
+	function closeExplore() {
+		setExploreOpen(false);
+	}
+
 	toggle.addEventListener('click', () => {
 		setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true');
 	});
 
+	if (exploreToggle && exploreGroup) {
+		exploreToggle.addEventListener('click', (event) => {
+			event.stopPropagation();
+			setExploreOpen(exploreToggle.getAttribute('aria-expanded') !== 'true');
+		});
+	}
+
 	menu.querySelectorAll('a').forEach((link) => {
-		link.addEventListener('click', closeMenu);
+		link.addEventListener('click', () => {
+			closeMenu();
+			closeExplore();
+		});
 	});
 
 	document.addEventListener('click', (event) => {
-		if (desktopQuery.matches) return;
 		const target = event.target;
 		if (!(target instanceof Node)) return;
-		if (toggle.contains(target) || menu.contains(target)) return;
-		closeMenu();
+
+		if (!desktopQuery.matches) {
+			if (toggle.contains(target) || menu.contains(target)) return;
+			closeMenu();
+			return;
+		}
+
+		if (exploreGroup && !exploreGroup.contains(target)) {
+			closeExplore();
+		}
 	});
 
 	document.addEventListener('keydown', (event) => {
-		if (event.key === 'Escape') closeMenu();
+		if (event.key === 'Escape') {
+			closeMenu();
+			closeExplore();
+		}
 	});
 
 	desktopQuery.addEventListener('change', () => {
+		closeExplore();
 		if (desktopQuery.matches) {
 			menu.classList.add('is-open');
 			toggle.setAttribute('aria-expanded', 'false');
