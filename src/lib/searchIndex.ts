@@ -7,6 +7,7 @@ import {
 	rosaryMysterySchedule,
 	rosaryPrayers,
 } from '../data/rosary';
+import { eucharisticMiracles, eucharisticMiraclesIntro } from '../data/eucharisticMiracles';
 import { miracles, miraclesIntro } from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
 import { sacraments } from '../data/sacraments';
@@ -83,6 +84,18 @@ export function buildSearchIndex(): SearchEntry[] {
 			[miraclesIntro, ...miracles.map((m) => joinParts(m.title, m.excerpt, m.gospelReference, m.category))],
 		),
 		entry(
+			'Eucharistic Miracles',
+			withBase('/eucharistic-miracles'),
+			'Eucharistic',
+			eucharisticMiraclesIntro,
+			[
+				eucharisticMiraclesIntro,
+				...eucharisticMiracles.map((m) =>
+					joinParts(m.title, m.excerpt, m.location, m.date, m.category)
+				),
+			],
+		),
+		entry(
 			'Parables of Jesus',
 			withBase('/parables'),
 			'Parables',
@@ -143,6 +156,18 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Miracle',
 				miracle.excerpt,
 				[miracle.gospelReference, miracle.category, sectionsText(miracle.sections)]
+			)
+		);
+	}
+
+	for (const miracle of eucharisticMiracles) {
+		items.push(
+			entry(
+				miracle.title,
+				withBase(`/eucharistic-miracles/${miracle.slug}`),
+				'Eucharistic miracle',
+				miracle.excerpt,
+				[miracle.location, miracle.date, miracle.category, sectionsText(miracle.sections)]
 			)
 		);
 	}

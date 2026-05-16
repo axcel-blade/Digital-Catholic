@@ -512,6 +512,21 @@ main {
 	color: var(--color-text-muted);
 }
 
+.catalog-footer-link {
+	margin-top: 2rem;
+	font-size: 0.95rem;
+}
+
+.catalog-footer-link a {
+	color: var(--color-accent);
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.catalog-footer-link a:hover {
+	text-decoration: underline;
+}
+
 .home-about {
 	margin: 2rem 0 0;
 }

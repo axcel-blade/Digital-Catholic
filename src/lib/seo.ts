@@ -3,9 +3,9 @@ export const SITE = {
 	defaultTitle:
 		'Digital Catholic — Saints, Sacraments, Gospel, Rosary & Catholic Faith',
 	defaultDescription:
-		'Learn the Catholic faith with saint biographies, the seven sacraments, miracles and parables of Jesus, the Ten Commandments, and how to pray the Rosary. Clear articles for prayer, formation, and sharing.',
+		'Learn the Catholic faith with saint biographies, the seven sacraments, Gospel miracles and parables, Eucharistic miracles, the Ten Commandments, and how to pray the Rosary. Clear articles for prayer, formation, and sharing.',
 	keywords:
-		'Catholic, Catholic faith, saints, Blessed Virgin Mary, sacraments, Baptism, Eucharist, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, rosary, mysteries of the rosary, prayer, catechism, Bible, Digital Catholic, Christian',
+		'Catholic, Catholic faith, saints, Blessed Virgin Mary, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, rosary, mysteries of the rosary, prayer, catechism, Bible, Digital Catholic, Christian',
 	locale: 'en_US',
 	themeColor: '#6b2d3c',
 	themeColorDark: '#1a1816',
@@ -17,13 +17,15 @@ export const SITE = {
 export const PAGE_DESCRIPTIONS = {
 	home: SITE.defaultDescription,
 	about:
-		'About Digital Catholic — a free site for saint biographies, sacraments, Gospel miracles and parables, the Commandments, and the Rosary, with search and articles for faith formation.',
+		'About Digital Catholic — a free site for saint biographies, sacraments, Gospel miracles and parables, Eucharistic miracles, the Commandments, and the Rosary, with search and articles for faith formation.',
 	saints:
 		'Saint biographies for the Catholic Church — lives of holy men and women, feast days, and lessons from Mary, Joseph, Anthony of Padua, and more.',
 	sacraments:
 		'Articles on the seven sacraments — Baptism, Confirmation, Eucharist, Penance, Anointing of the Sick, Holy Orders, and Matrimony — what the Church teaches and why they matter.',
 	miracles:
 		'Miracles of Jesus Christ in the Gospels of Matthew, Mark, Luke, and John — signs of the Kingdom with Scripture references and reflections for faith.',
+	eucharisticMiracles:
+		'Eucharistic miracles in the Catholic Church — hosts and blood that witness to the Real Presence, from Lanciano and Bolsena to modern shrines studied by science.',
 	parables:
 		'Parables of Jesus Christ in the New Testament Gospels — stories of God’s Kingdom with Scripture references and lessons for discipleship.',
 	commandments:

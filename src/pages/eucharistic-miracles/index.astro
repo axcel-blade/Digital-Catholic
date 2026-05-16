@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageBack from '../../components/PageBack.astro';
-import { miracles, miraclesIntro } from '../../data/miracles';
+import {
+	eucharisticMiracles,
+	eucharisticMiraclesIntro,
+} from '../../data/eucharisticMiracles';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 
@@ -9,26 +12,31 @@ const currentPath = Astro.url.pathname;
 ---
 
 <BaseLayout
-	title="Miracles of Jesus"
-	description={PAGE_DESCRIPTIONS.miracles}
+	title="Eucharistic Miracles"
+	description={PAGE_DESCRIPTIONS.eucharisticMiracles}
 	currentPath={currentPath}
 >
 	<div class="page-content page-content--catalog">
 		<PageBack href={withBase('/')} />
 		<div class="catalog-hero">
-			<p class="hero__tagline">Gospels</p>
-			<h1>Miracles of Jesus Christ</h1>
-			<p class="lead">{miraclesIntro}</p>
+			<p class="hero__tagline">Eucharist</p>
+			<h1>Eucharistic Miracles</h1>
+			<p class="lead">{eucharisticMiraclesIntro}</p>
 		</div>
 
 		<ul class="blog-grid blog-grid--catalog">
-			{miracles.map((miracle) => (
+			{eucharisticMiracles.map((miracle) => (
 				<li class="blog-card">
-					<a class="blog-card__link" href={withBase(`/miracles/${miracle.slug}`)}>
+					<a
+						class="blog-card__link"
+						href={withBase(`/eucharistic-miracles/${miracle.slug}`)}
+					>
 						<div class="blog-card__body">
 							<span class="blog-card__category">{miracle.category}</span>
 							<h2 class="blog-card__title">{miracle.title}</h2>
-							<p class="blog-card__meta">{miracle.gospelReference}</p>
+							<p class="blog-card__meta">
+								{miracle.location} · {miracle.date}
+							</p>
 							<p class="blog-card__excerpt">{miracle.excerpt}</p>
 							<span class="blog-card__read">Read article →</span>
 						</div>
@@ -38,7 +46,7 @@ const currentPath = Astro.url.pathname;
 		</ul>
 
 		<p class="catalog-footer-link">
-			<a href={withBase('/eucharistic-miracles')}>Eucharistic miracles →</a>
+			<a href={withBase('/miracles')}>Miracles of Jesus in the Gospels →</a>
 		</p>
 	</div>
 </BaseLayout>

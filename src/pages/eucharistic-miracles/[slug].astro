@@ -1,0 +1,43 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getEucharisticMiracle, eucharisticMiracles } from '../../data/eucharisticMiracles';
+import { withBase } from '../../lib/paths';
+
+export function getStaticPaths() {
+	return eucharisticMiracles.map((miracle) => ({
+		params: { slug: miracle.slug },
+	}));
+}
+
+const slug = Astro.params.slug ?? '';
+const miracle = getEucharisticMiracle(slug);
+
+if (!miracle) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const currentPath = Astro.url.pathname;
+---
+
+<ArticleLayout
+	title={miracle.title}
+	description={miracle.excerpt}
+	currentPath={currentPath}
+	backHref={withBase('/eucharistic-miracles')}
+	backLabel="All Eucharistic miracles"
+	category={`Eucharistic miracle · ${miracle.category}`}
+	asideLabel="Eucharistic devotion"
+>
+	<p class="article__lead article__lead--bordered">{miracle.excerpt}</p>
+	<p class="article__feast">
+		{miracle.location} · {miracle.date}
+	</p>
+	{miracle.sections.map((section) => (
+		<section>
+			<h2>{section.heading}</h2>
+			{section.paragraphs.map((paragraph) => (
+				<p>{paragraph}</p>
+			))}
+		</section>
+	))}
+</ArticleLayout>
