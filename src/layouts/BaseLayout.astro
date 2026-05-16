@@ -1,0 +1,98 @@
+---
+import '../styles/global.css';
+import { withBase, stripBase } from '../lib/paths';
+import SEOHead from '../components/SEOHead.astro';
+import {
+	formatPageTitle,
+	getCanonicalUrl,
+	getDefaultOgImage,
+	getAbsoluteUrl,
+	SITE,
+} from '../lib/seo';
+
+interface Props {
+	title: string;
+	description?: string;
+	currentPath: string;
+	ogImage?: string;
+	ogType?: 'website' | 'article';
+	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+	title,
+	description = SITE.defaultDescription,
+	currentPath,
+	ogImage,
+	ogType = 'website',
+	jsonLd,
+} = Astro.props;
+
+const navItems = [
+	{ href: withBase('/'), label: 'Home' },
+	{ href: withBase('/saints'), label: 'Saints' },
+	{ href: withBase('/sacraments'), label: 'Sacraments' },
+	{ href: withBase('/commandments'), label: 'Commandments' },
+	{ href: withBase('/about'), label: 'About' },
+];
+
+const routePath = stripBase(currentPath);
+
+function isNavActive(href: string, path: string): boolean {
+	const route = stripBase(href);
+	if (route === '/') return path === '/';
+	return path === route || path.startsWith(`${route}/`);
+}
+
+const pageTitle = formatPageTitle(title);
+const canonicalURL = getCanonicalUrl(Astro.url);
+const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+		<link rel="icon" href={withBase('/favicon.ico')} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{pageTitle}</title>
+		<SEOHead
+			title={pageTitle}
+			description={description}
+			canonicalUrl={canonicalURL}
+			ogImage={socialImage}
+			ogType={ogType}
+			jsonLd={jsonLd}
+		/>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="site-header__inner">
+				<a class="site-logo" href={withBase('/')}>Digital Catholic</a>
+				<nav aria-label="Main">
+					<ul class="site-nav">
+						{navItems.map((item) => (
+							<li>
+								<a
+									href={item.href}
+									aria-current={isNavActive(item.href, routePath) ? 'page' : undefined}
+								>
+									{item.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main id="main-content">
+			<slot />
+		</main>
+
+		<footer class="site-footer">
+			<p>Digital Catholic — faith, formation, and knowledge for all.</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {
+	sacraments,
+	getSacramentImageSrc,
+	getSacramentImageAlt,
+} from '../../data/sacraments';
+import { withBase } from '../../lib/paths';
+
+export function getStaticPaths() {
+	return sacraments.map((sacrament) => ({
+		params: { slug: sacrament.slug },
+		props: { sacrament },
+	}));
+}
+
+const { sacrament } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<ArticleLayout
+	title={sacrament.title}
+	description={sacrament.excerpt}
+	currentPath={currentPath}
+	backHref={withBase('/sacraments')}
+	backLabel="All sacraments"
+	imageSrc={getSacramentImageSrc(sacrament.slug)}
+	imageAlt={getSacramentImageAlt(sacrament.title)}
+>
+	<p class="article__lead article__lead--bordered">{sacrament.excerpt}</p>
+	{sacrament.sections.map((section) => (
+		<section>
+			<h2>{section.heading}</h2>
+			{section.paragraphs.map((paragraph) => (
+				<p>{paragraph}</p>
+			))}
+		</section>
+	))}
+</ArticleLayout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://axcel-blade.github.io/Digital-Catholic/sitemap-index.xml

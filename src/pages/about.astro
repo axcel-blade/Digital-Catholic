@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="About"
+	description="What Digital Catholic is about — saint biographies and sacraments shared for knowledge and faith formation."
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--wide">
+		<h1>About Digital Catholic</h1>
+		<p class="lead">
+			Digital Catholic is a learning site dedicated to sharing the riches of the Catholic
+			faith in a clear, accessible way.
+		</p>
+
+		<h2>What this site is about</h2>
+		<p>
+			We focus on two pillars of Catholic life: the <strong>biography of saints</strong> and
+			the <strong>sacraments</strong>. Together they help us know who we are called to be and
+			how God meets us in the Church.
+		</p>
+
+		<h2>Saints</h2>
+		<p>
+			The saints are our brothers and sisters in Christ who lived the Gospel with heroic love.
+			Here you will find their stories—where they came from, what they endured, how they prayed,
+			and what they teach us today. Their biographies are offered for knowledge and inspiration,
+			so that their example can guide your own journey of faith.
+		</p>
+
+		<h2>Sacraments</h2>
+		<p>
+			The seven sacraments are visible signs of God’s invisible grace: Baptism, Confirmation,
+			Eucharist, Penance, Anointing of the Sick, Holy Orders, and Matrimony. On this site we
+			share teaching about each sacrament—what the Church believes, how they are celebrated, and
+			why they are essential for every Catholic who seeks to know and live the faith.
+		</p>
+
+		<h2>Knowledge for sharing</h2>
+		<p>
+			Everything here is meant to be read, learned, and shared. Whether you are new to the
+			faith, preparing for a sacrament, or deepening your devotion to the saints, Digital
+			Catholic exists to make sound Catholic teaching available to all who wish to grow in
+			understanding and love of Christ and His Church.
+		</p>
+	</div>
+</BaseLayout>

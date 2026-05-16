@@ -1,0 +1,86 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getAbsoluteUrl } from '../lib/seo';
+
+interface Props {
+	title: string;
+	description: string;
+	currentPath: string;
+	backHref: string;
+	backLabel: string;
+	category?: string;
+	asideLabel?: string;
+	imageSrc?: string;
+	imageAlt?: string;
+}
+
+const {
+	title,
+	description,
+	currentPath,
+	backHref,
+	backLabel,
+	category = 'Sacraments',
+	asideLabel = 'Illustration',
+	imageSrc,
+	imageAlt,
+} = Astro.props;
+
+const hasImage = Boolean(imageSrc);
+
+const articleJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	headline: title,
+	description,
+	...(imageSrc && { image: getAbsoluteUrl(imageSrc) }),
+	author: {
+		'@type': 'Organization',
+		name: 'Digital Catholic',
+	},
+	publisher: {
+		'@type': 'Organization',
+		name: 'Digital Catholic',
+	},
+	mainEntityOfPage: {
+		'@type': 'WebPage',
+		'@id': getAbsoluteUrl(currentPath),
+	},
+};
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	currentPath={currentPath}
+	ogImage={imageSrc}
+	ogType="article"
+	jsonLd={articleJsonLd}
+>
+	<article class:list={['article', hasImage && 'article--with-image']}>
+		<p class="article__back">
+			<a href={backHref}>← {backLabel}</a>
+		</p>
+		<p class="article__category">{category}</p>
+		<h1 class="article__title">{title}</h1>
+		<div class="article__layout">
+			<div class="article__body">
+				<slot />
+			</div>
+			{hasImage && (
+				<aside class="article__aside" aria-label={asideLabel}>
+					<figure class="article__figure">
+						<img
+							src={imageSrc}
+							alt={imageAlt ?? title}
+							width="640"
+							height="960"
+							loading="eager"
+							decoding="async"
+						/>
+					</figure>
+				</aside>
+			)}
+		</div>
+	</article>
+</BaseLayout>

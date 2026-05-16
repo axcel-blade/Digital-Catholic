@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { saints, getSaintImageSrc, getSaintImageAlt } from '../../data/saints';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Saints"
+	description="Biographies of the saints — holy men and women who witness to Christ and inspire our faith."
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--wide">
+		<p class="hero__tagline">Saints</p>
+		<h1>Saint Biographies</h1>
+		<p class="lead">
+			Read the lives of the saints—their faith, trials, and love of God—so their example may guide
+			your own journey in Christ.
+		</p>
+
+		<ul class="blog-grid blog-grid--sacraments">
+			{saints.map((saint) => (
+				<li class="blog-card">
+					<a class="blog-card__link" href={withBase(`/saints/${saint.slug}`)}>
+						<div class="blog-card__media">
+							<img
+								src={getSaintImageSrc(saint.slug)}
+								alt={getSaintImageAlt(saint.title)}
+								width="640"
+								height="400"
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
+						<div class="blog-card__body">
+							<span class="blog-card__category">Saint</span>
+							<h2 class="blog-card__title">{saint.title}</h2>
+							{saint.feastDays && (
+								<p class="blog-card__meta">{saint.feastDays}</p>
+							)}
+							<p class="blog-card__excerpt">{saint.excerpt}</p>
+							<span class="blog-card__read">Read biography →</span>
+						</div>
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Digital Catholic"
+	description="Digital Catholic — Catholic saints, seven sacraments, Ten Commandments, and faith formation. Learn, pray, and share the teachings of the Church."
+	currentPath={currentPath}
+>
+	<div class="page-content">
+		<section class="hero">
+			<p class="hero__tagline">Welcome</p>
+			<h1>Digital Catholic</h1>
+			<p class="lead">
+				A place to explore the Catholic faith through the lives of the saints, the sacraments,
+				and God’s law—shared clearly so everyone can learn and grow.
+			</p>
+		</section>
+
+		<ul class="topic-list">
+			<li>
+				<strong>Saints</strong>
+				<p>
+					Biographies of holy men and women whose lives witness to Christ and inspire us in
+					prayer and daily living.
+				</p>
+				<a class="topic-list__link" href={withBase('/saints')}>Read saint biographies →</a>
+			</li>
+			<li>
+				<strong>Sacraments</strong>
+				<p>
+					Teaching on the seven sacraments—what they are, why they matter, and how they draw us
+					into God’s grace.
+				</p>
+				<a class="topic-list__link" href={withBase('/sacraments')}>Read all seven articles →</a>
+			</li>
+			<li>
+				<strong>Ten Commandments</strong>
+				<p>
+					The moral law given to Moses—how we love God with our whole heart and our neighbor as
+					ourselves.
+				</p>
+				<a class="topic-list__link" href={withBase('/commandments')}>Read the Ten Commandments →</a>
+			</li>
+		</ul>
+
+		<a class="cta-link" href={withBase('/about')}>Learn more about this site →</a>
+	</div>
+</BaseLayout>

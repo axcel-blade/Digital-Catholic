@@ -1,0 +1,38 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { saints, getSaintImageSrc, getSaintImageAlt } from '../../data/saints';
+import { withBase } from '../../lib/paths';
+
+export function getStaticPaths() {
+	return saints.map((saint) => ({
+		params: { slug: saint.slug },
+		props: { saint },
+	}));
+}
+
+const { saint } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<ArticleLayout
+	title={saint.title}
+	description={saint.excerpt}
+	currentPath={currentPath}
+	backHref={withBase('/saints')}
+	backLabel="All saints"
+	category="Saint"
+	asideLabel="Saint illustration"
+	imageSrc={getSaintImageSrc(saint.slug)}
+	imageAlt={getSaintImageAlt(saint.title)}
+>
+	<p class="article__lead">{saint.excerpt}</p>
+	{saint.feastDays && <p class="article__feast">Feast days: {saint.feastDays}</p>}
+	{saint.sections.map((section) => (
+		<section>
+			<h2>{section.heading}</h2>
+			{section.paragraphs.map((paragraph) => (
+				<p>{paragraph}</p>
+			))}
+		</section>
+	))}
+</ArticleLayout>

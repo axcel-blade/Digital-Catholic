@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+	sacraments,
+	getSacramentImageSrc,
+	getSacramentImageAlt,
+} from '../../data/sacraments';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Sacraments"
+	description="Articles on the seven sacraments of the Catholic Church — Baptism, Confirmation, Eucharist, Penance, Anointing, Holy Orders, and Matrimony."
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--wide">
+		<p class="hero__tagline">Sacraments</p>
+		<h1>The Seven Sacraments</h1>
+		<p class="lead">
+			Explore each sacrament as a short article—what the Church teaches, how it is celebrated,
+			and why it matters for your life in Christ.
+		</p>
+
+		<ul class="blog-grid blog-grid--sacraments">
+			{sacraments.map((sacrament) => (
+				<li class="blog-card">
+					<a class="blog-card__link" href={withBase(`/sacraments/${sacrament.slug}`)}>
+						<div class="blog-card__media">
+							<img
+								src={getSacramentImageSrc(sacrament.slug)}
+								alt={getSacramentImageAlt(sacrament.title)}
+								width="640"
+								height="400"
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
+						<div class="blog-card__body">
+							<span class="blog-card__category">Sacrament</span>
+							<h2 class="blog-card__title">{sacrament.title}</h2>
+							<p class="blog-card__excerpt">{sacrament.excerpt}</p>
+							<span class="blog-card__read">Read article →</span>
+						</div>
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+</BaseLayout>
