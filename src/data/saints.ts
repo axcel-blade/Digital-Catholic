@@ -39,7 +39,7 @@ export const saints: Saint[] = [
 				heading: 'Dogmas and devotion',
 				paragraphs: [
 					'The Church teaches the Immaculate Conception (Mary was preserved from original sin from the first instant of her existence), her perpetual virginity, and her Assumption body and soul into heavenly glory.',
-					'Catholics pray the Hail Mary, the Rosary, the Angelus, and many other devotions. She is invoked under titles such as Our Lady of Guadalupe, Lourdes, Fatima, and Help of Christians—always leading the faithful to Christ.',
+					'Catholics pray the Hail Mary, the Rosary, the Angelus, and many other devotions. She is invoked under titles such as Our Lady of Guadalupe, Lourdes, Fatima, Velankanni, and Help of Christians—always leading the faithful to Christ.',
 				],
 			},
 			{

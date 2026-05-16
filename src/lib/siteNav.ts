@@ -25,6 +25,7 @@ export const exploreNavItems: SiteNavItem[] = [
 	{ href: '/sacraments', label: 'Sacraments' },
 	{ href: '/miracles', label: 'Miracles of Jesus' },
 	{ href: '/eucharistic-miracles', label: 'Eucharistic Miracles' },
+	{ href: '/marian-apparitions', label: 'Marian Apparitions' },
 	{ href: '/parables', label: 'Parables of Jesus' },
 	{ href: '/commandments', label: 'Ten Commandments' },
 	{ href: '/rosary', label: 'Rosary' },

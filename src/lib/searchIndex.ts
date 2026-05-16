@@ -8,6 +8,7 @@ import {
 	rosaryPrayers,
 } from '../data/rosary';
 import { eucharisticMiracles, eucharisticMiraclesIntro } from '../data/eucharisticMiracles';
+import { marianApparitions, marianApparitionsIntro } from '../data/marianApparitions';
 import { miracles, miraclesIntro } from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
 import { sacraments } from '../data/sacraments';
@@ -96,6 +97,18 @@ export function buildSearchIndex(): SearchEntry[] {
 			],
 		),
 		entry(
+			'Marian Apparitions',
+			withBase('/marian-apparitions'),
+			'Marian',
+			marianApparitionsIntro,
+			[
+				marianApparitionsIntro,
+				...marianApparitions.map((a) =>
+					joinParts(a.title, a.excerpt, a.location, a.date, a.category)
+				),
+			],
+		),
+		entry(
 			'Parables of Jesus',
 			withBase('/parables'),
 			'Parables',
@@ -168,6 +181,18 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Eucharistic miracle',
 				miracle.excerpt,
 				[miracle.location, miracle.date, miracle.category, sectionsText(miracle.sections)]
+			)
+		);
+	}
+
+	for (const apparition of marianApparitions) {
+		items.push(
+			entry(
+				apparition.title,
+				withBase(`/marian-apparitions/${apparition.slug}`),
+				'Marian apparition',
+				apparition.excerpt,
+				[apparition.location, apparition.date, apparition.category, sectionsText(apparition.sections)]
 			)
 		);
 	}

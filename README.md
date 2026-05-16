@@ -1,6 +1,6 @@
 # Digital Catholic
 
-A static website for learning and sharing the Catholic faith—saint biographies, the sacraments, Gospel miracles and parables, Eucharistic miracles, the Ten Commandments, and the Holy Rosary—presented in clear language for prayer, formation, and everyday reading.
+A static website for learning and sharing the Catholic faith—saint biographies, the sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, and the Holy Rosary—presented in clear language for prayer, formation, and everyday reading.
 
 **Live site:** [https://axcel-blade.github.io/Digital-Catholic/](https://axcel-blade.github.io/Digital-Catholic/)
 
@@ -12,6 +12,7 @@ A static website for learning and sharing the Catholic faith—saint biographies
 | **Sacraments** | Articles on all seven sacraments—what the Church teaches, how they are celebrated, and why they matter. |
 | **Miracles of Jesus** | Gospel accounts of Christ’s miracles in Matthew, Mark, Luke, and John, with Scripture references and reflections. |
 | **Eucharistic Miracles** | Events in which the consecrated Host witnesses to the Real Presence—from Lanciano and Bolsena to modern shrines. |
+| **Marian Apparitions** | Our Lady appearing to the faithful in the real world—Guadalupe, Lourdes, Fátima, Velankanni in India, Knock, and other approved shrines. |
 | **Parables of Jesus** | Stories of the Kingdom from the Gospels—mercy, prayer, discipleship, and conversion. |
 | **Ten Commandments** | The moral law with each commandment’s text and a brief explanation. |
 | **Rosary** | How to recite the Rosary, the traditional prayers, and the twenty mysteries (Joyful, Sorrowful, Glorious, Luminous). |
@@ -64,7 +65,7 @@ For a `username.github.io` repository, use `ASTRO_BASE=/` instead.
 public/                 Static assets (favicon, robots.txt, saint images)
 src/
   components/           SEO head, search, theme toggle, header menu
-  data/                 Saints, sacraments, miracles, eucharistic miracles, parables, commandments, rosary
+  data/                 Saints, sacraments, miracles, eucharistic miracles, marian apparitions, parables, commandments, rosary
   layouts/              Base and article layouts
   lib/                  Paths, SEO helpers, search index
   pages/                Routes (home, about, saints, sacraments, etc.)
