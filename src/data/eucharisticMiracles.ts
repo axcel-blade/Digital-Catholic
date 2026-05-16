@@ -16,6 +16,8 @@ export interface EucharisticMiracle {
 	location: string;
 	date: string;
 	excerpt: string;
+	/** Alt text for the shrine or church photograph */
+	imageAlt: string;
 	sections: EucharisticMiracleSection[];
 }
 
@@ -31,6 +33,7 @@ export const eucharisticMiracles: EucharisticMiracle[] = [
 		date: 'c. 8th century (tradition: 731)',
 		excerpt:
 			'A doubting priest saw the Host become visible flesh and the wine become blood—the oldest recorded Eucharistic miracle, still venerated today.',
+		imageAlt: 'Basilica of St. Francis in Lanciano, Italy, where the Eucharistic miracle is venerated',
 		sections: [
 			{
 				heading: 'What happened',
@@ -55,6 +58,8 @@ export const eucharisticMiracles: EucharisticMiracle[] = [
 		date: '1263',
 		excerpt:
 			'During Mass at Bolsena the Host bled onto the corporal; the miracle led Pope Urban IV to extend the feast of Corpus Christi to the whole Church.',
+		imageAlt:
+			'Chapel of the Blessed Corporal in the Cathedral of Orvieto, where the Bolsena corporal is enshrined',
 		sections: [
 			{
 				heading: 'What happened',
@@ -79,6 +84,8 @@ export const eucharisticMiracles: EucharisticMiracle[] = [
 		date: '1225',
 		excerpt:
 			'A Host taken from church was returned after striking a stone with blood; the Church of St. Stephen became a center of Eucharistic devotion.',
+		imageAlt:
+			'Facade of the Church of the Holy Miracle (Igreja de Santo Estêvão) in Santarém, Portugal',
 		sections: [
 			{
 				heading: 'What happened',
@@ -103,6 +110,7 @@ export const eucharisticMiracles: EucharisticMiracle[] = [
 		date: '1331',
 		excerpt:
 			'A Host that fell into the chalice during Mass left blood on the corporal—preserved and venerated in the parish for centuries.',
+		imageAlt: 'Church of Saint Martin in Blanot, Saône-et-Loire, France',
 		sections: [
 			{
 				heading: 'What happened',
@@ -127,6 +135,7 @@ export const eucharisticMiracles: EucharisticMiracle[] = [
 		date: '1996',
 		excerpt:
 			'Hosts reserved in the tabernacle appeared as bloody flesh; scientific analysis reported human heart tissue.',
+		imageAlt: 'Eucharistic adoration with the Blessed Sacrament in a monstrance',
 		sections: [
 			{
 				heading: 'What happened',
@@ -151,6 +160,7 @@ export const eucharisticMiracles: EucharisticMiracle[] = [
 		date: '2008',
 		excerpt:
 			'A Host that fell during Communion was preserved and later found to bear tissue resembling heart muscle, in the shape of a cross.',
+		imageAlt: 'Interior of St. Anthony of Padua church in Sokółka, Poland',
 		sections: [
 			{
 				heading: 'What happened',
@@ -175,6 +185,7 @@ export const eucharisticMiracles: EucharisticMiracle[] = [
 		date: '2013',
 		excerpt:
 			'A Host that fell onto a corporal during Communion was studied and found to contain tissue identified as human heart muscle.',
+		imageAlt: 'Basilica of St. Hyacinth (św. Jacka) in Legnica, Poland',
 		sections: [
 			{
 				heading: 'What happened',
@@ -195,4 +206,8 @@ export const eucharisticMiracles: EucharisticMiracle[] = [
 
 export function getEucharisticMiracle(slug: string): EucharisticMiracle | undefined {
 	return eucharisticMiracles.find((m) => m.slug === slug);
+}
+
+export function getEucharisticMiracleImageSrc(slug: string): string {
+	return `${import.meta.env.BASE_URL}eucharistic-miracles/${slug}.jpg`;
 }

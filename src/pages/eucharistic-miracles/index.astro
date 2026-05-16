@@ -4,6 +4,7 @@ import PageBack from '../../components/PageBack.astro';
 import {
 	eucharisticMiracles,
 	eucharisticMiraclesIntro,
+	getEucharisticMiracleImageSrc,
 } from '../../data/eucharisticMiracles';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
@@ -24,13 +25,23 @@ const currentPath = Astro.url.pathname;
 			<p class="lead">{eucharisticMiraclesIntro}</p>
 		</div>
 
-		<ul class="blog-grid blog-grid--catalog">
+		<ul class="blog-grid blog-grid--catalog blog-grid--media">
 			{eucharisticMiracles.map((miracle) => (
 				<li class="blog-card">
 					<a
 						class="blog-card__link"
 						href={withBase(`/eucharistic-miracles/${miracle.slug}`)}
 					>
+						<div class="blog-card__media">
+							<img
+								src={getEucharisticMiracleImageSrc(miracle.slug)}
+								alt={miracle.imageAlt}
+								width="640"
+								height="400"
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
 						<div class="blog-card__body">
 							<span class="blog-card__category">{miracle.category}</span>
 							<h2 class="blog-card__title">{miracle.title}</h2>

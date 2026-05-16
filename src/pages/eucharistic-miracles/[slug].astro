@@ -1,6 +1,10 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { getEucharisticMiracle, eucharisticMiracles } from '../../data/eucharisticMiracles';
+import {
+	getEucharisticMiracle,
+	eucharisticMiracles,
+	getEucharisticMiracleImageSrc,
+} from '../../data/eucharisticMiracles';
 import { withBase } from '../../lib/paths';
 
 export function getStaticPaths() {
@@ -27,6 +31,8 @@ const currentPath = Astro.url.pathname;
 	backLabel="All Eucharistic miracles"
 	category={`Eucharistic miracle · ${miracle.category}`}
 	asideLabel="Eucharistic devotion"
+	imageSrc={getEucharisticMiracleImageSrc(miracle.slug)}
+	imageAlt={miracle.imageAlt}
 >
 	<p class="article__lead article__lead--bordered">{miracle.excerpt}</p>
 	<p class="article__feast">

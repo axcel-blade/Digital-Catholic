@@ -61,7 +61,8 @@ Pushes to `main` trigger deployment to GitHub Pages.
 
 ## What to change
 
-- **Content:** `src/data/` (saints, sacraments, commandments, rosary) and related pages under `src/pages/`
+- **Content:** `src/data/` (saints, sacraments, miracles, eucharistic miracles, parables, commandments, rosary) and related pages under `src/pages/`
+- **Images:** saint photos in `public/saints/{slug}.jpg`; Eucharistic miracle photos in `public/eucharistic-miracles/{slug}.jpg` (prefer Wikimedia Commons–licensed images)
 - **Layout & styles:** `src/layouts/`, `src/components/`, `src/styles/global.css`
 - **Search:** update `src/lib/searchIndex.ts` if you add new indexable pages
 
