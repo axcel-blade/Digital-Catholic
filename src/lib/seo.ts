@@ -2,9 +2,9 @@ export const SITE = {
 	name: 'Digital Catholic',
 	defaultTitle: 'Digital Catholic — Saints, Sacraments & Catholic Faith',
 	defaultDescription:
-		'Learn about Catholic saints, the seven sacraments, the Ten Commandments, and the faith. Clear teaching for prayer, formation, and knowledge sharing.',
+		'Learn about Catholic saints, the seven sacraments, the Ten Commandments, the Mysteries of the Rosary, and the faith. Clear teaching for prayer, formation, and knowledge sharing.',
 	keywords:
-		'Catholic, saints, sacraments, Ten Commandments, faith, catechism, biography, Digital Catholic, Christian',
+		'Catholic, saints, sacraments, Ten Commandments, rosary, mysteries of the rosary, faith, catechism, biography, Digital Catholic, Christian',
 	locale: 'en_US',
 	themeColor: '#6b2d3c',
 	productionOrigin: 'https://axcel-blade.github.io',

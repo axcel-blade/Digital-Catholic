@@ -273,6 +273,223 @@ p {
 	line-height: 1.6;
 }
 
+.rosary-how-to,
+.rosary-prayers,
+.rosary-mysteries {
+	margin-top: 2.75rem;
+	padding-top: 0.25rem;
+}
+
+.rosary-how-to h2,
+.rosary-prayers h2,
+.rosary-mysteries h2 {
+	font-family: var(--font-serif);
+	font-size: 1.5rem;
+	margin: 0 0 0.75rem;
+}
+
+.rosary-how-to > p,
+.rosary-prayers > p,
+.rosary-mysteries > p {
+	margin: 0 0 1.25rem;
+	color: var(--color-muted);
+}
+
+.rosary-step-list,
+.rosary-prayer-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 1rem;
+}
+
+.rosary-step-card,
+.rosary-prayer-card {
+	padding: 1.25rem 1.5rem;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 0.5rem;
+}
+
+.rosary-step-card__header {
+	display: flex;
+	align-items: baseline;
+	gap: 0.85rem;
+	margin-bottom: 0.65rem;
+}
+
+.rosary-step-card__number {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	font-family: var(--font-serif);
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--color-surface);
+	background: var(--color-accent);
+	border-radius: 50%;
+}
+
+.rosary-step-card__title,
+.rosary-prayer-card__title {
+	margin: 0;
+	font-family: var(--font-serif);
+	font-size: 1.1rem;
+	line-height: 1.35;
+}
+
+.rosary-step-card__text {
+	margin: 0;
+	font-size: 0.98rem;
+	color: var(--color-muted);
+	line-height: 1.6;
+}
+
+.rosary-schedule {
+	margin: 1.25rem 0 0;
+	padding: 1rem 1.25rem;
+	background: var(--color-accent-soft);
+	border-radius: 0.5rem;
+	font-size: 0.98rem;
+	line-height: 1.6;
+}
+
+.rosary-prayer-card__text {
+	margin: 0.75rem 0 0;
+	padding: 0 0 0 1rem;
+	border-left: 3px solid var(--color-accent-soft);
+	font-family: var(--font-serif);
+	font-size: 1rem;
+	font-style: italic;
+	line-height: 1.55;
+	color: var(--color-text);
+}
+
+.rosary-set-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 1.25rem;
+}
+
+@media (min-width: 40rem) {
+	.rosary-set-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.rosary-set-card__link {
+	display: block;
+	padding: 1.35rem 1.5rem;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 0.5rem;
+	color: inherit;
+	text-decoration: none;
+	height: 100%;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.rosary-set-card__link:hover {
+	border-color: var(--color-accent);
+	box-shadow: 0 2px 8px rgb(107 45 60 / 0.08);
+	text-decoration: none;
+}
+
+.rosary-set-card__days {
+	display: block;
+	font-size: 0.8rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--color-accent);
+	margin-bottom: 0.5rem;
+}
+
+.rosary-set-card__title {
+	margin: 0 0 0.65rem;
+	font-family: var(--font-serif);
+	font-size: 1.25rem;
+	line-height: 1.3;
+	color: var(--color-text);
+}
+
+.rosary-set-card__excerpt {
+	margin: 0 0 0.85rem;
+	font-size: 0.98rem;
+	color: var(--color-muted);
+	line-height: 1.55;
+}
+
+.rosary-set-card__read {
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: var(--color-accent);
+}
+
+.mystery-list {
+	margin: 2rem 0 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 1.25rem;
+}
+
+.mystery-card {
+	padding: 1.35rem 1.5rem;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 0.5rem;
+	scroll-margin-top: 1.5rem;
+}
+
+.mystery-card__header {
+	display: flex;
+	align-items: baseline;
+	gap: 0.85rem;
+	margin-bottom: 0.75rem;
+}
+
+.mystery-card__number {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	font-family: var(--font-serif);
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: var(--color-surface);
+	background: var(--color-accent);
+	border-radius: 50%;
+}
+
+.mystery-card__title {
+	margin: 0;
+	font-family: var(--font-serif);
+	font-size: 1.25rem;
+	line-height: 1.3;
+}
+
+.mystery-card__fruit {
+	margin: 0 0 0.75rem;
+	font-size: 0.95rem;
+	color: var(--color-text);
+}
+
+.mystery-card__meditation {
+	margin: 0;
+	font-size: 0.98rem;
+	color: var(--color-muted);
+	line-height: 1.6;
+}
+
 .blog-grid {
 	margin: 2rem 0 0;
 	padding: 0;

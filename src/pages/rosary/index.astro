@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+	mysterySets,
+	rosaryIntro,
+	rosaryHowToIntro,
+	rosaryHowToSteps,
+	rosaryMysterySchedule,
+	rosaryPrayers,
+} from '../../data/rosary';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Mysteries of the Rosary"
+	description="How to recite the Holy Rosary, the prayers of the Rosary, and the twenty mysteries — Joyful, Sorrowful, Glorious, and Luminous."
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--wide">
+		<p class="hero__tagline">Prayer</p>
+		<h1>Mysteries of the Rosary</h1>
+		<p class="lead">{rosaryIntro}</p>
+
+		<section class="rosary-how-to" id="how-to-recite">
+			<h2>How to recite the Rosary</h2>
+			<p>{rosaryHowToIntro}</p>
+
+			<ol class="rosary-step-list">
+				{rosaryHowToSteps.map((step) => (
+					<li class="rosary-step-card">
+						<div class="rosary-step-card__header">
+							<span class="rosary-step-card__number">{step.number}</span>
+							<h3 class="rosary-step-card__title">{step.title}</h3>
+						</div>
+						<p class="rosary-step-card__text">{step.description}</p>
+					</li>
+				))}
+			</ol>
+
+			<p class="rosary-schedule">
+				<strong>Which mysteries today?</strong> {rosaryMysterySchedule}
+			</p>
+		</section>
+
+		<section class="rosary-prayers" id="rosary-prayers">
+			<h2>Prayers of the Rosary</h2>
+			<p>These are the words most often prayed while reciting the Rosary.</p>
+			<ul class="rosary-prayer-list">
+				{rosaryPrayers.map((prayer) => (
+					<li class="rosary-prayer-card">
+						<h3 class="rosary-prayer-card__title">{prayer.title}</h3>
+						<blockquote class="rosary-prayer-card__text">{prayer.text}</blockquote>
+					</li>
+				))}
+			</ul>
+		</section>
+
+		<section class="rosary-mysteries">
+			<h2>The twenty mysteries</h2>
+			<p>Select a set to read each mystery and a short meditation.</p>
+
+			<ul class="rosary-set-list">
+			{mysterySets.map((set) => (
+				<li class="rosary-set-card">
+					<a class="rosary-set-card__link" href={withBase(`/rosary/${set.slug}`)}>
+						<span class="rosary-set-card__days">Prayed on {set.days}</span>
+						<h2 class="rosary-set-card__title">{set.title}</h2>
+						<p class="rosary-set-card__excerpt">{set.excerpt}</p>
+						<span class="rosary-set-card__read">View five mysteries →</span>
+					</a>
+				</li>
+			))}
+		</ul>
+		</section>
+	</div>
+</BaseLayout>

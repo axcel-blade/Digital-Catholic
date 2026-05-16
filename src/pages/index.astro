@@ -7,7 +7,7 @@ const currentPath = Astro.url.pathname;
 
 <BaseLayout
 	title="Digital Catholic"
-	description="Digital Catholic — Catholic saints, seven sacraments, Ten Commandments, and faith formation. Learn, pray, and share the teachings of the Church."
+	description="Digital Catholic — Catholic saints, sacraments, Ten Commandments, Mysteries of the Rosary, and faith formation. Learn, pray, and share the teachings of the Church."
 	currentPath={currentPath}
 >
 	<div class="page-content">
@@ -44,6 +44,13 @@ const currentPath = Astro.url.pathname;
 					ourselves.
 				</p>
 				<a class="topic-list__link" href={withBase('/commandments')}>Read the Ten Commandments →</a>
+			</li>
+			<li>
+				<strong>Mysteries of the Rosary</strong>
+				<p>
+					How to pray the Rosary, the traditional prayers, and the twenty mysteries for meditation.
+				</p>
+				<a class="topic-list__link" href={withBase('/rosary')}>Learn how to pray the Rosary →</a>
 			</li>
 		</ul>
 

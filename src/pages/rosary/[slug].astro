@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { mysterySets } from '../../data/rosary';
+import { withBase } from '../../lib/paths';
+
+export function getStaticPaths() {
+	return mysterySets.map((set) => ({
+		params: { slug: set.slug },
+		props: { set },
+	}));
+}
+
+const { set } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title={set.title}
+	description={set.excerpt}
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--wide">
+		<p class="article__back">
+			<a href={withBase('/rosary')}>← Rosary</a>
+			<span class="article__back-sep" aria-hidden="true"> · </span>
+			<a href={withBase('/rosary#how-to-recite')}>How to recite</a>
+		</p>
+		<p class="hero__tagline">Rosary · {set.days}</p>
+		<h1>{set.title}</h1>
+		<p class="lead">{set.intro}</p>
+
+		<ol class="mystery-list">
+			{set.mysteries.map((mystery) => (
+				<li class="mystery-card" id={`mystery-${mystery.number}`}>
+					<div class="mystery-card__header">
+						<span class="mystery-card__number">{mystery.number}</span>
+						<h2 class="mystery-card__title">{mystery.title}</h2>
+					</div>
+					<p class="mystery-card__fruit">
+						<strong>Fruit of the mystery:</strong> {mystery.fruit}
+					</p>
+					<p class="mystery-card__meditation">{mystery.meditation}</p>
+				</li>
+			))}
+		</ol>
+	</div>
+</BaseLayout>
