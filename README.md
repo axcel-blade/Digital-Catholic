@@ -8,7 +8,7 @@ A static website for learning and sharing the Catholic faith—saint biographies
 
 | Section | Description |
 | --- | --- |
-| **Saints** | Biographies of holy men and women (including the Blessed Virgin Mary, St. Joseph, and St. Anthony of Padua), with feast days and lessons for daily life. |
+| **Saints** | Biographies of holy men and women (including the Blessed Virgin Mary, St. Joseph, St. Anthony of Padua, and St. Carlo Acutis), with feast days and lessons for daily life. |
 | **Sacraments** | Articles on all seven sacraments—what the Church teaches, how they are celebrated, and why they matter. |
 | **Miracles of Jesus** | Gospel accounts of Christ’s miracles in Matthew, Mark, Luke, and John, with Scripture references and reflections. |
 | **Eucharistic Miracles** | Events in which the consecrated Host witnesses to the Real Presence—from Lanciano and Bolsena to modern shrines. |

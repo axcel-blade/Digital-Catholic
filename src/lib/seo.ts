@@ -5,7 +5,7 @@ export const SITE = {
 	defaultDescription:
 		'Learn the Catholic faith with saint biographies, the seven sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, and how to pray the Rosary. Clear articles for prayer, formation, and sharing.',
 	keywords:
-		'Catholic, Catholic faith, saints, Blessed Virgin Mary, Marian apparitions, Guadalupe, Lourdes, Fatima, Velankanni, India, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, rosary, mysteries of the rosary, prayer, catechism, Bible, Digital Catholic, Christian',
+		'Catholic, Catholic faith, saints, Carlo Acutis, Blessed Virgin Mary, Marian apparitions, Guadalupe, Lourdes, Fatima, Velankanni, India, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, rosary, mysteries of the rosary, prayer, catechism, Bible, Digital Catholic, Christian',
 	locale: 'en_US',
 	themeColor: '#6b2d3c',
 	themeColorDark: '#1a1816',
@@ -19,7 +19,7 @@ export const PAGE_DESCRIPTIONS = {
 	about:
 		'About Digital Catholic — a free site for saint biographies, sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Commandments, and the Rosary, with search and articles for faith formation.',
 	saints:
-		'Saint biographies for the Catholic Church — lives of holy men and women, feast days, and lessons from Mary, Joseph, Anthony of Padua, and more.',
+		'Saint biographies for the Catholic Church — lives of holy men and women, feast days, and lessons from Mary, Joseph, Anthony of Padua, Carlo Acutis, and more.',
 	sacraments:
 		'Articles on the seven sacraments — Baptism, Confirmation, Eucharist, Penance, Anointing of the Sick, Holy Orders, and Matrimony — what the Church teaches and why they matter.',
 	miracles:
