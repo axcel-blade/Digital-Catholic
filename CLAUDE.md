@@ -1,1 +1,0 @@
-Do not add co-contributors
