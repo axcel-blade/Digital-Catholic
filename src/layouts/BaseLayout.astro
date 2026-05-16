@@ -6,6 +6,9 @@ import SEOHead from '../components/SEOHead.astro';
 import SiteSearch from '../components/SiteSearch.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import SiteHeaderMenu from '../components/SiteHeaderMenu.astro';
+import SiteHeaderMenuToggle from '../components/SiteHeaderMenuToggle.astro';
+import SiteNavExplore from '../components/SiteNavExplore.astro';
+import SiteNavPrimary from '../components/SiteNavPrimary.astro';
 import {
 	formatPageTitle,
 	getCanonicalUrl,
@@ -75,7 +78,12 @@ const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
 			<div class="site-header__inner">
 				<a class="site-logo" href={withBase('/')}>Digital Catholic</a>
 				<div class="site-header__actions">
+					<div class="site-header__toolbar">
+						<SiteNavPrimary primary={primaryNav} />
+						<SiteNavExplore exploreGroup={exploreGroup} />
+					</div>
 					<SiteSearch />
+					<SiteHeaderMenuToggle />
 					<ThemeToggle />
 				</div>
 				<SiteHeaderMenu primary={primaryNav} exploreGroup={exploreGroup} />

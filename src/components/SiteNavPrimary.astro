@@ -1,0 +1,21 @@
+---
+import type { ResolvedNavItem } from '../lib/siteNav';
+
+interface Props {
+	primary: ResolvedNavItem[];
+}
+
+const { primary } = Astro.props;
+---
+
+<nav class="site-header__primary" aria-label="Primary">
+	<ul class="site-header__primary-list">
+		{primary.map((item) => (
+			<li>
+				<a href={item.href} aria-current={item.isActive ? 'page' : undefined}>
+					{item.label}
+				</a>
+			</li>
+		))}
+	</ul>
+</nav>
