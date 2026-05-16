@@ -1,0 +1,120 @@
+---
+interface NavItem {
+	href: string;
+	label: string;
+	isActive: boolean;
+}
+
+interface Props {
+	items: NavItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<button
+	type="button"
+	class="site-header__menu-toggle"
+	id="site-header-menu-toggle"
+	aria-controls="site-header-menu"
+	aria-expanded="false"
+	aria-label="Open menu"
+>
+	<svg
+		class="site-header__menu-icon site-header__menu-icon--open"
+		width="22"
+		height="22"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		aria-hidden="true"
+	>
+		<path d="M4 7h16M4 12h16M4 17h16"></path>
+	</svg>
+	<svg
+		class="site-header__menu-icon site-header__menu-icon--close"
+		width="22"
+		height="22"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		aria-hidden="true"
+	>
+		<path d="M6 6l12 12M18 6 6 18"></path>
+	</svg>
+</button>
+
+<div class="site-header__menu" id="site-header-menu">
+	<nav class="site-header__nav" aria-label="Main">
+		<ul class="site-nav">
+			{items.map((item) => (
+				<li>
+					<a href={item.href} aria-current={item.isActive ? 'page' : undefined}>
+						{item.label}
+					</a>
+				</li>
+			))}
+		</ul>
+	</nav>
+</div>
+
+<script>
+	const toggle = document.getElementById('site-header-menu-toggle');
+	const menu = document.getElementById('site-header-menu');
+
+	if (!toggle || !menu) throw new Error('Site header menu elements not found');
+
+	const desktopQuery = window.matchMedia('(min-width: 52rem)');
+
+	function setMenuOpen(open) {
+		const isOpen = open && !desktopQuery.matches;
+		toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+		toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+		if (isOpen) {
+			menu.classList.add('is-open');
+		} else {
+			menu.classList.remove('is-open');
+		}
+	}
+
+	function closeMenu() {
+		setMenuOpen(false);
+	}
+
+	toggle.addEventListener('click', () => {
+		setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true');
+	});
+
+	menu.querySelectorAll('a').forEach((link) => {
+		link.addEventListener('click', closeMenu);
+	});
+
+	document.addEventListener('click', (event) => {
+		if (desktopQuery.matches) return;
+		const target = event.target;
+		if (!(target instanceof Node)) return;
+		if (toggle.contains(target) || menu.contains(target)) return;
+		closeMenu();
+	});
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') closeMenu();
+	});
+
+	desktopQuery.addEventListener('change', () => {
+		if (desktopQuery.matches) {
+			menu.classList.add('is-open');
+			toggle.setAttribute('aria-expanded', 'false');
+		} else {
+			closeMenu();
+		}
+	});
+
+	if (desktopQuery.matches) {
+		menu.classList.add('is-open');
+	}
+</script>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
 import { withBase } from '../lib/paths';
 
 const currentPath = Astro.url.pathname;
@@ -58,7 +59,7 @@ const topics = [
 
 <BaseLayout
 	title="Digital Catholic"
-	description="Digital Catholic — Catholic saints, sacraments, miracles and parables of Jesus, Ten Commandments, Rosary, and faith formation. Learn, pray, and share the teachings of the Church."
+	description={PAGE_DESCRIPTIONS.home}
 	currentPath={currentPath}
 >
 	<div class="page-content page-content--catalog">

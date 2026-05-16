@@ -6,6 +6,7 @@ import {
 	getSacramentImageSrc,
 	getSacramentImageAlt,
 } from '../../data/sacraments';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 
 const currentPath = Astro.url.pathname;
@@ -13,7 +14,7 @@ const currentPath = Astro.url.pathname;
 
 <BaseLayout
 	title="Sacraments"
-	description="Articles on the seven sacraments of the Catholic Church — Baptism, Confirmation, Eucharist, Penance, Anointing, Holy Orders, and Matrimony."
+	description={PAGE_DESCRIPTIONS.sacraments}
 	currentPath={currentPath}
 >
 	<div class="page-content page-content--catalog">

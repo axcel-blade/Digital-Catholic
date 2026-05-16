@@ -4,6 +4,7 @@ import { withBase, stripBase } from '../lib/paths';
 import SEOHead from '../components/SEOHead.astro';
 import SiteSearch from '../components/SiteSearch.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import SiteHeaderMenu from '../components/SiteHeaderMenu.astro';
 import {
 	formatPageTitle,
 	getCanonicalUrl,
@@ -30,6 +31,14 @@ const {
 	jsonLd,
 } = Astro.props;
 
+const routePath = stripBase(currentPath);
+
+function isNavActive(href: string, path: string): boolean {
+	const route = stripBase(href);
+	if (route === '/') return path === '/';
+	return path === route || path.startsWith(`${route}/`);
+}
+
 const navItems = [
 	{ href: withBase('/'), label: 'Home' },
 	{ href: withBase('/about'), label: 'About' },
@@ -39,15 +48,10 @@ const navItems = [
 	{ href: withBase('/parables'), label: 'Parables' },
 	{ href: withBase('/commandments'), label: 'Commandments' },
 	{ href: withBase('/rosary'), label: 'Rosary' },
-];
-
-const routePath = stripBase(currentPath);
-
-function isNavActive(href: string, path: string): boolean {
-	const route = stripBase(href);
-	if (route === '/') return path === '/';
-	return path === route || path.startsWith(`${route}/`);
-}
+].map((item) => ({
+	...item,
+	isActive: isNavActive(item.href, routePath),
+}));
 
 const pageTitle = formatPageTitle(title);
 const canonicalURL = getCanonicalUrl(Astro.url);
@@ -89,24 +93,11 @@ const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
 		<header class="site-header">
 			<div class="site-header__inner">
 				<a class="site-logo" href={withBase('/')}>Digital Catholic</a>
-				<nav class="site-header__nav" aria-label="Main">
-					<ul class="site-nav">
-						{navItems.map((item) => (
-							<li>
-								<a
-									href={item.href}
-									aria-current={isNavActive(item.href, routePath) ? 'page' : undefined}
-								>
-									{item.label}
-								</a>
-							</li>
-						))}
-					</ul>
-				</nav>
 				<div class="site-header__actions">
 					<SiteSearch />
 					<ThemeToggle />
 				</div>
+				<SiteHeaderMenu items={navItems} />
 			</div>
 		</header>
 

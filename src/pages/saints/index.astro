@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageBack from '../../components/PageBack.astro';
 import { saints, getSaintImageSrc, getSaintImageAlt } from '../../data/saints';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 
 const currentPath = Astro.url.pathname;
@@ -9,7 +10,7 @@ const currentPath = Astro.url.pathname;
 
 <BaseLayout
 	title="Saints"
-	description="Biographies of the saints — holy men and women who witness to Christ and inspire our faith."
+	description={PAGE_DESCRIPTIONS.saints}
 	currentPath={currentPath}
 >
 	<div class="page-content page-content--catalog">
