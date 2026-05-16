@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { withBase, stripBase } from '../lib/paths';
 import SEOHead from '../components/SEOHead.astro';
 import SiteSearch from '../components/SiteSearch.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 import {
 	formatPageTitle,
 	getCanonicalUrl,
@@ -57,6 +58,20 @@ const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<script is:inline>
+			(function () {
+				var key = 'digital-catholic-theme';
+				var stored = localStorage.getItem(key);
+				var theme =
+					stored === 'light' || stored === 'dark'
+						? stored
+						: window.matchMedia('(prefers-color-scheme: dark)').matches
+							? 'dark'
+							: 'light';
+				document.documentElement.setAttribute('data-theme', theme);
+			})();
+		</script>
+		<meta name="theme-color" content={SITE.themeColor} />
 		<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
 		<link rel="icon" href={withBase('/favicon.ico')} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -74,7 +89,6 @@ const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
 		<header class="site-header">
 			<div class="site-header__inner">
 				<a class="site-logo" href={withBase('/')}>Digital Catholic</a>
-				<SiteSearch />
 				<nav class="site-header__nav" aria-label="Main">
 					<ul class="site-nav">
 						{navItems.map((item) => (
@@ -89,6 +103,10 @@ const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
 						))}
 					</ul>
 				</nav>
+				<div class="site-header__actions">
+					<SiteSearch />
+					<ThemeToggle />
+				</div>
 			</div>
 		</header>
 
