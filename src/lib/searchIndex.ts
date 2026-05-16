@@ -7,6 +7,10 @@ import {
 	rosaryMysterySchedule,
 	rosaryPrayers,
 } from '../data/rosary';
+import { eucharisticMiracles, eucharisticMiraclesIntro } from '../data/eucharisticMiracles';
+import { marianApparitions, marianApparitionsIntro } from '../data/marianApparitions';
+import { miracles, miraclesIntro } from '../data/miracles';
+import { parables, parablesIntro } from '../data/parables';
 import { sacraments } from '../data/sacraments';
 import { saints } from '../data/saints';
 import { withBase } from './paths';
@@ -74,6 +78,44 @@ export function buildSearchIndex(): SearchEntry[] {
 			['baptism confirmation eucharist penance orders matrimony anointing'],
 		),
 		entry(
+			'Miracles of Jesus',
+			withBase('/miracles'),
+			'Miracles',
+			miraclesIntro,
+			[miraclesIntro, ...miracles.map((m) => joinParts(m.title, m.excerpt, m.gospelReference, m.category))],
+		),
+		entry(
+			'Eucharistic Miracles',
+			withBase('/eucharistic-miracles'),
+			'Eucharistic',
+			eucharisticMiraclesIntro,
+			[
+				eucharisticMiraclesIntro,
+				...eucharisticMiracles.map((m) =>
+					joinParts(m.title, m.excerpt, m.location, m.date, m.category)
+				),
+			],
+		),
+		entry(
+			'Marian Apparitions',
+			withBase('/marian-apparitions'),
+			'Marian',
+			marianApparitionsIntro,
+			[
+				marianApparitionsIntro,
+				...marianApparitions.map((a) =>
+					joinParts(a.title, a.excerpt, a.location, a.date, a.category)
+				),
+			],
+		),
+		entry(
+			'Parables of Jesus',
+			withBase('/parables'),
+			'Parables',
+			parablesIntro,
+			[parablesIntro, ...parables.map((p) => joinParts(p.title, p.excerpt, p.gospelReference, p.category))],
+		),
+		entry(
 			'Ten Commandments',
 			withBase('/commandments'),
 			'Commandments',
@@ -115,6 +157,54 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Sacrament',
 				sacrament.excerpt,
 				[sectionsText(sacrament.sections)]
+			)
+		);
+	}
+
+	for (const miracle of miracles) {
+		items.push(
+			entry(
+				miracle.title,
+				withBase(`/miracles/${miracle.slug}`),
+				'Miracle',
+				miracle.excerpt,
+				[miracle.gospelReference, miracle.category, sectionsText(miracle.sections)]
+			)
+		);
+	}
+
+	for (const miracle of eucharisticMiracles) {
+		items.push(
+			entry(
+				miracle.title,
+				withBase(`/eucharistic-miracles/${miracle.slug}`),
+				'Eucharistic miracle',
+				miracle.excerpt,
+				[miracle.location, miracle.date, miracle.category, sectionsText(miracle.sections)]
+			)
+		);
+	}
+
+	for (const apparition of marianApparitions) {
+		items.push(
+			entry(
+				apparition.title,
+				withBase(`/marian-apparitions/${apparition.slug}`),
+				'Marian apparition',
+				apparition.excerpt,
+				[apparition.location, apparition.date, apparition.category, sectionsText(apparition.sections)]
+			)
+		);
+	}
+
+	for (const parable of parables) {
+		items.push(
+			entry(
+				parable.title,
+				withBase(`/parables/${parable.slug}`),
+				'Parable',
+				parable.excerpt,
+				[parable.gospelReference, parable.category, sectionsText(parable.sections)]
 			)
 		);
 	}

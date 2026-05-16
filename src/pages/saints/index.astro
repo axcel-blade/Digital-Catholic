@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
 import { saints, getSaintImageSrc, getSaintImageAlt } from '../../data/saints';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 
 const currentPath = Astro.url.pathname;
@@ -8,18 +10,21 @@ const currentPath = Astro.url.pathname;
 
 <BaseLayout
 	title="Saints"
-	description="Biographies of the saints — holy men and women who witness to Christ and inspire our faith."
+	description={PAGE_DESCRIPTIONS.saints}
 	currentPath={currentPath}
 >
-	<div class="page-content page-content--wide">
-		<p class="hero__tagline">Saints</p>
-		<h1>Saint Biographies</h1>
-		<p class="lead">
-			Read the lives of the saints—their faith, trials, and love of God—so their example may guide
-			your own journey in Christ.
-		</p>
+	<div class="page-content page-content--catalog">
+		<PageBack href={withBase('/')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Saints</p>
+			<h1>Saint Biographies</h1>
+			<p class="lead">
+				Read the lives of the saints—their faith, trials, and love of God—so their example may guide
+				your own journey in Christ.
+			</p>
+		</div>
 
-		<ul class="blog-grid blog-grid--sacraments">
+		<ul class="blog-grid blog-grid--catalog blog-grid--media">
 			{saints.map((saint) => (
 				<li class="blog-card">
 					<a class="blog-card__link" href={withBase(`/saints/${saint.slug}`)}>

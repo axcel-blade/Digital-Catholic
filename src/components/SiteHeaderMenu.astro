@@ -1,0 +1,95 @@
+---
+import type { ResolvedNavGroup, ResolvedNavItem } from '../lib/siteNav';
+
+interface Props {
+	primary: ResolvedNavItem[];
+	exploreGroup: ResolvedNavGroup;
+}
+
+const { primary, exploreGroup } = Astro.props;
+---
+
+<div class="site-header__menu" id="site-header-menu">
+	<nav class="site-header__nav" aria-label="Main">
+		<ul class="site-nav">
+			{primary.map((item) => (
+				<li class="site-nav__primary-item">
+					<a href={item.href} aria-current={item.isActive ? 'page' : undefined}>
+						{item.label}
+					</a>
+				</li>
+			))}
+			<li class="site-nav__explore-heading">
+				<span>{exploreGroup.label}</span>
+			</li>
+			{exploreGroup.items.map((item) => (
+				<li class="site-nav__explore-item">
+					<a href={item.href} aria-current={item.isActive ? 'page' : undefined}>
+						{item.label}
+					</a>
+				</li>
+			))}
+		</ul>
+	</nav>
+</div>
+
+<script>
+	const toggle = document.getElementById('site-header-menu-toggle');
+	const menu = document.getElementById('site-header-menu');
+
+	if (!menu) throw new Error('Site header menu panel not found');
+
+	const desktopQuery = window.matchMedia('(min-width: 52rem)');
+
+	function setMenuOpen(open) {
+		const isOpen = open && !desktopQuery.matches;
+		if (toggle) {
+			toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+			toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+		}
+		if (isOpen) {
+			menu.classList.add('is-open');
+		} else {
+			menu.classList.remove('is-open');
+		}
+	}
+
+	function closeMenu() {
+		setMenuOpen(false);
+	}
+
+	toggle?.addEventListener('click', () => {
+		setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true');
+	});
+
+	menu.querySelectorAll('a').forEach((link) => {
+		link.addEventListener('click', closeMenu);
+	});
+
+	document.addEventListener('click', (event) => {
+		if (desktopQuery.matches) return;
+		const target = event.target;
+		if (!(target instanceof Node)) return;
+		if (toggle?.contains(target) || menu.contains(target)) return;
+		closeMenu();
+	});
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') {
+			closeMenu();
+		}
+	});
+
+	desktopQuery.addEventListener('change', () => {
+		if (desktopQuery.matches) {
+			menu.classList.remove('is-open');
+			toggle?.setAttribute('aria-expanded', 'false');
+		} else {
+			closeMenu();
+		}
+	});
+
+	if (desktopQuery.matches) {
+		menu.classList.remove('is-open');
+	}
+</script>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
 import {
 	mysterySets,
 	rosaryIntro,
@@ -8,6 +9,7 @@ import {
 	rosaryMysterySchedule,
 	rosaryPrayers,
 } from '../../data/rosary';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 
 const currentPath = Astro.url.pathname;
@@ -15,13 +17,16 @@ const currentPath = Astro.url.pathname;
 
 <BaseLayout
 	title="Mysteries of the Rosary"
-	description="How to recite the Holy Rosary, the prayers of the Rosary, and the twenty mysteries — Joyful, Sorrowful, Glorious, and Luminous."
+	description={PAGE_DESCRIPTIONS.rosary}
 	currentPath={currentPath}
 >
-	<div class="page-content page-content--wide">
-		<p class="hero__tagline">Prayer</p>
-		<h1>Mysteries of the Rosary</h1>
-		<p class="lead">{rosaryIntro}</p>
+	<div class="page-content page-content--catalog">
+		<PageBack href={withBase('/')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Prayer</p>
+			<h1>Mysteries of the Rosary</h1>
+			<p class="lead">{rosaryIntro}</p>
+		</div>
 
 		<section class="rosary-how-to" id="how-to-recite">
 			<h2>How to recite the Rosary</h2>

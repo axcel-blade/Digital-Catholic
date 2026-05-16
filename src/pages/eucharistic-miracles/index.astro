@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import {
+	eucharisticMiracles,
+	eucharisticMiraclesIntro,
+	getEucharisticMiracleImageSrc,
+} from '../../data/eucharisticMiracles';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Eucharistic Miracles"
+	description={PAGE_DESCRIPTIONS.eucharisticMiracles}
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--catalog">
+		<PageBack href={withBase('/')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Eucharist</p>
+			<h1>Eucharistic Miracles</h1>
+			<p class="lead">{eucharisticMiraclesIntro}</p>
+		</div>
+
+		<ul class="blog-grid blog-grid--catalog blog-grid--media">
+			{eucharisticMiracles.map((miracle) => (
+				<li class="blog-card">
+					<a
+						class="blog-card__link"
+						href={withBase(`/eucharistic-miracles/${miracle.slug}`)}
+					>
+						<div class="blog-card__media">
+							<img
+								src={getEucharisticMiracleImageSrc(miracle.slug)}
+								alt={miracle.imageAlt}
+								width="640"
+								height="400"
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
+						<div class="blog-card__body">
+							<span class="blog-card__category">{miracle.category}</span>
+							<h2 class="blog-card__title">{miracle.title}</h2>
+							<p class="blog-card__meta">
+								{miracle.location} · {miracle.date}
+							</p>
+							<p class="blog-card__excerpt">{miracle.excerpt}</p>
+							<span class="blog-card__read">Read article →</span>
+						</div>
+					</a>
+				</li>
+			))}
+		</ul>
+
+		<p class="catalog-footer-link">
+			<a href={withBase('/marian-apparitions')}>Marian apparitions →</a>
+			{' · '}
+			<a href={withBase('/miracles')}>Miracles of Jesus in the Gospels →</a>
+		</p>
+	</div>
+</BaseLayout>

@@ -1,8 +1,14 @@
 ---
 import '../styles/global.css';
-import { withBase, stripBase } from '../lib/paths';
+import { withBase } from '../lib/paths';
+import { buildSiteNav } from '../lib/siteNav';
 import SEOHead from '../components/SEOHead.astro';
 import SiteSearch from '../components/SiteSearch.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import SiteHeaderMenu from '../components/SiteHeaderMenu.astro';
+import SiteHeaderMenuToggle from '../components/SiteHeaderMenuToggle.astro';
+import SiteNavExplore from '../components/SiteNavExplore.astro';
+import SiteNavPrimary from '../components/SiteNavPrimary.astro';
 import {
 	formatPageTitle,
 	getCanonicalUrl,
@@ -29,22 +35,7 @@ const {
 	jsonLd,
 } = Astro.props;
 
-const navItems = [
-	{ href: withBase('/'), label: 'Home' },
-	{ href: withBase('/about'), label: 'About' },
-	{ href: withBase('/saints'), label: 'Saints' },
-	{ href: withBase('/sacraments'), label: 'Sacraments' },
-	{ href: withBase('/commandments'), label: 'Commandments' },
-	{ href: withBase('/rosary'), label: 'Rosary' },
-];
-
-const routePath = stripBase(currentPath);
-
-function isNavActive(href: string, path: string): boolean {
-	const route = stripBase(href);
-	if (route === '/') return path === '/';
-	return path === route || path.startsWith(`${route}/`);
-}
+const { primary: primaryNav, exploreGroup } = buildSiteNav(currentPath);
 
 const pageTitle = formatPageTitle(title);
 const canonicalURL = getCanonicalUrl(Astro.url);
@@ -55,6 +46,20 @@ const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<script is:inline>
+			(function () {
+				var key = 'digital-catholic-theme';
+				var stored = localStorage.getItem(key);
+				var theme =
+					stored === 'light' || stored === 'dark'
+						? stored
+						: window.matchMedia('(prefers-color-scheme: dark)').matches
+							? 'dark'
+							: 'light';
+				document.documentElement.setAttribute('data-theme', theme);
+			})();
+		</script>
+		<meta name="theme-color" content={SITE.themeColor} />
 		<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
 		<link rel="icon" href={withBase('/favicon.ico')} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -72,21 +77,16 @@ const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
 		<header class="site-header">
 			<div class="site-header__inner">
 				<a class="site-logo" href={withBase('/')}>Digital Catholic</a>
-				<SiteSearch />
-				<nav class="site-header__nav" aria-label="Main">
-					<ul class="site-nav">
-						{navItems.map((item) => (
-							<li>
-								<a
-									href={item.href}
-									aria-current={isNavActive(item.href, routePath) ? 'page' : undefined}
-								>
-									{item.label}
-								</a>
-							</li>
-						))}
-					</ul>
-				</nav>
+				<div class="site-header__actions">
+					<div class="site-header__toolbar">
+						<SiteNavPrimary primary={primaryNav} />
+						<SiteNavExplore exploreGroup={exploreGroup} />
+					</div>
+					<SiteSearch />
+					<SiteHeaderMenuToggle />
+					<ThemeToggle />
+				</div>
+				<SiteHeaderMenu primary={primaryNav} exploreGroup={exploreGroup} />
 			</div>
 		</header>
 

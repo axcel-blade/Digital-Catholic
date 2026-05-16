@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import {
+	marianApparitions,
+	marianApparitionsIntro,
+	getMarianApparitionImageSrc,
+} from '../../data/marianApparitions';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Marian Apparitions"
+	description={PAGE_DESCRIPTIONS.marianApparitions}
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--catalog">
+		<PageBack href={withBase('/')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Blessed Virgin Mary</p>
+			<h1>Marian Apparitions</h1>
+			<p class="lead">{marianApparitionsIntro}</p>
+		</div>
+
+		<ul class="blog-grid blog-grid--catalog blog-grid--media">
+			{marianApparitions.map((apparition) => (
+				<li class="blog-card">
+					<a
+						class="blog-card__link"
+						href={withBase(`/marian-apparitions/${apparition.slug}`)}
+					>
+						<div class="blog-card__media">
+							<img
+								src={getMarianApparitionImageSrc(apparition.slug)}
+								alt={apparition.imageAlt}
+								width="640"
+								height="400"
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
+						<div class="blog-card__body">
+							<span class="blog-card__category">{apparition.category}</span>
+							<h2 class="blog-card__title">{apparition.title}</h2>
+							<p class="blog-card__meta">
+								{apparition.location} · {apparition.date}
+							</p>
+							<p class="blog-card__excerpt">{apparition.excerpt}</p>
+							<span class="blog-card__read">Read article →</span>
+						</div>
+					</a>
+				</li>
+			))}
+		</ul>
+
+		<p class="catalog-footer-link">
+			<a href={withBase('/saints/blessed-virgin-mary')}>Biography of the Blessed Virgin Mary →</a>
+		</p>
+	</div>
+</BaseLayout>

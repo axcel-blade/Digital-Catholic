@@ -1,50 +1,159 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageBack from '../components/PageBack.astro';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
+import { withBase } from '../lib/paths';
 
 const currentPath = Astro.url.pathname;
+const jesusTeachingSrc = `${import.meta.env.BASE_URL}about/jesus-teaching.jpg`;
+const jesusTeachingAlt =
+	'Christ teaching the people—the Sermon on the Mount, painting by Carl Heinrich Bloch (public domain)';
+
+const sections = [
+	{
+		href: '/saints',
+		title: 'Saints',
+		description: 'Biographies and feast days',
+	},
+	{
+		href: '/sacraments',
+		title: 'Sacraments',
+		description: 'All seven sacraments',
+	},
+	{
+		href: '/miracles',
+		title: 'Miracles of Jesus',
+		description: 'Signs in the Gospels',
+	},
+	{
+		href: '/eucharistic-miracles',
+		title: 'Eucharistic Miracles',
+		description: 'The Real Presence',
+	},
+	{
+		href: '/marian-apparitions',
+		title: 'Marian Apparitions',
+		description: 'Our Lady in the world',
+	},
+	{
+		href: '/parables',
+		title: 'Parables of Jesus',
+		description: 'Stories of the Kingdom',
+	},
+	{
+		href: '/commandments',
+		title: 'Ten Commandments',
+		description: 'God’s moral law',
+	},
+	{
+		href: '/rosary',
+		title: 'Rosary',
+		description: 'Prayer and mysteries',
+	},
+];
 ---
 
 <BaseLayout
 	title="About"
-	description="What Digital Catholic is about — saint biographies and sacraments shared for knowledge and faith formation."
+	description={PAGE_DESCRIPTIONS.about}
 	currentPath={currentPath}
 >
-	<div class="page-content page-content--wide">
-		<h1>About Digital Catholic</h1>
-		<p class="lead">
-			Digital Catholic is a learning site dedicated to sharing the riches of the Catholic
-			faith in a clear, accessible way.
-		</p>
+	<div class="page-content page-content--about">
+		<PageBack href={withBase('/')} />
 
-		<h2>What this site is about</h2>
-		<p>
-			We focus on two pillars of Catholic life: the <strong>biography of saints</strong> and
-			the <strong>sacraments</strong>. Together they help us know who we are called to be and
-			how God meets us in the Church.
-		</p>
+		<div class="about-layout">
+			<div class="about-main catalog-prose">
+				<h1>About Digital Catholic</h1>
+				<p class="lead">
+					Digital Catholic is a free learning site that shares the Catholic faith in clear,
+					accessible language—for prayer, formation, catechesis, and everyday reading.
+				</p>
 
-		<h2>Saints</h2>
-		<p>
-			The saints are our brothers and sisters in Christ who lived the Gospel with heroic love.
-			Here you will find their stories—where they came from, what they endured, how they prayed,
-			and what they teach us today. Their biographies are offered for knowledge and inspiration,
-			so that their example can guide your own journey of faith.
-		</p>
+				<h2>What you will find here</h2>
+				<p>
+					We publish short articles drawn from Scripture and the teaching of the Church. Each
+					section is written to be read on its own or shared with family, students, and anyone
+					seeking to grow in knowledge of Christ.
+				</p>
+				<p>
+					Use the <strong>Explore</strong> menu in the header to browse every section, or open the
+					list on the right on larger screens.
+				</p>
 
-		<h2>Sacraments</h2>
-		<p>
-			The seven sacraments are visible signs of God’s invisible grace: Baptism, Confirmation,
-			Eucharist, Penance, Anointing of the Sick, Holy Orders, and Matrimony. On this site we
-			share teaching about each sacrament—what the Church believes, how they are celebrated, and
-			why they are essential for every Catholic who seeks to know and live the faith.
-		</p>
+				<h2>Features</h2>
+				<ul class="about-features">
+					<li>
+						<strong>Site search</strong>
+						<span>Find saints, sacraments, Gospel articles, commandments, and Rosary content from any page.</span>
+					</li>
+					<li>
+						<strong>Dark mode</strong>
+						<span>Switch themes; your preference is saved in your browser.</span>
+					</li>
+					<li>
+						<strong>Responsive layout</strong>
+						<span>Readable on phones, tablets, and desktop.</span>
+					</li>
+				</ul>
 
-		<h2>Knowledge for sharing</h2>
-		<p>
-			Everything here is meant to be read, learned, and shared. Whether you are new to the
-			faith, preparing for a sacrament, or deepening your devotion to the saints, Digital
-			Catholic exists to make sound Catholic teaching available to all who wish to grow in
-			understanding and love of Christ and His Church.
-		</p>
+				<h2>Our approach</h2>
+				<p>
+					Content is offered for knowledge and devotion, not as a substitute for the Magisterium,
+					your parish, or spiritual direction. We aim for accuracy and reverence in presenting
+					what Catholics believe and how the saints and sacraments help us live the Gospel.
+				</p>
+
+				<h2>Knowledge for sharing</h2>
+				<p>
+					Everything on this site is meant to be read, learned, and shared. Whether you are new
+					to the faith, preparing for a sacrament, studying the Gospels, or deepening your
+					prayer life, Digital Catholic exists to make sound Catholic teaching available to all
+					who wish to grow in understanding and love of Christ and His Church.
+				</p>
+
+				<p class="about-main__cta">
+					<a class="cta-link" href={withBase('/')}>Browse all topics on the home page →</a>
+				</p>
+			</div>
+
+			<aside class="about-aside" aria-label="Site sections and highlights">
+				<figure class="about-aside__figure">
+					<img
+						src={jesusTeachingSrc}
+						alt={jesusTeachingAlt}
+						width="900"
+						height="600"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption>Sermon on the Mount — Carl Heinrich Bloch</figcaption>
+				</figure>
+
+				<div class="about-aside__panel">
+					<h2 class="about-aside__title">Explore the site</h2>
+					<ul class="about-section-list">
+						{sections.map((section) => (
+							<li>
+								<a href={withBase(section.href)}>
+									<strong>{section.title}</strong>
+									<span>{section.description}</span>
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+
+				<div class="about-aside__stats">
+					<div class="about-stat">
+						<span class="about-stat__value">8</span>
+						<span class="about-stat__label">Content areas</span>
+					</div>
+					<div class="about-stat">
+						<span class="about-stat__value">Free</span>
+						<span class="about-stat__label">Always open</span>
+					</div>
+				</div>
+			</aside>
+		</div>
 	</div>
 </BaseLayout>

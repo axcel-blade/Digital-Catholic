@@ -1,0 +1,94 @@
+---
+import type { ResolvedNavGroup } from '../lib/siteNav';
+
+interface Props {
+	exploreGroup: ResolvedNavGroup;
+}
+
+const { exploreGroup } = Astro.props;
+---
+
+<div
+	class:list={['site-header__explore', exploreGroup.isActive && 'is-active']}
+	id="site-nav-explore-group"
+>
+	<button
+		type="button"
+		class="site-nav__group-toggle"
+		id="site-nav-explore-toggle"
+		aria-expanded="false"
+		aria-controls="site-nav-explore-dropdown"
+		aria-haspopup="true"
+	>
+		{exploreGroup.label}
+		<svg
+			class="site-nav__group-chevron"
+			width="14"
+			height="14"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2.5"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+		>
+			<path d="M6 9l6 6 6-6"></path>
+		</svg>
+	</button>
+	<ul class="site-nav__dropdown" id="site-nav-explore-dropdown" role="list">
+		{exploreGroup.items.map((item) => (
+			<li>
+				<a href={item.href} aria-current={item.isActive ? 'page' : undefined}>
+					{item.label}
+				</a>
+			</li>
+		))}
+	</ul>
+</div>
+
+<script>
+	const exploreToggle = document.getElementById('site-nav-explore-toggle');
+	const exploreGroup = document.getElementById('site-nav-explore-group');
+
+	if (!exploreToggle || !exploreGroup) {
+		throw new Error('Site nav explore elements not found');
+	}
+
+	const desktopQuery = window.matchMedia('(min-width: 52rem)');
+
+	function setExploreOpen(open) {
+		const isOpen = open && desktopQuery.matches;
+		exploreToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+		exploreGroup.classList.toggle('is-open', isOpen);
+	}
+
+	function closeExplore() {
+		setExploreOpen(false);
+	}
+
+	exploreToggle.addEventListener('click', (event) => {
+		event.stopPropagation();
+		setExploreOpen(exploreToggle.getAttribute('aria-expanded') !== 'true');
+	});
+
+	exploreGroup.querySelectorAll('a').forEach((link) => {
+		link.addEventListener('click', closeExplore);
+	});
+
+	document.addEventListener('click', (event) => {
+		if (!desktopQuery.matches) return;
+		const target = event.target;
+		if (target instanceof Node && !exploreGroup.contains(target)) {
+			closeExplore();
+		}
+	});
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') {
+			closeExplore();
+		}
+	});
+
+	desktopQuery.addEventListener('change', closeExplore);
+</script>

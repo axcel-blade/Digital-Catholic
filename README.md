@@ -1,6 +1,6 @@
 # Digital Catholic
 
-A static website for learning and sharing the Catholic faith—saint biographies, the sacraments, the Ten Commandments, and the Holy Rosary—presented in clear language for prayer, formation, and everyday reading.
+A static website for learning and sharing the Catholic faith—saint biographies, the sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, and the Holy Rosary—presented in clear language for prayer, formation, and everyday reading.
 
 **Live site:** [https://axcel-blade.github.io/Digital-Catholic/](https://axcel-blade.github.io/Digital-Catholic/)
 
@@ -8,12 +8,16 @@ A static website for learning and sharing the Catholic faith—saint biographies
 
 | Section | Description |
 | --- | --- |
-| **Saints** | Biographies of holy men and women, with feast days and lessons for daily life. |
+| **Saints** | Biographies of holy men and women (including the Blessed Virgin Mary, St. Joseph, St. Anthony of Padua, and St. Carlo Acutis), with feast days and lessons for daily life. |
 | **Sacraments** | Articles on all seven sacraments—what the Church teaches, how they are celebrated, and why they matter. |
+| **Miracles of Jesus** | Gospel accounts of Christ’s miracles in Matthew, Mark, Luke, and John, with Scripture references and reflections. |
+| **Eucharistic Miracles** | Events in which the consecrated Host witnesses to the Real Presence—from Lanciano and Bolsena to modern shrines. |
+| **Marian Apparitions** | Our Lady appearing to the faithful in the real world—Guadalupe, Lourdes, Fátima, Velankanni in India, Knock, and other approved shrines. |
+| **Parables of Jesus** | Stories of the Kingdom from the Gospels—mercy, prayer, discipleship, and conversion. |
 | **Ten Commandments** | The moral law with each commandment’s text and a brief explanation. |
 | **Rosary** | How to recite the Rosary, the traditional prayers, and the twenty mysteries (Joyful, Sorrowful, Glorious, Luminous). |
 
-The header includes **site-wide search** across all of the above content.
+**Site features:** header search across all sections, light/dark theme (saved in your browser), and a responsive layout for mobile and desktop.
 
 ## Tech stack
 
@@ -22,7 +26,7 @@ The header includes **site-wide search** across all of the above content.
 - Plain CSS — no UI framework
 - Client-side search — built at compile time from site content (no external search service)
 
-Content lives in TypeScript data modules under `src/data/` and is rendered through Astro pages and layouts.
+Content lives in TypeScript data modules under `src/data/` and is rendered through Astro pages and layouts. Default meta titles, descriptions, and keywords are centralized in `src/lib/seo.ts` (`SITE` and `PAGE_DESCRIPTIONS`); update those when you add or rename major sections.
 
 ## Getting started
 
@@ -58,14 +62,14 @@ For a `username.github.io` repository, use `ASTRO_BASE=/` instead.
 ## Project structure
 
 ```text
-public/                 Static assets (favicon, robots.txt, images)
+public/                 Static assets (favicon, robots.txt, saint images)
 src/
-  components/           SEO head, site search
-  data/                 Saints, sacraments, commandments, rosary content
+  components/           SEO head, search, theme toggle, header menu
+  data/                 Saints, sacraments, miracles, eucharistic miracles, marian apparitions, parables, commandments, rosary
   layouts/              Base and article layouts
   lib/                  Paths, SEO helpers, search index
   pages/                Routes (home, about, saints, sacraments, etc.)
-  styles/               Global CSS
+  styles/               Global CSS (light/dark themes)
 .github/workflows/      CI build and CD deploy to GitHub Pages
 ```
 
@@ -77,6 +81,8 @@ src/
 ## Contributing
 
 All pull requests should target the **`contribution`** branch, not `main`. Maintainers merge `contribution` into `main` when a release is ready to deploy.
+
+When you add content or sections, update `src/lib/searchIndex.ts`, navigation in `BaseLayout.astro`, `PAGE_DESCRIPTIONS` in `src/lib/seo.ts`, and this README as needed.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow, branch setup, and content guidelines.
 
