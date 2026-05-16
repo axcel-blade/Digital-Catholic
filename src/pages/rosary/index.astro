@@ -19,11 +19,13 @@ const currentPath = Astro.url.pathname;
 	description="How to recite the Holy Rosary, the prayers of the Rosary, and the twenty mysteries — Joyful, Sorrowful, Glorious, and Luminous."
 	currentPath={currentPath}
 >
-	<div class="page-content page-content--wide">
+	<div class="page-content page-content--catalog">
 		<PageBack href={withBase('/')} />
-		<p class="hero__tagline">Prayer</p>
-		<h1>Mysteries of the Rosary</h1>
-		<p class="lead">{rosaryIntro}</p>
+		<div class="catalog-hero">
+			<p class="hero__tagline">Prayer</p>
+			<h1>Mysteries of the Rosary</h1>
+			<p class="lead">{rosaryIntro}</p>
+		</div>
 
 		<section class="rosary-how-to" id="how-to-recite">
 			<h2>How to recite the Rosary</h2>

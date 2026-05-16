@@ -261,45 +261,84 @@ main {
 	max-width: var(--page-width);
 }
 
-.page-content--catalog .catalog-hero {
-	max-width: 40rem;
-}
-
+.catalog-hero,
 .home-hero {
 	max-width: 36rem;
 	margin-bottom: 0.5rem;
+}
+
+.catalog-prose {
+	max-width: var(--max-width);
 }
 
 .home-about {
 	margin: 2rem 0 0;
 }
 
-.blog-grid--home {
+.blog-grid--home,
+.blog-grid--catalog {
 	margin-top: 1.5rem;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
 }
 
-@media (min-width: 40rem) {
-	.blog-grid--home {
-		grid-template-columns: repeat(2, 1fr);
-	}
+.blog-grid--home .blog-card__link,
+.blog-grid--catalog .blog-card__link {
+	height: 100%;
 }
 
-@media (min-width: 64rem) {
-	.blog-grid--home {
-		grid-template-columns: repeat(4, 1fr);
-	}
-}
-
-.blog-grid--home .blog-card__body {
+.blog-grid--home .blog-card__body,
+.blog-grid--catalog .blog-card__body {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
 }
 
-.blog-grid--home .blog-card__read {
+.blog-grid--home .blog-card__title,
+.blog-grid--catalog .blog-card__title {
+	font-size: 1.15rem;
+	line-height: 1.35;
+	hyphens: auto;
+	overflow-wrap: break-word;
+}
+
+.blog-grid--home .blog-card__excerpt,
+.blog-grid--catalog .blog-card__excerpt {
+	flex: 1;
+	margin-bottom: 0;
+}
+
+.blog-grid--home .blog-card__read,
+.blog-grid--catalog .blog-card__read {
 	margin-top: auto;
-	padding-top: 0.5rem;
+	padding-top: 0.75rem;
+}
+
+.blog-grid--catalog.blog-grid--media .blog-card__link {
+	flex-direction: column;
+}
+
+.blog-grid--catalog.blog-grid--media .blog-card__media {
+	aspect-ratio: 16 / 10;
+	flex-shrink: 0;
+	padding: 0;
+	background: var(--color-accent-soft);
+}
+
+.blog-grid--catalog.blog-grid--media .blog-card__media img {
+	width: 100%;
+	height: 100%;
+	max-height: none;
+	object-fit: cover;
+}
+
+.page-content--catalog .commandment-list {
+	margin-top: 1.5rem;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+}
+
+.page-content--catalog .rosary-set-list {
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
 }
 
 h1,
@@ -558,12 +597,7 @@ p {
 	list-style: none;
 	display: grid;
 	gap: 1.25rem;
-}
-
-@media (min-width: 40rem) {
-	.rosary-set-list {
-		grid-template-columns: repeat(2, 1fr);
-	}
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
 }
 
 .rosary-set-card__link {
@@ -687,49 +721,7 @@ p {
 	}
 }
 
-.blog-grid--catalog {
-	margin-top: 1.5rem;
-}
-
-@media (min-width: 40rem) {
-	.blog-grid--catalog {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
-@media (min-width: 64rem) {
-	.blog-grid--catalog {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
-.blog-grid--catalog .blog-card__link {
-	height: 100%;
-}
-
-.blog-grid--catalog .blog-card__body {
-	flex: 1;
-	min-height: 100%;
-}
-
-.blog-grid--catalog .blog-card__title {
-	font-size: 1.15rem;
-	line-height: 1.35;
-	hyphens: auto;
-	overflow-wrap: break-word;
-}
-
-.blog-grid--catalog .blog-card__excerpt {
-	flex: 1;
-	margin-bottom: 0;
-}
-
-.blog-grid--catalog .blog-card__read {
-	margin-top: auto;
-	padding-top: 0.75rem;
-}
-
-.blog-grid--sacraments {
+.blog-grid--sacraments:not(.blog-grid--catalog) {
 	grid-template-columns: 1fr;
 }
 

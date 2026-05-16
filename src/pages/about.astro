@@ -11,8 +11,9 @@ const currentPath = Astro.url.pathname;
 	description="What Digital Catholic is about — saint biographies and sacraments shared for knowledge and faith formation."
 	currentPath={currentPath}
 >
-	<div class="page-content page-content--wide">
+	<div class="page-content page-content--catalog">
 		<PageBack href={withBase('/')} />
+		<div class="catalog-prose">
 		<h1>About Digital Catholic</h1>
 		<p class="lead">
 			Digital Catholic is a learning site dedicated to sharing the riches of the Catholic
@@ -49,5 +50,6 @@ const currentPath = Astro.url.pathname;
 			Catholic exists to make sound Catholic teaching available to all who wish to grow in
 			understanding and love of Christ and His Church.
 		</p>
+		</div>
 	</div>
 </BaseLayout>

@@ -12,16 +12,18 @@ const currentPath = Astro.url.pathname;
 	description="Biographies of the saints — holy men and women who witness to Christ and inspire our faith."
 	currentPath={currentPath}
 >
-	<div class="page-content page-content--wide">
+	<div class="page-content page-content--catalog">
 		<PageBack href={withBase('/')} />
-		<p class="hero__tagline">Saints</p>
-		<h1>Saint Biographies</h1>
-		<p class="lead">
-			Read the lives of the saints—their faith, trials, and love of God—so their example may guide
-			your own journey in Christ.
-		</p>
+		<div class="catalog-hero">
+			<p class="hero__tagline">Saints</p>
+			<h1>Saint Biographies</h1>
+			<p class="lead">
+				Read the lives of the saints—their faith, trials, and love of God—so their example may guide
+				your own journey in Christ.
+			</p>
+		</div>
 
-		<ul class="blog-grid blog-grid--sacraments">
+		<ul class="blog-grid blog-grid--catalog blog-grid--media">
 			{saints.map((saint) => (
 				<li class="blog-card">
 					<a class="blog-card__link" href={withBase(`/saints/${saint.slug}`)}>

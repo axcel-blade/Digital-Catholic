@@ -12,11 +12,13 @@ const currentPath = Astro.url.pathname;
 	description="The Ten Commandments of God — moral law given to Moses, taught by the Catholic Church for love of God and neighbor."
 	currentPath={currentPath}
 >
-	<div class="page-content page-content--wide">
+	<div class="page-content page-content--catalog">
 		<PageBack href={withBase('/')} />
-		<p class="hero__tagline">Faith & Moral Life</p>
-		<h1>The Ten Commandments</h1>
-		<p class="lead">{commandmentsIntro}</p>
+		<div class="catalog-hero">
+			<p class="hero__tagline">Faith & Moral Life</p>
+			<h1>The Ten Commandments</h1>
+			<p class="lead">{commandmentsIntro}</p>
+		</div>
 
 		<ol class="commandment-list">
 			{commandments.map((commandment) => (
@@ -25,7 +27,7 @@ const currentPath = Astro.url.pathname;
 						<span class="commandment-card__number">{commandment.number}</span>
 						<h2 class="commandment-card__title">{commandment.title}</h2>
 					</div>
-					<blockquote class="commandment-card__text">“{commandment.text}”</blockquote>
+					<blockquote class="commandment-card__text">"{commandment.text}"</blockquote>
 					<p class="commandment-card__meaning">{commandment.meaning}</p>
 				</li>
 			))}

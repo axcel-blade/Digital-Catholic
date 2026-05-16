@@ -16,16 +16,18 @@ const currentPath = Astro.url.pathname;
 	description="Articles on the seven sacraments of the Catholic Church — Baptism, Confirmation, Eucharist, Penance, Anointing, Holy Orders, and Matrimony."
 	currentPath={currentPath}
 >
-	<div class="page-content page-content--wide">
+	<div class="page-content page-content--catalog">
 		<PageBack href={withBase('/')} />
-		<p class="hero__tagline">Sacraments</p>
-		<h1>The Seven Sacraments</h1>
-		<p class="lead">
-			Explore each sacrament as a short article—what the Church teaches, how it is celebrated,
-			and why it matters for your life in Christ.
-		</p>
+		<div class="catalog-hero">
+			<p class="hero__tagline">Sacraments</p>
+			<h1>The Seven Sacraments</h1>
+			<p class="lead">
+				Explore each sacrament as a short article—what the Church teaches, how it is celebrated,
+				and why it matters for your life in Christ.
+			</p>
+		</div>
 
-		<ul class="blog-grid blog-grid--sacraments">
+		<ul class="blog-grid blog-grid--catalog blog-grid--media">
 			{sacraments.map((sacrament) => (
 				<li class="blog-card">
 					<a class="blog-card__link" href={withBase(`/sacraments/${sacrament.slug}`)}>

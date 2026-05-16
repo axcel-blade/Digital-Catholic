@@ -61,8 +61,8 @@ const topics = [
 	description="Digital Catholic — Catholic saints, sacraments, miracles and parables of Jesus, Ten Commandments, Rosary, and faith formation. Learn, pray, and share the teachings of the Church."
 	currentPath={currentPath}
 >
-	<div class="page-content page-content--home">
-		<section class="home-hero">
+	<div class="page-content page-content--catalog">
+		<section class="catalog-hero">
 			<p class="hero__tagline">Welcome</p>
 			<h1>Digital Catholic</h1>
 			<p class="lead">
@@ -71,7 +71,7 @@ const topics = [
 			</p>
 		</section>
 
-		<ul class="blog-grid blog-grid--home">
+		<ul class="blog-grid blog-grid--catalog">
 			{topics.map((topic) => (
 				<li class="blog-card">
 					<a class="blog-card__link" href={withBase(topic.href)}>
