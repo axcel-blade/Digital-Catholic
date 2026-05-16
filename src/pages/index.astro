@@ -3,6 +3,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../lib/paths';
 
 const currentPath = Astro.url.pathname;
+
+const topics = [
+	{
+		href: '/saints',
+		category: 'Saints',
+		title: 'Saint Biographies',
+		excerpt:
+			'Biographies of holy men and women whose lives witness to Christ and inspire us in prayer and daily living.',
+		readLabel: 'Read biographies →',
+	},
+	{
+		href: '/sacraments',
+		category: 'Sacraments',
+		title: 'The Seven Sacraments',
+		excerpt:
+			'Teaching on the seven sacraments—what they are, why they matter, and how they draw us into God’s grace.',
+		readLabel: 'Read articles →',
+	},
+	{
+		href: '/commandments',
+		category: 'Commandments',
+		title: 'Ten Commandments',
+		excerpt:
+			'The moral law given to Moses—how we love God with our whole heart and our neighbor as ourselves.',
+		readLabel: 'Read the Commandments →',
+	},
+	{
+		href: '/rosary',
+		category: 'Rosary',
+		title: 'Mysteries of the Rosary',
+		excerpt:
+			'How to pray the Rosary, the traditional prayers, and the twenty mysteries for meditation.',
+		readLabel: 'Read & pray →',
+	},
+];
 ---
 
 <BaseLayout
@@ -10,8 +45,8 @@ const currentPath = Astro.url.pathname;
 	description="Digital Catholic — Catholic saints, sacraments, Ten Commandments, Mysteries of the Rosary, and faith formation. Learn, pray, and share the teachings of the Church."
 	currentPath={currentPath}
 >
-	<div class="page-content">
-		<section class="hero">
+	<div class="page-content page-content--home">
+		<section class="home-hero">
 			<p class="hero__tagline">Welcome</p>
 			<h1>Digital Catholic</h1>
 			<p class="lead">
@@ -20,40 +55,23 @@ const currentPath = Astro.url.pathname;
 			</p>
 		</section>
 
-		<ul class="topic-list">
-			<li>
-				<strong>Saints</strong>
-				<p>
-					Biographies of holy men and women whose lives witness to Christ and inspire us in
-					prayer and daily living.
-				</p>
-				<a class="topic-list__link" href={withBase('/saints')}>Read saint biographies →</a>
-			</li>
-			<li>
-				<strong>Sacraments</strong>
-				<p>
-					Teaching on the seven sacraments—what they are, why they matter, and how they draw us
-					into God’s grace.
-				</p>
-				<a class="topic-list__link" href={withBase('/sacraments')}>Read all seven articles →</a>
-			</li>
-			<li>
-				<strong>Ten Commandments</strong>
-				<p>
-					The moral law given to Moses—how we love God with our whole heart and our neighbor as
-					ourselves.
-				</p>
-				<a class="topic-list__link" href={withBase('/commandments')}>Read the Ten Commandments →</a>
-			</li>
-			<li>
-				<strong>Mysteries of the Rosary</strong>
-				<p>
-					How to pray the Rosary, the traditional prayers, and the twenty mysteries for meditation.
-				</p>
-				<a class="topic-list__link" href={withBase('/rosary')}>Learn how to pray the Rosary →</a>
-			</li>
+		<ul class="blog-grid blog-grid--home">
+			{topics.map((topic) => (
+				<li class="blog-card">
+					<a class="blog-card__link" href={withBase(topic.href)}>
+						<div class="blog-card__body">
+							<span class="blog-card__category">{topic.category}</span>
+							<h2 class="blog-card__title">{topic.title}</h2>
+							<p class="blog-card__excerpt">{topic.excerpt}</p>
+							<span class="blog-card__read">{topic.readLabel}</span>
+						</div>
+					</a>
+				</li>
+			))}
 		</ul>
 
-		<a class="cta-link" href={withBase('/about')}>Learn more about this site →</a>
+		<p class="home-about">
+			<a class="cta-link" href={withBase('/about')}>Learn more about this site →</a>
+		</p>
 	</div>
 </BaseLayout>

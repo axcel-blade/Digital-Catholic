@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { withBase, stripBase } from '../lib/paths';
 import SEOHead from '../components/SEOHead.astro';
+import SiteSearch from '../components/SiteSearch.astro';
 import {
 	formatPageTitle,
 	getCanonicalUrl,
@@ -30,11 +31,11 @@ const {
 
 const navItems = [
 	{ href: withBase('/'), label: 'Home' },
+	{ href: withBase('/about'), label: 'About' },
 	{ href: withBase('/saints'), label: 'Saints' },
 	{ href: withBase('/sacraments'), label: 'Sacraments' },
 	{ href: withBase('/commandments'), label: 'Commandments' },
 	{ href: withBase('/rosary'), label: 'Rosary' },
-	{ href: withBase('/about'), label: 'About' },
 ];
 
 const routePath = stripBase(currentPath);
@@ -71,7 +72,8 @@ const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
 		<header class="site-header">
 			<div class="site-header__inner">
 				<a class="site-logo" href={withBase('/')}>Digital Catholic</a>
-				<nav aria-label="Main">
+				<SiteSearch />
+				<nav class="site-header__nav" aria-label="Main">
 					<ul class="site-nav">
 						{navItems.map((item) => (
 							<li>

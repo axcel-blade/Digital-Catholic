@@ -1,0 +1,194 @@
+---
+import { buildSearchIndex } from '../lib/searchIndex';
+
+const searchIndex = buildSearchIndex();
+---
+
+<div class="site-search" data-site-search>
+		<form class="site-search__form" role="search" method="get" onsubmit="return false">
+		<label class="site-search__label" for="site-search-input">Search site</label>
+		<input
+			class="site-search__input"
+			id="site-search-input"
+			type="search"
+			name="q"
+			placeholder="Search…"
+			autocomplete="off"
+			spellcheck="false"
+			aria-controls="site-search-results"
+			aria-expanded="false"
+			aria-autocomplete="list"
+		/>
+	</form>
+	<div
+		id="site-search-results"
+		class="site-search__results"
+		role="listbox"
+		aria-label="Search results"
+		hidden
+	></div>
+</div>
+
+<script define:vars={{ searchIndex }}>
+	const root = document.querySelector('[data-site-search]');
+	if (!root) throw new Error('Site search root not found');
+
+	const input = root.querySelector('#site-search-input');
+	const resultsEl = root.querySelector('#site-search-results');
+	if (!(input instanceof HTMLInputElement) || !(resultsEl instanceof HTMLElement)) {
+		throw new Error('Site search elements not found');
+	}
+
+	const MIN_QUERY = 2;
+	const MAX_RESULTS = 10;
+	let debounceId = 0;
+	let activeIndex = -1;
+
+	function normalize(text) {
+		return text
+			.toLowerCase()
+			.normalize('NFD')
+			.replace(/\p{M}/gu, '');
+	}
+
+	function scoreEntry(entry, terms) {
+		const title = normalize(entry.title);
+		const excerpt = normalize(entry.excerpt);
+		const haystack = `${title} ${excerpt} ${entry.body}`;
+		let score = 0;
+
+		for (const term of terms) {
+			if (!haystack.includes(term)) return 0;
+			if (title.includes(term)) score += 12;
+			if (excerpt.includes(term)) score += 6;
+			if (entry.body.includes(term)) score += 2;
+		}
+
+		return score;
+	}
+
+	function runSearch(query) {
+		const q = normalize(query.trim());
+		if (q.length < MIN_QUERY) return [];
+
+		const terms = q.split(/\s+/).filter(Boolean);
+		return searchIndex
+			.map((entry) => ({ entry, score: scoreEntry(entry, terms) }))
+			.filter((row) => row.score > 0)
+			.sort((a, b) => b.score - a.score)
+			.slice(0, MAX_RESULTS)
+			.map((row) => row.entry);
+	}
+
+	function setExpanded(open) {
+		input.setAttribute('aria-expanded', open ? 'true' : 'false');
+	}
+
+	function closeResults() {
+		resultsEl.hidden = true;
+		resultsEl.replaceChildren();
+		activeIndex = -1;
+		setExpanded(false);
+	}
+
+	function renderResults(matches) {
+		resultsEl.replaceChildren();
+		activeIndex = -1;
+
+		if (matches.length === 0) {
+			const empty = document.createElement('p');
+			empty.className = 'site-search__empty';
+			empty.textContent = 'No results found.';
+			resultsEl.append(empty);
+			resultsEl.hidden = false;
+			setExpanded(true);
+			return;
+		}
+
+		const list = document.createElement('ul');
+		list.className = 'site-search__list';
+
+		for (const match of matches) {
+			const li = document.createElement('li');
+			li.setAttribute('role', 'option');
+
+			const link = document.createElement('a');
+			link.className = 'site-search__result';
+			link.href = match.url;
+
+			const category = document.createElement('span');
+			category.className = 'site-search__result-category';
+			category.textContent = match.category;
+
+			const title = document.createElement('span');
+			title.className = 'site-search__result-title';
+			title.textContent = match.title;
+
+			const excerpt = document.createElement('span');
+			excerpt.className = 'site-search__result-excerpt';
+			excerpt.textContent = match.excerpt;
+
+			link.append(category, title, excerpt);
+			li.append(link);
+			list.append(li);
+		}
+
+		resultsEl.append(list);
+		resultsEl.hidden = false;
+		setExpanded(true);
+	}
+
+	function updateResults() {
+		renderResults(runSearch(input.value));
+	}
+
+	function debouncedUpdate() {
+		window.clearTimeout(debounceId);
+		debounceId = window.setTimeout(updateResults, 150);
+	}
+
+	input.addEventListener('input', () => {
+		if (input.value.trim().length < MIN_QUERY) {
+			closeResults();
+			return;
+		}
+		debouncedUpdate();
+	});
+
+	input.addEventListener('focus', () => {
+		if (input.value.trim().length >= MIN_QUERY) updateResults();
+	});
+
+	input.addEventListener('keydown', (event) => {
+		const options = resultsEl.querySelectorAll('[role="option"] a');
+		if (event.key === 'Escape') {
+			closeResults();
+			input.blur();
+			return;
+		}
+		if (options.length === 0 || resultsEl.hidden) return;
+
+		if (event.key === 'ArrowDown') {
+			event.preventDefault();
+			activeIndex = Math.min(activeIndex + 1, options.length - 1);
+		} else if (event.key === 'ArrowUp') {
+			event.preventDefault();
+			activeIndex = Math.max(activeIndex - 1, 0);
+		} else if (event.key === 'Enter' && activeIndex >= 0) {
+			event.preventDefault();
+			/** @type {HTMLAnchorElement} */ (options[activeIndex]).click();
+			return;
+		} else {
+			return;
+		}
+
+		options.forEach((el, i) => {
+			el.classList.toggle('site-search__result--active', i === activeIndex);
+		});
+		if (activeIndex >= 0) options[activeIndex].scrollIntoView({ block: 'nearest' });
+	});
+
+	document.addEventListener('click', (event) => {
+		if (!root.contains(/** @type {Node} */ (event.target))) closeResults();
+	});
+</script>
