@@ -1,0 +1,1 @@
+export const commandmentsIntro = "God gave the Ten Commandments to Moses on Mount Sinai. They sum up the moral law for God’s people and show us how to love God above all and our neighbor as ourselves. The Church teaches them as binding on every conscience.";
