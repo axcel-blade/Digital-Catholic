@@ -12,6 +12,11 @@ import { marianApparitions, marianApparitionsIntro } from '../data/marianApparit
 import { miracles, miraclesIntro } from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
 import { sacraments } from '../data/sacraments';
+import {
+	buildLiturgicalYear,
+	liturgicalCalendarIntro,
+	liturgicalSeasonsIntro,
+} from '../data/liturgical-calendar';
 import { saints } from '../data/saints';
 import { withBase } from './paths';
 
@@ -133,6 +138,19 @@ export function buildSearchIndex(): SearchEntry[] {
 				rosaryMysterySchedule,
 				...rosaryHowToSteps.map((s) => joinParts(s.title, s.description)),
 				...rosaryPrayers.map((p) => joinParts(p.title, p.text)),
+			],
+		),
+		entry(
+			'Liturgical Calendar',
+			withBase('/liturgical-calendar'),
+			'Calendar',
+			liturgicalCalendarIntro,
+			[
+				liturgicalCalendarIntro,
+				liturgicalSeasonsIntro,
+				...buildLiturgicalYear(new Date().getFullYear()).months.flatMap((m) =>
+					m.days.map((d) => joinParts(d.title, d.rank, d.color, d.note ?? ''))
+				),
 			],
 		),
 	];

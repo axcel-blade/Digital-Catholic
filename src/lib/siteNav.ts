@@ -29,6 +29,7 @@ export const exploreNavItems: SiteNavItem[] = [
 	{ href: '/parables', label: 'Parables of Jesus' },
 	{ href: '/commandments', label: 'Ten Commandments' },
 	{ href: '/rosary', label: 'Rosary' },
+	{ href: '/liturgical-calendar', label: 'Liturgical Calendar' },
 ];
 
 function isNavActive(href: string, path: string): boolean {

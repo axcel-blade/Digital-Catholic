@@ -14,6 +14,7 @@ Content is split into **one file per article** so contributors can add entries w
 | Parables | `parables/items/{slug}.ts` | `the-prodigal-son.ts` |
 | Commandments | `commandments/items/NN-short-name.ts` | `03-keep-the-lord-s-day-holy.ts` |
 | Rosary mystery sets | `rosary/mystery-sets/{slug}.ts` | `joyful.ts` (order fixed in `rosary/index.ts`) |
+| Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates |
 
 Each folder has:
 
