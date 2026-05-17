@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import {
+	disciples,
+	disciplesIntro,
+	getDiscipleImageAlt,
+	getDiscipleImageSrc,
+} from '../../data/disciples';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Disciples of Jesus"
+	description={PAGE_DESCRIPTIONS.disciples}
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--catalog">
+		<PageBack href={withBase('/')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Gospels</p>
+			<h1>The Twelve Apostles</h1>
+			<p class="lead">{disciplesIntro}</p>
+		</div>
+
+		<ul class="blog-grid blog-grid--catalog blog-grid--media">
+			{disciples.map((disciple) => (
+				<li class="blog-card">
+					<a class="blog-card__link" href={withBase(`/disciples/${disciple.slug}`)}>
+						<div class="blog-card__media">
+							<img
+								src={getDiscipleImageSrc(disciple.slug)}
+								alt={getDiscipleImageAlt(disciple.title)}
+								width="640"
+								height="400"
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
+						<div class="blog-card__body">
+							<span class="blog-card__category">Apostle</span>
+							<h2 class="blog-card__title">{disciple.title}</h2>
+							{disciple.alsoKnownAs && (
+								<p class="blog-card__meta">{disciple.alsoKnownAs}</p>
+							)}
+							<p class="blog-card__excerpt">{disciple.excerpt}</p>
+							<span class="blog-card__read">Read biography →</span>
+						</div>
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+</BaseLayout>

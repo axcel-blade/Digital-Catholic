@@ -31,6 +31,7 @@ const currentPath = Astro.url.pathname;
 	imageAlt={getSaintImageAlt(saint.title)}
 >
 	<p class="article__lead">{saint.excerpt}</p>
+	{saint.lifeDates && <p class="article__feast">Life: {saint.lifeDates}</p>}
 	{saint.feastDays && <p class="article__feast">Feast days: {saint.feastDays}</p>}
 	{saint.sections.map((section) => (
 		<section>

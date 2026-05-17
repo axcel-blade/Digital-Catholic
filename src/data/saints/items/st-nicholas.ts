@@ -5,6 +5,7 @@ const saint: Saint = {
 	"title": "St. Nicholas of Myra",
 	"feastDays": "December 6",
 	"excerpt": "Fourth-century bishop of Myra—patron of children, sailors, and the poor—whose secret charity and defense of Christ’s divinity inspired the beloved figure of Santa Claus.",
+	"lifeDates": "c. 270–343",
 	"sections": [
 		{
 			"heading": "Who is St. Nicholas?",
@@ -19,6 +20,21 @@ const saint: Saint = {
 				"Nicholas was born to a wealthy Christian family in Patara. After his parents died, he gave his inheritance to the needy. A famous story tells how he secretly provided dowries for three poor sisters so they would not be sold into destitution—slipping gold through a window or down a chimney, an episode that later shaped Christmas folklore.",
 				"As bishop, Nicholas defended the faith. Eastern tradition holds that at the Council of Nicaea (325) he confronted the heretic Arius, who denied the divinity of Christ. He is also said to have rescued sailors in a storm, multiplied grain in famine, and raised three murdered boys to life—deeds that earned him patronage of children, travelers, and those in danger at sea.",
 				"His tomb in Myra became a place of pilgrimage. When Italian merchants transferred his relics to Bari in 1087, devotion spread across Europe. Churches, schools, and cities from Russia to the Americas bear his name."
+			]
+		},
+		{
+			"heading": "Full biography",
+			"paragraphs": [
+				"Nicholas was born around 270 in Patara, Lycia (in modern Turkey), to wealthy Christian parents who died in an epidemic while he was young. He took Jesus’ words to heart, sold his inheritance, and gave the proceeds to the needy—beginning a life marked by secret generosity.",
+				"While still young he was chosen bishop of Myra. During the persecution under Diocletian he was imprisoned and tortured for the faith, yet continued to defend Christians. After Constantine legalized Christianity, Nicholas attended the Council of Nicaea in 325 and, according to Eastern tradition, confronted the heretic Arius over the divinity of Christ.",
+				"As bishop he rescued the falsely accused, multiplied grain in famine, and calmed storms at sea—deeds that shaped his patronage of sailors, prisoners, and children. His tomb in Myra became a place of pilgrimage until Italian merchants translated his relics to Bari in 1087."
+			]
+		},
+		{
+			"heading": "Death and legacy",
+			"paragraphs": [
+				"Nicholas died on December 6, 343, in Myra and was buried in his cathedral. The anniversary of his death became his feast day, still celebrated across East and West. Myrrh is said to flow from his relics in Bari, a sign of holiness venerated for nearly seventeen centuries.",
+				"His charity inspired the figure of Santa Claus, but the saint himself points to Christ. Churches, cities, and nations claim him as patron; the Basilica of St. Nicholas in Bari remains one of the most visited shrines in Italy."
 			]
 		},
 		{

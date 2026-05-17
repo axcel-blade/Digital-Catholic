@@ -1,6 +1,6 @@
 # Digital Catholic
 
-A static website for learning and sharing the Catholic faith—saint biographies, the sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and the Holy Rosary—presented in clear language for prayer, formation, and everyday reading.
+A static website for learning and sharing the Catholic faith—saint biographies, the apostles and disciples of Jesus, the sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and the Holy Rosary—presented in clear language for prayer, formation, and everyday reading.
 
 **Live site:** [https://axcel-blade.github.io/Digital-Catholic/](https://axcel-blade.github.io/Digital-Catholic/)
 
@@ -8,7 +8,8 @@ A static website for learning and sharing the Catholic faith—saint biographies
 
 | Section | Description |
 | --- | --- |
-| **Saints** | Biographies of holy men and women (including the Blessed Virgin Mary, St. Joseph, St. Nicholas of Myra, St. Anthony of Padua, and St. Carlo Acutis), with feast days and lessons for daily life. |
+| **Saints** | Full biographies of holy men and women—from birth through death and legacy—including the Blessed Virgin Mary, St. Joseph, St. Nicholas of Myra, St. Anthony of Padua, and St. Carlo Acutis, with feast days and lessons for daily life. |
+| **Disciples of Jesus** | The Twelve Apostles—Peter, Andrew, James, John, and the rest—with full life stories, how each died, Gospel accounts, feast days, and lessons for discipleship. |
 | **Sacraments** | Articles on all seven sacraments—what the Church teaches, how they are celebrated, and why they matter. |
 | **Miracles of Jesus** | Gospel accounts of Christ’s miracles in Matthew, Mark, Luke, and John, with Scripture references and reflections. |
 | **Eucharistic Miracles** | Events in which the consecrated Host witnesses to the Real Presence—from Lanciano and Bolsena to modern shrines. |
@@ -63,7 +64,7 @@ For a `username.github.io` repository, use `ASTRO_BASE=/` instead.
 ## Project structure
 
 ```text
-public/                 Static assets (favicon, robots.txt, saint images)
+public/                 Static assets (favicon, robots.txt, saint and disciple images)
 src/
   components/           SEO head, search, theme toggle, header menu
   data/                 Per-item content files (saints/, miracles/, etc.) — see data/README.md

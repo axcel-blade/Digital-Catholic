@@ -1,0 +1,53 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {
+	disciples,
+	getDisciple,
+	getDiscipleImageAlt,
+	getDiscipleImageSrc,
+} from '../../data/disciples';
+import { withBase } from '../../lib/paths';
+
+export function getStaticPaths() {
+	return disciples.map((disciple) => ({
+		params: { slug: disciple.slug },
+	}));
+}
+
+const slug = Astro.params.slug ?? '';
+const disciple = getDisciple(slug);
+
+if (!disciple) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const currentPath = Astro.url.pathname;
+---
+
+<ArticleLayout
+	title={disciple.title}
+	description={disciple.excerpt}
+	currentPath={currentPath}
+	backHref={withBase('/disciples')}
+	backLabel="All disciples"
+	category="Apostle · Disciple of Jesus"
+	asideLabel="Apostle illustration"
+	imageSrc={getDiscipleImageSrc(disciple.slug)}
+	imageAlt={getDiscipleImageAlt(disciple.title)}
+>
+	<p class="article__lead article__lead--bordered">{disciple.excerpt}</p>
+	<p class="article__feast">Scripture: {disciple.gospelReference}</p>
+	{disciple.lifeDates && <p class="article__feast">Life: {disciple.lifeDates}</p>}
+	{disciple.feastDays && <p class="article__feast">Feast days: {disciple.feastDays}</p>}
+	{disciple.alsoKnownAs && (
+		<p class="article__feast">Also known as: {disciple.alsoKnownAs}</p>
+	)}
+	{disciple.sections.map((section) => (
+		<section>
+			<h2>{section.heading}</h2>
+			{section.paragraphs.map((paragraph) => (
+				<p>{paragraph}</p>
+			))}
+		</section>
+	))}
+</ArticleLayout>

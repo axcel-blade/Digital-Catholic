@@ -23,6 +23,7 @@ export const primaryNavItems: SiteNavItem[] = [
 export const exploreNavItems: SiteNavItem[] = [
 	{ href: '/saints', label: 'Saints' },
 	{ href: '/sacraments', label: 'Sacraments' },
+	{ href: '/disciples', label: 'Disciples of Jesus' },
 	{ href: '/miracles', label: 'Miracles of Jesus' },
 	{ href: '/eucharistic-miracles', label: 'Eucharistic Miracles' },
 	{ href: '/marian-apparitions', label: 'Marian Apparitions' },
