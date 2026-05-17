@@ -16,6 +16,7 @@ A static website for learning and sharing the Catholic faith—saint biographies
 | **Marian Apparitions** | Our Lady appearing to the faithful in the real world—Guadalupe, Lourdes, Fátima, Velankanni in India, Knock, and other approved shrines. |
 | **Parables of Jesus** | Stories of the Kingdom from the Gospels—mercy, prayer, discipleship, and conversion. |
 | **Ten Commandments** | The moral law with each commandment’s text and a brief explanation. |
+| **Prayers** | The Our Father (Lord’s Prayer) and Hail Mary—full text and brief explanations. |
 | **Rosary** | How to recite the Rosary, the traditional prayers, and the twenty mysteries (Joyful, Sorrowful, Glorious, Luminous). |
 | **Liturgical Calendar** | Solemnities, feasts, and memorials from the General Roman Calendar, moveable celebrations from Easter, and liturgical seasons (Advent, Christmas, Lent, Easter, Ordinary Time). |
 

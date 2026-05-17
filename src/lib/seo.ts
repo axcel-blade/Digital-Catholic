@@ -3,9 +3,9 @@ export const SITE = {
 	defaultTitle:
 		'Digital Catholic — Saints, Sacraments, Gospel, Marian Apparitions & Catholic Faith',
 	defaultDescription:
-		'Learn the Catholic faith with full saint and apostle biographies—from birth through death—the seven sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and how to pray the Rosary. Clear articles for prayer, formation, and sharing.',
+		'Learn the Catholic faith with full saint and apostle biographies—from birth through death—the Our Father, Hail Mary, the seven sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and how to pray the Rosary. Clear articles for prayer, formation, and sharing.',
 	keywords:
-		'Catholic, Catholic faith, saints, apostles, disciples of Jesus, Twelve Apostles, Peter, Paul, St. Nicholas, Santa Claus, liturgical calendar, feast days, solemnities, Advent, Lent, Easter, Carlo Acutis, Blessed Virgin Mary, Marian apparitions, Guadalupe, Lourdes, Fatima, Velankanni, India, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, rosary, mysteries of the rosary, prayer, catechism, Bible, Digital Catholic, Christian',
+		'Catholic, Catholic faith, saints, apostles, disciples of Jesus, Twelve Apostles, Peter, Paul, St. Nicholas, Santa Claus, liturgical calendar, feast days, solemnities, Advent, Lent, Easter, Carlo Acutis, Blessed Virgin Mary, Marian apparitions, Guadalupe, Lourdes, Fatima, Velankanni, India, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, Our Father, Lord\'s Prayer, Hail Mary, Ave Maria, rosary, mysteries of the rosary, prayer, catechism, Bible, Digital Catholic, Christian',
 	locale: 'en_US',
 	themeColor: '#6b2d3c',
 	themeColorDark: '#1a1816',
@@ -34,6 +34,8 @@ export const PAGE_DESCRIPTIONS = {
 		'Parables of Jesus Christ in the New Testament Gospels — stories of God’s Kingdom with Scripture references and lessons for discipleship.',
 	commandments:
 		'The Ten Commandments — God’s moral law given to Moses, with each commandment’s text and meaning for love of God and neighbor.',
+	prayers:
+		'The Our Father and Hail Mary — full text and brief explanations of the Lord’s Prayer and the Hail Mary, the heart of Catholic prayer and the Rosary.',
 	rosary:
 		'How to recite the Holy Rosary, the traditional prayers, and the twenty mysteries — Joyful, Sorrowful, Glorious, and Luminous — for meditation and prayer.',
 	liturgicalCalendar:

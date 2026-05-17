@@ -8,6 +8,7 @@ Content is split into **one file per article** so contributors can add entries w
 | --- | --- | --- |
 | Saints | `saints/items/{slug}.ts` | `st-joseph.ts` |
 | Disciples of Jesus | `disciples/items/NN-{slug}.ts` | `01-peter.ts` (order field sets list order) |
+| Prayers | `prayers/items/NN-{slug}.ts` | `01-our-father.ts` |
 
 Disciple portraits live in `public/disciples/{slug}.jpg` (Wikimedia Commons–licensed art, same pattern as saints).
 | Sacraments | `sacraments/items/{slug}.ts` | `baptism.ts` |
@@ -49,7 +50,7 @@ Pages may keep importing from the short paths (re-export shims):
 import { saints, getSaint } from '../../data/saints';
 ```
 
-Same for `miracles`, `parables`, `sacraments`, `eucharisticMiracles`, `marianApparitions`, `commandments`, and `rosary`.
+Same for `miracles`, `parables`, `sacraments`, `eucharisticMiracles`, `marianApparitions`, `commandments`, `prayers`, and `rosary`.
 
 ## Regenerating from old single files
 

@@ -1,5 +1,6 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
 import { disciples, disciplesIntro } from '../data/disciples';
+import { prayers, prayersIntro } from '../data/prayers';
 import {
 	mysterySets,
 	rosaryHowToIntro,
@@ -141,6 +142,16 @@ export function buildSearchIndex(): SearchEntry[] {
 			[commandmentsIntro, ...commandments.map((c) => joinParts(c.title, c.text, c.meaning))],
 		),
 		entry(
+			'Catholic Prayers',
+			withBase('/prayers'),
+			'Prayers',
+			prayersIntro,
+			[
+				prayersIntro,
+				...prayers.map((p) => joinParts(p.title, p.alsoKnownAs, p.excerpt, p.text, sectionsText(p.sections))),
+			],
+		),
+		entry(
 			'Mysteries of the Rosary',
 			withBase('/rosary'),
 			'Rosary',
@@ -194,6 +205,18 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Saint',
 				saint.excerpt,
 				[saint.lifeDates ?? '', saint.feastDays ?? '', sectionsText(saint.sections)]
+			)
+		);
+	}
+
+	for (const prayer of prayers) {
+		items.push(
+			entry(
+				prayer.title,
+				withBase(`/prayers/${prayer.slug}`),
+				'Prayer',
+				prayer.excerpt,
+				[prayer.alsoKnownAs ?? '', prayer.text, sectionsText(prayer.sections)]
 			)
 		);
 	}
