@@ -20,6 +20,8 @@ export const primaryNavItems: SiteNavItem[] = [
 	{ href: '/about', label: 'About' },
 ];
 
+export const contactNavItem: SiteNavItem = { href: '/contact', label: 'Contact' };
+
 export const exploreNavItems: SiteNavItem[] = [
 	{ href: '/saints', label: 'Saints' },
 	{ href: '/sacraments', label: 'Sacraments' },
@@ -60,5 +62,7 @@ export function buildSiteNav(currentPath: string) {
 		isActive: explore.some((item) => item.isActive),
 	};
 
-	return { primary, exploreGroup };
+	const contact = resolveItem(contactNavItem, path);
+
+	return { primary, exploreGroup, contact };
 }

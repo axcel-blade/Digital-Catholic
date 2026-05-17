@@ -72,6 +72,13 @@ export function buildSearchIndex(): SearchEntry[] {
 			]
 		),
 		entry(
+			'Contact',
+			withBase('/contact'),
+			'Contact',
+			'Reach the maintainer with corrections, suggestions, or questions.',
+			['contact email feedback github issues corrections suggestions'],
+		),
+		entry(
 			'Saints',
 			withBase('/saints'),
 			'Saints',

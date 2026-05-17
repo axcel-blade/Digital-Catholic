@@ -5,7 +5,7 @@ export const SITE = {
 	defaultDescription:
 		'Learn the Catholic faith with full saint and apostle biographies, summaries of all 73 books of the Catholic Bible, the Our Father, Hail Mary, the seven sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and how to pray the Rosary. Clear articles for prayer, formation, and sharing.',
 	keywords:
-		'Catholic, Catholic faith, saints, apostles, disciples of Jesus, Twelve Apostles, Peter, Paul, St. Nicholas, Santa Claus, liturgical calendar, feast days, solemnities, Advent, Lent, Easter, Carlo Acutis, Blessed Virgin Mary, Marian apparitions, Guadalupe, Lourdes, Fatima, Velankanni, India, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, Holy Bible, Catholic Bible, Old Testament, New Testament, deuterocanonical, Tobit, Maccabees, Our Father, Lord\'s Prayer, Hail Mary, Ave Maria, rosary, mysteries of the rosary, prayer, catechism, Scripture, Digital Catholic, Christian',
+		'Catholic, Catholic faith, contact, saints, apostles, disciples of Jesus, Twelve Apostles, Peter, Paul, St. Nicholas, Santa Claus, liturgical calendar, feast days, solemnities, Advent, Lent, Easter, Carlo Acutis, Blessed Virgin Mary, Marian apparitions, Guadalupe, Lourdes, Fatima, Velankanni, India, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, Holy Bible, Catholic Bible, Old Testament, New Testament, deuterocanonical, Tobit, Maccabees, Our Father, Lord\'s Prayer, Hail Mary, Ave Maria, rosary, mysteries of the rosary, prayer, catechism, Scripture, Digital Catholic, Christian',
 	locale: 'en_US',
 	themeColor: '#6b2d3c',
 	themeColorDark: '#1a1816',
@@ -18,6 +18,8 @@ export const PAGE_DESCRIPTIONS = {
 	home: SITE.defaultDescription,
 	about:
 		'About Digital Catholic — a free site for saint biographies, the apostles, sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Commandments, the liturgical calendar, and the Rosary, with search and articles for faith formation.',
+	contact:
+		'Contact Digital Catholic — email the maintainer or open a GitHub issue for corrections, suggestions, or questions about this Catholic faith formation site.',
 	saints:
 		'Saint biographies for the Catholic Church — full lives from birth to death, feast days, and lessons from Mary, Joseph, Nicholas of Myra, Anthony of Padua, Carlo Acutis, and more.',
 	sacraments:

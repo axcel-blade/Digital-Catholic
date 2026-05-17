@@ -4,9 +4,10 @@ import type { ResolvedNavGroup, ResolvedNavItem } from '../lib/siteNav';
 interface Props {
 	primary: ResolvedNavItem[];
 	exploreGroup: ResolvedNavGroup;
+	contact: ResolvedNavItem;
 }
 
-const { primary, exploreGroup } = Astro.props;
+const { primary, exploreGroup, contact } = Astro.props;
 ---
 
 <div class="site-header__menu" id="site-header-menu">
@@ -29,6 +30,11 @@ const { primary, exploreGroup } = Astro.props;
 					</a>
 				</li>
 			))}
+			<li class="site-nav__primary-item">
+				<a href={contact.href} aria-current={contact.isActive ? 'page' : undefined}>
+					{contact.label}
+				</a>
+			</li>
 		</ul>
 	</nav>
 </div>

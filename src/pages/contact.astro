@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageBack from '../components/PageBack.astro';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
+import { withBase } from '../lib/paths';
+
+const currentPath = Astro.url.pathname;
+const contactEmail = 'srikanthfernando3@gmail.com';
+const githubRepo = 'https://github.com/axcel-blade/Digital-Catholic';
+const githubIssues = `${githubRepo}/issues`;
+const contactImageSrc = `${import.meta.env.BASE_URL}contact/st-paul-writing-epistles.jpg`;
+const contactImageAlt =
+	'Saint Paul writing his epistles, oil painting by Valentin de Boulogne (public domain)';
+---
+
+<BaseLayout
+	title="Contact"
+	description={PAGE_DESCRIPTIONS.contact}
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--contact">
+		<PageBack href={withBase('/')} />
+
+		<div class="contact-layout">
+			<div class="contact-main catalog-prose contact-page">
+				<h1>Contact</h1>
+				<p class="lead">
+					Questions, corrections, or suggestions about Digital Catholic are welcome. This site is
+					maintained for Catholic faith formation and devotion.
+				</p>
+
+				<h2>Get in touch</h2>
+				<p>
+					If you want to contact the maintainer directly, email{' '}
+					<a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+				</p>
+				<p>
+					You can also reach out through the project repository on GitHub. Open an issue for broken
+					links, factual corrections, or ideas for new articles—especially saints, sacraments,
+					Scripture summaries, or prayer content that would help readers grow in Christ.
+				</p>
+				<p>
+					<a class="cta-link" href={githubIssues} rel="noopener noreferrer">
+						Open an issue on GitHub →
+					</a>
+				</p>
+				<p>
+					You can also browse the source or contribute through the{' '}
+					<a href={githubRepo} rel="noopener noreferrer">Digital-Catholic repository</a>.
+				</p>
+
+				<h2>What to expect</h2>
+				<p>
+					Content on this site is offered for knowledge and devotion, not as a substitute for the
+					Magisterium, your parish, or spiritual direction. Feedback is read in good faith; replies
+					depend on availability.
+				</p>
+
+				<p>
+					For browsing topics, use the <a href={withBase('/')}>home page</a> or the{' '}
+					<a href={withBase('/about')}>About</a> page, which lists every section.
+				</p>
+			</div>
+
+			<aside class="contact-aside" aria-label="Illustration">
+				<figure class="contact-aside__figure">
+					<img
+						src={contactImageSrc}
+						alt={contactImageAlt}
+						width="960"
+						height="706"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption>Saint Paul Writing His Epistles — Valentin de Boulogne</figcaption>
+				</figure>
+			</aside>
+		</div>
+	</div>
+</BaseLayout>

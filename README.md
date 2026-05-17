@@ -21,7 +21,7 @@ A static website for learning and sharing the Catholic faith—saint biographies
 | **Rosary** | How to recite the Rosary, the traditional prayers, and the twenty mysteries (Joyful, Sorrowful, Glorious, Luminous). |
 | **Liturgical Calendar** | Solemnities, feasts, and memorials from the General Roman Calendar, moveable celebrations from Easter, and liturgical seasons (Advent, Christmas, Lent, Easter, Ordinary Time). |
 
-**Site features:** header search across all sections, light/dark theme (saved in your browser), and a responsive layout for mobile and desktop.
+**Site features:** header navigation (Home, About, Explore, Contact), a Contact page with email and GitHub links, search across all sections, light/dark theme (saved in your browser), and a responsive layout for mobile and desktop.
 
 ## Tech stack
 
@@ -72,7 +72,7 @@ src/
   data/                 Per-item content files (saints/, miracles/, etc.) — see data/README.md
   layouts/              Base and article layouts
   lib/                  Paths, SEO helpers, search index
-  pages/                Routes (home, about, saints, sacraments, etc.)
+  pages/                Routes (home, about, contact, saints, sacraments, etc.)
   styles/               Global CSS (light/dark themes)
 .github/workflows/      CI build and CD deploy to GitHub Pages
 ```
