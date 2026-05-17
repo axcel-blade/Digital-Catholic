@@ -1,0 +1,2 @@
+export const bibleIntro =
+	'The Catholic Bible contains seventy-three books—forty-six in the Old Testament and twenty-seven in the New Testament. The Church received these writings as inspired Scripture and proclaims them in the liturgy. Below is a brief summary of each book: its place in salvation history, main themes, and what to notice when you read. These summaries are not a substitute for reading Scripture itself.';

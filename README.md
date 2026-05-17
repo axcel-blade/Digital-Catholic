@@ -1,6 +1,6 @@
 # Digital Catholic
 
-A static website for learning and sharing the Catholic faith—saint biographies, the apostles and disciples of Jesus, the sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and the Holy Rosary—presented in clear language for prayer, formation, and everyday reading.
+A static website for learning and sharing the Catholic faith—saint biographies, summaries of all 73 books of the Catholic Bible, the apostles and disciples of Jesus, the sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and the Holy Rosary—presented in clear language for prayer, formation, and everyday reading.
 
 **Live site:** [https://axcel-blade.github.io/Digital-Catholic/](https://axcel-blade.github.io/Digital-Catholic/)
 
@@ -16,6 +16,7 @@ A static website for learning and sharing the Catholic faith—saint biographies
 | **Marian Apparitions** | Our Lady appearing to the faithful in the real world—Guadalupe, Lourdes, Fátima, Velankanni in India, Knock, and other approved shrines. |
 | **Parables of Jesus** | Stories of the Kingdom from the Gospels—mercy, prayer, discipleship, and conversion. |
 | **Ten Commandments** | The moral law with each commandment’s text and a brief explanation. |
+| **Holy Bible** | All 73 books of the Catholic canon—brief summaries of each book (not full Scripture text). |
 | **Prayers** | The Our Father (Lord’s Prayer) and Hail Mary—full text and brief explanations. |
 | **Rosary** | How to recite the Rosary, the traditional prayers, and the twenty mysteries (Joyful, Sorrowful, Glorious, Luminous). |
 | **Liturgical Calendar** | Solemnities, feasts, and memorials from the General Roman Calendar, moveable celebrations from Easter, and liturgical seasons (Advent, Christmas, Lent, Easter, Ordinary Time). |

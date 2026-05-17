@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import {
+	bibleBooks,
+	bibleCategoryLabels,
+	getBibleBook,
+	testamentLabels,
+} from '../../data/bible';
+import { withBase } from '../../lib/paths';
+
+export function getStaticPaths() {
+	return bibleBooks.map((book) => ({
+		params: { slug: book.slug },
+	}));
+}
+
+const slug = Astro.params.slug ?? '';
+const book = getBibleBook(slug);
+
+if (!book) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout title={book.title} description={book.excerpt} currentPath={currentPath}>
+	<div class="page-content">
+		<PageBack href={withBase('/bible')} label="All Bible books" />
+		<article class="bible-book-article">
+			<header class="bible-book-article__header">
+				<p class="hero__tagline">Scripture · {testamentLabels[book.testament]}</p>
+				<h1>{book.title}</h1>
+				<p class="article__feast">
+					{bibleCategoryLabels[book.category]} · Abbreviation: {book.abbreviation}
+					{book.deuterocanonical && ' · Deuterocanonical'}
+				</p>
+				<p class="article__lead">{book.excerpt}</p>
+			</header>
+
+			{book.sections.map((section) => (
+				<section>
+					<h2>{section.heading}</h2>
+					{section.paragraphs.map((paragraph) => (
+						<p>{paragraph}</p>
+					))}
+				</section>
+			))}
+
+			<p class="prayers-related">
+				This summary introduces the book; read the full text in a Catholic Bible translation such as the
+				NABRE or RSV-2CE. Browse the <a href={withBase('/bible')}>complete canon</a> or explore{' '}
+				<a href={withBase('/parables')}>parables</a> and{' '}
+				<a href={withBase('/miracles')}>miracles of Jesus</a> on this site.
+			</p>
+		</article>
+	</div>
+</BaseLayout>

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import {
+	bibleBooks,
+	bibleCategoryLabels,
+	bibleIntro,
+	getBibleBooksByCategory,
+	newTestamentCategoryOrder,
+	oldTestamentCategoryOrder,
+	testamentLabels,
+} from '../../data/bible';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+
+const oldTestamentSections = oldTestamentCategoryOrder.map((category) => ({
+	category,
+	label: bibleCategoryLabels[category],
+	books: getBibleBooksByCategory('old', category),
+}));
+
+const newTestamentSections = newTestamentCategoryOrder.map((category) => ({
+	category,
+	label: bibleCategoryLabels[category],
+	books: getBibleBooksByCategory('new', category),
+}));
+---
+
+<BaseLayout
+	title="Holy Bible"
+	description={PAGE_DESCRIPTIONS.bible}
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--catalog">
+		<PageBack href={withBase('/')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Scripture</p>
+			<h1>Holy Bible</h1>
+			<p class="lead">{bibleIntro}</p>
+			<p class="bible-canon-note">
+				<strong>{bibleBooks.length} books</strong> in the Catholic canon—46 Old Testament and 27 New
+				Testament—including the deuterocanonical books received by the Church from antiquity.
+			</p>
+		</div>
+
+		<section class="bible-testament" id="old-testament">
+			<h2>{testamentLabels.old}</h2>
+			{oldTestamentSections.map((section) => (
+				<div class="bible-category">
+					<h3 class="bible-category__title">{section.label}</h3>
+					<ul class="bible-book-list">
+						{section.books.map((book) => (
+							<li class="bible-book-item">
+								<a class="bible-book-item__link" href={withBase(`/bible/${book.slug}`)}>
+									<span class="bible-book-item__abbr">{book.abbreviation}</span>
+									<span class="bible-book-item__title">{book.title}</span>
+									{book.deuterocanonical && (
+										<span class="bible-book-item__badge">Deuterocanonical</span>
+									)}
+								</a>
+								<p class="bible-book-item__excerpt">{book.excerpt}</p>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</section>
+
+		<section class="bible-testament" id="new-testament">
+			<h2>{testamentLabels.new}</h2>
+			{newTestamentSections.map((section) => (
+				<div class="bible-category">
+					<h3 class="bible-category__title">{section.label}</h3>
+					<ul class="bible-book-list">
+						{section.books.map((book) => (
+							<li class="bible-book-item">
+								<a class="bible-book-item__link" href={withBase(`/bible/${book.slug}`)}>
+									<span class="bible-book-item__abbr">{book.abbreviation}</span>
+									<span class="bible-book-item__title">{book.title}</span>
+								</a>
+								<p class="bible-book-item__excerpt">{book.excerpt}</p>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</section>
+	</div>
+</BaseLayout>
