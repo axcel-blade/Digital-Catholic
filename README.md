@@ -26,7 +26,7 @@ A static website for learning and sharing the Catholic faith—saint biographies
 - Plain CSS — no UI framework
 - Client-side search — built at compile time from site content (no external search service)
 
-Content lives in TypeScript data modules under `src/data/` and is rendered through Astro pages and layouts. Default meta titles, descriptions, and keywords are centralized in `src/lib/seo.ts` (`SITE` and `PAGE_DESCRIPTIONS`); update those when you add or rename major sections.
+Content lives in TypeScript modules under `src/data/`—**one file per saint, miracle, sacrament, etc.**—and is loaded automatically via each section’s `index.ts`. See [src/data/README.md](src/data/README.md) for how to add articles. Default meta titles, descriptions, and keywords are centralized in `src/lib/seo.ts` (`SITE` and `PAGE_DESCRIPTIONS`); update those when you add or rename major sections.
 
 ## Getting started
 
@@ -65,7 +65,7 @@ For a `username.github.io` repository, use `ASTRO_BASE=/` instead.
 public/                 Static assets (favicon, robots.txt, saint images)
 src/
   components/           SEO head, search, theme toggle, header menu
-  data/                 Saints, sacraments, miracles, eucharistic miracles, marian apparitions, parables, commandments, rosary
+  data/                 Per-item content files (saints/, miracles/, etc.) — see data/README.md
   layouts/              Base and article layouts
   lib/                  Paths, SEO helpers, search index
   pages/                Routes (home, about, saints, sacraments, etc.)

@@ -61,10 +61,10 @@ Pushes to `main` trigger deployment to GitHub Pages.
 
 ## What to change
 
-- **Content:** `src/data/` (saints, sacraments, miracles, eucharistic miracles, marian apparitions, parables, commandments, rosary) and related pages under `src/pages/`
+- **Content:** add one file per article under `src/data/<section>/items/` (see [src/data/README.md](src/data/README.md))—do not append to a giant shared list
 - **Images:** saint photos in `public/saints/{slug}.jpg`; Eucharistic miracle photos in `public/eucharistic-miracles/{slug}.jpg`; Marian apparition photos in `public/marian-apparitions/{slug}.jpg`; About page art in `public/about/jesus-teaching.jpg` (prefer Wikimedia Commons–licensed images)
 - **Layout & styles:** `src/layouts/`, `src/components/`, `src/styles/global.css`
-- **Search:** update `src/lib/searchIndex.ts` if you add new indexable pages
+- **Search:** new items in existing sections are picked up automatically; update `src/lib/searchIndex.ts` only if you add a wholly new section or page type
 
 Keep copy accurate, respectful, and aligned with Catholic teaching. Run `npm run build` before submitting a pull request.
 
