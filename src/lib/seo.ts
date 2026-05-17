@@ -3,9 +3,9 @@ export const SITE = {
 	defaultTitle:
 		'Digital Catholic — Saints, Sacraments, Gospel, Marian Apparitions & Catholic Faith',
 	defaultDescription:
-		'Learn the Catholic faith with saint biographies, the seven sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, and how to pray the Rosary. Clear articles for prayer, formation, and sharing.',
+		'Learn the Catholic faith with full saint and apostle biographies—from birth through death—the seven sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and how to pray the Rosary. Clear articles for prayer, formation, and sharing.',
 	keywords:
-		'Catholic, Catholic faith, saints, Carlo Acutis, Blessed Virgin Mary, Marian apparitions, Guadalupe, Lourdes, Fatima, Velankanni, India, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, rosary, mysteries of the rosary, prayer, catechism, Bible, Digital Catholic, Christian',
+		'Catholic, Catholic faith, saints, apostles, disciples of Jesus, Twelve Apostles, Peter, Paul, St. Nicholas, Santa Claus, liturgical calendar, feast days, solemnities, Advent, Lent, Easter, Carlo Acutis, Blessed Virgin Mary, Marian apparitions, Guadalupe, Lourdes, Fatima, Velankanni, India, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, rosary, mysteries of the rosary, prayer, catechism, Bible, Digital Catholic, Christian',
 	locale: 'en_US',
 	themeColor: '#6b2d3c',
 	themeColorDark: '#1a1816',
@@ -17,11 +17,13 @@ export const SITE = {
 export const PAGE_DESCRIPTIONS = {
 	home: SITE.defaultDescription,
 	about:
-		'About Digital Catholic — a free site for saint biographies, sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Commandments, and the Rosary, with search and articles for faith formation.',
+		'About Digital Catholic — a free site for saint biographies, the apostles, sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Commandments, the liturgical calendar, and the Rosary, with search and articles for faith formation.',
 	saints:
-		'Saint biographies for the Catholic Church — lives of holy men and women, feast days, and lessons from Mary, Joseph, Anthony of Padua, Carlo Acutis, and more.',
+		'Saint biographies for the Catholic Church — full lives from birth to death, feast days, and lessons from Mary, Joseph, Nicholas of Myra, Anthony of Padua, Carlo Acutis, and more.',
 	sacraments:
 		'Articles on the seven sacraments — Baptism, Confirmation, Eucharist, Penance, Anointing of the Sick, Holy Orders, and Matrimony — what the Church teaches and why they matter.',
+	disciples:
+		'The Twelve Apostles of Jesus Christ — full biographies from call to death, Gospel and Acts accounts, feast days, and lessons for following Christ.',
 	miracles:
 		'Miracles of Jesus Christ in the Gospels of Matthew, Mark, Luke, and John — signs of the Kingdom with Scripture references and reflections for faith.',
 	eucharisticMiracles:
@@ -34,6 +36,8 @@ export const PAGE_DESCRIPTIONS = {
 		'The Ten Commandments — God’s moral law given to Moses, with each commandment’s text and meaning for love of God and neighbor.',
 	rosary:
 		'How to recite the Holy Rosary, the traditional prayers, and the twenty mysteries — Joyful, Sorrowful, Glorious, and Luminous — for meditation and prayer.',
+	liturgicalCalendar:
+		'Catholic liturgical calendar — solemnities, feasts, and memorials from the General Roman Calendar, moveable celebrations from Easter, liturgical seasons, and links to saint feast days.',
 } as const;
 
 export function getSiteOrigin(): string {

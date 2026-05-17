@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import LiturgicalCalendarView from '../../components/LiturgicalCalendarView.astro';
+import {
+	buildLiturgicalYear,
+	getLiturgicalYearsRange,
+	liturgicalCalendarIntro,
+	liturgicalSeasonsIntro,
+} from '../../data/liturgical-calendar';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+const defaultYear = new Date().getFullYear();
+const yearData = buildLiturgicalYear(defaultYear);
+const yearOptions = getLiturgicalYearsRange(defaultYear, 1, 2);
+---
+
+<BaseLayout
+	title="Liturgical Calendar"
+	description={PAGE_DESCRIPTIONS.liturgicalCalendar}
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--catalog page-content--liturgical">
+		<PageBack href={withBase('/')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Worship & Prayer</p>
+			<h1>Catholic Liturgical Calendar {defaultYear}</h1>
+			<p class="lead">{liturgicalCalendarIntro}</p>
+			<p class="catalog-prose">{liturgicalSeasonsIntro}</p>
+		</div>
+
+		<LiturgicalCalendarView
+			yearData={yearData}
+			yearOptions={yearOptions}
+			defaultYear={defaultYear}
+		/>
+	</div>
+</BaseLayout>

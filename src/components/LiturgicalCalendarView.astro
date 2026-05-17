@@ -1,0 +1,147 @@
+---
+import type { LiturgicalYear } from '../data/liturgical-calendar/types';
+import { formatCalendarDate } from '../data/liturgical-calendar';
+import { withBase } from '../lib/paths';
+
+interface Props {
+	yearData: LiturgicalYear;
+	yearOptions: number[];
+	/** Civil year used for the main `/liturgical-calendar` route (usually the current year at build). */
+	defaultYear: number;
+}
+
+const { yearData, yearOptions, defaultYear } = Astro.props;
+const rankLabels: Record<string, string> = {
+	solemnity: 'Solemnity',
+	feast: 'Feast',
+	memorial: 'Memorial',
+	'optional-memorial': 'Optional memorial',
+	season: 'Season',
+};
+---
+
+<div class="liturgical-calendar">
+	<nav class="liturgical-year-nav" aria-label="Calendar year">
+		{yearOptions.map((y) => (
+			<a
+				class:list={['liturgical-year-nav__link', { 'is-active': y === yearData.year }]}
+				href={withBase(
+					y === defaultYear ? '/liturgical-calendar' : `/liturgical-calendar/${y}`
+				)}
+				aria-current={y === yearData.year ? 'page' : undefined}
+			>
+				{y}
+			</a>
+		))}
+	</nav>
+
+	<div class="liturgical-summary">
+		<div class="liturgical-summary__card" id="liturgical-today" hidden>
+			<h2 class="liturgical-summary__title">Today</h2>
+			<p class="liturgical-summary__season" id="liturgical-today-season"></p>
+			<ul class="liturgical-summary__list" id="liturgical-today-list"></ul>
+		</div>
+		<div class="liturgical-summary__card">
+			<h2 class="liturgical-summary__title">{yearData.year} at a glance</h2>
+			<p class="liturgical-summary__easter">
+				<strong>Easter Sunday:</strong> {formatCalendarDate(yearData.easter)}
+			</p>
+			<ul class="liturgical-seasons-list">
+				{yearData.seasons.map((season) => (
+					<li>
+						<strong>{season.name}</strong>
+						<span>
+							{formatCalendarDate(season.start)} – {formatCalendarDate(season.end)}
+						</span>
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+
+	<div class="liturgical-legend" aria-label="Liturgical colors">
+		<span class="liturgical-legend__label">Liturgical colors:</span>
+		<ul class="liturgical-legend__colors">
+			<li><span class="liturgical-color liturgical-color--white"></span> White</li>
+			<li><span class="liturgical-color liturgical-color--red"></span> Red</li>
+			<li><span class="liturgical-color liturgical-color--green"></span> Green</li>
+			<li><span class="liturgical-color liturgical-color--purple"></span> Purple</li>
+			<li><span class="liturgical-color liturgical-color--rose"></span> Rose</li>
+		</ul>
+	</div>
+
+	{yearData.months.map((month) =>
+		month.days.length > 0 ? (
+			<section class="liturgical-month" id={`month-${month.month}`}>
+				<h2 class="liturgical-month__title">{month.label}</h2>
+				<ul class="liturgical-day-list">
+					{month.days.map((day) => (
+						<li class="liturgical-day" data-date={day.date}>
+							<div class="liturgical-day__header">
+								<time class="liturgical-day__date" datetime={day.date}>
+									{formatCalendarDate(day.date)}
+								</time>
+								<span
+									class={`liturgical-color liturgical-color--${day.color}`}
+									title={`Liturgical color: ${day.color}`}
+								/>
+								<span class={`liturgical-rank liturgical-rank--${day.rank}`}>
+									{rankLabels[day.rank]}
+								</span>
+							</div>
+							<h3 class="liturgical-day__title">
+								{day.saintSlug ? (
+									<a href={withBase(`/saints/${day.saintSlug}`)}>{day.title}</a>
+								) : (
+									day.title
+								)}
+							</h3>
+							{day.note && <p class="liturgical-day__note">{day.note}</p>}
+						</li>
+					))}
+				</ul>
+			</section>
+		) : null
+	)}
+</div>
+
+<script define:vars={{ year: yearData.year, seasons: yearData.seasons, celebrations: yearData.months.flatMap((m) => m.days) }}>
+	const today = new Date();
+	const todayIso = [
+		today.getFullYear(),
+		String(today.getMonth() + 1).padStart(2, '0'),
+		String(today.getDate()).padStart(2, '0'),
+	].join('-');
+
+	if (today.getFullYear() === year) {
+		document.querySelectorAll(`[data-date="${todayIso}"]`).forEach((el) => {
+			el.classList.add('liturgical-day--today');
+		});
+
+		const todayBlock = document.getElementById('liturgical-today');
+		const seasonEl = document.getElementById('liturgical-today-season');
+		const listEl = document.getElementById('liturgical-today-list');
+
+		if (todayBlock && seasonEl && listEl) {
+			const season = seasons.find((s) => todayIso >= s.start && todayIso <= s.end);
+			if (season) {
+				seasonEl.textContent = `Liturgical season: ${season.name}`;
+			}
+
+			const todayCelebrations = celebrations.filter((c) => c.date === todayIso);
+			if (todayCelebrations.length > 0) {
+				for (const c of todayCelebrations) {
+					const li = document.createElement('li');
+					li.textContent = c.title;
+					listEl.appendChild(li);
+				}
+			} else {
+				const li = document.createElement('li');
+				li.textContent = 'No major feast on the universal calendar today.';
+				listEl.appendChild(li);
+			}
+
+			todayBlock.hidden = false;
+		}
+	}
+</script>

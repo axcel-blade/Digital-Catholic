@@ -1567,6 +1567,248 @@ p {
 	margin-top: 2rem;
 }
 
+.page-content--liturgical {
+	max-width: var(--page-width);
+}
+
+.liturgical-year-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 1.5rem 0 0;
+}
+
+.liturgical-year-nav__link {
+	display: inline-block;
+	padding: 0.4rem 0.85rem;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--color-muted);
+	text-decoration: none;
+	border: 1px solid var(--color-border);
+	border-radius: 999px;
+	background: var(--color-surface);
+}
+
+.liturgical-year-nav__link:hover,
+.liturgical-year-nav__link.is-active {
+	color: var(--color-accent);
+	border-color: var(--color-accent);
+	background: var(--color-accent-soft);
+}
+
+.liturgical-summary {
+	display: grid;
+	gap: 1rem;
+	margin-top: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+	.liturgical-summary {
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+	}
+}
+
+.liturgical-summary__card {
+	padding: 1.25rem 1.35rem;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow-card);
+}
+
+.liturgical-summary__title {
+	margin: 0 0 0.75rem;
+	font-family: var(--font-serif);
+	font-size: 1.15rem;
+}
+
+.liturgical-summary__easter {
+	margin: 0 0 0.75rem;
+	font-size: 0.98rem;
+}
+
+.liturgical-summary__season {
+	margin: 0 0 0.5rem;
+	font-size: 0.95rem;
+	color: var(--color-accent);
+	font-weight: 600;
+}
+
+.liturgical-summary__list {
+	margin: 0;
+	padding-left: 1.2rem;
+}
+
+.liturgical-seasons-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 0.65rem;
+}
+
+.liturgical-seasons-list li {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	font-size: 0.92rem;
+}
+
+.liturgical-seasons-list span {
+	color: var(--color-muted);
+}
+
+.liturgical-legend {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 1rem;
+	margin: 1.75rem 0 0;
+	padding: 0.85rem 1rem;
+	background: var(--color-accent-soft);
+	border-radius: 0.5rem;
+	font-size: 0.88rem;
+}
+
+.liturgical-legend__label {
+	font-weight: 600;
+	color: var(--color-text);
+}
+
+.liturgical-legend__colors {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.65rem 1rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.liturgical-legend__colors li {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+.liturgical-color {
+	display: inline-block;
+	width: 0.85rem;
+	height: 0.85rem;
+	border-radius: 50%;
+	border: 1px solid rgb(0 0 0 / 0.15);
+	flex-shrink: 0;
+}
+
+.liturgical-color--white {
+	background: #f8f6f2;
+}
+
+.liturgical-color--red {
+	background: #8b1e2f;
+}
+
+.liturgical-color--green {
+	background: #2d5a3d;
+}
+
+.liturgical-color--purple {
+	background: #4a3066;
+}
+
+.liturgical-color--rose {
+	background: #c76b8a;
+}
+
+.liturgical-month {
+	margin-top: 2.5rem;
+}
+
+.liturgical-month__title {
+	font-family: var(--font-serif);
+	font-size: 1.35rem;
+	margin: 0 0 1rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.liturgical-day-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 0.85rem;
+}
+
+.liturgical-day {
+	padding: 1rem 1.15rem;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 0.5rem;
+}
+
+.liturgical-day--today {
+	border-color: var(--color-accent);
+	box-shadow: 0 0 0 2px var(--color-accent-soft);
+}
+
+.liturgical-day__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 0.75rem;
+	margin-bottom: 0.35rem;
+}
+
+.liturgical-day__date {
+	font-size: 0.88rem;
+	font-weight: 600;
+	color: var(--color-muted);
+}
+
+.liturgical-rank {
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	padding: 0.15rem 0.5rem;
+	border-radius: 999px;
+	background: var(--color-accent-soft);
+	color: var(--color-accent);
+}
+
+.liturgical-rank--solemnity {
+	background: #e8d4a8;
+	color: #5c4a1a;
+}
+
+html[data-theme='dark'] .liturgical-rank--solemnity {
+	background: #4a3d20;
+	color: #e8d4a8;
+}
+
+.liturgical-day__title {
+	margin: 0;
+	font-family: var(--font-serif);
+	font-size: 1.1rem;
+	font-weight: 600;
+	line-height: 1.35;
+}
+
+.liturgical-day__title a {
+	text-decoration: none;
+}
+
+.liturgical-day__title a:hover {
+	text-decoration: underline;
+}
+
+.liturgical-day__note {
+	margin: 0.5rem 0 0;
+	font-size: 0.9rem;
+	color: var(--color-muted);
+}
+
 .site-footer {
 	border-top: 1px solid var(--color-border);
 	background: var(--color-surface);

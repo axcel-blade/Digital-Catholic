@@ -1,4 +1,5 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
+import { disciples, disciplesIntro } from '../data/disciples';
 import {
 	mysterySets,
 	rosaryHowToIntro,
@@ -12,6 +13,11 @@ import { marianApparitions, marianApparitionsIntro } from '../data/marianApparit
 import { miracles, miraclesIntro } from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
 import { sacraments } from '../data/sacraments';
+import {
+	buildLiturgicalYear,
+	liturgicalCalendarIntro,
+	liturgicalSeasonsIntro,
+} from '../data/liturgical-calendar';
 import { saints } from '../data/saints';
 import { withBase } from './paths';
 
@@ -78,6 +84,18 @@ export function buildSearchIndex(): SearchEntry[] {
 			['baptism confirmation eucharist penance orders matrimony anointing'],
 		),
 		entry(
+			'Disciples of Jesus',
+			withBase('/disciples'),
+			'Disciples',
+			disciplesIntro,
+			[
+				disciplesIntro,
+				...disciples.map((d) =>
+					joinParts(d.title, d.alsoKnownAs, d.excerpt, d.gospelReference, d.feastDays ?? '')
+				),
+			],
+		),
+		entry(
 			'Miracles of Jesus',
 			withBase('/miracles'),
 			'Miracles',
@@ -135,7 +153,38 @@ export function buildSearchIndex(): SearchEntry[] {
 				...rosaryPrayers.map((p) => joinParts(p.title, p.text)),
 			],
 		),
+		entry(
+			'Liturgical Calendar',
+			withBase('/liturgical-calendar'),
+			'Calendar',
+			liturgicalCalendarIntro,
+			[
+				liturgicalCalendarIntro,
+				liturgicalSeasonsIntro,
+				...buildLiturgicalYear(new Date().getFullYear()).months.flatMap((m) =>
+					m.days.map((d) => joinParts(d.title, d.rank, d.color, d.note ?? ''))
+				),
+			],
+		),
 	];
+
+	for (const disciple of disciples) {
+		items.push(
+			entry(
+				disciple.title,
+				withBase(`/disciples/${disciple.slug}`),
+				'Disciple',
+				disciple.excerpt,
+				[
+					disciple.alsoKnownAs ?? '',
+					disciple.lifeDates ?? '',
+					disciple.gospelReference,
+					disciple.feastDays ?? '',
+					sectionsText(disciple.sections),
+				]
+			)
+		);
+	}
 
 	for (const saint of saints) {
 		items.push(
@@ -144,7 +193,7 @@ export function buildSearchIndex(): SearchEntry[] {
 				withBase(`/saints/${saint.slug}`),
 				'Saint',
 				saint.excerpt,
-				[saint.feastDays ?? '', sectionsText(saint.sections)]
+				[saint.lifeDates ?? '', saint.feastDays ?? '', sectionsText(saint.sections)]
 			)
 		);
 	}

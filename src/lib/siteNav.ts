@@ -23,12 +23,14 @@ export const primaryNavItems: SiteNavItem[] = [
 export const exploreNavItems: SiteNavItem[] = [
 	{ href: '/saints', label: 'Saints' },
 	{ href: '/sacraments', label: 'Sacraments' },
+	{ href: '/disciples', label: 'Disciples of Jesus' },
 	{ href: '/miracles', label: 'Miracles of Jesus' },
 	{ href: '/eucharistic-miracles', label: 'Eucharistic Miracles' },
 	{ href: '/marian-apparitions', label: 'Marian Apparitions' },
 	{ href: '/parables', label: 'Parables of Jesus' },
 	{ href: '/commandments', label: 'Ten Commandments' },
 	{ href: '/rosary', label: 'Rosary' },
+	{ href: '/liturgical-calendar', label: 'Liturgical Calendar' },
 ];
 
 function isNavActive(href: string, path: string): boolean {
