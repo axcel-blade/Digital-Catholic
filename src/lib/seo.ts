@@ -40,6 +40,8 @@ export const PAGE_DESCRIPTIONS = {
 		'The Holy Bible in the Catholic canon — all 73 books with brief summaries of each book, including the deuterocanonical books, for study and faith formation.',
 	prayers:
 		'The Our Father and Hail Mary — full text and brief explanations of the Lord’s Prayer and the Hail Mary, the heart of Catholic prayer and the Rosary.',
+	mass:
+		'Items used at Mass in the Catholic Church — sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other objects used in the celebration of the Eucharist.',
 	rosary:
 		'How to recite the Holy Rosary, the traditional prayers, and the twenty mysteries — Joyful, Sorrowful, Glorious, and Luminous — for meditation and prayer.',
 	liturgicalCalendar:
