@@ -3,6 +3,8 @@ import type { MysterySet } from './types';
 
 export {
 	rosaryIntro,
+	rosaryOriginIntro,
+	rosaryOriginSections,
 	rosaryHowToIntro,
 	rosaryHowToSteps,
 	rosaryMysterySchedule,

@@ -4,6 +4,46 @@ const ourFatherText = getPrayerText('Our Father') ?? '';
 const hailMaryText = getPrayerText('Hail Mary') ?? '';
 
 export const rosaryIntro = "The Holy Rosary is a beloved prayer of the Catholic Church. On each bead we meditate on the life of Christ and His Mother while repeating the Our Father, Hail Mary, and Glory Be. The twenty mysteries are grouped into four sets, traditionally prayed on different days of the week.";
+
+export const rosaryOriginIntro = "The Rosary has ancient roots reaching back to the early Church, slowly taking shape over many centuries before becoming the beloved prayer we know today.";
+
+export const rosaryOriginSections = [
+	{
+		heading: "Early roots: the monastic psalter",
+		paragraphs: [
+			"The Rosary grew from an early Christian monastic custom. Monks prayed all 150 Psalms daily, but illiterate lay brothers could not read them. As a substitute, they prayed 150 Our Fathers, counting each on a knotted cord or small stones. These strings of beads came to be called a paternoster ('Our Father') and were common throughout medieval Europe.",
+			"Over time, as devotion to the Blessed Virgin Mary deepened, the Hail Mary—drawn from Luke 1:28 and 1:42—gradually replaced the Our Father in this count. By the twelfth century, it was common to meditate on events from the life of Christ and Mary while reciting these prayers, giving the Rosary its characteristic combination of vocal prayer and mental meditation.",
+		]
+	},
+	{
+		heading: "St. Dominic and the Dominican tradition",
+		paragraphs: [
+			"A beloved tradition holds that Our Lady appeared to St. Dominic of Guzman (1170–1221), founder of the Order of Preachers (Dominicans), and gave him the Rosary as a spiritual weapon against the Albigensian heresy. While historians note that the Rosary developed gradually rather than appearing fully formed at one moment, St. Dominic's order did become its greatest champion and helped spread this prayer across the Christian world.",
+			"Blessed Alan de la Roche (1428–1475), a Dominican friar, revived and popularized Rosary devotion in the fifteenth century. He founded Rosary confraternities that spread from the Low Countries throughout Europe, cementing the Dominican Order's role in promoting this prayer.",
+		]
+	},
+	{
+		heading: "Pope Pius V and the Battle of Lepanto",
+		paragraphs: [
+			"Pope Pius V (a Dominican) standardized the Rosary in its essentially modern form with his 1569 apostolic constitution Consueverunt Romani Pontifices. Two years later, on October 7, 1571, the Christian fleet under Don John of Austria defeated the Ottoman navy at the Battle of Lepanto. Pius V attributed this decisive victory to Our Lady of the Rosary, whose intercession faithful Catholics had invoked. He established October 7 as the feast of Our Lady of Victory, later renamed Our Lady of the Rosary.",
+			"This feast remains in the universal Roman Calendar today. Every October is dedicated to the Rosary in the Church's tradition.",
+		]
+	},
+	{
+		heading: "The Rosary Popes",
+		paragraphs: [
+			"Numerous popes have promoted the Rosary with singular devotion. Pope Leo XIII (1878–1903) issued twelve encyclicals on the Rosary alone and earned the title 'the Rosary Pope.' He called the Rosary 'the psalter of the Virgin Mary' and urged its daily recitation as a remedy for the social ills of his age.",
+			"Pope Pius XII, Pope Paul VI, and Pope John Paul II all wrote important documents on Rosary devotion. Pope John Paul II, in his 2002 apostolic letter Rosarium Virginis Mariae, added five new mysteries—the Luminous Mysteries—bringing the total to twenty and covering Christ's public ministry, the period of the Gospels that the original fifteen mysteries left largely untouched.",
+		]
+	},
+	{
+		heading: "The Rosary today",
+		paragraphs: [
+			"Today the Rosary is prayed by millions of Catholics on every continent. It is recited privately, in families, before the Blessed Sacrament, in pilgrimages, and at shrines such as Lourdes and Fátima—where Our Lady herself urged its daily recitation during her apparitions to three shepherd children in 1917.",
+			"Though simple in form—just beads and familiar prayers—the Rosary is considered by the Church one of the most excellent forms of prayer. John Paul II wrote that 'to pray the Rosary is to hand over our burdens to the merciful hearts of Christ and his Mother.'",
+		]
+	},
+];
 export const rosaryHowToIntro = "The Rosary is prayed on a string of beads—a crucifix, one large bead, five sets of ten small beads (decades), and small beads between decades. You may use your fingers if you have no beads. Move slowly, speak the prayers, and pause to meditate on each mystery.";
 export const rosaryMysterySchedule = "Joyful Mysteries on Monday and Saturday; Sorrowful on Tuesday and Friday; Glorious on Wednesday and Sunday; Luminous on Thursday. Many Catholics also pray the Joyful Mysteries on Sundays during Advent and Christmas, and the Sorrowful during Lent.";
 

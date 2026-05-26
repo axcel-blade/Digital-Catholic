@@ -8,6 +8,8 @@ import {
 	rosaryHowToSteps,
 	rosaryIntro,
 	rosaryMysterySchedule,
+	rosaryOriginIntro,
+	rosaryOriginSections,
 	rosaryPrayers,
 } from '../data/rosary';
 import { eucharisticMiracles, eucharisticMiraclesIntro } from '../data/eucharisticMiracles';
@@ -179,6 +181,8 @@ export function buildSearchIndex(): SearchEntry[] {
 			rosaryIntro,
 			[
 				rosaryIntro,
+				rosaryOriginIntro,
+				...rosaryOriginSections.flatMap((s) => [s.heading, ...s.paragraphs]),
 				rosaryHowToIntro,
 				rosaryMysterySchedule,
 				...rosaryHowToSteps.map((s) => joinParts(s.title, s.description)),
