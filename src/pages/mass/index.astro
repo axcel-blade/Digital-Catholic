@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import { massIntro, massSections } from '../../data/mass';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Items Used at Mass"
+	description={PAGE_DESCRIPTIONS.mass}
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--catalog">
+		<PageBack href={withBase('/')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Worship</p>
+			<h1>Items Used at Mass</h1>
+			<p class="lead">{massIntro}</p>
+		</div>
+
+		{massSections.map((section) => (
+			<section class="mass-section">
+				<h2 class="mass-section__heading">{section.heading}</h2>
+				<ul class="mass-item-list">
+					{section.items.map((item) => (
+						<li class="mass-item-card">
+							<h3 class="mass-item-card__name">{item.name}</h3>
+							<p class="mass-item-card__description">{item.description}</p>
+						</li>
+					))}
+				</ul>
+			</section>
+		))}
+	</div>
+</BaseLayout>

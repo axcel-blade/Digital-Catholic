@@ -1,5 +1,6 @@
 import { bibleBooks, bibleIntro } from '../data/bible';
 import { commandments, commandmentsIntro } from '../data/commandments';
+import { massIntro, massSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
 import { prayers, prayersIntro } from '../data/prayers';
 import {
@@ -172,6 +173,16 @@ export function buildSearchIndex(): SearchEntry[] {
 			[
 				prayersIntro,
 				...prayers.map((p) => joinParts(p.title, p.alsoKnownAs, p.excerpt, p.text, sectionsText(p.sections))),
+			],
+		),
+		entry(
+			'Items Used at Mass',
+			withBase('/mass'),
+			'Mass',
+			massIntro,
+			[
+				massIntro,
+				...massSections.flatMap((s) => [s.heading, ...s.items.map((i) => joinParts(i.name, i.description))]),
 			],
 		),
 		entry(
