@@ -1,0 +1,17 @@
+---
+import type { ResolvedNavItem } from '../lib/siteNav';
+
+interface Props {
+	item: ResolvedNavItem;
+}
+
+const { item } = Astro.props;
+---
+
+<a
+	class="site-header__toolbar-link"
+	href={item.href}
+	aria-current={item.isActive ? 'page' : undefined}
+>
+	{item.label}
+</a>

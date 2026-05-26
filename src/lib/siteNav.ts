@@ -20,6 +20,8 @@ export const primaryNavItems: SiteNavItem[] = [
 	{ href: '/about', label: 'About' },
 ];
 
+export const contactNavItem: SiteNavItem = { href: '/contact', label: 'Contact' };
+
 export const exploreNavItems: SiteNavItem[] = [
 	{ href: '/saints', label: 'Saints' },
 	{ href: '/sacraments', label: 'Sacraments' },
@@ -29,6 +31,8 @@ export const exploreNavItems: SiteNavItem[] = [
 	{ href: '/marian-apparitions', label: 'Marian Apparitions' },
 	{ href: '/parables', label: 'Parables of Jesus' },
 	{ href: '/commandments', label: 'Ten Commandments' },
+	{ href: '/bible', label: 'Holy Bible' },
+	{ href: '/prayers', label: 'Prayers' },
 	{ href: '/rosary', label: 'Rosary' },
 	{ href: '/liturgical-calendar', label: 'Liturgical Calendar' },
 ];
@@ -58,5 +62,7 @@ export function buildSiteNav(currentPath: string) {
 		isActive: explore.some((item) => item.isActive),
 	};
 
-	return { primary, exploreGroup };
+	const contact = resolveItem(contactNavItem, path);
+
+	return { primary, exploreGroup, contact };
 }

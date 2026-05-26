@@ -51,11 +51,22 @@ const currentPath = Astro.url.pathname;
 
 		<section class="rosary-prayers" id="rosary-prayers">
 			<h2>Prayers of the Rosary</h2>
-			<p>These are the words most often prayed while reciting the Rosary.</p>
+			<p>
+				These are the words most often prayed while reciting the Rosary. Read the{' '}
+				<a href={withBase('/prayers/our-father')}>Our Father</a> and{' '}
+				<a href={withBase('/prayers/hail-mary')}>Hail Mary</a> with brief explanations, or browse{' '}
+				<a href={withBase('/prayers')}>all prayers</a>.
+			</p>
 			<ul class="rosary-prayer-list">
 				{rosaryPrayers.map((prayer) => (
 					<li class="rosary-prayer-card">
-						<h3 class="rosary-prayer-card__title">{prayer.title}</h3>
+						<h3 class="rosary-prayer-card__title">
+							{'slug' in prayer && prayer.slug ? (
+								<a href={withBase(`/prayers/${prayer.slug}`)}>{prayer.title}</a>
+							) : (
+								prayer.title
+							)}
+						</h3>
 						<blockquote class="rosary-prayer-card__text">{prayer.text}</blockquote>
 					</li>
 				))}

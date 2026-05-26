@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import { prayers, getPrayer } from '../../data/prayers';
+import { withBase } from '../../lib/paths';
+
+export function getStaticPaths() {
+	return prayers.map((prayer) => ({
+		params: { slug: prayer.slug },
+	}));
+}
+
+const slug = Astro.params.slug ?? '';
+const prayer = getPrayer(slug);
+
+if (!prayer) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title={prayer.title}
+	description={prayer.excerpt}
+	currentPath={currentPath}
+>
+	<div class="page-content">
+		<PageBack href={withBase('/prayers')} label="All prayers" />
+		<article class="prayer-article">
+			<header class="prayer-article__header">
+				<p class="hero__tagline">Prayer</p>
+				<h1>{prayer.title}</h1>
+				{prayer.alsoKnownAs && (
+					<p class="article__feast">Also known as: {prayer.alsoKnownAs}</p>
+				)}
+				<p class="article__lead">{prayer.excerpt}</p>
+			</header>
+
+			<blockquote class="prayer-article__text">{prayer.text}</blockquote>
+
+			{prayer.sections.map((section) => (
+				<section>
+					<h2>{section.heading}</h2>
+					{section.paragraphs.map((paragraph) => (
+						<p>{paragraph}</p>
+					))}
+				</section>
+			))}
+
+			<p class="prayers-related">
+				Part of the <a href={withBase('/rosary')}>Holy Rosary</a> and daily Catholic prayer. See also{' '}
+				<a href={withBase('/prayers')}>all prayers</a>.
+			</p>
+		</article>
+	</div>
+</BaseLayout>

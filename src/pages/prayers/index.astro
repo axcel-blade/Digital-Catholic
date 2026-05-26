@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import { prayers, prayersIntro } from '../../data/prayers';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Catholic Prayers"
+	description={PAGE_DESCRIPTIONS.prayers}
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--catalog">
+		<PageBack href={withBase('/')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Prayer</p>
+			<h1>Catholic Prayers</h1>
+			<p class="lead">{prayersIntro}</p>
+		</div>
+
+		<ul class="rosary-prayer-list">
+			{prayers.map((prayer) => (
+				<li class="rosary-prayer-card">
+					<a class="rosary-prayer-card__link" href={withBase(`/prayers/${prayer.slug}`)}>
+						<h2 class="rosary-prayer-card__title">{prayer.title}</h2>
+						{prayer.alsoKnownAs && (
+							<p class="rosary-prayer-card__also-known">Also called: {prayer.alsoKnownAs}</p>
+						)}
+						<blockquote class="rosary-prayer-card__text">{prayer.text}</blockquote>
+						<p class="rosary-prayer-card__excerpt">{prayer.excerpt}</p>
+						<span class="rosary-prayer-card__read">Read more →</span>
+					</a>
+				</li>
+			))}
+		</ul>
+
+		<p class="prayers-related">
+			These prayers are also used in the <a href={withBase('/rosary')}>Holy Rosary</a>, along with the
+			Glory Be, Apostles’ Creed, and other traditional prayers.
+		</p>
+	</div>
+</BaseLayout>

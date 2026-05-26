@@ -8,6 +8,7 @@ import ThemeToggle from '../components/ThemeToggle.astro';
 import SiteHeaderMenu from '../components/SiteHeaderMenu.astro';
 import SiteHeaderMenuToggle from '../components/SiteHeaderMenuToggle.astro';
 import SiteNavExplore from '../components/SiteNavExplore.astro';
+import SiteNavLink from '../components/SiteNavLink.astro';
 import SiteNavPrimary from '../components/SiteNavPrimary.astro';
 import {
 	formatPageTitle,
@@ -35,7 +36,7 @@ const {
 	jsonLd,
 } = Astro.props;
 
-const { primary: primaryNav, exploreGroup } = buildSiteNav(currentPath);
+const { primary: primaryNav, exploreGroup, contact: contactNav } = buildSiteNav(currentPath);
 
 const pageTitle = formatPageTitle(title);
 const canonicalURL = getCanonicalUrl(Astro.url);
@@ -81,12 +82,13 @@ const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
 					<div class="site-header__toolbar">
 						<SiteNavPrimary primary={primaryNav} />
 						<SiteNavExplore exploreGroup={exploreGroup} />
+						<SiteNavLink item={contactNav} />
 					</div>
 					<SiteSearch />
 					<SiteHeaderMenuToggle />
 					<ThemeToggle />
 				</div>
-				<SiteHeaderMenu primary={primaryNav} exploreGroup={exploreGroup} />
+				<SiteHeaderMenu primary={primaryNav} exploreGroup={exploreGroup} contact={contactNav} />
 			</div>
 		</header>
 

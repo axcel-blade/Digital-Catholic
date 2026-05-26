@@ -1,3 +1,8 @@
+import { getPrayerText } from '../prayers';
+
+const ourFatherText = getPrayerText('Our Father') ?? '';
+const hailMaryText = getPrayerText('Hail Mary') ?? '';
+
 export const rosaryIntro = "The Holy Rosary is a beloved prayer of the Catholic Church. On each bead we meditate on the life of Christ and His Mother while repeating the Our Father, Hail Mary, and Glory Be. The twenty mysteries are grouped into four sets, traditionally prayed on different days of the week.";
 export const rosaryHowToIntro = "The Rosary is prayed on a string of beads—a crucifix, one large bead, five sets of ten small beads (decades), and small beads between decades. You may use your fingers if you have no beads. Move slowly, speak the prayers, and pause to meditate on each mystery.";
 export const rosaryMysterySchedule = "Joyful Mysteries on Monday and Saturday; Sorrowful on Tuesday and Friday; Glorious on Wednesday and Sunday; Luminous on Thursday. Many Catholics also pray the Joyful Mysteries on Sundays during Advent and Christmas, and the Sorrowful during Lent.";
@@ -50,11 +55,13 @@ export const rosaryPrayers = [
 	},
 	{
 		"title": "Our Father",
-		"text": "Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen."
+		"text": ourFatherText,
+		"slug": "our-father"
 	},
 	{
 		"title": "Hail Mary",
-		"text": "Hail Mary, full of grace, the Lord is with thee; blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen."
+		"text": hailMaryText,
+		"slug": "hail-mary"
 	},
 	{
 		"title": "Glory Be",
