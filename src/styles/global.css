@@ -12,6 +12,7 @@
 	--font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 	--max-width: 42rem;
 	--page-width: 72rem;
+	--radius: 0.5rem;
 	color-scheme: light;
 }
 
