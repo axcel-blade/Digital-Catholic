@@ -26,9 +26,29 @@ const currentPath = Astro.url.pathname;
 				<h2 class="mass-section__heading">{section.heading}</h2>
 				<ul class="mass-item-list">
 					{section.items.map((item) => (
-						<li class="mass-item-card">
-							<h3 class="mass-item-card__name">{item.name}</h3>
-							<p class="mass-item-card__description">{item.description}</p>
+						<li class={`mass-item-card${(item as any).image || (item as any).color ? ' mass-item-card--has-media' : ''}`}>
+							{(item as any).image && (
+								<div class="mass-item-card__image-wrap">
+									<img
+										class="mass-item-card__image"
+										src={withBase((item as any).image)}
+										alt={(item as any).imageAlt ?? item.name}
+										loading="lazy"
+										decoding="async"
+									/>
+								</div>
+							)}
+							{(item as any).color && (
+								<div
+									class="mass-item-card__swatch"
+									style={`background:${(item as any).color}`}
+									aria-hidden="true"
+								/>
+							)}
+							<div class="mass-item-card__body">
+								<h3 class="mass-item-card__name">{item.name}</h3>
+								<p class="mass-item-card__description">{item.description}</p>
+							</div>
 						</li>
 					))}
 				</ul>
