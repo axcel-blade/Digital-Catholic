@@ -4,6 +4,8 @@ import PageBack from '../../components/PageBack.astro';
 import {
 	mysterySets,
 	rosaryIntro,
+	rosaryOriginIntro,
+	rosaryOriginSections,
 	rosaryHowToIntro,
 	rosaryHowToSteps,
 	rosaryMysterySchedule,
@@ -27,6 +29,17 @@ const currentPath = Astro.url.pathname;
 			<h1>Mysteries of the Rosary</h1>
 			<p class="lead">{rosaryIntro}</p>
 		</div>
+
+		<section class="rosary-origin" id="origin">
+			<h2>Origin of the Rosary</h2>
+			<p>{rosaryOriginIntro}</p>
+			{rosaryOriginSections.map((section) => (
+				<div class="rosary-origin__section">
+					<h3>{section.heading}</h3>
+					{section.paragraphs.map((p) => <p>{p}</p>)}
+				</div>
+			))}
+		</section>
 
 		<section class="rosary-how-to" id="how-to-recite">
 			<h2>How to recite the Rosary</h2>

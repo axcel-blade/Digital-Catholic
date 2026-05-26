@@ -103,7 +103,7 @@ git push origin main develop --tags
 
 - **Content:** add one file per article under `src/data/<section>/items/` (see [src/data/README.md](src/data/README.md)) — do not append to a giant shared list.
 - **Images:** saint photos in `public/saints/{slug}.jpg`; disciple portraits in `public/disciples/{slug}.jpg`; Eucharistic miracle photos in `public/eucharistic-miracles/{slug}.jpg`; Marian apparition photos in `public/marian-apparitions/{slug}.jpg`. Prefer Wikimedia Commons–licensed images.
-- **Layout & styles:** `src/layouts/`, `src/components/`, `src/styles/global.css`. Follow the tokens and principles in [frontend/README.md](frontend/README.md).
+- **Layout & styles:** `src/layouts/`, `src/components/`, `src/styles/global.css`. Follow the tokens and principles in [DESIGN.md](DESIGN.md).
 - **Search:** new items in existing sections are picked up automatically. Update `src/lib/searchIndex.ts` only if you add a wholly new section or page type.
 - **Markdown files:** always update relevant `.md` files (README, CHANGELOG, etc.) when making structural or content changes.
 

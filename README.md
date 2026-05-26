@@ -30,7 +30,7 @@ The site also includes full-text search across all sections, a light/dark theme,
 ## Built with
 
 - [Astro 6](https://astro.build) — static site generation
-- Plain CSS — no UI framework (see [frontend/README.md](frontend/README.md) for the design system)
+- Plain CSS — no UI framework (see [DESIGN.md](DESIGN.md) for the design system)
 - Client-side search — index built at compile time, no external service
 - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) — sitemap for SEO
 
