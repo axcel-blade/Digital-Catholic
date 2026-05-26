@@ -84,12 +84,12 @@ src/
 
 ## Contributing
 
-All pull requests should target the **`contribution`** branch, not `main`. Maintainers merge `contribution` into `main` when a release is ready to deploy.
+This project uses **Git Flow**. Create a `feature/*` branch from `develop`, make your changes, and open a pull request targeting **`develop`**. Maintainers cut release branches from `develop` and merge into `main` when ready to deploy.
 
 When you add content or sections, update `src/lib/searchIndex.ts`, navigation in `BaseLayout.astro`, `PAGE_DESCRIPTIONS` in `src/lib/seo.ts`, and this README as needed.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow, branch setup, and content guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow, branch model, and content guidelines.
 
 ## License
 
-See [LICENSE](LICENSE).
+See [LICENSE.md](LICENSE.md).
