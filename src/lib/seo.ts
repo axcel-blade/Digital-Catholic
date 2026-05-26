@@ -3,9 +3,9 @@ export const SITE = {
 	defaultTitle:
 		'Digital Catholic — Saints, Sacraments, Gospel, Marian Apparitions & Catholic Faith',
 	defaultDescription:
-		'Learn the Catholic faith with full saint and apostle biographies, summaries of all 73 books of the Catholic Bible, the Our Father, Hail Mary, the seven sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and how to pray the Rosary. Clear articles for prayer, formation, and sharing.',
+		'Learn the Catholic faith with full saint and apostle biographies—from birth through death—the seven sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and how to pray the Rosary. Clear articles for prayer, formation, and sharing.',
 	keywords:
-		'Catholic, Catholic faith, contact, saints, apostles, disciples of Jesus, Twelve Apostles, Peter, Paul, St. Nicholas, Santa Claus, liturgical calendar, feast days, solemnities, Advent, Lent, Easter, Carlo Acutis, Blessed Virgin Mary, Marian apparitions, Guadalupe, Lourdes, Fatima, Velankanni, India, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, Holy Bible, Catholic Bible, Old Testament, New Testament, deuterocanonical, Tobit, Maccabees, Our Father, Lord\'s Prayer, Hail Mary, Ave Maria, rosary, mysteries of the rosary, prayer, catechism, Scripture, Digital Catholic, Christian',
+		'Catholic, Catholic faith, saints, apostles, disciples of Jesus, Twelve Apostles, Peter, Paul, St. Nicholas, Santa Claus, liturgical calendar, feast days, solemnities, Advent, Lent, Easter, Carlo Acutis, Blessed Virgin Mary, Marian apparitions, Guadalupe, Lourdes, Fatima, Velankanni, India, sacraments, Baptism, Eucharist, Real Presence, Eucharistic miracles, Lanciano, miracles of Jesus, parables of Jesus, Gospel, Ten Commandments, rosary, mysteries of the rosary, prayer, catechism, Bible, Digital Catholic, Christian',
 	locale: 'en_US',
 	themeColor: '#6b2d3c',
 	themeColorDark: '#1a1816',
@@ -18,8 +18,6 @@ export const PAGE_DESCRIPTIONS = {
 	home: SITE.defaultDescription,
 	about:
 		'About Digital Catholic — a free site for saint biographies, the apostles, sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Commandments, the liturgical calendar, and the Rosary, with search and articles for faith formation.',
-	contact:
-		'Contact Digital Catholic — email the maintainer or open a GitHub issue for corrections, suggestions, or questions about this Catholic faith formation site.',
 	saints:
 		'Saint biographies for the Catholic Church — full lives from birth to death, feast days, and lessons from Mary, Joseph, Nicholas of Myra, Anthony of Padua, Carlo Acutis, and more.',
 	sacraments:
@@ -36,12 +34,10 @@ export const PAGE_DESCRIPTIONS = {
 		'Parables of Jesus Christ in the New Testament Gospels — stories of God’s Kingdom with Scripture references and lessons for discipleship.',
 	commandments:
 		'The Ten Commandments — God’s moral law given to Moses, with each commandment’s text and meaning for love of God and neighbor.',
-	bible:
-		'The Holy Bible in the Catholic canon — all 73 books with brief summaries of each book, including the deuterocanonical books, for study and faith formation.',
-	prayers:
-		'The Our Father and Hail Mary — full text and brief explanations of the Lord’s Prayer and the Hail Mary, the heart of Catholic prayer and the Rosary.',
 	mass:
 		'Items used at Mass in the Catholic Church — sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other objects used in the celebration of the Eucharist.',
+	rosaryOrigin:
+		'The origin of the Holy Rosary — from the early monastic psalter through St. Dominic, the Battle of Lepanto, the Rosary Popes, and the Luminous Mysteries added by Pope John Paul II.',
 	rosary:
 		'How to recite the Holy Rosary, the traditional prayers, and the twenty mysteries — Joyful, Sorrowful, Glorious, and Luminous — for meditation and prayer.',
 	liturgicalCalendar:

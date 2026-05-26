@@ -4,8 +4,6 @@ import PageBack from '../../components/PageBack.astro';
 import {
 	mysterySets,
 	rosaryIntro,
-	rosaryOriginIntro,
-	rosaryOriginSections,
 	rosaryHowToIntro,
 	rosaryHowToSteps,
 	rosaryMysterySchedule,
@@ -28,18 +26,8 @@ const currentPath = Astro.url.pathname;
 			<p class="hero__tagline">Prayer</p>
 			<h1>Mysteries of the Rosary</h1>
 			<p class="lead">{rosaryIntro}</p>
+			<p><a class="cta-link" href={withBase('/rosary/origin')}>Read the origin of the Rosary →</a></p>
 		</div>
-
-		<section class="rosary-origin" id="origin">
-			<h2>Origin of the Rosary</h2>
-			<p>{rosaryOriginIntro}</p>
-			{rosaryOriginSections.map((section) => (
-				<div class="rosary-origin__section">
-					<h3>{section.heading}</h3>
-					{section.paragraphs.map((p) => <p>{p}</p>)}
-				</div>
-			))}
-		</section>
 
 		<section class="rosary-how-to" id="how-to-recite">
 			<h2>How to recite the Rosary</h2>
@@ -64,22 +52,11 @@ const currentPath = Astro.url.pathname;
 
 		<section class="rosary-prayers" id="rosary-prayers">
 			<h2>Prayers of the Rosary</h2>
-			<p>
-				These are the words most often prayed while reciting the Rosary. Read the{' '}
-				<a href={withBase('/prayers/our-father')}>Our Father</a> and{' '}
-				<a href={withBase('/prayers/hail-mary')}>Hail Mary</a> with brief explanations, or browse{' '}
-				<a href={withBase('/prayers')}>all prayers</a>.
-			</p>
+			<p>These are the words most often prayed while reciting the Rosary.</p>
 			<ul class="rosary-prayer-list">
 				{rosaryPrayers.map((prayer) => (
 					<li class="rosary-prayer-card">
-						<h3 class="rosary-prayer-card__title">
-							{'slug' in prayer && prayer.slug ? (
-								<a href={withBase(`/prayers/${prayer.slug}`)}>{prayer.title}</a>
-							) : (
-								prayer.title
-							)}
-						</h3>
+						<h3 class="rosary-prayer-card__title">{prayer.title}</h3>
 						<blockquote class="rosary-prayer-card__text">{prayer.text}</blockquote>
 					</li>
 				))}
