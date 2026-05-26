@@ -1,8 +1,6 @@
-import { bibleBooks, bibleIntro } from '../data/bible';
 import { commandments, commandmentsIntro } from '../data/commandments';
 import { massIntro, massSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
-import { prayers, prayersIntro } from '../data/prayers';
 import {
 	mysterySets,
 	rosaryHowToIntro,
@@ -73,13 +71,6 @@ export function buildSearchIndex(): SearchEntry[] {
 			[
 				'learning site Catholic faith biography sacraments knowledge sharing',
 			]
-		),
-		entry(
-			'Contact',
-			withBase('/contact'),
-			'Contact',
-			'Reach the maintainer with corrections, suggestions, or questions.',
-			['contact email feedback github issues corrections suggestions'],
 		),
 		entry(
 			'Saints',
@@ -153,29 +144,6 @@ export function buildSearchIndex(): SearchEntry[] {
 			[commandmentsIntro, ...commandments.map((c) => joinParts(c.title, c.text, c.meaning))],
 		),
 		entry(
-			'Holy Bible',
-			withBase('/bible'),
-			'Scripture',
-			bibleIntro,
-			[
-				bibleIntro,
-				'Catholic canon 73 books Old Testament New Testament deuterocanonical',
-				...bibleBooks.map((b) =>
-					joinParts(b.title, b.abbreviation, b.excerpt, sectionsText(b.sections))
-				),
-			],
-		),
-		entry(
-			'Catholic Prayers',
-			withBase('/prayers'),
-			'Prayers',
-			prayersIntro,
-			[
-				prayersIntro,
-				...prayers.map((p) => joinParts(p.title, p.alsoKnownAs, p.excerpt, p.text, sectionsText(p.sections))),
-			],
-		),
-		entry(
 			'Items Used at Mass',
 			withBase('/mass'),
 			'Mass',
@@ -186,14 +154,22 @@ export function buildSearchIndex(): SearchEntry[] {
 			],
 		),
 		entry(
+			'Origin of the Rosary',
+			withBase('/rosary/origin'),
+			'Rosary',
+			rosaryOriginIntro,
+			[
+				rosaryOriginIntro,
+				...rosaryOriginSections.flatMap((s) => [s.heading, ...s.paragraphs]),
+			],
+		),
+		entry(
 			'Mysteries of the Rosary',
 			withBase('/rosary'),
 			'Rosary',
 			rosaryIntro,
 			[
 				rosaryIntro,
-				rosaryOriginIntro,
-				...rosaryOriginSections.flatMap((s) => [s.heading, ...s.paragraphs]),
 				rosaryHowToIntro,
 				rosaryMysterySchedule,
 				...rosaryHowToSteps.map((s) => joinParts(s.title, s.description)),
@@ -241,36 +217,6 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Saint',
 				saint.excerpt,
 				[saint.lifeDates ?? '', saint.feastDays ?? '', sectionsText(saint.sections)]
-			)
-		);
-	}
-
-	for (const prayer of prayers) {
-		items.push(
-			entry(
-				prayer.title,
-				withBase(`/prayers/${prayer.slug}`),
-				'Prayer',
-				prayer.excerpt,
-				[prayer.alsoKnownAs ?? '', prayer.text, sectionsText(prayer.sections)]
-			)
-		);
-	}
-
-	for (const book of bibleBooks) {
-		items.push(
-			entry(
-				book.title,
-				withBase(`/bible/${book.slug}`),
-				'Scripture',
-				book.excerpt,
-				[
-					book.abbreviation,
-					book.testament,
-					book.category,
-					book.deuterocanonical ? 'deuterocanonical' : '',
-					sectionsText(book.sections),
-				]
 			)
 		);
 	}

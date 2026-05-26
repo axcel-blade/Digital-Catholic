@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBack from '../../components/PageBack.astro';
+import { rosaryOriginIntro, rosaryOriginSections } from '../../data/rosary';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout
+	title="Origin of the Rosary"
+	description={PAGE_DESCRIPTIONS.rosaryOrigin}
+	currentPath={currentPath}
+>
+	<div class="page-content page-content--catalog">
+		<PageBack href={withBase('/rosary')} />
+		<div class="catalog-hero">
+			<p class="hero__tagline">Rosary</p>
+			<h1>Origin of the Rosary</h1>
+			<p class="lead">{rosaryOriginIntro}</p>
+		</div>
+
+		{rosaryOriginSections.map((section) => (
+			<section class="rosary-origin-section">
+				<h2>{section.heading}</h2>
+				{section.paragraphs.map((p) => <p>{p}</p>)}
+			</section>
+		))}
+
+		<p class="rosary-origin-cta">
+			<a class="cta-link" href={withBase('/rosary')}>Pray the Rosary — mysteries, prayers, and how to recite →</a>
+		</p>
+	</div>
+</BaseLayout>
