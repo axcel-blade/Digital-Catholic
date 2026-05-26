@@ -1,40 +1,46 @@
 # Digital Catholic
 
-A static website for learning and sharing the Catholic faith—saint biographies, summaries of all 73 books of the Catholic Bible, the apostles and disciples of Jesus, the sacraments, Gospel miracles and parables, Eucharistic miracles, Marian apparitions, the Ten Commandments, the liturgical calendar, and the Holy Rosary—presented in clear language for prayer, formation, and everyday reading.
+A static website for learning and sharing the Catholic faith — presented in clear language for prayer, formation, and everyday reading.
 
 **Live site:** [https://axcel-blade.github.io/Digital-Catholic/](https://axcel-blade.github.io/Digital-Catholic/)
 
-## What’s on the site
+---
 
-| Section | Description |
+## What it covers
+
+| Section | What you'll find |
 | --- | --- |
-| **Saints** | Full biographies of holy men and women—from birth through death and legacy—including the Blessed Virgin Mary, St. Joseph, St. Nicholas of Myra, St. Anthony of Padua, and St. Carlo Acutis, with feast days and lessons for daily life. |
-| **Disciples of Jesus** | The Twelve Apostles—Peter, Andrew, James, John, and the rest—with full life stories, how each died, Gospel accounts, feast days, and lessons for discipleship. |
-| **Sacraments** | Articles on all seven sacraments—what the Church teaches, how they are celebrated, and why they matter. |
-| **Miracles of Jesus** | Gospel accounts of Christ’s miracles in Matthew, Mark, Luke, and John, with Scripture references and reflections. |
-| **Eucharistic Miracles** | Events in which the consecrated Host witnesses to the Real Presence—from Lanciano and Bolsena to modern shrines. |
-| **Marian Apparitions** | Our Lady appearing to the faithful in the real world—Guadalupe, Lourdes, Fátima, Velankanni in India, Knock, and other approved shrines. |
-| **Parables of Jesus** | Stories of the Kingdom from the Gospels—mercy, prayer, discipleship, and conversion. |
-| **Ten Commandments** | The moral law with each commandment’s text and a brief explanation. |
-| **Holy Bible** | All 73 books of the Catholic canon—brief summaries of each book (not full Scripture text). |
-| **Prayers** | The Our Father (Lord’s Prayer) and Hail Mary—full text and brief explanations. |
-| **Rosary** | How to recite the Rosary, the traditional prayers, and the twenty mysteries (Joyful, Sorrowful, Glorious, Luminous). |
-| **Liturgical Calendar** | Solemnities, feasts, and memorials from the General Roman Calendar, moveable celebrations from Easter, and liturgical seasons (Advent, Christmas, Lent, Easter, Ordinary Time). |
+| **Saints** | Biographies of holy men and women with feast days and legacies |
+| **Disciples of Jesus** | The Twelve Apostles — life stories, deaths, Gospel accounts, and feast days |
+| **Sacraments** | All seven sacraments — what the Church teaches and how each is celebrated |
+| **Miracles of Jesus** | Gospel accounts with Scripture references and reflections |
+| **Eucharistic Miracles** | Events witnessing to the Real Presence, from Lanciano to modern shrines |
+| **Marian Apparitions** | Approved apparition sites — Guadalupe, Lourdes, Fátima, Knock, and others |
+| **Parables of Jesus** | Stories of the Kingdom from the Gospels |
+| **Ten Commandments** | The moral law with the text and meaning of each commandment |
+| **Holy Bible** | Summaries of all 73 books of the Catholic canon |
+| **Prayers** | The Our Father and Hail Mary — full text and explanation |
+| **Rosary** | How to pray the Rosary, the traditional prayers, and all twenty mysteries |
+| **Liturgical Calendar** | Solemnities, feasts, memorials, and liturgical seasons by year |
 
-**Site features:** header navigation (Home, About, Explore, Contact), a Contact page with email and GitHub links, search across all sections, light/dark theme (saved in your browser), and a responsive layout for mobile and desktop.
+The site also includes full-text search across all sections, a light/dark theme, and a responsive layout for mobile and desktop.
 
-## Tech stack
+---
 
-- [Astro](https://astro.build) 6 — static site generation
+## Built with
+
+- [Astro 6](https://astro.build) — static site generation
+- Plain CSS — no UI framework (see [frontend/README.md](frontend/README.md) for the design system)
+- Client-side search — index built at compile time, no external service
 - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) — sitemap for SEO
-- Plain CSS — no UI framework
-- Client-side search — built at compile time from site content (no external search service)
 
-Content lives in TypeScript modules under `src/data/`—**one file per saint, miracle, sacrament, etc.**—and is loaded automatically via each section’s `index.ts`. See [src/data/README.md](src/data/README.md) for how to add articles. Default meta titles, descriptions, and keywords are centralized in `src/lib/seo.ts` (`SITE` and `PAGE_DESCRIPTIONS`); update those when you add or rename major sections.
+All content lives in TypeScript modules under `src/data/` — one file per article, loaded automatically via each section's `index.ts`.
 
-## Getting started
+---
 
-**Requirements:** Node.js 22.12 or newer
+## Running locally
+
+**Requires:** Node.js 22.12 or newer
 
 ```sh
 git clone https://github.com/axcel-blade/Digital-Catholic.git
@@ -43,53 +49,43 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:4321](http://localhost:4321). Paths respect `BASE_URL` when you build for GitHub Pages (see below).
+Open [http://localhost:4321](http://localhost:4321).
 
-### Scripts
-
-| Command | Description |
+| Command | What it does |
 | --- | --- |
 | `npm run dev` | Start the development server |
 | `npm run build` | Production build to `dist/` |
 | `npm run preview` | Serve the production build locally |
 
-### Build for GitHub Pages (project site)
-
-For a repository named `Digital-Catholic` under a user/org Pages host:
-
-```sh
-ASTRO_SITE=https://<your-username>.github.io ASTRO_BASE=/Digital-Catholic/ npm run build
-```
-
-For a `username.github.io` repository, use `ASTRO_BASE=/` instead.
+---
 
 ## Project structure
 
-```text
-public/                 Static assets (favicon, robots.txt, saint and disciple images)
+```
+public/               Static assets — favicon, robots.txt, images
 src/
-  components/           SEO head, search, theme toggle, header menu
-  data/                 Per-item content files (saints/, miracles/, etc.) — see data/README.md
-  layouts/              Base and article layouts
-  lib/                  Paths, SEO helpers, search index
-  pages/                Routes (home, about, contact, saints, sacraments, etc.)
-  styles/               Global CSS (light/dark themes)
-.github/workflows/      CI build and CD deploy to GitHub Pages
+  components/         SEO head, search, theme toggle, navigation
+  data/               Content files — one .ts per article per section
+  layouts/            Base and article page layouts
+  lib/                Path helpers, SEO config, search index builder
+  pages/              Routes — home, about, contact, and all section pages
+  styles/             global.css — light and dark themes
+frontend/             Design system documentation
+.github/workflows/    CI (build check) and CD (deploy to GitHub Pages)
 ```
 
-## Deployment
+See [src/data/README.md](src/data/README.md) for how to add or edit content. SEO titles and descriptions are centralized in `src/lib/seo.ts`.
 
-- **CI** runs on pushes to `main` and `contribution`, and on pull requests targeting those branches.
-- **CD** deploys the `dist/` folder to **GitHub Pages** only when `main` is updated. The workflow sets `ASTRO_SITE` and `ASTRO_BASE` automatically for project vs. user Pages sites.
+---
 
-## Contributing
+## Contributing and support
 
-This project uses **Git Flow**. Create a `feature/*` branch from `develop`, make your changes, and open a pull request targeting **`develop`**. Maintainers cut release branches from `develop` and merge into `main` when ready to deploy.
-
-When you add content or sections, update `src/lib/searchIndex.ts`, navigation in `BaseLayout.astro`, `PAGE_DESCRIPTIONS` in `src/lib/seo.ts`, and this README as needed.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow, branch model, and content guidelines.
+- Contribution workflow: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Bug reports and content requests: [GitHub Issues](https://github.com/axcel-blade/Digital-Catholic/issues)
+- Help and contact: [SUPPORT.md](SUPPORT.md)
+- Planned work: [ROADMAP.md](ROADMAP.md) · [TODO.md](TODO.md)
+- Change history: [CHANGELOG.md](CHANGELOG.md)
 
 ## License
 
-See [LICENSE.md](LICENSE.md).
+[MIT](LICENSE.md)
