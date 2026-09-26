@@ -3,14 +3,15 @@ import type { Saint } from '../types';
 const saint: Saint = {
 	"slug": "archbishop-fulton-j-sheen",
 	"title": "Archbishop Fulton J. Sheen",
+	"status": "Blessed",
 	"excerpt": "American bishop, scholar, and pioneering broadcaster—through radio, television, and dozens of books he brought the Catholic faith into millions of homes, and he never missed his daily Holy Hour before the Blessed Sacrament.",
 	"lifeDates": "1895–1979",
 	"sections": [
 		{
 			"heading": "Who is Archbishop Fulton J. Sheen?",
 			"paragraphs": [
-				"Venerable Fulton John Sheen was born in El Paso, Illinois, on May 8, 1895, and raised in nearby Peoria. A brilliant philosopher, priest, and bishop, he became one of the best-known Catholics in twentieth-century America through his radio sermons, his Emmy-winning television series, and his many books.",
-				"Sheen died in New York on December 9, 1979. Pope Benedict XVI declared him Venerable in 2012, recognizing that he lived the Christian virtues to a heroic degree. His cause for beatification is ongoing, and Catholics around the world ask his intercession."
+				"Blessed Fulton John Sheen was born in El Paso, Illinois, on May 8, 1895, and raised in nearby Peoria. A brilliant philosopher, priest, and bishop, he became one of the best-known Catholics in twentieth-century America through his radio sermons, his Emmy-winning television series, and his many books.",
+				"Sheen died in New York on December 9, 1979. Pope Benedict XVI declared him Venerable in 2012, recognizing that he lived the Christian virtues to a heroic degree. He was beatified in St. Louis, Missouri, on September 24, 2026, and Catholics around the world ask his intercession as his cause for canonization continues."
 			]
 		},
 		{
@@ -39,14 +40,14 @@ const saint: Saint = {
 			"heading": "Death and legacy",
 			"paragraphs": [
 				"In October 1979, Pope St. John Paul II embraced Sheen at St. Patrick’s Cathedral in New York and told him he had written and spoken well of the Lord Jesus and was a loyal son of the Church. Two months later, on December 9, 1979, Sheen was found dead in his private chapel before the Blessed Sacrament. He was first buried in the crypt of St. Patrick’s Cathedral.",
-				"His cause for canonization was opened by the Diocese of Peoria in 2002, and he was declared Venerable on June 28, 2012. In 2019 Pope Francis approved a miracle attributed to his intercession—the recovery of a newborn boy who showed no signs of life for over an hour after birth—and that same year his remains were transferred to St. Mary’s Cathedral in Peoria, where he had served Mass as a boy. His recorded talks and books continue to reach new audiences today."
+				"His cause for canonization was opened by the Diocese of Peoria in 2002, and he was declared Venerable on June 28, 2012. In 2019 Pope Francis approved a miracle attributed to his intercession—the recovery of a newborn boy who showed no signs of life for over an hour after birth—and that same year his remains were transferred to St. Mary’s Cathedral in Peoria, where he had served Mass as a boy. He was beatified on September 24, 2026, at a Mass in St. Louis presided over by Cardinal Luis Antonio Tagle, becoming the first American-born bishop to be named Blessed. One more verified miracle is required for his canonization as a saint. His recorded talks and books continue to reach new audiences today."
 			]
 		},
 		{
 			"heading": "Lessons for us today",
 			"paragraphs": [
 				"Sheen shows that the Gospel belongs in every public square—on the radio, on television, and now online—and that modern media can be used to lead people to Christ. He spoke with humor, charity, and clarity, never talking down to his listeners.",
-				"Above all, his fruitfulness flowed from one hidden hour each day with Jesus in the Eucharist. If you feel too busy to pray, Venerable Fulton Sheen invites you to begin with a Holy Hour and let the Lord do the rest."
+				"Above all, his fruitfulness flowed from one hidden hour each day with Jesus in the Eucharist. If you feel too busy to pray, Blessed Fulton Sheen invites you to begin with a Holy Hour and let the Lord do the rest."
 			]
 		}
 	]

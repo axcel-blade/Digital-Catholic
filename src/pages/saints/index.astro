@@ -2,7 +2,7 @@
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import EntryCard from '../../components/EntryCard.astro';
 import EmptyState from '../../components/EmptyState.astro';
-import { saints, getSaintImageAlt } from '../../data/saints';
+import { saints, getSaintImageAlt, getSaintStatus } from '../../data/saints';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 import { getCollectionImage } from '../../lib/images';
@@ -16,7 +16,7 @@ const currentPath = Astro.url.pathname;
 	title="Saints"
 	description={PAGE_DESCRIPTIONS.saints}
 	currentPath={currentPath}
-	intro="Read the lives of the saints—their faith, trials, and love of God—so their example may guide your own journey in Christ."
+	intro="Read the lives of the saints, and of holy men and women on the path to canonization—their faith, trials, and love of God—so their example may guide your own journey in Christ."
 	count={`${saints.length} ${saints.length === 1 ? 'biography' : 'biographies'}`}
 >
 	{saints.length === 0 ? (
@@ -27,7 +27,7 @@ const currentPath = Astro.url.pathname;
 				<EntryCard
 					href={withBase(`/saints/${saint.slug}`)}
 					title={saint.title}
-					label="Saint"
+					label={getSaintStatus(saint)}
 					meta={saint.feastDays ? `Feast: ${saint.feastDays}` : saint.lifeDates}
 					excerpt={saint.excerpt}
 					action="Read biography"

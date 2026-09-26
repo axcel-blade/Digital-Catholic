@@ -21,7 +21,7 @@ import {
 	liturgicalCalendarIntro,
 	liturgicalSeasonsIntro,
 } from '../data/liturgical-calendar';
-import { saints } from '../data/saints';
+import { saints, getSaintStatus } from '../data/saints';
 import { bibleBooks, bibleIntro, testamentLabels } from '../data/bible';
 import { prayers, prayersIntro } from '../data/prayers';
 import { withBase } from './paths';
@@ -235,7 +235,7 @@ export function buildSearchIndex(): SearchEntry[] {
 			entry(
 				saint.title,
 				withBase(`/saints/${saint.slug}`),
-				'Saint',
+				getSaintStatus(saint),
 				saint.excerpt,
 				[saint.lifeDates ?? '', saint.feastDays ?? '', sectionsText(saint.sections)]
 			)
