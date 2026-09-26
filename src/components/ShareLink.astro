@@ -1,0 +1,58 @@
+---
+interface Props {
+	url: string;
+	title: string;
+}
+
+const { url, title } = Astro.props;
+---
+
+<div class="share-link" data-share-link data-url={url} data-title={title}>
+	<button type="button" class="share-link__button" data-share-copy>
+		<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"></path></svg>
+		<span>Copy link</span>
+	</button>
+	<span class="share-link__status" role="status" aria-live="polite"></span>
+</div>
+
+<script>
+	function copyFallback(text: string) {
+		const field = document.createElement('textarea');
+		field.value = text;
+		field.setAttribute('readonly', '');
+		field.style.position = 'fixed';
+		field.style.opacity = '0';
+		document.body.append(field);
+		field.select();
+		let ok = false;
+		try {
+			ok = document.execCommand('copy');
+		} catch {
+			ok = false;
+		}
+		field.remove();
+		return ok;
+	}
+
+	document.querySelectorAll<HTMLElement>('[data-share-link]').forEach((root) => {
+		const button = root.querySelector<HTMLButtonElement>('[data-share-copy]');
+		const status = root.querySelector<HTMLElement>('.share-link__status');
+		const url = root.dataset.url ?? window.location.href;
+		let resetId = 0;
+
+		button?.addEventListener('click', async () => {
+			let ok = false;
+			try {
+				await navigator.clipboard.writeText(url);
+				ok = true;
+			} catch {
+				ok = copyFallback(url);
+			}
+			if (status) {
+				status.textContent = ok ? 'Link copied.' : `Copy this link: ${url}`;
+				window.clearTimeout(resetId);
+				if (ok) resetId = window.setTimeout(() => (status.textContent = ''), 3000);
+			}
+		});
+	});
+</script>

@@ -8,6 +8,8 @@ const marianApparition: MarianApparition = {
 	"date": "1830",
 	"excerpt": "Mary appeared to St. Catherine Labouré and revealed the design of the medal that bears rays of grace from her hands.",
 	"imageAlt": "Chapel of Our Lady of the Miraculous Medal on Rue du Bac in Paris, where St. Catherine Labouré saw Mary",
+	"churchStatus": "approved",
+	"statusNote": "Archbishop Hyacinthe-Louis de Quélen of Paris approved the devotion in 1836 after investigation.",
 	"sections": [
 		{
 			"heading": "What happened",

@@ -1,3 +1,5 @@
+import type { TrustInfo } from '../lib/trust';
+
 export type EucharisticMiracleCategory =
 	| 'Host transformed'
 	| 'Bleeding host'
@@ -9,7 +11,7 @@ export interface EucharisticMiracleSection {
 	paragraphs: string[];
 }
 
-export interface EucharisticMiracle {
+export interface EucharisticMiracle extends TrustInfo {
 	slug: string;
 	title: string;
 	category: EucharisticMiracleCategory;

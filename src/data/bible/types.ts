@@ -1,3 +1,5 @@
+import type { TrustInfo } from '../lib/trust';
+
 export interface BibleBookSection {
 	heading: string;
 	paragraphs: string[];
@@ -16,7 +18,7 @@ export type BibleCategory =
 	| 'catholic-epistles'
 	| 'apocalyptic';
 
-export interface BibleBook {
+export interface BibleBook extends TrustInfo {
 	/** Canonical order in the Catholic Bible (1–73) */
 	order: number;
 	slug: string;

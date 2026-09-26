@@ -1,142 +1,291 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { PAGE_DESCRIPTIONS } from '../lib/seo';
+import {
+	buildLiturgicalYear,
+	formatCalendarDate,
+	liturgicalSeasonsIntro,
+} from '../data/liturgical-calendar';
+import { PAGE_DESCRIPTIONS, SITE, getAbsoluteUrl } from '../lib/seo';
 import { withBase } from '../lib/paths';
+import { sectionGroups, getSectionsInGroup, siteSections } from '../lib/sections';
 
 const currentPath = Astro.url.pathname;
 
-const topics = [
-	{
-		href: '/saints',
-		category: 'Saints',
-		title: 'Saint Biographies',
-		excerpt:
-			'Biographies of holy men and women whose lives witness to Christ and inspire us in prayer and daily living.',
-		readLabel: 'Read biographies →',
-	},
-	{
-		href: '/sacraments',
-		category: 'Sacraments',
-		title: 'The Seven Sacraments',
-		excerpt:
-			'Teaching on the seven sacraments—what they are, why they matter, and how they draw us into God’s grace.',
-		readLabel: 'Read articles →',
-	},
-	{
-		href: '/disciples',
-		category: 'Gospels',
-		title: 'Disciples of Jesus',
-		excerpt:
-			'The Twelve Apostles—Peter, Andrew, James, John, and the rest—who lived with Christ and carried the Gospel to the world.',
-		readLabel: 'Read the apostles →',
-	},
-	{
-		href: '/miracles',
-		category: 'Gospels',
-		title: 'Miracles of Jesus',
-		excerpt:
-			'Extraordinary signs in Matthew, Mark, Luke, and John that reveal Christ’s glory and call us to faith.',
-		readLabel: 'Read the miracles →',
-	},
-	{
-		href: '/eucharistic-miracles',
-		category: 'Eucharist',
-		title: 'Eucharistic Miracles',
-		excerpt:
-			'Hosts and blood that witness to the Real Presence—from Lanciano and Bolsena to shrines studied in our own time.',
-		readLabel: 'Read the miracles →',
-	},
-	{
-		href: '/marian-apparitions',
-		category: 'Blessed Virgin Mary',
-		title: 'Marian Apparitions',
-		excerpt:
-			'Our Lady appearing to the faithful in the real world—at Guadalupe, Lourdes, Fátima, Velankanni in India, Knock, and other shrines the Church has approved for devotion.',
-		readLabel: 'Read the apparitions →',
-	},
-	{
-		href: '/parables',
-		category: 'Gospels',
-		title: 'Parables of Jesus',
-		excerpt:
-			'Stories of the Kingdom in the Gospels that teach mercy, prayer, discipleship, and the love of God.',
-		readLabel: 'Read the parables →',
-	},
-	{
-		href: '/commandments',
-		category: 'Commandments',
-		title: 'Ten Commandments',
-		excerpt:
-			'The moral law given to Moses—how we love God with our whole heart and our neighbor as ourselves.',
-		readLabel: 'Read the Commandments →',
-	},
-	{
-		href: '/mass',
-		category: 'Worship',
-		title: 'Items Used at Mass',
-		excerpt:
-			'Sacred vessels, vestments, linens, liturgical books, and other objects used in the celebration of the Eucharist — and what each one means.',
-		readLabel: 'Explore items →',
-	},
-	{
-		href: '/rosary/origin',
-		category: 'Rosary',
-		title: 'Origin of the Rosary',
-		excerpt:
-			'How the Rosary came to be — from early monastic prayer beads through St. Dominic, the Battle of Lepanto, and the Luminous Mysteries.',
-		readLabel: 'Read the history →',
-	},
-	{
-		href: '/rosary',
-		category: 'Rosary',
-		title: 'Mysteries of the Rosary',
-		excerpt:
-			'How to pray the Rosary, the traditional prayers, and the twenty mysteries for meditation.',
-		readLabel: 'Read & pray →',
-	},
-	{
-		href: '/liturgical-calendar',
-		category: 'Worship',
-		title: 'Liturgical Calendar',
-		excerpt:
-			'Solemnities, feasts, and seasons of the Church year—from Advent and Lent to Easter and Ordinary Time.',
-		readLabel: 'View the calendar →',
-	},
+const pathwayActions: Record<string, { href: string; label: string }> = {
+	learn: { href: '/bible', label: 'Begin with the Holy Bible' },
+	pray: { href: '/rosary', label: 'Learn to pray the Rosary' },
+	explore: { href: '/disciples', label: 'Meet the Twelve Apostles' },
+};
+
+const pathways = sectionGroups.map((group) => ({
+	...group,
+	sections: getSectionsInGroup(group.key),
+	action: pathwayActions[group.key],
+}));
+
+// Featured calendar: a year overview computed at build time. "Today" details
+// are filled in by the visitor's own browser, never baked into the page.
+const calendarYear = new Date().getFullYear();
+const yearData = buildLiturgicalYear(calendarYear);
+const allDays = yearData.months.flatMap((m) => m.days);
+const landmarkTitles = [
+	'Ash Wednesday',
+	'Easter Sunday of the Resurrection of the Lord',
+	'Pentecost Sunday',
+	'First Sunday of Advent',
+	'The Nativity of the Lord (Christmas)',
 ];
+const landmarks = landmarkTitles
+	.map((title) => allDays.find((d) => d.title === title))
+	.filter((d): d is NonNullable<typeof d> => Boolean(d))
+	.sort((a, b) => a.date.localeCompare(b.date));
+const seasonColor: Record<string, string> = {
+	Advent: 'purple',
+	Christmas: 'white',
+	'Christmas (continued)': 'white',
+	Lent: 'purple',
+	Easter: 'white',
+	'Ordinary Time (early)': 'green',
+	'Ordinary Time (late)': 'green',
+};
+const celebrations = allDays
+	.filter((d) => d.rank === 'solemnity' || d.rank === 'feast')
+	.map((d) => ({ date: d.date, title: d.title, rank: d.rank }));
+
+const websiteJsonLd = {
+	'@type': 'WebPage',
+	name: SITE.defaultTitle,
+	url: getAbsoluteUrl(withBase('/')),
+	description: PAGE_DESCRIPTIONS.home,
+	isPartOf: { '@type': 'WebSite', name: SITE.name },
+};
 ---
 
 <BaseLayout
 	title="Digital Catholic"
 	description={PAGE_DESCRIPTIONS.home}
 	currentPath={currentPath}
+	jsonLd={websiteJsonLd}
 >
-	<div class="page-content page-content--catalog">
-		<section class="catalog-hero">
-			<p class="hero__tagline">Welcome</p>
-			<h1>Digital Catholic</h1>
-			<p class="lead">
-				A place to explore the Catholic faith through the lives of the saints, the sacraments,
-				and God’s law—shared clearly so everyone can learn and grow.
-			</p>
-		</section>
+	<section class="hero" aria-labelledby="hero-title">
+		<div class="container hero__inner">
+			<div class="hero__text">
+				<p class="eyebrow">A Catholic digital library</p>
+				<h1 class="hero__title" id="hero-title">
+					Learn the faith. <span class="hero__line">Pray with the Church.</span>
+					<span class="hero__line">Live it daily.</span>
+				</h1>
+				<p class="hero__lead">
+					Clear Catholic resources for Scripture, saints, sacraments, prayer, and the liturgical
+					year—made for quiet reading and everyday growth.
+				</p>
+				<div class="hero__actions">
+					<a class="button button--primary" href="#pathways">Find your starting point</a>
+					<a class="button button--secondary" href="#church-year">See today’s focus</a>
+				</div>
+				<p class="hero__stats">
+					<span>{siteSections.length} content areas</span>
+					<span aria-hidden="true">·</span>
+					<span>Free to read</span>
+					<span aria-hidden="true">·</span>
+					<span>Search on every page</span>
+				</p>
+			</div>
 
-		<ul class="blog-grid blog-grid--catalog">
-			{topics.map((topic) => (
-				<li class="blog-card">
-					<a class="blog-card__link" href={withBase(topic.href)}>
-						<div class="blog-card__body">
-							<span class="blog-card__category">{topic.category}</span>
-							<h2 class="blog-card__title">{topic.title}</h2>
-							<p class="blog-card__excerpt">{topic.excerpt}</p>
-							<span class="blog-card__read">{topic.readLabel}</span>
-						</div>
-					</a>
-				</li>
-			))}
-		</ul>
+			<div class="hero__art" aria-hidden="true">
+				<svg viewBox="0 0 360 400" width="360" height="400" focusable="false">
+					<g fill="none" stroke="var(--color-gold)" stroke-width="1">
+						<circle cx="180" cy="170" r="150" opacity="0.35"></circle>
+						<circle cx="180" cy="170" r="118" opacity="0.5"></circle>
+						<path d="M180 20v300M30 170h300" opacity="0.25"></path>
+						<path d="M74 64l212 212M286 64L74 276" opacity="0.15"></path>
+					</g>
+					<path
+						d="M96 380V178a84 84 0 0 1 168 0v202Z"
+						fill="var(--color-brand-fill)"
+					></path>
+					<path
+						d="M112 380V180a68 68 0 0 1 136 0v200"
+						fill="none"
+						stroke="var(--color-gold)"
+						stroke-width="1.5"
+						opacity="0.8"
+					></path>
+					<path
+						d="M180 150v150M140 196h80"
+						stroke="var(--color-brand-on)"
+						stroke-width="10"
+						stroke-linecap="round"
+					></path>
+					<path d="M60 380h240" stroke="var(--color-gold)" stroke-width="2" stroke-linecap="round"></path>
+					<g fill="var(--color-gold)">
+						<circle cx="180" cy="120" r="3"></circle>
+						<circle cx="180" cy="104" r="2"></circle>
+					</g>
+				</svg>
+			</div>
+		</div>
+	</section>
 
-		<p class="home-about">
-			<a class="cta-link" href={withBase('/about')}>Learn more about this site →</a>
-		</p>
-	</div>
+	<section class="band" id="pathways" aria-labelledby="pathways-title">
+		<div class="container">
+			<header class="band__header">
+				<p class="eyebrow">Guided pathways</p>
+				<h2 class="band__title" id="pathways-title">Find your starting point</h2>
+				<p class="band__intro">
+					Three ways into the library, whether you are studying the faith, deepening your prayer, or
+					simply curious.
+				</p>
+			</header>
+
+			<ul class="pathways">
+				{pathways.map((pathway) => (
+					<li class={`pathway pathway--${pathway.key}`} id={pathway.anchor}>
+						<p class="pathway__kicker">{pathway.sections.length} sections</p>
+						<h3 class="pathway__title">{pathway.label}</h3>
+						<p class="pathway__summary">{pathway.summary}</p>
+						<ul class="pathway__links">
+							{pathway.sections.map((section) => (
+								<li><a href={withBase(section.href)}>{section.title}</a></li>
+							))}
+						</ul>
+						<a class="pathway__action" href={withBase(pathway.action.href)}>
+							{pathway.action.label} <span aria-hidden="true">→</span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</section>
+
+	<section class="band band--alt" id="church-year" aria-labelledby="church-year-title">
+		<div class="container featured">
+			<div class="featured__text">
+				<p class="eyebrow">Featured · Liturgical Calendar</p>
+				<h2 class="band__title" id="church-year-title">Walk through the year with the Church</h2>
+				<p>{liturgicalSeasonsIntro}</p>
+				<p>
+					The calendar lists solemnities, feasts, and memorials of the General Roman Calendar, with
+					links to the saints whose lives you can read here. Local observances may differ; confirm
+					with your diocese or parish.
+				</p>
+				<a class="button button--primary" href={withBase('/liturgical-calendar')}>
+					Open the {calendarYear} calendar
+				</a>
+			</div>
+
+			<div class="season-panel" data-season-panel>
+				<div class="season-panel__today" data-today hidden>
+					<p class="season-panel__kicker">Today</p>
+					<p class="season-panel__date" data-today-date></p>
+					<p class="season-panel__season" data-today-season></p>
+					<p class="season-panel__celebration" data-today-celebration></p>
+					<p class="season-panel__next" data-today-next></p>
+				</div>
+
+				<p class="season-panel__kicker">The Church year {calendarYear}</p>
+				<p class="season-panel__easter">
+					Easter Sunday falls on <strong>{formatCalendarDate(yearData.easter)}</strong>
+				</p>
+				<ol class="season-panel__timeline">
+					{landmarks.map((day) => (
+						<li>
+							<time datetime={day.date}>{formatCalendarDate(day.date)}</time>
+							<span>{day.title}</span>
+						</li>
+					))}
+				</ol>
+				<p class="season-panel__kicker season-panel__kicker--spaced">Seasons</p>
+				<ul class="season-panel__seasons">
+					{yearData.seasons.map((season) => (
+						<li>
+							{seasonColor[season.name] && (
+								<span class={`color-dot color-dot--${seasonColor[season.name]}`} aria-hidden="true"></span>
+							)}
+							<span class="season-panel__season-name">{season.name}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="band" id="library" aria-labelledby="library-title">
+		<div class="container">
+			<header class="band__header">
+				<p class="eyebrow">Everything on the site</p>
+				<h2 class="band__title" id="library-title">Explore the library</h2>
+			</header>
+
+			<div class="library">
+				{pathways.map((pathway) => (
+					<section class="library__group" aria-labelledby={`library-${pathway.key}`}>
+						<h3 class="library__heading" id={`library-${pathway.key}`}>{pathway.label}</h3>
+						<ul class="library__list">
+							{pathway.sections.map((section) => (
+								<li class="library__item">
+									<a class="library__link" href={withBase(section.href)}>
+										<span class="library__label">{section.label}</span>
+										<span class="library__title">{section.title}</span>
+										<span class="library__blurb">{section.blurb}</span>
+									</a>
+								</li>
+							))}
+						</ul>
+					</section>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="band band--alt" aria-labelledby="approach-title">
+		<div class="container approach">
+			<div>
+				<p class="eyebrow">Our approach</p>
+				<h2 class="band__title" id="approach-title">Accurate, reverent, and easy to share</h2>
+			</div>
+			<div class="approach__text">
+				<p>
+					Articles draw on Scripture and the teaching of the Church, and are written to be read on
+					their own or shared with family, students, and anyone seeking Christ. Where the Church has
+					made a judgment about an apparition or a Eucharistic miracle, we say so plainly—and where
+					it has not, we say that too.
+				</p>
+				<p>
+					Content is offered for knowledge and devotion, not as a substitute for the Magisterium, your
+					parish, or spiritual direction.
+				</p>
+				<p><a class="text-link" href={withBase('/about')}>More about Digital Catholic <span aria-hidden="true">→</span></a></p>
+			</div>
+		</div>
+	</section>
 </BaseLayout>
+
+<script define:vars={{ year: calendarYear, seasons: yearData.seasons, celebrations }}>
+	const panel = document.querySelector('[data-season-panel]');
+	const today = new Date();
+	const pad = (n) => String(n).padStart(2, '0');
+	const iso = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
+
+	if (panel && today.getFullYear() === year) {
+		const block = panel.querySelector('[data-today]');
+		const set = (selector, text) => {
+			const el = panel.querySelector(selector);
+			if (el) {
+				el.textContent = text;
+				el.hidden = !text;
+			}
+		};
+		const season = seasons.find((s) => iso >= s.start && iso <= s.end);
+		const todays = celebrations.filter((c) => c.date === iso);
+		const upcoming = celebrations.find((c) => c.date > iso);
+		const format = (d) =>
+			new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+
+		set('[data-today-date]', today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }));
+		set('[data-today-season]', season ? `Season: ${season.name}` : '');
+		set('[data-today-celebration]', todays.length ? todays.map((c) => c.title).join(' · ') : '');
+		set('[data-today-next]', upcoming ? `Next feast: ${upcoming.title}, ${format(upcoming.date)}` : '');
+		if (block) block.hidden = false;
+	}
+</script>

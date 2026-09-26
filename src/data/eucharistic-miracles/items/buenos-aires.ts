@@ -8,6 +8,8 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"date": "1996",
 	"excerpt": "Hosts reserved in the tabernacle appeared as bloody flesh; scientific analysis reported human heart tissue.",
 	"imageAlt": "Eucharistic adoration with the Blessed Sacrament in a monstrance",
+	"churchStatus": "reported",
+	"statusNote": "Laboratory findings were reported, but this article records no formal Church judgment on the events.",
 	"sections": [
 		{
 			"heading": "What happened",

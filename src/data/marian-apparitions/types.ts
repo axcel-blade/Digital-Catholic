@@ -1,3 +1,5 @@
+import type { TrustInfo } from '../lib/trust';
+
 export type MarianApparitionCategory =
 	| 'Pilgrimage shrine'
 	| 'Healing spring'
@@ -9,7 +11,7 @@ export interface MarianApparitionSection {
 	paragraphs: string[];
 }
 
-export interface MarianApparition {
+export interface MarianApparition extends TrustInfo {
 	slug: string;
 	title: string;
 	category: MarianApparitionCategory;

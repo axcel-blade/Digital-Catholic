@@ -1,35 +1,31 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBack from '../../components/PageBack.astro';
-import { rosaryOriginIntro, rosaryOriginSections } from '../../data/rosary';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import { mysterySets, rosaryOriginIntro, rosaryOriginSections } from '../../data/rosary';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
+import type { ArticleLink } from '../../lib/article';
 
-const currentPath = Astro.url.pathname;
+const related: ArticleLink[] = mysterySets.slice(0, 3).map((set) => ({
+	href: withBase(`/rosary/${set.slug}`),
+	title: set.title,
+	label: `Prayed on ${set.days}`,
+	excerpt: set.excerpt,
+}));
 ---
 
-<BaseLayout
+<ArticleLayout
 	title="Origin of the Rosary"
 	description={PAGE_DESCRIPTIONS.rosaryOrigin}
-	currentPath={currentPath}
+	currentPath={Astro.url.pathname}
+	sectionKey="rosary"
+	label="Rosary · History"
+	lead={rosaryOriginIntro}
+	sections={rosaryOriginSections}
+	related={related}
 >
-	<div class="page-content page-content--catalog">
-		<PageBack href={withBase('/rosary')} />
-		<div class="catalog-hero">
-			<p class="hero__tagline">Rosary</p>
-			<h1>Origin of the Rosary</h1>
-			<p class="lead">{rosaryOriginIntro}</p>
-		</div>
-
-		{rosaryOriginSections.map((section) => (
-			<section class="rosary-origin-section">
-				<h2>{section.heading}</h2>
-				{section.paragraphs.map((p) => <p>{p}</p>)}
-			</section>
-		))}
-
-		<p class="rosary-origin-cta">
-			<a class="cta-link" href={withBase('/rosary')}>Pray the Rosary — mysteries, prayers, and how to recite →</a>
-		</p>
-	</div>
-</BaseLayout>
+	<SectionList sections={rosaryOriginSections} />
+	<p class="callout callout--liturgy">
+		Ready to pray? See <a href={withBase('/rosary')}>the mysteries, prayers, and how to recite the Rosary</a>.
+	</p>
+</ArticleLayout>

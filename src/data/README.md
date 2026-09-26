@@ -38,6 +38,19 @@ Each folder has:
 
 The new saint appears on `/saints` and in search automatically—no need to edit `index.ts`.
 
+## Trust and source fields (optional)
+
+Every article type accepts the optional fields in `lib/trust.ts`. Pages show each one only when it is present:
+
+| Field | Use |
+| --- | --- |
+| `churchStatus` | Marian apparitions and Eucharistic miracles: `approved`, `recognized`, `under-investigation`, `historical-tradition`, or `reported` |
+| `statusNote` | One sentence, taken from the article itself, explaining the status |
+| `sources`, `primaryReferences`, `furtherReading` | Lists of `{ label, url? }` for real, checked references |
+| `lastReviewed` | ISO date (`YYYY-MM-DD`) of the last content review |
+
+Only add a status or a source when the article text or a checked reference supports it. Never mark an apparition or miracle as approved unless the article says a Church authority approved it.
+
 ## Slug rules
 
 - Use lowercase letters, numbers, and hyphens only.

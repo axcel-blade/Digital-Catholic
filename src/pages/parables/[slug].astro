@@ -1,41 +1,44 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { getParable, parables } from '../../data/parables';
+import SectionList from '../../components/SectionList.astro';
+import { parables, type Parable } from '../../data/parables';
 import { withBase } from '../../lib/paths';
+import { getNeighbors, getRelated, type ArticleLink } from '../../lib/article';
 
 export function getStaticPaths() {
-	return parables.map((parable) => ({
-		params: { slug: parable.slug },
-	}));
+	return parables.map((parable) => ({ params: { slug: parable.slug } }));
 }
 
-const slug = Astro.params.slug ?? '';
-const parable = getParable(slug);
+const index = parables.findIndex((p) => p.slug === Astro.params.slug);
+const parable = parables[index];
 
 if (!parable) {
 	return new Response(null, { status: 404, statusText: 'Not found' });
 }
 
-const currentPath = Astro.url.pathname;
+const toLink = (p: Parable): ArticleLink => ({
+	href: withBase(`/parables/${p.slug}`),
+	title: p.title,
+	label: p.category,
+	excerpt: p.excerpt,
+});
+
+const { prev, next } = getNeighbors(parables, index);
 ---
 
 <ArticleLayout
 	title={parable.title}
 	description={parable.excerpt}
-	currentPath={currentPath}
-	backHref={withBase('/parables')}
-	backLabel="All parables"
-	category={`Parable · ${parable.category}`}
-	asideLabel="Gospel illustration"
+	currentPath={Astro.url.pathname}
+	sectionKey="parables"
+	label={`Parable · ${parable.category}`}
+	lead={parable.excerpt}
+	meta={[{ term: 'Gospel', value: parable.gospelReference }]}
+	sections={parable.sections}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={getRelated(parables, index, 3, (p) => p.category).map(toLink)}
+	trust={parable}
 >
-	<p class="article__lead article__lead--bordered">{parable.excerpt}</p>
-	<p class="article__feast">Gospel: {parable.gospelReference}</p>
-	{parable.sections.map((section) => (
-		<section>
-			<h2>{section.heading}</h2>
-			{section.paragraphs.map((paragraph) => (
-				<p>{paragraph}</p>
-			))}
-		</section>
-	))}
+	<SectionList sections={parable.sections} />
 </ArticleLayout>

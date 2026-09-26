@@ -8,6 +8,8 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"date": "2013",
 	"excerpt": "A Host that fell onto a corporal during Communion was studied and found to contain tissue identified as human heart muscle.",
 	"imageAlt": "Basilica of St. Hyacinth (św. Jacka) in Legnica, Poland",
+	"churchStatus": "recognized",
+	"statusNote": "The parish followed Church procedures for investigation, and the bishop permitted public veneration.",
 	"sections": [
 		{
 			"heading": "What happened",

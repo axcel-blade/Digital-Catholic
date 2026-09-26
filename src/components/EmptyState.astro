@@ -1,0 +1,17 @@
+---
+import { withBase } from '../lib/paths';
+
+interface Props {
+	message?: string;
+}
+
+const { message = 'There are no articles in this section yet.' } = Astro.props;
+---
+
+<div class="empty-state">
+	<p class="empty-state__message">{message}</p>
+	<p>
+		Try the search, return to the <a href={withBase('/')}>home page</a>, or
+		<a href={withBase('/contact')}>suggest an article</a>.
+	</p>
+</div>

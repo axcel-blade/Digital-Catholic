@@ -8,6 +8,8 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"date": "c. 8th century (tradition: 731)",
 	"excerpt": "A doubting priest saw the Host become visible flesh and the wine become blood—the oldest recorded Eucharistic miracle, still venerated today.",
 	"imageAlt": "Basilica of St. Francis in Lanciano, Italy, where the Eucharistic miracle is venerated",
+	"churchStatus": "historical-tradition",
+	"statusNote": "The account rests on longstanding tradition; the relics have been venerated for centuries in the Basilica of St. Francis.",
 	"sections": [
 		{
 			"heading": "What happened",

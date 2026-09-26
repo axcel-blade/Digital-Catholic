@@ -247,7 +247,13 @@ function buildSeasons(year: number, easter: Date): LiturgicalYear['seasons'] {
 	const ashWednesday = addDays(easter, -46);
 	const pentecost = addDays(easter, 49);
 
-	return [
+	const seasons: LiturgicalYear['seasons'] = [
+		{
+			// Christmas season that began the previous December.
+			name: 'Christmas (continued)',
+			start: toIso(year, 1, 1),
+			end: isoFromDate(baptism),
+		},
 		{
 			name: 'Advent',
 			start: isoFromDate(advent1),
@@ -256,7 +262,7 @@ function buildSeasons(year: number, easter: Date): LiturgicalYear['seasons'] {
 		{
 			name: 'Christmas',
 			start: toIso(year, 12, 25),
-			end: isoFromDate(baptism),
+			end: isoFromDate(getBaptismOfTheLord(year + 1)),
 		},
 		{
 			name: 'Ordinary Time (early)',
@@ -284,6 +290,8 @@ function buildSeasons(year: number, easter: Date): LiturgicalYear['seasons'] {
 			end: isoFromDate(addDays(advent1, -1)),
 		},
 	];
+
+	return seasons.sort((a, b) => a.start.localeCompare(b.start));
 }
 
 export function buildLiturgicalYear(year: number): LiturgicalYear {

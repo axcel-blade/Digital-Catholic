@@ -8,6 +8,8 @@ const marianApparition: MarianApparition = {
 	"date": "August 21, 1879",
 	"excerpt": "Fifteen villagers saw Mary, St. Joseph, St. John the Evangelist, and a lamb on an altar at the parish church—without a spoken message.",
 	"imageAlt": "Knock Shrine in County Mayo, Ireland, built at the site of the 1879 apparition",
+	"churchStatus": "recognized",
+	"statusNote": "Archbishop John MacHale of Tuam and later commissions found the witnesses’ testimony trustworthy; Knock is Ireland’s national Marian shrine.",
 	"sections": [
 		{
 			"heading": "What happened",

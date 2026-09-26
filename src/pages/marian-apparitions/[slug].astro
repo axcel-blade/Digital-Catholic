@@ -1,49 +1,49 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {
-	getMarianApparition,
-	marianApparitions,
-	getMarianApparitionImageSrc,
-} from '../../data/marianApparitions';
+import SectionList from '../../components/SectionList.astro';
+import { marianApparitions, type MarianApparition } from '../../data/marianApparitions';
 import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+import { getNeighbors, getRelated, type ArticleLink } from '../../lib/article';
 
 export function getStaticPaths() {
-	return marianApparitions.map((apparition) => ({
-		params: { slug: apparition.slug },
-	}));
+	return marianApparitions.map((apparition) => ({ params: { slug: apparition.slug } }));
 }
 
-const slug = Astro.params.slug ?? '';
-const apparition = getMarianApparition(slug);
+const index = marianApparitions.findIndex((a) => a.slug === Astro.params.slug);
+const apparition = marianApparitions[index];
 
 if (!apparition) {
 	return new Response(null, { status: 404, statusText: 'Not found' });
 }
 
-const currentPath = Astro.url.pathname;
+const toLink = (a: MarianApparition): ArticleLink => ({
+	href: withBase(`/marian-apparitions/${a.slug}`),
+	title: a.title,
+	label: a.location,
+	excerpt: a.excerpt,
+});
+
+const { prev, next } = getNeighbors(marianApparitions, index);
 ---
 
 <ArticleLayout
 	title={apparition.title}
 	description={apparition.excerpt}
-	currentPath={currentPath}
-	backHref={withBase('/marian-apparitions')}
-	backLabel="All Marian apparitions"
-	category={`Marian apparition · ${apparition.category}`}
-	asideLabel="Marian devotion"
-	imageSrc={getMarianApparitionImageSrc(apparition.slug)}
-	imageAlt={apparition.imageAlt}
+	currentPath={Astro.url.pathname}
+	sectionKey="marian-apparitions"
+	label={`Marian apparition · ${apparition.category}`}
+	lead={apparition.excerpt}
+	meta={[
+		{ term: 'Place', value: apparition.location },
+		{ term: 'Date', value: apparition.date },
+	]}
+	image={getCollectionImage('marian-apparitions', apparition.slug, apparition.imageAlt)}
+	sections={apparition.sections}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={getRelated(marianApparitions, index, 3, (a) => a.category).map(toLink)}
+	trust={apparition}
 >
-	<p class="article__lead article__lead--bordered">{apparition.excerpt}</p>
-	<p class="article__feast">
-		{apparition.location} · {apparition.date}
-	</p>
-	{apparition.sections.map((section) => (
-		<section>
-			<h2>{section.heading}</h2>
-			{section.paragraphs.map((paragraph) => (
-				<p>{paragraph}</p>
-			))}
-		</section>
-	))}
+	<SectionList sections={apparition.sections} />
 </ArticleLayout>

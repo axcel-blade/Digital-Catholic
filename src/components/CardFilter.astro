@@ -1,0 +1,82 @@
+---
+/**
+ * Progressive-enhancement filter for a card list. It renders hidden and is
+ * revealed by script, so without JavaScript every card simply stays visible.
+ */
+interface Option {
+	value: string;
+	label: string;
+	count: number;
+}
+
+interface Props {
+	/** id of the list whose `[data-filter-value]` children are filtered */
+	target: string;
+	label: string;
+	options: Option[];
+	noun: { one: string; many: string };
+}
+
+const { target, label, options, noun } = Astro.props;
+const total = options.reduce((sum, option) => sum + option.count, 0);
+---
+
+<div
+	class="filter-bar"
+	data-card-filter
+	data-target={target}
+	data-noun-one={noun.one}
+	data-noun-many={noun.many}
+	hidden
+>
+	<p class="filter-bar__label" id={`${target}-filter-label`}>{label}</p>
+	<div class="filter-bar__options" role="group" aria-labelledby={`${target}-filter-label`}>
+		<button type="button" class="filter-chip" aria-pressed="true" data-value="" data-label="All">
+			All <span class="filter-chip__count">{total}</span>
+		</button>
+		{options.map((option) => (
+			<button
+				type="button"
+				class="filter-chip"
+				aria-pressed="false"
+				data-value={option.value}
+				data-label={option.label}
+			>
+				{option.label} <span class="filter-chip__count">{option.count}</span>
+			</button>
+		))}
+	</div>
+	<p class="filter-bar__status" role="status" aria-live="polite"></p>
+</div>
+
+<script>
+	document.querySelectorAll<HTMLElement>('[data-card-filter]').forEach((bar) => {
+		const list = document.getElementById(bar.dataset.target ?? '');
+		if (!list) return;
+		const chips = Array.from(bar.querySelectorAll<HTMLButtonElement>('.filter-chip'));
+		const status = bar.querySelector<HTMLElement>('.filter-bar__status');
+		const cards = Array.from(list.querySelectorAll<HTMLElement>('[data-filter-value]'));
+		const one = bar.dataset.nounOne ?? 'item';
+		const many = bar.dataset.nounMany ?? 'items';
+
+		bar.hidden = false;
+
+		chips.forEach((chip) => {
+			chip.addEventListener('click', () => {
+				const value = chip.dataset.value ?? '';
+				chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+				let shown = 0;
+				cards.forEach((card) => {
+					const visible = !value || card.dataset.filterValue === value;
+					card.hidden = !visible;
+					if (visible) shown += 1;
+				});
+				if (status) {
+					status.textContent = value
+						? `Showing ${shown} ${shown === 1 ? one : many}: ${chip.dataset.label}.`
+						: `Showing all ${shown} ${many}.`;
+				}
+			});
+		});
+	});
+</script>

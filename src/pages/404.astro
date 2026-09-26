@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
+import { withBase } from '../lib/paths';
+import { siteSections } from '../lib/sections';
+---
+
+<BaseLayout title="Page not found" description={PAGE_DESCRIPTIONS.notFound} currentPath={Astro.url.pathname}>
+	<div class="container section-page not-found">
+		<p class="eyebrow">Page not found</p>
+		<h1 class="page-header__title">We couldn’t find that page</h1>
+		<p class="page-header__intro">
+			The address may have changed, or the page may never have existed. Try the search in the header,
+			or choose a section below.
+		</p>
+		<p><a class="button button--primary" href={withBase('/')}>Go to the home page</a></p>
+		<ul class="chip-list">
+			{siteSections.map((section) => (
+				<li><a class="chip" href={withBase(section.href)}>{section.title}</a></li>
+			))}
+		</ul>
+	</div>
+</BaseLayout>
