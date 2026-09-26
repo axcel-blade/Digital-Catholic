@@ -37,6 +37,7 @@ const itemCount = sections.reduce((sum, s) => sum + s.items.length, 0);
 		{sections.map((s) => (
 			<a class="jump-links__link" href={`#${s.id}`}>{s.heading} <span class="jump-links__count">{s.items.length}</span></a>
 		))}
+		<a class="jump-links__link" href={withBase('/mass/order-of-mass')}>The order of Mass</a>
 	</nav>
 
 	{sections.map((section) => (
@@ -71,7 +72,7 @@ const itemCount = sections.reduce((sum, s) => sum + s.items.length, 0);
 	))}
 
 	<p class="section-footer-links">
-		See also the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a> and the
+		See also <a href={withBase('/mass/order-of-mass')}>the order of Mass</a>, the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a>, and the
 		<a href={withBase('/liturgical-calendar')}>liturgical calendar</a>, which sets the color of each day.
 	</p>
 </SectionLayout>

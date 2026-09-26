@@ -1,5 +1,5 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
-import { massIntro, massSections } from '../data/mass';
+import { massIntro, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
 import {
 	mysterySets,
@@ -177,6 +177,16 @@ export function buildSearchIndex(): SearchEntry[] {
 			[
 				massIntro,
 				...massSections.flatMap((s) => [s.heading, ...s.items.map((i) => joinParts(i.name, i.description))]),
+			],
+		),
+		entry(
+			'The Order of Mass',
+			withBase('/mass/order-of-mass'),
+			'Mass',
+			orderOfMassIntro,
+			[
+				'mass parts procedure liturgy consecration communion readings homily creed',
+				...orderOfMassSections.flatMap((s) => [s.heading, ...s.paragraphs]),
 			],
 		),
 		entry(
