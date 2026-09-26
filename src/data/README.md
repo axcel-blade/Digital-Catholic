@@ -10,16 +10,17 @@ Content is split into **one file per article** so contributors can add entries w
 | Disciples of Jesus | `disciples/items/NN-{slug}.ts` | `01-peter.ts` (order field sets list order) |
 | Prayers | `prayers/items/NN-{slug}.ts` | `01-our-father.ts` |
 | Holy Bible | `bible/books/old-testament.ts`, `new-testament.ts` | `genesis` slug per book (73 books) |
-
-Disciple portraits live in `public/disciples/{slug}.jpg` (Wikimedia Commons–licensed art, same pattern as saints).
 | Sacraments | `sacraments/items/{slug}.ts` | `baptism.ts` |
 | Miracles of Jesus | `miracles/items/{slug}.ts` | `wedding-at-cana.ts` |
 | Eucharistic miracles | `eucharistic-miracles/items/{slug}.ts` | `lanciano.ts` |
 | Marian apparitions | `marian-apparitions/items/{slug}.ts` | `lourdes.ts` |
 | Parables | `parables/items/{slug}.ts` | `the-prodigal-son.ts` |
 | Commandments | `commandments/items/NN-short-name.ts` | `03-keep-the-lord-s-day-holy.ts` |
-| Rosary mystery sets | `rosary/mystery-sets/{slug}.ts` | `joyful.ts` (order fixed in `rosary/index.ts`) |
+| Rosary mystery sets | `rosary/mystery-sets/NN-{slug}.ts` | `01-joyful.ts` (order fixed in `rosary/index.ts`) |
 | Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates |
+| Items used at Mass | `mass/index.ts` | add an entry to the relevant group in `massSections` |
+
+Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, and Mass items in `public/mass/{name}.jpg` (Wikimedia Commons–licensed art preferred).
 
 Each folder has:
 
