@@ -6,6 +6,7 @@ const miracle: Miracle = {
 	"category": "Healing",
 	"gospelReference": "John 9:1–41",
 	"excerpt": "Jesus gives sight to one blind from birth; the Pharisees question the sign while the man confesses, “Lord, I believe.”",
+	"imageAlt": "Christ touching the eyes of a blind man in a city square, painted by El Greco",
 	"sections": [
 		{
 			"heading": "The sign",

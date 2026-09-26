@@ -18,5 +18,7 @@ export interface Parable extends TrustInfo {
 	category: ParableCategory;
 	gospelReference: string;
 	excerpt: string;
+	/** Alt text for the painting or illustration of the parable */
+	imageAlt: string;
 	sections: ParableSection[];
 }

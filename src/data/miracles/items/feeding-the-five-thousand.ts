@@ -6,6 +6,7 @@ const miracle: Miracle = {
 	"category": "Nature",
 	"gospelReference": "John 6:1–15 · Matthew 14:13–21 · Mark 6:30–44 · Luke 9:10–17",
 	"excerpt": "With five loaves and two fish Jesus feeds a vast crowd; twelve baskets of fragments remain.",
+	"imageAlt": "Christ blessing the loaves and fish before the crowd, painted by Giovanni Lanfranco",
 	"sections": [
 		{
 			"heading": "The sign",

@@ -6,6 +6,7 @@ const miracle: Miracle = {
 	"category": "Nature",
 	"gospelReference": "Mark 4:35–41 · Matthew 8:23–27 · Luke 8:22–25",
 	"excerpt": "Jesus rebukes the wind and sea; the disciples ask, “Who then is this, that even wind and sea obey him?”",
+	"imageAlt": "The disciples struggling to control their boat in a violent storm on the Sea of Galilee, painted by Rembrandt",
 	"sections": [
 		{
 			"heading": "The sign",

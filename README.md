@@ -33,10 +33,10 @@ The library has thirteen content areas, grouped into three pathways. The same gr
 | Section | What you'll find |
 | --- | --- |
 | **Disciples of Jesus** | The Twelve Apostles in traditional order — life, Gospel accounts, death, and feast days |
-| **Miracles of Jesus** | Gospel accounts with Scripture references, filterable by kind of sign |
+| **Miracles of Jesus** | Gospel accounts with Scripture references and classic artwork, filterable by kind of sign |
 | **Eucharistic Miracles** | Accounts from Lanciano to modern events, each labeled with its Church status |
 | **Marian Apparitions** | Guadalupe, Lourdes, Fátima, Knock, Velankanni, and others, each labeled with its Church status |
-| **Parables of Jesus** | Stories of the Kingdom, filterable by theme |
+| **Parables of Jesus** | Stories of the Kingdom with classic artwork, filterable by theme |
 
 ### Features
 

@@ -6,6 +6,7 @@ const parable: Parable = {
 	"category": "Kingdom of God",
 	"gospelReference": "Matthew 13:31–32 · Mark 4:30–32 · Luke 13:18–19",
 	"excerpt": "The Kingdom begins small like a mustard seed yet grows into a tree where many find shelter.",
+	"imageAlt": "Jesus teaching his disciples beside a flowering tree grown from a mustard seed, with birds in its branches",
 	"sections": [
 		{
 			"heading": "The story",
