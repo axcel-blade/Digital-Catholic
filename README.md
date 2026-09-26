@@ -59,6 +59,27 @@ Open [http://localhost:4321](http://localhost:4321).
 
 ---
 
+## Running with Docker
+
+**Requires:** Docker (with Docker Compose)
+
+```sh
+docker compose up --build
+```
+
+Open [http://localhost:8080](http://localhost:8080).
+
+The image is a multi-stage build: Node 22 runs `npm ci` and `npm run build`, and the static output in `dist/` is served by nginx (config in `docker/nginx.conf`). To build and run the image without Compose:
+
+```sh
+docker build -t digital-catholic .
+docker run --rm -p 8080:80 digital-catholic
+```
+
+The optional build argument `ASTRO_SITE` sets the site URL used for canonical links and the sitemap (for example `--build-arg ASTRO_SITE=https://example.org`). The container serves the site from the root path, so leave `ASTRO_BASE` at its default of `/`.
+
+---
+
 ## Project structure
 
 ```
@@ -71,6 +92,9 @@ src/
   pages/              Routes — home, about, contact, and all section pages
   styles/             global.css — light and dark themes
 frontend/             Design system documentation
+docker/               nginx config for the Docker image
+Dockerfile            Multi-stage build (Node build, nginx serve)
+docker-compose.yml    Local container setup on port 8080
 .github/workflows/    CI (build check) and CD (deploy to GitHub Pages)
 ```
 
