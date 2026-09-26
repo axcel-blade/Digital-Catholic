@@ -107,7 +107,7 @@ One global stylesheet built on CSS custom properties (design tokens) for a singl
 
 ### 6. Static assets — `public/`
 
-Copied to the output as-is. Images are stored per section, named after the item slug: `public/saints/`, `public/disciples/`, `public/eucharistic-miracles/`, `public/marian-apparitions/`, `public/sacraments/`, `public/mass/`. Also holds the favicon, the 1200×630 social image (`og-image.png`), and `robots.txt`.
+Copied to the output as-is. Images are stored per section, named after the item slug: `public/saints/`, `public/disciples/`, `public/eucharistic-miracles/`, `public/marian-apparitions/`, `public/sacraments/`, `public/mass/` (with image attribution in `public/mass/CREDITS.md`). Also holds the favicon, the 1200×630 social image (`og-image.png`), and `robots.txt`.
 
 ---
 
