@@ -8,6 +8,8 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"date": "1263",
 	"excerpt": "During Mass at Bolsena the Host bled onto the corporal; the miracle led Pope Urban IV to extend the feast of Corpus Christi to the whole Church.",
 	"imageAlt": "Chapel of the Blessed Corporal in the Cathedral of Orvieto, where the Bolsena corporal is enshrined",
+	"churchStatus": "recognized",
+	"statusNote": "Pope Urban IV investigated the event, and the corporal was enshrined in the Cathedral of Orvieto.",
 	"sections": [
 		{
 			"heading": "What happened",

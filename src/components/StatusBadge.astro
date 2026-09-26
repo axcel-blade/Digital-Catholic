@@ -1,0 +1,26 @@
+---
+import { churchStatusLabels, type ChurchStatus } from '../data/lib/trust';
+
+interface Props {
+	status: ChurchStatus;
+	size?: 'sm' | 'md';
+}
+
+const { status, size = 'sm' } = Astro.props;
+
+// Each status has a distinct icon shape so meaning never relies on color alone.
+const icons: Record<ChurchStatus, string> = {
+	approved: 'M5 12.5l4.5 4.5L19 7.5',
+	recognized: 'M12 4v16M4 12h16',
+	'under-investigation': 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4-4',
+	'historical-tradition': 'M6 4h12v16l-6-4-6 4z',
+	reported: 'M12 7v6M12 16.5v.5',
+};
+---
+
+<span class:list={['status-badge', `status-badge--${status}`, `status-badge--${size}`]}>
+	<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		<path d={icons[status]}></path>
+	</svg>
+	<span><span class="visually-hidden">Church status: </span>{churchStatusLabels[status]}</span>
+</span>

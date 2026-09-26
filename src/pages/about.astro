@@ -1,179 +1,133 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageBack from '../components/PageBack.astro';
-import { PAGE_DESCRIPTIONS } from '../lib/seo';
+import PageHeader from '../components/PageHeader.astro';
+import { PAGE_DESCRIPTIONS, type BreadcrumbItem } from '../lib/seo';
 import { withBase } from '../lib/paths';
+import { getPublicImage } from '../lib/images';
+import { sectionGroups, getSectionsInGroup, siteSections } from '../lib/sections';
 
-const currentPath = Astro.url.pathname;
-const jesusTeachingSrc = `${import.meta.env.BASE_URL}about/jesus-teaching.jpg`;
-const jesusTeachingAlt =
-	'Christ teaching the people—the Sermon on the Mount, painting by Carl Heinrich Bloch (public domain)';
-
-const sections = [
-	{
-		href: '/saints',
-		title: 'Saints',
-		description: 'Biographies and feast days',
-	},
-	{
-		href: '/sacraments',
-		title: 'Sacraments',
-		description: 'All seven sacraments',
-	},
-	{
-		href: '/disciples',
-		title: 'Disciples of Jesus',
-		description: 'The Twelve Apostles',
-	},
-	{
-		href: '/miracles',
-		title: 'Miracles of Jesus',
-		description: 'Signs in the Gospels',
-	},
-	{
-		href: '/eucharistic-miracles',
-		title: 'Eucharistic Miracles',
-		description: 'The Real Presence',
-	},
-	{
-		href: '/marian-apparitions',
-		title: 'Marian Apparitions',
-		description: 'Our Lady in the world',
-	},
-	{
-		href: '/parables',
-		title: 'Parables of Jesus',
-		description: 'Stories of the Kingdom',
-	},
-	{
-		href: '/commandments',
-		title: 'Ten Commandments',
-		description: 'God’s moral law',
-	},
-	{
-		href: '/bible',
-		title: 'Holy Bible',
-		description: '73 books, summaries',
-	},
-	{
-		href: '/prayers',
-		title: 'Prayers',
-		description: 'Our Father and Hail Mary',
-	},
-	{
-		href: '/rosary',
-		title: 'Rosary',
-		description: 'Prayer and mysteries',
-	},
-	{
-		href: '/liturgical-calendar',
-		title: 'Liturgical Calendar',
-		description: 'Feasts and Church seasons',
-	},
-];
+const breadcrumbs: BreadcrumbItem[] = [{ label: 'Home', href: withBase('/') }, { label: 'About' }];
+const image = getPublicImage(
+	'/about/jesus-teaching.jpg',
+	'Christ teaching the people—the Sermon on the Mount, painting by Carl Heinrich Bloch (public domain)'
+);
+const groups = sectionGroups.map((group) => ({ ...group, sections: getSectionsInGroup(group.key) }));
 ---
 
 <BaseLayout
 	title="About"
 	description={PAGE_DESCRIPTIONS.about}
-	currentPath={currentPath}
+	currentPath={Astro.url.pathname}
+	breadcrumbs={breadcrumbs}
 >
-	<div class="page-content page-content--about">
-		<PageBack href={withBase('/')} />
+	<div class="container section-page">
+		<PageHeader
+			breadcrumbs={breadcrumbs}
+			label="About"
+			title="About Digital Catholic"
+			intro="Digital Catholic is a free library that shares the Catholic faith in clear, accessible language—for prayer, formation, catechesis, and everyday reading."
+		/>
 
-		<div class="about-layout">
-			<div class="about-main catalog-prose">
-				<h1>About Digital Catholic</h1>
-				<p class="lead">
-					Digital Catholic is a free learning site that shares the Catholic faith in clear,
-					accessible language—for prayer, formation, catechesis, and everyday reading.
+		<div class="split">
+			<div class="prose">
+				<h2>What Digital Catholic is</h2>
+				<p>
+					We publish articles drawn from Scripture and the teaching of the Church: lives of the saints
+					and apostles, the sacraments, summaries of every book of the Bible, traditional prayers, the
+					Rosary, and the seasons and feasts of the liturgical year. Each article can be read on its
+					own or shared with family, students, and friends.
 				</p>
 
-				<h2>What you will find here</h2>
+				<h2>Who it is for</h2>
+				<ul>
+					<li>Catholics who want to understand and pray their faith more deeply.</li>
+					<li>Catechists, parents, and teachers looking for clear material to share.</li>
+					<li>Anyone preparing for a sacrament, or simply curious about what Catholics believe.</li>
+				</ul>
+
+				<h2>What you can learn and do</h2>
 				<p>
-					We publish short articles drawn from Scripture and the teaching of the Church. Each
-					section is written to be read on its own or shared with family, students, and anyone
-					seeking to grow in knowledge of Christ.
+					Read a saint’s biography on their feast day, follow the Church year in the liturgical
+					calendar, learn how to pray the Rosary step by step, discover what each object at Mass
+					means, or explore the miracles and parables of Jesus with their Gospel references.
+				</p>
+
+				<h2>How the content is organized</h2>
+				<p>
+					The library has <strong>{siteSections.length} content areas</strong> grouped into three
+					pathways:
+				</p>
+				<dl class="about-groups">
+					{groups.map((group) => (
+						<div class="about-groups__item">
+							<dt>{group.label}</dt>
+							<dd>{group.sections.map((s) => s.title).join(', ')}</dd>
+						</div>
+					))}
+				</dl>
+
+				<h2>Our approach to accuracy and devotion</h2>
+				<p>
+					We aim for accuracy and reverence in presenting what Catholics believe. Articles on Marian
+					apparitions and Eucharistic miracles carry a Church status label that reflects only what
+					the article itself reports—approved for devotion, recognized or permitted, historical
+					tradition, or reported without a formal judgment. The Church never requires belief in a
+					private revelation.
 				</p>
 				<p>
-					Use the <strong>Explore</strong> menu in the header to browse every section, open{' '}
-					<a href={withBase('/contact')}>Contact</a> for feedback, or open the list on the right on
-					larger screens.
+					Content is offered for knowledge and devotion, not as a substitute for the Magisterium, your
+					parish, or spiritual direction. If you spot an error, please
+					<a href={withBase('/contact')}>let us know</a>.
 				</p>
 
 				<h2>Features</h2>
-				<ul class="about-features">
+				<ul class="feature-list">
 					<li>
-						<strong>Site search</strong>
-						<span>Find saints, apostles, sacraments, Gospel articles, Bible summaries, prayers, commandments, the liturgical calendar, and Rosary content from any page.</span>
+						<strong>Site search.</strong> Find saints, apostles, sacraments, Bible summaries, prayers,
+						commandments, calendar entries, and Rosary mysteries from any page. Press
+						<kbd>/</kbd> to open it.
 					</li>
 					<li>
-						<strong>Dark mode</strong>
-						<span>Switch themes; your preference is saved in your browser.</span>
+						<strong>Light and dark themes.</strong> Switch themes from the header; your choice is saved
+						in your browser.
 					</li>
 					<li>
-						<strong>Responsive layout</strong>
-						<span>Readable on phones, tablets, and desktop.</span>
+						<strong>Responsive and accessible.</strong> Pages work on phones, tablets, and desktops, and
+						every control can be used with a keyboard.
 					</li>
 				</ul>
-
-				<h2>Our approach</h2>
-				<p>
-					Content is offered for knowledge and devotion, not as a substitute for the Magisterium,
-					your parish, or spiritual direction. We aim for accuracy and reverence in presenting
-					what Catholics believe and how the saints and sacraments help us live the Gospel.
-				</p>
-
-				<h2>Knowledge for sharing</h2>
-				<p>
-					Everything on this site is meant to be read, learned, and shared. Whether you are new
-					to the faith, preparing for a sacrament, studying the Gospels, or deepening your
-					prayer life, Digital Catholic exists to make sound Catholic teaching available to all
-					who wish to grow in understanding and love of Christ and His Church.
-				</p>
-
-				<p class="about-main__cta">
-					<a class="cta-link" href={withBase('/')}>Browse all topics on the home page →</a>
-				</p>
 			</div>
 
-			<aside class="about-aside" aria-label="Site sections and highlights">
-				<figure class="about-aside__figure">
-					<img
-						src={jesusTeachingSrc}
-						alt={jesusTeachingAlt}
-						width="900"
-						height="600"
-						loading="lazy"
-						decoding="async"
-					/>
-					<figcaption>Sermon on the Mount — Carl Heinrich Bloch</figcaption>
-				</figure>
-
-				<div class="about-aside__panel">
-					<h2 class="about-aside__title">Explore the site</h2>
-					<ul class="about-section-list">
-						{sections.map((section) => (
+			<aside class="split__aside" aria-label="Illustration and site sections">
+				{image && (
+					<figure class="framed-figure">
+						<img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+						<figcaption>Sermon on the Mount — Carl Heinrich Bloch</figcaption>
+					</figure>
+				)}
+				<div class="stat-row">
+					<div class="stat">
+						<span class="stat__value">{siteSections.length}</span>
+						<span class="stat__label">Content areas</span>
+					</div>
+					<div class="stat">
+						<span class="stat__value">Free</span>
+						<span class="stat__label">Always open</span>
+					</div>
+				</div>
+				<nav class="aside-panel" aria-labelledby="about-sections-title">
+					<h2 class="aside-panel__title" id="about-sections-title">Browse every section</h2>
+					<ul class="aside-panel__list">
+						{siteSections.map((section) => (
 							<li>
 								<a href={withBase(section.href)}>
-									<strong>{section.title}</strong>
-									<span>{section.description}</span>
+									<span class="aside-panel__name">{section.title}</span>
+									<span class="aside-panel__blurb">{section.blurb}</span>
 								</a>
 							</li>
 						))}
 					</ul>
-				</div>
-
-				<div class="about-aside__stats">
-					<div class="about-stat">
-						<span class="about-stat__value">10</span>
-						<span class="about-stat__label">Content areas</span>
-					</div>
-					<div class="about-stat">
-						<span class="about-stat__value">Free</span>
-						<span class="about-stat__label">Always open</span>
-					</div>
-				</div>
+				</nav>
 			</aside>
 		</div>
 	</div>

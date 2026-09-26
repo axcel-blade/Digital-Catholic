@@ -1,0 +1,250 @@
+---
+import type { SiteNav } from '../lib/siteNav';
+import { withBase } from '../lib/paths';
+import BrandMark from './BrandMark.astro';
+import SiteSearch from './SiteSearch.astro';
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+	nav: SiteNav;
+}
+
+const { nav } = Astro.props;
+---
+
+<header class="site-header" data-site-header>
+	<div class="site-header__inner">
+		<a class="brand" href={withBase('/')} aria-label="Digital Catholic — home">
+			<BrandMark class="brand__mark" />
+			<span class="brand__name">Digital Catholic</span>
+		</a>
+
+		<nav class="primary-nav" aria-label="Main">
+			<ul class="primary-nav__list">
+				<li>
+					<a
+						class="primary-nav__link"
+						href={nav.home.href}
+						aria-current={nav.home.isActive ? 'page' : undefined}>{nav.home.label}</a
+					>
+				</li>
+				{nav.groups.map((group) => (
+					<li class="primary-nav__group" data-nav-group>
+						<button
+							type="button"
+							class:list={['primary-nav__link', 'primary-nav__toggle', { 'is-active': group.isActive }]}
+							aria-expanded="false"
+							aria-controls={`nav-panel-${group.key}`}
+							data-nav-toggle
+						>
+							{group.label}
+							<svg class="primary-nav__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+						</button>
+						<div class="nav-panel" id={`nav-panel-${group.key}`} hidden data-nav-panel>
+							<p class="nav-panel__summary">{group.summary}</p>
+							<ul class="nav-panel__list">
+								{group.items.map((item) => (
+									<li>
+										<a
+											class="nav-panel__link"
+											href={item.href}
+											aria-current={item.isActive ? 'page' : undefined}
+										>
+											<span class="nav-panel__title">{item.label}</span>
+											{item.blurb && <span class="nav-panel__blurb">{item.blurb}</span>}
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					</li>
+				))}
+				{[nav.about, nav.contact].map((item) => (
+					<li>
+						<a
+							class="primary-nav__link"
+							href={item.href}
+							aria-current={item.isActive ? 'page' : undefined}>{item.label}</a
+						>
+					</li>
+				))}
+			</ul>
+		</nav>
+
+		<div class="site-header__tools">
+			<button
+				type="button"
+				class="icon-button search-toggle"
+				aria-expanded="false"
+				aria-controls="site-search-panel"
+				data-search-toggle
+			>
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+				<span class="search-toggle__label">Search</span>
+			</button>
+			<ThemeToggle />
+			<button
+				type="button"
+				class="icon-button menu-toggle"
+				aria-expanded="false"
+				aria-controls="mobile-menu"
+				aria-label="Open menu"
+				data-menu-toggle
+			>
+				<svg class="menu-toggle__open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+				<svg class="menu-toggle__close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+				<span class="menu-toggle__label">Menu</span>
+			</button>
+		</div>
+	</div>
+
+	<SiteSearch />
+
+	<div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+		<nav class="mobile-menu__inner" aria-label="Main (mobile)">
+			<ul class="mobile-menu__top">
+				{[nav.home, nav.about, nav.contact].map((item) => (
+					<li>
+						<a
+							class="mobile-menu__link"
+							href={item.href}
+							aria-current={item.isActive ? 'page' : undefined}>{item.label}</a
+						>
+					</li>
+				))}
+			</ul>
+			{nav.groups.map((group) => (
+				<section class="mobile-menu__group" aria-labelledby={`mobile-menu-${group.key}`}>
+					<h2 class="mobile-menu__heading" id={`mobile-menu-${group.key}`}>{group.label}</h2>
+					<ul class="mobile-menu__list">
+						{group.items.map((item) => (
+							<li>
+								<a
+									class="mobile-menu__link"
+									href={item.href}
+									aria-current={item.isActive ? 'page' : undefined}>{item.label}</a
+								>
+							</li>
+						))}
+					</ul>
+				</section>
+			))}
+		</nav>
+	</div>
+</header>
+
+<script>
+	const header = document.querySelector<HTMLElement>('[data-site-header]');
+
+	if (header) {
+		const groups = Array.from(header.querySelectorAll<HTMLElement>('[data-nav-group]'));
+		const menuToggle = header.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+		const mobileMenu = header.querySelector<HTMLElement>('[data-mobile-menu]');
+
+		function panelFor(toggle: HTMLButtonElement) {
+			const id = toggle.getAttribute('aria-controls');
+			return id ? document.getElementById(id) : null;
+		}
+
+		function setGroupOpen(group: HTMLElement, open: boolean) {
+			const toggle = group.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+			if (!toggle) return;
+			const panel = panelFor(toggle);
+			toggle.setAttribute('aria-expanded', String(open));
+			if (panel) panel.hidden = !open;
+			group.classList.toggle('is-open', open);
+		}
+
+		function closeAllGroups(except?: HTMLElement) {
+			groups.forEach((group) => {
+				if (group !== except) setGroupOpen(group, false);
+			});
+		}
+
+		groups.forEach((group) => {
+			const toggle = group.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+			if (!toggle) return;
+
+			toggle.addEventListener('click', () => {
+				const open = toggle.getAttribute('aria-expanded') !== 'true';
+				closeAllGroups(group);
+				setGroupOpen(group, open);
+			});
+
+			group.addEventListener('keydown', (event) => {
+				if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+					event.stopPropagation();
+					setGroupOpen(group, false);
+					toggle.focus();
+				}
+			});
+
+			group.addEventListener('focusout', (event) => {
+				const next = event.relatedTarget;
+				if (next instanceof Node && !group.contains(next)) setGroupOpen(group, false);
+			});
+		});
+
+		function setMenuOpen(open: boolean, returnFocus = false) {
+			if (!menuToggle || !mobileMenu) return;
+			menuToggle.setAttribute('aria-expanded', String(open));
+			menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+			mobileMenu.hidden = !open;
+			header?.classList.toggle('has-menu-open', open);
+			if (open) {
+				document.dispatchEvent(new CustomEvent('site:overlay-open', { detail: 'menu' }));
+				mobileMenu.querySelector<HTMLAnchorElement>('a')?.focus();
+			} else if (returnFocus) {
+				menuToggle.focus();
+			}
+		}
+
+		menuToggle?.addEventListener('click', () => {
+			setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+		});
+
+		mobileMenu?.querySelectorAll('a').forEach((link) => {
+			link.addEventListener('click', () => setMenuOpen(false));
+		});
+
+		mobileMenu?.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape') {
+				event.stopPropagation();
+				setMenuOpen(false, true);
+			}
+		});
+
+		menuToggle?.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+				setMenuOpen(false, true);
+			}
+		});
+
+		document.addEventListener('site:overlay-open', (event) => {
+			if ((event as CustomEvent).detail !== 'menu') setMenuOpen(false);
+			closeAllGroups();
+		});
+
+		document.addEventListener('click', (event) => {
+			const target = event.target;
+			if (!(target instanceof Node)) return;
+			groups.forEach((group) => {
+				if (!group.contains(target)) setGroupOpen(group, false);
+			});
+			if (
+				mobileMenu &&
+				!mobileMenu.hidden &&
+				!mobileMenu.contains(target) &&
+				!menuToggle?.contains(target)
+			) {
+				setMenuOpen(false);
+			}
+		});
+
+		const desktop = window.matchMedia('(min-width: 60rem)');
+		desktop.addEventListener('change', () => {
+			setMenuOpen(false);
+			closeAllGroups();
+		});
+	}
+</script>

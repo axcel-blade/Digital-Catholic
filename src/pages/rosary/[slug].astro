@@ -1,47 +1,64 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { mysterySets } from '../../data/rosary';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { mysterySets, type MysterySet } from '../../data/rosary';
 import { withBase } from '../../lib/paths';
+import { getNeighbors, type ArticleLink } from '../../lib/article';
 
 export function getStaticPaths() {
-	return mysterySets.map((set) => ({
-		params: { slug: set.slug },
-		props: { set },
-	}));
+	return mysterySets.map((set) => ({ params: { slug: set.slug } }));
 }
 
-const { set } = Astro.props;
-const currentPath = Astro.url.pathname;
+const index = mysterySets.findIndex((s) => s.slug === Astro.params.slug);
+const set = mysterySets[index];
+
+if (!set) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const toLink = (s: MysterySet): ArticleLink => ({
+	href: withBase(`/rosary/${s.slug}`),
+	title: s.title,
+	label: `Prayed on ${s.days}`,
+	excerpt: s.excerpt,
+});
+
+const { prev, next } = getNeighbors(mysterySets, index);
+const related: ArticleLink[] = [
+	...mysterySets.filter((s) => s.slug !== set.slug).map(toLink),
+];
 ---
 
-<BaseLayout
+<ArticleLayout
 	title={set.title}
 	description={set.excerpt}
-	currentPath={currentPath}
+	currentPath={Astro.url.pathname}
+	sectionKey="rosary"
+	label="Rosary"
+	lead={set.intro}
+	meta={[
+		{ term: 'Prayed on', value: set.days },
+		{ term: 'Mysteries', value: String(set.mysteries.length) },
+	]}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={related}
 >
-	<div class="page-content page-content--catalog">
-		<p class="article__back">
-			<a href={withBase('/rosary')}>← Rosary</a>
-			<span class="article__back-sep" aria-hidden="true"> · </span>
-			<a href={withBase('/rosary#how-to-recite')}>How to recite</a>
-		</p>
-		<p class="hero__tagline">Rosary · {set.days}</p>
-		<h1>{set.title}</h1>
-		<p class="lead">{set.intro}</p>
-
-		<ol class="mystery-list">
-			{set.mysteries.map((mystery) => (
-				<li class="mystery-card" id={`mystery-${mystery.number}`}>
-					<div class="mystery-card__header">
-						<span class="mystery-card__number">{mystery.number}</span>
-						<h2 class="mystery-card__title">{mystery.title}</h2>
-					</div>
-					<p class="mystery-card__fruit">
-						<strong>Fruit of the mystery:</strong> {mystery.fruit}
-					</p>
-					<p class="mystery-card__meditation">{mystery.meditation}</p>
-				</li>
-			))}
-		</ol>
-	</div>
-</BaseLayout>
+	<p>
+		New to the Rosary? Read <a href={withBase('/rosary#how-to-recite')}>how to pray it</a> and
+		<a href={withBase('/rosary#rosary-prayers')}>its prayers</a> first.
+	</p>
+	<ol class="numbered-list numbered-list--prose">
+		{set.mysteries.map((mystery) => (
+			<li class="numbered-item" id={`mystery-${mystery.number}`}>
+				<span class="numbered-item__number" aria-hidden="true">{mystery.number}</span>
+				<div class="numbered-item__body">
+					<h2 class="numbered-item__title">
+						<span class="visually-hidden">Mystery {mystery.number}: </span>{mystery.title}
+					</h2>
+					<p class="numbered-item__fruit"><strong>Fruit of the mystery:</strong> {mystery.fruit}</p>
+					<p class="numbered-item__text">{mystery.meditation}</p>
+				</div>
+			</li>
+		))}
+	</ol>
+</ArticleLayout>

@@ -8,6 +8,8 @@ const marianApparition: MarianApparition = {
 	"date": "September 19, 1846",
 	"excerpt": "Mary appeared to two shepherd children on a mountain, weeping for those who neglect Sunday Mass and the name of her Son.",
 	"imageAlt": "Basilica of Our Lady of La Salette in the French Alps, above the apparition site",
+	"churchStatus": "approved",
+	"statusNote": "Bishop Philibert de Bruillard of Grenoble authorized public devotion and a shrine in 1851.",
 	"sections": [
 		{
 			"heading": "What happened",

@@ -8,6 +8,8 @@ const marianApparition: MarianApparition = {
 	"date": "February–July 1858",
 	"excerpt": "Mary appeared eighteen times to St. Bernadette Soubirous in a grotto and directed her to dig a spring whose waters have brought physical and spiritual healing.",
 	"imageAlt": "The grotto of Massabielle at the Sanctuary of Our Lady of Lourdes in France",
+	"churchStatus": "approved",
+	"statusNote": "Bishop Bertrand-Sévère Laurence of Tarbes declared in 1862 that the faithful are justified in believing the apparitions authentic.",
 	"sections": [
 		{
 			"heading": "What happened",

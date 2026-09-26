@@ -1,55 +1,40 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBack from '../../components/PageBack.astro';
-import { saints, getSaintImageSrc, getSaintImageAlt } from '../../data/saints';
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { saints, getSaintImageAlt } from '../../data/saints';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
 
 const currentPath = Astro.url.pathname;
 ---
 
-<BaseLayout
+<SectionLayout
+	sectionKey="saints"
+	heading="Saint Biographies"
 	title="Saints"
 	description={PAGE_DESCRIPTIONS.saints}
 	currentPath={currentPath}
+	intro="Read the lives of the saints—their faith, trials, and love of God—so their example may guide your own journey in Christ."
+	count={`${saints.length} ${saints.length === 1 ? 'biography' : 'biographies'}`}
 >
-	<div class="page-content page-content--catalog">
-		<PageBack href={withBase('/')} />
-		<div class="catalog-hero">
-			<p class="hero__tagline">Saints</p>
-			<h1>Saint Biographies</h1>
-			<p class="lead">
-				Read the lives of the saints—their faith, trials, and love of God—so their example may guide
-				your own journey in Christ.
-			</p>
-		</div>
-
-		<ul class="blog-grid blog-grid--catalog blog-grid--media">
-			{saints.map((saint) => (
-				<li class="blog-card">
-					<a class="blog-card__link" href={withBase(`/saints/${saint.slug}`)}>
-						<div class="blog-card__media">
-							<img
-								src={getSaintImageSrc(saint.slug)}
-								alt={getSaintImageAlt(saint.title)}
-								width="640"
-								height="400"
-								loading="lazy"
-								decoding="async"
-							/>
-						</div>
-						<div class="blog-card__body">
-							<span class="blog-card__category">Saint</span>
-							<h2 class="blog-card__title">{saint.title}</h2>
-							{saint.feastDays && (
-								<p class="blog-card__meta">{saint.feastDays}</p>
-							)}
-							<p class="blog-card__excerpt">{saint.excerpt}</p>
-							<span class="blog-card__read">Read biography →</span>
-						</div>
-					</a>
-				</li>
+	{saints.length === 0 ? (
+		<EmptyState />
+	) : (
+		<ul class="card-grid card-grid--media">
+			{saints.map((saint, i) => (
+				<EntryCard
+					href={withBase(`/saints/${saint.slug}`)}
+					title={saint.title}
+					label="Saint"
+					meta={saint.feastDays ? `Feast: ${saint.feastDays}` : saint.lifeDates}
+					excerpt={saint.excerpt}
+					action="Read biography"
+					image={getCollectionImage('saints', saint.slug, getSaintImageAlt(saint.title))}
+					eager={i < 3}
+				/>
 			))}
 		</ul>
-	</div>
-</BaseLayout>
+	)}
+</SectionLayout>

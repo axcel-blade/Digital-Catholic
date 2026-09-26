@@ -1,9 +1,11 @@
+import type { TrustInfo } from '../lib/trust';
+
 export interface SaintSection {
 	heading: string;
 	paragraphs: string[];
 }
 
-export interface Saint {
+export interface Saint extends TrustInfo {
 	slug: string;
 	title: string;
 	excerpt: string;

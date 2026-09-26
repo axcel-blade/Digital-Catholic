@@ -108,12 +108,17 @@ git push origin main develop --tags
 ## What to change
 
 - **Content:** add one file per article under `src/data/<section>/items/` (see [src/data/README.md](src/data/README.md)) — do not append to a giant shared list.
-- **Images:** saint photos in `public/saints/{slug}.jpg`; disciple portraits in `public/disciples/{slug}.jpg`; Eucharistic miracle photos in `public/eucharistic-miracles/{slug}.jpg`; Marian apparition photos in `public/marian-apparitions/{slug}.jpg`. Prefer Wikimedia Commons–licensed images.
-- **Layout & styles:** `src/layouts/`, `src/components/`, `src/styles/global.css`. Follow the tokens and principles in [DESIGN.md](DESIGN.md).
+- **Sources and Church status:** the optional trust fields (`churchStatus`, `statusNote`, `sources`, `lastReviewed`, and others) are described in [src/data/README.md](src/data/README.md). Only add a status or source that the article text or a checked reference supports. Never label an apparition or Eucharistic miracle as approved unless a Church authority's approval is stated in the article.
+- **Images:** saint photos in `public/saints/{slug}.jpg`; disciple portraits in `public/disciples/{slug}.jpg`; sacrament art in `public/sacraments/{slug}.jpg`; Eucharistic miracle photos in `public/eucharistic-miracles/{slug}.jpg`; Marian apparition photos in `public/marian-apparitions/{slug}.jpg`. Prefer Wikimedia Commons–licensed images. Width and height are read from the file at build time, and a missing image is skipped rather than shown broken.
+- **New section:** add it to `siteSections` in `src/lib/sections.ts` (this updates the menus, homepage, About page, and footer), add a meta description to `PAGE_DESCRIPTIONS` in `src/lib/seo.ts`, build its pages with `SectionLayout` and `ArticleLayout`, and add it to `src/lib/searchIndex.ts`.
+- **Layout & styles:** `src/layouts/`, `src/components/`, `src/styles/global.css`. Use the design tokens only — no hard-coded colors — and follow [docs/DESIGN.md](docs/DESIGN.md). Update that document when you add or change a token.
+- **Links:** build every internal URL with `withBase()` from `src/lib/paths.ts` so pages work under the GitHub Pages base path.
 - **Search:** new items in existing sections are picked up automatically. Update `src/lib/searchIndex.ts` only if you add a wholly new section or page type.
 - **Markdown files:** always update relevant `.md` files (README, CHANGELOG, etc.) when making structural or content changes.
 
-Keep copy accurate, respectful, and aligned with Catholic teaching. Run `npm run build` before submitting a pull request.
+Keep copy accurate, respectful, and aligned with Catholic teaching. Run `npm run build` before submitting a pull request, and check new pages with the keyboard and in both light and dark themes.
+
+> **Windows:** building with `ASTRO_BASE=/Digital-Catholic/` fails locally with Astro 6.3.3 (`Missing parameter: slug`) but works on Linux and in CI. Build at the root path, or use Docker or WSL for a base-path build.
 
 ---
 

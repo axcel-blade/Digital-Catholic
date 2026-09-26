@@ -11,6 +11,7 @@ assignees: ''
 - [ ] New article (saint, miracle, prayer, Bible book, apparition, etc.)
 - [ ] New section / category
 - [ ] Correction to existing content
+- [ ] Church status or source for an existing article
 - [ ] Other
 
 ## What to add or change
@@ -19,7 +20,7 @@ assignees: ''
 
 ## Sources
 
-<!-- If you have a suggested source (e.g., Catholic Encyclopedia, Vatican documents, Wikimedia Commons image), list it here. -->
+<!-- If you have a suggested source (e.g., Catholic Encyclopedia, Vatican documents, Wikimedia Commons image), list it here. For a Church status (approval of an apparition or Eucharistic miracle), please link the bishop's or Holy See's decision. -->
 
 ## Why this matters
 

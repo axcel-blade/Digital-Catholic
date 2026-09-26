@@ -1,0 +1,68 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { getSection } from '../lib/sections';
+import { withBase } from '../lib/paths';
+import type { BreadcrumbItem } from '../lib/seo';
+
+interface Props {
+	/** Key from src/lib/sections.ts */
+	sectionKey: string;
+	description: string;
+	currentPath: string;
+	/** Visible h1; defaults to the section title */
+	heading?: string;
+	/** Document title; defaults to the heading */
+	title?: string;
+	intro?: string;
+	count?: string;
+	/** Extra crumbs between the section and this page (for sub-pages) */
+	extraCrumbs?: BreadcrumbItem[];
+	/** Current page's crumb label when this is a sub-page of the section */
+	pageCrumb?: string;
+}
+
+const {
+	sectionKey,
+	description,
+	currentPath,
+	heading,
+	title,
+	intro,
+	count,
+	extraCrumbs = [],
+	pageCrumb,
+} = Astro.props;
+
+const section = getSection(sectionKey);
+const h1 = heading ?? section.title;
+const breadcrumbs: BreadcrumbItem[] = pageCrumb
+	? [
+			{ label: 'Home', href: withBase('/') },
+			{ label: section.title, href: withBase(section.href) },
+			...extraCrumbs,
+			{ label: pageCrumb },
+		]
+	: [{ label: 'Home', href: withBase('/') }, ...extraCrumbs, { label: section.title }];
+---
+
+<BaseLayout
+	title={title ?? h1}
+	description={description}
+	currentPath={currentPath}
+	breadcrumbs={breadcrumbs}
+>
+	<div class="container section-page">
+		<PageHeader
+			breadcrumbs={breadcrumbs}
+			label={section.label}
+			title={h1}
+			intro={intro}
+			count={count}
+			group={section.group}
+		>
+			<slot name="header" />
+		</PageHeader>
+		<slot />
+	</div>
+</BaseLayout>

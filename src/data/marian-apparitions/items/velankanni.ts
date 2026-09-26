@@ -8,6 +8,8 @@ const marianApparition: MarianApparition = {
 	"date": "16th century (tradition)",
 	"excerpt": "Mary appeared near the Bay of Bengal to a shepherd boy, a lame youth, and storm-tossed sailors—India’s “Lourdes of the East” and a basilica of Our Lady of Good Health.",
 	"imageAlt": "Basilica of Our Lady of Good Health at Velankanni on the coast of Tamil Nadu, India",
+	"churchStatus": "historical-tradition",
+	"statusNote": "The apparitions are known through longstanding local tradition; Pope John XXIII raised the shrine to a minor basilica in 1962.",
 	"sections": [
 		{
 			"heading": "What happened",

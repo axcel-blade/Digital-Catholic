@@ -35,7 +35,12 @@ const base = process.env.ASTRO_BASE
 export default defineConfig({
 	site: process.env.ASTRO_SITE || 'https://axcel-blade.github.io',
 	base,
-	integrations: [sitemap()],
+	integrations: [
+		sitemap({
+			// The search index is a data file, not a page.
+			filter: (page) => !page.endsWith('.json') && !page.includes('/404'),
+		}),
+	],
 	vite: {
 		plugins: [refreshRoutesOnDataChange()],
 	},

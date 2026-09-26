@@ -1,0 +1,31 @@
+---
+/** Decorative Digital Catholic mark: a cross set within an arched window. */
+interface Props {
+	class?: string;
+	size?: number;
+}
+
+const { class: className, size = 32 } = Astro.props;
+---
+
+<svg
+	class={className}
+	width={size}
+	height={size}
+	viewBox="0 0 32 32"
+	fill="none"
+	aria-hidden="true"
+	focusable="false"
+>
+	<path
+		d="M6 29V14a10 10 0 0 1 20 0v15H6Z"
+		fill="var(--color-brand-fill)"
+	></path>
+	<path
+		d="M16 8.5v15M11.5 13.5h9"
+		stroke="var(--color-brand-on)"
+		stroke-width="2.2"
+		stroke-linecap="round"
+	></path>
+	<path d="M3.5 29h25" stroke="var(--color-gold)" stroke-width="1.6" stroke-linecap="round"></path>
+</svg>

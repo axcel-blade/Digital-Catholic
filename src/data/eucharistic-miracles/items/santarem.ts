@@ -8,6 +8,8 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"date": "1225",
 	"excerpt": "A Host taken from church was returned after striking a stone with blood; the Church of St. Stephen became a center of Eucharistic devotion.",
 	"imageAlt": "Facade of the Church of the Holy Miracle (Igreja de Santo Estêvão) in Santarém, Portugal",
+	"churchStatus": "historical-tradition",
+	"statusNote": "The account rests on tradition; the relics have been venerated for centuries at the Church of the Holy Miracle.",
 	"sections": [
 		{
 			"heading": "What happened",

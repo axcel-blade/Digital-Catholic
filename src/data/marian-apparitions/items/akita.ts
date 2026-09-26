@@ -8,6 +8,8 @@ const marianApparition: MarianApparition = {
 	"date": "1973–1981",
 	"excerpt": "Mary appeared to Sister Agnes Sasagawa; a wooden statue in the chapel wept, perspired, and echoed her call to prayer and penance.",
 	"imageAlt": "Yuzawadai Catholic church in Akita, Japan, where the weeping statue of Our Lady of Akita is venerated",
+	"churchStatus": "approved",
+	"statusNote": "Bishop John Shojiro Ito of Niigata declared in 1984 that the events may be believed and promoted; the Holy See did not overturn his judgment.",
 	"sections": [
 		{
 			"heading": "What happened",

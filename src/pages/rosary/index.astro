@@ -1,6 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBack from '../../components/PageBack.astro';
+import SectionLayout from '../../layouts/SectionLayout.astro';
 import {
 	mysterySets,
 	rosaryIntro,
@@ -11,74 +10,72 @@ import {
 } from '../../data/rosary';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
-
-const currentPath = Astro.url.pathname;
 ---
 
-<BaseLayout
-	title="Mysteries of the Rosary"
+<SectionLayout
+	sectionKey="rosary"
+	heading="Mysteries of the Rosary"
 	description={PAGE_DESCRIPTIONS.rosary}
-	currentPath={currentPath}
+	currentPath={Astro.url.pathname}
+	intro={rosaryIntro}
+	count={`${mysterySets.length} sets of mysteries · ${mysterySets.reduce((n, s) => n + s.mysteries.length, 0)} mysteries`}
 >
-	<div class="page-content page-content--catalog">
-		<PageBack href={withBase('/')} />
-		<div class="catalog-hero">
-			<p class="hero__tagline">Prayer</p>
-			<h1>Mysteries of the Rosary</h1>
-			<p class="lead">{rosaryIntro}</p>
-			<p><a class="cta-link" href={withBase('/rosary/origin')}>Read the origin of the Rosary →</a></p>
-		</div>
+	<nav class="jump-links" aria-label="On this page" slot="header">
+		<a class="jump-links__link" href="#how-to-recite">How to pray</a>
+		<a class="jump-links__link" href="#rosary-prayers">The prayers</a>
+		<a class="jump-links__link" href="#mysteries">The mysteries</a>
+		<a class="jump-links__link" href={withBase('/rosary/origin')}>Origin of the Rosary</a>
+	</nav>
 
-		<section class="rosary-how-to" id="how-to-recite">
-			<h2>How to recite the Rosary</h2>
-			<p>{rosaryHowToIntro}</p>
+	<section class="page-section" id="how-to-recite" aria-labelledby="how-to-recite-title">
+		<h2 class="section-title" id="how-to-recite-title">How to pray the Rosary</h2>
+		<p class="section-intro">{rosaryHowToIntro}</p>
+		<ol class="step-list">
+			{rosaryHowToSteps.map((step) => (
+				<li class="step">
+					<span class="step__number" aria-hidden="true">{step.number}</span>
+					<div>
+						<h3 class="step__title">{step.title}</h3>
+						<p class="step__text">{step.description}</p>
+					</div>
+				</li>
+			))}
+		</ol>
+		<p class="callout callout--liturgy">
+			<strong>Which mysteries today?</strong>
+			{rosaryMysterySchedule}
+		</p>
+	</section>
 
-			<ol class="rosary-step-list">
-				{rosaryHowToSteps.map((step) => (
-					<li class="rosary-step-card">
-						<div class="rosary-step-card__header">
-							<span class="rosary-step-card__number">{step.number}</span>
-							<h3 class="rosary-step-card__title">{step.title}</h3>
-						</div>
-						<p class="rosary-step-card__text">{step.description}</p>
-					</li>
-				))}
-			</ol>
-
-			<p class="rosary-schedule">
-				<strong>Which mysteries today?</strong> {rosaryMysterySchedule}
-			</p>
-		</section>
-
-		<section class="rosary-prayers" id="rosary-prayers">
-			<h2>Prayers of the Rosary</h2>
-			<p>These are the words most often prayed while reciting the Rosary.</p>
-			<ul class="rosary-prayer-list">
-				{rosaryPrayers.map((prayer) => (
-					<li class="rosary-prayer-card">
-						<h3 class="rosary-prayer-card__title">{prayer.title}</h3>
-						<blockquote class="rosary-prayer-card__text">{prayer.text}</blockquote>
-					</li>
-				))}
-			</ul>
-		</section>
-
-		<section class="rosary-mysteries">
-			<h2>The twenty mysteries</h2>
-			<p>Select a set to read each mystery and a short meditation.</p>
-
-			<ul class="rosary-set-list">
-			{mysterySets.map((set) => (
-				<li class="rosary-set-card">
-					<a class="rosary-set-card__link" href={withBase(`/rosary/${set.slug}`)}>
-						<span class="rosary-set-card__days">Prayed on {set.days}</span>
-						<h2 class="rosary-set-card__title">{set.title}</h2>
-						<p class="rosary-set-card__excerpt">{set.excerpt}</p>
-						<span class="rosary-set-card__read">View five mysteries →</span>
-					</a>
+	<section class="page-section" id="rosary-prayers" aria-labelledby="rosary-prayers-title">
+		<h2 class="section-title" id="rosary-prayers-title">Prayers of the Rosary</h2>
+		<p class="section-intro">These are the words most often prayed while reciting the Rosary.</p>
+		<ul class="prayer-list">
+			{rosaryPrayers.map((prayer) => (
+				<li class="prayer-card prayer-card--static">
+					<h3 class="prayer-card__title">{prayer.title}</h3>
+					<blockquote class="prayer-text prayer-text--card">{prayer.text}</blockquote>
 				</li>
 			))}
 		</ul>
-		</section>
-	</div>
-</BaseLayout>
+	</section>
+
+	<section class="page-section" id="mysteries" aria-labelledby="mysteries-title">
+		<h2 class="section-title" id="mysteries-title">The twenty mysteries</h2>
+		<p class="section-intro">Choose a set to read each mystery with its fruit and a short meditation.</p>
+		<ul class="card-grid card-grid--two">
+			{mysterySets.map((set) => (
+				<li class="card">
+					<div class="card__body">
+						<p class="card__label">Prayed on {set.days}</p>
+						<h3 class="card__title">
+							<a class="card__link" href={withBase(`/rosary/${set.slug}`)}>{set.title}</a>
+						</h3>
+						<p class="card__excerpt">{set.excerpt}</p>
+						<span class="card__action" aria-hidden="true">View the five mysteries <span class="card__arrow">→</span></span>
+					</div>
+				</li>
+			))}
+		</ul>
+	</section>
+</SectionLayout>
