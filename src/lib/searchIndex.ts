@@ -21,7 +21,12 @@ import {
 	liturgicalCalendarIntro,
 	liturgicalSeasonsIntro,
 } from '../data/liturgical-calendar';
-import { saints, getSaintStatus } from '../data/saints';
+import {
+	saints,
+	getSaintStatus,
+	pathToSainthoodIntro,
+	pathToSainthoodSections,
+} from '../data/saints';
 import { bibleBooks, bibleIntro, testamentLabels } from '../data/bible';
 import { prayers, prayersIntro } from '../data/prayers';
 import { withBase } from './paths';
@@ -172,6 +177,16 @@ export function buildSearchIndex(): SearchEntry[] {
 			[
 				massIntro,
 				...massSections.flatMap((s) => [s.heading, ...s.items.map((i) => joinParts(i.name, i.description))]),
+			],
+		),
+		entry(
+			'The Path to Sainthood',
+			withBase('/saints/path-to-sainthood'),
+			'Saints',
+			pathToSainthoodIntro,
+			[
+				'canonization beatification miracle heroic virtue cause',
+				...pathToSainthoodSections.flatMap((s) => [s.heading, ...s.paragraphs]),
 			],
 		),
 		entry(

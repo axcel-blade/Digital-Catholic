@@ -15,7 +15,7 @@ The library has thirteen content areas, grouped into three pathways. The same gr
 | Section | What you'll find |
 | --- | --- |
 | **Holy Bible** | Summaries of all 73 books of the Catholic canon, including the deuterocanonical books |
-| **Saints** | Biographies of holy men and women with life dates and feast days |
+| **Saints** | Biographies of holy men and women with life dates and feast days, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint) |
 | **Sacraments** | All seven sacraments in Catechism order — initiation, healing, and service of communion |
 | **Ten Commandments** | The text and meaning of each commandment |
 
