@@ -120,6 +120,7 @@ The optional build argument `ASTRO_SITE` sets the site URL used for canonical li
 
 ```
 public/               Static assets — favicon, social image (og-image.png), robots.txt, article images
+scripts/              One-off maintenance scripts (content file splitter)
 src/
   components/         Header, footer, search, cards, filters, breadcrumbs, trust panel, SEO head
   data/               Content files — one .ts per article per section
@@ -128,13 +129,14 @@ src/
   lib/                Section registry, navigation, SEO, search index, image and path helpers
   pages/              Routes — home, about, contact, 404, all section pages, search-index.json
   styles/             global.css — design tokens, light and dark themes
-docs/                 DESIGN.md — design system and principles
+docs/                 ARCHITECTURE.md (how the site is built and deployed) and DESIGN.md (design system)
 docker/               nginx config for the Docker image
 Dockerfile            Multi-stage build (Node build, nginx serve)
 docker-compose.yml    Local container setup on port 8080
 .github/workflows/    CI (build check) and CD (deploy to GitHub Pages)
 ```
 
+- How the site is built and deployed: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - Add or edit content: [src/data/README.md](src/data/README.md)
 - Section names, pathways, and menu descriptions: `src/lib/sections.ts`
 - Page titles and meta descriptions: `src/lib/seo.ts`

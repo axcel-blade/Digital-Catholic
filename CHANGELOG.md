@@ -22,6 +22,12 @@ All notable changes to Digital Catholic are documented here.
 - Docker support: multi-stage `Dockerfile` (Node build, nginx serve), `docker-compose.yml`, `.dockerignore`, and `docker/nginx.conf`
 - Prayers section expanded with additional common Catholic prayers
 - Prayer page improvements (slug routing, intro text, type system)
+- Items Used at Mass section (`/mass`) — sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other sacred items, with images under `public/mass/`
+- Origin of the Rosary moved to its own page at `/rosary/origin`
+- Saints: St. Charbel and Archbishop Fulton J. Sheen added
+- Design system documentation moved to `docs/DESIGN.md`
+- Architecture documentation added at `docs/ARCHITECTURE.md`
+- `ROADMAP.md` and `TODO.md` removed
 
 ### Changed
 - Sacraments are listed in Catechism order (initiation, healing, service of communion)

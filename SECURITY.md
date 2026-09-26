@@ -12,7 +12,7 @@ Only the latest version of the site (deployed from the `main` branch) is activel
 
 ## Reporting a vulnerability
 
-If you discover a security issue — for example, a dependency vulnerability, a problem with the GitHub Actions workflow, or a concern about the GitHub Pages deployment configuration — please report it responsibly:
+If you discover a security issue — for example, a dependency vulnerability, a problem with the GitHub Actions workflow, a concern about the GitHub Pages deployment configuration, or an issue with the Docker image or its nginx configuration (`Dockerfile`, `docker/nginx.conf`) — please report it responsibly:
 
 1. **Do not open a public GitHub issue** for security-sensitive findings.
 2. Send a description of the issue to the maintainer at **srikanthfernando3@gmail.com** with the subject line `[SECURITY] Digital Catholic`.
@@ -24,4 +24,4 @@ The maintainer will acknowledge your report within 7 days and aim to resolve con
 
 This project intentionally uses minimal dependencies. No open-source UI libraries, authentication packages, or data-fetching libraries are included. The only runtime dependencies are `astro` and `@astrojs/sitemap`.
 
-Keep dependencies up to date by running `npm audit` periodically and updating `package.json` as needed.
+Keep dependencies up to date by running `npm audit` periodically and updating `package.json` as needed. The Docker image builds on `node:22-alpine` and `nginx:1.27-alpine`; bump these base image tags in the `Dockerfile` when security updates are released.

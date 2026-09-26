@@ -1,4 +1,4 @@
-# Frontend — Design System & Principles
+# Design — Design System & Principles
 
 This document is the single source of truth for the visual language and interaction design of Digital Catholic. Every value in `src/styles/global.css` comes from the tokens below; components never hard-code colors.
 
