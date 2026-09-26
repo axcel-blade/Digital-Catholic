@@ -107,9 +107,11 @@ git push origin main develop --tags
 
 ## What to change
 
+For an overview of how content, pages, search, and deployment fit together, read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) first.
+
 - **Content:** add one file per article under `src/data/<section>/items/` (see [src/data/README.md](src/data/README.md)) — do not append to a giant shared list.
-- **Images:** saint photos in `public/saints/{slug}.jpg`; disciple portraits in `public/disciples/{slug}.jpg`; Eucharistic miracle photos in `public/eucharistic-miracles/{slug}.jpg`; Marian apparition photos in `public/marian-apparitions/{slug}.jpg`. Prefer Wikimedia Commons–licensed images.
-- **Layout & styles:** `src/layouts/`, `src/components/`, `src/styles/global.css`. Follow the tokens and principles in [DESIGN.md](DESIGN.md).
+- **Images:** saint photos in `public/saints/{slug}.jpg`; disciple portraits in `public/disciples/{slug}.jpg`; Eucharistic miracle photos in `public/eucharistic-miracles/{slug}.jpg`; Marian apparition photos in `public/marian-apparitions/{slug}.jpg`; Mass item photos in `public/mass/{name}.jpg`. Prefer Wikimedia Commons–licensed images.
+- **Layout & styles:** `src/layouts/`, `src/components/`, `src/styles/global.css`. Follow the tokens and principles in [docs/DESIGN.md](docs/DESIGN.md).
 - **Search:** new items in existing sections are picked up automatically. Update `src/lib/searchIndex.ts` only if you add a wholly new section or page type.
 - **Markdown files:** always update relevant `.md` files (README, CHANGELOG, etc.) when making structural or content changes.
 

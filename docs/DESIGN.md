@@ -1,4 +1,4 @@
-# Frontend — Style Foundations & Design Principles
+# Design — Style Foundations & Design Principles
 
 This document is the single source of truth for the visual language and interaction design of Digital Catholic. All styling decisions in `src/styles/global.css` and component files must be consistent with the tokens and principles defined here.
 
