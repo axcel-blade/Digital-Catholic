@@ -1,6 +1,23 @@
 export { orderOfMassIntro, orderOfMassSections } from './order';
 
-export const massIntro = "The Mass is the central act of Catholic worship — the Eucharistic sacrifice in which Christ offers Himself to the Father through the ministry of the priest. Every object used at Mass carries meaning rooted in Scripture and centuries of tradition.";
+export const massIntro = "The Mass is the central act of Catholic worship — the Eucharistic sacrifice in which Christ offers Himself to the Father through the ministry of the priest. Learn how the celebration unfolds from the Entrance to the Dismissal, and what each object at the altar means.";
+
+export const massItemsIntro = "Every object used at Mass carries meaning rooted in Scripture and centuries of tradition — from the chalice and paten on the altar to the vestments of the priest and the colors of the liturgical year.";
+
+export const massPages = [
+	{
+		href: "/mass/order-of-mass",
+		title: "The Order of Mass",
+		excerpt: "The Introductory Rites, Liturgy of the Word, Liturgy of the Eucharist, and Concluding Rites, step by step.",
+		action: "Follow the Mass",
+	},
+	{
+		href: "/mass/items-used-at-mass",
+		title: "Items Used at Mass",
+		excerpt: "Sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other sacred items.",
+		action: "See the items",
+	},
+];
 
 export const massSections = [
 	{
