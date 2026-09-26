@@ -3,61 +3,61 @@
    Tokens are documented in docs/DESIGN.md. Components must use tokens only.
    ========================================================================== */
 
-/* ---------- Tokens: light theme ---------- */
+/* ---------- Tokens (dark theme only) ---------- */
 :root {
 	/* Surfaces */
-	--color-bg: #fbf8f3;
-	--color-bg-alt: #f4eee4;
-	--color-surface: #ffffff;
-	--color-surface-muted: #fdfaf5;
+	--color-bg: #1b1614;
+	--color-bg-alt: #221c19;
+	--color-surface: #262019;
+	--color-surface-muted: #2c2520;
 
 	/* Text */
-	--color-text: #28201e;
-	--color-text-muted: #62564f;
+	--color-text: #f3ece4;
+	--color-text-muted: #c4b7ab;
 	--color-muted: var(--color-text-muted);
-	--color-heading: #28201e;
+	--color-heading: #f7f1ea;
 
 	/* Brand */
-	--color-accent: #6f2f3f;
-	--color-accent-strong: #4d1f2b;
-	--color-accent-soft: #f4e8ea;
-	--color-on-accent: #ffffff;
-	--color-brand-fill: #6f2f3f;
-	--color-brand-on: #fbf8f3;
-	--color-gold: #b88b46;
-	--color-gold-text: #80581b;
-	--color-gold-soft: #f6eddd;
+	--color-accent: #e6a9b6;
+	--color-accent-strong: #f3cbd3;
+	--color-accent-soft: #3a2329;
+	--color-on-accent: #1b1614;
+	--color-brand-fill: #8a3b4f;
+	--color-brand-on: #f7f1ea;
+	--color-gold: #d4ae6e;
+	--color-gold-text: #e2c07f;
+	--color-gold-soft: #3a2f1e;
 
 	/* Supporting accents */
-	--color-scripture: #2f5573;
-	--color-scripture-soft: #e6eef4;
-	--color-liturgy: #3b6647;
-	--color-liturgy-soft: #e5efe6;
+	--color-scripture: #a4c6e2;
+	--color-scripture-soft: #1f2b35;
+	--color-liturgy: #a3d1ad;
+	--color-liturgy-soft: #1f2c23;
 
 	/* Lines and focus */
-	--color-border: #e7ddd0;
-	--color-border-strong: #d3c3ae;
-	--color-focus: #6f2f3f;
-	--color-mark: #f6e3b4;
+	--color-border: #3b312b;
+	--color-border-strong: #54473f;
+	--color-focus: #f0bfca;
+	--color-mark: #5a4722;
 
 	/* Liturgical colors (swatches only, never text) */
-	--liturgical-white: #f7f3e8;
-	--liturgical-red: #b3261e;
-	--liturgical-green: #2e7d32;
-	--liturgical-purple: #6b2d8b;
-	--liturgical-rose: #e393aa;
+	--liturgical-white: #efe9dc;
+	--liturgical-red: #e0605a;
+	--liturgical-green: #66b56b;
+	--liturgical-purple: #b58ad0;
+	--liturgical-rose: #eba7ba;
 
 	/* Church status */
-	--status-approved: #2f6a3f;
-	--status-approved-soft: #e4f0e6;
-	--status-recognized: #2f5573;
-	--status-recognized-soft: #e6eef4;
-	--status-investigation: #80581b;
-	--status-investigation-soft: #f6eddd;
-	--status-tradition: #62564f;
-	--status-tradition-soft: #efe9e1;
-	--status-reported: #6f2f3f;
-	--status-reported-soft: #f4e8ea;
+	--status-approved: #a3d1ad;
+	--status-approved-soft: #1f2c23;
+	--status-recognized: #a4c6e2;
+	--status-recognized-soft: #1f2b35;
+	--status-investigation: #e2c07f;
+	--status-investigation-soft: #3a2f1e;
+	--status-tradition: #c4b7ab;
+	--status-tradition-soft: #2f2823;
+	--status-reported: #e6a9b6;
+	--status-reported-soft: #3a2329;
 
 	/* Typography */
 	--font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
@@ -96,68 +96,13 @@
 	--radius-md: 8px;
 	--radius-lg: 14px;
 	--radius-pill: 999px;
-	--shadow-sm: 0 1px 2px rgb(40 32 30 / 0.06);
-	--shadow-card: 0 6px 20px rgb(77 31 43 / 0.08);
-	--shadow-elevated: 0 14px 40px rgb(40 32 30 / 0.14);
+	--shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+	--shadow-card: 0 6px 20px rgb(0 0 0 / 0.35);
+	--shadow-elevated: 0 14px 40px rgb(0 0 0 / 0.55);
 
 	/* Motion */
 	--transition-fast: 0.15s ease;
 	--transition-base: 0.25s ease;
-
-	color-scheme: light;
-}
-
-/* ---------- Tokens: dark theme ---------- */
-html[data-theme='dark'] {
-	--color-bg: #1b1614;
-	--color-bg-alt: #221c19;
-	--color-surface: #262019;
-	--color-surface-muted: #2c2520;
-
-	--color-text: #f3ece4;
-	--color-text-muted: #c4b7ab;
-	--color-heading: #f7f1ea;
-
-	--color-accent: #e6a9b6;
-	--color-accent-strong: #f3cbd3;
-	--color-accent-soft: #3a2329;
-	--color-on-accent: #1b1614;
-	--color-brand-fill: #8a3b4f;
-	--color-brand-on: #f7f1ea;
-	--color-gold: #d4ae6e;
-	--color-gold-text: #e2c07f;
-	--color-gold-soft: #3a2f1e;
-
-	--color-scripture: #a4c6e2;
-	--color-scripture-soft: #1f2b35;
-	--color-liturgy: #a3d1ad;
-	--color-liturgy-soft: #1f2c23;
-
-	--color-border: #3b312b;
-	--color-border-strong: #54473f;
-	--color-focus: #f0bfca;
-	--color-mark: #5a4722;
-
-	--liturgical-white: #efe9dc;
-	--liturgical-red: #e0605a;
-	--liturgical-green: #66b56b;
-	--liturgical-purple: #b58ad0;
-	--liturgical-rose: #eba7ba;
-
-	--status-approved: #a3d1ad;
-	--status-approved-soft: #1f2c23;
-	--status-recognized: #a4c6e2;
-	--status-recognized-soft: #1f2b35;
-	--status-investigation: #e2c07f;
-	--status-investigation-soft: #3a2f1e;
-	--status-tradition: #c4b7ab;
-	--status-tradition-soft: #2f2823;
-	--status-reported: #e6a9b6;
-	--status-reported-soft: #3a2329;
-
-	--shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-	--shadow-card: 0 6px 20px rgb(0 0 0 / 0.35);
-	--shadow-elevated: 0 14px 40px rgb(0 0 0 / 0.55);
 
 	color-scheme: dark;
 }
@@ -616,18 +561,6 @@ mark {
 	display: block;
 }
 
-.theme-toggle__icon--moon {
-	display: none;
-}
-
-html[data-theme='dark'] .theme-toggle__icon--sun {
-	display: none;
-}
-
-html[data-theme='dark'] .theme-toggle__icon--moon {
-	display: block;
-}
-
 /* Mobile menu */
 .mobile-menu {
 	position: absolute;
@@ -719,8 +652,20 @@ html[data-theme='dark'] .theme-toggle__icon--moon {
 		clip: auto;
 	}
 
+	.site-header__tools {
+		flex: 1;
+		justify-content: flex-end;
+	}
+
+	/* Wide search bar in the header on desktop */
 	.search-toggle {
-		padding-inline: var(--space-3) var(--space-4);
+		flex: 1;
+		min-width: 10rem;
+		max-width: 24rem;
+		justify-content: flex-start;
+		padding-inline: var(--space-4) var(--space-3);
+		border-radius: var(--radius-pill);
+		background: var(--color-bg);
 		color: var(--color-text-muted);
 	}
 }

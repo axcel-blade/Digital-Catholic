@@ -48,30 +48,9 @@ No web fonts are loaded; all stacks are local system fonts.
 
 ## Color
 
-### Light theme (`:root`)
+### Dark theme (`:root`)
 
-| Token | Value | Role |
-|---|---|---|
-| `--color-bg` | `#fbf8f3` | Warm paper background |
-| `--color-bg-alt` | `#f4eee4` | Alternate bands, footer |
-| `--color-surface` | `#ffffff` | Cards, panels |
-| `--color-surface-muted` | `#fdfaf5` | Header, trust panel |
-| `--color-text` / `--color-heading` | `#28201e` | Primary text |
-| `--color-text-muted` (alias `--color-muted`) | `#62564f` | Secondary text |
-| `--color-accent` | `#6f2f3f` | Burgundy — links, CTAs, active states |
-| `--color-accent-strong` | `#4d1f2b` | Hover / pressed accent |
-| `--color-accent-soft` | `#f4e8ea` | Hover fills, active menu items |
-| `--color-on-accent` | `#ffffff` | Text on accent fills |
-| `--color-brand-fill` / `--color-brand-on` | `#6f2f3f` / `#fbf8f3` | Logo mark, hero art, “Today” panels (burgundy in both themes) |
-| `--color-gold` | `#b88b46` | Decorative rules and lines only |
-| `--color-gold-text` | `#80581b` | Eyebrow labels (AA on paper) |
-| `--color-gold-soft` | `#f6eddd` | Prayer text, callouts, counts |
-| `--color-scripture` / `-soft` | `#2f5573` / `#e6eef4` | Bible content |
-| `--color-liturgy` / `-soft` | `#3b6647` / `#e5efe6` | Liturgical and Rosary content |
-| `--color-border` / `-strong` | `#e7ddd0` / `#d3c3ae` | Thin warm lines |
-| `--color-focus` | `#6f2f3f` | Focus outline |
-
-### Dark theme (`html[data-theme='dark']`)
+The site ships a single dark theme; there is no light mode or theme toggle.
 
 | Token | Value |
 |---|---|

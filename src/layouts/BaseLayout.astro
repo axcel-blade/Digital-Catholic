@@ -56,23 +56,6 @@ const extraJsonLd = [
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script is:inline>
-			(function () {
-				var theme = 'light';
-				try {
-					var stored = localStorage.getItem('digital-catholic-theme');
-					theme =
-						stored === 'light' || stored === 'dark'
-							? stored
-							: window.matchMedia('(prefers-color-scheme: dark)').matches
-								? 'dark'
-								: 'light';
-				} catch (e) {
-					theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-				}
-				document.documentElement.setAttribute('data-theme', theme);
-			})();
-		</script>
 		<title>{pageTitle}</title>
 		<meta name="theme-color" content={SITE.themeColor} />
 		<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
