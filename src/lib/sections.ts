@@ -109,11 +109,11 @@ export const siteSections: SiteSection[] = [
 	{
 		key: 'mass',
 		href: '/mass',
-		title: 'Items Used at Mass',
-		navLabel: 'Items Used at Mass',
+		title: 'Holy Mass',
+		navLabel: 'Holy Mass',
 		group: 'pray',
 		label: 'Liturgy',
-		blurb: 'Sacred vessels, linens, books, vestments, and colors.',
+		blurb: 'The order of Mass and the items used at the altar.',
 	},
 	{
 		key: 'liturgical-calendar',

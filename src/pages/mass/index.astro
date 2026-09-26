@@ -1,29 +1,9 @@
 ---
 import SectionLayout from '../../layouts/SectionLayout.astro';
-import { massIntro, massSections } from '../../data/mass';
+import EntryCard from '../../components/EntryCard.astro';
+import { massIntro, massPages } from '../../data/mass';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
-import { getPublicImage } from '../../lib/images';
-import { slugify } from '../../lib/article';
-
-interface MassItem {
-	name: string;
-	description: string;
-	image?: string;
-	imageAlt?: string;
-	color?: string;
-}
-
-const sections = massSections.map((section) => ({
-	heading: section.heading,
-	id: slugify(section.heading),
-	items: (section.items as MassItem[]).map((item) => ({
-		...item,
-		// Only show art that is actually present in /public.
-		picture: item.image ? getPublicImage(item.image, item.imageAlt ?? item.name) : null,
-	})),
-}));
-const itemCount = sections.reduce((sum, s) => sum + s.items.length, 0);
 ---
 
 <SectionLayout
@@ -31,48 +11,22 @@ const itemCount = sections.reduce((sum, s) => sum + s.items.length, 0);
 	description={PAGE_DESCRIPTIONS.mass}
 	currentPath={Astro.url.pathname}
 	intro={massIntro}
-	count={`${itemCount} items in ${sections.length} groups`}
+	count={`${massPages.length} guides`}
 >
-	<nav class="jump-links" aria-label="Jump to a group" slot="header">
-		{sections.map((s) => (
-			<a class="jump-links__link" href={`#${s.id}`}>{s.heading} <span class="jump-links__count">{s.items.length}</span></a>
+	<ul class="card-grid card-grid--two">
+		{massPages.map((page) => (
+			<EntryCard
+				href={withBase(page.href)}
+				title={page.title}
+				label="Mass"
+				excerpt={page.excerpt}
+				action={page.action}
+			/>
 		))}
-		<a class="jump-links__link" href={withBase('/mass/order-of-mass')}>The order of Mass</a>
-	</nav>
-
-	{sections.map((section) => (
-		<section class="mass-section" id={section.id} aria-labelledby={`${section.id}-title`}>
-			<h2 class="section-title" id={`${section.id}-title`}>{section.heading}</h2>
-			<ul class="mass-grid">
-				{section.items.map((item) => (
-					<li class:list={['mass-item', { 'mass-item--media': item.picture || item.color }]}>
-						{item.picture && (
-							<div class="mass-item__media">
-								<img
-									src={item.picture.src}
-									alt={item.picture.alt}
-									width={item.picture.width}
-									height={item.picture.height}
-									loading="lazy"
-									decoding="async"
-								/>
-							</div>
-						)}
-						{item.color && (
-							<span class="mass-item__swatch" style={`--swatch: ${item.color}`} aria-hidden="true"></span>
-						)}
-						<div class="mass-item__body">
-							<h3 class="mass-item__name">{item.name}</h3>
-							<p class="mass-item__text">{item.description}</p>
-						</div>
-					</li>
-				))}
-			</ul>
-		</section>
-	))}
+	</ul>
 
 	<p class="section-footer-links">
-		See also <a href={withBase('/mass/order-of-mass')}>the order of Mass</a>, the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a>, and the
+		See also the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a> and the
 		<a href={withBase('/liturgical-calendar')}>liturgical calendar</a>, which sets the color of each day.
 	</p>
 </SectionLayout>

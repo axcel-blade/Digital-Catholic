@@ -13,7 +13,7 @@ All content areas are defined once in `src/lib/sections.ts`. Navigation, the hom
 | Pathway | Sections |
 |---|---|
 | **Learn** | Holy Bible, Saints, Sacraments, Ten Commandments |
-| **Pray** | Prayers, Rosary, Items Used at Mass, Liturgical Calendar |
+| **Pray** | Prayers, Rosary, Holy Mass, Liturgical Calendar |
 | **Explore** | Disciples of Jesus, Miracles of Jesus, Eucharistic Miracles, Marian Apparitions, Parables of Jesus |
 
 Top-level navigation: Home · Learn ▾ · Pray ▾ · Explore ▾ · About · Contact · Search · Theme toggle.

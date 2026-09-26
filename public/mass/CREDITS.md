@@ -1,6 +1,6 @@
 # Image credits — Items Used at Mass
 
-All images are from Wikimedia Commons, resized to at most 960px.
+Images shown on the Items Used at Mass page (`/mass/items-used-at-mass`). All images are from Wikimedia Commons, resized to at most 960px.
 
 | File | Source | Author | License |
 | --- | --- | --- | --- |

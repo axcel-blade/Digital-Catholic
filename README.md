@@ -25,7 +25,7 @@ The library has thirteen content areas, grouped into three pathways. The same gr
 | --- | --- |
 | **Prayers** | The Our Father and Hail Mary — full text and explanation |
 | **Rosary** | How to pray it, the traditional prayers, all twenty mysteries, and its origin |
-| **Items Used at Mass** | Sacred vessels, altar linens, liturgical books, vestments, and liturgical colors, plus the order of Mass step by step |
+| **Holy Mass** | The order of Mass step by step, and the items used at Mass: sacred vessels, altar linens, liturgical books, vestments, and liturgical colors |
 | **Liturgical Calendar** | Seasons, solemnities, feasts, and memorials by year, with a “today” view |
 
 ### Explore
