@@ -1,0 +1,45 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import { orderOfMassIntro, orderOfMassSections } from '../../data/mass';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import type { ArticleLink } from '../../lib/article';
+
+const related: ArticleLink[] = [
+	{
+		href: withBase('/mass/items-used-at-mass'),
+		title: 'Items Used at Mass',
+		label: 'Mass',
+		excerpt: 'Sacred vessels, altar linens, liturgical books, vestments, and liturgical colors.',
+	},
+	{
+		href: withBase('/sacraments/eucharist'),
+		title: 'The Eucharist',
+		label: 'Sacraments',
+		excerpt: 'The source and summit of the Christian life.',
+	},
+	{
+		href: withBase('/liturgical-calendar'),
+		title: 'Liturgical Calendar',
+		label: 'Calendar',
+		excerpt: 'The seasons, feasts, and colors that shape each celebration of the Mass.',
+	},
+];
+---
+
+<ArticleLayout
+	title="The Order of Mass"
+	description={PAGE_DESCRIPTIONS.orderOfMass}
+	currentPath={Astro.url.pathname}
+	sectionKey="mass"
+	label="Mass · Liturgy"
+	lead={orderOfMassIntro}
+	sections={orderOfMassSections}
+	related={related}
+>
+	<SectionList sections={orderOfMassSections} />
+	<p class="callout callout--liturgy">
+		Learn about the vessels, vestments, and books you will see at the altar in <a href={withBase('/mass/items-used-at-mass')}>Items Used at Mass</a>.
+	</p>
+</ArticleLayout>

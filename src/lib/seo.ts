@@ -42,7 +42,13 @@ export const PAGE_DESCRIPTIONS = {
 	commandments:
 		'The Ten Commandments—God’s moral law given to Moses—with the text of each commandment and its meaning for love of God and neighbor.',
 	mass:
+		'The Holy Mass in the Catholic Church—the order of Mass step by step and the sacred vessels, linens, books, vestments, and colors used in its celebration.',
+	massItems:
 		'Items used at Mass in the Catholic Church—sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other objects used in the Eucharist.',
+	orderOfMass:
+		'The order of the Catholic Mass step by step—Introductory Rites, Liturgy of the Word, Liturgy of the Eucharist, and Concluding Rites—with the meaning of each part.',
+	pathToSainthood:
+		'The path to sainthood in the Catholic Church—Servant of God, Venerable, Blessed, and Saint—and what each stage of a cause for canonization requires.',
 	rosaryOrigin:
 		'The origin of the Holy Rosary—from early monastic prayer through St. Dominic, the Battle of Lepanto, the Rosary popes, and the Luminous Mysteries.',
 	rosary:

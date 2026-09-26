@@ -1,0 +1,36 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import {
+	saints,
+	getSaintStatus,
+	pathToSainthoodIntro,
+	pathToSainthoodSections,
+} from '../../data/saints';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import type { ArticleLink } from '../../lib/article';
+
+const related: ArticleLink[] = saints.slice(0, 3).map((saint) => ({
+	href: withBase(`/saints/${saint.slug}`),
+	title: saint.title,
+	label: getSaintStatus(saint),
+	excerpt: saint.excerpt,
+}));
+---
+
+<ArticleLayout
+	title="The Path to Sainthood"
+	description={PAGE_DESCRIPTIONS.pathToSainthood}
+	currentPath={Astro.url.pathname}
+	sectionKey="saints"
+	label="Saints · Canonization"
+	lead={pathToSainthoodIntro}
+	sections={pathToSainthoodSections}
+	related={related}
+>
+	<SectionList sections={pathToSainthoodSections} />
+	<p class="callout callout--liturgy">
+		Meet holy men and women at every stage in our <a href={withBase('/saints')}>saint biographies</a>.
+	</p>
+</ArticleLayout>

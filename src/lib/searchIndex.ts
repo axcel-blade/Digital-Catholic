@@ -1,5 +1,5 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
-import { massIntro, massSections } from '../data/mass';
+import { massIntro, massItemsIntro, massPages, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
 import {
 	mysterySets,
@@ -21,7 +21,12 @@ import {
 	liturgicalCalendarIntro,
 	liturgicalSeasonsIntro,
 } from '../data/liturgical-calendar';
-import { saints } from '../data/saints';
+import {
+	saints,
+	getSaintStatus,
+	pathToSainthoodIntro,
+	pathToSainthoodSections,
+} from '../data/saints';
 import { bibleBooks, bibleIntro, testamentLabels } from '../data/bible';
 import { prayers, prayersIntro } from '../data/prayers';
 import { withBase } from './paths';
@@ -165,13 +170,40 @@ export function buildSearchIndex(): SearchEntry[] {
 			[commandmentsIntro, ...commandments.map((c) => joinParts(c.title, c.text, c.meaning))],
 		),
 		entry(
-			'Items Used at Mass',
+			'Holy Mass',
 			withBase('/mass'),
 			'Mass',
 			massIntro,
+			[massIntro, ...massPages.map((p) => joinParts(p.title, p.excerpt))],
+		),
+		entry(
+			'Items Used at Mass',
+			withBase('/mass/items-used-at-mass'),
+			'Mass',
+			massItemsIntro,
 			[
-				massIntro,
+				massItemsIntro,
 				...massSections.flatMap((s) => [s.heading, ...s.items.map((i) => joinParts(i.name, i.description))]),
+			],
+		),
+		entry(
+			'The Order of Mass',
+			withBase('/mass/order-of-mass'),
+			'Mass',
+			orderOfMassIntro,
+			[
+				'mass parts procedure liturgy consecration communion readings homily creed',
+				...orderOfMassSections.flatMap((s) => [s.heading, ...s.paragraphs]),
+			],
+		),
+		entry(
+			'The Path to Sainthood',
+			withBase('/saints/path-to-sainthood'),
+			'Saints',
+			pathToSainthoodIntro,
+			[
+				'canonization beatification miracle heroic virtue cause',
+				...pathToSainthoodSections.flatMap((s) => [s.heading, ...s.paragraphs]),
 			],
 		),
 		entry(
@@ -235,7 +267,7 @@ export function buildSearchIndex(): SearchEntry[] {
 			entry(
 				saint.title,
 				withBase(`/saints/${saint.slug}`),
-				'Saint',
+				getSaintStatus(saint),
 				saint.excerpt,
 				[saint.lifeDates ?? '', saint.feastDays ?? '', sectionsText(saint.sections)]
 			)

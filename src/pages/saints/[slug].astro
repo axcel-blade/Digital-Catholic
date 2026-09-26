@@ -1,7 +1,7 @@
 ---
 import ArticleLayout, { type ArticleMeta } from '../../layouts/ArticleLayout.astro';
 import SectionList from '../../components/SectionList.astro';
-import { saints, getSaintImageAlt, type Saint } from '../../data/saints';
+import { saints, getSaintImageAlt, getSaintStatus, type Saint } from '../../data/saints';
 import { withBase } from '../../lib/paths';
 import { getCollectionImage } from '../../lib/images';
 import { getNeighbors, getRelated, type ArticleLink } from '../../lib/article';
@@ -20,7 +20,7 @@ if (!saint) {
 const toLink = (s: Saint): ArticleLink => ({
 	href: withBase(`/saints/${s.slug}`),
 	title: s.title,
-	label: 'Saint',
+	label: getSaintStatus(s),
 	excerpt: s.excerpt,
 });
 
@@ -36,7 +36,7 @@ const meta: ArticleMeta[] = [
 	description={saint.excerpt}
 	currentPath={Astro.url.pathname}
 	sectionKey="saints"
-	label="Saint"
+	label={getSaintStatus(saint)}
 	lead={saint.excerpt}
 	meta={meta}
 	image={getCollectionImage('saints', saint.slug, getSaintImageAlt(saint.title))}
@@ -47,4 +47,7 @@ const meta: ArticleMeta[] = [
 	trust={saint}
 >
 	<SectionList sections={saint.sections} />
+	<p class="callout callout--liturgy">
+		What does “{getSaintStatus(saint)}” mean? Learn about <a href={withBase('/saints/path-to-sainthood')}>the path to sainthood</a>.
+	</p>
 </ArticleLayout>

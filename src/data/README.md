@@ -18,9 +18,9 @@ Content is split into **one file per article** so contributors can add entries w
 | Commandments | `commandments/items/NN-short-name.ts` | `03-keep-the-lord-s-day-holy.ts` |
 | Rosary mystery sets | `rosary/mystery-sets/NN-{slug}.ts` | `01-joyful.ts` (order fixed in `rosary/index.ts`) |
 | Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates |
-| Items used at Mass | `mass/index.ts` | add an entry to the relevant group in `massSections` |
+| Holy Mass | `mass/index.ts` | add an entry to the relevant group in `massSections` (Items Used at Mass); the Order of Mass text lives in `mass/order.ts`; a new Mass sub-page also needs an entry in `massPages` |
 
-Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, and Mass items in `public/mass/{name}.jpg` (Wikimedia Commons–licensed art preferred).
+Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, and Mass items in `public/mass/{name}.jpg` (Wikimedia Commons–licensed art preferred). Record the source, author, and license of each Mass image in `public/mass/CREDITS.md`.
 
 Each folder has:
 
@@ -32,11 +32,11 @@ Each folder has:
 ## Adding a saint (example)
 
 1. Copy an existing file in `saints/items/`, e.g. `st-joseph.ts`, and rename it to your slug: `st-francis-of-assisi.ts`.
-2. Edit the object: `slug`, `title`, `excerpt`, optional `lifeDates`, `feastDays`, and `sections` (include **Full biography** and **Death and legacy** before any closing lesson section).
+2. Edit the object: `slug`, `title`, `excerpt`, optional `status` (`Servant of God`, `Venerable`, `Blessed`, or `Saint`; defaults to `Saint`), `lifeDates`, `feastDays`, and `sections` (include **Full biography** and **Death and legacy** before any closing lesson section).
 3. Add a photo at `public/saints/st-francis-of-assisi.jpg`.
 4. Run `npm run build`.
 
-The new saint appears on `/saints` and in search automatically—no need to edit `index.ts`.
+The new saint appears on `/saints` and in search automatically—no need to edit `index.ts`. Do not use the slug `path-to-sainthood`; it is reserved for the page explaining each stage, whose text lives in `saints/path.ts`.
 
 ## Trust and source fields (optional)
 

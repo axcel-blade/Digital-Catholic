@@ -49,7 +49,7 @@ All site content is written as TypeScript objects, not Markdown or a CMS.
 - Flat files such as `src/data/saints.ts` are re-export shims so pages can import from short paths (`../../data/saints`).
 - Some sections are not item collections:
   - **Holy Bible** — `bible/books/old-testament.ts` and `new-testament.ts` hold all 73 books
-  - **Items Used at Mass** — `mass/index.ts` exports grouped `massSections`
+  - **Holy Mass** — `mass/index.ts` exports the hub's `massPages`, the grouped `massSections` for Items Used at Mass, and re-exports the Order of Mass text from `mass/order.ts`
   - **Liturgical Calendar** — `liturgical-calendar/compute.ts` calculates the year (see below)
 
 See [src/data/README.md](../src/data/README.md) for the contributor guide.
@@ -63,7 +63,7 @@ Astro's file-based routing. Each section has:
 | `<section>/index.astro` | Section listing page, e.g. `/saints` |
 | `<section>/[slug].astro` | One page per item; `getStaticPaths()` maps the collection to slugs |
 
-Other routes: `index.astro` (home), `about.astro`, `contact.astro`, `404.astro`, `commandments/index.astro`, `mass/index.astro`, `rosary/origin.astro`, `liturgical-calendar/[year].astro`, and `search-index.json.ts` (a static JSON endpoint for search).
+Other routes: `index.astro` (home), `about.astro`, `contact.astro`, `404.astro`, `commandments/index.astro`, `mass/index.astro` (the Holy Mass hub), `mass/order-of-mass.astro`, `mass/items-used-at-mass.astro`, `rosary/origin.astro`, `saints/path-to-sainthood.astro`, `liturgical-calendar/[year].astro`, and `search-index.json.ts` (a static JSON endpoint for search).
 
 Listing pages use `SectionLayout`; item pages use `ArticleLayout`.
 
@@ -107,7 +107,7 @@ One global stylesheet built on CSS custom properties (design tokens) for a singl
 
 ### 6. Static assets — `public/`
 
-Copied to the output as-is. Images are stored per section, named after the item slug: `public/saints/`, `public/disciples/`, `public/eucharistic-miracles/`, `public/marian-apparitions/`, `public/sacraments/`, `public/mass/`. Also holds the favicon, the 1200×630 social image (`og-image.png`), and `robots.txt`.
+Copied to the output as-is. Images are stored per section, named after the item slug: `public/saints/`, `public/disciples/`, `public/eucharistic-miracles/`, `public/marian-apparitions/`, `public/sacraments/`, `public/mass/` (with image attribution in `public/mass/CREDITS.md`). Also holds the favicon, the 1200×630 social image (`og-image.png`), and `robots.txt`.
 
 ---
 

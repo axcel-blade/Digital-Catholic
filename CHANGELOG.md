@@ -22,9 +22,13 @@ All notable changes to Digital Catholic are documented here.
 - Docker support: multi-stage `Dockerfile` (Node build, nginx serve), `docker-compose.yml`, `.dockerignore`, and `docker/nginx.conf`
 - Prayers section expanded with additional common Catholic prayers
 - Prayer page improvements (slug routing, intro text, type system)
-- Items Used at Mass section (`/mass`) — sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other sacred items, with images under `public/mass/`
+- Items Used at Mass page (`/mass/items-used-at-mass`) — sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other sacred items, with images under `public/mass/`
+- Images for all 26 Items Used at Mass entries (every item except the liturgical colors), from Wikimedia Commons and resized to at most 960px, with alt text describing each image and attribution in `public/mass/CREDITS.md`
 - Origin of the Rosary moved to its own page at `/rosary/origin`
 - Saints: St. Charbel and Archbishop Fulton J. Sheen added
+- Saints: “The Path to Sainthood” page at `/saints/path-to-sainthood` explaining Servant of God, Venerable, Blessed, and Saint, linked from the Saints listing and every biography, and included in search
+- Mass: “The Order of Mass” page at `/mass/order-of-mass` walking through the Introductory Rites, Liturgy of the Word, Liturgy of the Eucharist, and Concluding Rites, linked from Items Used at Mass and included in search
+- Mass: `/mass` is now a “Holy Mass” hub linking to its two sub-pages, “The Order of Mass” and “Items Used at Mass” (moved to `/mass/items-used-at-mass`)
 - Design system documentation moved to `docs/DESIGN.md`
 - Architecture documentation added at `docs/ARCHITECTURE.md`
 - `ROADMAP.md` and `TODO.md` removed
@@ -38,6 +42,8 @@ All notable changes to Digital Catholic are documented here.
 ### Fixed
 - Undefined CSS variables (`--radius`, `--color-text-muted`, `--color-heading`, `--radius-md`)
 - Items Used at Mass no longer shows broken images for files missing from `public/mass/`
+- `public/mass/candles.jpg` and `public/mass/crucifix.jpg` were saved Wikimedia error pages rather than images; replaced with real photos
+- `public/mass/corporal.jpg` reduced from 1.9 MB to under 50 KB
 - Disciples now appear in traditional order (they were sorted by a field that did not exist)
 - Christmas season dates in the liturgical calendar: the season now runs to the Baptism of the Lord in the following January, and early January is included
 - About page showed 10 content areas instead of 13
