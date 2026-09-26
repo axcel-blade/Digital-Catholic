@@ -7,6 +7,9 @@ import { withBase } from '../lib/paths';
 import { getPublicImage } from '../lib/images';
 
 const contactEmail = 'srikanthfernando3@gmail.com';
+const emailSubject = 'Digital Catholic enquiry';
+// Web compose link, so the button works even when no desktop mail app is set up.
+const gmailComposeHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent(emailSubject)}`;
 const githubRepo = SITE.repoUrl;
 const githubIssues = `${githubRepo}/issues`;
 const breadcrumbs: BreadcrumbItem[] = [{ label: 'Home', href: withBase('/') }, { label: 'Contact' }];
@@ -36,8 +39,8 @@ const image = getPublicImage(
 					<li class="contact-option">
 						<h2 class="contact-option__title">Email the maintainer</h2>
 						<p>For questions or anything you would rather not post publicly.</p>
-						<a class="button button--primary" href={`mailto:${contactEmail}`}>
-							Email {contactEmail}
+						<a class="button button--primary" href={gmailComposeHref} rel="noopener noreferrer" target="_blank">
+							Email {contactEmail}<span class="visually-hidden"> in Gmail (opens in a new tab)</span>
 						</a>
 					</li>
 					<li class="contact-option">
