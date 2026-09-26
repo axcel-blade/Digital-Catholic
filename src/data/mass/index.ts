@@ -1,3 +1,5 @@
+export { orderOfMassIntro, orderOfMassSections } from './order';
+
 export const massIntro = "The Mass is the central act of Catholic worship — the Eucharistic sacrifice in which Christ offers Himself to the Father through the ministry of the priest. Every object used at Mass carries meaning rooted in Scripture and centuries of tradition.";
 
 export const massSections = [

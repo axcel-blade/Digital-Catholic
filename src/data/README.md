@@ -18,7 +18,7 @@ Content is split into **one file per article** so contributors can add entries w
 | Commandments | `commandments/items/NN-short-name.ts` | `03-keep-the-lord-s-day-holy.ts` |
 | Rosary mystery sets | `rosary/mystery-sets/NN-{slug}.ts` | `01-joyful.ts` (order fixed in `rosary/index.ts`) |
 | Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates |
-| Items used at Mass | `mass/index.ts` | add an entry to the relevant group in `massSections` |
+| Items used at Mass | `mass/index.ts` | add an entry to the relevant group in `massSections`; the Order of Mass text lives in `mass/order.ts` |
 
 Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, and Mass items in `public/mass/{name}.jpg` (Wikimedia Commons–licensed art preferred). Record the source, author, and license of each Mass image in `public/mass/CREDITS.md`.
 
