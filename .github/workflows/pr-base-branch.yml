@@ -8,11 +8,11 @@ jobs:
   require-contribution-base:
     name: Require contribution as PR base
     runs-on: ubuntu-latest
-    if: github.base_ref == 'main' && github.head_ref != 'contribution'
+    if: github.base_ref == 'main' && github.head_ref != 'contribution' && github.head_ref != 'develop'
     steps:
       - name: Reject pull requests targeting main
         run: |
           echo "::error::Open pull requests against the \`contribution\` branch, not \`main\`."
           echo "Branch from \`contribution\`, push your changes, and open a PR into \`contribution\`."
-          echo "Maintainers merge \`contribution\` → \`main\` when ready to deploy."
+          echo "Maintainers merge \`contribution\` or \`develop\` → \`main\` when ready to deploy."
           exit 1
