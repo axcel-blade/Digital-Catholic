@@ -19,6 +19,10 @@ const currentPath = Astro.url.pathname;
 	intro="Read the lives of the saints, and of holy men and women on the path to canonization—their faith, trials, and love of God—so their example may guide your own journey in Christ."
 	count={`${saints.length} ${saints.length === 1 ? 'biography' : 'biographies'}`}
 >
+	<nav class="jump-links" aria-label="Related pages" slot="header">
+		<a class="jump-links__link" href={withBase('/saints/path-to-sainthood')}>The path to sainthood</a>
+	</nav>
+
 	{saints.length === 0 ? (
 		<EmptyState />
 	) : (

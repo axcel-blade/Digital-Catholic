@@ -26,6 +26,7 @@ All notable changes to Digital Catholic are documented here.
 - Images for all 26 Items Used at Mass entries (every item except the liturgical colors), from Wikimedia Commons and resized to at most 960px, with alt text describing each image and attribution in `public/mass/CREDITS.md`
 - Origin of the Rosary moved to its own page at `/rosary/origin`
 - Saints: St. Charbel and Archbishop Fulton J. Sheen added
+- Saints: “The Path to Sainthood” page at `/saints/path-to-sainthood` explaining Servant of God, Venerable, Blessed, and Saint, linked from the Saints listing and every biography, and included in search
 - Design system documentation moved to `docs/DESIGN.md`
 - Architecture documentation added at `docs/ARCHITECTURE.md`
 - `ROADMAP.md` and `TODO.md` removed
