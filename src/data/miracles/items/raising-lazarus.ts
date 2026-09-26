@@ -6,6 +6,7 @@ const miracle: Miracle = {
 	"category": "Raising the dead",
 	"gospelReference": "John 11:1–44",
 	"excerpt": "“I am the resurrection and the life.” Jesus calls Lazarus from the tomb after four days.",
+	"imageAlt": "Lazarus rising from the tomb at Christ’s command, painted by Sebastiano del Piombo",
 	"sections": [
 		{
 			"heading": "The sign",

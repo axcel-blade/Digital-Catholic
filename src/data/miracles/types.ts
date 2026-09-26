@@ -13,5 +13,7 @@ export interface Miracle extends TrustInfo {
 	category: MiracleCategory;
 	gospelReference: string;
 	excerpt: string;
+	/** Alt text for the painting or mosaic of the miracle */
+	imageAlt: string;
 	sections: MiracleSection[];
 }

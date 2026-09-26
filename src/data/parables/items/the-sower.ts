@@ -6,6 +6,7 @@ const parable: Parable = {
 	"category": "Kingdom of God",
 	"gospelReference": "Matthew 13:1–23 · Mark 4:1–20 · Luke 8:4–15",
 	"excerpt": "Seed falls on four kinds of soil—a lesson on how the Word of God is received in the human heart.",
+	"imageAlt": "A sower scattering seed across a field, painted by James Tissot",
 	"sections": [
 		{
 			"heading": "The parable",

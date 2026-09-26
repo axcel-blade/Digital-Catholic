@@ -29,6 +29,7 @@ All notable changes to Digital Catholic are documented here.
 - Saints: “The Path to Sainthood” page at `/saints/path-to-sainthood` explaining Servant of God, Venerable, Blessed, and Saint, linked from the Saints listing and every biography, and included in search
 - Mass: “The Order of Mass” page at `/mass/order-of-mass` walking through the Introductory Rites, Liturgy of the Word, Liturgy of the Eucharist, and Concluding Rites, linked from Items Used at Mass and included in search
 - Mass: `/mass` is now a “Holy Mass” hub linking to its two sub-pages, “The Order of Mass” and “Items Used at Mass” (moved to `/mass/items-used-at-mass`)
+- Parables and Miracles of Jesus: public-domain artwork from Wikimedia Commons for all 12 parables and 11 miracles, shown on listing cards and article pages, with alt text and attribution in `public/parables/CREDITS.md` and `public/miracles/CREDITS.md`
 - Design system documentation moved to `docs/DESIGN.md`
 - Architecture documentation added at `docs/ARCHITECTURE.md`
 - `ROADMAP.md` and `TODO.md` removed

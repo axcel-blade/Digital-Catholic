@@ -6,6 +6,7 @@ const parable: Parable = {
 	"category": "Discipleship",
 	"gospelReference": "John 10:1–18",
 	"excerpt": "“I am the good shepherd. The good shepherd lays down his life for the sheep.”",
+	"imageAlt": "Christ the Good Shepherd carrying a lamb among his flock, painted by Bernhard Plockhorst",
 	"sections": [
 		{
 			"heading": "The teaching",

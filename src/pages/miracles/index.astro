@@ -7,6 +7,7 @@ import { miracles, miraclesIntro } from '../../data/miracles';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 import { slugify } from '../../lib/article';
+import { getCollectionImage } from '../../lib/images';
 
 const categories = [...new Set(miracles.map((m) => m.category))].map((category) => ({
 	value: slugify(category),
@@ -34,8 +35,8 @@ const categories = [...new Set(miracles.map((m) => m.category))].map((category) 
 				options={categories}
 				noun={{ one: 'miracle', many: 'miracles' }}
 			/>
-			<ul class="card-grid" id="miracle-list">
-				{miracles.map((miracle) => (
+			<ul class="card-grid card-grid--media" id="miracle-list">
+				{miracles.map((miracle, i) => (
 					<EntryCard
 						href={withBase(`/miracles/${miracle.slug}`)}
 						title={miracle.title}
@@ -43,7 +44,9 @@ const categories = [...new Set(miracles.map((m) => m.category))].map((category) 
 						meta={miracle.gospelReference}
 						excerpt={miracle.excerpt}
 						action="Read article"
+						image={getCollectionImage('miracles', miracle.slug, miracle.imageAlt)}
 						filterValue={slugify(miracle.category)}
+						eager={i < 3}
 					/>
 				))}
 			</ul>
