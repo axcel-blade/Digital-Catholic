@@ -1,11 +1,15 @@
 import { loadCollection } from '../lib/loadCollection';
-import type { Saint } from './types';
+import type { Saint, SaintStatus } from './types';
 export type * from './types';
 const modules = import.meta.glob('./items/*.ts', { eager: true });
 export const saints = loadCollection<Saint>(modules);
 
 export function getSaint(slug: string) {
 	return saints.find((s) => s.slug === slug);
+}
+
+export function getSaintStatus(saint: Saint): SaintStatus {
+	return saint.status ?? 'Saint';
 }
 
 export function getSaintImageSrc(slug: string): string {
