@@ -85,7 +85,6 @@ The Liturgical Calendar computes the current year on `/liturgical-calendar` and 
 | `src/components/StatusBadge.astro`, `StatusLegend.astro`, `TrustPanel.astro` | Church status labels and the “About this article” panel |
 | `src/components/SectionList.astro` | Article sections with anchor ids shared with the “On this page” list |
 | `src/components/ShareLink.astro` | Copy-link button |
-| `src/components/ThemeToggle.astro` | Light/dark switch |
 | `src/components/LiturgicalCalendarView.astro` | Year navigation, season summary, “today” card, and monthly listings |
 
 ### 4. Shared logic — `src/lib/`
@@ -104,7 +103,7 @@ Internal links and asset URLs must go through `withBase()` (or `import.meta.env.
 
 ### 5. Styling — `src/styles/global.css`
 
-One global stylesheet built on CSS custom properties (design tokens) with light and dark values. No CSS framework and no web fonts. The tokens, components, and principles are documented in [DESIGN.md](DESIGN.md).
+One global stylesheet built on CSS custom properties (design tokens) for a single dark theme. No CSS framework and no web fonts. The tokens, components, and principles are documented in [DESIGN.md](DESIGN.md).
 
 ### 6. Static assets — `public/`
 
@@ -117,7 +116,6 @@ Copied to the output as-is. Images are stored per section, named after the item 
 All content is readable without JavaScript. Scripts add:
 
 - **Search.** `src/pages/search-index.json.ts` writes the output of `buildSearchIndex()` to a static JSON file at build time. `SiteSearch` fetches it the first time the search panel opens (button or `/` key), then scores each query's terms against titles, categories, excerpts, and body text in the browser. Results support arrow keys, Enter, and Escape. Nothing is sent to a server, and new items are indexed on the next build without code changes. A new *section* needs an entry in `searchIndex.ts`.
-- **Theme.** An inline script in `BaseLayout` reads the saved preference from `localStorage` (falling back to the OS setting) and sets `data-theme` on `<html>` before first paint, which avoids a flash of the wrong theme. `ThemeToggle` updates the attribute and stores the choice.
 - **Navigation.** Learn/Pray/Explore dropdowns on desktop and a grouped menu on small screens; both close on Escape or an outside click and manage focus.
 - **Filters.** `CardFilter` shows or hides cards by category or Church status. It is hidden without JavaScript, so every card stays visible.
 - **Copy link.** Copies the page's canonical URL to the clipboard.

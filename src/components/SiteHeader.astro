@@ -3,7 +3,6 @@ import type { SiteNav } from '../lib/siteNav';
 import { withBase } from '../lib/paths';
 import BrandMark from './BrandMark.astro';
 import SiteSearch from './SiteSearch.astro';
-import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
 	nav: SiteNav;
@@ -82,7 +81,6 @@ const { nav } = Astro.props;
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
 				<span class="search-toggle__label">Search</span>
 			</button>
-			<ThemeToggle />
 			<button
 				type="button"
 				class="icon-button menu-toggle"
