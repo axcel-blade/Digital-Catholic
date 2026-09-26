@@ -20,7 +20,8 @@ A static website for learning and sharing the Catholic faith — presented in cl
 | **Ten Commandments** | The moral law with the text and meaning of each commandment |
 | **Holy Bible** | Summaries of all 73 books of the Catholic canon |
 | **Prayers** | The Our Father and Hail Mary — full text and explanation |
-| **Rosary** | How to pray the Rosary, the traditional prayers, and all twenty mysteries |
+| **Rosary** | How to pray the Rosary, the traditional prayers, all twenty mysteries, and the origin of the Rosary |
+| **Items Used at Mass** | Sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other sacred items |
 | **Liturgical Calendar** | Solemnities, feasts, memorials, and liturgical seasons by year |
 
 The site also includes full-text search across all sections, a light/dark theme, and a responsive layout for mobile and desktop.
@@ -30,7 +31,7 @@ The site also includes full-text search across all sections, a light/dark theme,
 ## Built with
 
 - [Astro 6](https://astro.build) — static site generation
-- Plain CSS — no UI framework (see [DESIGN.md](DESIGN.md) for the design system)
+- Plain CSS — no UI framework (see [docs/DESIGN.md](docs/DESIGN.md) for the design system)
 - Client-side search — index built at compile time, no external service
 - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) — sitemap for SEO
 
@@ -84,6 +85,7 @@ The optional build argument `ASTRO_SITE` sets the site URL used for canonical li
 
 ```
 public/               Static assets — favicon, robots.txt, images
+scripts/              One-off maintenance scripts (content file splitter)
 src/
   components/         SEO head, search, theme toggle, navigation
   data/               Content files — one .ts per article per section
@@ -91,14 +93,14 @@ src/
   lib/                Path helpers, SEO config, search index builder
   pages/              Routes — home, about, contact, and all section pages
   styles/             global.css — light and dark themes
-frontend/             Design system documentation
+docs/                 Architecture and design system documentation
 docker/               nginx config for the Docker image
 Dockerfile            Multi-stage build (Node build, nginx serve)
 docker-compose.yml    Local container setup on port 8080
 .github/workflows/    CI (build check) and CD (deploy to GitHub Pages)
 ```
 
-See [src/data/README.md](src/data/README.md) for how to add or edit content. SEO titles and descriptions are centralized in `src/lib/seo.ts`.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how the site is built and deployed, and [src/data/README.md](src/data/README.md) for how to add or edit content. SEO titles and descriptions are centralized in `src/lib/seo.ts`.
 
 ---
 
@@ -107,7 +109,6 @@ See [src/data/README.md](src/data/README.md) for how to add or edit content. SEO
 - Contribution workflow: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Bug reports and content requests: [GitHub Issues](https://github.com/axcel-blade/Digital-Catholic/issues)
 - Help and contact: [SUPPORT.md](SUPPORT.md)
-- Planned work: [ROADMAP.md](ROADMAP.md) · [TODO.md](TODO.md)
 - Change history: [CHANGELOG.md](CHANGELOG.md)
 
 ## License

@@ -15,7 +15,7 @@
 - [ ] Branch is based on `develop` (not `main`)
 - [ ] `npm run build` passes without errors
 - [ ] Content is accurate and aligned with Catholic teaching
-- [ ] Relevant markdown files updated (README, CHANGELOG, TODO, etc.)
+- [ ] Relevant markdown files updated (README, CHANGELOG, src/data/README, etc.)
 - [ ] No open-source libraries added
 - [ ] Images (if any) are Wikimedia Commons–licensed or original
 

@@ -6,6 +6,10 @@
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) first — it covers the branch model, how to add content, code style expectations, and the release process.
 
+### Questions about how the site works
+
+Read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how content, routing, search, the build, and deployment (GitHub Pages and Docker) fit together, and [docs/DESIGN.md](docs/DESIGN.md) for the design system.
+
 ### Questions about content
 
 Read [src/data/README.md](src/data/README.md) for how content files are structured and how to add a new article to any section.
