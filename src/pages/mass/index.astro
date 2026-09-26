@@ -1,58 +1,77 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBack from '../../components/PageBack.astro';
+import SectionLayout from '../../layouts/SectionLayout.astro';
 import { massIntro, massSections } from '../../data/mass';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
+import { getPublicImage } from '../../lib/images';
+import { slugify } from '../../lib/article';
 
-const currentPath = Astro.url.pathname;
+interface MassItem {
+	name: string;
+	description: string;
+	image?: string;
+	imageAlt?: string;
+	color?: string;
+}
+
+const sections = massSections.map((section) => ({
+	heading: section.heading,
+	id: slugify(section.heading),
+	items: (section.items as MassItem[]).map((item) => ({
+		...item,
+		// Only show art that is actually present in /public.
+		picture: item.image ? getPublicImage(item.image, item.imageAlt ?? item.name) : null,
+	})),
+}));
+const itemCount = sections.reduce((sum, s) => sum + s.items.length, 0);
 ---
 
-<BaseLayout
-	title="Items Used at Mass"
+<SectionLayout
+	sectionKey="mass"
 	description={PAGE_DESCRIPTIONS.mass}
-	currentPath={currentPath}
+	currentPath={Astro.url.pathname}
+	intro={massIntro}
+	count={`${itemCount} items in ${sections.length} groups`}
 >
-	<div class="page-content page-content--catalog">
-		<PageBack href={withBase('/')} />
-		<div class="catalog-hero">
-			<p class="hero__tagline">Worship</p>
-			<h1>Items Used at Mass</h1>
-			<p class="lead">{massIntro}</p>
-		</div>
-
-		{massSections.map((section) => (
-			<section class="mass-section">
-				<h2 class="mass-section__heading">{section.heading}</h2>
-				<ul class="mass-item-list">
-					{section.items.map((item) => (
-						<li class={`mass-item-card${(item as any).image || (item as any).color ? ' mass-item-card--has-media' : ''}`}>
-							{(item as any).image && (
-								<div class="mass-item-card__image-wrap">
-									<img
-										class="mass-item-card__image"
-										src={withBase((item as any).image)}
-										alt={(item as any).imageAlt ?? item.name}
-										loading="lazy"
-										decoding="async"
-									/>
-								</div>
-							)}
-							{(item as any).color && (
-								<div
-									class="mass-item-card__swatch"
-									style={`background:${(item as any).color}`}
-									aria-hidden="true"
-								/>
-							)}
-							<div class="mass-item-card__body">
-								<h3 class="mass-item-card__name">{item.name}</h3>
-								<p class="mass-item-card__description">{item.description}</p>
-							</div>
-						</li>
-					))}
-				</ul>
-			</section>
+	<nav class="jump-links" aria-label="Jump to a group" slot="header">
+		{sections.map((s) => (
+			<a class="jump-links__link" href={`#${s.id}`}>{s.heading} <span class="jump-links__count">{s.items.length}</span></a>
 		))}
-	</div>
-</BaseLayout>
+	</nav>
+
+	{sections.map((section) => (
+		<section class="mass-section" id={section.id} aria-labelledby={`${section.id}-title`}>
+			<h2 class="section-title" id={`${section.id}-title`}>{section.heading}</h2>
+			<ul class="mass-grid">
+				{section.items.map((item) => (
+					<li class:list={['mass-item', { 'mass-item--media': item.picture || item.color }]}>
+						{item.picture && (
+							<div class="mass-item__media">
+								<img
+									src={item.picture.src}
+									alt={item.picture.alt}
+									width={item.picture.width}
+									height={item.picture.height}
+									loading="lazy"
+									decoding="async"
+								/>
+							</div>
+						)}
+						{item.color && (
+							<span class="mass-item__swatch" style={`--swatch: ${item.color}`} aria-hidden="true"></span>
+						)}
+						<div class="mass-item__body">
+							<h3 class="mass-item__name">{item.name}</h3>
+							<p class="mass-item__text">{item.description}</p>
+						</div>
+					</li>
+				))}
+			</ul>
+		</section>
+	))}
+
+	<p class="section-footer-links">
+		See also the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a> and the
+		<a href={withBase('/liturgical-calendar')}>liturgical calendar</a>, which sets the color of each day.
+	</p>
+</SectionLayout>

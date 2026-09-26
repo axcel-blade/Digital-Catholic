@@ -22,6 +22,8 @@ import {
 	liturgicalSeasonsIntro,
 } from '../data/liturgical-calendar';
 import { saints } from '../data/saints';
+import { bibleBooks, bibleIntro, testamentLabels } from '../data/bible';
+import { prayers, prayersIntro } from '../data/prayers';
 import { withBase } from './paths';
 
 export interface SearchEntry {
@@ -58,16 +60,35 @@ export function buildSearchIndex(): SearchEntry[] {
 			'Digital Catholic',
 			withBase('/'),
 			'Home',
-			'Catholic saints, sacraments, commandments, and the Rosary.',
-			[
-				'saints sacraments commandments rosary faith formation prayer',
-			]
+			'Clear Catholic resources for Scripture, saints, sacraments, prayer, and the liturgical year.',
+			['saints sacraments commandments rosary faith formation prayer bible scripture']
+		),
+		entry(
+			'Contact',
+			withBase('/contact'),
+			'About',
+			'Questions, corrections, or suggestions—by email or on GitHub.',
+			['contact email feedback correction github issue contribute']
+		),
+		entry(
+			'Holy Bible',
+			withBase('/bible'),
+			'Scripture',
+			bibleIntro,
+			['bible scripture old testament new testament books canon deuterocanonical'],
+		),
+		entry(
+			'Prayers',
+			withBase('/prayers'),
+			'Prayer',
+			prayersIntro,
+			[...prayers.map((p) => joinParts(p.title, p.alsoKnownAs, p.excerpt))],
 		),
 		entry(
 			'About Digital Catholic',
 			withBase('/about'),
 			'About',
-			'What this site is about — saints, sacraments, and faith formation.',
+			'What Digital Catholic is, who it is for, and how its content is organized.',
 			[
 				'learning site Catholic faith biography sacraments knowledge sharing',
 			]
@@ -289,6 +310,30 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Commandment',
 				commandment.text,
 				[commandment.title, commandment.text, commandment.meaning]
+			)
+		);
+	}
+
+	for (const book of bibleBooks) {
+		items.push(
+			entry(
+				book.title,
+				withBase(`/bible/${book.slug}`),
+				`Bible · ${testamentLabels[book.testament]}`,
+				book.excerpt,
+				[book.abbreviation, book.deuterocanonical ? 'deuterocanonical' : '', sectionsText(book.sections)]
+			)
+		);
+	}
+
+	for (const prayer of prayers) {
+		items.push(
+			entry(
+				prayer.title,
+				withBase(`/prayers/${prayer.slug}`),
+				'Prayer',
+				prayer.excerpt,
+				[prayer.alsoKnownAs ?? '', prayer.text, sectionsText(prayer.sections)]
 			)
 		);
 	}

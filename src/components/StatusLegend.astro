@@ -1,0 +1,33 @@
+---
+/** Explains the Church-status labels used on a listing page. */
+import {
+	churchStatusDescriptions,
+	churchStatusOrder,
+	type ChurchStatus,
+} from '../data/lib/trust';
+import StatusBadge from './StatusBadge.astro';
+
+interface Props {
+	/** Statuses that actually appear on the page */
+	statuses: ChurchStatus[];
+}
+
+const { statuses } = Astro.props;
+const shown = churchStatusOrder.filter((status) => statuses.includes(status));
+---
+
+<details class="status-legend">
+	<summary class="status-legend__summary">What the Church status labels mean</summary>
+	<dl class="status-legend__list">
+		{shown.map((status) => (
+			<div class="status-legend__item">
+				<dt><StatusBadge status={status} /></dt>
+				<dd>{churchStatusDescriptions[status]}</dd>
+			</div>
+		))}
+	</dl>
+	<p class="status-legend__note">
+		Each label summarizes what the article itself reports. The Church never requires Catholics to
+		believe in a private revelation, even an approved one.
+	</p>
+</details>

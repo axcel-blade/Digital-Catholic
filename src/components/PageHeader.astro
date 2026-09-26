@@ -1,0 +1,38 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+import type { BreadcrumbItem } from '../lib/seo';
+import { getSectionGroup, type SectionGroupKey } from '../lib/sections';
+import { withBase } from '../lib/paths';
+
+interface Props {
+	breadcrumbs: BreadcrumbItem[];
+	label: string;
+	title: string;
+	intro?: string;
+	/** e.g. "12 apostles" */
+	count?: string;
+	/** Adds a link back to the Learn / Pray / Explore pathway */
+	group?: SectionGroupKey;
+}
+
+const { breadcrumbs, label, title, intro, count, group } = Astro.props;
+const groupInfo = group ? getSectionGroup(group) : undefined;
+---
+
+<header class="page-header">
+	<Breadcrumbs items={breadcrumbs} />
+	<p class="eyebrow">{label}</p>
+	<h1 class="page-header__title">{title}</h1>
+	{intro && <p class="page-header__intro">{intro}</p>}
+	<slot />
+	{(count || groupInfo) && (
+		<p class="page-header__meta">
+			{count && <span class="page-header__count">{count}</span>}
+			{groupInfo && (
+				<a class="page-header__group" href={withBase(`/#${groupInfo.anchor}`)}>
+					More in {groupInfo.label}
+				</a>
+			)}
+		</p>
+	)}
+</header>

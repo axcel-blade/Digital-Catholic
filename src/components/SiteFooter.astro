@@ -1,0 +1,51 @@
+---
+import type { SiteNav } from '../lib/siteNav';
+import { SITE } from '../lib/seo';
+import BrandMark from './BrandMark.astro';
+import Disclaimer from './Disclaimer.astro';
+
+interface Props {
+	nav: SiteNav;
+}
+
+const { nav } = Astro.props;
+---
+
+<footer class="site-footer">
+	<div class="site-footer__inner">
+		<div class="site-footer__brand">
+			<a class="brand brand--footer" href={nav.home.href}>
+				<BrandMark class="brand__mark" size={28} />
+				<span class="brand__name">Digital Catholic</span>
+			</a>
+			<p class="site-footer__tagline">{SITE.tagline}</p>
+			<Disclaimer class="site-footer__disclaimer" />
+		</div>
+
+		<nav class="site-footer__nav" aria-label="Footer">
+			{nav.groups.map((group) => (
+				<div class="site-footer__col">
+					<h2 class="site-footer__heading">{group.label}</h2>
+					<ul class="site-footer__list">
+						{group.items.map((item) => (
+							<li><a href={item.href}>{item.label}</a></li>
+						))}
+					</ul>
+				</div>
+			))}
+			<div class="site-footer__col">
+				<h2 class="site-footer__heading">Digital Catholic</h2>
+				<ul class="site-footer__list">
+					<li><a href={nav.about.href}>About</a></li>
+					<li><a href={nav.contact.href}>Contact</a></li>
+					<li>
+						<a href={SITE.repoUrl} rel="noopener noreferrer" target="_blank">
+							GitHub<span class="visually-hidden"> (opens in a new tab)</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<p class="site-footer__legal">Free to read and share. Made for prayer, catechesis, and study.</p>
+</footer>

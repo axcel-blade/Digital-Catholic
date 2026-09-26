@@ -15,7 +15,9 @@
 - [ ] Branch is based on `develop` (not `main`)
 - [ ] `npm run build` passes without errors
 - [ ] Content is accurate and aligned with Catholic teaching
-- [ ] Relevant markdown files updated (README, CHANGELOG, src/data/README, etc.)
+- [ ] Any Church status or source is supported by the article text or a checked reference
+- [ ] New pages checked with the keyboard, on mobile, and in light and dark themes
+- [ ] Relevant markdown files updated (README, CHANGELOG, src/data/README, docs/DESIGN.md, etc.)
 - [ ] No open-source libraries added
 - [ ] Images (if any) are Wikimedia Commons–licensed or original
 

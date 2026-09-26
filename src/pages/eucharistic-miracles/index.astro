@@ -1,65 +1,70 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBack from '../../components/PageBack.astro';
-import {
-	eucharisticMiracles,
-	eucharisticMiraclesIntro,
-	getEucharisticMiracleImageSrc,
-} from '../../data/eucharisticMiracles';
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import CardFilter from '../../components/CardFilter.astro';
+import StatusLegend from '../../components/StatusLegend.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { eucharisticMiracles, eucharisticMiraclesIntro } from '../../data/eucharisticMiracles';
+import { churchStatusLabels, churchStatusOrder } from '../../data/lib/trust';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
 
-const currentPath = Astro.url.pathname;
+const statuses = churchStatusOrder.filter((status) =>
+	eucharisticMiracles.some((m) => m.churchStatus === status)
+);
+const statusOptions = statuses.map((status) => ({
+	value: status,
+	label: churchStatusLabels[status],
+	count: eucharisticMiracles.filter((m) => m.churchStatus === status).length,
+}));
 ---
 
-<BaseLayout
-	title="Eucharistic Miracles"
+<SectionLayout
+	sectionKey="eucharistic-miracles"
+	heading="Eucharistic Miracles"
 	description={PAGE_DESCRIPTIONS.eucharisticMiracles}
-	currentPath={currentPath}
+	currentPath={Astro.url.pathname}
+	intro={eucharisticMiraclesIntro}
+	count={`${eucharisticMiracles.length} accounts`}
 >
-	<div class="page-content page-content--catalog">
-		<PageBack href={withBase('/')} />
-		<div class="catalog-hero">
-			<p class="hero__tagline">Eucharist</p>
-			<h1>Eucharistic Miracles</h1>
-			<p class="lead">{eucharisticMiraclesIntro}</p>
-		</div>
+	<Fragment slot="header">
+		{statuses.length > 0 && <StatusLegend statuses={statuses} />}
+	</Fragment>
 
-		<ul class="blog-grid blog-grid--catalog blog-grid--media">
-			{eucharisticMiracles.map((miracle) => (
-				<li class="blog-card">
-					<a
-						class="blog-card__link"
+	{eucharisticMiracles.length === 0 ? (
+		<EmptyState />
+	) : (
+		<>
+			{statusOptions.length > 1 && (
+				<CardFilter
+					target="eucharistic-list"
+					label="Filter by Church status"
+					options={statusOptions}
+					noun={{ one: 'account', many: 'accounts' }}
+				/>
+			)}
+			<ul class="card-grid card-grid--media" id="eucharistic-list">
+				{eucharisticMiracles.map((miracle, i) => (
+					<EntryCard
 						href={withBase(`/eucharistic-miracles/${miracle.slug}`)}
-					>
-						<div class="blog-card__media">
-							<img
-								src={getEucharisticMiracleImageSrc(miracle.slug)}
-								alt={miracle.imageAlt}
-								width="640"
-								height="400"
-								loading="lazy"
-								decoding="async"
-							/>
-						</div>
-						<div class="blog-card__body">
-							<span class="blog-card__category">{miracle.category}</span>
-							<h2 class="blog-card__title">{miracle.title}</h2>
-							<p class="blog-card__meta">
-								{miracle.location} · {miracle.date}
-							</p>
-							<p class="blog-card__excerpt">{miracle.excerpt}</p>
-							<span class="blog-card__read">Read article →</span>
-						</div>
-					</a>
-				</li>
-			))}
-		</ul>
-
-		<p class="catalog-footer-link">
-			<a href={withBase('/marian-apparitions')}>Marian apparitions →</a>
-			{' · '}
-			<a href={withBase('/miracles')}>Miracles of Jesus in the Gospels →</a>
-		</p>
-	</div>
-</BaseLayout>
+						title={miracle.title}
+						label={miracle.category}
+						meta={`${miracle.location} · ${miracle.date}`}
+						status={miracle.churchStatus}
+						excerpt={miracle.excerpt}
+						action="Read article"
+						image={getCollectionImage('eucharistic-miracles', miracle.slug, miracle.imageAlt)}
+						filterValue={miracle.churchStatus}
+						eager={i < 3}
+					/>
+				))}
+			</ul>
+		</>
+	)}
+	<p class="section-footer-links">
+		See also the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a>,
+		<a href={withBase('/marian-apparitions')}>Marian apparitions</a>, and the
+		<a href={withBase('/miracles')}>miracles of Jesus in the Gospels</a>.
+	</p>
+</SectionLayout>

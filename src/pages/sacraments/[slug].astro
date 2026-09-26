@@ -1,45 +1,51 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
 import {
-	getSacrament,
-	getSacramentImageSrc,
-	getSacramentImageAlt,
 	sacraments,
+	sacramentGroupLabels,
+	getSacramentImageAlt,
+	type Sacrament,
 } from '../../data/sacraments';
 import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+import { getNeighbors, getRelated, type ArticleLink } from '../../lib/article';
 
 export function getStaticPaths() {
-	return sacraments.map((sacrament) => ({
-		params: { slug: sacrament.slug },
-	}));
+	return sacraments.map((sacrament) => ({ params: { slug: sacrament.slug } }));
 }
 
-const slug = Astro.params.slug ?? '';
-const sacrament = getSacrament(slug);
+const index = sacraments.findIndex((s) => s.slug === Astro.params.slug);
+const sacrament = sacraments[index];
 
 if (!sacrament) {
 	return new Response(null, { status: 404, statusText: 'Not found' });
 }
 
-const currentPath = Astro.url.pathname;
+const groupOf = (s: Sacrament) => sacramentGroupLabels[s.slug];
+const toLink = (s: Sacrament): ArticleLink => ({
+	href: withBase(`/sacraments/${s.slug}`),
+	title: s.title,
+	label: groupOf(s) ?? 'Sacrament',
+	excerpt: s.excerpt,
+});
+
+const { prev, next } = getNeighbors(sacraments, index);
 ---
 
 <ArticleLayout
 	title={sacrament.title}
 	description={sacrament.excerpt}
-	currentPath={currentPath}
-	backHref={withBase('/sacraments')}
-	backLabel="All sacraments"
-	imageSrc={getSacramentImageSrc(sacrament.slug)}
-	imageAlt={getSacramentImageAlt(sacrament.title)}
+	currentPath={Astro.url.pathname}
+	sectionKey="sacraments"
+	label={groupOf(sacrament) ?? 'Sacrament'}
+	lead={sacrament.excerpt}
+	image={getCollectionImage('sacraments', sacrament.slug, getSacramentImageAlt(sacrament.title))}
+	sections={sacrament.sections}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={getRelated(sacraments, index, 3, groupOf).map(toLink)}
+	trust={sacrament}
 >
-	<p class="article__lead article__lead--bordered">{sacrament.excerpt}</p>
-	{sacrament.sections.map((section) => (
-		<section>
-			<h2>{section.heading}</h2>
-			{section.paragraphs.map((paragraph) => (
-				<p>{paragraph}</p>
-			))}
-		</section>
-	))}
+	<SectionList sections={sacrament.sections} />
 </ArticleLayout>

@@ -1,37 +1,44 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBack from '../../components/PageBack.astro';
+import SectionLayout from '../../layouts/SectionLayout.astro';
 import { commandments, commandmentsIntro } from '../../data/commandments';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
-
-const currentPath = Astro.url.pathname;
 ---
 
-<BaseLayout
+<SectionLayout
+	sectionKey="commandments"
+	heading="The Ten Commandments"
 	title="Ten Commandments"
 	description={PAGE_DESCRIPTIONS.commandments}
-	currentPath={currentPath}
+	currentPath={Astro.url.pathname}
+	intro={commandmentsIntro}
+	count={`${commandments.length} commandments`}
 >
-	<div class="page-content page-content--catalog">
-		<PageBack href={withBase('/')} />
-		<div class="catalog-hero">
-			<p class="hero__tagline">Faith & Moral Life</p>
-			<h1>The Ten Commandments</h1>
-			<p class="lead">{commandmentsIntro}</p>
-		</div>
+	<nav class="jump-links jump-links--numbers" aria-label="Jump to a commandment" slot="header">
+		{commandments.map((c) => (
+			<a class="jump-links__link" href={`#commandment-${c.number}`}>
+				<span class="visually-hidden">Commandment </span>{c.number}
+			</a>
+		))}
+	</nav>
 
-		<ol class="commandment-list">
-			{commandments.map((commandment) => (
-				<li class="commandment-card" id={`commandment-${commandment.number}`}>
-					<div class="commandment-card__header">
-						<span class="commandment-card__number">{commandment.number}</span>
-						<h2 class="commandment-card__title">{commandment.title}</h2>
-					</div>
-					<blockquote class="commandment-card__text">"{commandment.text}"</blockquote>
-					<p class="commandment-card__meaning">{commandment.meaning}</p>
-				</li>
-			))}
-		</ol>
-	</div>
-</BaseLayout>
+	<ol class="numbered-list">
+		{commandments.map((commandment) => (
+			<li class="numbered-item" id={`commandment-${commandment.number}`}>
+				<span class="numbered-item__number" aria-hidden="true">{commandment.number}</span>
+				<div class="numbered-item__body">
+					<h2 class="numbered-item__title">
+						<span class="visually-hidden">Commandment {commandment.number}: </span>{commandment.title}
+					</h2>
+					<blockquote class="numbered-item__quote">“{commandment.text}”</blockquote>
+					<p class="numbered-item__text">{commandment.meaning}</p>
+				</div>
+			</li>
+		))}
+	</ol>
+
+	<p class="section-footer-links">
+		Continue with the <a href={withBase('/sacraments/penance')}>sacrament of Penance</a> or the
+		<a href={withBase('/bible/exodus')}>Book of Exodus</a>, where the Commandments are given at Sinai.
+	</p>
+</SectionLayout>

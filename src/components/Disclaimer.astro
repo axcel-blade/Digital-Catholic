@@ -1,0 +1,12 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<p class:list={['disclaimer', className]}>
+	Content on Digital Catholic is offered for knowledge and devotion. It is not a substitute for the
+	Magisterium, your parish, or spiritual direction.
+</p>

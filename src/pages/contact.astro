@@ -1,80 +1,97 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageBack from '../components/PageBack.astro';
-import { PAGE_DESCRIPTIONS } from '../lib/seo';
+import PageHeader from '../components/PageHeader.astro';
+import Disclaimer from '../components/Disclaimer.astro';
+import { PAGE_DESCRIPTIONS, SITE, type BreadcrumbItem } from '../lib/seo';
 import { withBase } from '../lib/paths';
+import { getPublicImage } from '../lib/images';
 
-const currentPath = Astro.url.pathname;
 const contactEmail = 'srikanthfernando3@gmail.com';
-const githubRepo = 'https://github.com/axcel-blade/Digital-Catholic';
+const githubRepo = SITE.repoUrl;
 const githubIssues = `${githubRepo}/issues`;
-const contactImageSrc = `${import.meta.env.BASE_URL}contact/st-paul-writing-epistles.jpg`;
-const contactImageAlt =
-	'Saint Paul writing his epistles, oil painting by Valentin de Boulogne (public domain)';
+const breadcrumbs: BreadcrumbItem[] = [{ label: 'Home', href: withBase('/') }, { label: 'Contact' }];
+const image = getPublicImage(
+	'/contact/st-paul-writing-epistles.jpg',
+	'Saint Paul writing his epistles, oil painting by Valentin de Boulogne (public domain)'
+);
 ---
 
 <BaseLayout
 	title="Contact"
 	description={PAGE_DESCRIPTIONS.contact}
-	currentPath={currentPath}
+	currentPath={Astro.url.pathname}
+	breadcrumbs={breadcrumbs}
 >
-	<div class="page-content page-content--contact">
-		<PageBack href={withBase('/')} />
+	<div class="container section-page">
+		<PageHeader
+			breadcrumbs={breadcrumbs}
+			label="Contact"
+			title="Contact Digital Catholic"
+			intro="Questions, corrections, and suggestions are welcome. Digital Catholic is maintained for Catholic faith formation and devotion."
+		/>
 
-		<div class="contact-layout">
-			<div class="contact-main catalog-prose contact-page">
-				<h1>Contact</h1>
-				<p class="lead">
-					Questions, corrections, or suggestions about Digital Catholic are welcome. This site is
-					maintained for Catholic faith formation and devotion.
-				</p>
+		<div class="split">
+			<div>
+				<ul class="contact-options">
+					<li class="contact-option">
+						<h2 class="contact-option__title">Email the maintainer</h2>
+						<p>For questions or anything you would rather not post publicly.</p>
+						<a class="button button--primary" href={`mailto:${contactEmail}`}>
+							Email {contactEmail}
+						</a>
+					</li>
+					<li class="contact-option">
+						<h2 class="contact-option__title">Report an issue on GitHub</h2>
+						<p>
+							For broken links, factual corrections, or ideas for new articles. Issues are public, so
+							others can see and help.
+						</p>
+						<a class="button button--secondary" href={githubIssues} rel="noopener noreferrer" target="_blank">
+							Open an issue<span class="visually-hidden"> on GitHub (opens in a new tab)</span>
+						</a>
+					</li>
+				</ul>
 
-				<h2>Get in touch</h2>
-				<p>
-					If you want to contact the maintainer directly, email{' '}
-					<a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
-				</p>
-				<p>
-					You can also reach out through the project repository on GitHub. Open an issue for broken
-					links, factual corrections, or ideas for new articles—especially saints, sacraments,
-					Scripture summaries, or prayer content that would help readers grow in Christ.
-				</p>
-				<p>
-					<a class="cta-link" href={githubIssues} rel="noopener noreferrer">
-						Open an issue on GitHub →
-					</a>
-				</p>
-				<p>
-					You can also browse the source or contribute through the{' '}
-					<a href={githubRepo} rel="noopener noreferrer">Digital-Catholic repository</a>.
-				</p>
+				<div class="prose">
+					<h2>Corrections and contributions</h2>
+					<p>Helpful reports include:</p>
+					<ul>
+						<li>The page address and the sentence you believe is wrong.</li>
+						<li>
+							A source for the correction—Scripture, the Catechism, a Church document, or a reliable
+							historical reference.
+						</li>
+						<li>For new articles: the saint, prayer, or topic, and why it would help readers.</li>
+					</ul>
+					<p>
+						Developers and writers can also contribute directly through the
+						<a href={githubRepo} rel="noopener noreferrer" target="_blank">
+							Digital-Catholic repository<span class="visually-hidden"> (opens in a new tab)</span></a
+						>. Each article lives in its own file, so adding a saint or prayer is a small change.
+					</p>
 
-				<h2>What to expect</h2>
-				<p>
-					Content on this site is offered for knowledge and devotion, not as a substitute for the
-					Magisterium, your parish, or spiritual direction. Feedback is read in good faith; replies
-					depend on availability.
-				</p>
-
-				<p>
-					For browsing topics, use the <a href={withBase('/')}>home page</a> or the{' '}
-					<a href={withBase('/about')}>About</a> page, which lists every section.
-				</p>
+					<h2>What to expect</h2>
+					<p>
+						Feedback is read in good faith; replies depend on the maintainer’s availability. To browse
+						topics, visit the <a href={withBase('/')}>home page</a> or the
+						<a href={withBase('/about')}>About</a> page, which lists every section.
+					</p>
+					<Disclaimer />
+				</div>
 			</div>
 
-			<aside class="contact-aside" aria-label="Illustration">
-				<figure class="contact-aside__figure">
-					<img
-						src={contactImageSrc}
-						alt={contactImageAlt}
-						width="960"
-						height="706"
-						loading="lazy"
-						decoding="async"
-					/>
-					<figcaption>Saint Paul Writing His Epistles — Valentin de Boulogne</figcaption>
-				</figure>
-			</aside>
+			{image && (
+				<aside class="split__aside" aria-label="Illustration">
+					<figure class="framed-figure">
+						<img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+						<figcaption>Saint Paul Writing His Epistles — Valentin de Boulogne</figcaption>
+					</figure>
+					<blockquote class="pull-quote">
+						<p>“Always be ready to give an explanation to anyone who asks you for a reason for your hope.”</p>
+						<cite>1 Peter 3:15</cite>
+					</blockquote>
+				</aside>
+			)}
 		</div>
 	</div>
 </BaseLayout>

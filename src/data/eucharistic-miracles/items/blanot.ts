@@ -8,6 +8,8 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"date": "1331",
 	"excerpt": "A Host that fell into the chalice during Mass left blood on the corporal—preserved and venerated in the parish for centuries.",
 	"imageAlt": "Church of Saint Martin in Blanot, Saône-et-Loire, France",
+	"churchStatus": "recognized",
+	"statusNote": "The stained corporal was preserved and authenticated by local bishops.",
 	"sections": [
 		{
 			"heading": "What happened",

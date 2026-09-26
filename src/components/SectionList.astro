@@ -1,0 +1,18 @@
+---
+/** Renders article sections with anchor ids that match the table of contents. */
+import { buildToc, type ArticleSection } from '../lib/article';
+
+interface Props {
+	sections: ArticleSection[];
+}
+
+const { sections } = Astro.props;
+const toc = buildToc(sections);
+---
+
+{sections.map((section, i) => (
+	<section class="article-section" aria-labelledby={toc[i].id}>
+		<h2 id={toc[i].id}>{section.heading}</h2>
+		{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+	</section>
+))}

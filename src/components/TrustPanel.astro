@@ -1,0 +1,79 @@
+---
+/**
+ * "About this article": Church status, sources, and review information.
+ * Each block renders only when real data exists; the devotional disclaimer
+ * is always shown.
+ */
+import type { SourceReference, TrustInfo } from '../data/lib/trust';
+import { churchStatusDescriptions } from '../data/lib/trust';
+import StatusBadge from './StatusBadge.astro';
+import Disclaimer from './Disclaimer.astro';
+
+interface Props {
+	trust?: TrustInfo;
+}
+
+const { trust = {} } = Astro.props;
+
+const lists: { title: string; items?: SourceReference[] }[] = [
+	{ title: 'Sources', items: trust.sources },
+	{ title: 'Primary references', items: trust.primaryReferences },
+	{ title: 'Further reading', items: trust.furtherReading },
+];
+
+const reviewed = trust.lastReviewed
+	? new Date(`${trust.lastReviewed}T12:00:00`).toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric',
+		})
+	: undefined;
+---
+
+<aside class="trust-panel" aria-labelledby="trust-panel-title">
+	<h2 class="trust-panel__title" id="trust-panel-title">About this article</h2>
+
+	{trust.churchStatus && (
+		<div class="trust-panel__status">
+			<StatusBadge status={trust.churchStatus} size="md" />
+			<p class="trust-panel__status-text">
+				{trust.statusNote ?? churchStatusDescriptions[trust.churchStatus]}
+			</p>
+			{trust.statusNote && (
+				<p class="trust-panel__fine">{churchStatusDescriptions[trust.churchStatus]}</p>
+			)}
+		</div>
+	)}
+
+	{lists.map(
+		(list) =>
+			list.items &&
+			list.items.length > 0 && (
+				<div class="trust-panel__block">
+					<h3 class="trust-panel__subtitle">{list.title}</h3>
+					<ul class="trust-panel__list">
+						{list.items.map((item) => (
+							<li>
+								{item.url ? (
+									<a href={item.url} rel="noopener noreferrer" target="_blank">
+										{item.label}
+										<span class="visually-hidden"> (opens in a new tab)</span>
+									</a>
+								) : (
+									item.label
+								)}
+							</li>
+						))}
+					</ul>
+				</div>
+			)
+	)}
+
+	{reviewed && (
+		<p class="trust-panel__fine">
+			Last reviewed <time datetime={trust.lastReviewed}>{reviewed}</time>
+		</p>
+	)}
+
+	<Disclaimer class="trust-panel__disclaimer" />
+</aside>

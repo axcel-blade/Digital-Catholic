@@ -8,6 +8,8 @@ const marianApparition: MarianApparition = {
 	"date": "May–October 1917",
 	"excerpt": "Mary appeared six times to three shepherd children, asked for the Rosary and penance, and pointed the world toward conversion and peace.",
 	"imageAlt": "Basilica of Our Lady of the Rosary at the Sanctuary of Fátima in Portugal",
+	"churchStatus": "approved",
+	"statusNote": "Bishop José Alves Correia da Silva of Leiria declared the apparitions worthy of belief in 1930.",
 	"sections": [
 		{
 			"heading": "What happened",

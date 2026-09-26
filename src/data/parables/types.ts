@@ -1,3 +1,5 @@
+import type { TrustInfo } from '../lib/trust';
+
 export type ParableCategory =
 	| 'Kingdom of God'
 	| 'Mercy'
@@ -10,7 +12,7 @@ export interface ParableSection {
 	paragraphs: string[];
 }
 
-export interface Parable {
+export interface Parable extends TrustInfo {
 	slug: string;
 	title: string;
 	category: ParableCategory;

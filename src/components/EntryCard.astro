@@ -1,0 +1,62 @@
+---
+import type { PublicImage } from '../lib/images';
+import type { ChurchStatus } from '../data/lib/trust';
+import StatusBadge from './StatusBadge.astro';
+
+interface Props {
+	href: string;
+	title: string;
+	label?: string;
+	meta?: string;
+	excerpt?: string;
+	action?: string;
+	image?: PublicImage | null;
+	status?: ChurchStatus;
+	/** Value matched by CardFilter */
+	filterValue?: string;
+	headingLevel?: 'h2' | 'h3';
+	/** Eager-load the image (only for cards visible on first paint) */
+	eager?: boolean;
+}
+
+const {
+	href,
+	title,
+	label,
+	meta,
+	excerpt,
+	action = 'Read more',
+	image,
+	status,
+	filterValue,
+	headingLevel = 'h2',
+	eager = false,
+} = Astro.props;
+
+const Heading = headingLevel;
+---
+
+<li class:list={['card', { 'card--media': Boolean(image) }]} data-filter-value={filterValue}>
+	{image && (
+		<div class="card__media">
+			<img
+				src={image.src}
+				alt={image.alt}
+				width={image.width}
+				height={image.height}
+				loading={eager ? 'eager' : 'lazy'}
+				decoding="async"
+			/>
+		</div>
+	)}
+	<div class="card__body">
+		{label && <p class="card__label">{label}</p>}
+		<Heading class="card__title">
+			<a class="card__link" href={href}>{title}</a>
+		</Heading>
+		{meta && <p class="card__meta">{meta}</p>}
+		{status && <StatusBadge status={status} />}
+		{excerpt && <p class="card__excerpt">{excerpt}</p>}
+		<span class="card__action" aria-hidden="true">{action} <span class="card__arrow">→</span></span>
+	</div>
+</li>

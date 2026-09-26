@@ -6,7 +6,7 @@ import { withBase } from '../lib/paths';
 interface Props {
 	yearData: LiturgicalYear;
 	yearOptions: number[];
-	/** Civil year used for the main `/liturgical-calendar` route (usually the current year at build). */
+	/** Civil year used for the main `/liturgical-calendar` route (the build year). */
 	defaultYear: number;
 }
 
@@ -18,130 +18,146 @@ const rankLabels: Record<string, string> = {
 	'optional-memorial': 'Optional memorial',
 	season: 'Season',
 };
+const colorLabels: Record<string, string> = {
+	white: 'White',
+	red: 'Red',
+	green: 'Green',
+	purple: 'Purple',
+	rose: 'Rose',
+};
+const months = yearData.months.filter((m) => m.days.length > 0);
+const celebrations = yearData.months.flatMap((m) =>
+	m.days.map((d) => ({ date: d.date, title: d.title }))
+);
 ---
 
-<div class="liturgical-calendar">
-	<nav class="liturgical-year-nav" aria-label="Calendar year">
-		{yearOptions.map((y) => (
-			<a
-				class:list={['liturgical-year-nav__link', { 'is-active': y === yearData.year }]}
-				href={withBase(
-					y === defaultYear ? '/liturgical-calendar' : `/liturgical-calendar/${y}`
-				)}
-				aria-current={y === yearData.year ? 'page' : undefined}
-			>
-				{y}
-			</a>
-		))}
+<div class="liturgical-calendar" data-liturgical-calendar>
+	<nav class="year-nav" aria-label="Calendar year">
+		<span class="year-nav__label">Year</span>
+		<ul class="year-nav__list">
+			{yearOptions.map((y) => (
+				<li>
+					<a
+						class="year-nav__link"
+						href={withBase(y === defaultYear ? '/liturgical-calendar' : `/liturgical-calendar/${y}`)}
+						aria-current={y === yearData.year ? 'page' : undefined}
+					>
+						{y}
+					</a>
+				</li>
+			))}
+		</ul>
 	</nav>
 
-	<div class="liturgical-summary">
-		<div class="liturgical-summary__card" id="liturgical-today" hidden>
-			<h2 class="liturgical-summary__title">Today</h2>
-			<p class="liturgical-summary__season" id="liturgical-today-season"></p>
-			<ul class="liturgical-summary__list" id="liturgical-today-list"></ul>
-		</div>
-		<div class="liturgical-summary__card">
-			<h2 class="liturgical-summary__title">{yearData.year} at a glance</h2>
-			<p class="liturgical-summary__easter">
+	<div class="calendar-summary">
+		<section class="calendar-summary__card calendar-summary__card--today" id="liturgical-today" aria-labelledby="liturgical-today-title" hidden>
+			<h2 class="calendar-summary__title" id="liturgical-today-title">Today</h2>
+			<p class="calendar-summary__date" id="liturgical-today-date"></p>
+			<p class="calendar-summary__season" id="liturgical-today-season"></p>
+			<ul class="calendar-summary__list" id="liturgical-today-list"></ul>
+			<p class="calendar-summary__fine">Based on your device’s date and the universal calendar.</p>
+		</section>
+		<section class="calendar-summary__card" aria-labelledby="year-glance-title">
+			<h2 class="calendar-summary__title" id="year-glance-title">{yearData.year} at a glance</h2>
+			<p class="calendar-summary__easter">
 				<strong>Easter Sunday:</strong> {formatCalendarDate(yearData.easter)}
 			</p>
-			<ul class="liturgical-seasons-list">
+			<ul class="season-list">
 				{yearData.seasons.map((season) => (
-					<li>
-						<strong>{season.name}</strong>
-						<span>
+					<li class="season-list__item">
+						<span class="season-list__name">{season.name}</span>
+						<span class="season-list__dates">
 							{formatCalendarDate(season.start)} – {formatCalendarDate(season.end)}
 						</span>
 					</li>
 				))}
 			</ul>
-		</div>
+		</section>
 	</div>
 
-	<div class="liturgical-legend" aria-label="Liturgical colors">
-		<span class="liturgical-legend__label">Liturgical colors:</span>
-		<ul class="liturgical-legend__colors">
-			<li><span class="liturgical-color liturgical-color--white"></span> White</li>
-			<li><span class="liturgical-color liturgical-color--red"></span> Red</li>
-			<li><span class="liturgical-color liturgical-color--green"></span> Green</li>
-			<li><span class="liturgical-color liturgical-color--purple"></span> Purple</li>
-			<li><span class="liturgical-color liturgical-color--rose"></span> Rose</li>
+	<div class="calendar-legend">
+		<p class="calendar-legend__label" id="calendar-legend-label">Liturgical colors</p>
+		<ul class="calendar-legend__colors" aria-labelledby="calendar-legend-label">
+			{Object.entries(colorLabels).map(([key, label]) => (
+				<li><span class={`color-dot color-dot--${key}`} aria-hidden="true"></span>{label}</li>
+			))}
 		</ul>
 	</div>
 
-	{yearData.months.map((month) =>
-		month.days.length > 0 ? (
-			<section class="liturgical-month" id={`month-${month.month}`}>
-				<h2 class="liturgical-month__title">{month.label}</h2>
-				<ul class="liturgical-day-list">
-					{month.days.map((day) => (
-						<li class="liturgical-day" data-date={day.date}>
-							<div class="liturgical-day__header">
-								<time class="liturgical-day__date" datetime={day.date}>
-									{formatCalendarDate(day.date)}
-								</time>
-								<span
-									class={`liturgical-color liturgical-color--${day.color}`}
-									title={`Liturgical color: ${day.color}`}
-								/>
-								<span class={`liturgical-rank liturgical-rank--${day.rank}`}>
-									{rankLabels[day.rank]}
-								</span>
-							</div>
-							<h3 class="liturgical-day__title">
+	<nav class="jump-links jump-links--months" aria-label="Jump to month">
+		{months.map((month) => (
+			<a class="jump-links__link" href={`#month-${month.month}`}>{month.label.slice(0, 3)}<span class="visually-hidden">{month.label.slice(3)}</span></a>
+		))}
+	</nav>
+
+	{months.map((month) => (
+		<section class="calendar-month" id={`month-${month.month}`} aria-labelledby={`month-${month.month}-title`}>
+			<h2 class="calendar-month__title" id={`month-${month.month}-title`}>{month.label} {yearData.year}</h2>
+			<ul class="calendar-days">
+				{month.days.map((day) => (
+					<li class={`calendar-day calendar-day--${day.rank}`} data-date={day.date}>
+						<time class="calendar-day__date" datetime={day.date}>{formatCalendarDate(day.date)}</time>
+						<div class="calendar-day__body">
+							<h3 class="calendar-day__title">
 								{day.saintSlug ? (
 									<a href={withBase(`/saints/${day.saintSlug}`)}>{day.title}</a>
 								) : (
 									day.title
 								)}
 							</h3>
-							{day.note && <p class="liturgical-day__note">{day.note}</p>}
-						</li>
-					))}
-				</ul>
-			</section>
-		) : null
-	)}
+							<p class="calendar-day__meta">
+								<span class="calendar-day__rank">{rankLabels[day.rank]}</span>
+								<span class="calendar-day__color">
+									<span class={`color-dot color-dot--${day.color}`} aria-hidden="true"></span>
+									<span class="visually-hidden">Liturgical color: </span>{colorLabels[day.color]}
+								</span>
+								<span class="calendar-day__today-label">Today</span>
+							</p>
+							{day.note && <p class="calendar-day__note">{day.note}</p>}
+						</div>
+					</li>
+				))}
+			</ul>
+		</section>
+	))}
 </div>
 
-<script define:vars={{ year: yearData.year, seasons: yearData.seasons, celebrations: yearData.months.flatMap((m) => m.days) }}>
+<script define:vars={{ year: yearData.year, seasons: yearData.seasons, celebrations }}>
 	const today = new Date();
-	const todayIso = [
-		today.getFullYear(),
-		String(today.getMonth() + 1).padStart(2, '0'),
-		String(today.getDate()).padStart(2, '0'),
-	].join('-');
+	const pad = (n) => String(n).padStart(2, '0');
+	const todayIso = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
 
 	if (today.getFullYear() === year) {
 		document.querySelectorAll(`[data-date="${todayIso}"]`).forEach((el) => {
-			el.classList.add('liturgical-day--today');
+			el.classList.add('is-today');
+			el.setAttribute('aria-current', 'date');
 		});
 
-		const todayBlock = document.getElementById('liturgical-today');
+		const block = document.getElementById('liturgical-today');
+		const dateEl = document.getElementById('liturgical-today-date');
 		const seasonEl = document.getElementById('liturgical-today-season');
 		const listEl = document.getElementById('liturgical-today-list');
 
-		if (todayBlock && seasonEl && listEl) {
+		if (block && dateEl && seasonEl && listEl) {
+			dateEl.textContent = today.toLocaleDateString('en-US', {
+				weekday: 'long',
+				month: 'long',
+				day: 'numeric',
+				year: 'numeric',
+			});
 			const season = seasons.find((s) => todayIso >= s.start && todayIso <= s.end);
-			if (season) {
-				seasonEl.textContent = `Liturgical season: ${season.name}`;
-			}
+			seasonEl.textContent = season ? `Season: ${season.name}` : '';
 
-			const todayCelebrations = celebrations.filter((c) => c.date === todayIso);
-			if (todayCelebrations.length > 0) {
-				for (const c of todayCelebrations) {
-					const li = document.createElement('li');
-					li.textContent = c.title;
-					listEl.appendChild(li);
-				}
-			} else {
+			const todays = celebrations.filter((c) => c.date === todayIso);
+			const items = todays.length > 0
+				? todays.map((c) => c.title)
+				: ['No solemnity, feast, or memorial on the universal calendar today.'];
+			for (const text of items) {
 				const li = document.createElement('li');
-				li.textContent = 'No major feast on the universal calendar today.';
+				li.textContent = text;
 				listEl.appendChild(li);
 			}
-
-			todayBlock.hidden = false;
+			block.hidden = false;
 		}
 	}
 </script>

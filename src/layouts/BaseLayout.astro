@@ -3,101 +3,97 @@ import '../styles/global.css';
 import { withBase } from '../lib/paths';
 import { buildSiteNav } from '../lib/siteNav';
 import SEOHead from '../components/SEOHead.astro';
-import SiteSearch from '../components/SiteSearch.astro';
-import ThemeToggle from '../components/ThemeToggle.astro';
-import SiteHeaderMenu from '../components/SiteHeaderMenu.astro';
-import SiteHeaderMenuToggle from '../components/SiteHeaderMenuToggle.astro';
-import SiteNavExplore from '../components/SiteNavExplore.astro';
-import SiteNavLink from '../components/SiteNavLink.astro';
-import SiteNavPrimary from '../components/SiteNavPrimary.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import {
 	formatPageTitle,
+	getAbsoluteUrl,
+	getBreadcrumbJsonLd,
 	getCanonicalUrl,
 	getDefaultOgImage,
-	getAbsoluteUrl,
 	SITE,
+	type BreadcrumbItem,
 } from '../lib/seo';
 
 interface Props {
 	title: string;
-	description?: string;
+	description: string;
 	currentPath: string;
+	/** Article-specific social image (root-relative with base, or absolute) */
 	ogImage?: string;
+	ogImageAlt?: string;
 	ogType?: 'website' | 'article';
+	/** Adds BreadcrumbList structured data */
+	breadcrumbs?: BreadcrumbItem[];
 	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
 	title,
-	description = SITE.defaultDescription,
+	description,
 	currentPath,
 	ogImage,
+	ogImageAlt,
 	ogType = 'website',
+	breadcrumbs,
 	jsonLd,
 } = Astro.props;
 
-const { primary: primaryNav, exploreGroup, contact: contactNav } = buildSiteNav(currentPath);
-
+const nav = buildSiteNav(currentPath);
 const pageTitle = formatPageTitle(title);
 const canonicalURL = getCanonicalUrl(Astro.url);
 const socialImage = ogImage ? getAbsoluteUrl(ogImage) : getDefaultOgImage();
+const socialImageAlt = ogImage ? (ogImageAlt ?? title) : SITE.ogImageAlt;
+
+const extraJsonLd = [
+	...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []),
+	...(breadcrumbs && breadcrumbs.length > 1 ? [getBreadcrumbJsonLd(breadcrumbs, canonicalURL)] : []),
+];
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script is:inline>
 			(function () {
-				var key = 'digital-catholic-theme';
-				var stored = localStorage.getItem(key);
-				var theme =
-					stored === 'light' || stored === 'dark'
-						? stored
-						: window.matchMedia('(prefers-color-scheme: dark)').matches
-							? 'dark'
-							: 'light';
+				var theme = 'light';
+				try {
+					var stored = localStorage.getItem('digital-catholic-theme');
+					theme =
+						stored === 'light' || stored === 'dark'
+							? stored
+							: window.matchMedia('(prefers-color-scheme: dark)').matches
+								? 'dark'
+								: 'light';
+				} catch (e) {
+					theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				}
 				document.documentElement.setAttribute('data-theme', theme);
 			})();
 		</script>
+		<title>{pageTitle}</title>
 		<meta name="theme-color" content={SITE.themeColor} />
 		<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
-		<link rel="icon" href={withBase('/favicon.ico')} />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>{pageTitle}</title>
+		<link rel="icon" href={withBase('/favicon.ico')} sizes="32x32" />
 		<SEOHead
 			title={pageTitle}
 			description={description}
 			canonicalUrl={canonicalURL}
 			ogImage={socialImage}
+			ogImageAlt={socialImageAlt}
+			ogImageSize={ogImage ? undefined : { width: 1200, height: 630 }}
 			ogType={ogType}
-			jsonLd={jsonLd}
+			jsonLd={extraJsonLd}
 		/>
 	</head>
 	<body>
-		<header class="site-header">
-			<div class="site-header__inner">
-				<a class="site-logo" href={withBase('/')}>Digital Catholic</a>
-				<div class="site-header__actions">
-					<div class="site-header__toolbar">
-						<SiteNavPrimary primary={primaryNav} />
-						<SiteNavExplore exploreGroup={exploreGroup} />
-						<SiteNavLink item={contactNav} />
-					</div>
-					<SiteSearch />
-					<SiteHeaderMenuToggle />
-					<ThemeToggle />
-				</div>
-				<SiteHeaderMenu primary={primaryNav} exploreGroup={exploreGroup} contact={contactNav} />
-			</div>
-		</header>
-
-		<main id="main-content">
+		<a class="skip-link" href="#main-content">Skip to content</a>
+		<SiteHeader nav={nav} />
+		<main id="main-content" tabindex="-1">
 			<slot />
 		</main>
-
-		<footer class="site-footer">
-			<p>Digital Catholic — faith, formation, and knowledge for all.</p>
-		</footer>
+		<SiteFooter nav={nav} />
 	</body>
 </html>

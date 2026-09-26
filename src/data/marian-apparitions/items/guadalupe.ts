@@ -8,6 +8,8 @@ const marianApparition: MarianApparition = {
 	"date": "December 1531",
 	"excerpt": "Mary appeared to St. Juan Diego on Tepeyac Hill and left her image on his tilma—the most visited Marian shrine in the world.",
 	"imageAlt": "Basilica of Our Lady of Guadalupe on Tepeyac Hill in Mexico City, where the tilma is venerated",
+	"churchStatus": "recognized",
+	"statusNote": "Venerated for nearly five centuries; popes have crowned and honored Our Lady of Guadalupe as Patroness of the Americas.",
 	"sections": [
 		{
 			"heading": "What happened",

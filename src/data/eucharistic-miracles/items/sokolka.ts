@@ -8,6 +8,8 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"date": "2008",
 	"excerpt": "A Host that fell during Communion was preserved and later found to bear tissue resembling heart muscle, in the shape of a cross.",
 	"imageAlt": "Interior of St. Anthony of Padua church in Sokółka, Poland",
+	"churchStatus": "recognized",
+	"statusNote": "The Archbishop of Białystok authorized devotion while leaving final judgment to the faith of the faithful.",
 	"sections": [
 		{
 			"heading": "What happened",

@@ -1,44 +1,50 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { saints, getSaint, getSaintImageSrc, getSaintImageAlt } from '../../data/saints';
+import ArticleLayout, { type ArticleMeta } from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import { saints, getSaintImageAlt, type Saint } from '../../data/saints';
 import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+import { getNeighbors, getRelated, type ArticleLink } from '../../lib/article';
 
 export function getStaticPaths() {
-	return saints.map((saint) => ({
-		params: { slug: saint.slug },
-	}));
+	return saints.map((saint) => ({ params: { slug: saint.slug } }));
 }
 
-const slug = Astro.params.slug ?? '';
-const saint = getSaint(slug);
+const index = saints.findIndex((s) => s.slug === Astro.params.slug);
+const saint = saints[index];
 
 if (!saint) {
 	return new Response(null, { status: 404, statusText: 'Not found' });
 }
 
-const currentPath = Astro.url.pathname;
+const toLink = (s: Saint): ArticleLink => ({
+	href: withBase(`/saints/${s.slug}`),
+	title: s.title,
+	label: 'Saint',
+	excerpt: s.excerpt,
+});
+
+const { prev, next } = getNeighbors(saints, index);
+const meta: ArticleMeta[] = [
+	...(saint.lifeDates ? [{ term: 'Life', value: saint.lifeDates }] : []),
+	...(saint.feastDays ? [{ term: 'Feast days', value: saint.feastDays }] : []),
+];
 ---
 
 <ArticleLayout
 	title={saint.title}
 	description={saint.excerpt}
-	currentPath={currentPath}
-	backHref={withBase('/saints')}
-	backLabel="All saints"
-	category="Saint"
-	asideLabel="Saint illustration"
-	imageSrc={getSaintImageSrc(saint.slug)}
-	imageAlt={getSaintImageAlt(saint.title)}
+	currentPath={Astro.url.pathname}
+	sectionKey="saints"
+	label="Saint"
+	lead={saint.excerpt}
+	meta={meta}
+	image={getCollectionImage('saints', saint.slug, getSaintImageAlt(saint.title))}
+	sections={saint.sections}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={getRelated(saints, index).map(toLink)}
+	trust={saint}
 >
-	<p class="article__lead">{saint.excerpt}</p>
-	{saint.lifeDates && <p class="article__feast">Life: {saint.lifeDates}</p>}
-	{saint.feastDays && <p class="article__feast">Feast days: {saint.feastDays}</p>}
-	{saint.sections.map((section) => (
-		<section>
-			<h2>{section.heading}</h2>
-			{section.paragraphs.map((paragraph) => (
-				<p>{paragraph}</p>
-			))}
-		</section>
-	))}
+	<SectionList sections={saint.sections} />
 </ArticleLayout>

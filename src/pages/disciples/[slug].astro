@@ -1,53 +1,52 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {
-	disciples,
-	getDisciple,
-	getDiscipleImageAlt,
-	getDiscipleImageSrc,
-} from '../../data/disciples';
+import ArticleLayout, { type ArticleMeta } from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import { disciples, getDiscipleImageAlt, type Disciple } from '../../data/disciples';
 import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+import { getNeighbors, getRelated, type ArticleLink } from '../../lib/article';
 
 export function getStaticPaths() {
-	return disciples.map((disciple) => ({
-		params: { slug: disciple.slug },
-	}));
+	return disciples.map((disciple) => ({ params: { slug: disciple.slug } }));
 }
 
-const slug = Astro.params.slug ?? '';
-const disciple = getDisciple(slug);
+const index = disciples.findIndex((d) => d.slug === Astro.params.slug);
+const disciple = disciples[index];
 
 if (!disciple) {
 	return new Response(null, { status: 404, statusText: 'Not found' });
 }
 
-const currentPath = Astro.url.pathname;
+const toLink = (d: Disciple): ArticleLink => ({
+	href: withBase(`/disciples/${d.slug}`),
+	title: d.title,
+	label: 'Apostle',
+	excerpt: d.excerpt,
+});
+
+const { prev, next } = getNeighbors(disciples, index);
+const meta: ArticleMeta[] = [
+	...(disciple.alsoKnownAs ? [{ term: 'Also known as', value: disciple.alsoKnownAs }] : []),
+	...(disciple.lifeDates ? [{ term: 'Life', value: disciple.lifeDates }] : []),
+	...(disciple.feastDays ? [{ term: 'Feast days', value: disciple.feastDays }] : []),
+	{ term: 'Scripture', value: disciple.gospelReference },
+];
 ---
 
 <ArticleLayout
 	title={disciple.title}
 	description={disciple.excerpt}
-	currentPath={currentPath}
-	backHref={withBase('/disciples')}
-	backLabel="All disciples"
-	category="Apostle · Disciple of Jesus"
-	asideLabel="Apostle illustration"
-	imageSrc={getDiscipleImageSrc(disciple.slug)}
-	imageAlt={getDiscipleImageAlt(disciple.title)}
+	currentPath={Astro.url.pathname}
+	sectionKey="disciples"
+	label="Apostle · Disciple of Jesus"
+	lead={disciple.excerpt}
+	meta={meta}
+	image={getCollectionImage('disciples', disciple.slug, getDiscipleImageAlt(disciple.title))}
+	sections={disciple.sections}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={getRelated(disciples, index).map(toLink)}
+	trust={disciple}
 >
-	<p class="article__lead article__lead--bordered">{disciple.excerpt}</p>
-	<p class="article__feast">Scripture: {disciple.gospelReference}</p>
-	{disciple.lifeDates && <p class="article__feast">Life: {disciple.lifeDates}</p>}
-	{disciple.feastDays && <p class="article__feast">Feast days: {disciple.feastDays}</p>}
-	{disciple.alsoKnownAs && (
-		<p class="article__feast">Also known as: {disciple.alsoKnownAs}</p>
-	)}
-	{disciple.sections.map((section) => (
-		<section>
-			<h2>{section.heading}</h2>
-			{section.paragraphs.map((paragraph) => (
-				<p>{paragraph}</p>
-			))}
-		</section>
-	))}
+	<SectionList sections={disciple.sections} />
 </ArticleLayout>

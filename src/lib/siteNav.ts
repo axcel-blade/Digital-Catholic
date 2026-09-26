@@ -1,68 +1,57 @@
 import { stripBase, withBase } from './paths';
+import { sectionGroups, siteSections, type SectionGroupKey } from './sections';
 
-export interface SiteNavItem {
+export interface ResolvedNavItem {
 	href: string;
 	label: string;
-}
-
-export interface ResolvedNavItem extends SiteNavItem {
+	blurb?: string;
 	isActive: boolean;
 }
 
 export interface ResolvedNavGroup {
+	key: SectionGroupKey;
 	label: string;
+	summary: string;
 	items: ResolvedNavItem[];
 	isActive: boolean;
 }
 
-export const primaryNavItems: SiteNavItem[] = [
-	{ href: '/', label: 'Home' },
-	{ href: '/about', label: 'About' },
-];
+export interface SiteNav {
+	home: ResolvedNavItem;
+	groups: ResolvedNavGroup[];
+	about: ResolvedNavItem;
+	contact: ResolvedNavItem;
+}
 
-export const contactNavItem: SiteNavItem = { href: '/contact', label: 'Contact' };
-
-export const exploreNavItems: SiteNavItem[] = [
-	{ href: '/saints', label: 'Saints' },
-	{ href: '/sacraments', label: 'Sacraments' },
-	{ href: '/disciples', label: 'Disciples of Jesus' },
-	{ href: '/miracles', label: 'Miracles of Jesus' },
-	{ href: '/eucharistic-miracles', label: 'Eucharistic Miracles' },
-	{ href: '/marian-apparitions', label: 'Marian Apparitions' },
-	{ href: '/parables', label: 'Parables of Jesus' },
-	{ href: '/commandments', label: 'Ten Commandments' },
-	{ href: '/bible', label: 'Holy Bible' },
-	{ href: '/prayers', label: 'Prayers' },
-	{ href: '/rosary', label: 'Rosary' },
-	{ href: '/liturgical-calendar', label: 'Liturgical Calendar' },
-];
-
-function isNavActive(href: string, path: string): boolean {
-	const route = stripBase(href);
+function isNavActive(route: string, path: string): boolean {
 	if (route === '/') return path === '/';
 	return path === route || path.startsWith(`${route}/`);
 }
 
-function resolveItem(item: SiteNavItem, path: string): ResolvedNavItem {
-	const href = withBase(item.href);
-	return {
-		...item,
-		href,
-		isActive: isNavActive(href, path),
-	};
+function resolve(route: string, label: string, path: string, blurb?: string): ResolvedNavItem {
+	return { href: withBase(route), label, blurb, isActive: isNavActive(route, path) };
 }
 
-export function buildSiteNav(currentPath: string) {
-	const path = stripBase(currentPath);
-	const primary = primaryNavItems.map((item) => resolveItem(item, path));
-	const explore = exploreNavItems.map((item) => resolveItem(item, path));
-	const exploreGroup: ResolvedNavGroup = {
-		label: 'Explore',
-		items: explore,
-		isActive: explore.some((item) => item.isActive),
+export function buildSiteNav(currentPath: string): SiteNav {
+	const path = stripBase(currentPath).replace(/(.)\/$/, '$1');
+
+	const groups = sectionGroups.map((group) => {
+		const items = siteSections
+			.filter((section) => section.group === group.key)
+			.map((section) => resolve(section.href, section.navLabel, path, section.blurb));
+		return {
+			key: group.key,
+			label: group.label,
+			summary: group.summary,
+			items,
+			isActive: items.some((item) => item.isActive),
+		};
+	});
+
+	return {
+		home: resolve('/', 'Home', path),
+		groups,
+		about: resolve('/about', 'About', path),
+		contact: resolve('/contact', 'Contact', path),
 	};
-
-	const contact = resolveItem(contactNavItem, path);
-
-	return { primary, exploreGroup, contact };
 }

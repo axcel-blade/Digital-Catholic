@@ -1,9 +1,11 @@
+import type { TrustInfo } from '../lib/trust';
+
 export interface DiscipleSection {
 	heading: string;
 	paragraphs: string[];
 }
 
-export interface Disciple {
+export interface Disciple extends TrustInfo {
 	slug: string;
 	/** Traditional list order among the Twelve */
 	order: number;
