@@ -6,6 +6,7 @@ const miracle: Miracle = {
 	"category": "Healing",
 	"gospelReference": "Mark 1:40–45 · Matthew 8:1–4 · Luke 5:12–16",
 	"excerpt": "\"If you will, you can make me clean.\" Jesus stretches out His hand: \"I will; be clean.\"",
+	"imageAlt": "Christ reaching out to heal a kneeling leper, a drawing attributed to Pieter de Jode I",
 	"sections": [
 		{
 			"heading": "The sign",

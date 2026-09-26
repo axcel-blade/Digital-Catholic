@@ -7,6 +7,7 @@ import { parables, parablesIntro } from '../../data/parables';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 import { slugify } from '../../lib/article';
+import { getCollectionImage } from '../../lib/images';
 
 const categories = [...new Set(parables.map((p) => p.category))].map((category) => ({
 	value: slugify(category),
@@ -34,8 +35,8 @@ const categories = [...new Set(parables.map((p) => p.category))].map((category) 
 				options={categories}
 				noun={{ one: 'parable', many: 'parables' }}
 			/>
-			<ul class="card-grid" id="parable-list">
-				{parables.map((parable) => (
+			<ul class="card-grid card-grid--media" id="parable-list">
+				{parables.map((parable, i) => (
 					<EntryCard
 						href={withBase(`/parables/${parable.slug}`)}
 						title={parable.title}
@@ -43,7 +44,9 @@ const categories = [...new Set(parables.map((p) => p.category))].map((category) 
 						meta={parable.gospelReference}
 						excerpt={parable.excerpt}
 						action="Read article"
+						image={getCollectionImage('parables', parable.slug, parable.imageAlt)}
 						filterValue={slugify(parable.category)}
+						eager={i < 3}
 					/>
 				))}
 			</ul>

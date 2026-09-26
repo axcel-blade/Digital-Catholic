@@ -6,6 +6,7 @@ const parable: Parable = {
 	"category": "Mercy",
 	"gospelReference": "Luke 10:25–37",
 	"excerpt": "“Who is my neighbor?”—A wounded man is helped by the one society despised, not by religious officials who pass by.",
+	"imageAlt": "The Good Samaritan lifting the wounded man onto his horse, painted by Vincent van Gogh after Eugène Delacroix",
 	"sections": [
 		{
 			"heading": "The story",

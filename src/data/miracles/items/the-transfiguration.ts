@@ -6,6 +6,7 @@ const miracle: Miracle = {
 	"category": "Glory",
 	"gospelReference": "Matthew 17:1–9 · Mark 9:2–10 · Luke 9:28–36",
 	"excerpt": "On the mountain Jesus is transfigured in light; Moses and Elijah appear, and the Father says, “Listen to him.”",
+	"imageAlt": "Christ transfigured in glory above Mount Tabor with Moses and Elijah, painted by Raphael",
 	"sections": [
 		{
 			"heading": "The sign",

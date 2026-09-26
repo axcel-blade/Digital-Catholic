@@ -6,6 +6,7 @@ const miracle: Miracle = {
 	"category": "Glory",
 	"gospelReference": "Matthew 28 · Mark 16 · Luke 24 · John 20–21",
 	"excerpt": "The central miracle of the faith: Christ rises bodily from the dead on the third day, the foundation of Christian hope.",
+	"imageAlt": "The risen Christ emerging from the tomb in radiant light, flanked by kneeling angels, painted by Carl Heinrich Bloch",
 	"sections": [
 		{
 			"heading": "The sign",

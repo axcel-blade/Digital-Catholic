@@ -6,6 +6,7 @@ const parable: Parable = {
 	"category": "Mercy",
 	"gospelReference": "Matthew 18:21–35",
 	"excerpt": "Forgiven an impossible debt, a servant refuses to forgive a small one—God will judge us by the mercy we show.",
+	"imageAlt": "The unforgiving servant seizing his fellow servant by the throat, painted by Domenico Fetti",
 	"sections": [
 		{
 			"heading": "The story",

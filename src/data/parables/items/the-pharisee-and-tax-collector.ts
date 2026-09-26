@@ -6,6 +6,7 @@ const parable: Parable = {
 	"category": "Prayer",
 	"gospelReference": "Luke 18:9–14",
 	"excerpt": "Two men pray in the Temple; the humble tax collector goes home justified, not the self-righteous Pharisee.",
+	"imageAlt": "The Pharisee standing to pray while the tax collector stands apart in the Temple, painted by James Tissot",
 	"sections": [
 		{
 			"heading": "The story",

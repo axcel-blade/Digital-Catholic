@@ -3,6 +3,7 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import SectionList from '../../components/SectionList.astro';
 import { miracles, type Miracle } from '../../data/miracles';
 import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
 import { getNeighbors, getRelated, type ArticleLink } from '../../lib/article';
 
 export function getStaticPaths() {
@@ -34,6 +35,7 @@ const { prev, next } = getNeighbors(miracles, index);
 	label={`Miracle · ${miracle.category}`}
 	lead={miracle.excerpt}
 	meta={[{ term: 'Gospel', value: miracle.gospelReference }]}
+	image={getCollectionImage('miracles', miracle.slug, miracle.imageAlt)}
 	sections={miracle.sections}
 	prev={prev && toLink(prev)}
 	next={next && toLink(next)}
