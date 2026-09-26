@@ -20,7 +20,7 @@ Content is split into **one file per article** so contributors can add entries w
 | Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates |
 | Holy Mass | `mass/index.ts` | add an entry to the relevant group in `massSections` (Items Used at Mass); the Order of Mass text lives in `mass/order.ts`; a new Mass sub-page also needs an entry in `massPages` |
 
-Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, and Mass items in `public/mass/{name}.jpg` (Wikimedia Commons–licensed art preferred). Record the source, author, and license of each Mass image in `public/mass/CREDITS.md`.
+Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, parables in `public/parables/{slug}.jpg`, miracles of Jesus in `public/miracles/{slug}.jpg`, and Mass items in `public/mass/{name}.jpg` (Wikimedia Commons–licensed art preferred). Record the source, author, and license of each parable, miracle, and Mass image in that folder's `CREDITS.md`, and give each parable and miracle an `imageAlt` describing the artwork.
 
 Each folder has:
 

@@ -6,6 +6,7 @@ const parable: Parable = {
 	"category": "Kingdom of God",
 	"gospelReference": "Matthew 13:45–46",
 	"excerpt": "A merchant sells all he has to buy one pearl of surpassing worth—the Kingdom demands our all.",
+	"imageAlt": "Merchants examining a precious pearl, a nineteenth-century Bible illustration",
 	"sections": [
 		{
 			"heading": "The story",

@@ -6,6 +6,7 @@ const parable: Parable = {
 	"category": "Kingdom of God",
 	"gospelReference": "Matthew 22:1–14 · Luke 14:15–24",
 	"excerpt": "Invited guests refuse the king’s banquet; the poor fill the hall—many are called, but few are chosen.",
+	"imageAlt": "A king’s servant calling guests to the wedding feast, painted by Bernardo Strozzi",
 	"sections": [
 		{
 			"heading": "The story",

@@ -6,6 +6,7 @@ const parable: Parable = {
 	"category": "Wealth & judgment",
 	"gospelReference": "Luke 16:19–31",
 	"excerpt": "A poor man at the gate dies in Abraham’s bosom; the rich man who ignored him suffers separation and pleads for his brothers.",
+	"imageAlt": "The rich man feasting while poor Lazarus lies at his gate, attributed to Luca Giordano",
 	"sections": [
 		{
 			"heading": "The story",

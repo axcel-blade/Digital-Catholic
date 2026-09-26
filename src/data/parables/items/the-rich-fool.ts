@@ -6,6 +6,7 @@ const parable: Parable = {
 	"category": "Wealth & judgment",
 	"gospelReference": "Luke 12:13–21",
 	"excerpt": "“You fool! This night your soul is required of you.” Riches stored up for self cannot secure the soul.",
+	"imageAlt": "A rich man examining a coin by candlelight among his ledgers, Rembrandt’s Parable of the Rich Fool",
 	"sections": [
 		{
 			"heading": "The story",

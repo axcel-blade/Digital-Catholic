@@ -6,6 +6,7 @@ const miracle: Miracle = {
 	"category": "Nature",
 	"gospelReference": "John 2:1–11",
 	"excerpt": "At a wedding feast Jesus changes water into wine—the first sign that manifests His glory and calls His disciples to believe.",
+	"imageAlt": "The crowded wedding feast at Cana where Christ turned water into wine, painted by Paolo Veronese",
 	"sections": [
 		{
 			"heading": "The sign",

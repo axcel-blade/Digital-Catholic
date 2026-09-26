@@ -6,6 +6,7 @@ const miracle: Miracle = {
 	"category": "Healing",
 	"gospelReference": "Mark 2:1–12 · Matthew 9:1–8 · Luke 5:17–26",
 	"excerpt": "“Your sins are forgiven”—then “Rise, pick up your mat and walk.” Faith and divine authority meet in one healing.",
+	"imageAlt": "A paralysed man lowered through the roof on his mat before Jesus, painted by James Tissot",
 	"sections": [
 		{
 			"heading": "The sign",

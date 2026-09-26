@@ -6,6 +6,7 @@ const miracle: Miracle = {
 	"category": "Nature",
 	"gospelReference": "Matthew 14:22–33 · Mark 6:45–52 · John 6:16–21",
 	"excerpt": "Jesus comes to the disciples across the sea; Peter walks toward Him on the waves until doubt overtakes him.",
+	"imageAlt": "Christ walking on the stormy sea in a glow of light, painted by Ivan Aivazovsky",
 	"sections": [
 		{
 			"heading": "The sign",
