@@ -51,6 +51,12 @@ git push -u origin feature/your-topic
 
 Open a pull request on GitHub with base **`develop`** and compare **`feature/your-topic`**.
 
+If you change the build setup or the `Dockerfile`, also check that the container builds and serves the site:
+
+```sh
+docker compose up --build   # then open http://localhost:8080
+```
+
 ---
 
 ## Maintainers: cutting a release

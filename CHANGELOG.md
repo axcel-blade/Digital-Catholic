@@ -8,6 +8,7 @@ All notable changes to Digital Catholic are documented here.
 
 - Prayers section expanded with additional common Catholic prayers
 - Prayer page improvements (slug routing, intro text, type system)
+- Docker support: multi-stage `Dockerfile` (Node build, nginx serve), `docker-compose.yml`, `.dockerignore`, and `docker/nginx.conf`
 
 ---
 
