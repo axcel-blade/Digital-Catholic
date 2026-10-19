@@ -25,6 +25,7 @@ All notable changes to Digital Catholic are documented here.
 - Items Used at Mass page (`/mass/items-used-at-mass`) — sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other sacred items, with images under `public/mass/`
 - Images for all 26 Items Used at Mass entries (every item except the liturgical colors), from Wikimedia Commons and resized to at most 960px, with alt text describing each image and attribution in `public/mass/CREDITS.md`
 - Origin of the Rosary moved to its own page at `/rosary/origin`
+- Holy Bible: “How the Bible Was Formed” page at `/bible/how-the-bible-was-formed` covering inspiration, oral tradition, the Septuagint, the writing of the New Testament, the canon, St. Jerome and the Vulgate, and the Council of Trent; linked from the Holy Bible page and included in search, with Caravaggio’s *Saint Jerome Writing* (public domain) credited in `public/bible/CREDITS.md`
 - Saints: St. Charbel and Archbishop Fulton J. Sheen added
 - Saints: “The Path to Sainthood” page at `/saints/path-to-sainthood` explaining Servant of God, Venerable, Blessed, and Saint, linked from the Saints listing and every biography, and included in search
 - Mass: “The Order of Mass” page at `/mass/order-of-mass` walking through the Introductory Rites, Liturgy of the Word, Liturgy of the Eucharist, and Concluding Rites, linked from Items Used at Mass and included in search
