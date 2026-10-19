@@ -4,7 +4,13 @@ import SectionList from '../../components/SectionList.astro';
 import { bibleBooks, bibleFormationIntro, bibleFormationSections } from '../../data/bible';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
+import { getPublicImage } from '../../lib/images';
 import type { ArticleLink } from '../../lib/article';
+
+const image = getPublicImage(
+	'/bible/how-the-bible-was-formed.jpg',
+	'Saint Jerome writing at a table with open books and a skull, oil painting by Caravaggio (public domain)'
+);
 
 const related: ArticleLink[] = ['genesis', 'matthew', 'wisdom']
 	.map((slug) => bibleBooks.find((b) => b.slug === slug))
@@ -26,6 +32,8 @@ const related: ArticleLink[] = ['genesis', 'matthew', 'wisdom']
 	lead={bibleFormationIntro}
 	sections={bibleFormationSections}
 	related={related}
+	image={image}
+	imageCaption="Saint Jerome Writing, Caravaggio (c. 1605–1606). St. Jerome translated the Scriptures into Latin."
 >
 	<SectionList sections={bibleFormationSections} />
 	<p class="callout callout--scripture">
