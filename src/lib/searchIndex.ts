@@ -27,7 +27,13 @@ import {
 	pathToSainthoodIntro,
 	pathToSainthoodSections,
 } from '../data/saints';
-import { bibleBooks, bibleIntro, testamentLabels } from '../data/bible';
+import {
+	bibleBooks,
+	bibleFormationIntro,
+	bibleFormationSections,
+	bibleIntro,
+	testamentLabels,
+} from '../data/bible';
 import { prayers, prayersIntro } from '../data/prayers';
 import { withBase } from './paths';
 
@@ -81,6 +87,16 @@ export function buildSearchIndex(): SearchEntry[] {
 			'Scripture',
 			bibleIntro,
 			['bible scripture old testament new testament books canon deuterocanonical'],
+		),
+		entry(
+			'How the Bible Was Formed',
+			withBase('/bible/how-the-bible-was-formed'),
+			'Scripture',
+			bibleFormationIntro,
+			[
+				'inspiration canon septuagint vulgate jerome trent councils history',
+				...bibleFormationSections.flatMap((s) => [s.heading, ...s.paragraphs]),
+			],
 		),
 		entry(
 			'Prayers',

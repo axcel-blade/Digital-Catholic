@@ -9,6 +9,7 @@ export {
 	testamentLabels,
 } from './categories';
 export { bibleIntro } from './intro';
+export { bibleFormationIntro, bibleFormationSections } from './formation';
 export type * from './types';
 
 export const bibleBooks: BibleBook[] = [...oldTestamentBooks, ...newTestamentBooks];

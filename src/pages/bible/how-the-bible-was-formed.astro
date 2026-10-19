@@ -1,0 +1,34 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import { bibleBooks, bibleFormationIntro, bibleFormationSections } from '../../data/bible';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import type { ArticleLink } from '../../lib/article';
+
+const related: ArticleLink[] = ['genesis', 'matthew', 'wisdom']
+	.map((slug) => bibleBooks.find((b) => b.slug === slug))
+	.filter((b) => b !== undefined)
+	.map((book) => ({
+		href: withBase(`/bible/${book.slug}`),
+		title: book.title,
+		label: 'Book of the Bible',
+		excerpt: book.excerpt,
+	}));
+---
+
+<ArticleLayout
+	title="How the Bible Was Formed"
+	description={PAGE_DESCRIPTIONS.bibleFormation}
+	currentPath={Astro.url.pathname}
+	sectionKey="bible"
+	label="Bible · History"
+	lead={bibleFormationIntro}
+	sections={bibleFormationSections}
+	related={related}
+>
+	<SectionList sections={bibleFormationSections} />
+	<p class="callout callout--scripture">
+		Ready to read? See <a href={withBase('/bible')}>all seventy-three books of the Catholic Bible</a>.
+	</p>
+</ArticleLayout>
