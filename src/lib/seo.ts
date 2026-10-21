@@ -51,6 +51,8 @@ export const PAGE_DESCRIPTIONS = {
 		'The path to sainthood in the Catholic Church—Servant of God, Venerable, Blessed, and Saint—and what each stage of a cause for canonization requires.',
 	shroudOfTurin:
 		'The Shroud of Turin—the linen cloth many believe wrapped the body of Jesus: its image, history, the 1898 photograph, carbon dating, and what the Church teaches.',
+	veilOfVeronica:
+		'The Veil of Veronica, the Holy Face, and the Sudarium of Oviedo—the tradition of Veronica, the Vera Icon in Rome, Manoppello, the face cloth of John 20:7, and devotion to the Holy Face.',
 	bibleFormation:
 		'How the Bible was formed—divine inspiration, oral tradition, the Septuagint, the writing of the New Testament, the canon of seventy-three books, St. Jerome, and the Council of Trent.',
 	rosaryOrigin:
