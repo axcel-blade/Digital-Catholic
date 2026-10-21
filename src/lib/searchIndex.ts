@@ -13,7 +13,14 @@ import {
 } from '../data/rosary';
 import { eucharisticMiracles, eucharisticMiraclesIntro } from '../data/eucharisticMiracles';
 import { marianApparitions, marianApparitionsIntro } from '../data/marianApparitions';
-import { miracles, miraclesIntro, shroudOfTurinIntro, shroudOfTurinSections } from '../data/miracles';
+import {
+	miracles,
+	miraclesIntro,
+	shroudOfTurinIntro,
+	shroudOfTurinSections,
+	veilOfVeronicaIntro,
+	veilOfVeronicaSections,
+} from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
 import { sacraments } from '../data/sacraments';
 import {
@@ -155,6 +162,16 @@ export function buildSearchIndex(): SearchEntry[] {
 			[
 				'shroud turin relic burial cloth holy face carbon dating sturp secondo pia',
 				...shroudOfTurinSections.flatMap((s) => [s.heading, ...s.paragraphs]),
+			],
+		),
+		entry(
+			'The Veil of Veronica and the Holy Face',
+			withBase('/miracles/veil-of-veronica'),
+			'Miracles',
+			veilOfVeronicaIntro,
+			[
+				'veil veronica vera icon holy face sudarium oviedo manoppello mandylion relic face cloth sixth station',
+				...veilOfVeronicaSections.flatMap((s) => [s.heading, ...s.paragraphs]),
 			],
 		),
 		entry(
