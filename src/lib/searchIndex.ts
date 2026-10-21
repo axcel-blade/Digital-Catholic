@@ -13,7 +13,7 @@ import {
 } from '../data/rosary';
 import { eucharisticMiracles, eucharisticMiraclesIntro } from '../data/eucharisticMiracles';
 import { marianApparitions, marianApparitionsIntro } from '../data/marianApparitions';
-import { miracles, miraclesIntro } from '../data/miracles';
+import { miracles, miraclesIntro, shroudOfTurinIntro, shroudOfTurinSections } from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
 import { sacraments } from '../data/sacraments';
 import {
@@ -146,6 +146,16 @@ export function buildSearchIndex(): SearchEntry[] {
 			'Miracles',
 			miraclesIntro,
 			[miraclesIntro, ...miracles.map((m) => joinParts(m.title, m.excerpt, m.gospelReference, m.category))],
+		),
+		entry(
+			'The Shroud of Turin',
+			withBase('/miracles/shroud-of-turin'),
+			'Miracles',
+			shroudOfTurinIntro,
+			[
+				'shroud turin relic burial cloth holy face carbon dating sturp secondo pia',
+				...shroudOfTurinSections.flatMap((s) => [s.heading, ...s.paragraphs]),
+			],
 		),
 		entry(
 			'Eucharistic Miracles',
