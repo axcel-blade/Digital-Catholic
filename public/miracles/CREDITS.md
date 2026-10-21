@@ -15,3 +15,4 @@ Images shown on the Miracles of Jesus Christ pages (`/miracles`). All images are
 | the-transfiguration.jpg | [Transfiguration Raphael.jpg](https://commons.wikimedia.org/wiki/File:Transfiguration_Raphael.jpg) | Raphael | Public domain |
 | walking-on-water.jpg | [Po vodam 1888.jpg](https://commons.wikimedia.org/wiki/File:Po_vodam_1888.jpg) | Ivan Aivazovsky | Public domain |
 | wedding-at-cana.jpg | [Paolo Veronese, The Wedding at Cana.JPG](https://commons.wikimedia.org/wiki/File:Paolo_Veronese,_The_Wedding_at_Cana.JPG) | Paolo Veronese | Public domain |
+| shroud-of-turin.jpg | [Holy Face of Jesus from Shroud of Turin (1909).jpg](https://commons.wikimedia.org/wiki/File:Holy_Face_of_Jesus_from_Shroud_of_Turin_(1909).jpg) | Secondo Pia; Paul Vignon | Public domain |

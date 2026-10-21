@@ -1,0 +1,39 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import { miracles, shroudOfTurinIntro, shroudOfTurinSections } from '../../data/miracles';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { getPublicImage } from '../../lib/images';
+import type { ArticleLink } from '../../lib/article';
+
+const image = getPublicImage(
+	'/miracles/shroud-of-turin.jpg',
+	'The Holy Face from the Shroud of Turin as a photographic positive: a bearded man with long hair and closed eyes (public domain)'
+);
+
+const related: ArticleLink[] = miracles.slice(0, 3).map((miracle) => ({
+	href: withBase(`/miracles/${miracle.slug}`),
+	title: miracle.title,
+	label: miracle.category,
+	excerpt: miracle.excerpt,
+}));
+---
+
+<ArticleLayout
+	title="The Shroud of Turin"
+	description={PAGE_DESCRIPTIONS.shroudOfTurin}
+	currentPath={Astro.url.pathname}
+	sectionKey="miracles"
+	label="Relics · History"
+	lead={shroudOfTurinIntro}
+	sections={shroudOfTurinSections}
+	related={related}
+	image={image}
+	imageCaption="The Holy Face of the Shroud as a photographic positive, published by Paul Vignon (1909) from Secondo Pia’s 1898 negative."
+>
+	<SectionList sections={shroudOfTurinSections} />
+	<p class="callout callout--scripture">
+		Read the Passion and burial of Jesus in <a href={withBase('/bible/john')}>the Gospel of John</a>, chapters 18–20.
+	</p>
+</ArticleLayout>

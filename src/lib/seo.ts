@@ -49,6 +49,8 @@ export const PAGE_DESCRIPTIONS = {
 		'The order of the Catholic Mass step by step—Introductory Rites, Liturgy of the Word, Liturgy of the Eucharist, and Concluding Rites—with the meaning of each part.',
 	pathToSainthood:
 		'The path to sainthood in the Catholic Church—Servant of God, Venerable, Blessed, and Saint—and what each stage of a cause for canonization requires.',
+	shroudOfTurin:
+		'The Shroud of Turin—the linen cloth many believe wrapped the body of Jesus: its image, history, the 1898 photograph, carbon dating, and what the Church teaches.',
 	bibleFormation:
 		'How the Bible was formed—divine inspiration, oral tradition, the Septuagint, the writing of the New Testament, the canon of seventy-three books, St. Jerome, and the Council of Trent.',
 	rosaryOrigin:
