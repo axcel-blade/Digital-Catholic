@@ -10,6 +10,10 @@ const disciple: Disciple = {
 	lifeDates: 'd. c. AD 90',
 	gospelReference: 'Matthew 9:9–13',
 	feastDays: 'September 21',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Wikipedia: Salerno Cathedral', url: 'https://en.wikipedia.org/wiki/Salerno_Cathedral' },
+	],
 	sections: [
 		{
 			heading: 'Who was Matthew?',
@@ -36,6 +40,14 @@ const disciple: Disciple = {
 				'Matthew, also called Levi son of Alphaeus, collected taxes at Capernaum for Herod Antipas—work that made him despised as a collaborator with Rome. Jesus passed his booth and said, “Follow me”; Matthew rose, left everything, and gave a banquet so sinners could meet the Lord.',
 				'As an apostle he heard Christ’s teaching and witnessed the Passion and Resurrection. The Church from the earliest centuries attributed the First Gospel to him, written for Jewish Christians to show Jesus as fulfillment of Moses and the prophets.',
 				'After Pentecost tradition places him preaching first in Judea among his own people, then in Ethiopia and Persia, establishing communities and baptizing converts. He is often shown with a winged man or writing desk, symbols of his Gospel and his new life as evangelist.',
+			],
+		},
+		{
+			heading: 'Relics',
+			image: { src: '/disciples/sections/matthew-relics.jpg', alt: 'The richly frescoed Baroque crypt of Salerno Cathedral with the altar of St. Matthew at the far end', caption: 'The crypt of St. Matthew in Salerno Cathedral. Photo: NateBergin, CC BY 4.0.' },
+			paragraphs: [
+				'Matthew’s relics were brought to Salerno in southern Italy on May 6, 954. They were hidden for more than a century, rediscovered in 1081, and placed in the crypt of the new Salerno Cathedral, consecrated by Pope Gregory VII in 1084.',
+				'The crypt was richly decorated in the Baroque style in the seventeenth century and remains a place of pilgrimage.',
 			],
 		},
 		{

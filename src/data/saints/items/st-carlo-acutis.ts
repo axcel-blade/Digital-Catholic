@@ -6,6 +6,12 @@ const saint: Saint = {
 	"feastDays": "October 12",
 	"excerpt": "Italian teenager and first millennial saint—he used the internet to spread faith in the Eucharist and showed that holiness is possible for young people in the digital age.",
 	"lifeDates": "1991–2006",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Catholic World Report: Tomb of Carlo Acutis is opened for veneration ahead of beatification", "url": "https://www.catholicworldreport.com/2020/10/01/tomb-of-carlo-acutis-is-opened-for-veneration-ahead-of-beatification/" },
+		{ "label": "ACI Prensa: Este es el milagro de San Carlo Acutis", "url": "https://www.aciprensa.com/noticias/104581/este-es-el-milagro-de-san-carlo-acutis" },
+		{ "label": "Wikipedia: Santa Maria Maggiore, Assisi", "url": "https://en.wikipedia.org/wiki/Santa_Maria_Maggiore,_Assisi" }
+	],
 	"sections": [
 		{
 			"heading": "Who is St. Carlo Acutis?",
@@ -35,6 +41,21 @@ const saint: Saint = {
 				"Carlo Acutis was born in London on May 3, 1991, to Italian parents and grew up in Milan. Baptized shortly after birth, he received First Communion at age seven and soon asked to visit churches daily, attend Mass, and pray the Rosary. His parents were not deeply practicing at first; Carlo’s faith was joyful and drew them toward the Church.",
 				"At school he defended classmates bullied for their faith, helped disabled neighbors, and gave his savings to the homeless. He taught himself programming and built a website cataloging Eucharistic miracles worldwide, hoping to lead others to adore Christ in the Blessed Sacrament. He recorded parish events and encouraged friends to use technology for evangelization, not vanity.",
 				"When leukemia was diagnosed in 2006, Carlo offered his suffering for the Pope and the Church. He died in Monza on October 12, 2006, at fifteen, and was buried in Assisi, a city he loved for its link to St. Francis."
+			]
+		},
+		{
+			"heading": "Miracles",
+			"paragraphs": [
+				"The miracle approved for Carlo's beatification was the healing of Matheus Vianna, a young Brazilian boy who suffered from a rare congenital disease of the pancreas. He was cured after touching a relic, a piece of a shirt bearing traces of Carlo's blood.",
+				"The miracle approved for his canonization was the recovery of Valeria Valverde, a young Costa Rican student who suffered a severe head injury in a bicycle accident in Florence. Her mother went to pray at Carlo's tomb in Assisi, and soon afterward Valeria began to recover. Pope Leo XIV canonized him on September 7, 2025."
+			]
+		},
+		{
+			"heading": "Relics",
+			"image": { "src": "/saints/sections/st-carlo-acutis-relics.jpg", "alt": "Carlo Acutis lying in a glass-fronted tomb, dressed in jeans and a sweatshirt", "caption": "Carlo Acutis's tomb in the Sanctuary of the Spoliation, Assisi. Photo: Dulceridentem, CC BY-SA 4.0." },
+			"paragraphs": [
+				"Carlo's body rests in a glass-fronted tomb in the Sanctuary of the Spoliation in Assisi, where it was opened for public veneration in October 2020 ahead of his beatification. He is shown in jeans, a sweatshirt, and sneakers. His body is not incorrupt; it has been covered with a lifelike wax layer for display, a common practice for the presentation of saints' bodies.",
+				"His heart, now venerated as a relic, is kept in a reliquary in the Basilica of St. Francis in Assisi."
 			]
 		},
 		{

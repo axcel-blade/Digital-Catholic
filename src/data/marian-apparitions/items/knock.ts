@@ -10,6 +10,10 @@ const marianApparition: MarianApparition = {
 	"imageAlt": "Knock Shrine in County Mayo, Ireland, built at the site of the 1879 apparition",
 	"churchStatus": "recognized",
 	"statusNote": "Archbishop John MacHale of Tuam and later commissions found the witnesses’ testimony trustworthy; Knock is Ireland’s national Marian shrine.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Wikipedia: Knock Shrine", "url": "https://en.wikipedia.org/wiki/Knock_Shrine" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

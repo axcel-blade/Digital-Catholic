@@ -7,6 +7,10 @@ const miracle: Miracle = {
 	"gospelReference": "John 11:1–44",
 	"excerpt": "“I am the resurrection and the life.” Jesus calls Lazarus from the tomb after four days.",
 	"imageAlt": "Lazarus rising from the tomb at Christ’s command, painted by Sebastiano del Piombo",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "John 11:1–44 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/john/11" }
+	],
 	"sections": [
 		{
 			"heading": "The sign",

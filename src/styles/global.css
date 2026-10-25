@@ -1947,6 +1947,10 @@ mark {
 	background: var(--color-bg-alt);
 }
 
+.section-figure {
+	margin-top: var(--space-4);
+}
+
 .article-figure img {
 	width: 100%;
 	max-height: 70vh;

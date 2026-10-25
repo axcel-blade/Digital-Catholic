@@ -1,3 +1,5 @@
+import type { TrustInfo } from '../lib/trust';
+
 export const veilOfVeronicaIntro =
 	'Tradition tells of a woman of Jerusalem who, moved by pity, wiped the face of Jesus as He carried His Cross to Calvary, and found His likeness left upon her veil. Honoured as the Veil of Veronica, the Holy Face, and the Vera Icon or “true image,” it became one of the most beloved relics of Christendom, alongside the Sudarium of Oviedo, the cloth said to have covered His face in death.';
 
@@ -53,3 +55,11 @@ export const veilOfVeronicaSections = [
 		],
 	},
 ];
+
+export const veilOfVeronicaTrust: TrustInfo = {
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Wikipedia: Veil of Veronica', url: 'https://en.wikipedia.org/wiki/Veil_of_Veronica' },
+		{ label: 'Luke 23:27–31 (USCCB New American Bible)', url: 'https://bible.usccb.org/bible/luke/23' },
+	],
+};

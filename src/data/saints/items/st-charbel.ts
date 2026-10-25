@@ -6,6 +6,12 @@ const saint: Saint = {
 	"feastDays": "July 24",
 	"excerpt": "Lebanese Maronite hermit and monk whose life of radical prayer and penance drew thousands to holiness, and whose body remained incorrupt for decades after death.",
 	"lifeDates": "1828–1898",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Wikipedia: Charbel Makhlouf", "url": "https://en.wikipedia.org/wiki/Charbel_Makhlouf" },
+		{ "label": "Hozana: Saint Charbel", "url": "https://hozana.org/en/saints/saint-charbel" },
+		{ "label": "Hozana: Six Miracles of Saint Charbel", "url": "https://hozana.org/en/miracles-and-apparitions/miracles/saint-charbel" }
+	],
 	"sections": [
 		{
 			"heading": "Who is St. Charbel?",
@@ -32,6 +38,22 @@ const saint: Saint = {
 				"On December 16, 1898, while celebrating Mass at the words of consecration, he suffered a stroke. He died nine days later on Christmas Eve, December 24, 1898, at the age of seventy. He was buried simply in the monastery cemetery.",
 				"Forty-five nights after his burial, witnesses reported bright lights over his tomb. The monastery community sought permission to open the tomb, and when they did in 1899, they found his body perfectly incorrupt, flexible, and emitting a fragrant liquid. His body has been exhumed and examined several times since, always found incorrupt and always exuding the same oil. Thousands of miraculous cures have been attributed to his intercession, documented and investigated by Church authorities.",
 				"Blessed John XXIII reopened his beatification cause; Pope Paul VI beatified him on December 5, 1965, during the Second Vatican Council—a moment that drew the attention of the whole Church to the Eastern Catholic traditions. He was canonized by the same pope on October 9, 1977."
+			]
+		},
+		{
+			"heading": "Miracles",
+			"paragraphs": [
+				"The Church approved two miracles for Charbel's beatification and a third for his canonization. Among those approved for his beatification was the healing of Sister Mary Abel Kamari, a nun who had suffered for years from a severe ulcer.",
+				"The miracle approved for his canonization was the healing of Mariam Assaf Awad of Hammana, Lebanon. Between 1963 and 1965 she underwent three operations for cancerous tumors; she then refused further treatment and prayed to Blessed Charbel, and after four days of prayer her tumor disappeared completely.",
+				"Pilgrims continue to report healings through his intercession, and the monastery at Annaya keeps records of thousands of favors attributed to him."
+			]
+		},
+		{
+			"heading": "Relics",
+			"image": { "src": "/saints/sections/st-charbel-relics.jpg", "alt": "A carved wooden tomb beneath a stone arch, with an icon of St. Charbel above it", "caption": "St. Charbel's tomb at the Monastery of St. Maron, Annaya, Lebanon. Photo: LLEW, CC BY-SA 4.0." },
+			"paragraphs": [
+				"St. Charbel's body rests at the Monastery of St. Maron in Annaya, Lebanon, near the hermitage where he spent his last twenty-three years. When his tomb was opened after his death, his body was found incorrupt and exuding a fragrant liquid.",
+				"Oil and cloths blessed at his shrine are distributed to pilgrims and are treasured by Maronite communities throughout the world."
 			]
 		},
 		{

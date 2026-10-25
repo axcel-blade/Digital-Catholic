@@ -10,6 +10,10 @@ const marianApparition: MarianApparition = {
 	"imageAlt": "Basilica of Our Lady of La Salette in the French Alps, above the apparition site",
 	"churchStatus": "approved",
 	"statusNote": "Bishop Philibert de Bruillard of Grenoble authorized public devotion and a shrine in 1851.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Wikipedia: Our Lady of La Salette", "url": "https://en.wikipedia.org/wiki/Our_Lady_of_La_Salette" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

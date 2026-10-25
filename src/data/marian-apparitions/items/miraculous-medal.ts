@@ -10,6 +10,10 @@ const marianApparition: MarianApparition = {
 	"imageAlt": "Chapel of Our Lady of the Miraculous Medal on Rue du Bac in Paris, where St. Catherine Labouré saw Mary",
 	"churchStatus": "approved",
 	"statusNote": "Archbishop Hyacinthe-Louis de Quélen of Paris approved the devotion in 1836 after investigation.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Wikipedia: Miraculous Medal", "url": "https://en.wikipedia.org/wiki/Miraculous_Medal" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

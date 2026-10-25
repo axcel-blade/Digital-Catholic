@@ -1,7 +1,7 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import SectionList from '../../components/SectionList.astro';
-import { miracles, veilOfVeronicaIntro, veilOfVeronicaSections } from '../../data/miracles';
+import { miracles, veilOfVeronicaIntro, veilOfVeronicaSections, veilOfVeronicaTrust } from '../../data/miracles';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 import { getPublicImage } from '../../lib/images';
@@ -30,6 +30,7 @@ const related: ArticleLink[] = miracles.slice(0, 3).map((miracle) => ({
 	sections={veilOfVeronicaSections}
 	related={related}
 	image={image}
+	trust={veilOfVeronicaTrust}
 	imageCaption="The Veil of St. Veronica, El Greco (c. 1580)."
 >
 	<SectionList sections={veilOfVeronicaSections} />

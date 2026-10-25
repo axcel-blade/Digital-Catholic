@@ -7,6 +7,12 @@ const parable: Parable = {
 	"gospelReference": "Matthew 13:1–23 · Mark 4:1–20 · Luke 8:4–15",
 	"excerpt": "Seed falls on four kinds of soil—a lesson on how the Word of God is received in the human heart.",
 	"imageAlt": "A sower scattering seed across a field, painted by James Tissot",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Matthew 13:1–23 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/13" },
+		{ "label": "Mark 4:1–20 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/mark/4" },
+		{ "label": "Luke 8:4–15 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/8" }
+	],
 	"sections": [
 		{
 			"heading": "The parable",

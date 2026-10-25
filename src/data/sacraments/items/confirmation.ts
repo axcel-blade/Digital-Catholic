@@ -4,6 +4,11 @@ const sacrament: Sacrament = {
 	"slug": "confirmation",
 	"title": "Confirmation",
 	"excerpt": "Sealed with the gift of the Holy Spirit, we are strengthened to bear witness to Christ in word and deed.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Catechism of the Catholic Church, §§1285–1321 (Confirmation)", "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM" },
+		{ "label": "Acts 8:14–17 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/acts/8" }
+	],
 	"sections": [
 		{
 			"heading": "What is Confirmation?",

@@ -4,6 +4,11 @@ const sacrament: Sacrament = {
 	"slug": "anointing-of-the-sick",
 	"title": "Anointing of the Sick",
 	"excerpt": "Christ’s healing presence for those who suffer illness or the frailty of age, uniting their crosses to His.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Catechism of the Catholic Church, §§1499–1532 (Anointing of the Sick)", "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM" },
+		{ "label": "James 5:14–15 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/james/5" }
+	],
 	"sections": [
 		{
 			"heading": "What is this sacrament?",

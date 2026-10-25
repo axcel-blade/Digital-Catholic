@@ -4,6 +4,12 @@ const sacrament: Sacrament = {
 	"slug": "baptism",
 	"title": "Baptism",
 	"excerpt": "The gateway to life in Christ—by water and the Holy Spirit we are born anew as children of God.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Catechism of the Catholic Church, §§1213–1284 (Baptism)", "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM" },
+		{ "label": "Matthew 28:19–20 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/28" },
+		{ "label": "John 3:5 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/john/3" }
+	],
 	"sections": [
 		{
 			"heading": "What is Baptism?",

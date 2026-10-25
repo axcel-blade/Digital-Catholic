@@ -7,6 +7,13 @@ const miracle: Miracle = {
 	"gospelReference": "Matthew 28 · Mark 16 · Luke 24 · John 20–21",
 	"excerpt": "The central miracle of the faith: Christ rises bodily from the dead on the third day, the foundation of Christian hope.",
 	"imageAlt": "The risen Christ emerging from the tomb in radiant light, flanked by kneeling angels, painted by Carl Heinrich Bloch",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Matthew 28 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/28" },
+		{ "label": "Mark 16 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/mark/16" },
+		{ "label": "Luke 24 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/24" },
+		{ "label": "John 20–21 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/john/20" }
+	],
 	"sections": [
 		{
 			"heading": "The sign",

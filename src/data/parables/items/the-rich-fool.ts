@@ -7,6 +7,10 @@ const parable: Parable = {
 	"gospelReference": "Luke 12:13–21",
 	"excerpt": "“You fool! This night your soul is required of you.” Riches stored up for self cannot secure the soul.",
 	"imageAlt": "A rich man examining a coin by candlelight among his ledgers, Rembrandt’s Parable of the Rich Fool",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Luke 12:13–21 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/12" }
+	],
 	"sections": [
 		{
 			"heading": "The story",

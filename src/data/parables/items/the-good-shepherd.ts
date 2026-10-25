@@ -7,6 +7,10 @@ const parable: Parable = {
 	"gospelReference": "John 10:1–18",
 	"excerpt": "“I am the good shepherd. The good shepherd lays down his life for the sheep.”",
 	"imageAlt": "Christ the Good Shepherd carrying a lamb among his flock, painted by Bernhard Plockhorst",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "John 10:1–18 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/john/10" }
+	],
 	"sections": [
 		{
 			"heading": "The teaching",

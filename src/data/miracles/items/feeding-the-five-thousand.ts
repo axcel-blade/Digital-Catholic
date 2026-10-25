@@ -7,6 +7,13 @@ const miracle: Miracle = {
 	"gospelReference": "John 6:1–15 · Matthew 14:13–21 · Mark 6:30–44 · Luke 9:10–17",
 	"excerpt": "With five loaves and two fish Jesus feeds a vast crowd; twelve baskets of fragments remain.",
 	"imageAlt": "Christ blessing the loaves and fish before the crowd, painted by Giovanni Lanfranco",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "John 6:1–15 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/john/6" },
+		{ "label": "Matthew 14:13–21 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/14" },
+		{ "label": "Mark 6:30–44 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/mark/6" },
+		{ "label": "Luke 9:10–17 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/9" }
+	],
 	"sections": [
 		{
 			"heading": "The sign",

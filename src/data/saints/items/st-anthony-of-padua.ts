@@ -6,6 +6,12 @@ const saint: Saint = {
 	"feastDays": "June 13",
 	"excerpt": "Franciscan preacher and Doctor of the Church—beloved for his zeal for the Gospel, care for the poor, and powerful intercession, especially for what is lost.",
 	"lifeDates": "1195–1231",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Catholic World Report: The opening of St. Anthony's tomb and the 'Feast of the Tongue'", "url": "https://www.catholicworldreport.com/2024/06/13/the-opening-of-st-anthonys-tomb-and-the-feast-of-the-tongue" },
+		{ "label": "Basilica of St. Anthony, Padua (santantonio.org)", "url": "https://www.santantonio.org/en/node/578" },
+		{ "label": "Wikipedia: Tempietto of Sant'Antonio, Rimini", "url": "https://en.wikipedia.org/wiki/Tempietto_of_Sant%27Antonio,_Rimini" }
+	],
 	"sections": [
 		{
 			"heading": "Who is St. Anthony of Padua?",
@@ -35,6 +41,24 @@ const saint: Saint = {
 				"Fernando Martins de Bulhões was born in Lisbon, Portugal, in 1195 into a noble family. He entered the Augustinian canons at São Vicente, then transferred to the Franciscans after seeing the bodies of the first Franciscan martyrs brought from Morocco. Taking the name Anthony, he set out to preach in North Africa but illness forced him to land in Sicily.",
 				"His gift for preaching was discovered almost by accident at a Dominican ordination in Forlì, Italy, when no one else would speak. He studied Scripture under St. Francis’s guidance and preached throughout Italy and southern France, drawing enormous crowds. He defended the Real Presence, confuted heretics, and served as provincial superior of the friars in northern Italy while remaining humble and devoted to the poor.",
 				"In Padua his sermons bore lasting fruit: usurers restored ill-gotten goods, enemies reconciled, and sinners returned to the sacraments. He wrote sermons for the feasts of the Lord and composed notes on Scripture that influenced Franciscan theology for centuries."
+			]
+		},
+		{
+			"heading": "Miracles",
+			"image": { "src": "/saints/sections/st-anthony-of-padua-miracles.jpg", "alt": "A mule kneeling before St. Anthony as he holds up the Blessed Sacrament", "caption": "The Miracle of the Mule, Anthony van Dyck (Musée des Augustins, Toulouse)." },
+			"paragraphs": [
+				"Anthony was already called a wonderworker in his lifetime. One well-known account comes from Rimini, where heretics refused to hear him; he went to the shore and preached to the sea, and witnesses said a great crowd of fish gathered and lifted their heads from the water to listen.",
+				"Also at Rimini, according to tradition, a man named Bonvillo challenged him to prove Christ's presence in the Eucharist. The man brought a hungry mule and offered it fodder, while Anthony held up the Blessed Sacrament; the mule ignored the food and knelt before the Host. A small chapel, the Tempietto of Sant'Antonio, marks the spot.",
+				"Countless favors, especially the finding of lost things, have been attributed to his intercession since his death in 1231."
+			]
+		},
+		{
+			"heading": "Relics",
+			"image": { "src": "/saints/sections/st-anthony-of-padua-relics.jpg", "alt": "Gold reliquaries holding the jaw and tongue of St. Anthony", "caption": "Reliquaries of St. Anthony's jaw and tongue, Basilica of St. Anthony, Padua. Photo: Richard Mortel, CC BY 2.0." },
+			"paragraphs": [
+				"On April 8, 1263, Anthony's remains were transferred to the new basilica built in his honor in Padua, in a ceremony presided over by St. Bonaventure, then Minister General of the Franciscans.",
+				"When the tomb was opened, his body had returned to dust and bone, but his tongue was found incorrupt. Bonaventure is said to have exclaimed, \"O blessed tongue, which has always blessed God and caused others to bless Him.\" The tongue, together with his jaw and vocal apparatus, is displayed in reliquaries in a chapel of the Basilica of St. Anthony in Padua.",
+				"The Franciscans still celebrate this discovery each year as the Feast of the Tongue."
 			]
 		},
 		{

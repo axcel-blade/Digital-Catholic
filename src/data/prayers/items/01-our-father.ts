@@ -7,6 +7,12 @@ const prayer: Prayer = {
 	excerpt:
 		'The prayer Christ taught His disciples—the pattern for all Christian prayer and the words spoken on every bead before each decade of the Rosary.',
 	text: 'Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Catechism of the Catholic Church, §§2759–2865 (The Lord’s Prayer)', url: 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM' },
+		{ label: 'Matthew 6:9–13 (USCCB New American Bible)', url: 'https://bible.usccb.org/bible/matthew/6' },
+		{ label: 'Luke 11:2–4 (USCCB New American Bible)', url: 'https://bible.usccb.org/bible/luke/11' },
+	],
 	sections: [
 		{
 			heading: 'What is the Our Father?',
