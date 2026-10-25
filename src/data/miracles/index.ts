@@ -1,6 +1,8 @@
 import { loadCollection } from '../lib/loadCollection';
 import type { Miracle } from './types';
 export { miraclesIntro } from './intro';
+export { shroudOfTurinIntro, shroudOfTurinSections } from './shroud';
+export { veilOfVeronicaIntro, veilOfVeronicaSections } from './veronica';
 export type * from './types';
 const modules = import.meta.glob('./items/*.ts', { eager: true });
 export const miracles = loadCollection<Miracle>(modules);

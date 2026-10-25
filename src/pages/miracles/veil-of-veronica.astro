@@ -1,0 +1,39 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import { miracles, veilOfVeronicaIntro, veilOfVeronicaSections } from '../../data/miracles';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { getPublicImage } from '../../lib/images';
+import type { ArticleLink } from '../../lib/article';
+
+const image = getPublicImage(
+	'/miracles/veil-of-veronica.jpg',
+	'The Holy Face of Jesus imprinted on the Veil of St. Veronica, painted by El Greco (public domain)'
+);
+
+const related: ArticleLink[] = miracles.slice(0, 3).map((miracle) => ({
+	href: withBase(`/miracles/${miracle.slug}`),
+	title: miracle.title,
+	label: miracle.category,
+	excerpt: miracle.excerpt,
+}));
+---
+
+<ArticleLayout
+	title="The Veil of Veronica and the Holy Face"
+	description={PAGE_DESCRIPTIONS.veilOfVeronica}
+	currentPath={Astro.url.pathname}
+	sectionKey="miracles"
+	label="Relics · History"
+	lead={veilOfVeronicaIntro}
+	sections={veilOfVeronicaSections}
+	related={related}
+	image={image}
+	imageCaption="The Veil of St. Veronica, El Greco (c. 1580)."
+>
+	<SectionList sections={veilOfVeronicaSections} />
+	<p class="callout callout--scripture">
+		Read of the women of Jerusalem on the way to the Cross in <a href={withBase('/bible/luke')}>the Gospel of Luke</a>, chapter 23, and of the face cloth in the empty tomb in <a href={withBase('/bible/john')}>John</a> 20.
+	</p>
+</ArticleLayout>

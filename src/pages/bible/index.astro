@@ -42,6 +42,7 @@ const deuterocanonicalCount = bibleBooks.filter((b) => b.deuterocanonical).lengt
 		{testaments.map((t) => (
 			<a class="jump-links__link" href={`#${t.id}`}>{t.label} <span class="jump-links__count">{t.count}</span></a>
 		))}
+		<a class="jump-links__link" href={withBase('/bible/how-the-bible-was-formed')}>How the Bible was formed</a>
 	</nav>
 
 	<p class="callout callout--scripture">

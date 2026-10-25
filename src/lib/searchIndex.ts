@@ -13,7 +13,14 @@ import {
 } from '../data/rosary';
 import { eucharisticMiracles, eucharisticMiraclesIntro } from '../data/eucharisticMiracles';
 import { marianApparitions, marianApparitionsIntro } from '../data/marianApparitions';
-import { miracles, miraclesIntro } from '../data/miracles';
+import {
+	miracles,
+	miraclesIntro,
+	shroudOfTurinIntro,
+	shroudOfTurinSections,
+	veilOfVeronicaIntro,
+	veilOfVeronicaSections,
+} from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
 import { sacraments } from '../data/sacraments';
 import {
@@ -27,7 +34,13 @@ import {
 	pathToSainthoodIntro,
 	pathToSainthoodSections,
 } from '../data/saints';
-import { bibleBooks, bibleIntro, testamentLabels } from '../data/bible';
+import {
+	bibleBooks,
+	bibleFormationIntro,
+	bibleFormationSections,
+	bibleIntro,
+	testamentLabels,
+} from '../data/bible';
 import { prayers, prayersIntro } from '../data/prayers';
 import { withBase } from './paths';
 
@@ -83,6 +96,16 @@ export function buildSearchIndex(): SearchEntry[] {
 			['bible scripture old testament new testament books canon deuterocanonical'],
 		),
 		entry(
+			'How the Bible Was Formed',
+			withBase('/bible/how-the-bible-was-formed'),
+			'Scripture',
+			bibleFormationIntro,
+			[
+				'inspiration canon septuagint vulgate jerome trent councils history',
+				...bibleFormationSections.flatMap((s) => [s.heading, ...s.paragraphs]),
+			],
+		),
+		entry(
 			'Prayers',
 			withBase('/prayers'),
 			'Prayer',
@@ -130,6 +153,26 @@ export function buildSearchIndex(): SearchEntry[] {
 			'Miracles',
 			miraclesIntro,
 			[miraclesIntro, ...miracles.map((m) => joinParts(m.title, m.excerpt, m.gospelReference, m.category))],
+		),
+		entry(
+			'The Shroud of Turin',
+			withBase('/miracles/shroud-of-turin'),
+			'Miracles',
+			shroudOfTurinIntro,
+			[
+				'shroud turin relic burial cloth holy face carbon dating sturp secondo pia',
+				...shroudOfTurinSections.flatMap((s) => [s.heading, ...s.paragraphs]),
+			],
+		),
+		entry(
+			'The Veil of Veronica and the Holy Face',
+			withBase('/miracles/veil-of-veronica'),
+			'Miracles',
+			veilOfVeronicaIntro,
+			[
+				'veil veronica vera icon holy face sudarium oviedo manoppello mandylion relic face cloth sixth station',
+				...veilOfVeronicaSections.flatMap((s) => [s.heading, ...s.paragraphs]),
+			],
 		),
 		entry(
 			'Eucharistic Miracles',
