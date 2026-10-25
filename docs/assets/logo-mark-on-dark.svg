@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="512" height="512">
+	<title>Digital Catholic</title>
+	<path d="M5 30V14a11 11 0 0 1 22 0v16H5Z" fill="#8a3b4f"/>
+	<path d="M16 8v16M11 13.5h10" stroke="#f7f1ea" stroke-width="2.6" stroke-linecap="round"/>
+	<path d="M3 30h26" stroke="#d4ae6e" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-lockup-on-dark.svg">
+    <img src="docs/assets/logo-lockup.svg" alt="Digital Catholic" width="360">
+  </picture>
+</p>
+
 # Digital Catholic
 
 A static Catholic digital library for learning and sharing the faith — clear resources for Scripture, saints, sacraments, prayer, and the liturgical year, made for quiet reading and everyday growth.
@@ -130,7 +137,7 @@ src/
   lib/                Section registry, navigation, SEO, search index, image and path helpers
   pages/              Routes — home, about, contact, 404, all section pages, search-index.json
   styles/             global.css — design tokens, light and dark themes
-docs/                 ARCHITECTURE.md (how the site is built and deployed) and DESIGN.md (design system)
+docs/                 ARCHITECTURE.md (how the site is built and deployed), DESIGN.md (design system), and assets/ (logos and brand guide)
 docker/               nginx config for the Docker image
 Dockerfile            Multi-stage build (Node build, nginx serve)
 docker-compose.yml    Local container setup on port 8080
@@ -142,6 +149,7 @@ docker-compose.yml    Local container setup on port 8080
 - Section names, pathways, and menu descriptions: `src/lib/sections.ts`
 - Page titles and meta descriptions: `src/lib/seo.ts`
 - Design tokens and component rules: [docs/DESIGN.md](docs/DESIGN.md)
+- Logos and brand usage: [docs/assets/](docs/assets/README.md)
 
 ---
 

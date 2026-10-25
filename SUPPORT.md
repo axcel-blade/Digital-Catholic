@@ -8,7 +8,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) first — it covers the branch model, ho
 
 ### Questions about how the site works
 
-Read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how content, routing, search, the build, and deployment (GitHub Pages and Docker) fit together, and [docs/DESIGN.md](docs/DESIGN.md) for the design system.
+Read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how content, routing, search, the build, and deployment (GitHub Pages and Docker) fit together, [docs/DESIGN.md](docs/DESIGN.md) for the design system, and [docs/assets/](docs/assets/README.md) for logos and brand usage.
 
 ### Questions about content
 

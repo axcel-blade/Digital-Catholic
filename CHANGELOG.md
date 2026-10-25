@@ -37,6 +37,7 @@ All notable changes to Digital Catholic are documented here.
 - Article sections accept an optional `image` (`SectionImage` in `src/lib/article.ts`), rendered by `SectionList` as a captioned figure
 - Sources and a review date on every article: Catechism and Scripture references for sacraments and prayers; USCCB New American Bible links for parables, Gospel miracles, Judas, and all 73 Bible books (generated from each book's slug); Wikipedia and Church sources for Marian apparitions; the Carlo Acutis Eucharistic miracles exhibition for Eucharistic miracles; and the Shroud of Turin and Veil of Veronica pages
 - Image attribution in `public/saints/CREDITS.md` and `public/disciples/CREDITS.md`
+- Brand assets in `docs/assets/`: the mark and the mark-plus-name lockup as SVG and PNG for light and dark backgrounds, the social card, and a usage guide
 - Design system documentation moved to `docs/DESIGN.md`
 - Architecture documentation added at `docs/ARCHITECTURE.md`
 - `ROADMAP.md` and `TODO.md` removed
