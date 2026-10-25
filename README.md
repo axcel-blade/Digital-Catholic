@@ -15,7 +15,7 @@ The library has thirteen content areas, grouped into three pathways. The same gr
 | Section | What you'll find |
 | --- | --- |
 | **Holy Bible** | Summaries of all 73 books of the Catholic canon, including the deuterocanonical books, and how the Bible was formed |
-| **Saints** | Biographies of holy men and women with life dates and feast days, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint) |
+| **Saints** | Biographies of holy men and women with life dates, feast days, miracles, and relics, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint) |
 | **Sacraments** | All seven sacraments in Catechism order — initiation, healing, and service of communion |
 | **Ten Commandments** | The text and meaning of each commandment |
 
@@ -32,7 +32,7 @@ The library has thirteen content areas, grouped into three pathways. The same gr
 
 | Section | What you'll find |
 | --- | --- |
-| **Disciples of Jesus** | The Twelve Apostles in traditional order — life, Gospel accounts, death, and feast days |
+| **Disciples of Jesus** | The Twelve Apostles in traditional order — life, Gospel accounts, miracles, relics, death, and feast days |
 | **Miracles of Jesus** | Gospel accounts with Scripture references and classic artwork, filterable by kind of sign |
 | **Eucharistic Miracles** | Accounts from Lanciano to modern events, each labeled with its Church status |
 | **Marian Apparitions** | Guadalupe, Lourdes, Fátima, Knock, Velankanni, and others, each labeled with its Church status |
@@ -42,6 +42,7 @@ The library has thirteen content areas, grouped into three pathways. The same gr
 
 - **Guided homepage** with Learn / Pray / Explore pathways, a featured liturgical-calendar panel, and a full library index.
 - **Article pages** with breadcrumbs, metadata, an “On this page” list for longer articles, previous/next links, related reading, and a copy-link button.
+- **Sources on every article** in an “About this article” panel: Scripture (linked to the USCCB New American Bible), the Catechism, Church documents, and other cited references, with the date each article was last reviewed.
 - **Church status labels** for apparitions and Eucharistic miracles (approved for devotion, recognized or permitted, under investigation, historical tradition, or reported). Labels reflect only what each article states.
 - **Site search** from any page (press `/`), with category labels, highlighted excerpts, and full keyboard support.
 - **Light and dark themes**, a responsive layout, and accessibility built in: skip link, visible focus, 44px touch targets, and ARIA on every interactive control.
