@@ -8,6 +8,12 @@ const saint: Saint = {
 	"lifeDates": "1815–1888",
 	"lastReviewed": "2026-10-25",
 	"sources": [
+		{ "label": "ANS: Don Bosco the dreamer: the dream of the two columns", "url": "https://infoans.org/en/component/k2/item/20087" },
+		{ "label": "ANS: Don Bosco the dreamer: the ten diamonds", "url": "https://infoans.org/en/component/k2/item/20106" },
+		{ "label": "Salesian Bulletin: A Pergola of Roses (1847)", "url": "https://salesianbulletin.org/2024/08/15/a-pergola-of-roses-1847/" },
+		{ "label": "Journal of Salesian Studies: Don Bosco’s Vocation – Mission Dreams (Arthur J. Lenti, SDB)", "url": "https://journal.salesianstudies.org/?p=339" },
+		{ "label": "Correio Braziliense: Brasília, uma arqueologia do futuro (Don Bosco’s 1883 dream)", "url": "https://blogs.correiobraziliense.com.br/ofuturojacomecou/2021/04/21/brasilia-uma-arqueologia-do-futuro-edicao-especial/" },
+		{ "label": "Eugene M. Brown (ed.), Dreams, Visions and Prophecies of Don Bosco (1986)", "url": "https://salesians.org.uk/bookshop/dreams-visions-and-prophecies-of-don-bosco" },
 		{ "label": "Wikipedia: John Bosco", "url": "https://en.wikipedia.org/wiki/John_Bosco" },
 		{ "label": "EWTN News: Stolen relic of St John Bosco's brain recovered", "url": "https://www.ewtnnews.com/world/europe/stolen-relic-of-st-john-boscos-brain-recovered" },
 		{ "label": "InfoANS: Return of St John Bosco's relic", "url": "https://infoans.org/en/component/k2/item/3629" },
@@ -46,8 +52,17 @@ const saint: Saint = {
 			"paragraphs": [
 				"In 1849, Don Bosco promised roasted chestnuts to the boys of the Oratory, but only a small basket had been prepared. Witnesses said he kept drawing ladlefuls from it until about four hundred boys had been served, and the basket still was not empty. Others recalled similar occasions when consecrated hosts and loaves of bread were multiplied so that no one went without.",
 				"His early biographers record many healings attributed to his prayers and blessing, often given with an invitation to receive the sacraments and to pray to Mary Help of Christians. One of the best-known accounts, from 1849, concerns a fifteen-year-old boy named Charles who died while Don Bosco was away from Turin. Arriving afterward, Don Bosco prayed and called him by name; the boy is said to have woken, confessed a serious sin he had hidden out of shame in his last confession, and then died peacefully.",
-				"Don Bosco was also known for prophetic dreams. Some were warnings, such as his December 1854 dream of a herald announcing \"great funerals at court.\" He told King Victor Emmanuel II of it, and early in 1855 the king's mother, his wife, and his brother all died within weeks of one another. Others were spiritual visions, like the famous Dream of the Two Columns, in which the ship of the Church finds safety anchored between the Eucharist and Mary Help of Christians.",
 				"Before his beatification and canonization, the Church investigated and approved miraculous healings obtained through his intercession, as required for every cause."
+			]
+		},
+		{
+			"heading": "Prophetic dreams and visions",
+			"paragraphs": [
+				"Don Bosco is remembered as one of the great dreamers among the saints. The Biographical Memoirs compiled by his Salesian biographers record about 150 of his dreams; later Salesian scholarship counts 159. He usually recounted them to his boys and Salesians in the evening “Good Night” talk, and he himself called them dreams, leaving their meaning to be weighed with prudence.",
+				"The first came at the age of nine, when he saw fighting boys turned into lambs and was told to win hearts with gentleness. It shaped his whole vocation, and he returned to it throughout his life. In the Dream of the Pergola of Roses (1847), told to his Salesians only in 1864, he walked beneath roses while his feet were pierced by hidden thorns, an image of the sacrifices behind his apostolate to the young.",
+				"Some dreams were warnings. In December 1854 he dreamed of a court herald announcing “great funerals at court” while a law suppressing religious houses was before the Piedmont parliament. He told King Victor Emmanuel II, and early in 1855 the king’s mother, his wife, and his brother died within weeks of one another.",
+				"The most famous is the Dream of the Two Columns, which he described on May 30, 1862. He saw the great ship of the Church, steered by the Pope, attacked by an enemy fleet, until it found safety moored between two pillars rising from the sea: one crowned with the Eucharistic Host, the other with a statue of Mary Help of Christians. The dream became a lasting summary of his spirituality: devotion to the Eucharist and to Our Lady.",
+				"Other dreams guided his congregation. In the Dream of the Ten Diamonds (September 1881), a majestic figure wore diamonds representing faith, hope, charity, work, temperance, obedience, and the other virtues of a Salesian. In his missionary dreams of the 1880s he travelled over South America; in one, dated August 30, 1883, he saw a land of promised riches between the 15th and 20th parallels. Brazilians link it to the founding of Brasília, which honors him as one of its patron saints."
 			]
 		},
 		{
