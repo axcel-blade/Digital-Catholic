@@ -10,6 +10,11 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"imageAlt": "Eucharistic adoration with the Blessed Sacrament in a monstrance",
 	"churchStatus": "reported",
 	"statusNote": "Laboratory findings were reported, but this article records no formal Church judgment on the events.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "The Eucharistic Miracles of the World (Carlo Acutis exhibition): Buenos Aires", "url": "https://www.miracolieucaristici.org/en/download/buenosaires.pdf" },
+		{ "label": "Wikipedia: List of Eucharistic miracles", "url": "https://en.wikipedia.org/wiki/List_of_Eucharistic_miracles" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

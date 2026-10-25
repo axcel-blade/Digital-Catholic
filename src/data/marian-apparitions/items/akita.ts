@@ -10,6 +10,10 @@ const marianApparition: MarianApparition = {
 	"imageAlt": "Yuzawadai Catholic church in Akita, Japan, where the weeping statue of Our Lady of Akita is venerated",
 	"churchStatus": "approved",
 	"statusNote": "Bishop John Shojiro Ito of Niigata declared in 1984 that the events may be believed and promoted; the Holy See did not overturn his judgment.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Wikipedia: Our Lady of Akita", "url": "https://en.wikipedia.org/wiki/Our_Lady_of_Akita" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

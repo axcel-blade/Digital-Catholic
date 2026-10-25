@@ -19,7 +19,7 @@
 - [ ] New pages checked with the keyboard, on mobile, and in light and dark themes
 - [ ] Relevant markdown files updated (README, CHANGELOG, src/data/README, docs/DESIGN.md, etc.)
 - [ ] No open-source libraries added
-- [ ] Images (if any) are Wikimedia Commons–licensed or original
+- [ ] Images (if any) are Wikimedia Commons–licensed or original, recorded in that folder's `CREDITS.md`, and credited in the caption when the license requires it
 
 ## Description of changes
 

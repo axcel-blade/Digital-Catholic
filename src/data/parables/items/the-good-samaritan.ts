@@ -7,6 +7,10 @@ const parable: Parable = {
 	"gospelReference": "Luke 10:25–37",
 	"excerpt": "“Who is my neighbor?”—A wounded man is helped by the one society despised, not by religious officials who pass by.",
 	"imageAlt": "The Good Samaritan lifting the wounded man onto his horse, painted by Vincent van Gogh after Eugène Delacroix",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Luke 10:25–37 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/10" }
+	],
 	"sections": [
 		{
 			"heading": "The story",

@@ -7,6 +7,10 @@ const parable: Parable = {
 	"gospelReference": "Matthew 18:21–35",
 	"excerpt": "Forgiven an impossible debt, a servant refuses to forgive a small one—God will judge us by the mercy we show.",
 	"imageAlt": "The unforgiving servant seizing his fellow servant by the throat, painted by Domenico Fetti",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Matthew 18:21–35 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/18" }
+	],
 	"sections": [
 		{
 			"heading": "The story",

@@ -10,6 +10,11 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"imageAlt": "Facade of the Church of the Holy Miracle (Igreja de Santo Estêvão) in Santarém, Portugal",
 	"churchStatus": "historical-tradition",
 	"statusNote": "The account rests on tradition; the relics have been venerated for centuries at the Church of the Holy Miracle.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "The Eucharistic Miracles of the World (Carlo Acutis exhibition): Santarém", "url": "https://www.miracolieucaristici.org/en/download/santarem.pdf" },
+		{ "label": "Wikipedia: Eucharistic miracle of Santarém", "url": "https://en.wikipedia.org/wiki/Eucharistic_miracle_of_Santar%C3%A9m" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

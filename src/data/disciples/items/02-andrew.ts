@@ -9,6 +9,12 @@ const disciple: Disciple = {
 	lifeDates: 'c. 1st century BC–c. AD 60',
 	gospelReference: 'John 1:35–42',
 	feastDays: 'November 30',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Wikipedia: Amalfi Cathedral', url: 'https://en.wikipedia.org/wiki/Amalfi_Cathedral' },
+		{ label: 'Mystagogy: The return of the skull of the Apostle Andrew', url: 'https://www.johnsanidopoulos.com/2016/09/the-return-of-skull-of-apostle-andrew.html' },
+		{ label: 'John 6:8–13' },
+	],
 	sections: [
 		{
 			heading: 'Who was Andrew?',
@@ -36,6 +42,21 @@ const disciple: Disciple = {
 				'Andrew grew up in Bethsaida as a fisherman alongside his brother Simon (Peter). He first followed John the Baptist; when John declared Jesus the Lamb of God, Andrew stayed with the Lord and became one of the earliest disciples. His first act was to find Simon and announce, “We have found the Messiah.”',
 				'Through three years with Jesus he heard the Sermon on the Mount, saw healings and the feeding of the five thousand—where he brought the boy with loaves and fish—and stood near Christ in Jerusalem. After the Resurrection he remained in the upper room until Pentecost, then preached Christ with power in the newborn Church.',
 				'Later tradition, recorded by Eusebius and others, describes Andrew traveling along the Black Sea, through Scythia, and into Greece, founding churches and ordaining bishops as he went. He is remembered as a tireless bringer of souls to Christ.',
+			],
+		},
+		{
+			heading: 'Miracles',
+			paragraphs: [
+				'Scripture says that Jesus gave the Twelve authority to cast out unclean spirits and to heal every disease (Matthew 10:1), and that after Pentecost “many signs and wonders were done among the people by the hands of the apostles” (Acts 5:12).',
+				'Scripture does not record a miracle worked by Andrew by name. It was Andrew, however, who brought to Jesus the boy with five barley loaves and two fish, which the Lord multiplied to feed the five thousand (John 6:8–13).',
+			],
+		},
+		{
+			heading: 'Relics',
+			image: { src: '/disciples/sections/andrew-relics.jpg', alt: 'The ornate marble crypt of Amalfi Cathedral with the bronze statue of St. Andrew above his altar', caption: 'The crypt of St. Andrew in Amalfi Cathedral. Photo: Luciano Tronati, CC BY-SA 4.0.' },
+			paragraphs: [
+				'According to tradition Andrew was martyred at Patras in Greece. His relics were later taken to Constantinople, and during the Fourth Crusade they were brought to Amalfi in Italy by Cardinal Peter of Capua; they were enshrined in the crypt of Amalfi Cathedral in 1208.',
+				'His head was long kept in Rome. In September 1964 Pope Paul VI returned it to Patras as a gesture of goodwill toward the Greek Orthodox Church, and Cardinal Augustin Bea presented it to the Metropolitan of Patras on September 24, 1964.',
 			],
 		},
 		{

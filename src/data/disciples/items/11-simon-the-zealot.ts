@@ -10,6 +10,11 @@ const disciple: Disciple = {
 	lifeDates: 'd. c. AD 65',
 	gospelReference: 'Matthew 10:2–4',
 	feastDays: 'October 28 (with St. Jude)',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'St. Peter’s Basilica Info: Altar of St. Joseph', url: 'https://stpetersbasilica.info/Altars/StJoseph/StJoseph.htm' },
+		{ label: 'Vatican News: Sts. Simon and Jude (Taddeo), Apostles', url: 'https://www.vaticannews.va/en/saints/10/28/sts--simon-and-jude--taddeo---apostles.html' },
+	],
 	sections: [
 		{
 			heading: 'Who was Simon?',
@@ -36,6 +41,13 @@ const disciple: Disciple = {
 				'Simon, called the Zealot or Cananaean (from Hebrew qana, “zealous”), was chosen among the Twelve. Some think he had belonged to a movement resisting Roman rule; others read the title as describing fervent devotion to God. In either case, Jesus redirected his zeal toward the Kingdom of heaven.',
 				'He appears in the apostolic lists in Matthew, Mark, Luke, and Acts but is not singled out in narrative scenes—showing how the Lord gathers followers from every background into one mission. After Pentecost he preached Christ with the rest of the apostles.',
 				'Tradition links him closely with Jude Thaddeus. Together they are said to have traveled through Egypt and Mesopotamia into Persia, converting multitudes and enduring hardship for the Gospel.',
+			],
+		},
+		{
+			heading: 'Relics',
+			image: { src: '/disciples/sections/simon-the-zealot-relics.jpg', alt: 'The altar of St. Joseph in the left transept of St. Peter’s Basilica', caption: 'The altar of St. Joseph in St. Peter’s Basilica, beneath which the relics of Sts. Simon and Jude rest. Photo: John Samuel, CC BY-SA 4.0.' },
+			paragraphs: [
+				'Relics of Simon rest with those of Jude Thaddeus in an ancient sarcophagus beneath the altar of the left transept of St. Peter’s Basilica in Rome, where they have been venerated since October 27, 1605. The two apostles share a feast day on October 28.',
 			],
 		},
 		{

@@ -31,6 +31,13 @@ All notable changes to Digital Catholic are documented here.
 - Mass: “The Order of Mass” page at `/mass/order-of-mass` walking through the Introductory Rites, Liturgy of the Word, Liturgy of the Eucharist, and Concluding Rites, linked from Items Used at Mass and included in search
 - Mass: `/mass` is now a “Holy Mass” hub linking to its two sub-pages, “The Order of Mass” and “Items Used at Mass” (moved to `/mass/items-used-at-mass`)
 - Parables and Miracles of Jesus: public-domain artwork from Wikimedia Commons for all 12 parables and 11 miracles, shown on listing cards and article pages, with alt text and attribution in `public/parables/CREDITS.md` and `public/miracles/CREDITS.md`
+- Saints: St. John Bosco added, with a “Prophetic dreams and visions” section covering his recorded dreams (the dream at nine, the Pergola of Roses, the Two Columns, the Ten Diamonds, and his 1883 South America dream)
+- Saints and Disciples: “Miracles” and “Relics” sections, added only where a saint or apostle has documented miracles or known relics, each fact checked against a cited source
+- Saints and Disciples: images for Miracles and Relics sections (public-domain paintings and freely licensed photos of relics and tombs from Wikimedia Commons), with captions crediting each photographer and license, stored in `public/saints/sections/` and `public/disciples/sections/`
+- Article sections accept an optional `image` (`SectionImage` in `src/lib/article.ts`), rendered by `SectionList` as a captioned figure
+- Sources and a review date on every article: Catechism and Scripture references for sacraments and prayers; USCCB New American Bible links for parables, Gospel miracles, Judas, and all 73 Bible books (generated from each book's slug); Wikipedia and Church sources for Marian apparitions; the Carlo Acutis Eucharistic miracles exhibition for Eucharistic miracles; and the Shroud of Turin and Veil of Veronica pages
+- Image attribution in `public/saints/CREDITS.md` and `public/disciples/CREDITS.md`
+- Brand assets in `docs/assets/`: the mark and the mark-plus-name lockup as SVG and PNG for light and dark backgrounds, the social card, and a usage guide
 - Design system documentation moved to `docs/DESIGN.md`
 - Architecture documentation added at `docs/ARCHITECTURE.md`
 - `ROADMAP.md` and `TODO.md` removed
@@ -38,6 +45,7 @@ All notable changes to Digital Catholic are documented here.
 ### Changed
 - Sacraments are listed in Catechism order (initiation, healing, service of communion)
 - Images now use their intrinsic width and height, read at build time
+- Saint portraits of St. Anthony of Padua and St. Joseph replaced with public-domain paintings (Murillo and Guido Reni), since the originals had no known source
 - Keyword meta tag removed; homepage title and description rewritten
 - Search index and 404 page excluded from the sitemap
 

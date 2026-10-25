@@ -7,6 +7,12 @@ const miracle: Miracle = {
 	"gospelReference": "Mark 2:1–12 · Matthew 9:1–8 · Luke 5:17–26",
 	"excerpt": "“Your sins are forgiven”—then “Rise, pick up your mat and walk.” Faith and divine authority meet in one healing.",
 	"imageAlt": "A paralysed man lowered through the roof on his mat before Jesus, painted by James Tissot",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Mark 2:1–12 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/mark/2" },
+		{ "label": "Matthew 9:1–8 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/9" },
+		{ "label": "Luke 5:17–26 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/5" }
+	],
 	"sections": [
 		{
 			"heading": "The sign",

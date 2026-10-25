@@ -10,6 +10,11 @@ const disciple: Disciple = {
 	lifeDates: 'd. c. AD 72',
 	gospelReference: 'John 20:24–29',
 	feastDays: 'July 3',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Atlas Obscura: Relics of the Apostle St. Thomas', url: 'https://www.atlasobscura.com/places/relics-of-the-apostle-st-thomas' },
+		{ label: 'New World Encyclopedia: Thomas the Apostle', url: 'https://www.newworldencyclopedia.org/entry/Thomas_the_Apostle' },
+	],
 	sections: [
 		{
 			heading: 'Who was Thomas?',
@@ -36,6 +41,21 @@ const disciple: Disciple = {
 				'Thomas, called Didymus (“the twin”), was one of the Twelve from Galilee. When Jesus resolved to go to Bethany after Lazarus’s death, Thomas urged the others, “Let us also go, that we may die with him”—showing loyal courage beneath his later reputation for doubt.',
 				'At the Last Supper he asked how the disciples could know the way; Jesus answered, “I am the way, and the truth, and the life.” After the Resurrection Thomas insisted on seeing and touching Christ’s wounds; the Lord granted his request and Thomas proclaimed, “My Lord and my God!”',
 				'Tradition, supported by the ancient Syrian and Indian churches, holds that Thomas preached the Gospel eastward—through Persia and into India, where the Mar Thoma (“St. Thomas”) Christian communities trace their origins to his missionary work.',
+			],
+		},
+		{
+			heading: 'Miracles',
+			image: { src: '/disciples/sections/thomas-miracles.jpg', alt: 'Thomas putting his finger into the wound in the side of the risen Christ', caption: 'The Incredulity of Saint Thomas, Caravaggio (Sanssouci, Potsdam).' },
+			paragraphs: [
+				'Thomas’s best-known moment is not a miracle he worked but one he witnessed: the risen Jesus invited him to touch His wounds, and Thomas confessed, “My Lord and my God!” (John 20:24–29). Scripture also says that after Pentecost “many signs and wonders were done among the people by the hands of the apostles” (Acts 5:12).',
+			],
+		},
+		{
+			heading: 'Relics',
+			image: { src: '/disciples/sections/thomas-relics.jpg', alt: 'The tomb chapel of St. Thomas beneath San Thome Basilica', caption: 'The tomb of St. Thomas in San Thome Basilica, Chennai. Photo: Sailko, CC BY 3.0.' },
+			paragraphs: [
+				'Tradition holds that Thomas was martyred in India and buried at Mylapore, where the San Thome Basilica in Chennai now stands over his traditional first tomb.',
+				'His relics were later taken to Edessa in Syria, then to the Greek island of Chios, and from there to Ortona in Italy, where they arrived on September 6, 1258. They rest in the crypt of Ortona Cathedral, and his head is kept in a silver bust reliquary.',
 			],
 		},
 		{

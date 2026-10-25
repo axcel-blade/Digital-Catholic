@@ -7,6 +7,10 @@ const parable: Parable = {
 	"gospelReference": "Luke 15:11–32",
 	"excerpt": "A father welcomes home the son who squandered everything—the mercy of God and the challenge to the elder brother.",
 	"imageAlt": "The father embracing his kneeling younger son in The Return of the Prodigal Son by Rembrandt",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Luke 15:11–32 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/15" }
+	],
 	"sections": [
 		{
 			"heading": "The story",

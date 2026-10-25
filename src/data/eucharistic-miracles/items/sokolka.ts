@@ -10,6 +10,11 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"imageAlt": "Interior of St. Anthony of Padua church in Sokółka, Poland",
 	"churchStatus": "recognized",
 	"statusNote": "The Archbishop of Białystok authorized devotion while leaving final judgment to the faith of the faithful.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "The Eucharistic Miracles of the World (Carlo Acutis exhibition): Sokółka", "url": "https://www.miracolieucaristici.org/en/download/sokolka.pdf" },
+		{ "label": "Wikipedia: Eucharistic miracle of Sokółka", "url": "https://en.wikipedia.org/wiki/Eucharistic_miracle_of_Sok%C3%B3%C5%82ka" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

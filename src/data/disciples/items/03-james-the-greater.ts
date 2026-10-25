@@ -10,6 +10,12 @@ const disciple: Disciple = {
 	lifeDates: 'd. c. AD 44',
 	gospelReference: 'Matthew 4:21–22; Mark 10:35–40',
 	feastDays: 'July 25',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Pilgrimaps: Whose bones lie in Compostela?', url: 'https://www.pilgrimaps.com/whose-bones-lie-in-compostela/' },
+		{ label: 'Fr. Tommy Lane: Tomb of St. James the Great in Santiago de Compostela', url: 'https://frtommylane.com/homilies/pilgrimage/saint_james_compostela.htm' },
+		{ label: 'Acts 12:2' },
+	],
 	sections: [
 		{
 			heading: 'Who was James?',
@@ -37,6 +43,22 @@ const disciple: Disciple = {
 				'James, son of Zebedee, was a fisherman on the Sea of Galilee, called with his brother John while mending nets with their father. Jesus named the brothers Boanerges—“sons of thunder”—for their fervent spirit. With Peter and John, James belonged to the inner circle who witnessed the raising of Jairus’s daughter, the Transfiguration, and Christ’s agony in Gethsemane.',
 				'He once asked, with John, for places of honor in the Kingdom; Jesus taught that greatness means service and sharing His cup. After the Resurrection James was among the apostles in Jerusalem; at Pentecost he received the Holy Spirit and preached the risen Christ.',
 				'His ministry in the early Church was cut short, but his witness opened the age of apostolic martyrdom. Spanish tradition later linked his preaching in Iberia with the great shrine at Santiago de Compostela, though details belong to pious legend as well as history.',
+			],
+		},
+		{
+			heading: 'Miracles',
+			image: { src: '/disciples/sections/james-the-greater-miracles.jpg', alt: 'The Virgin Mary appearing on a pillar to St. James and his kneeling companions', caption: 'The Apparition of the Virgin to St. James the Great, Nicolas Poussin (Louvre).' },
+			paragraphs: [
+				'James was one of the three apostles Jesus chose to witness the raising of Jairus’s daughter (Mark 5:37–43) and the Transfiguration (Matthew 17:1–8). Scripture says that Jesus gave the Twelve authority to heal every disease (Matthew 10:1), and that after Pentecost “many signs and wonders were done among the people by the hands of the apostles” (Acts 5:12).',
+				'A Spanish tradition holds that while James was preaching in Spain, the Virgin Mary appeared to him at Zaragoza standing on a pillar to encourage him; the Basilica of Our Lady of the Pillar honors this tradition.',
+			],
+		},
+		{
+			heading: 'Relics',
+			image: { src: '/disciples/sections/james-the-greater-relics.jpg', alt: 'An ornate silver urn in the crypt beneath the high altar of Santiago Cathedral', caption: 'The silver urn holding the relics of St. James, Cathedral of Santiago de Compostela. Photo: Lancastermerrin88, CC BY-SA 3.0.' },
+			paragraphs: [
+				'Acts 12:2 records that Herod Agrippa had James put to death by the sword, making him the first of the Twelve to be martyred. Tradition says his disciples carried his body to Galicia in Spain.',
+				'In the early ninth century a hermit named Pelagius reported mysterious lights over a field, and Bishop Theodemir investigated and found a tomb identified as that of James. King Alfonso II of Asturias ordered a church built over the site, which grew into the Cathedral of Santiago de Compostela, the goal of the Camino de Santiago pilgrimage.',
 			],
 		},
 		{

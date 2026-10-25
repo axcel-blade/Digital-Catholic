@@ -7,6 +7,10 @@ const miracle: Miracle = {
 	"gospelReference": "John 9:1–41",
 	"excerpt": "Jesus gives sight to one blind from birth; the Pharisees question the sign while the man confesses, “Lord, I believe.”",
 	"imageAlt": "Christ touching the eyes of a blind man in a city square, painted by El Greco",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "John 9:1–41 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/john/9" }
+	],
 	"sections": [
 		{
 			"heading": "The sign",

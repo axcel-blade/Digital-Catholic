@@ -10,6 +10,12 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"imageAlt": "Chapel of the Blessed Corporal in the Cathedral of Orvieto, where the Bolsena corporal is enshrined",
 	"churchStatus": "recognized",
 	"statusNote": "Pope Urban IV investigated the event, and the corporal was enshrined in the Cathedral of Orvieto.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "The Eucharistic Miracles of the World (Carlo Acutis exhibition): Bolsena", "url": "https://www.miracolieucaristici.org/en/download/bolsena.pdf" },
+		{ "label": "Wikipedia: Corporal of Bolsena", "url": "https://en.wikipedia.org/wiki/Corporal_of_Bolsena" },
+		{ "label": "Wikipedia: The Mass at Bolsena (Raphael)", "url": "https://en.wikipedia.org/wiki/The_Mass_at_Bolsena" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

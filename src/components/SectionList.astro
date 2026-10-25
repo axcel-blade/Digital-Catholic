@@ -1,6 +1,7 @@
 ---
 /** Renders article sections with anchor ids that match the table of contents. */
 import { buildToc, type ArticleSection } from '../lib/article';
+import { getPublicImage } from '../lib/images';
 
 interface Props {
 	sections: ArticleSection[];
@@ -14,5 +15,14 @@ const toc = buildToc(sections);
 	<section class="article-section" aria-labelledby={toc[i].id}>
 		<h2 id={toc[i].id}>{section.heading}</h2>
 		{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+		{section.image && (() => {
+			const image = getPublicImage(section.image.src, section.image.alt);
+			return image && (
+				<figure class="article-figure section-figure">
+					<img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+					{section.image.caption && <figcaption>{section.image.caption}</figcaption>}
+				</figure>
+			);
+		})()}
 	</section>
 ))}

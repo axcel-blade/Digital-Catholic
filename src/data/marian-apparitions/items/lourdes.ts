@@ -10,6 +10,11 @@ const marianApparition: MarianApparition = {
 	"imageAlt": "The grotto of Massabielle at the Sanctuary of Our Lady of Lourdes in France",
 	"churchStatus": "approved",
 	"statusNote": "Bishop Bertrand-Sévère Laurence of Tarbes declared in 1862 that the faithful are justified in believing the apparitions authentic.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Wikipedia: Our Lady of Lourdes", "url": "https://en.wikipedia.org/wiki/Our_Lady_of_Lourdes" },
+		{ "label": "Wikipedia: Lourdes Medical Bureau", "url": "https://en.wikipedia.org/wiki/Lourdes_Medical_Bureau" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

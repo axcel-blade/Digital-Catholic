@@ -7,6 +7,12 @@ const miracle: Miracle = {
 	"gospelReference": "Mark 5:1–20 · Matthew 8:28–34 · Luke 8:26–39",
 	"excerpt": "Jesus drives a host of demons from a tormented man into a herd of swine—power over evil and freedom for the possessed.",
 	"imageAlt": "Christ freeing the Gerasene demoniac as the swine rush into the sea, a sixth-century mosaic in Sant’Apollinare Nuovo, Ravenna",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Mark 5:1–20 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/mark/5" },
+		{ "label": "Matthew 8:28–34 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/8" },
+		{ "label": "Luke 8:26–39 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/8" }
+	],
 	"sections": [
 		{
 			"heading": "The sign",

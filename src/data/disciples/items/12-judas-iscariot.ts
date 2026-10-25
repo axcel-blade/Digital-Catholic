@@ -8,6 +8,12 @@ const disciple: Disciple = {
 		'One of the Twelve who betrayed Jesus for thirty pieces of silver—a sober warning about greed, despair, and the tragedy of rejecting mercy.',
 	lifeDates: 'd. c. AD 30',
 	gospelReference: 'Matthew 26:14–16; 27:3–10',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Matthew 26–27 (USCCB New American Bible)', url: 'https://bible.usccb.org/bible/matthew/26' },
+		{ label: 'John 13 (USCCB New American Bible)', url: 'https://bible.usccb.org/bible/john/13' },
+		{ label: 'Acts 1:15–26 (USCCB New American Bible)', url: 'https://bible.usccb.org/bible/acts/1' },
+	],
 	sections: [
 		{
 			heading: 'Who was Judas?',

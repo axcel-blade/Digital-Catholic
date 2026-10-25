@@ -6,6 +6,12 @@ const saint: Saint = {
 	"feastDays": "December 6",
 	"excerpt": "Fourth-century bishop of Myra—patron of children, sailors, and the poor—whose secret charity and defense of Christ’s divinity inspired the beloved figure of Santa Claus.",
 	"lifeDates": "c. 270–343",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "St. Nicholas Center: Saint Nicholas Relics", "url": "https://www.stnicholascenter.org/who-is-st-nicholas/relics" },
+		{ "label": "St. Nicholas Center: Is St. Nicholas in Venice, too?", "url": "https://www.stnicholascenter.org/who-is-st-nicholas/real-face/relics-in-the-lido-of-venice" },
+		{ "label": "EWTN: Saint Nicholas of Myra, Bishop, Confessor", "url": "https://www.ewtn.com/catholicism/library/saint-nicholas-of-myra-bishop-confessor-5701" }
+	],
 	"sections": [
 		{
 			"heading": "Who is St. Nicholas?",
@@ -28,6 +34,24 @@ const saint: Saint = {
 				"Nicholas was born around 270 in Patara, Lycia (in modern Turkey), to wealthy Christian parents who died in an epidemic while he was young. He took Jesus’ words to heart, sold his inheritance, and gave the proceeds to the needy—beginning a life marked by secret generosity.",
 				"While still young he was chosen bishop of Myra. During the persecution under Diocletian he was imprisoned and tortured for the faith, yet continued to defend Christians. After Constantine legalized Christianity, Nicholas attended the Council of Nicaea in 325 and, according to Eastern tradition, confronted the heretic Arius over the divinity of Christ.",
 				"As bishop he rescued the falsely accused, multiplied grain in famine, and calmed storms at sea—deeds that shaped his patronage of sailors, prisoners, and children. His tomb in Myra became a place of pilgrimage until Italian merchants translated his relics to Bari in 1087."
+			]
+		},
+		{
+			"heading": "Miracles",
+			"image": { "src": "/saints/sections/st-nicholas-miracles.jpg", "alt": "St. Nicholas tossing a bag of gold through the window of a poor man's house where three daughters sleep", "caption": "Saint Nicholas Providing Dowries, Bicci di Lorenzo (Metropolitan Museum of Art)." },
+			"paragraphs": [
+				"The best-loved story tells of a poor man with three daughters who had no dowries and faced being sold into slavery. Nicholas secretly tossed a bag of gold through their window at night, once for each daughter; tradition says the gold landed in stockings or shoes left by the fire to dry, the origin of hanging stockings for St. Nicholas.",
+				"Another legend recounts three young students murdered by an innkeeper and hidden in a pickling tub; through Nicholas's prayer they were restored to life. Sailors tell how, returning from a pilgrimage to the Holy Land, he calmed a violent storm by his prayer, which is why seafarers have long invoked him as their protector.",
+				"These accounts come from centuries of tradition rather than documented investigations, but they explain his patronage of children, sailors, and the poor."
+			]
+		},
+		{
+			"heading": "Relics",
+			"image": { "src": "/saints/sections/st-nicholas-relics.jpg", "alt": "An empty carved stone sarcophagus in a dim stone chamber", "caption": "The sarcophagus traditionally venerated as St. Nicholas's first tomb, Church of St. Nicholas, Myra (Demre, Turkey). Photo: Rab Lawrence, CC BY 2.0." },
+			"paragraphs": [
+				"Nicholas was buried in Myra, in present-day Turkey. In 1087, sailors from Bari took about half of his skeleton and brought it to their city, arriving on May 9. The relics rest in the crypt of the Basilica di San Nicola in Bari.",
+				"The smaller fragments left behind in Myra were later collected by Venetian sailors during the First Crusade and brought to a church dedicated to him on the Lido of Venice. Scientific studies of the relics in Bari and Venice have found that they belong to the same skeleton.",
+				"A clear, watery liquid called manna (or myrrh) is collected from his tomb in Bari. Believers regard it as a sign of his intercession, and small vials of it have been taken all over the world."
 			]
 		},
 		{

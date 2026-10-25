@@ -7,6 +7,12 @@ const miracle: Miracle = {
 	"gospelReference": "Mark 4:35–41 · Matthew 8:23–27 · Luke 8:22–25",
 	"excerpt": "Jesus rebukes the wind and sea; the disciples ask, “Who then is this, that even wind and sea obey him?”",
 	"imageAlt": "The disciples struggling to control their boat in a violent storm on the Sea of Galilee, painted by Rembrandt",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Mark 4:35–41 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/mark/4" },
+		{ "label": "Matthew 8:23–27 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/8" },
+		{ "label": "Luke 8:22–25 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/8" }
+	],
 	"sections": [
 		{
 			"heading": "The sign",

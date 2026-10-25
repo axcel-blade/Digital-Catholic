@@ -7,6 +7,11 @@ const prayer: Prayer = {
 	excerpt:
 		'Greeting to the Blessed Virgin drawn from the Angel Gabriel and St. Elizabeth, completed by the Church’s petition for her intercession at our death.',
 	text: 'Hail Mary, full of grace, the Lord is with thee; blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Catechism of the Catholic Church, §§2673–2679 (In communion with the holy Mother of God)', url: 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM' },
+		{ label: 'Luke 1:28, 42 (USCCB New American Bible)', url: 'https://bible.usccb.org/bible/luke/1' },
+	],
 	sections: [
 		{
 			heading: 'What is the Hail Mary?',

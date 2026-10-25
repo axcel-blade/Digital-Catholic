@@ -7,6 +7,12 @@ const miracle: Miracle = {
 	"gospelReference": "Matthew 17:1–9 · Mark 9:2–10 · Luke 9:28–36",
 	"excerpt": "On the mountain Jesus is transfigured in light; Moses and Elijah appear, and the Father says, “Listen to him.”",
 	"imageAlt": "Christ transfigured in glory above Mount Tabor with Moses and Elijah, painted by Raphael",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Matthew 17:1–9 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/17" },
+		{ "label": "Mark 9:2–10 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/mark/9" },
+		{ "label": "Luke 9:28–36 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/9" }
+	],
 	"sections": [
 		{
 			"heading": "The sign",

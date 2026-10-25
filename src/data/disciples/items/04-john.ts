@@ -10,6 +10,12 @@ const disciple: Disciple = {
 	lifeDates: 'c. AD 6–c. AD 100',
 	gospelReference: 'John 19:25–27; John 21:20–24',
 	feastDays: 'December 27',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Wikipedia: Basilica of St. John', url: 'https://en.wikipedia.org/wiki/Basilica_of_St._John' },
+		{ label: 'NASSCAL: Chapel of San Giovanni in Oleo, Rome', url: 'https://www.nasscal.com/materiae-apocryphorum/chapel-of-san-giovanni-in-oleo-rome/' },
+		{ label: 'Britannica: How did St. John the Apostle die?', url: 'https://britannica.com/question/How-did-St-John-the-Apostle-die' },
+	],
 	sections: [
 		{
 			heading: 'Who was John?',
@@ -37,6 +43,20 @@ const disciple: Disciple = {
 				'John, son of Zebedee, was a Galilean fisherman called with his brother James. He reclined next to Jesus at the Last Supper and stood at the foot of the cross, where Christ entrusted His mother Mary to John’s care. The Church honors him as the beloved disciple who leaned on the Lord’s breast and ran with Peter to the empty tomb.',
 				'After Pentecost he preached in Jerusalem and, according to tradition, took Mary to Ephesus. He wrote the Fourth Gospel, three epistles, and the Book of Revelation—the last while exiled on the island of Patmos under the Emperor Domitian. His writings stress Christ’s divinity and the command to love one another.',
 				'Early Fathers report that he lived to a great age in Ephesus, cared for churches throughout Asia Minor, and resisted heresies that denied Christ had come in the flesh. When too weak to walk to gatherings, he was carried and simply exhorted, “Little children, love one another.”',
+			],
+		},
+		{
+			heading: 'Miracles',
+			paragraphs: [
+				'With Peter, John was present when the man lame from birth was healed at the Temple gate (Acts 3:1–10). Scripture also says that after Pentecost “many signs and wonders were done among the people by the hands of the apostles” (Acts 5:12).',
+				'Ancient tradition adds two famous stories. Tertullian, writing around AD 200, reports that John was plunged into boiling oil in Rome and emerged unharmed. The apocryphal Acts of John tells how he drank a cup of poison without harm, which is why he is often shown holding a chalice with a serpent.',
+			],
+		},
+		{
+			heading: 'Relics',
+			image: { src: '/disciples/sections/john-relics.jpg', alt: 'Four marble columns marking the site of St. John’s tomb amid the ruins of a basilica', caption: 'The traditional site of St. John’s tomb in the ruins of Justinian’s basilica, Selçuk (Ephesus). Photo: Bernard Gagnon, CC BY-SA 3.0.' },
+			paragraphs: [
+				'Tradition holds that John died at Ephesus in old age. In the sixth century the Emperor Justinian built the Basilica of St. John over the site where he was said to be buried, with the grave beneath its central dome. The basilica is now in ruins near Selçuk in Turkey; no relics of his body are known to survive.',
 			],
 		},
 		{

@@ -10,6 +10,11 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"imageAlt": "Church of Saint Martin in Blanot, Saône-et-Loire, France",
 	"churchStatus": "recognized",
 	"statusNote": "The stained corporal was preserved and authenticated by local bishops.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "The Eucharistic Miracles of the World (Carlo Acutis exhibition): Blanot", "url": "https://www.miracolieucaristici.org/en/download/blanot.pdf" },
+		{ "label": "Wikipedia: List of Eucharistic miracles", "url": "https://en.wikipedia.org/wiki/List_of_Eucharistic_miracles" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

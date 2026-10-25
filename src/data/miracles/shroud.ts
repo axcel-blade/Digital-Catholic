@@ -1,3 +1,5 @@
+import type { TrustInfo } from '../lib/trust';
+
 export const shroudOfTurinIntro =
 	'The Shroud of Turin is a linen cloth bearing the faint image of a man who appears to have been scourged, crowned with thorns, and crucified. Many believe it is the burial cloth in which Jesus was wrapped. The Church has never officially declared it authentic, but venerates it as a powerful icon of Christ’s Passion.';
 
@@ -61,3 +63,12 @@ export const shroudOfTurinSections = [
 		],
 	},
 ];
+
+export const shroudOfTurinTrust: TrustInfo = {
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Official website of the Shroud of Turin (Archdiocese of Turin)', url: 'https://www.sindone.it/en/' },
+		{ label: 'Wikipedia: Shroud of Turin', url: 'https://en.wikipedia.org/wiki/Shroud_of_Turin' },
+		{ label: 'John 20:1–10 (USCCB New American Bible)', url: 'https://bible.usccb.org/bible/john/20' },
+	],
+};

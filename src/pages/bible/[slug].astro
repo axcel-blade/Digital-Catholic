@@ -35,6 +35,17 @@ const meta: ArticleMeta[] = [
 	{ term: 'Abbreviation', value: book.abbreviation },
 	...(book.deuterocanonical ? [{ term: 'Canon', value: 'Deuterocanonical' }] : []),
 ];
+
+// Every book links to its full text in the USCCB's New American Bible unless the data names its own sources
+const trust = {
+	...book,
+	sources: book.sources ?? [
+		{
+			label: `${book.title} (USCCB New American Bible)`,
+			url: `https://bible.usccb.org/bible/${book.slug.replace(/-/g, '')}/1`,
+		},
+	],
+};
 ---
 
 <ArticleLayout
@@ -49,7 +60,7 @@ const meta: ArticleMeta[] = [
 	prev={prev && toLink(prev)}
 	next={next && toLink(next)}
 	related={getRelated(bibleBooks, index, 3, (b) => b.category).map(toLink)}
-	trust={book}
+	trust={trust}
 >
 	<SectionList sections={book.sections} />
 	<p class="callout callout--scripture">

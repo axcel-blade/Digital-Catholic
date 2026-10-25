@@ -20,7 +20,9 @@ Content is split into **one file per article** so contributors can add entries w
 | Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates |
 | Holy Mass | `mass/index.ts` | add an entry to the relevant group in `massSections` (Items Used at Mass); the Order of Mass text lives in `mass/order.ts`; a new Mass sub-page also needs an entry in `massPages` |
 
-Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, parables in `public/parables/{slug}.jpg`, miracles of Jesus in `public/miracles/{slug}.jpg`, Mass items in `public/mass/{name}.jpg`, and Bible page art in `public/bible/` (Wikimedia Commons–licensed art preferred). Record the source, author, and license of each parable, miracle, Mass, and Bible image in that folder's `CREDITS.md`, and give each parable and miracle an `imageAlt` describing the artwork.
+Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, parables in `public/parables/{slug}.jpg`, miracles of Jesus in `public/miracles/{slug}.jpg`, Mass items in `public/mass/{name}.jpg`, and Bible page art in `public/bible/` (Wikimedia Commons–licensed art preferred). Record the source, author, and license of every image in that folder's `CREDITS.md`, and give each parable and miracle an `imageAlt` describing the artwork.
+
+Saint and disciple sections can also carry an image, such as a painting of a miracle or a photo of a relic or tomb: add `image: { src, alt, caption }` to the section, with `src` pointing to a file in a `sections/` subfolder (for example `/saints/sections/st-nicholas-relics.jpg`). When the license requires attribution (CC BY, CC BY-SA), name the photographer and license in the caption as well as in `CREDITS.md`.
 
 Each folder has:
 
@@ -32,7 +34,7 @@ Each folder has:
 ## Adding a saint (example)
 
 1. Copy an existing file in `saints/items/`, e.g. `st-joseph.ts`, and rename it to your slug: `st-francis-of-assisi.ts`.
-2. Edit the object: `slug`, `title`, `excerpt`, optional `status` (`Servant of God`, `Venerable`, `Blessed`, or `Saint`; defaults to `Saint`), `lifeDates`, `feastDays`, and `sections` (include **Full biography** and **Death and legacy** before any closing lesson section).
+2. Edit the object: `slug`, `title`, `excerpt`, optional `status` (`Servant of God`, `Venerable`, `Blessed`, or `Saint`; defaults to `Saint`), `lifeDates`, `feastDays`, and `sections` (include **Full biography** and **Death and legacy** before any closing lesson section). Add **Miracles** and **Relics** sections, before Death and legacy, only when the saint has documented miracles or known relics, and cite them in `sources`.
 3. Add a photo at `public/saints/st-francis-of-assisi.jpg`.
 4. Run `npm run build`.
 
