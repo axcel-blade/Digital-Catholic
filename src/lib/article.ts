@@ -1,6 +1,14 @@
+export interface SectionImage {
+	/** Path under /public, e.g. "/saints/sections/st-nicholas-relics.jpg" */
+	src: string;
+	alt: string;
+	caption?: string;
+}
+
 export interface ArticleSection {
 	heading: string;
 	paragraphs: string[];
+	image?: SectionImage;
 }
 
 export interface TocEntry {

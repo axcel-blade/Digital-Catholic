@@ -4,6 +4,12 @@ const sacrament: Sacrament = {
 	"slug": "eucharist",
 	"title": "Eucharist",
 	"excerpt": "The source and summit of Christian life—the true Body and Blood of Christ offered in thanksgiving at Mass.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Catechism of the Catholic Church, §§1322–1419 (The Eucharist)", "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM" },
+		{ "label": "John 6 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/john/6" },
+		{ "label": "1 Corinthians 11:23–29 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/1corinthians/11" }
+	],
 	"sections": [
 		{
 			"heading": "What is the Eucharist?",

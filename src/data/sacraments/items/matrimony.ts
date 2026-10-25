@@ -4,6 +4,11 @@ const sacrament: Sacrament = {
 	"slug": "matrimony",
 	"title": "Matrimony",
 	"excerpt": "The covenant of married love between man and woman mirrors Christ’s faithful, fruitful love for the Church.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Catechism of the Catholic Church, §§1601–1666 (Matrimony)", "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM" },
+		{ "label": "Matthew 19:3–9 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/19" }
+	],
 	"sections": [
 		{
 			"heading": "What is Matrimony?",

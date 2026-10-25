@@ -7,6 +7,10 @@ const miracle: Miracle = {
 	"gospelReference": "John 2:1–11",
 	"excerpt": "At a wedding feast Jesus changes water into wine—the first sign that manifests His glory and calls His disciples to believe.",
 	"imageAlt": "The crowded wedding feast at Cana where Christ turned water into wine, painted by Paolo Veronese",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "John 2:1–11 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/john/2" }
+	],
 	"sections": [
 		{
 			"heading": "The sign",

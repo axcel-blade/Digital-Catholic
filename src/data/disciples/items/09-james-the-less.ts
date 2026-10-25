@@ -10,6 +10,10 @@ const disciple: Disciple = {
 	lifeDates: 'd. c. AD 62',
 	gospelReference: 'Matthew 10:2–4; Acts 15:13–21',
 	feastDays: 'May 3 (with St. Philip)',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'OrthodoxWiki: Apostle Philip (of the Twelve)', url: 'https://orthodoxwiki.org/Apostle_Philip_(of_the_Twelve)' },
+	],
 	sections: [
 		{
 			heading: 'Who was James the Less?',
@@ -36,6 +40,13 @@ const disciple: Disciple = {
 				'James, son of Alphaeus, is called “the Less” to distinguish him from James the son of Zebedee. He appears in every list of the Twelve but receives little direct mention in the Gospels—reminding us that many saints serve quietly.',
 				'Many scholars and ancient writers identify him with James the “brother” of the Lord (a kinsman of Jesus), who appears in Acts as a leader of the Jerusalem church. If so, he witnessed the risen Christ (1 Corinthians 15:7), presided at the Council of Jerusalem in A.D. 49, and wrote the epistle of James urging faith expressed in works of mercy.',
 				'He was known for prayer: tradition says his knees grew hard like a camel’s from kneeling in the Temple. He governed the mother church of Jerusalem with wisdom and poverty, earning respect from Jewish and Christian communities alike.',
+			],
+		},
+		{
+			heading: 'Relics',
+			image: { src: '/disciples/sections/james-the-less-relics.jpg', alt: 'An ancient sarcophagus in the crypt of the Basilica of the Holy Apostles', caption: 'The sarcophagus holding relics of Sts. Philip and James in the crypt of Santi Apostoli, Rome. Photo: Sailko, CC BY 3.0.' },
+			paragraphs: [
+				'Relics of James the Less are venerated in Rome at the Basilica of the Holy Twelve Apostles (Santi Apostoli), together with those of Philip, with whom he shares a feast day.',
 			],
 		},
 		{

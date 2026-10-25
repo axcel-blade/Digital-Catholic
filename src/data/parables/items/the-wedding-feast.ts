@@ -7,6 +7,11 @@ const parable: Parable = {
 	"gospelReference": "Matthew 22:1–14 · Luke 14:15–24",
 	"excerpt": "Invited guests refuse the king’s banquet; the poor fill the hall—many are called, but few are chosen.",
 	"imageAlt": "A king’s servant calling guests to the wedding feast, painted by Bernardo Strozzi",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Matthew 22:1–14 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/22" },
+		{ "label": "Luke 14:15–24 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/14" }
+	],
 	"sections": [
 		{
 			"heading": "The story",

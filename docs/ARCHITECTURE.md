@@ -45,7 +45,7 @@ All site content is written as TypeScript objects, not Markdown or a CMS.
   - `loadCollectionByNumber` sorts by a numeric field (Commandments)
   - Sections with a fixed order re-sort after loading: disciples by their `order` field, sacraments in Catechism order, prayers and Rosary mystery sets by a fixed slug list
 - Adding a file to `items/` is enough — no manual registration.
-- Every article type extends `TrustInfo` from `src/data/lib/trust.ts`: optional `churchStatus`, `statusNote`, `sources`, `primaryReferences`, `furtherReading`, and `lastReviewed`. Pages render each field only when it is present.
+- Every article type extends `TrustInfo` from `src/data/lib/trust.ts`: optional `churchStatus`, `statusNote`, `sources`, `primaryReferences`, `furtherReading`, and `lastReviewed`. Pages render each field only when it is present. Bible book pages fall back to a generated USCCB link when a book has no `sources` of its own.
 - Flat files such as `src/data/saints.ts` are re-export shims so pages can import from short paths (`../../data/saints`).
 - Some sections are not item collections:
   - **Holy Bible** — `bible/books/old-testament.ts` and `new-testament.ts` hold all 73 books; `bible/formation.ts` holds the text of How the Bible Was Formed
@@ -83,7 +83,7 @@ The Liturgical Calendar computes the current year on `/liturgical-calendar` and 
 | `src/components/EntryCard.astro`, `CardFilter.astro` | Clickable article cards and progressive-enhancement filters |
 | `src/components/Breadcrumbs.astro`, `PageHeader.astro` | Breadcrumb trail and section page header |
 | `src/components/StatusBadge.astro`, `StatusLegend.astro`, `TrustPanel.astro` | Church status labels and the “About this article” panel |
-| `src/components/SectionList.astro` | Article sections with anchor ids shared with the “On this page” list |
+| `src/components/SectionList.astro` | Article sections with anchor ids shared with the “On this page” list, and an optional captioned image per section (`SectionImage` in `src/lib/article.ts`) |
 | `src/components/ShareLink.astro` | Copy-link button |
 | `src/components/LiturgicalCalendarView.astro` | Year navigation, season summary, “today” card, and monthly listings |
 
@@ -107,7 +107,7 @@ One global stylesheet built on CSS custom properties (design tokens) for a singl
 
 ### 6. Static assets — `public/`
 
-Copied to the output as-is. Images are stored per section, named after the item slug: `public/saints/`, `public/disciples/`, `public/eucharistic-miracles/`, `public/marian-apparitions/`, `public/sacraments/`, `public/parables/`, `public/miracles/`, `public/mass/`, `public/bible/` (the last four with image attribution in their own `CREDITS.md`). Also holds the favicon, the 1200×630 social image (`og-image.png`), and `robots.txt`.
+Copied to the output as-is. Images are stored per section, named after the item slug: `public/saints/`, `public/disciples/`, `public/eucharistic-miracles/`, `public/marian-apparitions/`, `public/sacraments/`, `public/parables/`, `public/miracles/`, `public/mass/`, `public/bible/`. Section images (for example Miracles and Relics) live in a `sections/` subfolder, such as `public/saints/sections/`. Image attribution is kept in a `CREDITS.md` in `public/saints/`, `public/disciples/`, `public/parables/`, `public/miracles/`, `public/mass/`, and `public/bible/`. Also holds the favicon, the 1200×630 social image (`og-image.png`), and `robots.txt`.
 
 ---
 

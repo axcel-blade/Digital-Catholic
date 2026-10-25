@@ -6,6 +6,12 @@ const saint: Saint = {
 	"status": "Blessed",
 	"excerpt": "American bishop, scholar, and pioneering broadcaster—through radio, television, and dozens of books he brought the Catholic faith into millions of homes, and he never missed his daily Holy Hour before the Blessed Sacrament.",
 	"lifeDates": "1895–1979",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "America Magazine: The miracle that moved Archbishop Fulton Sheen toward beatification", "url": "https://www.americamagazine.org/faith/2019/07/08/miracle-moved-archbishop-fulton-sheen-beatification" },
+		{ "label": "America Magazine: Archbishop Fulton J. Sheen declared 'Blessed' at beatification Mass in St. Louis", "url": "https://www.americamagazine.org/news/2026/09/25/archbishop-fulton-j-sheen-declared-blessed-at-beatification-mass-in-st-louis/" },
+		{ "label": "Vatican News: Fulton Sheen to be beatified in St. Louis on 24 September", "url": "https://www.vaticannews.va/en/vatican-city/news/2026-03/fulton-sheen-to-be-beatified-in-st-louis-on-24-september.html" }
+	],
 	"sections": [
 		{
 			"heading": "Who is Archbishop Fulton J. Sheen?",
@@ -34,6 +40,21 @@ const saint: Saint = {
 			"paragraphs": [
 				"Born Peter John Sheen to a farming family, he later took his mother’s maiden name, Fulton. He served as an altar boy at St. Mary’s Cathedral in Peoria, studied at St. Viator College and St. Paul Seminary in Minnesota, and was ordained on September 20, 1919. After graduate studies at the Catholic University of America, he earned his doctorate at Louvain in 1923 and received its prestigious agrégé degree, then briefly served as a parish priest in Peoria before joining the faculty of the Catholic University of America in 1926.",
 				"His radio and television work made him a household name, while his role with the Society for the Propagation of the Faith from 1950 to 1966 connected him to missions around the globe. He was consecrated auxiliary bishop of New York in Rome in 1951, took part in the Second Vatican Council, and served as Bishop of Rochester, New York, from 1966 to 1969. On retiring from Rochester, Pope Paul VI named him titular Archbishop of Newport."
+			]
+		},
+		{
+			"heading": "Miracles",
+			"paragraphs": [
+				"The miracle approved for Sheen's beatification is the recovery of James Fulton Engstrom, born to Bonnie and Travis Engstrom of Goodfield, Illinois, in September 2010. He was stillborn and had no heartbeat for 61 minutes despite CPR, while his parents prayed for Sheen's intercession. His heart then began to beat, and he grew up a healthy boy.",
+				"The Vatican's Congregation for the Causes of Saints promulgated the decree approving this miracle on July 6, 2019. A second verified miracle is required before he can be canonized."
+			]
+		},
+		{
+			"heading": "Relics",
+			"image": { "src": "/saints/sections/archbishop-fulton-j-sheen-relics.jpg", "alt": "The tomb of Archbishop Fulton Sheen inside St. Mary's Cathedral, Peoria", "caption": "Fulton Sheen's tomb in St. Mary's Cathedral, Peoria, Illinois. Photo: Farragutful, CC BY-SA 4.0." },
+			"paragraphs": [
+				"After his death in 1979, Sheen was buried in the crypt of St. Patrick's Cathedral in New York. Following a lengthy legal dispute, the Archdiocese of New York agreed in June 2019 to release his remains, and on June 27, 2019, they were transferred to St. Mary's Cathedral in Peoria, Illinois, where he had served as an altar boy.",
+				"His tomb in Peoria is now a place of pilgrimage for those seeking his intercession."
 			]
 		},
 		{

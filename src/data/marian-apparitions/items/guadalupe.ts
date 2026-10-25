@@ -10,6 +10,10 @@ const marianApparition: MarianApparition = {
 	"imageAlt": "Basilica of Our Lady of Guadalupe on Tepeyac Hill in Mexico City, where the tilma is venerated",
 	"churchStatus": "recognized",
 	"statusNote": "Venerated for nearly five centuries; popes have crowned and honored Our Lady of Guadalupe as Patroness of the Americas.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Wikipedia: Our Lady of Guadalupe", "url": "https://en.wikipedia.org/wiki/Our_Lady_of_Guadalupe" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

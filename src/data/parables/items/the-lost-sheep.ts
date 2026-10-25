@@ -7,6 +7,11 @@ const parable: Parable = {
 	"gospelReference": "Matthew 18:12–14 · Luke 15:1–7",
 	"excerpt": "The shepherd leaves ninety-nine sheep to seek the one that is lost—heaven rejoices over one repentant sinner.",
 	"imageAlt": "A shepherd searching a rocky hillside at dusk for his lost sheep, painted by John Atkinson Grimshaw",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Matthew 18:12–14 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/18" },
+		{ "label": "Luke 15:1–7 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/15" }
+	],
 	"sections": [
 		{
 			"heading": "The story",

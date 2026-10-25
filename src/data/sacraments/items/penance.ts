@@ -4,6 +4,11 @@ const sacrament: Sacrament = {
 	"slug": "penance",
 	"title": "Penance",
 	"excerpt": "Also called Reconciliation or Confession—God’s mercy restores the soul wounded by sin to friendship with Him.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Catechism of the Catholic Church, §§1422–1498 (Penance and Reconciliation)", "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM" },
+		{ "label": "John 20:21–23 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/john/20" }
+	],
 	"sections": [
 		{
 			"heading": "What is Penance?",

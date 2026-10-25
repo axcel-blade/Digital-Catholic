@@ -4,6 +4,8 @@ This document is the single source of truth for the visual language and interact
 
 The site should feel like a **calm, reverent, trustworthy Catholic digital library**: warm paper, editorial serif headings, restrained color, and the reading experience first.
 
+Logos, the social card, and brand usage rules live in [`docs/assets/`](assets/README.md).
+
 ---
 
 ## Information architecture
@@ -114,6 +116,7 @@ Church status uses `--status-{approved,recognized,investigation,tradition,report
 | Card filter | `CardFilter.astro` | Toggle buttons with `aria-pressed`; hidden without JavaScript so all cards remain visible |
 | Status badge / legend | `StatusBadge.astro`, `StatusLegend.astro` | Church status with icon + text |
 | Article layout | `layouts/ArticleLayout.astro` | Breadcrumbs, metadata list, copy-link, image, “On this page” (3+ sections), trust panel, previous/next, related reading, back link |
+| Section list | `SectionList.astro` | Article sections with anchor ids; a section with an `image` gets a captioned figure (`.article-figure.section-figure`) after its paragraphs |
 | Trust panel | `TrustPanel.astro` | Shows Church status, sources, references, further reading, last reviewed — each only when data exists — plus the devotional disclaimer |
 | Footer | `SiteFooter.astro` | Pathway links, disclaimer, GitHub |
 

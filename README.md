@@ -1,4 +1,22 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-lockup-on-dark.svg">
+    <img src="docs/assets/logo-lockup.svg" alt="Digital Catholic" width="360">
+  </picture>
+</p>
+
 # Digital Catholic
+
+[![CI](https://img.shields.io/github/actions/workflow/status/axcel-blade/Digital-Catholic/ci.yml?branch=main&label=CI&logo=astro)](https://github.com/axcel-blade/Digital-Catholic/actions/workflows/ci.yml)
+[![CD](https://img.shields.io/github/actions/workflow/status/axcel-blade/Digital-Catholic/cd.yml?branch=main&label=CD&logo=githubpages)](https://github.com/axcel-blade/Digital-Catholic/actions/workflows/cd.yml)
+[![Live site](https://img.shields.io/badge/live%20site-GitHub%20Pages-8a3b4f)](https://axcel-blade.github.io/Digital-Catholic/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-d4ae6e)](LICENSE.md)
+[![Astro](https://img.shields.io/github/package-json/dependency-version/axcel-blade/Digital-Catholic/astro?logo=astro&label=Astro)](https://astro.build)
+[![Node](https://img.shields.io/badge/node-%E2%89%A522.12-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![Stars](https://img.shields.io/github/stars/axcel-blade/Digital-Catholic?style=flat)](https://github.com/axcel-blade/Digital-Catholic/stargazers)
+[![Forks](https://img.shields.io/github/forks/axcel-blade/Digital-Catholic?style=flat)](https://github.com/axcel-blade/Digital-Catholic/forks)
+[![Issues](https://img.shields.io/github/issues/axcel-blade/Digital-Catholic)](https://github.com/axcel-blade/Digital-Catholic/issues)
+[![Last commit](https://img.shields.io/github/last-commit/axcel-blade/Digital-Catholic)](https://github.com/axcel-blade/Digital-Catholic/commits/main)
 
 A static Catholic digital library for learning and sharing the faith — clear resources for Scripture, saints, sacraments, prayer, and the liturgical year, made for quiet reading and everyday growth.
 
@@ -15,7 +33,7 @@ The library has thirteen content areas, grouped into three pathways. The same gr
 | Section | What you'll find |
 | --- | --- |
 | **Holy Bible** | Summaries of all 73 books of the Catholic canon, including the deuterocanonical books, and how the Bible was formed |
-| **Saints** | Biographies of holy men and women with life dates and feast days, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint) |
+| **Saints** | Biographies of holy men and women with life dates, feast days, miracles, and relics, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint) |
 | **Sacraments** | All seven sacraments in Catechism order — initiation, healing, and service of communion |
 | **Ten Commandments** | The text and meaning of each commandment |
 
@@ -32,7 +50,7 @@ The library has thirteen content areas, grouped into three pathways. The same gr
 
 | Section | What you'll find |
 | --- | --- |
-| **Disciples of Jesus** | The Twelve Apostles in traditional order — life, Gospel accounts, death, and feast days |
+| **Disciples of Jesus** | The Twelve Apostles in traditional order — life, Gospel accounts, miracles, relics, death, and feast days |
 | **Miracles of Jesus** | Gospel accounts with Scripture references and classic artwork, filterable by kind of sign |
 | **Eucharistic Miracles** | Accounts from Lanciano to modern events, each labeled with its Church status |
 | **Marian Apparitions** | Guadalupe, Lourdes, Fátima, Knock, Velankanni, and others, each labeled with its Church status |
@@ -42,6 +60,7 @@ The library has thirteen content areas, grouped into three pathways. The same gr
 
 - **Guided homepage** with Learn / Pray / Explore pathways, a featured liturgical-calendar panel, and a full library index.
 - **Article pages** with breadcrumbs, metadata, an “On this page” list for longer articles, previous/next links, related reading, and a copy-link button.
+- **Sources on every article** in an “About this article” panel: Scripture (linked to the USCCB New American Bible), the Catechism, Church documents, and other cited references, with the date each article was last reviewed.
 - **Church status labels** for apparitions and Eucharistic miracles (approved for devotion, recognized or permitted, under investigation, historical tradition, or reported). Labels reflect only what each article states.
 - **Site search** from any page (press `/`), with category labels, highlighted excerpts, and full keyboard support.
 - **Light and dark themes**, a responsive layout, and accessibility built in: skip link, visible focus, 44px touch targets, and ARIA on every interactive control.
@@ -129,7 +148,7 @@ src/
   lib/                Section registry, navigation, SEO, search index, image and path helpers
   pages/              Routes — home, about, contact, 404, all section pages, search-index.json
   styles/             global.css — design tokens, light and dark themes
-docs/                 ARCHITECTURE.md (how the site is built and deployed) and DESIGN.md (design system)
+docs/                 ARCHITECTURE.md (how the site is built and deployed), DESIGN.md (design system), and assets/ (logos and brand guide)
 docker/               nginx config for the Docker image
 Dockerfile            Multi-stage build (Node build, nginx serve)
 docker-compose.yml    Local container setup on port 8080
@@ -141,6 +160,7 @@ docker-compose.yml    Local container setup on port 8080
 - Section names, pathways, and menu descriptions: `src/lib/sections.ts`
 - Page titles and meta descriptions: `src/lib/seo.ts`
 - Design tokens and component rules: [docs/DESIGN.md](docs/DESIGN.md)
+- Logos and brand usage: [docs/assets/](docs/assets/README.md)
 
 ---
 
@@ -150,8 +170,13 @@ docker-compose.yml    Local container setup on port 8080
 - Bug reports and content requests: [GitHub Issues](https://github.com/axcel-blade/Digital-Catholic/issues)
 - Help and contact: [SUPPORT.md](SUPPORT.md)
 - Security: [SECURITY.md](SECURITY.md)
+- Community standards: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - Change history: [CHANGELOG.md](CHANGELOG.md)
+
+## Sources and image credits
+
+Each article lists its sources — Scripture, the Catechism, Church documents, and other checked references — in its “About this article” panel. Images come from Wikimedia Commons; most are public domain, and some photos are under Creative Commons licenses that require attribution. The source, author, and license of every image is recorded in the `CREDITS.md` file of its folder (for example [public/saints/CREDITS.md](public/saints/CREDITS.md)), and attribution-required photos are also credited in their captions.
 
 ## License
 
-[MIT](LICENSE.md)
+The code is released under the [MIT License](LICENSE.md). Images keep their own licenses, as listed in each folder's `CREDITS.md`.

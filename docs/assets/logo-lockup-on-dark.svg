@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" width="960" height="160">
+	<title>Digital Catholic</title>
+	
+	<g transform="translate(4 4)">
+	<path d="M5 30V14a11 11 0 0 1 22 0v16H5Z" fill="#8a3b4f"/>
+	<path d="M16 8v16M11 13.5h10" stroke="#f7f1ea" stroke-width="2.6" stroke-linecap="round"/>
+	<path d="M3 30h26" stroke="#d4ae6e" stroke-width="2" stroke-linecap="round"/>
+	</g>
+	<text x="46" y="28" font-family="'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif" font-size="22" font-weight="600" fill="#f3ece4">Digital Catholic</text>
+</svg>

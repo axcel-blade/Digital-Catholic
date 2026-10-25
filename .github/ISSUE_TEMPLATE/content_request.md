@@ -12,6 +12,7 @@ assignees: ''
 - [ ] New section / category
 - [ ] Correction to existing content
 - [ ] Church status or source for an existing article
+- [ ] Miracle, relic, or image for a saint or disciple
 - [ ] Other
 
 ## What to add or change

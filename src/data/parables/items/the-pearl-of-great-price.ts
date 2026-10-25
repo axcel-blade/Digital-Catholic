@@ -7,6 +7,10 @@ const parable: Parable = {
 	"gospelReference": "Matthew 13:45–46",
 	"excerpt": "A merchant sells all he has to buy one pearl of surpassing worth—the Kingdom demands our all.",
 	"imageAlt": "Merchants examining a precious pearl, a nineteenth-century Bible illustration",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Matthew 13:45–46 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/13" }
+	],
 	"sections": [
 		{
 			"heading": "The story",

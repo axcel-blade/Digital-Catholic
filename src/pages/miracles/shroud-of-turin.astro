@@ -1,7 +1,7 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import SectionList from '../../components/SectionList.astro';
-import { miracles, shroudOfTurinIntro, shroudOfTurinSections } from '../../data/miracles';
+import { miracles, shroudOfTurinIntro, shroudOfTurinSections, shroudOfTurinTrust } from '../../data/miracles';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 import { getPublicImage } from '../../lib/images';
@@ -30,6 +30,7 @@ const related: ArticleLink[] = miracles.slice(0, 3).map((miracle) => ({
 	sections={shroudOfTurinSections}
 	related={related}
 	image={image}
+	trust={shroudOfTurinTrust}
 	imageCaption="The Holy Face of the Shroud as a photographic positive, published by Paul Vignon (1909) from Secondo Pia’s 1898 negative."
 >
 	<SectionList sections={shroudOfTurinSections} />

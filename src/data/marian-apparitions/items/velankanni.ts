@@ -10,6 +10,10 @@ const marianApparition: MarianApparition = {
 	"imageAlt": "Basilica of Our Lady of Good Health at Velankanni on the coast of Tamil Nadu, India",
 	"churchStatus": "historical-tradition",
 	"statusNote": "The apparitions are known through longstanding local tradition; Pope John XXIII raised the shrine to a minor basilica in 1962.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Wikipedia: Basilica of Our Lady of Good Health, Velankanni", "url": "https://en.wikipedia.org/wiki/Basilica_of_Our_Lady_of_Good_Health,_Velankanni" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

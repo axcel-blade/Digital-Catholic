@@ -7,6 +7,12 @@ const miracle: Miracle = {
 	"gospelReference": "Matthew 14:22–33 · Mark 6:45–52 · John 6:16–21",
 	"excerpt": "Jesus comes to the disciples across the sea; Peter walks toward Him on the waves until doubt overtakes him.",
 	"imageAlt": "Christ walking on the stormy sea in a glow of light, painted by Ivan Aivazovsky",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Matthew 14:22–33 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/matthew/14" },
+		{ "label": "Mark 6:45–52 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/mark/6" },
+		{ "label": "John 6:16–21 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/john/6" }
+	],
 	"sections": [
 		{
 			"heading": "The sign",

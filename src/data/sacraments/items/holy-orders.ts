@@ -4,6 +4,11 @@ const sacrament: Sacrament = {
 	"slug": "holy-orders",
 	"title": "Holy Orders",
 	"excerpt": "Through ordination, deacons, priests, and bishops receive the sacred power to serve God’s people in Christ’s name.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Catechism of the Catholic Church, §§1536–1600 (Holy Orders)", "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM" },
+		{ "label": "Luke 22:19 (USCCB New American Bible)", "url": "https://bible.usccb.org/bible/luke/22" }
+	],
 	"sections": [
 		{
 			"heading": "What is Holy Orders?",

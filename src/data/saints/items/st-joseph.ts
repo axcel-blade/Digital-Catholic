@@ -6,6 +6,12 @@ const saint: Saint = {
 	"feastDays": "March 19 · May 1 (St. Joseph the Worker)",
 	"excerpt": "Foster father of Jesus, spouse of the Blessed Virgin Mary, and patron of the Universal Church—silent, faithful, and strong in obedience to God.",
 	"lifeDates": "c. 1st century BC–c. AD 1–20",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "National Catholic Register: Relics believed to be St. Joseph's cloak, belt and staff are venerated today", "url": "https://www.ncregister.com/features/st-joseph-relics-cloak-venerated" },
+		{ "label": "Holy Cross: The St. Joseph Oratory and St. André Bessette", "url": "https://www.holycrossusa.org/article/the-st-joseph-oratory-and-st-andre-bessette/" },
+		{ "label": "Wikipedia: André Bessette", "url": "https://en.wikipedia.org/wiki/Andr%C3%A9_Bessette" }
+	],
 	"sections": [
 		{
 			"heading": "Who is St. Joseph?",
@@ -34,6 +40,21 @@ const saint: Saint = {
 				"Joseph was a descendant of David, a craftsman—traditionally a carpenter—in Nazareth. Betrothed to Mary, he learned she was with child and, being a just man, planned to divorce her quietly until an angel appeared in a dream and told him the child was conceived by the Holy Spirit. He took Mary as his wife and protected her honor.",
 				"When Caesar Augustus ordered a census, Joseph led Mary to Bethlehem, where Jesus was born. Warned in dreams, he fled with the Holy Family to Egypt to escape Herod, then settled again in Nazareth. There he provided for Jesus and Mary through honest labor, teaching the boy his trade and offering the home where the Son of God grew in wisdom and stature.",
 				"Scripture records no word Joseph spoke; his holiness appears entirely in obedient action—taking the child, rising by night, going where God sent him. The last mention of Joseph is the finding of the twelve-year-old Jesus in the Temple; Christian tradition holds that he died before Jesus’ public ministry, cared for by Jesus and Mary."
+			]
+		},
+		{
+			"heading": "Miracles",
+			"image": { "src": "/saints/sections/st-joseph-miracles.jpg", "alt": "A statue of St. Joseph above rows of votive candles", "caption": "The Votive Chapel of Saint Joseph's Oratory, Montreal, where pilgrims leave candles and the crutches of the healed." },
+			"paragraphs": [
+				"Scripture records no miracles worked by St. Joseph himself, but the Church has long honored his powerful intercession. The most famous modern witness is St. André Bessette, a Holy Cross brother in Montreal who prayed with the sick and always credited the many cures reported through his prayers to St. Joseph.",
+				"Brother André founded Saint Joseph's Oratory in Montreal, perhaps the world's principal shrine to St. Joseph. Its walls display hundreds of crutches and wheelchairs left by people who reported being healed. Brother André was canonized by Pope Benedict XVI on October 17, 2010."
+			]
+		},
+		{
+			"heading": "Relics",
+			"paragraphs": [
+				"Because Joseph's tomb is unknown, there are no bodily relics of him. Instead, tradition honors objects associated with his life. A relic venerated as part of his cloak is kept at the Basilica of St. Joseph al Trionfale in Rome, and churches in France and Naples keep relics said to be from his cloak, belt, or staff.",
+				"The Church does not guarantee that these objects are authentic, but they have long helped the faithful draw near to the guardian of the Holy Family."
 			]
 		},
 		{

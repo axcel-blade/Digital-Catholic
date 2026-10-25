@@ -10,6 +10,11 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"imageAlt": "Basilica of St. Francis in Lanciano, Italy, where the Eucharistic miracle is venerated",
 	"churchStatus": "historical-tradition",
 	"statusNote": "The account rests on longstanding tradition; the relics have been venerated for centuries in the Basilica of St. Francis.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "The Eucharistic Miracles of the World (Carlo Acutis exhibition): Lanciano", "url": "https://www.miracolieucaristici.org/en/download/lanciano.pdf" },
+		{ "label": "Wikipedia: Eucharistic miracle of Lanciano", "url": "https://en.wikipedia.org/wiki/Eucharistic_miracle_of_Lanciano" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

@@ -10,6 +10,11 @@ const marianApparition: MarianApparition = {
 	"imageAlt": "Basilica of Our Lady of the Rosary at the Sanctuary of Fátima in Portugal",
 	"churchStatus": "approved",
 	"statusNote": "Bishop José Alves Correia da Silva of Leiria declared the apparitions worthy of belief in 1930.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "Congregation for the Doctrine of the Faith: The Message of Fatima (2000)", "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000626_message-fatima_en.html" },
+		{ "label": "Wikipedia: Our Lady of Fátima", "url": "https://en.wikipedia.org/wiki/Our_Lady_of_F%C3%A1tima" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",

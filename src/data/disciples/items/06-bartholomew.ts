@@ -10,6 +10,11 @@ const disciple: Disciple = {
 	lifeDates: 'd. c. AD 70',
 	gospelReference: 'John 1:45–51',
 	feastDays: 'August 24',
+	lastReviewed: '2026-10-25',
+	sources: [
+		{ label: 'Wikipedia: San Bartolomeo all’Isola', url: 'https://en.wikipedia.org/wiki/San_Bartolomeo_all%27Isola' },
+		{ label: 'Visit Frankfurt: St. Bartholomew Cathedral', url: 'https://www.visitfrankfurt.travel/en/poi/st-bartholomew-cathedral' },
+	],
 	sections: [
 		{
 			heading: 'Who was Bartholomew?',
@@ -37,6 +42,14 @@ const disciple: Disciple = {
 				'Bartholomew, widely identified with Nathanael son of Talmai, was brought to Jesus by Philip. Christ praised him as an Israelite without guile and revealed that He had seen him under the fig tree before Philip called him—drawing forth Nathanael’s confession: “Rabbi, you are the Son of God! You are the King of Israel!”',
 				'Listed among the Twelve in the Synoptic Gospels and Acts, he shared in the Lord’s ministry, the Last Supper, and Pentecost. Ancient sources describe him preaching alongside Philip and later laboring in Armenia, India, and Mesopotamia.',
 				'He is credited with translating the Gospel of Matthew into the language of India and with establishing the faith in regions that would keep Christian communities for centuries. His honesty and zeal made him a fearless witness to Christ’s divinity.',
+			],
+		},
+		{
+			heading: 'Relics',
+			image: { src: '/disciples/sections/bartholomew-relics.jpg', alt: 'The nave and high altar of the Basilica of San Bartolomeo all’Isola', caption: 'The Basilica of San Bartolomeo all’Isola, Rome, which keeps relics of St. Bartholomew. Photo: Daderot, public domain.' },
+			paragraphs: [
+				'Relics of Bartholomew, including bones and a piece of what is venerated as his flayed skin, are kept in the Basilica of San Bartolomeo all’Isola on Rome’s Tiber Island, founded by Emperor Otto III around 998.',
+				'A skull relic of Bartholomew is preserved in Frankfurt Cathedral in Germany, which is dedicated to him, and Canterbury Cathedral once claimed an arm relic.',
 			],
 		},
 		{

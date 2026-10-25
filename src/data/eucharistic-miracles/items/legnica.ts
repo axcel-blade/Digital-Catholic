@@ -10,6 +10,11 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"imageAlt": "Basilica of St. Hyacinth (św. Jacka) in Legnica, Poland",
 	"churchStatus": "recognized",
 	"statusNote": "The parish followed Church procedures for investigation, and the bishop permitted public veneration.",
+	"lastReviewed": "2026-10-25",
+	"sources": [
+		{ "label": "The Eucharistic Miracles of the World (Carlo Acutis exhibition): Legnica", "url": "https://www.miracolieucaristici.org/en/download/legnica.pdf" },
+		{ "label": "Wikipedia: Eucharistic miracle of Legnica", "url": "https://en.wikipedia.org/wiki/Eucharistic_miracle_of_Legnica" }
+	],
 	"sections": [
 		{
 			"heading": "What happened",
