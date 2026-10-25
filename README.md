@@ -7,6 +7,17 @@
 
 # Digital Catholic
 
+[![CI](https://img.shields.io/github/actions/workflow/status/axcel-blade/Digital-Catholic/ci.yml?branch=main&label=CI&logo=astro)](https://github.com/axcel-blade/Digital-Catholic/actions/workflows/ci.yml)
+[![CD](https://img.shields.io/github/actions/workflow/status/axcel-blade/Digital-Catholic/cd.yml?branch=main&label=CD&logo=githubpages)](https://github.com/axcel-blade/Digital-Catholic/actions/workflows/cd.yml)
+[![Live site](https://img.shields.io/badge/live%20site-GitHub%20Pages-8a3b4f)](https://axcel-blade.github.io/Digital-Catholic/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-d4ae6e)](LICENSE.md)
+[![Astro](https://img.shields.io/github/package-json/dependency-version/axcel-blade/Digital-Catholic/astro?logo=astro&label=Astro)](https://astro.build)
+[![Node](https://img.shields.io/badge/node-%E2%89%A522.12-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![Stars](https://img.shields.io/github/stars/axcel-blade/Digital-Catholic?style=flat)](https://github.com/axcel-blade/Digital-Catholic/stargazers)
+[![Forks](https://img.shields.io/github/forks/axcel-blade/Digital-Catholic?style=flat)](https://github.com/axcel-blade/Digital-Catholic/forks)
+[![Issues](https://img.shields.io/github/issues/axcel-blade/Digital-Catholic)](https://github.com/axcel-blade/Digital-Catholic/issues)
+[![Last commit](https://img.shields.io/github/last-commit/axcel-blade/Digital-Catholic)](https://github.com/axcel-blade/Digital-Catholic/commits/main)
+
 A static Catholic digital library for learning and sharing the faith — clear resources for Scripture, saints, sacraments, prayer, and the liturgical year, made for quiet reading and everyday growth.
 
 **Live site:** [https://axcel-blade.github.io/Digital-Catholic/](https://axcel-blade.github.io/Digital-Catholic/)
@@ -159,8 +170,13 @@ docker-compose.yml    Local container setup on port 8080
 - Bug reports and content requests: [GitHub Issues](https://github.com/axcel-blade/Digital-Catholic/issues)
 - Help and contact: [SUPPORT.md](SUPPORT.md)
 - Security: [SECURITY.md](SECURITY.md)
+- Community standards: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - Change history: [CHANGELOG.md](CHANGELOG.md)
+
+## Sources and image credits
+
+Each article lists its sources — Scripture, the Catechism, Church documents, and other checked references — in its “About this article” panel. Images come from Wikimedia Commons; most are public domain, and some photos are under Creative Commons licenses that require attribution. The source, author, and license of every image is recorded in the `CREDITS.md` file of its folder (for example [public/saints/CREDITS.md](public/saints/CREDITS.md)), and attribution-required photos are also credited in their captions.
 
 ## License
 
-[MIT](LICENSE.md)
+The code is released under the [MIT License](LICENSE.md). Images keep their own licenses, as listed in each folder's `CREDITS.md`.
