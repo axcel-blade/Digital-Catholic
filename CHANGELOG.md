@@ -44,6 +44,7 @@ All notable changes to Digital Catholic are documented here.
 - `ROADMAP.md` and `TODO.md` removed
 
 ### Changed
+- Navigation menus organised into subgroups (Learn: Foundations, Holy Spirit, Holy lives; Pray: Prayer & devotion, Liturgy; Explore: Life of Jesus, Signs & wonders) so dropdowns stay short; desktop panels show subgroups as columns and the mobile menu shows subgroup headings
 - Sacraments are listed in Catechism order (initiation, healing, service of communion)
 - Images now use their intrinsic width and height, read at build time
 - Saint portraits of St. Anthony of Padua and St. Joseph replaced with public-domain paintings (Murillo and Guido Reni), since the originals had no known source

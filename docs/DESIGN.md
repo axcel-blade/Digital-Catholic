@@ -12,11 +12,17 @@ Logos, the social card, and brand usage rules live in [`docs/assets/`](assets/RE
 
 All content areas are defined once in `src/lib/sections.ts`. Navigation, the homepage library, the About page, breadcrumbs, and the footer read from that registry, so names, descriptions, and counts never drift.
 
-| Pathway | Sections |
-|---|---|
-| **Learn** | Holy Bible, Saints, Sacraments, Ten Commandments, Gifts of the Holy Spirit, Fruits of the Holy Spirit |
-| **Pray** | Prayers, Rosary, Holy Mass, Liturgical Calendar |
-| **Explore** | Disciples of Jesus, Miracles of Jesus, Eucharistic Miracles, Marian Apparitions, Parables of Jesus |
+Each pathway is split into subgroups so the dropdown menus stay short: desktop panels show one column per subgroup, and the mobile menu shows each subgroup under a small heading.
+
+| Pathway | Subgroup | Sections |
+|---|---|---|
+| **Learn** | Foundations | Holy Bible, Sacraments, Ten Commandments |
+| | Holy Spirit | Gifts of the Holy Spirit, Fruits of the Holy Spirit |
+| | Holy lives | Saints |
+| **Pray** | Prayer & devotion | Prayers, Rosary |
+| | Liturgy | Holy Mass, Liturgical Calendar |
+| **Explore** | Life of Jesus | Disciples of Jesus, Miracles of Jesus, Parables of Jesus |
+| | Signs & wonders | Eucharistic Miracles, Marian Apparitions |
 
 Top-level navigation: Home · Learn ▾ · Pray ▾ · Explore ▾ · About · Contact · Search · Theme toggle.
 
@@ -109,7 +115,7 @@ Church status uses `--status-{approved,recognized,investigation,tradition,report
 
 | Component | File | Notes |
 |---|---|---|
-| Header | `SiteHeader.astro` | Disclosure menus (`aria-expanded`, `aria-controls`), close on Escape/outside click/focus leaving; mobile panel with grouped links, focus moves in on open and back to the button on Escape |
+| Header | `SiteHeader.astro` | Disclosure menus (`aria-expanded`, `aria-controls`), close on Escape/outside click/focus leaving; dropdown panels lay subgroups out as columns (centred under the nav, never wider than the viewport); mobile panel with links under subgroup headings, focus moves in on open and back to the button on Escape |
 | Search | `SiteSearch.astro` | Panel + ARIA combobox/listbox; index fetched lazily from `/search-index.json`; arrow keys, Home/End, Enter, Escape; `/` opens it; live result count and no-results state |
 | Page header | `PageHeader.astro` | Breadcrumbs, eyebrow, h1, intro, count, link back to its pathway |
 | Card | `EntryCard.astro` | Whole card clickable via a stretched link; focus ring on `:focus-within`; hover changes border **and** shadow |

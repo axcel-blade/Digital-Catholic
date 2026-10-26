@@ -93,8 +93,8 @@ The Liturgical Calendar computes the current year on `/liturgical-calendar` and 
 | --- | --- |
 | `paths.ts` | `withBase()` / `stripBase()` — prefix and strip the deploy base path (`/Digital-Catholic/` on GitHub Pages, `/` in Docker) |
 | `seo.ts` | Site-wide metadata (`SITE`), per-section `PAGE_DESCRIPTIONS`, canonical/absolute URL helpers |
-| `sections.ts` | Registry of the fifteen content areas and their Learn/Pray/Explore grouping — used by navigation, homepage, About, footer, and breadcrumbs |
-| `siteNav.ts` | Builds the navigation from `sections.ts` and resolves active states |
+| `sections.ts` | Registry of the fifteen content areas and their Learn/Pray/Explore grouping, plus the subgroups that organise each menu — used by navigation, homepage, About, footer, and breadcrumbs |
+| `siteNav.ts` | Builds the navigation (groups and their subgroups) from `sections.ts` and resolves active states |
 | `searchIndex.ts` | `buildSearchIndex()` — flattens every section into `{ title, url, category, excerpt, body }` entries |
 | `images.ts` | Reads JPEG/PNG dimensions from `public/` at build time; returns `null` for missing files so pages skip them |
 | `article.ts` | Heading anchors for the “On this page” list, previous/next neighbors, and related-article selection |
@@ -116,7 +116,7 @@ Copied to the output as-is. Images are stored per section, named after the item 
 All content is readable without JavaScript. Scripts add:
 
 - **Search.** `src/pages/search-index.json.ts` writes the output of `buildSearchIndex()` to a static JSON file at build time. `SiteSearch` fetches it the first time the search panel opens (button or `/` key), then scores each query's terms against titles, categories, excerpts, and body text in the browser. Results support arrow keys, Enter, and Escape. Nothing is sent to a server, and new items are indexed on the next build without code changes. A new *section* needs an entry in `searchIndex.ts`.
-- **Navigation.** Learn/Pray/Explore dropdowns on desktop and a grouped menu on small screens; both close on Escape or an outside click and manage focus.
+- **Navigation.** Learn/Pray/Explore dropdowns on desktop, each split into subgroup columns, and a grouped menu with subgroup headings on small screens; both close on Escape or an outside click and manage focus.
 - **Filters.** `CardFilter` shows or hides cards by category or Church status. It is hidden without JavaScript, so every card stays visible.
 - **Copy link.** Copies the page's canonical URL to the clipboard.
 - **Liturgical “today”.** The calendar and homepage panels compare the visitor's own date with the build-time calendar data to show the current season and celebration. Nothing about “today” is baked into the HTML.

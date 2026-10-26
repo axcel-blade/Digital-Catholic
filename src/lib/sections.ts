@@ -12,6 +12,8 @@ export interface SectionGroup {
 	summary: string;
 	/** Anchor on the homepage that introduces this pathway */
 	anchor: string;
+	/** Sub-headings that keep navigation menus short and scannable */
+	subgroups: { key: string; label: string }[];
 }
 
 export interface SiteSection {
@@ -21,6 +23,8 @@ export interface SiteSection {
 	/** Short label for navigation menus */
 	navLabel: string;
 	group: SectionGroupKey;
+	/** Key of a subgroup within the group, used to organise menus */
+	subgroup: string;
 	/** Category label shown above section titles */
 	label: string;
 	/** One-line description for menus and the library list */
@@ -34,6 +38,11 @@ export const sectionGroups: SectionGroup[] = [
 		summary:
 			'Start with the Bible, sacraments, saints, commandments, and the foundations of Catholic faith.',
 		anchor: 'learn',
+		subgroups: [
+			{ key: 'foundations', label: 'Foundations' },
+			{ key: 'holy-spirit', label: 'Holy Spirit' },
+			{ key: 'holy-lives', label: 'Holy lives' },
+		],
 	},
 	{
 		key: 'pray',
@@ -41,6 +50,10 @@ export const sectionGroups: SectionGroup[] = [
 		summary:
 			'Pray the Rosary, discover traditional prayers, and follow the seasons and feasts of the Church.',
 		anchor: 'pray',
+		subgroups: [
+			{ key: 'devotion', label: 'Prayer & devotion' },
+			{ key: 'liturgy', label: 'Liturgy' },
+		],
 	},
 	{
 		key: 'explore',
@@ -48,6 +61,10 @@ export const sectionGroups: SectionGroup[] = [
 		summary:
 			'Meet the apostles, read the parables, and explore miracles and Marian apparitions with context.',
 		anchor: 'explore',
+		subgroups: [
+			{ key: 'gospels', label: 'Life of Jesus' },
+			{ key: 'signs', label: 'Signs & wonders' },
+		],
 	},
 ];
 
@@ -58,6 +75,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Holy Bible',
 		navLabel: 'Holy Bible',
 		group: 'learn',
+		subgroup: 'foundations',
 		label: 'Scripture',
 		blurb: 'Summaries of all 73 books of the Catholic canon.',
 	},
@@ -67,6 +85,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Saints',
 		navLabel: 'Saints',
 		group: 'learn',
+		subgroup: 'holy-lives',
 		label: 'Saints',
 		blurb: 'Lives of holy men and women, with feast days.',
 	},
@@ -76,6 +95,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Sacraments',
 		navLabel: 'Sacraments',
 		group: 'learn',
+		subgroup: 'foundations',
 		label: 'Sacraments',
 		blurb: 'The seven sacraments and what the Church teaches.',
 	},
@@ -85,6 +105,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Ten Commandments',
 		navLabel: 'Ten Commandments',
 		group: 'learn',
+		subgroup: 'foundations',
 		label: 'Moral life',
 		blurb: 'God’s law given to Moses and its meaning today.',
 	},
@@ -94,6 +115,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Gifts of the Holy Spirit',
 		navLabel: 'Gifts of the Holy Spirit',
 		group: 'learn',
+		subgroup: 'holy-spirit',
 		label: 'Holy Spirit',
 		blurb: 'The seven gifts that make us docile to the Spirit.',
 	},
@@ -103,6 +125,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Fruits of the Holy Spirit',
 		navLabel: 'Fruits of the Holy Spirit',
 		group: 'learn',
+		subgroup: 'holy-spirit',
 		label: 'Holy Spirit',
 		blurb: 'The twelve fruits of a life lived in the Spirit.',
 	},
@@ -112,6 +135,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Prayers',
 		navLabel: 'Prayers',
 		group: 'pray',
+		subgroup: 'devotion',
 		label: 'Prayer',
 		blurb: 'The Our Father, the Hail Mary, and their meaning.',
 	},
@@ -121,6 +145,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Rosary',
 		navLabel: 'Rosary',
 		group: 'pray',
+		subgroup: 'devotion',
 		label: 'Prayer',
 		blurb: 'How to pray it, its prayers, and the twenty mysteries.',
 	},
@@ -130,6 +155,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Holy Mass',
 		navLabel: 'Holy Mass',
 		group: 'pray',
+		subgroup: 'liturgy',
 		label: 'Liturgy',
 		blurb: 'The order of Mass and the items used at the altar.',
 	},
@@ -139,6 +165,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Liturgical Calendar',
 		navLabel: 'Liturgical Calendar',
 		group: 'pray',
+		subgroup: 'liturgy',
 		label: 'Liturgy',
 		blurb: 'Seasons, solemnities, feasts, and memorials of the year.',
 	},
@@ -148,6 +175,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Disciples of Jesus',
 		navLabel: 'Disciples of Jesus',
 		group: 'explore',
+		subgroup: 'gospels',
 		label: 'Gospels',
 		blurb: 'The Twelve Apostles, from their call to their deaths.',
 	},
@@ -157,6 +185,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Miracles of Jesus',
 		navLabel: 'Miracles of Jesus',
 		group: 'explore',
+		subgroup: 'gospels',
 		label: 'Gospels',
 		blurb: 'Signs in the Gospels that reveal who Christ is.',
 	},
@@ -166,6 +195,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Eucharistic Miracles',
 		navLabel: 'Eucharistic Miracles',
 		group: 'explore',
+		subgroup: 'signs',
 		label: 'Eucharist',
 		blurb: 'Reported signs of the Real Presence, with Church status.',
 	},
@@ -175,6 +205,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Marian Apparitions',
 		navLabel: 'Marian Apparitions',
 		group: 'explore',
+		subgroup: 'signs',
 		label: 'Blessed Virgin Mary',
 		blurb: 'Guadalupe, Lourdes, Fátima, and more, with Church status.',
 	},
@@ -184,6 +215,7 @@ export const siteSections: SiteSection[] = [
 		title: 'Parables of Jesus',
 		navLabel: 'Parables of Jesus',
 		group: 'explore',
+		subgroup: 'gospels',
 		label: 'Gospels',
 		blurb: 'Stories of the Kingdom and what they teach.',
 	},

@@ -39,22 +39,29 @@ const { nav } = Astro.props;
 							{group.label}
 							<svg class="primary-nav__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
 						</button>
-						<div class="nav-panel" id={`nav-panel-${group.key}`} hidden data-nav-panel>
+						<div class="nav-panel" id={`nav-panel-${group.key}`} hidden data-nav-panel style={`--nav-columns: ${group.subgroups.length}`}>
 							<p class="nav-panel__summary">{group.summary}</p>
-							<ul class="nav-panel__list">
-								{group.items.map((item) => (
-									<li>
-										<a
-											class="nav-panel__link"
-											href={item.href}
-											aria-current={item.isActive ? 'page' : undefined}
-										>
-											<span class="nav-panel__title">{item.label}</span>
-											{item.blurb && <span class="nav-panel__blurb">{item.blurb}</span>}
-										</a>
-									</li>
+							<div class="nav-panel__columns">
+								{group.subgroups.map((subgroup) => (
+									<section class="nav-panel__column" aria-labelledby={`nav-sub-${group.key}-${subgroup.key}`}>
+										<h3 class="nav-panel__heading" id={`nav-sub-${group.key}-${subgroup.key}`}>{subgroup.label}</h3>
+										<ul class="nav-panel__list">
+											{subgroup.items.map((item) => (
+												<li>
+													<a
+														class="nav-panel__link"
+														href={item.href}
+														aria-current={item.isActive ? 'page' : undefined}
+													>
+														<span class="nav-panel__title">{item.label}</span>
+														{item.blurb && <span class="nav-panel__blurb">{item.blurb}</span>}
+													</a>
+												</li>
+											))}
+										</ul>
+									</section>
 								))}
-							</ul>
+							</div>
 						</div>
 					</li>
 				))}
@@ -114,17 +121,22 @@ const { nav } = Astro.props;
 			{nav.groups.map((group) => (
 				<section class="mobile-menu__group" aria-labelledby={`mobile-menu-${group.key}`}>
 					<h2 class="mobile-menu__heading" id={`mobile-menu-${group.key}`}>{group.label}</h2>
-					<ul class="mobile-menu__list">
-						{group.items.map((item) => (
-							<li>
-								<a
-									class="mobile-menu__link"
-									href={item.href}
-									aria-current={item.isActive ? 'page' : undefined}>{item.label}</a
-								>
-							</li>
-						))}
-					</ul>
+					{group.subgroups.map((subgroup) => (
+						<div class="mobile-menu__subgroup">
+							<h3 class="mobile-menu__subheading">{subgroup.label}</h3>
+							<ul class="mobile-menu__list">
+								{subgroup.items.map((item) => (
+									<li>
+										<a
+											class="mobile-menu__link"
+											href={item.href}
+											aria-current={item.isActive ? 'page' : undefined}>{item.label}</a
+										>
+									</li>
+								))}
+							</ul>
+						</div>
+					))}
 				</section>
 			))}
 		</nav>
