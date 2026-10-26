@@ -43,7 +43,7 @@ All site content is written as TypeScript objects, not Markdown or a CMS.
 - `index.ts` uses Vite's `import.meta.glob('./items/*.ts', { eager: true })` and the helpers in `src/data/lib/loadCollection.ts`:
   - `loadCollection` sorts items by `slug`
   - `loadCollectionByNumber` sorts by a numeric field (Commandments, Core Catholic Beliefs, Holy Spirit gifts and fruits, Holy Trinity persons)
-  - Sections with a fixed order re-sort after loading: disciples by their `order` field, sacraments in Catechism order, prayers and Rosary mystery sets by a fixed slug list
+  - Sections with a fixed order re-sort after loading: disciples by their `order` field, sacraments in Catechism order, sacrament guides (`sacraments/guides/*.ts`) by their numeric file-name prefix, prayers and Rosary mystery sets by a fixed slug list
 - Adding a file to `items/` is enough — no manual registration.
 - Every article type extends `TrustInfo` from `src/data/lib/trust.ts`: optional `churchStatus`, `statusNote`, `sources`, `primaryReferences`, `furtherReading`, and `lastReviewed`. Pages render each field only when it is present. Bible book pages fall back to a generated USCCB link when a book has no `sources` of its own.
 - Flat files such as `src/data/saints.ts` are re-export shims so pages can import from short paths (`../../data/saints`).
@@ -63,7 +63,7 @@ Astro's file-based routing. Each section has:
 | `<section>/index.astro` | Section listing page, e.g. `/saints` |
 | `<section>/[slug].astro` | One page per item; `getStaticPaths()` maps the collection to slugs |
 
-Other routes: `index.astro` (home), `about.astro`, `contact.astro`, `404.astro`, `commandments/index.astro`, `core-beliefs/index.astro`, `holy-trinity/index.astro`, `holy-trinity/[testament].astro` (Old and New Testament articles), `gifts-of-the-holy-spirit/index.astro`, `fruits-of-the-holy-spirit/index.astro`, `mass/index.astro` (the Holy Mass hub), `mass/order-of-mass.astro`, `mass/items-used-at-mass.astro`, `rosary/origin.astro`, `bible/how-the-bible-was-formed.astro`, `saints/path-to-sainthood.astro`, `liturgical-calendar/[year].astro`, and `search-index.json.ts` (a static JSON endpoint for search).
+Other routes: `index.astro` (home), `about.astro`, `contact.astro`, `404.astro`, `commandments/index.astro`, `core-beliefs/index.astro`, `holy-trinity/index.astro`, `holy-trinity/[testament].astro` (Old and New Testament articles), `gifts-of-the-holy-spirit/index.astro`, `fruits-of-the-holy-spirit/index.astro`, `mass/index.astro` (the Holy Mass hub), `mass/order-of-mass.astro`, `mass/items-used-at-mass.astro`, `rosary/origin.astro`, `bible/how-the-bible-was-formed.astro`, `saints/path-to-sainthood.astro`, `liturgical-calendar/[year].astro`, `sacraments/guides/[slug].astro` (the Sacraments in Depth guides), and `search-index.json.ts` (a static JSON endpoint for search).
 
 Listing pages use `SectionLayout`; item pages use `ArticleLayout`.
 
@@ -107,7 +107,7 @@ One global stylesheet built on CSS custom properties (design tokens) for a singl
 
 ### 6. Static assets — `public/`
 
-Copied to the output as-is. Images are stored per section, named after the item slug: `public/saints/`, `public/disciples/`, `public/eucharistic-miracles/`, `public/marian-apparitions/`, `public/sacraments/`, `public/parables/`, `public/miracles/`, `public/mass/`, `public/bible/`. Section images (for example Miracles and Relics) live in a `sections/` subfolder, such as `public/saints/sections/`. Image attribution is kept in a `CREDITS.md` in `public/saints/`, `public/disciples/`, `public/parables/`, `public/miracles/`, `public/mass/`, and `public/bible/`. Also holds the favicon, the 1200×630 social image (`og-image.png`), and `robots.txt`.
+Copied to the output as-is. Images are stored per section, named after the item slug: `public/saints/`, `public/disciples/`, `public/eucharistic-miracles/`, `public/marian-apparitions/`, `public/sacraments/` (guide images in `public/sacraments/guides/`), `public/parables/`, `public/miracles/`, `public/mass/`, `public/bible/`. Section images (for example Miracles and Relics) live in a `sections/` subfolder, such as `public/saints/sections/`. Image attribution is kept in a `CREDITS.md` in `public/saints/`, `public/disciples/`, `public/parables/`, `public/miracles/`, `public/mass/`, `public/sacraments/guides/`, and `public/bible/`. Also holds the favicon, the 1200×630 social image (`og-image.png`), and `robots.txt`.
 
 ---
 
