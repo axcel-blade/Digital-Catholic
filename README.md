@@ -26,7 +26,7 @@ A static Catholic digital library for learning and sharing the faith — clear r
 
 ## What it covers
 
-The library has thirteen content areas, grouped into three pathways. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
+The library has fifteen content areas, grouped into three pathways. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
 
 ### Learn
 
@@ -36,6 +36,8 @@ The library has thirteen content areas, grouped into three pathways. The same gr
 | **Saints** | Biographies of holy men and women with life dates, feast days, miracles, and relics, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint) |
 | **Sacraments** | All seven sacraments in Catechism order — initiation, healing, and service of communion |
 | **Ten Commandments** | The text and meaning of each commandment |
+| **Gifts of the Holy Spirit** | The seven gifts and what each one means |
+| **Fruits of the Holy Spirit** | The twelve fruits and how each shapes the Christian life |
 
 ### Pray
 

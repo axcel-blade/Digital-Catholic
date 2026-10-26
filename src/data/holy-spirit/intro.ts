@@ -1,0 +1,3 @@
+export const giftsIntro = "The seven gifts of the Holy Spirit are permanent dispositions that make us docile in following His promptings. They belong in their fullness to Christ, as foretold in Isaiah 11:1–2, and complete and perfect the virtues of those who receive them. They are given at Baptism and strengthened in Confirmation (CCC 1830–1831).";
+
+export const fruitsIntro = "The fruits of the Spirit are perfections that the Holy Spirit forms in us as the first fruits of eternal glory. St. Paul lists them in Galatians 5:22–23, and the tradition of the Church, following the Latin Vulgate, numbers twelve (CCC 1832).";

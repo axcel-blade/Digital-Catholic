@@ -1,0 +1,44 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import { giftsIntro, spiritGifts } from '../../data/holySpirit';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<SectionLayout
+	sectionKey="gifts-of-the-holy-spirit"
+	heading="The Seven Gifts of the Holy Spirit"
+	title="Gifts of the Holy Spirit"
+	description={PAGE_DESCRIPTIONS.giftsOfTheHolySpirit}
+	currentPath={Astro.url.pathname}
+	intro={giftsIntro}
+	count={`${spiritGifts.length} gifts`}
+>
+	<nav class="jump-links jump-links--numbers" aria-label="Jump to a gift" slot="header">
+		{spiritGifts.map((g) => (
+			<a class="jump-links__link" href={`#gift-${g.number}`}>
+				<span class="visually-hidden">Gift </span>{g.number}
+			</a>
+		))}
+	</nav>
+
+	<ol class="numbered-list">
+		{spiritGifts.map((gift) => (
+			<li class="numbered-item" id={`gift-${gift.number}`}>
+				<span class="numbered-item__number" aria-hidden="true">{gift.number}</span>
+				<div class="numbered-item__body">
+					<h2 class="numbered-item__title">
+						<span class="visually-hidden">Gift {gift.number}: </span>{gift.title}
+					</h2>
+					<blockquote class="numbered-item__quote">{gift.summary}</blockquote>
+					<p class="numbered-item__text">{gift.meaning}</p>
+				</div>
+			</li>
+		))}
+	</ol>
+
+	<p class="section-footer-links">
+		Continue with the <a href={withBase('/fruits-of-the-holy-spirit')}>Fruits of the Holy Spirit</a> or the
+		<a href={withBase('/sacraments/confirmation')}>sacrament of Confirmation</a>, which strengthens these gifts.
+	</p>
+</SectionLayout>
