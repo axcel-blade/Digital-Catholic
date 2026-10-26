@@ -1085,6 +1085,14 @@ mark {
 	font-size: var(--text-md);
 }
 
+/* Word links (e.g. "Old Testament") placed among number links */
+.jump-links--numbers .jump-links__link--text {
+	padding: 0 var(--space-4);
+	font-family: inherit;
+	font-size: var(--text-sm);
+	white-space: nowrap;
+}
+
 .jump-links__count {
 	font-size: var(--text-xs);
 	color: var(--color-text-muted);
