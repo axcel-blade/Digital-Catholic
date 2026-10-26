@@ -1,4 +1,5 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
+import { coreBeliefs, coreBeliefsIntro } from '../data/coreBeliefs';
 import { trinityIntro, trinityPersons, trinityScripture, trinityScriptureIntro } from '../data/trinity';
 import { fruitsIntro, giftsIntro, spiritFruits, spiritGifts } from '../data/holySpirit';
 import { massIntro, massItemsIntro, massPages, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
@@ -215,6 +216,16 @@ export function buildSearchIndex(): SearchEntry[] {
 			[commandmentsIntro, ...commandments.map((c) => joinParts(c.title, c.text, c.meaning))],
 		),
 		entry(
+			'Core Catholic Beliefs',
+			withBase('/core-beliefs'),
+			'Doctrine',
+			coreBeliefsIntro,
+			[
+				coreBeliefsIntro,
+				...coreBeliefs.map((b) => joinParts(b.title, b.summary, b.scripture, b.catechism, ...b.meaning)),
+			],
+		),
+		entry(
 			'Holy Trinity',
 			withBase('/holy-trinity'),
 			'Doctrine',
@@ -425,6 +436,18 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Doctrine',
 				person.summary,
 				[person.title, person.summary, person.meaning, person.scripture]
+			)
+		);
+	}
+
+	for (const belief of coreBeliefs) {
+		items.push(
+			entry(
+				`Core Beliefs: ${belief.title}`,
+				withBase(`/core-beliefs#belief-${belief.number}`),
+				'Doctrine',
+				belief.summary,
+				[belief.title, belief.summary, belief.scripture, belief.catechism, ...belief.meaning, ...(belief.text?.lines ?? [])]
 			)
 		);
 	}

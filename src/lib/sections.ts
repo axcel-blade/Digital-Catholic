@@ -80,6 +80,16 @@ export const siteSections: SiteSection[] = [
 		blurb: 'Summaries of all 73 books of the Catholic canon.',
 	},
 	{
+		key: 'core-beliefs',
+		href: '/core-beliefs',
+		title: 'Core Catholic Beliefs',
+		navLabel: 'Core Beliefs',
+		group: 'learn',
+		subgroup: 'foundations',
+		label: 'Doctrine',
+		blurb: 'The Trinity, Incarnation, Resurrection, salvation, and the life to come.',
+	},
+	{
 		key: 'holy-trinity',
 		href: '/holy-trinity',
 		title: 'Holy Trinity',

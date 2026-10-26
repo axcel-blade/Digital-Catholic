@@ -16,6 +16,7 @@ Content is split into **one file per article** so contributors can add entries w
 | Marian apparitions | `marian-apparitions/items/{slug}.ts` | `lourdes.ts` |
 | Parables | `parables/items/{slug}.ts` | `the-prodigal-son.ts` |
 | Commandments | `commandments/items/NN-short-name.ts` | `03-keep-the-lord-s-day-holy.ts` |
+| Core Catholic Beliefs | `core-beliefs/items/NN-{slug}.ts` | `01-the-holy-trinity.ts` |
 | Holy Trinity | `trinity/persons/NN-{slug}.ts` | `01-god-the-father.ts` |
 | Gifts and Fruits of the Holy Spirit | `holy-spirit/gifts/NN-{slug}.ts`, `holy-spirit/fruits/NN-{slug}.ts` | `01-wisdom.ts`, `01-charity.ts` |
 | Rosary mystery sets | `rosary/mystery-sets/NN-{slug}.ts` | `01-joyful.ts` (order fixed in `rosary/index.ts`) |
