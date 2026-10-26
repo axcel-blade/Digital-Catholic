@@ -2025,6 +2025,8 @@ mark {
 
 .section-figure {
 	margin-top: var(--space-4);
+	/* Matches the paragraph spacing so the next section's heading does not sit on the image */
+	margin-bottom: var(--space-5);
 }
 
 .article-figure img {
