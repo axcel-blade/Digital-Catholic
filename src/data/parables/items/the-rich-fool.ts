@@ -3,7 +3,7 @@ import type { Parable } from '../types';
 const parable: Parable = {
 	"slug": "the-rich-fool",
 	"title": "The Rich Fool",
-	"category": "Wealth & judgment",
+	"category": "Wealth & judgement",
 	"gospelReference": "Luke 12:13–21",
 	"excerpt": "“You fool! This night your soul is required of you.” Riches stored up for self cannot secure the soul.",
 	"imageAlt": "A rich man examining a coin by candlelight among his ledgers, Rembrandt’s Parable of the Rich Fool",
@@ -21,7 +21,7 @@ const parable: Parable = {
 		{
 			"heading": "What it teaches",
 			"paragraphs": [
-				"Earthly security is an illusion. True wealth is friendship with God through charity, especially toward the poor. The parable prepares hearts for detachment and trust in Providence."
+				"Earthly security is an illusion. True wealth is friendship with God through charity, especially towards the poor. The parable prepares hearts for detachment and trust in Providence."
 			]
 		}
 	]

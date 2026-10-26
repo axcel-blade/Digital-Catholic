@@ -15,14 +15,14 @@ const parable: Parable = {
 		{
 			"heading": "The story",
 			"paragraphs": [
-				"A lawyer tests Jesus on eternal life and loving one’s neighbor. Jesus tells of a man beaten on the road to Jericho. A priest and a Levite pass by, but a Samaritan tends his wounds, brings him to an inn, and pays for his care.",
-				"Jesus asks who proved neighbor to the victim. The lawyer answers, “The one who showed mercy.” Jesus says, “Go and do likewise.”"
+				"A lawyer tests Jesus on eternal life and loving one’s neighbour. Jesus tells of a man beaten on the road to Jericho. A priest and a Levite pass by, but a Samaritan tends his wounds, brings him to an inn, and pays for his care.",
+				"Jesus asks who proved neighbour to the victim. The lawyer answers, “The one who showed mercy.” Jesus says, “Go and do likewise.”"
 			]
 		},
 		{
 			"heading": "What it teaches",
 			"paragraphs": [
-				"Neighbor love crosses ethnic and religious boundaries. Mercy is measured in action, not status. Christ Himself is the true Good Samaritan who heals our wounds on the road of sin."
+				"Neighbour love crosses ethnic and religious boundaries. Mercy is measured in action, not status. Christ Himself is the true Good Samaritan who heals our wounds on the road of sin."
 			]
 		}
 	]

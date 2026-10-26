@@ -36,22 +36,22 @@ export interface TrustInfo {
 
 export const churchStatusLabels: Record<ChurchStatus, string> = {
 	approved: 'Approved for devotion',
-	recognized: 'Recognized or permitted',
+	recognized: 'Recognised or permitted',
 	'under-investigation': 'Under investigation',
 	'historical-tradition': 'Historical tradition',
-	reported: 'Reported, not officially recognized',
+	reported: 'Reported, not officially recognised',
 };
 
 export const churchStatusDescriptions: Record<ChurchStatus, string> = {
 	approved:
 		'A competent Church authority has judged the events worthy of belief or approved public devotion. Catholics are still not required to believe any private revelation.',
 	recognized:
-		'Church authorities have honored, authenticated, or permitted devotion connected with the event, without every detail being formally judged.',
+		'Church authorities have honoured, authenticated, or permitted devotion connected with the event, without every detail being formally judged.',
 	'under-investigation': 'Church authorities are still studying the reported events.',
 	'historical-tradition':
-		'The account is handed down by long tradition and venerated locally; this site does not record a formal modern judgment.',
+		'The account is handed down by long tradition and venerated locally; this site does not record a formal modern judgement.',
 	reported:
-		'The events have been reported and studied, but this article records no formal Church judgment on them.',
+		'The events have been reported and studied, but this article records no formal Church judgement on them.',
 };
 
 /** Order used when listing or filtering by status */

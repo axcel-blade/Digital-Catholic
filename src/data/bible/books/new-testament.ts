@@ -9,20 +9,20 @@ export const newTestamentBooks: BibleBook[] = [
 		testament: 'new',
 		category: 'gospels',
 		excerpt:
-			'The Gospel for the Church: Jesus the Messiah fulfills the Law and the prophets and founds His kingdom.',
+			'The Gospel for the Church: Jesus the Messiah fulfils the Law and the prophets and founds His kingdom.',
 		sections: [
 			{
 				heading: 'Summary',
 				paragraphs: [
 					'Matthew opens with Jesus’ genealogy from Abraham and David, then the virginal conception and birth in Bethlehem. The Magi and flight to Egypt show Gentiles and threats to the newborn King.',
-					'The Sermon on the Mount presents the beatitudes and the new righteousness of the kingdom. Miracles, parables, and Peter’s confession lead to Jerusalem, Passion, death, and resurrection with the Great Commission to baptize all nations.',
+					'The Sermon on the Mount presents the beatitudes and the new righteousness of the kingdom. Miracles, parables, and Peter’s confession lead to Jerusalem, Passion, death, and resurrection with the Great Commission to baptise all nations.',
 					'Structured in five discourse blocks echoing the Pentateuch, Matthew presents Jesus as the new Moses and Emmanuel—God with us.',
 				],
 			},
 			{
 				heading: 'Themes and key points',
 				paragraphs: [
-					'Fulfillment formulas (“This was to fulfill…”) tie Christ to the Old Testament. The Church, keys of the kingdom, and binding and loosing (Mt 16, 18) shape Catholic ecclesiology.',
+					'Fulfilment formulas (“This was to fulfill…”) tie Christ to the Old Testament. The Church, keys of the kingdom, and binding and loosing (Mt 16, 18) shape Catholic ecclesiology.',
 					'Eucharistic language in Mt 26 and the presence of Christ “until the end of the age” ground liturgy and mission.',
 				],
 			},
@@ -43,7 +43,7 @@ export const newTestamentBooks: BibleBook[] = [
 				paragraphs: [
 					'Mark moves quickly from John the Baptist to Jesus’ baptism, temptation, and Galilean ministry of healing and exorcism. Parables reveal the kingdom; the disciples misunderstand.',
 					'Peter confesses Christ; transfiguration follows. Journey to Jerusalem brings three passion predictions. The Last Supper, Gethsemane, trial, crucifixion, and empty tomb end with the women told— and silence at first.',
-					'The earliest Gospel in tradition, Mark emphasizes action and the cost of discipleship.',
+					'The earliest Gospel in tradition, Mark emphasises action and the cost of discipleship.',
 				],
 			},
 			{
@@ -122,7 +122,7 @@ export const newTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Summary',
 				paragraphs: [
-					'Acts begins with ascension and Pentecost: the Spirit fills the disciples. Peter preaches; three thousand are baptized. Deacons are appointed; Stephen martyred.',
+					'Acts begins with ascension and Pentecost: the Spirit fills the disciples. Peter preaches; three thousand are baptised. Deacons are appointed; Stephen martyred.',
 					'Philip, Peter, and the conversion of Cornelius open the Church to Gentiles. Paul’s conversion, missionary journeys, council of Jerusalem, and trials before Jews and Romans dominate the narrative.',
 					'The book ends with Paul preaching freely in Rome— the Gospel unhindered. Luke presents the Church as Spirit-led, apostolic, and catholic in reach.',
 				],
@@ -151,7 +151,7 @@ export const newTestamentBooks: BibleBook[] = [
 				paragraphs: [
 					'To the church in Rome, Paul sets forth the Gospel: all have sinned; righteousness is revealed through faith in Christ. Adam and Christ contrast death and life.',
 					'Chapters 6–8 treat baptism, freedom from sin, and the Spirit’s witness as children of God. Chapters 9–11 wrestle with Israel’s role; 12–16 exhort to love, obedience to authorities, and unity.',
-					'Romans is systematic yet pastoral, aiming to strengthen a mixed Jewish-Gentile community at the empire’s center.',
+					'Romans is systematic yet pastoral, aiming to strengthen a mixed Jewish-Gentile community at the empire’s centre.',
 				],
 			},
 			{
@@ -231,7 +231,7 @@ export const newTestamentBooks: BibleBook[] = [
 				heading: 'Summary',
 				paragraphs: [
 					'Galatians is passionate: “O foolish Galatians!” Paul’s gospel came by revelation; Peter’s inconsistency at Antioch is rebuked. Abraham believed— promise, not Law, justifies.',
-					'Christ redeemed us from the curse of the Law; we are sons and heirs. Freedom is not license but love of neighbor; Spirit produces fruit, not flesh.',
+					'Christ redeemed us from the curse of the Law; we are sons and heirs. Freedom is not licence but love of neighbour; Spirit produces fruit, not flesh.',
 					'Paul bears the marks of Jesus; blessing and curse close the letter.',
 				],
 			},
@@ -259,7 +259,7 @@ export const newTestamentBooks: BibleBook[] = [
 				paragraphs: [
 					'Blessing in Christ recounts election, redemption, and the mystery revealed: Gentiles are co-heirs. Christ is head over all; apostles and prophets found the Church.',
 					'Household codes address marriage as Christ and Church, children, slaves, and masters— read in their historical context and in light of mutual submission in the Lord.',
-					'The armor of God concludes exhortation to stand against evil. Ephesians is lyrical and ecclesial.',
+					'The armour of God concludes exhortation to stand against evil. Ephesians is lyrical and ecclesial.',
 				],
 			},
 			{
@@ -285,7 +285,7 @@ export const newTestamentBooks: BibleBook[] = [
 				heading: 'Summary',
 				paragraphs: [
 					'Paul thanks the Philippians for support; his imprisonment advances the Gospel. Exhortation to unity and humility culminates in the Christ hymn: though divine, He emptied Himself to the cross and is exalted.',
-					'Paul presses toward the goal; enemies of the cross are warned. Greetings include the household of Caesar.',
+					'Paul presses towards the goal; enemies of the cross are warned. Greetings include the household of Caesar.',
 					'The tone is warm, thankful, and confident in the Lord.',
 				],
 			},
@@ -346,7 +346,7 @@ export const newTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Themes and key points',
 				paragraphs: [
-					'Eschatology here must be read with later tradition: the Church teaches one definitive coming and judgment, not repeated failed predictions.',
+					'Eschatology here must be read with later tradition: the Church teaches one definitive coming and judgement, not repeated failed predictions.',
 					'Hope in resurrection comforts the bereaved and sustains moral vigilance.',
 				],
 			},
@@ -393,7 +393,7 @@ export const newTestamentBooks: BibleBook[] = [
 				heading: 'Summary',
 				paragraphs: [
 					'Paul urges Timothy to remain and combat false teaching. Prayer for all, including rulers, is fitting. Women’s roles and modesty are addressed in context of the household of God.',
-					'Qualifications for bishops and deacons emphasize virtue, family stability, and holding the mystery of faith. The good fight, godliness with contentment, and care of the poor close the letter.',
+					'Qualifications for bishops and deacons emphasise virtue, family stability, and holding the mystery of faith. The good fight, godliness with contentment, and care of the poor close the letter.',
 					'“The laborer deserves his wages” and warnings against love of money apply to ministry.',
 				],
 			},
@@ -441,13 +441,13 @@ export const newTestamentBooks: BibleBook[] = [
 		testament: 'new',
 		category: 'pauline',
 		excerpt:
-			'Organizing the church in Crete: appoint elders and teach sound doctrine with good works.',
+			'Organising the church in Crete: appoint elders and teach sound doctrine with good works.',
 		sections: [
 			{
 				heading: 'Summary',
 				paragraphs: [
 					'Paul left Titus in Crete to appoint presbyters: blameless, hospitable, able to teach and refute opponents. Old and young, slaves, are instructed in godly living.',
-					'God’s grace has appeared, training us to renounce impiety and live uprightly while awaiting the blessed hope, the appearing of our great God and Savior.',
+					'God’s grace has appeared, training us to renounce impiety and live uprightly while awaiting the blessed hope, the appearing of our great God and Saviour.',
 					'Avoid foolish controversies; let Christians be ready for every good work.',
 				],
 			},
@@ -455,7 +455,7 @@ export const newTestamentBooks: BibleBook[] = [
 				heading: 'Themes and key points',
 				paragraphs: [
 					'Grace saves and demands moral transformation— a Catholic synthesis of faith and works. Pastoral letters together model episcopal ministry.',
-					'Titus emphasizes that doctrine and ethics are inseparable in credible witness.',
+					'Titus emphasises that doctrine and ethics are inseparable in credible witness.',
 				],
 			},
 		],
@@ -535,7 +535,7 @@ export const newTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Themes and key points',
 				paragraphs: [
-					'James complements Paul: faith alive in charity. Catholic tradition honors James the Apostle and this letter in the canon.',
+					'James complements Paul: faith alive in charity. Catholic tradition honours James the Apostle and this letter in the canon.',
 					'Social justice and sacramental undertones (anointing of the sick) connect James to parish life.',
 				],
 			},
@@ -581,7 +581,7 @@ export const newTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Summary',
 				paragraphs: [
-					'God’s power has given all things pertaining to life and godliness; partake of the divine nature. False teachers deny the Lord who bought them; their judgment is sure.',
+					'God’s power has given all things pertaining to life and godliness; partake of the divine nature. False teachers deny the Lord who bought them; their judgement is sure.',
 					'The author recalls the transfiguration as eyewitness; prophecy is more sure, inspired by the Spirit. Scoffers will come; the day of the Lord is like a thousand years.',
 					'Grow in grace and knowledge of our Lord; to Him be glory forever.',
 				],
@@ -684,13 +684,13 @@ export const newTestamentBooks: BibleBook[] = [
 		testament: 'new',
 		category: 'catholic-epistles',
 		excerpt:
-			'Contend for the faith once delivered; false teachers face judgment like rebellions of old.',
+			'Contend for the faith once delivered; false teachers face judgement like rebellions of old.',
 		sections: [
 			{
 				heading: 'Summary',
 				paragraphs: [
 					'Jude, servant of Jesus and brother of James, intended to write on salvation but must warn against intruders who pervert grace into licentiousness and deny Christ.',
-					'Examples from Israel, angels, Sodom, Cain, Balaam, and Korah illustrate judgment. Enoch prophecy and apostolic predictions are cited.',
+					'Examples from Israel, angels, Sodom, Cain, Balaam, and Korah illustrate judgement. Enoch prophecy and apostolic predictions are cited.',
 					'Build yourselves in faith, pray in the Spirit, keep in God’s love, have mercy on doubters. To the only God be glory.',
 				],
 			},
@@ -717,7 +717,7 @@ export const newTestamentBooks: BibleBook[] = [
 				heading: 'Summary',
 				paragraphs: [
 					'Letters to seven churches in Asia blend praise, warning, and promise to overcomers. The heavenly throne room and the Lamb who was slain open the scroll of history.',
-					'Seals, trumpets, and bowls depict tribulation and judgment. Beasts and Babylon oppose God; the Lamb and His army triumph. Satan is bound; the dead judged.',
+					'Seals, trumpets, and bowls depict tribulation and judgement. Beasts and Babylon oppose God; the Lamb and His army triumph. Satan is bound; the dead judged.',
 					'A new heaven and earth appear; the holy city descends. “Behold, I make all things new.” No temple— the Lord God is its light.',
 				],
 			},

@@ -26,7 +26,7 @@ A static Catholic digital library for learning and sharing the faith — clear r
 
 ## What it covers
 
-The library has seventeen content areas, grouped into three pathways, each split into smaller subgroups in the menus. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
+The library has twenty-seven content areas, grouped into three pathways, each split into smaller subgroups in the menus. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
 
 ### Learn
 
@@ -40,6 +40,14 @@ The library has seventeen content areas, grouped into three pathways, each split
 | **Ten Commandments** | The text and meaning of each commandment |
 | **Gifts of the Holy Spirit** | The seven gifts and what each one means |
 | **Fruits of the Holy Spirit** | The twelve fruits and how each shapes the Christian life |
+| **The Bible and Catholic Tradition** | Scripture and Tradition, the Magisterium, the 73 books and the Deuterocanonical books, how Catholics interpret Scripture, faith and reason, and the development of doctrine |
+| **The Catholic Church** | The four marks, the Pope, bishops, priests, deacons and laity, apostolic succession, the Orthodox and Eastern Catholic Churches, the differences between Christian traditions, and ecumenism |
+| **Catholic Church History** | The early Church and Church Fathers, the seven ecumenical councils, the Great Schism, the Reformation and Counter-Reformation, Trent and Vatican II, the papacy, and religious orders |
+| **Catholic Apologetics and FAQ** | Answers to common questions — Confession, the Real Presence, Mary and the saints, infant baptism, salvation, faith and works, the Pope, science and faith, and misconceptions |
+| **Catholic Moral Teaching** | The capital sins and virtues, the theological and cardinal virtues, the Commandments, the Beatitudes, mortal and venial sin, conscience, mercy, and the Works of Mercy |
+| **Catholic Social Teaching** | Human dignity, the common good, solidarity and subsidiarity, the poor, the dignity of work, family, stewardship of creation, and peace and citizenship |
+| **Living the Catholic Faith** | First Communion and Confirmation, Confession step by step, OCIA, vocations, dating and marriage, Mass for beginners, daily prayer, and faith at university and work |
+| **Mary and the Communion of Saints** | The Marian doctrines, the intercession and veneration of saints, relics and sacramentals, and angels |
 
 ### Pray
 
@@ -47,8 +55,10 @@ The library has seventeen content areas, grouped into three pathways, each split
 | --- | --- |
 | **Prayers** | The Our Father and Hail Mary — full text and explanation |
 | **Rosary** | How to pray it, the traditional prayers, all twenty mysteries, and its origin |
-| **Holy Mass** | The order of Mass step by step, and the items used at Mass: sacred vessels, altar linens, liturgical books, vestments, and liturgical colors |
+| **Holy Mass** | The order of Mass step by step, and the items used at Mass: sacred vessels, altar linens, liturgical books, vestments, and liturgical colours |
 | **Liturgical Calendar** | Seasons, solemnities, feasts, and memorials by year, with a “today” view |
+| **Catholic Prayer and Devotions** | The Liturgy of the Hours, Lectio Divina, adoration and Benediction, the Divine Mercy Chaplet, the Angelus, the Stations of the Cross, novenas and litanies, and fasting |
+| **Catholic Liturgy and Worship** | The parts of the Mass, Sunday and holy days of obligation, the liturgical year and its colours, the Real Presence, sacred music, sacred signs, Eastern liturgies, and reverence at Mass |
 
 ### Explore
 
@@ -56,8 +66,8 @@ The library has seventeen content areas, grouped into three pathways, each split
 | --- | --- |
 | **Disciples of Jesus** | The Twelve Apostles in traditional order — life, Gospel accounts, miracles, relics, death, and feast days |
 | **Miracles of Jesus** | Gospel accounts with Scripture references and classic artwork, filterable by kind of sign |
-| **Eucharistic Miracles** | Accounts from Lanciano to modern events, each labeled with its Church status |
-| **Marian Apparitions** | Guadalupe, Lourdes, Fátima, Knock, Velankanni, and others, each labeled with its Church status |
+| **Eucharistic Miracles** | Accounts from Lanciano to modern events, each labelled with its Church status |
+| **Marian Apparitions** | Guadalupe, Lourdes, Fátima, Knock, Velankanni, and others, each labelled with its Church status |
 | **Parables of Jesus** | Stories of the Kingdom with classic artwork, filterable by theme |
 
 ### Features
@@ -65,7 +75,7 @@ The library has seventeen content areas, grouped into three pathways, each split
 - **Guided homepage** with Learn / Pray / Explore pathways, a featured liturgical-calendar panel, and a full library index.
 - **Article pages** with breadcrumbs, metadata, an “On this page” list for longer articles, previous/next links, related reading, and a copy-link button.
 - **Sources on every article** in an “About this article” panel: Scripture (linked to the USCCB New American Bible), the Catechism, Church documents, and other cited references, with the date each article was last reviewed.
-- **Church status labels** for apparitions and Eucharistic miracles (approved for devotion, recognized or permitted, under investigation, historical tradition, or reported). Labels reflect only what each article states.
+- **Church status labels** for apparitions and Eucharistic miracles (approved for devotion, recognised or permitted, under investigation, historical tradition, or reported). Labels reflect only what each article states.
 - **Site search** from any page (press `/`), with category labels, highlighted excerpts, and full keyboard support.
 - **Light and dark themes**, a responsive layout, and accessibility built in: skip link, visible focus, 44px touch targets, and ARIA on every interactive control.
 - **SEO**: a unique description per page, canonical URLs, Open Graph and Twitter cards with a branded social image, JSON-LD (WebSite, Organization, Article, BreadcrumbList), and a sitemap.
@@ -179,8 +189,8 @@ docker-compose.yml    Local container setup on port 8080
 
 ## Sources and image credits
 
-Each article lists its sources — Scripture, the Catechism, Church documents, and other checked references — in its “About this article” panel. Images come from Wikimedia Commons; most are public domain, and some photos are under Creative Commons licenses that require attribution. The source, author, and license of every image is recorded in the `CREDITS.md` file of its folder (for example [public/saints/CREDITS.md](public/saints/CREDITS.md)), and attribution-required photos are also credited in their captions.
+Each article lists its sources — Scripture, the Catechism, Church documents, and other checked references — in its “About this article” panel. Images come from Wikimedia Commons; most are public domain, and some photos are under Creative Commons licences that require attribution. The source, author, and licence of every image is recorded in the `CREDITS.md` file of its folder (for example [public/saints/CREDITS.md](public/saints/CREDITS.md)), and attribution-required photos are also credited in their captions.
 
-## License
+## Licence
 
-The code is released under the [MIT License](LICENSE.md). Images keep their own licenses, as listed in each folder's `CREDITS.md`.
+The code is released under the [MIT License](LICENSE.md). Images keep their own licences, as listed in each folder's `CREDITS.md`.

@@ -1,0 +1,75 @@
+---
+import SectionLayout from '../layouts/SectionLayout.astro';
+import { getGuide } from '../data/guides';
+import { getSection } from '../lib/sections';
+import { withBase } from '../lib/paths';
+
+interface Props {
+	/** Key from src/lib/sections.ts and folder name in src/data/guides */
+	guideKey: string;
+	description: string;
+}
+
+const { guideKey, description } = Astro.props;
+const guide = getGuide(guideKey);
+const section = getSection(guideKey);
+---
+
+<SectionLayout
+	sectionKey={guideKey}
+	description={description}
+	currentPath={Astro.url.pathname}
+	intro={guide.intro}
+	count={`${guide.topics.length} topics`}
+>
+	<nav class="jump-links" aria-label={`Jump to a topic in ${section.title}`} slot="header">
+		{guide.topics.map((t) => (
+			<a class="jump-links__link" href={`#topic-${t.number}`}>{t.title}</a>
+		))}
+	</nav>
+
+	<ol class="numbered-list">
+		{guide.topics.map((topic) => (
+			<li class="numbered-item" id={`topic-${topic.number}`}>
+				<span class="numbered-item__number" aria-hidden="true">{topic.number}</span>
+				<div class="numbered-item__body">
+					<h2 class="numbered-item__title">{topic.title}</h2>
+					<blockquote class="numbered-item__quote">{topic.summary}</blockquote>
+					{(topic.scripture || topic.catechism) && (
+						<p class="numbered-item__reference">
+							{[topic.scripture, topic.catechism].filter(Boolean).join(' · ')}
+						</p>
+					)}
+					{topic.meaning.map((paragraph) => (
+						<p class="numbered-item__text">{paragraph}</p>
+					))}
+					{topic.points && (
+						<div class="numbered-item__points">
+							<p class="numbered-item__points-title">{topic.points.title}</p>
+							<ul>
+								{topic.points.items.map((item) => (
+									<li>{item}</li>
+								))}
+							</ul>
+						</div>
+					)}
+					{topic.text && (
+						<figure class="numbered-item__prayer">
+							<figcaption class="numbered-item__prayer-title">{topic.text.title}</figcaption>
+							{topic.text.lines.map((line) => (
+								<p>{line}</p>
+							))}
+						</figure>
+					)}
+					{topic.links?.map((link) => (
+						<p class="numbered-item__link">
+							<a href={withBase(link.href)}>{link.label} →</a>
+						</p>
+					))}
+				</div>
+			</li>
+		))}
+	</ol>
+
+	<slot />
+</SectionLayout>

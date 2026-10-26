@@ -23,14 +23,14 @@ const guide: SacramentGuide = {
 		{
 			heading: 'The witness of Scripture',
 			paragraphs: [
-				'In the Bread of Life discourse, Jesus says: “I am the living bread that came down from heaven… the bread that I will give is my flesh for the life of the world” (John 6:51). When many disciples were scandalized, He did not soften His words but insisted: “My flesh is true food, and my blood is true drink” (John 6:55). Many walked away, and He let them go.',
+				'In the Bread of Life discourse, Jesus says: “I am the living bread that came down from heaven… the bread that I will give is my flesh for the life of the world” (John 6:51). When many disciples were scandalised, He did not soften His words but insisted: “My flesh is true food, and my blood is true drink” (John 6:55). Many walked away, and He let them go.',
 				'At the Last Supper Jesus took bread and said, “This is my body,” and the cup, “This is my blood of the covenant” (Mark 14:22–24). St. Paul warns that whoever eats the bread or drinks the cup unworthily “will have to answer for the body and blood of the Lord” (1 Corinthians 11:27)—a warning that only makes sense if Christ is truly present.',
 			],
 		},
 		{
 			heading: 'The witness of the early Church',
 			paragraphs: [
-				'From the earliest centuries Christians spoke plainly about the Real Presence. St. Ignatius of Antioch, writing around AD 107, called the Eucharist the flesh of our Savior Jesus Christ. St. Justin Martyr, around AD 155, explained that the food blessed by the prayer of His word is the flesh and blood of the incarnate Jesus.',
+				'From the earliest centuries Christians spoke plainly about the Real Presence. St. Ignatius of Antioch, writing around AD 107, called the Eucharist the flesh of our Saviour Jesus Christ. St. Justin Martyr, around AD 155, explained that the food blessed by the prayer of His word is the flesh and blood of the incarnate Jesus.',
 				'This faith has been held without interruption in East and West. The Orthodox Churches, too, profess the real change of the bread and wine into the Body and Blood of Christ.',
 			],
 		},

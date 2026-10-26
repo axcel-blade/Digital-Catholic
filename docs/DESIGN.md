@@ -1,8 +1,8 @@
 # Design — Design System & Principles
 
-This document is the single source of truth for the visual language and interaction design of Digital Catholic. Every value in `src/styles/global.css` comes from the tokens below; components never hard-code colors.
+This document is the single source of truth for the visual language and interaction design of Digital Catholic. Every value in `src/styles/global.css` comes from the tokens below; components never hard-code colours.
 
-The site should feel like a **calm, reverent, trustworthy Catholic digital library**: warm paper, editorial serif headings, restrained color, and the reading experience first.
+The site should feel like a **calm, reverent, trustworthy Catholic digital library**: warm paper, editorial serif headings, restrained colour, and the reading experience first.
 
 Logos, the social card, and brand usage rules live in [`docs/assets/`](assets/README.md).
 
@@ -17,10 +17,12 @@ Each pathway is split into subgroups so the dropdown menus stay short: desktop p
 | Pathway | Subgroup | Sections |
 |---|---|---|
 | **Learn** | Foundations | Holy Bible, Core Catholic Beliefs, Holy Trinity, Sacraments, Ten Commandments |
+| | Church & Tradition | The Bible and Catholic Tradition, The Catholic Church, Catholic Church History, Catholic Apologetics and FAQ |
+| | Christian living | Catholic Moral Teaching, Catholic Social Teaching, Living the Catholic Faith |
 | | Holy Spirit | Gifts of the Holy Spirit, Fruits of the Holy Spirit |
-| | Holy lives | Saints |
-| **Pray** | Prayer & devotion | Prayers, Rosary |
-| | Liturgy | Holy Mass, Liturgical Calendar |
+| | Holy lives | Saints, Mary and the Communion of Saints |
+| **Pray** | Prayer & devotion | Prayers, Rosary, Catholic Prayer and Devotions |
+| | Liturgy | Holy Mass, Liturgical Calendar, Catholic Liturgy and Worship |
 | **Explore** | Life of Jesus | Disciples of Jesus, Miracles of Jesus, Parables of Jesus |
 | | Signs & wonders | Eucharistic Miracles, Marian Apparitions |
 
@@ -54,7 +56,7 @@ No web fonts are loaded; all stacks are local system fonts.
 
 ---
 
-## Color
+## Colour
 
 ### Dark theme (`:root`)
 
@@ -76,11 +78,11 @@ The site ships a single dark theme; there is no light mode or theme toggle.
 
 All text/background pairs meet WCAG AA (≥ 4.5:1); the lowest pair is gold text on gold-soft at 5.4:1.
 
-### Liturgical and status colors
+### Liturgical and status colours
 
 `--liturgical-{white,red,green,purple,rose}` are used only for small swatches, always next to a text label.
 
-Church status uses `--status-{approved,recognized,investigation,tradition,reported}` with `-soft` fills. Each status also has a distinct icon (check, cross, magnifier, bookmark, exclamation), and “reported” uses a dashed border, so meaning never depends on color.
+Church status uses `--status-{approved,recognized,investigation,tradition,reported}` with `-soft` fills. Each status also has a distinct icon (check, cross, magnifier, bookmark, exclamation), and “reported” uses a dashed border, so meaning never depends on colour.
 
 ---
 
@@ -132,9 +134,9 @@ Church status uses `--status-{approved,recognized,investigation,tradition,report
 
 1. **Content first.** Prose is set in the reading serif at `--content-width`. Chrome recedes.
 2. **Guided entry.** Visitors start from Learn, Pray, or Explore rather than a flat grid.
-3. **Honest trust signals.** Church status, sources, and review dates appear only when the underlying content supports them. Nothing is labeled “approved” unless the article text says so.
-4. **Accessible by default.** One h1 per page, logical heading order, skip link, visible `:focus-visible` outline, 44px targets, labeled icon buttons, `aria-current` on active navigation, and no meaning conveyed by color alone.
-5. **Theme parity.** Every color token has a dark counterpart; the brand burgundy stays recognizable in both.
-6. **Restraint in motion.** Short color/border/shadow transitions only; `prefers-reduced-motion` disables them and smooth scrolling.
+3. **Honest trust signals.** Church status, sources, and review dates appear only when the underlying content supports them. Nothing is labelled “approved” unless the article text says so.
+4. **Accessible by default.** One h1 per page, logical heading order, skip link, visible `:focus-visible` outline, 44px targets, labelled icon buttons, `aria-current` on active navigation, and no meaning conveyed by colour alone.
+5. **Theme parity.** Every colour token has a dark counterpart; the brand burgundy stays recognisable in both.
+6. **Restraint in motion.** Short colour/border/shadow transitions only; `prefers-reduced-motion` disables them and smooth scrolling.
 7. **Static and fast.** No framework or web fonts. Images are local, carry intrinsic `width`/`height` (read at build time by `src/lib/images.ts`), and lazy-load below the fold. Missing images are skipped instead of rendering broken.
 8. **Base-path safe.** Every internal URL goes through `withBase()` so the site works under `/Digital-Catholic/` on GitHub Pages.

@@ -8,7 +8,7 @@ A cross set within an arched window, standing on a gold line: a doorway into the
 
 | File | Use |
 | --- | --- |
-| `logo-mark.svg` | Primary mark, for light backgrounds. Same colors as `public/favicon.svg` |
+| `logo-mark.svg` | Primary mark, for light backgrounds. Same colours as `public/favicon.svg` |
 | `logo-mark-on-dark.svg` | Mark in the site's dark-theme tokens, for dark backgrounds |
 | `logo-mark-512.png`, `logo-mark-192.png`, `logo-mark-32.png` | Transparent PNGs of the primary mark (app icons, avatars, small UI) |
 | `logo-mark-on-dark-512.png` | Transparent PNG of the dark-background mark |
@@ -28,7 +28,7 @@ The SVG lockups set the name as live text in the site's serif stack (`Iowan Old 
 
 `social-card.png` (1200×630) is a copy of `public/og-image.png`, the default Open Graph and Twitter image for every page that has no image of its own.
 
-## Colors
+## Colours
 
 | Role | Light backgrounds | Dark backgrounds (site tokens) |
 | --- | --- | --- |
@@ -37,14 +37,14 @@ The SVG lockups set the name as live text in the site's serif stack (`Iowan Old 
 | Base line | `#b88b46` | `#d4ae6e` (`--color-gold`) |
 | Name (lockup) | `#2a1f1b` | `#f3ece4` (`--color-text`) |
 
-See `docs/DESIGN.md` for the full color system.
+See `docs/DESIGN.md` for the full colour system.
 
 ## Usage
 
 - Keep clear space around the mark of at least a quarter of its height.
 - Don't recolor, stretch, rotate, or add effects to the mark, and don't separate the cross from the arch.
 - Use the light versions on light backgrounds and the dark versions on dark ones. On photographs, place the mark on a solid panel.
-- The name is always written “Digital Catholic” — two words, both capitalized.
+- The name is always written “Digital Catholic” — two words, both capitalised.
 
 ## Regenerating the PNGs
 

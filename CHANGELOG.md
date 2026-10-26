@@ -7,6 +7,15 @@ All notable changes to Digital Catholic are documented here.
 ## [Unreleased]
 
 ### Added
+- Ten topic guides, each a single page of numbered topics with Scripture and Catechism references, jump links, and search entries per topic, built on a shared guide format (`src/data/guides/`, `GuidePage` component):
+  - The Bible and Catholic Tradition (`/bible-and-tradition`): Scripture and Tradition, the Magisterium, the 73 books, the Deuterocanonical books, interpreting Scripture, faith and reason, and the development of doctrine
+  - The Catholic Church (`/the-church`): the four marks, the papacy, bishops, priests, deacons and laity, apostolic succession, the Orthodox Churches, Eastern Catholic Churches, Catholic, Orthodox, Anglican and Protestant differences, and ecumenism
+  - Catholic Church History (`/church-history`): the early Church and Apostolic Fathers, the Church Fathers, the seven ecumenical councils, the Great Schism, the Reformation and Counter-Reformation, Trent and Vatican II, the papacy and religious orders
+  - Catholic Apologetics and FAQ (`/apologetics`): nine common questions, from Confession and the Real Presence to science and faith and popular misconceptions
+  - Catholic Moral Teaching (`/moral-teaching`), Catholic Social Teaching (`/social-teaching`), and Living the Catholic Faith (`/living-the-faith`), listed under a new Learn → Christian living subgroup
+  - Mary and the Communion of Saints (`/mary-and-the-saints`), listed under Learn → Holy lives
+  - Catholic Prayer and Devotions (`/prayer-and-devotions`) and Catholic Liturgy and Worship (`/liturgy-and-worship`), listed under Pray
+- New Learn → Church & Tradition subgroup in the navigation
 - The Sacraments in Depth: eight guides at `/sacraments/guides/{slug}`—Baptism and Confirmation, the Real Presence, Transubstantiation, Confession and absolution, Marriage, Holy Orders, Anointing of the Sick and Viaticum, and the state of grace and worthy reception of Holy Communion—with Catechism, Scripture, and Canon Law sources, each with an image (credited in `public/sacraments/guides/CREDITS.md`), listed on the Sacraments page, linked from each related sacrament, and included in search
 - Core Catholic Beliefs page (`/core-beliefs`) introducing the fundamental doctrines—the Holy Trinity, the Incarnation and two natures of Christ, the Resurrection and Ascension, original sin, grace and salvation, heaven, hell, purgatory and the resurrection of the dead, the Apostles' and Nicene Creeds (with the text of the Apostles' Creed), and the Four Last Things—with Scripture and Catechism references, listed under Learn → Foundations and included in search
 - Holy Trinity page (`/holy-trinity`, Matthew 28:19, CCC 232–267) covering God the Father, the Son, and the Holy Spirit, with separate articles on the Trinity in the Old Testament (`/holy-trinity/old-testament`) and New Testament (`/holy-trinity/new-testament`), listed under Learn → Foundations and included in search
@@ -26,8 +35,8 @@ All notable changes to Digital Catholic are documented here.
 - Docker support: multi-stage `Dockerfile` (Node build, nginx serve), `docker-compose.yml`, `.dockerignore`, and `docker/nginx.conf`
 - Prayers section expanded with additional common Catholic prayers
 - Prayer page improvements (slug routing, intro text, type system)
-- Items Used at Mass page (`/mass/items-used-at-mass`) — sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other sacred items, with images under `public/mass/`
-- Images for all 26 Items Used at Mass entries (every item except the liturgical colors), from Wikimedia Commons and resized to at most 960px, with alt text describing each image and attribution in `public/mass/CREDITS.md`
+- Items Used at Mass page (`/mass/items-used-at-mass`) — sacred vessels, altar linens, liturgical books, vestments, liturgical colours, and other sacred items, with images under `public/mass/`
+- Images for all 26 Items Used at Mass entries (every item except the liturgical colours), from Wikimedia Commons and resized to at most 960px, with alt text describing each image and attribution in `public/mass/CREDITS.md`
 - Origin of the Rosary moved to its own page at `/rosary/origin`
 - Holy Bible: “How the Bible Was Formed” page at `/bible/how-the-bible-was-formed` covering inspiration, oral tradition, the Septuagint, the writing of the New Testament, the canon, St. Jerome and the Vulgate, and the Council of Trent; linked from the Holy Bible page and included in search, with Caravaggio’s *Saint Jerome Writing* (public domain) credited in `public/bible/CREDITS.md`
 - Saints: St. Charbel and Archbishop Fulton J. Sheen added
@@ -37,7 +46,7 @@ All notable changes to Digital Catholic are documented here.
 - Parables and Miracles of Jesus: public-domain artwork from Wikimedia Commons for all 12 parables and 11 miracles, shown on listing cards and article pages, with alt text and attribution in `public/parables/CREDITS.md` and `public/miracles/CREDITS.md`
 - Saints: St. John Bosco added, with a “Prophetic dreams and visions” section covering his recorded dreams (the dream at nine, the Pergola of Roses, the Two Columns, the Ten Diamonds, and his 1883 South America dream)
 - Saints and Disciples: “Miracles” and “Relics” sections, added only where a saint or apostle has documented miracles or known relics, each fact checked against a cited source
-- Saints and Disciples: images for Miracles and Relics sections (public-domain paintings and freely licensed photos of relics and tombs from Wikimedia Commons), with captions crediting each photographer and license, stored in `public/saints/sections/` and `public/disciples/sections/`
+- Saints and Disciples: images for Miracles and Relics sections (public-domain paintings and freely licensed photos of relics and tombs from Wikimedia Commons), with captions crediting each photographer and licence, stored in `public/saints/sections/` and `public/disciples/sections/`
 - Article sections accept an optional `image` (`SectionImage` in `src/lib/article.ts`), rendered by `SectionList` as a captioned figure
 - Sources and a review date on every article: Catechism and Scripture references for sacraments and prayers; USCCB New American Bible links for parables, Gospel miracles, Judas, and all 73 Bible books (generated from each book's slug); Wikipedia and Church sources for Marian apparitions; the Carlo Acutis Eucharistic miracles exhibition for Eucharistic miracles; and the Shroud of Turin and Veil of Veronica pages
 - Image attribution in `public/saints/CREDITS.md` and `public/disciples/CREDITS.md`

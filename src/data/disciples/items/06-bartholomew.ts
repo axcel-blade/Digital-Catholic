@@ -56,7 +56,7 @@ const disciple: Disciple = {
 			heading: 'Death and legacy',
 			paragraphs: [
 				'In Albanopolis, Armenia, tradition holds that Bartholomew converted the king’s brother and was condemned by the pagan ruler. He was flayed alive and then beheaded or crucified—around A.D. 70—making the knife his symbol in sacred art. He is patron of tanners, butchers, and those who work with leather.',
-				'Relics are venerated on the island of Lipari and in Rome. His feast on August 24 honors a martyr who gave his skin and blood rather than deny the Son of God he had recognized under the fig tree.',
+				'Relics are venerated on the island of Lipari and in Rome. His feast on August 24 honours a martyr who gave his skin and blood rather than deny the Son of God he had recognised under the fig tree.',
 			],
 		},
 		{

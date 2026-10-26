@@ -41,7 +41,7 @@ const disciple: Disciple = {
 			paragraphs: [
 				'Andrew grew up in Bethsaida as a fisherman alongside his brother Simon (Peter). He first followed John the Baptist; when John declared Jesus the Lamb of God, Andrew stayed with the Lord and became one of the earliest disciples. His first act was to find Simon and announce, “We have found the Messiah.”',
 				'Through three years with Jesus he heard the Sermon on the Mount, saw healings and the feeding of the five thousand—where he brought the boy with loaves and fish—and stood near Christ in Jerusalem. After the Resurrection he remained in the upper room until Pentecost, then preached Christ with power in the newborn Church.',
-				'Later tradition, recorded by Eusebius and others, describes Andrew traveling along the Black Sea, through Scythia, and into Greece, founding churches and ordaining bishops as he went. He is remembered as a tireless bringer of souls to Christ.',
+				'Later tradition, recorded by Eusebius and others, describes Andrew travelling along the Black Sea, through Scythia, and into Greece, founding churches and ordaining bishops as he went. He is remembered as a tireless bringer of souls to Christ.',
 			],
 		},
 		{
@@ -56,7 +56,7 @@ const disciple: Disciple = {
 			image: { src: '/disciples/sections/andrew-relics.jpg', alt: 'The ornate marble crypt of Amalfi Cathedral with the bronze statue of St. Andrew above his altar', caption: 'The crypt of St. Andrew in Amalfi Cathedral. Photo: Luciano Tronati, CC BY-SA 4.0.' },
 			paragraphs: [
 				'According to tradition Andrew was martyred at Patras in Greece. His relics were later taken to Constantinople, and during the Fourth Crusade they were brought to Amalfi in Italy by Cardinal Peter of Capua; they were enshrined in the crypt of Amalfi Cathedral in 1208.',
-				'His head was long kept in Rome. In September 1964 Pope Paul VI returned it to Patras as a gesture of goodwill toward the Greek Orthodox Church, and Cardinal Augustin Bea presented it to the Metropolitan of Patras on September 24, 1964.',
+				'His head was long kept in Rome. In September 1964 Pope Paul VI returned it to Patras as a gesture of goodwill towards the Greek Orthodox Church, and Cardinal Augustin Bea presented it to the Metropolitan of Patras on September 24, 1964.',
 			],
 		},
 		{
@@ -69,7 +69,7 @@ const disciple: Disciple = {
 		{
 			heading: 'Lesson for disciples today',
 			paragraphs: [
-				'Andrew teaches evangelization by personal invitation: bring those you love to Christ, one soul at a time.',
+				'Andrew teaches evangelisation by personal invitation: bring those you love to Christ, one soul at a time.',
 			],
 		},
 	],

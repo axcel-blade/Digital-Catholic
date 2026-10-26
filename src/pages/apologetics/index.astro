@@ -1,0 +1,11 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<GuidePage guideKey="apologetics" description={PAGE_DESCRIPTIONS.apologetics}>
+	<p class="section-footer-links">
+		Continue with <a href={withBase('/core-beliefs')}>Core Catholic Beliefs</a> or <a href={withBase('/living-the-faith')}>Living the Catholic Faith</a>.
+	</p>
+</GuidePage>

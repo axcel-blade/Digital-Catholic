@@ -45,6 +45,7 @@ All site content is written as TypeScript objects, not Markdown or a CMS.
   - `loadCollectionByNumber` sorts by a numeric field (Commandments, Core Catholic Beliefs, Holy Spirit gifts and fruits, Holy Trinity persons)
   - Sections with a fixed order re-sort after loading: disciples by their `order` field, sacraments in Catechism order, sacrament guides (`sacraments/guides/*.ts`) by their numeric file-name prefix, prayers and Rosary mystery sets by a fixed slug list
 - Adding a file to `items/` is enough — no manual registration.
+- Topic guides (`guides/`) share one shape (`guides/types.ts`): each guide is a folder named after its section key, with `intro.ts` and numbered `items/NN-{slug}.ts` topics. `guides/index.ts` discovers every folder with `import.meta.glob`, and each guide page renders through `src/components/GuidePage.astro`.
 - Every article type extends `TrustInfo` from `src/data/lib/trust.ts`: optional `churchStatus`, `statusNote`, `sources`, `primaryReferences`, `furtherReading`, and `lastReviewed`. Pages render each field only when it is present. Bible book pages fall back to a generated USCCB link when a book has no `sources` of its own.
 - Flat files such as `src/data/saints.ts` are re-export shims so pages can import from short paths (`../../data/saints`).
 - Some sections are not item collections:
@@ -63,7 +64,7 @@ Astro's file-based routing. Each section has:
 | `<section>/index.astro` | Section listing page, e.g. `/saints` |
 | `<section>/[slug].astro` | One page per item; `getStaticPaths()` maps the collection to slugs |
 
-Other routes: `index.astro` (home), `about.astro`, `contact.astro`, `404.astro`, `commandments/index.astro`, `core-beliefs/index.astro`, `holy-trinity/index.astro`, `holy-trinity/[testament].astro` (Old and New Testament articles), `gifts-of-the-holy-spirit/index.astro`, `fruits-of-the-holy-spirit/index.astro`, `mass/index.astro` (the Holy Mass hub), `mass/order-of-mass.astro`, `mass/items-used-at-mass.astro`, `rosary/origin.astro`, `bible/how-the-bible-was-formed.astro`, `saints/path-to-sainthood.astro`, `liturgical-calendar/[year].astro`, `sacraments/guides/[slug].astro` (the Sacraments in Depth guides), and `search-index.json.ts` (a static JSON endpoint for search).
+Other routes: `index.astro` (home), `about.astro`, `contact.astro`, `404.astro`, `commandments/index.astro`, `core-beliefs/index.astro`, the topic-guide pages (`bible-and-tradition`, `the-church`, `church-history`, `apologetics`, `moral-teaching`, `social-teaching`, `living-the-faith`, `mary-and-the-saints`, `prayer-and-devotions`, `liturgy-and-worship`, each an `index.astro` using `GuidePage`), `holy-trinity/index.astro`, `holy-trinity/[testament].astro` (Old and New Testament articles), `gifts-of-the-holy-spirit/index.astro`, `fruits-of-the-holy-spirit/index.astro`, `mass/index.astro` (the Holy Mass hub), `mass/order-of-mass.astro`, `mass/items-used-at-mass.astro`, `rosary/origin.astro`, `bible/how-the-bible-was-formed.astro`, `saints/path-to-sainthood.astro`, `liturgical-calendar/[year].astro`, `sacraments/guides/[slug].astro` (the Sacraments in Depth guides), and `search-index.json.ts` (a static JSON endpoint for search).
 
 Listing pages use `SectionLayout`; item pages use `ArticleLayout`.
 
@@ -93,11 +94,11 @@ The Liturgical Calendar computes the current year on `/liturgical-calendar` and 
 | --- | --- |
 | `paths.ts` | `withBase()` / `stripBase()` — prefix and strip the deploy base path (`/Digital-Catholic/` on GitHub Pages, `/` in Docker) |
 | `seo.ts` | Site-wide metadata (`SITE`), per-section `PAGE_DESCRIPTIONS`, canonical/absolute URL helpers |
-| `sections.ts` | Registry of the seventeen content areas and their Learn/Pray/Explore grouping, plus the subgroups that organise each menu — used by navigation, homepage, About, footer, and breadcrumbs |
+| `sections.ts` | Registry of the twenty-seven content areas and their Learn/Pray/Explore grouping, plus the subgroups that organise each menu — used by navigation, homepage, About, footer, and breadcrumbs |
 | `siteNav.ts` | Builds the navigation (groups and their subgroups) from `sections.ts` and resolves active states |
 | `searchIndex.ts` | `buildSearchIndex()` — flattens every section into `{ title, url, category, excerpt, body }` entries |
 | `images.ts` | Reads JPEG/PNG dimensions from `public/` at build time; returns `null` for missing files so pages skip them |
-| `article.ts` | Heading anchors for the “On this page” list, previous/next neighbors, and related-article selection |
+| `article.ts` | Heading anchors for the “On this page” list, previous/next neighbours, and related-article selection |
 
 Internal links and asset URLs must go through `withBase()` (or `import.meta.env.BASE_URL`) so the site works under any base path.
 

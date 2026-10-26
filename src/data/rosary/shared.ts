@@ -14,13 +14,13 @@ export const rosaryOriginSections = [
 		heading: "St. Dominic and the Dominican tradition",
 		paragraphs: [
 			"A beloved tradition holds that Our Lady appeared to St. Dominic of Guzman (1170–1221), founder of the Order of Preachers (Dominicans), and gave him the Rosary as a spiritual weapon against the Albigensian heresy. While historians note that the Rosary developed gradually, St. Dominic's order became its greatest champion and helped spread this prayer across the Christian world.",
-			"Blessed Alan de la Roche (1428–1475), a Dominican friar, revived and popularized Rosary devotion in the fifteenth century. He founded Rosary confraternities that spread from the Low Countries throughout Europe, cementing the Dominican Order's role in promoting this prayer.",
+			"Blessed Alan de la Roche (1428–1475), a Dominican friar, revived and popularised Rosary devotion in the fifteenth century. He founded Rosary confraternities that spread from the Low Countries throughout Europe, cementing the Dominican Order's role in promoting this prayer.",
 		]
 	},
 	{
 		heading: "Pope Pius V and the Battle of Lepanto",
 		paragraphs: [
-			"Pope Pius V (a Dominican) standardized the Rosary in its essentially modern form with his 1569 apostolic constitution Consueverunt Romani Pontifices. Two years later, on October 7, 1571, the Christian fleet defeated the Ottoman navy at the Battle of Lepanto. Pius V attributed this decisive victory to Our Lady of the Rosary and established October 7 as the feast of Our Lady of Victory, later renamed Our Lady of the Rosary.",
+			"Pope Pius V (a Dominican) standardised the Rosary in its essentially modern form with his 1569 apostolic constitution Consueverunt Romani Pontifices. Two years later, on October 7, 1571, the Christian fleet defeated the Ottoman navy at the Battle of Lepanto. Pius V attributed this decisive victory to Our Lady of the Rosary and established October 7 as the feast of Our Lady of Victory, later renamed Our Lady of the Rosary.",
 			"This feast remains in the universal Roman Calendar today. Every October is dedicated to the Rosary in the Church's tradition.",
 		]
 	},
@@ -106,7 +106,7 @@ export const rosaryPrayers = [
 	},
 	{
 		"title": "Hail Holy Queen",
-		"text": "Hail, holy Queen, Mother of Mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve; to thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us, and after this our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary. Pray for us, O holy Mother of God, that we may be made worthy of the promises of Christ."
+		"text": "Hail, holy Queen, Mother of Mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve; to thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy towards us, and after this our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary. Pray for us, O holy Mother of God, that we may be made worthy of the promises of Christ."
 	},
 	{
 		"title": "Concluding prayer",

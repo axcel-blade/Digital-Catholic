@@ -2,7 +2,7 @@
 
 Images shown on the Sacraments in Depth guides (`/sacraments/guides/{slug}`). Each is a copy of an image already used elsewhere on the site.
 
-| File | Copied from | Source | Author | License |
+| File | Copied from | Source | Author | Licence |
 | --- | --- | --- | --- | --- |
 | baptism-and-confirmation.jpg | `public/sacraments/baptism.jpg` | Same as the Baptism article | — | — |
 | the-real-presence.jpg | `public/mass/monstrance.jpg` | [Monstranz-Christian-Schweling-Köln-1657.jpg](https://commons.wikimedia.org/wiki/File:Monstranz-Christian-Schweling-K%C3%B6ln-1657.jpg) | Tuxyso | CC BY-SA 4.0 |

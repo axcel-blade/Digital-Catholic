@@ -29,7 +29,7 @@ const mysterySet: MysterySet = {
 			"number": 4,
 			"title": "The Presentation in the Temple",
 			"fruit": "Obedience",
-			"meditation": "Mary and Joseph present the Child according to the Law. Simeon takes Jesus in his arms and prophesies a sword of sorrow for Mary. The Holy Family fulfills God’s commands in faithful love."
+			"meditation": "Mary and Joseph present the Child according to the Law. Simeon takes Jesus in his arms and prophesies a sword of sorrow for Mary. The Holy Family fulfils God’s commands in faithful love."
 		},
 		{
 			"number": 5,

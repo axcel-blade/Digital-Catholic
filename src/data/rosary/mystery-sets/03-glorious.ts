@@ -5,7 +5,7 @@ const mysterySet: MysterySet = {
 	"title": "Glorious Mysteries",
 	"excerpt": "From the Resurrection to the Coronation of Mary—the triumph of Christ and the glory of the Mother of God.",
 	"days": "Wednesday and Sunday",
-	"intro": "The Glorious Mysteries proclaim Christ’s victory over death and the honor given to Mary: the Resurrection, Ascension, Pentecost, her Assumption, and her Coronation as Queen of Heaven and earth.",
+	"intro": "The Glorious Mysteries proclaim Christ’s victory over death and the honour given to Mary: the Resurrection, Ascension, Pentecost, her Assumption, and her Coronation as Queen of Heaven and earth.",
 	"mysteries": [
 		{
 			"number": 1,
@@ -17,7 +17,7 @@ const mysterySet: MysterySet = {
 			"number": 2,
 			"title": "The Ascension",
 			"fruit": "Hope",
-			"meditation": "Forty days after Easter, Jesus ascends to the Father before the apostles’ eyes. He promises to be with us always and sends us to baptize all nations. Our true home is with Him in heaven."
+			"meditation": "Forty days after Easter, Jesus ascends to the Father before the apostles’ eyes. He promises to be with us always and sends us to baptise all nations. Our true home is with Him in heaven."
 		},
 		{
 			"number": 3,
@@ -29,7 +29,7 @@ const mysterySet: MysterySet = {
 			"number": 4,
 			"title": "The Assumption of Mary",
 			"fruit": "Grace of a happy death",
-			"meditation": "At the end of her earthly life, Mary is taken body and soul into heavenly glory. She who carried the Savior is the first to share fully in His resurrection—a sign of hope for all the faithful."
+			"meditation": "At the end of her earthly life, Mary is taken body and soul into heavenly glory. She who carried the Saviour is the first to share fully in His resurrection—a sign of hope for all the faithful."
 		},
 		{
 			"number": 5,

@@ -19,7 +19,7 @@ const disciple: Disciple = {
 		{
 			heading: 'Who was Thomas?',
 			paragraphs: [
-				'Thomas, called Didymus, was one of the Twelve. He is remembered for honest questioning and for courage: when Jesus set out toward Jerusalem where Lazarus had died, Thomas said to the others, “Let us also go, that we may die with him.”',
+				'Thomas, called Didymus, was one of the Twelve. He is remembered for honest questioning and for courage: when Jesus set out towards Jerusalem where Lazarus had died, Thomas said to the others, “Let us also go, that we may die with him.”',
 			],
 		},
 		{

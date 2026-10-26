@@ -1,0 +1,11 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<GuidePage guideKey="living-the-faith" description={PAGE_DESCRIPTIONS.livingTheFaith}>
+	<p class="section-footer-links">
+		Continue with the <a href={withBase('/sacraments')}>Sacraments</a> or <a href={withBase('/prayer-and-devotions')}>Prayer and Devotions</a>.
+	</p>
+</GuidePage>

@@ -1,5 +1,7 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
 import { coreBeliefs, coreBeliefsIntro } from '../data/coreBeliefs';
+import { guides } from '../data/guides';
+import { getSection } from './sections';
 import { trinityIntro, trinityPersons, trinityScripture, trinityScriptureIntro } from '../data/trinity';
 import { fruitsIntro, giftsIntro, spiritFruits, spiritGifts } from '../data/holySpirit';
 import { massIntro, massItemsIntro, massPages, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
@@ -119,7 +121,7 @@ export function buildSearchIndex(): SearchEntry[] {
 			'About Digital Catholic',
 			withBase('/about'),
 			'About',
-			'What Digital Catholic is, who it is for, and how its content is organized.',
+			'What Digital Catholic is, who it is for, and how its content is organised.',
 			[
 				'learning site Catholic faith biography sacraments knowledge sharing',
 			]
@@ -284,7 +286,7 @@ export function buildSearchIndex(): SearchEntry[] {
 			'Saints',
 			pathToSainthoodIntro,
 			[
-				'canonization beatification miracle heroic virtue cause',
+				'canonisation beatification miracle heroic virtue cause',
 				...pathToSainthoodSections.flatMap((s) => [s.heading, ...s.paragraphs]),
 			],
 		),
@@ -543,6 +545,35 @@ export function buildSearchIndex(): SearchEntry[] {
 					'Rosary mystery',
 					mystery.meditation.slice(0, 120) + (mystery.meditation.length > 120 ? '…' : ''),
 					[mystery.title, mystery.fruit, mystery.meditation, set.title]
+				)
+			);
+		}
+	}
+
+	for (const guide of guides) {
+		const section = getSection(guide.key);
+		items.push(
+			entry(section.title, withBase(section.href), section.label, guide.intro, [
+				guide.intro,
+				...guide.topics.map((t) => joinParts(t.title, t.summary)),
+			])
+		);
+		for (const topic of guide.topics) {
+			items.push(
+				entry(
+					`${section.title}: ${topic.title}`,
+					withBase(`${section.href}#topic-${topic.number}`),
+					section.label,
+					topic.summary,
+					[
+						topic.title,
+						topic.summary,
+						topic.scripture,
+						topic.catechism,
+						...topic.meaning,
+						...(topic.points?.items ?? []),
+						...(topic.text?.lines ?? []),
+					].filter((part): part is string => Boolean(part))
 				)
 			);
 		}

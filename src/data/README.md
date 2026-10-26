@@ -18,15 +18,16 @@ Content is split into **one file per article** so contributors can add entries w
 | Parables | `parables/items/{slug}.ts` | `the-prodigal-son.ts` |
 | Commandments | `commandments/items/NN-short-name.ts` | `03-keep-the-lord-s-day-holy.ts` |
 | Core Catholic Beliefs | `core-beliefs/items/NN-{slug}.ts` | `01-the-holy-trinity.ts` |
+| Topic guides (Bible and Tradition, The Church, Church History, Apologetics, Moral Teaching, Social Teaching, Living the Faith, Mary and the Saints, Prayer and Devotions, Liturgy and Worship) | `guides/{section-key}/items/NN-{slug}.ts` | `guides/moral-teaching/items/05-mortal-and-venial-sin.ts` (a new guide folder also needs `intro.ts`, a `siteSections` entry, and a page using `GuidePage`) |
 | Holy Trinity | `trinity/persons/NN-{slug}.ts` | `01-god-the-father.ts` |
 | Gifts and Fruits of the Holy Spirit | `holy-spirit/gifts/NN-{slug}.ts`, `holy-spirit/fruits/NN-{slug}.ts` | `01-wisdom.ts`, `01-charity.ts` |
 | Rosary mystery sets | `rosary/mystery-sets/NN-{slug}.ts` | `01-joyful.ts` (order fixed in `rosary/index.ts`) |
 | Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates |
 | Holy Mass | `mass/index.ts` | add an entry to the relevant group in `massSections` (Items Used at Mass); the Order of Mass text lives in `mass/order.ts`; a new Mass sub-page also needs an entry in `massPages` |
 
-Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, parables in `public/parables/{slug}.jpg`, miracles of Jesus in `public/miracles/{slug}.jpg`, Mass items in `public/mass/{name}.jpg`, and Bible page art in `public/bible/` (Wikimedia Commons–licensed art preferred). Record the source, author, and license of every image in that folder's `CREDITS.md`, and give each parable and miracle an `imageAlt` describing the artwork.
+Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, parables in `public/parables/{slug}.jpg`, miracles of Jesus in `public/miracles/{slug}.jpg`, Mass items in `public/mass/{name}.jpg`, and Bible page art in `public/bible/` (Wikimedia Commons–licensed art preferred). Record the source, author, and licence of every image in that folder's `CREDITS.md`, and give each parable and miracle an `imageAlt` describing the artwork.
 
-Saint and disciple sections can also carry an image, such as a painting of a miracle or a photo of a relic or tomb: add `image: { src, alt, caption }` to the section, with `src` pointing to a file in a `sections/` subfolder (for example `/saints/sections/st-nicholas-relics.jpg`). When the license requires attribution (CC BY, CC BY-SA), name the photographer and license in the caption as well as in `CREDITS.md`.
+Saint and disciple sections can also carry an image, such as a painting of a miracle or a photo of a relic or tomb: add `image: { src, alt, caption }` to the section, with `src` pointing to a file in a `sections/` subfolder (for example `/saints/sections/st-nicholas-relics.jpg`). When the licence requires attribution (CC BY, CC BY-SA), name the photographer and licence in the caption as well as in `CREDITS.md`.
 
 Each folder has:
 

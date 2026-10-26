@@ -5,7 +5,7 @@ export type ParableCategory =
 	| 'Mercy'
 	| 'Prayer'
 	| 'Discipleship'
-	| 'Wealth & judgment';
+	| 'Wealth & judgement';
 
 export interface ParableSection {
 	heading: string;

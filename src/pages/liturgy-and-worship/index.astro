@@ -1,0 +1,11 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<GuidePage guideKey="liturgy-and-worship" description={PAGE_DESCRIPTIONS.liturgyAndWorship}>
+	<p class="section-footer-links">
+		Continue with <a href={withBase('/mass')}>The Holy Mass</a> or the <a href={withBase('/liturgical-calendar')}>Liturgical Calendar</a>.
+	</p>
+</GuidePage>

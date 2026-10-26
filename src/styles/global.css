@@ -2384,6 +2384,29 @@ mark {
 	font-size: var(--text-sm);
 }
 
+.numbered-item__link + .numbered-item__link {
+	margin-top: var(--space-1);
+}
+
+/* Bulleted list within a numbered item (guide topics) */
+.numbered-item__points {
+	margin: var(--space-4) 0 0;
+}
+
+.numbered-item__points-title {
+	font-weight: 600;
+	margin: 0 0 var(--space-2);
+}
+
+.numbered-item__points ul {
+	margin: 0;
+	padding-left: var(--space-5);
+}
+
+.numbered-item__points li + li {
+	margin-top: var(--space-1);
+}
+
 .prose .numbered-list {
 	margin: var(--space-5) 0;
 	padding: 0;

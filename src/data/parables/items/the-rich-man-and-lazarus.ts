@@ -3,7 +3,7 @@ import type { Parable } from '../types';
 const parable: Parable = {
 	"slug": "the-rich-man-and-lazarus",
 	"title": "The Rich Man and Lazarus",
-	"category": "Wealth & judgment",
+	"category": "Wealth & judgement",
 	"gospelReference": "Luke 16:19–31",
 	"excerpt": "A poor man at the gate dies in Abraham’s bosom; the rich man who ignored him suffers separation and pleads for his brothers.",
 	"imageAlt": "The rich man feasting while poor Lazarus lies at his gate, attributed to Luca Giordano",

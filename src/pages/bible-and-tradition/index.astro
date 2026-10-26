@@ -1,0 +1,11 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<GuidePage guideKey="bible-and-tradition" description={PAGE_DESCRIPTIONS.bibleAndTradition}>
+	<p class="section-footer-links">
+		Continue with the <a href={withBase('/bible')}>Holy Bible</a> or <a href={withBase('/core-beliefs')}>Core Catholic Beliefs</a>.
+	</p>
+</GuidePage>

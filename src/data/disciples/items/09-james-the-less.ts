@@ -53,7 +53,7 @@ const disciple: Disciple = {
 			heading: 'Death and legacy',
 			paragraphs: [
 				'During the high priesthood of Ananus son of Ananus, James was cast down from the pinnacle of the Temple in Jerusalem and stoned; as he prayed for his killers, a fuller finished him with a club—about A.D. 62, before the Jewish War. Hegesippus and Eusebius preserve this account of his martyrdom.',
-				'He shares a feast with Philip on May 3. The Church honors him as a bishop-martyr whose blood watered the church he shepherded, and as author of a letter that still calls Christians to pure religion: care for widows and orphans and keeping oneself unstained by the world.',
+				'He shares a feast with Philip on May 3. The Church honours him as a bishop-martyr whose blood watered the church he shepherded, and as author of a letter that still calls Christians to pure religion: care for widows and orphans and keeping oneself unstained by the world.',
 			],
 		},
 		{

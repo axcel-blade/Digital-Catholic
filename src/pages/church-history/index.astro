@@ -1,0 +1,11 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<GuidePage guideKey="church-history" description={PAGE_DESCRIPTIONS.churchHistory}>
+	<p class="section-footer-links">
+		Continue with <a href={withBase('/the-church')}>The Catholic Church</a> or the <a href={withBase('/saints')}>Saints</a>.
+	</p>
+</GuidePage>

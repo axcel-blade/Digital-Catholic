@@ -6,7 +6,7 @@ export const trinityScripture: TrinityTestament[] = [
 	{
 		id: 'old-testament',
 		title: 'Foreshadowed in the Old Testament',
-		intro: "Israel was taught above all that God is one (Deuteronomy 6:4). Within that faith, the Old Testament speaks of God’s Word, Spirit, and Wisdom in ways the Church, in the light of Christ, recognizes as anticipations of the three divine Persons.",
+		intro: "Israel was taught above all that God is one (Deuteronomy 6:4). Within that faith, the Old Testament speaks of God’s Word, Spirit, and Wisdom in ways the Church, in the light of Christ, recognises as anticipations of the three divine Persons.",
 		passages: [
 			{
 				reference: 'Genesis 1:1–3',
@@ -78,7 +78,7 @@ export const trinityScripture: TrinityTestament[] = [
 			{
 				reference: 'Matthew 3:16–17; Mark 1:9–11',
 				title: 'The Baptism of the Lord',
-				meaning: "The Son is baptized, the Spirit descends like a dove, and the Father’s voice proclaims His beloved Son. The Church sees here a manifestation of the Trinity (CCC 535–536)."
+				meaning: "The Son is baptised, the Spirit descends like a dove, and the Father’s voice proclaims His beloved Son. The Church sees here a manifestation of the Trinity (CCC 535–536)."
 			},
 			{
 				reference: 'Matthew 17:1–5',

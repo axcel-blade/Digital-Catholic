@@ -22,7 +22,7 @@ const guide: SacramentGuide = {
 		{
 			heading: 'Substance and appearances',
 			paragraphs: [
-				'Every thing has what it is (its substance) and how it appears to the senses (its accidents or appearances): color, taste, weight, texture, shape. Normally the two go together. In the Eucharist, the substance of bread and wine ceases to be, and the substance of Christ’s Body and Blood takes its place, while the appearances of bread and wine remain.',
+				'Every thing has what it is (its substance) and how it appears to the senses (its accidents or appearances): colour, taste, weight, texture, shape. Normally the two go together. In the Eucharist, the substance of bread and wine ceases to be, and the substance of Christ’s Body and Blood takes its place, while the appearances of bread and wine remain.',
 				'This is why a consecrated host still looks, tastes, and would test in a laboratory like bread. The senses are not deceived about what they perceive; they simply cannot perceive substance. What we know of the change, we know by faith in Christ’s word: “This is my body.”',
 			],
 		},

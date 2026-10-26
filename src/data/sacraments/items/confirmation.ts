@@ -13,7 +13,7 @@ const sacrament: Sacrament = {
 		{
 			"heading": "What is Confirmation?",
 			"paragraphs": [
-				"Confirmation completes the grace of Baptism. It is the sacrament in which the baptized are more perfectly bound to the Church and enriched with a special strength of the Holy Spirit.",
+				"Confirmation completes the grace of Baptism. It is the sacrament in which the baptised are more perfectly bound to the Church and enriched with a special strength of the Holy Spirit.",
 				"Like the apostles at Pentecost, those who are confirmed are sent to spread and defend the faith by word and action."
 			]
 		},
