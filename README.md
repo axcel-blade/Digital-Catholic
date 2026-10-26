@@ -26,7 +26,7 @@ A static Catholic digital library for learning and sharing the faith — clear r
 
 ## What it covers
 
-The library has fifteen content areas, grouped into three pathways. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
+The library has fifteen content areas, grouped into three pathways, each split into smaller subgroups in the menus. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
 
 ### Learn
 
@@ -159,7 +159,7 @@ docker-compose.yml    Local container setup on port 8080
 
 - How the site is built and deployed: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - Add or edit content: [src/data/README.md](src/data/README.md)
-- Section names, pathways, and menu descriptions: `src/lib/sections.ts`
+- Section names, pathways, menu subgroups, and menu descriptions: `src/lib/sections.ts`
 - Page titles and meta descriptions: `src/lib/seo.ts`
 - Design tokens and component rules: [docs/DESIGN.md](docs/DESIGN.md)
 - Logos and brand usage: [docs/assets/](docs/assets/README.md)

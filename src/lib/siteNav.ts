@@ -8,11 +8,18 @@ export interface ResolvedNavItem {
 	isActive: boolean;
 }
 
+export interface ResolvedNavSubgroup {
+	key: string;
+	label: string;
+	items: ResolvedNavItem[];
+}
+
 export interface ResolvedNavGroup {
 	key: SectionGroupKey;
 	label: string;
 	summary: string;
 	items: ResolvedNavItem[];
+	subgroups: ResolvedNavSubgroup[];
 	isActive: boolean;
 }
 
@@ -36,14 +43,21 @@ export function buildSiteNav(currentPath: string): SiteNav {
 	const path = stripBase(currentPath).replace(/(.)\/$/, '$1');
 
 	const groups = sectionGroups.map((group) => {
-		const items = siteSections
-			.filter((section) => section.group === group.key)
-			.map((section) => resolve(section.href, section.navLabel, path, section.blurb));
+		const sections = siteSections.filter((section) => section.group === group.key);
+		const subgroups = group.subgroups.map((subgroup) => ({
+			key: subgroup.key,
+			label: subgroup.label,
+			items: sections
+				.filter((section) => section.subgroup === subgroup.key)
+				.map((section) => resolve(section.href, section.navLabel, path, section.blurb)),
+		}));
+		const items = subgroups.flatMap((subgroup) => subgroup.items);
 		return {
 			key: group.key,
 			label: group.label,
 			summary: group.summary,
 			items,
+			subgroups,
 			isActive: items.some((item) => item.isActive),
 		};
 	});
