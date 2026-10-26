@@ -17,7 +17,7 @@ Each pathway is split into subgroups so the dropdown menus stay short: desktop p
 | Pathway | Subgroup | Sections |
 |---|---|---|
 | **Learn** | Foundations | Holy Bible, Core Catholic Beliefs, Holy Trinity, Sacraments, Ten Commandments |
-| | Church & Tradition | The Bible and Catholic Tradition, The Catholic Church, Catholic Church History, Catholic Apologetics and FAQ, Church History Timeline, Compare Christian Traditions |
+| **Study** | Church & Tradition | The Bible and Catholic Tradition, The Catholic Church, Catholic Church History, Catholic Apologetics and FAQ, Church History Timeline, Compare Christian Traditions |
 | | Christian living | Catholic Moral Teaching, Catholic Social Teaching, Living the Catholic Faith |
 | | Study tools | Catholic Glossary, Ask a Catholic Question, Catholic Study Paths |
 | | Holy Spirit | Gifts of the Holy Spirit, Fruits of the Holy Spirit |
@@ -27,7 +27,7 @@ Each pathway is split into subgroups so the dropdown menus stay short: desktop p
 | **Explore** | Life of Jesus | Disciples of Jesus, Miracles of Jesus, Parables of Jesus |
 | | Signs & wonders | Eucharistic Miracles, Marian Apparitions |
 
-Top-level navigation: Home · Learn ▾ · Pray ▾ · Explore ▾ · About · Contact · Search · Theme toggle.
+Top-level navigation: Home · Learn ▾ · Study ▾ · Pray ▾ · Explore ▾ · About · Contact · Search · Theme toggle.
 
 To add a section: add it to `siteSections`, add a description to `PAGE_DESCRIPTIONS` in `src/lib/seo.ts`, and create its pages with `SectionLayout` / `ArticleLayout`.
 
@@ -107,7 +107,7 @@ Church status uses `--status-{approved,recognized,investigation,tradition,report
 |---|---|
 | `36rem` | Previous/next article links side by side |
 | `48rem` | Footer shows four columns; calendar summary cards side by side |
-| `52rem` | Hero art appears; pathways and library become three columns |
+| `52rem` | Hero art appears; pathways become two columns and the library three |
 | `56rem` | Featured calendar becomes two columns |
 | `60rem` | Desktop navigation replaces the menu button; article sidebar (image + sticky “On this page”) appears; About/Contact become two columns |
 | `64rem` | Footer brand column sits beside the link columns |
@@ -134,7 +134,7 @@ Church status uses `--status-{approved,recognized,investigation,tradition,report
 ## Principles
 
 1. **Content first.** Prose is set in the reading serif at `--content-width`. Chrome recedes.
-2. **Guided entry.** Visitors start from Learn, Pray, or Explore rather than a flat grid.
+2. **Guided entry.** Visitors start from Learn, Study, Pray, or Explore rather than a flat grid.
 3. **Honest trust signals.** Church status, sources, and review dates appear only when the underlying content supports them. Nothing is labelled “approved” unless the article text says so.
 4. **Accessible by default.** One h1 per page, logical heading order, skip link, visible `:focus-visible` outline, 44px targets, labelled icon buttons, `aria-current` on active navigation, and no meaning conveyed by colour alone.
 5. **Theme parity.** Every colour token has a dark counterpart; the brand burgundy stays recognisable in both.

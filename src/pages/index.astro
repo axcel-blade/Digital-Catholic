@@ -13,6 +13,7 @@ const currentPath = Astro.url.pathname;
 
 const pathwayActions: Record<string, { href: string; label: string }> = {
 	learn: { href: '/bible', label: 'Begin with the Holy Bible' },
+	study: { href: '/study-paths', label: 'Follow a study path' },
 	pray: { href: '/rosary', label: 'Learn to pray the Rosary' },
 	explore: { href: '/disciples', label: 'Meet the Twelve Apostles' },
 };
@@ -133,8 +134,8 @@ const websiteJsonLd = {
 				<p class="eyebrow">Guided pathways</p>
 				<h2 class="band__title" id="pathways-title">Find your starting point</h2>
 				<p class="band__intro">
-					Three ways into the library, whether you are studying the faith, deepening your prayer, or
-					simply curious.
+					Four ways into the library, whether you are learning the basics, studying the faith in depth,
+					deepening your prayer, or simply curious.
 				</p>
 			</header>
 

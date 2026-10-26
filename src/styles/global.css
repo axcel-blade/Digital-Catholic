@@ -707,6 +707,31 @@ mark {
 	}
 }
 
+/* Narrow desktops: keep the header on one comfortable line */
+@media (min-width: 60rem) and (max-width: 72rem) {
+	.primary-nav {
+		margin-left: var(--space-1);
+	}
+
+	.primary-nav__link {
+		padding: 0 var(--space-2);
+	}
+
+	.search-toggle {
+		flex: 0 0 auto;
+		min-width: 0;
+		padding-inline: var(--space-3);
+	}
+
+	.search-toggle__label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+	}
+}
+
 @media (max-width: 22rem) {
 	.brand__name {
 		font-size: 1.05rem;
@@ -1570,7 +1595,13 @@ mark {
 
 @media (min-width: 52rem) {
 	.pathways {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 80rem) {
+	.pathways {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
@@ -1587,6 +1618,10 @@ mark {
 
 .pathway--learn {
 	border-top-color: var(--color-scripture);
+}
+
+.pathway--study {
+	border-top-color: var(--color-liturgy);
 }
 
 .pathway--pray {

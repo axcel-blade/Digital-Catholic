@@ -26,7 +26,7 @@ A static Catholic digital library for learning and sharing the faith — clear r
 
 ## What it covers
 
-The library has thirty-three content areas, grouped into three pathways, each split into smaller subgroups in the menus. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
+The library has thirty-three content areas, grouped into four pathways, each split into smaller subgroups in the menus. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
 
 ### Learn
 
@@ -40,19 +40,24 @@ The library has thirty-three content areas, grouped into three pathways, each sp
 | **Ten Commandments** | The text and meaning of each commandment |
 | **Gifts of the Holy Spirit** | The seven gifts and what each one means |
 | **Fruits of the Holy Spirit** | The twelve fruits and how each shapes the Christian life |
+| **Mary and the Communion of Saints** | The Marian doctrines, the intercession and veneration of saints, relics and sacramentals, and angels |
+
+### Study
+
+| Section | What you'll find |
+| --- | --- |
 | **The Bible and Catholic Tradition** | Scripture and Tradition, the Magisterium, the 73 books and the Deuterocanonical books, how Catholics interpret Scripture, faith and reason, and the development of doctrine |
 | **The Catholic Church** | The four marks, the Pope, bishops, priests, deacons and laity, apostolic succession, the Orthodox and Eastern Catholic Churches, the differences between Christian traditions, and ecumenism |
 | **Catholic Church History** | The early Church and Church Fathers, the seven ecumenical councils, the Great Schism, the Reformation and Counter-Reformation, Trent and Vatican II, the papacy, and religious orders |
+| **Church History Timeline** | Milestones from Pentecost to the present, filterable by era |
+| **Compare Christian Traditions** | A sourced, side-by-side comparison of Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, and Protestant beliefs |
 | **Catholic Apologetics and FAQ** | Answers to common questions — Confession, the Real Presence, Mary and the saints, infant baptism, salvation, faith and works, the Pope, science and faith, and misconceptions |
 | **Catholic Moral Teaching** | The capital sins and virtues, the theological and cardinal virtues, the Commandments, the Beatitudes, mortal and venial sin, conscience, mercy, and the Works of Mercy |
 | **Catholic Social Teaching** | Human dignity, the common good, solidarity and subsidiarity, the poor, the dignity of work, family, stewardship of creation, and peace and citizenship |
 | **Living the Catholic Faith** | First Communion and Confirmation, Confession step by step, OCIA, vocations, dating and marriage, Mass for beginners, daily prayer, and faith at university and work |
-| **Church History Timeline** | Milestones from Pentecost to the present, filterable by era |
-| **Compare Christian Traditions** | A sourced, side-by-side comparison of Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, and Protestant beliefs |
 | **Catholic Glossary** | Plain-language definitions of Catholic terms, from absolution to viaticum, with Catechism references |
 | **Ask a Catholic Question** | A searchable FAQ on doctrine, worship, morality, and Church history |
 | **Catholic Study Paths** | Guided learning plans for beginners, people becoming Catholic, and practising Catholics |
-| **Mary and the Communion of Saints** | The Marian doctrines, the intercession and veneration of saints, relics and sacramentals, and angels |
 
 ### Pray
 
