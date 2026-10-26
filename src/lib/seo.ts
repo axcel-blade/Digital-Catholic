@@ -18,7 +18,7 @@ export const SITE = {
 export const PAGE_DESCRIPTIONS = {
 	home: SITE.defaultDescription,
 	about:
-		'What Digital Catholic is, who it is for, how its fifteen content areas are organized, and its approach to accuracy and devotion.',
+		'What Digital Catholic is, who it is for, how its sixteen content areas are organized, and its approach to accuracy and devotion.',
 	contact:
 		'Contact Digital Catholic with questions, corrections, or suggestions—by email or by opening an issue in the project’s GitHub repository.',
 	bible:
@@ -41,6 +41,12 @@ export const PAGE_DESCRIPTIONS = {
 		'Parables of Jesus Christ in the Gospels—stories of God’s Kingdom with Scripture references and lessons for discipleship.',
 	commandments:
 		'The Ten Commandments—God’s moral law given to Moses—with the text of each commandment and its meaning for love of God and neighbor.',
+	holyTrinity:
+		'The Most Holy Trinity—one God in three divine Persons, the Father, the Son, and the Holy Spirit—with Scripture and the teaching of the Catechism.',
+	trinityOldTestament:
+		'How the Old Testament foreshadows the Holy Trinity—God’s Word, Spirit, and Wisdom at creation, the visitors at Mamre, the thrice-holy God, and the promised Spirit.',
+	trinityNewTestament:
+		'How the New Testament reveals the Holy Trinity—the Annunciation, the Baptism of the Lord, Christ’s promise of the Spirit, Pentecost, and the letters of the apostles.',
 	giftsOfTheHolySpirit:
 		'The seven gifts of the Holy Spirit—wisdom, understanding, counsel, fortitude, knowledge, piety, and fear of the Lord (Isaiah 11:2)—and what each one means.',
 	fruitsOfTheHolySpirit:

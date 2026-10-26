@@ -7,6 +7,7 @@ All notable changes to Digital Catholic are documented here.
 ## [Unreleased]
 
 ### Added
+- Holy Trinity page (`/holy-trinity`, Matthew 28:19, CCC 232–267) covering God the Father, the Son, and the Holy Spirit, with separate articles on the Trinity in the Old Testament (`/holy-trinity/old-testament`) and New Testament (`/holy-trinity/new-testament`), listed under Learn → Foundations and included in search
 - Gifts of the Holy Spirit page (`/gifts-of-the-holy-spirit`, Isaiah 11:2, CCC 1830–1831) and Fruits of the Holy Spirit page (`/fruits-of-the-holy-spirit`, Galatians 5:22–23, CCC 1832), listed under Learn and included in search
 - Site-wide redesign as a warm, editorial Catholic digital library: paper background, burgundy and gold accents, serif headings and reading text, and matching dark theme
 - Learn / Pray / Explore information architecture, defined once in `src/lib/sections.ts` and used by navigation, homepage, About, and footer

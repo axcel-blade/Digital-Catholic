@@ -42,7 +42,7 @@ All site content is written as TypeScript objects, not Markdown or a CMS.
   - `index.ts` — loads every item and exports the collection plus lookup helpers
 - `index.ts` uses Vite's `import.meta.glob('./items/*.ts', { eager: true })` and the helpers in `src/data/lib/loadCollection.ts`:
   - `loadCollection` sorts items by `slug`
-  - `loadCollectionByNumber` sorts by a numeric field (Commandments, Holy Spirit gifts and fruits)
+  - `loadCollectionByNumber` sorts by a numeric field (Commandments, Holy Spirit gifts and fruits, Holy Trinity persons)
   - Sections with a fixed order re-sort after loading: disciples by their `order` field, sacraments in Catechism order, prayers and Rosary mystery sets by a fixed slug list
 - Adding a file to `items/` is enough — no manual registration.
 - Every article type extends `TrustInfo` from `src/data/lib/trust.ts`: optional `churchStatus`, `statusNote`, `sources`, `primaryReferences`, `furtherReading`, and `lastReviewed`. Pages render each field only when it is present. Bible book pages fall back to a generated USCCB link when a book has no `sources` of its own.
@@ -63,7 +63,7 @@ Astro's file-based routing. Each section has:
 | `<section>/index.astro` | Section listing page, e.g. `/saints` |
 | `<section>/[slug].astro` | One page per item; `getStaticPaths()` maps the collection to slugs |
 
-Other routes: `index.astro` (home), `about.astro`, `contact.astro`, `404.astro`, `commandments/index.astro`, `gifts-of-the-holy-spirit/index.astro`, `fruits-of-the-holy-spirit/index.astro`, `mass/index.astro` (the Holy Mass hub), `mass/order-of-mass.astro`, `mass/items-used-at-mass.astro`, `rosary/origin.astro`, `bible/how-the-bible-was-formed.astro`, `saints/path-to-sainthood.astro`, `liturgical-calendar/[year].astro`, and `search-index.json.ts` (a static JSON endpoint for search).
+Other routes: `index.astro` (home), `about.astro`, `contact.astro`, `404.astro`, `commandments/index.astro`, `holy-trinity/index.astro`, `holy-trinity/[testament].astro` (Old and New Testament articles), `gifts-of-the-holy-spirit/index.astro`, `fruits-of-the-holy-spirit/index.astro`, `mass/index.astro` (the Holy Mass hub), `mass/order-of-mass.astro`, `mass/items-used-at-mass.astro`, `rosary/origin.astro`, `bible/how-the-bible-was-formed.astro`, `saints/path-to-sainthood.astro`, `liturgical-calendar/[year].astro`, and `search-index.json.ts` (a static JSON endpoint for search).
 
 Listing pages use `SectionLayout`; item pages use `ArticleLayout`.
 
@@ -93,7 +93,7 @@ The Liturgical Calendar computes the current year on `/liturgical-calendar` and 
 | --- | --- |
 | `paths.ts` | `withBase()` / `stripBase()` — prefix and strip the deploy base path (`/Digital-Catholic/` on GitHub Pages, `/` in Docker) |
 | `seo.ts` | Site-wide metadata (`SITE`), per-section `PAGE_DESCRIPTIONS`, canonical/absolute URL helpers |
-| `sections.ts` | Registry of the fifteen content areas and their Learn/Pray/Explore grouping, plus the subgroups that organise each menu — used by navigation, homepage, About, footer, and breadcrumbs |
+| `sections.ts` | Registry of the sixteen content areas and their Learn/Pray/Explore grouping, plus the subgroups that organise each menu — used by navigation, homepage, About, footer, and breadcrumbs |
 | `siteNav.ts` | Builds the navigation (groups and their subgroups) from `sections.ts` and resolves active states |
 | `searchIndex.ts` | `buildSearchIndex()` — flattens every section into `{ title, url, category, excerpt, body }` entries |
 | `images.ts` | Reads JPEG/PNG dimensions from `public/` at build time; returns `null` for missing files so pages skip them |

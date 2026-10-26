@@ -1,0 +1,59 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import { trinityScripture } from '../../data/trinity';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import type { ArticleLink, ArticleSection } from '../../lib/article';
+import type { TrinityTestament } from '../../data/trinity';
+
+export function getStaticPaths() {
+	return trinityScripture.map((testament, i) => ({
+		params: { testament: testament.id },
+		props: { testament, other: trinityScripture[(i + 1) % trinityScripture.length], index: i },
+	}));
+}
+
+interface Props {
+	testament: TrinityTestament;
+	other: TrinityTestament;
+	index: number;
+}
+
+const { testament, other, index } = Astro.props;
+
+const sections: ArticleSection[] = testament.passages.map((passage) => ({
+	heading: passage.title,
+	paragraphs: [`Scripture: ${passage.reference}`, passage.meaning],
+}));
+
+const otherLink: ArticleLink = {
+	href: withBase(`/holy-trinity/${other.id}`),
+	title: `The Trinity ${other.title}`,
+	excerpt: other.intro,
+};
+
+const description =
+	testament.id === 'old-testament'
+		? PAGE_DESCRIPTIONS.trinityOldTestament
+		: PAGE_DESCRIPTIONS.trinityNewTestament;
+---
+
+<ArticleLayout
+	title={`The Trinity ${testament.title}`}
+	description={description}
+	currentPath={Astro.url.pathname}
+	sectionKey="holy-trinity"
+	label="Holy Trinity · Scripture"
+	lead={testament.intro}
+	meta={[{ term: 'Passages', value: String(testament.passages.length) }]}
+	sections={sections}
+	prev={index > 0 ? otherLink : undefined}
+	next={index === 0 ? otherLink : undefined}
+>
+	<SectionList sections={sections} />
+	<p class="callout callout--liturgy">
+		Return to <a href={withBase('/holy-trinity')}>the Most Holy Trinity</a>: one God in three Persons, the Father,
+		the Son, and the Holy Spirit.
+	</p>
+</ArticleLayout>

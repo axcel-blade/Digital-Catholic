@@ -1,4 +1,5 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
+import { trinityIntro, trinityPersons, trinityScripture, trinityScriptureIntro } from '../data/trinity';
 import { fruitsIntro, giftsIntro, spiritFruits, spiritGifts } from '../data/holySpirit';
 import { massIntro, massItemsIntro, massPages, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
@@ -214,6 +215,18 @@ export function buildSearchIndex(): SearchEntry[] {
 			[commandmentsIntro, ...commandments.map((c) => joinParts(c.title, c.text, c.meaning))],
 		),
 		entry(
+			'Holy Trinity',
+			withBase('/holy-trinity'),
+			'Doctrine',
+			trinityIntro,
+			[
+				trinityIntro,
+				...trinityPersons.map((p) => joinParts(p.title, p.summary, p.meaning, p.scripture)),
+				trinityScriptureIntro,
+				...trinityScripture.flatMap((t) => t.passages.map((p) => joinParts(p.reference, p.title, p.meaning))),
+			],
+		),
+		entry(
 			'Gifts of the Holy Spirit',
 			withBase('/gifts-of-the-holy-spirit'),
 			'Holy Spirit',
@@ -400,6 +413,30 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Commandment',
 				commandment.text,
 				[commandment.title, commandment.text, commandment.meaning]
+			)
+		);
+	}
+
+	for (const person of trinityPersons) {
+		items.push(
+			entry(
+				`Holy Trinity: ${person.title}`,
+				withBase(`/holy-trinity#person-${person.number}`),
+				'Doctrine',
+				person.summary,
+				[person.title, person.summary, person.meaning, person.scripture]
+			)
+		);
+	}
+
+	for (const testament of trinityScripture) {
+		items.push(
+			entry(
+				`Holy Trinity: ${testament.title}`,
+				withBase(`/holy-trinity/${testament.id}`),
+				'Doctrine',
+				testament.intro,
+				[testament.title, testament.intro, ...testament.passages.map((p) => joinParts(p.reference, p.title, p.meaning))]
 			)
 		);
 	}

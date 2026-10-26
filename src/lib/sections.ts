@@ -80,6 +80,16 @@ export const siteSections: SiteSection[] = [
 		blurb: 'Summaries of all 73 books of the Catholic canon.',
 	},
 	{
+		key: 'holy-trinity',
+		href: '/holy-trinity',
+		title: 'Holy Trinity',
+		navLabel: 'Holy Trinity',
+		group: 'learn',
+		subgroup: 'foundations',
+		label: 'Doctrine',
+		blurb: 'One God in three Persons: Father, Son, and Holy Spirit.',
+	},
+	{
 		key: 'saints',
 		href: '/saints',
 		title: 'Saints',
