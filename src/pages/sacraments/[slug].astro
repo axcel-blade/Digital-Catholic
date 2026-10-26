@@ -5,6 +5,7 @@ import {
 	sacraments,
 	sacramentGroupLabels,
 	getSacramentImageAlt,
+	getGuidesForSacrament,
 	type Sacrament,
 } from '../../data/sacraments';
 import { withBase } from '../../lib/paths';
@@ -31,6 +32,7 @@ const toLink = (s: Sacrament): ArticleLink => ({
 });
 
 const { prev, next } = getNeighbors(sacraments, index);
+const guides = getGuidesForSacrament(sacrament.slug);
 ---
 
 <ArticleLayout
@@ -48,4 +50,16 @@ const { prev, next } = getNeighbors(sacraments, index);
 	trust={sacrament}
 >
 	<SectionList sections={sacrament.sections} />
+	{guides.length > 0 && (
+		<section class="article-section">
+			<h2>Go deeper</h2>
+			<ul>
+				{guides.map((guide) => (
+					<li>
+						<a href={withBase(`/sacraments/guides/${guide.slug}`)}>{guide.title}</a> — {guide.excerpt}
+					</li>
+				))}
+			</ul>
+		</section>
+	)}
 </ArticleLayout>

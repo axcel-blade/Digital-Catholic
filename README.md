@@ -34,7 +34,7 @@ The library has seventeen content areas, grouped into three pathways, each split
 | --- | --- |
 | **Holy Bible** | Summaries of all 73 books of the Catholic canon, including the deuterocanonical books, and how the Bible was formed |
 | **Saints** | Biographies of holy men and women with life dates, feast days, miracles, and relics, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint) |
-| **Sacraments** | All seven sacraments in Catechism order — initiation, healing, and service of communion |
+| **Sacraments** | All seven sacraments in Catechism order — initiation, healing, and service of communion — plus eight in-depth guides (The Sacraments in Depth) on Baptism and Confirmation, the Real Presence, Transubstantiation, Confession, Marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion |
 | **Core Catholic Beliefs** | The fundamental doctrines: the Trinity, the Incarnation, the Resurrection and Ascension, original sin and grace, heaven, hell, and purgatory, the Creeds, and the Four Last Things |
 | **Holy Trinity** | One God in three Persons — the Father, the Son, and the Holy Spirit — and how the Trinity appears across the Old and New Testaments |
 | **Ten Commandments** | The text and meaning of each commandment |
