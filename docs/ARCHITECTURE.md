@@ -64,7 +64,7 @@ Astro's file-based routing. Each section has:
 | `<section>/index.astro` | Section listing page, e.g. `/saints` |
 | `<section>/[slug].astro` | One page per item; `getStaticPaths()` maps the collection to slugs |
 
-Other routes: `index.astro` (home), `about.astro`, `contact.astro`, `404.astro`, `commandments/index.astro`, `core-beliefs/index.astro`, the topic-guide pages (`bible-and-tradition`, `the-church`, `church-history`, `apologetics`, `moral-teaching`, `social-teaching`, `living-the-faith`, `mary-and-the-saints`, `prayer-and-devotions`, `liturgy-and-worship`, each an `index.astro` using `GuidePage`), `holy-trinity/index.astro`, `holy-trinity/[testament].astro` (Old and New Testament articles), `gifts-of-the-holy-spirit/index.astro`, `fruits-of-the-holy-spirit/index.astro`, `mass/index.astro` (the Holy Mass hub), `mass/order-of-mass.astro`, `mass/items-used-at-mass.astro`, `rosary/origin.astro`, `bible/how-the-bible-was-formed.astro`, `saints/path-to-sainthood.astro`, `liturgical-calendar/[year].astro`, `sacraments/guides/[slug].astro` (the Sacraments in Depth guides), and `search-index.json.ts` (a static JSON endpoint for search).
+Other routes: `index.astro` (home), `about.astro`, `contact.astro`, `404.astro`, `commandments/index.astro`, `core-beliefs/index.astro`, `glossary/index.astro`, `daily-gospel/index.astro` (picks the day’s reflection in the browser), `ask-a-catholic-question/index.astro` (client-side search and topic filter), `study-paths/index.astro`, `church-history-timeline/index.astro` (era filter via `CardFilter`), `compare-christian-traditions/index.astro`, the topic-guide pages (`bible-and-tradition`, `the-church`, `church-history`, `apologetics`, `moral-teaching`, `social-teaching`, `living-the-faith`, `mary-and-the-saints`, `prayer-and-devotions`, `liturgy-and-worship`, each an `index.astro` using `GuidePage`), `holy-trinity/index.astro`, `holy-trinity/[testament].astro` (Old and New Testament articles), `gifts-of-the-holy-spirit/index.astro`, `fruits-of-the-holy-spirit/index.astro`, `mass/index.astro` (the Holy Mass hub), `mass/order-of-mass.astro`, `mass/items-used-at-mass.astro`, `rosary/origin.astro`, `bible/how-the-bible-was-formed.astro`, `saints/path-to-sainthood.astro`, `liturgical-calendar/[year].astro`, `sacraments/guides/[slug].astro` (the Sacraments in Depth guides), and `search-index.json.ts` (a static JSON endpoint for search).
 
 Listing pages use `SectionLayout`; item pages use `ArticleLayout`.
 
@@ -83,7 +83,8 @@ The Liturgical Calendar computes the current year on `/liturgical-calendar` and 
 | `src/components/SEOHead.astro` | Description, canonical URL, Open Graph/Twitter tags, WebSite/Organization JSON-LD |
 | `src/components/EntryCard.astro`, `CardFilter.astro` | Clickable article cards and progressive-enhancement filters |
 | `src/components/Breadcrumbs.astro`, `PageHeader.astro` | Breadcrumb trail and section page header |
-| `src/components/StatusBadge.astro`, `StatusLegend.astro`, `TrustPanel.astro` | Church status labels and the “About this article” panel |
+| `src/components/StatusBadge.astro`, `StatusLegend.astro`, `TrustPanel.astro` | Church status labels and the “About this article” panel, including its References block (Catechism, Scripture, Church documents) |
+| `src/components/ReferenceLine.astro` | Linked Scripture and Catechism line for numbered topics (guides, Core Beliefs, Commandments, FAQ) |
 | `src/components/SectionList.astro` | Article sections with anchor ids shared with the “On this page” list, and an optional captioned image per section (`SectionImage` in `src/lib/article.ts`) |
 | `src/components/ShareLink.astro` | Copy-link button |
 | `src/components/LiturgicalCalendarView.astro` | Year navigation, season summary, “today” card, and monthly listings |
@@ -94,9 +95,10 @@ The Liturgical Calendar computes the current year on `/liturgical-calendar` and 
 | --- | --- |
 | `paths.ts` | `withBase()` / `stripBase()` — prefix and strip the deploy base path (`/Digital-Catholic/` on GitHub Pages, `/` in Docker) |
 | `seo.ts` | Site-wide metadata (`SITE`), per-section `PAGE_DESCRIPTIONS`, canonical/absolute URL helpers |
-| `sections.ts` | Registry of the twenty-seven content areas and their Learn/Pray/Explore grouping, plus the subgroups that organise each menu — used by navigation, homepage, About, footer, and breadcrumbs |
+| `sections.ts` | Registry of the thirty-three content areas and their Learn/Pray/Explore grouping, plus the subgroups that organise each menu — used by navigation, homepage, About, footer, and breadcrumbs |
 | `siteNav.ts` | Builds the navigation (groups and their subgroups) from `sections.ts` and resolves active states |
 | `searchIndex.ts` | `buildSearchIndex()` — flattens every section into `{ title, url, category, excerpt, body }` entries |
+| `references.ts` | Catechism paragraphs, Scripture citations, and verified links to official Church documents. `getArticleReferences()` builds the References block of every article from section defaults, per-article entries, and citations already in the data; `scriptureUrl()` and `documentsMentionedIn()` link the reference lines on topic pages |
 | `images.ts` | Reads JPEG/PNG dimensions from `public/` at build time; returns `null` for missing files so pages skip them |
 | `article.ts` | Heading anchors for the “On this page” list, previous/next neighbours, and related-article selection |
 

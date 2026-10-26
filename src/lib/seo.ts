@@ -18,7 +18,7 @@ export const SITE = {
 export const PAGE_DESCRIPTIONS = {
 	home: SITE.defaultDescription,
 	about:
-		'What Digital Catholic is, who it is for, how its twenty-seven content areas are organised, and its approach to accuracy and devotion.',
+		'What Digital Catholic is, who it is for, how its thirty-three content areas are organised, and its approach to accuracy and devotion.',
 	contact:
 		'Contact Digital Catholic with questions, corrections, or suggestions—by email or by opening an issue in the project’s GitHub repository.',
 	bible:
@@ -63,6 +63,18 @@ export const PAGE_DESCRIPTIONS = {
 		'Catholic prayer and devotions—the Liturgy of the Hours, Lectio Divina, Eucharistic adoration, the Divine Mercy Chaplet, the Angelus, the Stations of the Cross, novenas and litanies, and fasting.',
 	liturgyAndWorship:
 		'Catholic liturgy and worship—the parts of the Mass, Sunday and holy days of obligation, the liturgical year and colours, the Real Presence, sacred music, sacred signs, Eastern liturgies, and reverence at Mass.',
+	glossary:
+		'A Catholic glossary explaining key terms—transubstantiation, Magisterium, indulgence, sacramental, apostolic succession, and more—with Catechism references.',
+	askACatholicQuestion:
+		'A searchable FAQ answering common questions about Catholic doctrine, worship, morality, and Church history, with Scripture and Catechism references.',
+	studyPaths:
+		'Guided Catholic learning plans for beginners, people preparing to become Catholic through OCIA, and practising Catholics who want to go deeper.',
+	churchHistoryTimeline:
+		'An interactive timeline of Catholic Church history, from Pentecost and the apostles through the councils, the Great Schism, the Reformation, and Vatican II to the present.',
+	compareChristianTraditions:
+		'A careful, sourced comparison of Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, and Protestant beliefs on authority, Scripture, the sacraments, salvation, Mary, and more.',
+	dailyGospel:
+		'A daily Gospel passage with a short explanation and a reflection question, cycling through key scenes from the life of Jesus.',
 	holyTrinity:
 		'The Most Holy Trinity—one God in three divine Persons, the Father, the Son, and the Holy Spirit—with Scripture and the teaching of the Catechism.',
 	trinityOldTestament:

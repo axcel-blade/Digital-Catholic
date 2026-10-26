@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ShareLink from '../components/ShareLink.astro';
 import StatusBadge from '../components/StatusBadge.astro';
 import TrustPanel from '../components/TrustPanel.astro';
+import { getArticleReferences } from '../lib/references';
 import { getAbsoluteUrl, getCanonicalUrl, SITE, type BreadcrumbItem } from '../lib/seo';
 import { getSection } from '../lib/sections';
 import { withBase } from '../lib/paths';
@@ -169,7 +170,7 @@ const articleJsonLd = {
 					<slot />
 				</div>
 
-				<TrustPanel trust={trust} />
+				<TrustPanel trust={trust} references={getArticleReferences(sectionKey, currentPath)} />
 
 				{(prev || next) && (
 					<nav class="article-pager" aria-label={`More in ${section.title}`}>

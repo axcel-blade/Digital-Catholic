@@ -17,11 +17,12 @@ Each pathway is split into subgroups so the dropdown menus stay short: desktop p
 | Pathway | Subgroup | Sections |
 |---|---|---|
 | **Learn** | Foundations | Holy Bible, Core Catholic Beliefs, Holy Trinity, Sacraments, Ten Commandments |
-| | Church & Tradition | The Bible and Catholic Tradition, The Catholic Church, Catholic Church History, Catholic Apologetics and FAQ |
+| | Church & Tradition | The Bible and Catholic Tradition, The Catholic Church, Catholic Church History, Catholic Apologetics and FAQ, Church History Timeline, Compare Christian Traditions |
 | | Christian living | Catholic Moral Teaching, Catholic Social Teaching, Living the Catholic Faith |
+| | Study tools | Catholic Glossary, Ask a Catholic Question, Catholic Study Paths |
 | | Holy Spirit | Gifts of the Holy Spirit, Fruits of the Holy Spirit |
 | | Holy lives | Saints, Mary and the Communion of Saints |
-| **Pray** | Prayer & devotion | Prayers, Rosary, Catholic Prayer and Devotions |
+| **Pray** | Prayer & devotion | Prayers, Rosary, Catholic Prayer and Devotions, Daily Gospel and Reflection |
 | | Liturgy | Holy Mass, Liturgical Calendar, Catholic Liturgy and Worship |
 | **Explore** | Life of Jesus | Disciples of Jesus, Miracles of Jesus, Parables of Jesus |
 | | Signs & wonders | Eucharistic Miracles, Marian Apparitions |

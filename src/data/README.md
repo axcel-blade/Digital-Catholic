@@ -18,6 +18,12 @@ Content is split into **one file per article** so contributors can add entries w
 | Parables | `parables/items/{slug}.ts` | `the-prodigal-son.ts` |
 | Commandments | `commandments/items/NN-short-name.ts` | `03-keep-the-lord-s-day-holy.ts` |
 | Core Catholic Beliefs | `core-beliefs/items/NN-{slug}.ts` | `01-the-holy-trinity.ts` |
+| Catholic Glossary | `glossary/terms.ts` | add a `{ term, definition, catechism?, link? }` entry; the page sorts and groups by letter |
+| Daily Gospel | `daily-gospel/index.ts` | add to `gospelReflections`; the page cycles through them by day of the year |
+| Ask a Catholic Question | `faq/index.ts` | add to `faqEntries` with a `category` of doctrine, worship, morality, or history |
+| Study paths | `study-paths/index.ts` | add a path or a step (`title`, `href`, `note`) |
+| Church History Timeline | `timeline/index.ts` | add to `timelineEvents` with a sortable `year` and an `era` |
+| Compare Christian Traditions | `compare-traditions/index.ts` | add a row to `comparisonRows` with a value for every tradition |
 | Topic guides (Bible and Tradition, The Church, Church History, Apologetics, Moral Teaching, Social Teaching, Living the Faith, Mary and the Saints, Prayer and Devotions, Liturgy and Worship) | `guides/{section-key}/items/NN-{slug}.ts` | `guides/moral-teaching/items/05-mortal-and-venial-sin.ts` (a new guide folder also needs `intro.ts`, a `siteSections` entry, and a page using `GuidePage`) |
 | Holy Trinity | `trinity/persons/NN-{slug}.ts` | `01-god-the-father.ts` |
 | Gifts and Fruits of the Holy Spirit | `holy-spirit/gifts/NN-{slug}.ts`, `holy-spirit/fruits/NN-{slug}.ts` | `01-wisdom.ts`, `01-charity.ts` |

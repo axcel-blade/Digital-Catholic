@@ -1,0 +1,34 @@
+---
+/**
+ * Scripture and Catechism line for a numbered topic: each Scripture citation
+ * links to its text, and any official document it names links to vatican.va.
+ */
+import { documentsMentionedIn, scriptureUrl, splitCitations } from '../lib/references';
+
+interface Props {
+	scripture?: string;
+	catechism?: string;
+}
+
+const { scripture, catechism } = Astro.props;
+const citations = scripture ? splitCitations(scripture) : [];
+const documents = catechism ? documentsMentionedIn(catechism) : [];
+---
+
+{(citations.length > 0 || catechism) && (
+	<p class="numbered-item__reference">
+		{citations.map((citation, i) => (
+			<>{i > 0 && '; '}<a href={scriptureUrl(citation)} rel="noopener noreferrer" target="_blank">{citation}<span class="visually-hidden"> (opens in a new tab)</span></a></>
+		))}
+		{citations.length > 0 && catechism && ' · '}
+		{catechism}
+		{documents.length > 0 && (
+			<span class="numbered-item__documents">
+				{' · Read: '}
+				{documents.map((doc, i) => (
+					<>{i > 0 && ', '}<a href={doc.url} rel="noopener noreferrer" target="_blank">{doc.label}<span class="visually-hidden"> (opens in a new tab)</span></a></>
+				))}
+			</span>
+		)}
+	</p>
+)}

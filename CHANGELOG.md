@@ -7,6 +7,14 @@ All notable changes to Digital Catholic are documented here.
 ## [Unreleased]
 
 ### Added
+- Catholic Glossary (`/glossary`): 47 terms from absolution to viaticum, grouped A–Z, with Catechism references, links to fuller explanations, and a search entry per term
+- Daily Gospel and Reflection (`/daily-gospel`): 32 Gospel scenes, each with the passage in brief, an explanation, and a reflection question; the page shows a different one each day, with previous/next navigation and a link to the day’s Mass readings
+- Ask a Catholic Question (`/ask-a-catholic-question`): a searchable FAQ of 24 questions organised by doctrine, worship, morality, and Church history
+- Catholic Study Paths (`/study-paths`): guided learning plans for beginners, people preparing to become Catholic through OCIA, and practising Catholics
+- Church History Timeline (`/church-history-timeline`): 43 milestones from Pentecost to the present, filterable by era
+- Compare Christian Traditions (`/compare-christian-traditions`): a sourced comparison of Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, and Protestant beliefs on twelve topics
+- References on every article: the “About this article” panel now lists Catechism paragraphs, linked Scripture citations, and links to official Church documents on vatican.va (`src/lib/references.ts`); Scripture citations on topic pages, Core Beliefs, the Ten Commandments (now with Catechism paragraphs), and the Gifts and Fruits of the Holy Spirit are linked too
+- New Learn → Study tools subgroup in the navigation
 - Ten topic guides, each a single page of numbered topics with Scripture and Catechism references, jump links, and search entries per topic, built on a shared guide format (`src/data/guides/`, `GuidePage` component):
   - The Bible and Catholic Tradition (`/bible-and-tradition`): Scripture and Tradition, the Magisterium, the 73 books, the Deuterocanonical books, interpreting Scripture, faith and reason, and the development of doctrine
   - The Catholic Church (`/the-church`): the four marks, the papacy, bishops, priests, deacons and laity, apostolic succession, the Orthodox Churches, Eastern Catholic Churches, Catholic, Orthodox, Anglican and Protestant differences, and ecumenism

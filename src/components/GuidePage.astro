@@ -1,5 +1,6 @@
 ---
 import SectionLayout from '../layouts/SectionLayout.astro';
+import ReferenceLine from './ReferenceLine.astro';
 import { getGuide } from '../data/guides';
 import { getSection } from '../lib/sections';
 import { withBase } from '../lib/paths';
@@ -35,11 +36,7 @@ const section = getSection(guideKey);
 				<div class="numbered-item__body">
 					<h2 class="numbered-item__title">{topic.title}</h2>
 					<blockquote class="numbered-item__quote">{topic.summary}</blockquote>
-					{(topic.scripture || topic.catechism) && (
-						<p class="numbered-item__reference">
-							{[topic.scripture, topic.catechism].filter(Boolean).join(' · ')}
-						</p>
-					)}
+					<ReferenceLine scripture={topic.scripture} catechism={topic.catechism} />
 					{topic.meaning.map((paragraph) => (
 						<p class="numbered-item__text">{paragraph}</p>
 					))}

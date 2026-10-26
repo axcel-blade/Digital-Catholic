@@ -26,7 +26,7 @@ A static Catholic digital library for learning and sharing the faith — clear r
 
 ## What it covers
 
-The library has twenty-seven content areas, grouped into three pathways, each split into smaller subgroups in the menus. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
+The library has thirty-three content areas, grouped into three pathways, each split into smaller subgroups in the menus. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
 
 ### Learn
 
@@ -47,6 +47,11 @@ The library has twenty-seven content areas, grouped into three pathways, each sp
 | **Catholic Moral Teaching** | The capital sins and virtues, the theological and cardinal virtues, the Commandments, the Beatitudes, mortal and venial sin, conscience, mercy, and the Works of Mercy |
 | **Catholic Social Teaching** | Human dignity, the common good, solidarity and subsidiarity, the poor, the dignity of work, family, stewardship of creation, and peace and citizenship |
 | **Living the Catholic Faith** | First Communion and Confirmation, Confession step by step, OCIA, vocations, dating and marriage, Mass for beginners, daily prayer, and faith at university and work |
+| **Church History Timeline** | Milestones from Pentecost to the present, filterable by era |
+| **Compare Christian Traditions** | A sourced, side-by-side comparison of Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, and Protestant beliefs |
+| **Catholic Glossary** | Plain-language definitions of Catholic terms, from absolution to viaticum, with Catechism references |
+| **Ask a Catholic Question** | A searchable FAQ on doctrine, worship, morality, and Church history |
+| **Catholic Study Paths** | Guided learning plans for beginners, people becoming Catholic, and practising Catholics |
 | **Mary and the Communion of Saints** | The Marian doctrines, the intercession and veneration of saints, relics and sacramentals, and angels |
 
 ### Pray
@@ -57,6 +62,7 @@ The library has twenty-seven content areas, grouped into three pathways, each sp
 | **Rosary** | How to pray it, the traditional prayers, all twenty mysteries, and its origin |
 | **Holy Mass** | The order of Mass step by step, and the items used at Mass: sacred vessels, altar linens, liturgical books, vestments, and liturgical colours |
 | **Liturgical Calendar** | Seasons, solemnities, feasts, and memorials by year, with a “today” view |
+| **Daily Gospel and Reflection** | A Gospel passage each day, with a short explanation and a question for reflection |
 | **Catholic Prayer and Devotions** | The Liturgy of the Hours, Lectio Divina, adoration and Benediction, the Divine Mercy Chaplet, the Angelus, the Stations of the Cross, novenas and litanies, and fasting |
 | **Catholic Liturgy and Worship** | The parts of the Mass, Sunday and holy days of obligation, the liturgical year and its colours, the Real Presence, sacred music, sacred signs, Eastern liturgies, and reverence at Mass |
 

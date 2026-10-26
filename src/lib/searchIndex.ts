@@ -1,6 +1,12 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
 import { coreBeliefs, coreBeliefsIntro } from '../data/coreBeliefs';
 import { guides } from '../data/guides';
+import { glossary, glossaryIntro, termId } from '../data/glossary';
+import { faqEntries, faqIntro, faqCategoryLabels } from '../data/faq';
+import { studyPaths, studyPathsIntro } from '../data/study-paths';
+import { timelineEvents, timelineIntro } from '../data/timeline';
+import { compareIntro, comparisonRows } from '../data/compare-traditions';
+import { dailyGospelIntro, gospelReflections } from '../data/daily-gospel';
 import { getSection } from './sections';
 import { trinityIntro, trinityPersons, trinityScripture, trinityScriptureIntro } from '../data/trinity';
 import { fruitsIntro, giftsIntro, spiritFruits, spiritGifts } from '../data/holySpirit';
@@ -548,6 +554,54 @@ export function buildSearchIndex(): SearchEntry[] {
 				)
 			);
 		}
+	}
+
+	items.push(
+		entry('Catholic Glossary', withBase('/glossary'), 'Reference', glossaryIntro, [
+			glossaryIntro,
+			...glossary.map((t) => t.term),
+		]),
+		entry('Ask a Catholic Question', withBase('/ask-a-catholic-question'), 'FAQ', faqIntro, [
+			faqIntro,
+			...faqEntries.map((f) => f.question),
+		]),
+		entry('Catholic Study Paths', withBase('/study-paths'), 'Learning plans', studyPathsIntro, [
+			studyPathsIntro,
+			...studyPaths.map((p) => joinParts(p.title, p.audience, p.summary)),
+		]),
+		entry('Church History Timeline', withBase('/church-history-timeline'), 'Timeline', timelineIntro, [
+			timelineIntro,
+			...timelineEvents.map((e) => joinParts(e.date, e.title, e.description)),
+		]),
+		entry('Compare Christian Traditions', withBase('/compare-christian-traditions'), 'Comparison', compareIntro, [
+			compareIntro,
+			...comparisonRows.map((r) => joinParts(r.topic, ...Object.values(r.values))),
+		]),
+		entry('Daily Gospel and Reflection', withBase('/daily-gospel'), 'Daily prayer', dailyGospelIntro, [
+			dailyGospelIntro,
+			...gospelReflections.map((r) => joinParts(r.reference, r.title)),
+		])
+	);
+
+	for (const term of glossary) {
+		items.push(
+			entry(`Glossary: ${term.term}`, withBase(`/glossary#${termId(term.term)}`), 'Reference', term.definition, [
+				term.term,
+				term.definition,
+				term.catechism ?? '',
+			])
+		);
+	}
+
+	for (const faq of faqEntries) {
+		items.push(
+			entry(faq.question, withBase('/ask-a-catholic-question'), `FAQ · ${faqCategoryLabels[faq.category]}`, faq.answer[0], [
+				faq.question,
+				...faq.answer,
+				faq.catechism ?? '',
+				faq.scripture ?? '',
+			])
+		);
 	}
 
 	for (const guide of guides) {
