@@ -217,7 +217,7 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 763–766',
 		scripture: 'Matthew 16:18; Acts 2:1–47',
-		link: { href: '/church-history#timeline-title', label: 'Church History Timeline' },
+		link: { href: '/church-history-timeline', label: 'Church History Timeline' },
 	},
 	{
 		question: 'Why did the Catholic and Orthodox Churches split?',

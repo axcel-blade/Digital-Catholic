@@ -62,7 +62,23 @@ export const PAGE_DESCRIPTIONS = {
 	dailyGospel:
 		'A daily Gospel passage with a short explanation and a reflection question, cycling through key scenes from the life of Jesus.',
 	holyTrinity:
-		'The Most Holy Trinity—one God in three divine Persons, the Father, the Son, and the Holy Spirit—with Scripture, the teaching of the Catechism, and the seven gifts of the Holy Spirit (Isaiah 11:2) and the twelve fruits of the Spirit (Galatians 5:22–23).',
+		'The Most Holy Trinity—one God in three divine Persons, the Father, the Son, and the Holy Spirit—with Scripture and the teaching of the Catechism.',
+	churchHistoryTimeline:
+		'An interactive timeline of Catholic Church history, from Pentecost and the apostles through the councils, the Great Schism, the Reformation, and Vatican II to the present.',
+	disciples:
+		'The Twelve Apostles of Jesus Christ—biographies from their call to their deaths, Gospel and Acts accounts, feast days, and lessons for following Christ.',
+	eucharisticMiracles:
+		'Eucharistic miracles in Catholic history—Lanciano, Bolsena, and more recent events—with a clear note on the Church status of each account.',
+	marianApparitions:
+		'Marian apparitions such as Guadalupe, Lourdes, Fátima, Knock, and Velankanni—what happened, what it means, and the Church status of each.',
+	miracles:
+		'Miracles of Jesus Christ in the Gospels of Matthew, Mark, Luke, and John—signs of the Kingdom with Scripture references and reflections for faith.',
+	parables:
+		'Parables of Jesus Christ in the Gospels—stories of God’s Kingdom with Scripture references and lessons for discipleship.',
+	sacramentsInDepth:
+		'In-depth guides to the sacraments—Baptism and Confirmation, the Real Presence, transubstantiation, Confession, marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion.',
+	holySpirit:
+		'The seven gifts of the Holy Spirit (Isaiah 11:2)—wisdom, understanding, counsel, fortitude, knowledge, piety, and fear of the Lord—and the twelve fruits of the Spirit (Galatians 5:22–23), with what each means for the Christian life.',
 	trinityOldTestament:
 		'How the Old Testament foreshadows the Holy Trinity—God’s Word, Spirit, and Wisdom at creation, the visitors at Mamre, the thrice-holy God, and the promised Spirit.',
 	trinityNewTestament:

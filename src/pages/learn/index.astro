@@ -1,9 +1,7 @@
 ---
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import EntryCard from '../../components/EntryCard.astro';
-import CardFilter from '../../components/CardFilter.astro';
-import EmptyState from '../../components/EmptyState.astro';
-import { disciples, disciplesIntro, getDiscipleImageAlt } from '../../data/disciples';
+import { disciples, disciplesIntro } from '../../data/disciples';
 import { parables, parablesIntro } from '../../data/parables';
 import { miracles, miraclesIntro } from '../../data/miracles';
 import { saints } from '../../data/saints';
@@ -16,16 +14,6 @@ import { marianApparitions } from '../../data/marian-apparitions';
 import { eucharisticMiracles } from '../../data/eucharistic-miracles';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
-import { slugify } from '../../lib/article';
-import { getCollectionImage } from '../../lib/images';
-
-function categoryOptions(items: { category: string }[]) {
-	return [...new Set(items.map((item) => item.category))].map((category) => ({
-		value: slugify(category),
-		label: category,
-		count: items.filter((item) => item.category === category).length,
-	}));
-}
 
 // Every page with its own URL in this section: the item pages of each collection, plus How the Bible Was Formed and the Shroud and Veil pages.
 const articleCount =
@@ -40,11 +28,8 @@ const articleCount =
 	2 +
 	marianApparitions.length +
 	eucharisticMiracles.length;
-// The seven hub cards plus the life of Jesus on this page.
-const areaCount = 8;
-
-const parableOptions = categoryOptions(parables);
-const miracleOptions = categoryOptions(miracles);
+// The seven doctrine cards plus the three life-of-Jesus cards.
+const areaCount = 10;
 ---
 
 <SectionLayout
@@ -57,8 +42,6 @@ const miracleOptions = categoryOptions(miracles);
 	<nav class="jump-links" aria-label="Jump to a part of this page" slot="header">
 		<a class="jump-links__link" href="#signs-of-faith">Scripture, Doctrine, and Saints</a>
 		<a class="jump-links__link" href="#jesus">The Life of Jesus</a>
-		<a class="jump-links__link" href="#parables">Parables of Jesus</a>
-		<a class="jump-links__link" href="#miracles">Miracles of Jesus</a>
 	</nav>
 
 	<section class="page-section" aria-labelledby="signs-of-faith">
@@ -119,96 +102,29 @@ const miracleOptions = categoryOptions(miracles);
 	<section class="page-section" aria-labelledby="jesus">
 		<h2 class="section-title" id="jesus">The Life of Jesus</h2>
 		<p class="section-intro">Jesus called twelve apostles to be with Him, taught in parables, and confirmed His teaching with mighty works. The parables reveal the Kingdom of God in stories drawn from everyday life; the miracles are signs that the Kingdom has come in Him (CCC 546–553).</p>
-	</section>
-
-	<section class="page-section" aria-labelledby="disciples">
-		<h2 class="section-title" id="disciples">The Twelve Apostles</h2>
-		<p class="section-intro">{disciplesIntro}</p>
-		{disciples.length === 0 ? (
-			<EmptyState />
-		) : (
-			<ul class="card-grid card-grid--media">
-				{disciples.map((disciple, i) => (
-					<EntryCard
-						href={withBase(`/disciples/${disciple.slug}`)}
-						title={disciple.title}
-						label="Apostle"
-						meta={disciple.alsoKnownAs}
-						excerpt={disciple.excerpt}
-						action="Read biography"
-						image={getCollectionImage('disciples', disciple.slug, getDiscipleImageAlt(disciple.title))}
-						eager={i < 3}
-					/>
-				))}
-			</ul>
-		)}
-	</section>
-
-	<section class="page-section" aria-labelledby="parables">
-		<h2 class="section-title" id="parables">Parables of Jesus</h2>
-		<p class="section-intro">{parablesIntro}</p>
-		{parables.length === 0 ? (
-			<EmptyState />
-		) : (
-			<>
-				<CardFilter
-					target="parable-list"
-					label="Filter by theme"
-					options={parableOptions}
-					noun={{ one: 'parable', many: 'parables' }}
-				/>
-				<ul class="card-grid card-grid--media" id="parable-list">
-					{parables.map((parable) => (
-						<EntryCard
-							href={withBase(`/parables/${parable.slug}`)}
-							title={parable.title}
-							label={parable.category}
-							meta={parable.gospelReference}
-							excerpt={parable.excerpt}
-							action="Read article"
-							image={getCollectionImage('parables', parable.slug, parable.imageAlt)}
-							filterValue={slugify(parable.category)}
-						/>
-					))}
-				</ul>
-			</>
-		)}
-	</section>
-
-	<section class="page-section" aria-labelledby="miracles">
-		<h2 class="section-title" id="miracles">Miracles of Jesus</h2>
-		<p class="section-intro">{miraclesIntro}</p>
-		{miracles.length === 0 ? (
-			<EmptyState />
-		) : (
-			<>
-				<CardFilter
-					target="miracle-list"
-					label="Filter by kind of sign"
-					options={miracleOptions}
-					noun={{ one: 'miracle', many: 'miracles' }}
-				/>
-				<ul class="card-grid card-grid--media" id="miracle-list">
-					{miracles.map((miracle) => (
-						<EntryCard
-							href={withBase(`/miracles/${miracle.slug}`)}
-							title={miracle.title}
-							label={miracle.category}
-							meta={miracle.gospelReference}
-							excerpt={miracle.excerpt}
-							action="Read article"
-							image={getCollectionImage('miracles', miracle.slug, miracle.imageAlt)}
-							filterValue={slugify(miracle.category)}
-						/>
-					))}
-				</ul>
-			</>
-		)}
-		<p class="section-footer-links">
-			See also <a href={withBase('/miracles/shroud-of-turin')}>the Shroud of Turin</a>,
-			<a href={withBase('/miracles/veil-of-veronica')}>the Veil of Veronica</a>, and
-			<a href={withBase('/signs-and-wonders#eucharistic-miracles')}>Eucharistic miracles</a>.
-		</p>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/disciples')}
+				title="The Twelve Apostles"
+				label="Apostles"
+				excerpt={disciplesIntro}
+				action={`Meet all ${disciples.length} apostles`}
+			/>
+			<EntryCard
+				href={withBase('/parables')}
+				title="Parables of Jesus"
+				label="Gospels"
+				excerpt={parablesIntro}
+				action={`Read ${parables.length} parables`}
+			/>
+			<EntryCard
+				href={withBase('/miracles')}
+				title="Miracles of Jesus"
+				label="Gospels"
+				excerpt={miraclesIntro}
+				action={`Read ${miracles.length} miracles`}
+			/>
+		</ul>
 	</section>
 
 	<p class="section-footer-links">

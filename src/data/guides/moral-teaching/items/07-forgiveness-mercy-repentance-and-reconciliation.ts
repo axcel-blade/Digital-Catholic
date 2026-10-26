@@ -12,7 +12,7 @@ const topic: GuideTopic = {
 	],
 	links: [
 		{ href: '/sacraments/penance', label: 'The Sacrament of Penance' },
-		{ href: '/learn#parables', label: 'The Parable of the Prodigal Son and other parables' },
+		{ href: '/parables', label: 'The Parable of the Prodigal Son and other parables' },
 	],
 };
 

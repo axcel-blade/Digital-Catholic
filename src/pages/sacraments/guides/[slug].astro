@@ -32,12 +32,12 @@ const toLink = (g: SacramentGuide): ArticleLink => ({
 const { prev, next } = getNeighbors(sacramentGuides, index);
 const relatedTeaching: Record<string, { href: string; title: string }[]> = {
 	'baptism-and-confirmation': [
-		{ href: '/holy-trinity#gifts', title: 'Gifts of the Holy Spirit' },
+		{ href: '/holy-spirit#gifts', title: 'Gifts of the Holy Spirit' },
 		{ href: '/study#topic-3', title: 'Why the Church baptises infants' },
 	],
 	'the-real-presence': [
 		{ href: '/study#topic-2', title: 'Why Catholics believe in the Real Presence' },
-		{ href: '/signs-and-wonders#eucharistic-miracles', title: 'Eucharistic miracles' },
+		{ href: '/eucharistic-miracles', title: 'Eucharistic miracles' },
 	],
 	'transubstantiation-explained': [{ href: '/glossary#term-transubstantiation', title: 'Transubstantiation in the glossary' }],
 	'confession-repentance-and-absolution': [
@@ -67,7 +67,7 @@ const relatedSacraments = guide.sacraments
 	description={guide.excerpt}
 	currentPath={Astro.url.pathname}
 	sectionKey="learn"
-	extraCrumbs={[{ label: 'Sacraments', href: withBase('/sacraments') }, { label: 'The Sacraments in Depth', href: withBase('/sacraments#in-depth') }]}
+	extraCrumbs={[{ label: 'Sacraments', href: withBase('/sacraments') }, { label: 'The Sacraments in Depth', href: withBase('/sacraments/guides') }]}
 	label="Sacrament guide"
 	lead={guide.excerpt}
 	image={getCollectionImage('sacraments/guides', guide.slug, getSacramentGuideImageAlt(guide.title))}

@@ -1,0 +1,71 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import CardFilter from '../../components/CardFilter.astro';
+import StatusLegend from '../../components/StatusLegend.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { marianApparitions, marianApparitionsIntro } from '../../data/marianApparitions';
+import { churchStatusLabels, churchStatusOrder } from '../../data/lib/trust';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+
+const statuses = churchStatusOrder.filter((status) =>
+	marianApparitions.some((a) => a.churchStatus === status)
+);
+const statusOptions = statuses.map((status) => ({
+	value: status,
+	label: churchStatusLabels[status],
+	count: marianApparitions.filter((a) => a.churchStatus === status).length,
+}));
+---
+
+<SectionLayout
+	sectionKey="learn"
+	extraCrumbs={[{ label: 'Marian and Eucharistic Signs', href: withBase('/signs-and-wonders') }]}
+	pageCrumb="Marian Apparitions"
+	heading="Marian Apparitions"
+	description={PAGE_DESCRIPTIONS.marianApparitions}
+	currentPath={Astro.url.pathname}
+	intro={marianApparitionsIntro}
+	count={`${marianApparitions.length} apparitions`}
+>
+	<Fragment slot="header">
+		{statuses.length > 0 && <StatusLegend statuses={statuses} />}
+	</Fragment>
+
+	{marianApparitions.length === 0 ? (
+		<EmptyState />
+	) : (
+		<>
+			{statusOptions.length > 1 && (
+				<CardFilter
+					target="apparition-list"
+					label="Filter by Church status"
+					options={statusOptions}
+					noun={{ one: 'apparition', many: 'apparitions' }}
+				/>
+			)}
+			<ul class="card-grid card-grid--media" id="apparition-list">
+				{marianApparitions.map((apparition, i) => (
+					<EntryCard
+						href={withBase(`/marian-apparitions/${apparition.slug}`)}
+						title={apparition.title}
+						label={apparition.category}
+						meta={`${apparition.location} · ${apparition.date}`}
+						status={apparition.churchStatus}
+						excerpt={apparition.excerpt}
+						action="Read article"
+						image={getCollectionImage('marian-apparitions', apparition.slug, apparition.imageAlt)}
+						filterValue={apparition.churchStatus}
+						eager={i < 3}
+					/>
+				))}
+			</ul>
+		</>
+	)}
+	<p class="section-footer-links">
+		Read the <a href={withBase('/saints/blessed-virgin-mary')}>biography of the Blessed Virgin Mary</a>
+		or learn to pray the <a href={withBase('/rosary')}>Rosary</a>.
+	</p>
+</SectionLayout>

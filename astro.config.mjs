@@ -43,16 +43,8 @@ export default defineConfig({
 		'/prayer-and-devotions': '/pray',
 		'/liturgy-and-worship': '/mass',
 		'/mary-and-the-saints': '/saints',
-		'/marian-apparitions': '/signs-and-wonders#marian-apparitions',
-		'/eucharistic-miracles': '/signs-and-wonders#eucharistic-miracles',
-		'/church-history-timeline': '/church-history#timeline-title',
-		'/holy-spirit': '/holy-trinity#gifts',
-		'/gifts-of-the-holy-spirit': '/holy-trinity#gifts',
-		'/fruits-of-the-holy-spirit': '/holy-trinity#fruits',
-		'/sacraments/guides': '/sacraments#in-depth',
-		'/disciples': '/learn#disciples',
-		'/parables': '/learn#parables',
-		'/miracles': '/learn#miracles',
+		'/gifts-of-the-holy-spirit': '/holy-spirit#gifts',
+		'/fruits-of-the-holy-spirit': '/holy-spirit#fruits',
 	},
 	integrations: [
 		sitemap({

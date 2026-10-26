@@ -1,0 +1,60 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import CardFilter from '../../components/CardFilter.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { parables, parablesIntro } from '../../data/parables';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { slugify } from '../../lib/article';
+import { getCollectionImage } from '../../lib/images';
+
+const categories = [...new Set(parables.map((p) => p.category))].map((category) => ({
+	value: slugify(category),
+	label: category,
+	count: parables.filter((p) => p.category === category).length,
+}));
+---
+
+<SectionLayout
+	sectionKey="learn"
+	pageCrumb="Parables of Jesus"
+	heading="Parables of Jesus Christ"
+	title="Parables of Jesus"
+	description={PAGE_DESCRIPTIONS.parables}
+	currentPath={Astro.url.pathname}
+	intro={parablesIntro}
+	count={`${parables.length} parables`}
+>
+	{parables.length === 0 ? (
+		<EmptyState />
+	) : (
+		<>
+			<CardFilter
+				target="parable-list"
+				label="Filter by theme"
+				options={categories}
+				noun={{ one: 'parable', many: 'parables' }}
+			/>
+			<ul class="card-grid card-grid--media" id="parable-list">
+				{parables.map((parable, i) => (
+					<EntryCard
+						href={withBase(`/parables/${parable.slug}`)}
+						title={parable.title}
+						label={parable.category}
+						meta={parable.gospelReference}
+						excerpt={parable.excerpt}
+						action="Read article"
+						image={getCollectionImage('parables', parable.slug, parable.imageAlt)}
+						filterValue={slugify(parable.category)}
+						eager={i < 3}
+					/>
+				))}
+			</ul>
+		</>
+	)}
+	<p class="section-footer-links">
+		See also the <a href={withBase('/miracles')}>miracles of Jesus</a> and summaries of the
+		<a href={withBase('/bible')}>Gospels and every book of the Bible</a>.
+	</p>
+</SectionLayout>

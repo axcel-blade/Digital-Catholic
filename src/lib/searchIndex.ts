@@ -134,7 +134,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Disciples of Jesus',
-			withBase('/learn#disciples'),
+			withBase('/disciples'),
 			'Disciples',
 			disciplesIntro,
 			[
@@ -146,7 +146,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Miracles of Jesus',
-			withBase('/learn#miracles'),
+			withBase('/miracles'),
 			'Miracles',
 			miraclesIntro,
 			[miraclesIntro, ...miracles.map((m) => joinParts(m.title, m.excerpt, m.gospelReference, m.category))],
@@ -173,7 +173,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Eucharistic Miracles',
-			withBase('/signs-and-wonders#eucharistic-miracles'),
+			withBase('/eucharistic-miracles'),
 			'Eucharistic',
 			eucharisticMiraclesIntro,
 			[
@@ -185,7 +185,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Marian Apparitions',
-			withBase('/signs-and-wonders#marian-apparitions'),
+			withBase('/marian-apparitions'),
 			'Marian',
 			marianApparitionsIntro,
 			[
@@ -197,7 +197,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Parables of Jesus',
-			withBase('/learn#parables'),
+			withBase('/parables'),
 			'Parables',
 			parablesIntro,
 			[parablesIntro, ...parables.map((p) => joinParts(p.title, p.excerpt, p.gospelReference, p.category))],
@@ -233,14 +233,14 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Gifts of the Holy Spirit',
-			withBase('/holy-trinity#gifts'),
+			withBase('/holy-spirit#gifts'),
 			'Holy Spirit',
 			giftsIntro,
 			[giftsIntro, ...spiritGifts.map((g) => joinParts(g.title, g.summary, g.meaning))],
 		),
 		entry(
 			'Fruits of the Holy Spirit',
-			withBase('/holy-trinity#fruits'),
+			withBase('/holy-spirit#fruits'),
 			'Holy Spirit',
 			fruitsIntro,
 			[fruitsIntro, ...spiritFruits.map((f) => joinParts(f.title, f.meaning))],
@@ -362,7 +362,7 @@ export function buildSearchIndex(): SearchEntry[] {
 	items.push(
 		entry(
 			'The Sacraments in Depth',
-			withBase('/sacraments#in-depth'),
+			withBase('/sacraments/guides'),
 			'Sacrament guides',
 			'In-depth guides to the sacraments and how to live them.',
 			sacramentGuides.map((g) => joinParts(g.title, g.excerpt))
@@ -481,7 +481,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		items.push(
 			entry(
 				`Gift of the Holy Spirit: ${gift.title}`,
-				withBase(`/holy-trinity#gift-${gift.number}`),
+				withBase(`/holy-spirit#gift-${gift.number}`),
 				'Holy Spirit',
 				gift.summary,
 				[gift.title, gift.summary, gift.meaning]
@@ -493,7 +493,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		items.push(
 			entry(
 				`Fruit of the Holy Spirit: ${fruit.title}`,
-				withBase(`/holy-trinity#fruit-${fruit.number}`),
+				withBase(`/holy-spirit#fruit-${fruit.number}`),
 				'Holy Spirit',
 				fruit.meaning,
 				[fruit.title, fruit.meaning]
@@ -564,7 +564,7 @@ export function buildSearchIndex(): SearchEntry[] {
 			studyPathsIntro,
 			...studyPaths.map((p) => joinParts(p.title, p.audience, p.summary)),
 		]),
-		entry('Church History Timeline', withBase('/church-history#timeline-title'), 'Timeline', timelineIntro, [
+		entry('Church History Timeline', withBase('/church-history-timeline'), 'Timeline', timelineIntro, [
 			timelineIntro,
 			...timelineEvents.map((e) => joinParts(e.date, e.title, e.description)),
 		]),

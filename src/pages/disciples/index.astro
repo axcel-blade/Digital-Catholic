@@ -1,0 +1,39 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { disciples, disciplesIntro, getDiscipleImageAlt } from '../../data/disciples';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+---
+
+<SectionLayout
+	sectionKey="learn"
+	pageCrumb="The Twelve Apostles"
+	heading="The Twelve Apostles"
+	title="Disciples of Jesus"
+	description={PAGE_DESCRIPTIONS.disciples}
+	currentPath={Astro.url.pathname}
+	intro={disciplesIntro}
+	count={`${disciples.length} apostles, in traditional order`}
+>
+	{disciples.length === 0 ? (
+		<EmptyState />
+	) : (
+		<ul class="card-grid card-grid--media">
+			{disciples.map((disciple, i) => (
+				<EntryCard
+					href={withBase(`/disciples/${disciple.slug}`)}
+					title={disciple.title}
+					label="Apostle"
+					meta={disciple.alsoKnownAs}
+					excerpt={disciple.excerpt}
+					action="Read biography"
+					image={getCollectionImage('disciples', disciple.slug, getDiscipleImageAlt(disciple.title))}
+					eager={i < 3}
+				/>
+			))}
+		</ul>
+	)}
+</SectionLayout>

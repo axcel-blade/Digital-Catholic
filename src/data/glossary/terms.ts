@@ -116,7 +116,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'A gathering of the bishops of the whole world with and under the Pope to teach and govern the universal Church. There have been twenty-one, from Nicaea I (325) to Vatican II (1962–1965).',
 		catechism: 'CCC 884',
-		link: { href: '/church-history#timeline-title', label: 'Church History Timeline' },
+		link: { href: '/church-history-timeline', label: 'Church History Timeline' },
 	},
 	{
 		term: 'Ecumenism',
