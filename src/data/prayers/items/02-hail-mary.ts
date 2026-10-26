@@ -24,7 +24,7 @@ const prayer: Prayer = {
 			heading: 'When Catholics pray it',
 			paragraphs: [
 				'The Hail Mary is prayed fifty-three times in a full Rosary—ten Hail Marys per decade, plus three at the opening. It is also the prayer of the Angelus (traditionally at 6 a.m., noon, and 6 p.m.), many Marian processions, and personal devotion throughout the day.',
-				'Because it centers on Christ in Mary’s womb and asks her intercession at death, the Hail Mary has comforted the dying and strengthened the living for centuries.',
+				'Because it centres on Christ in Mary’s womb and asks her intercession at death, the Hail Mary has comforted the dying and strengthened the living for centuries.',
 			],
 		},
 	],

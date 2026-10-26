@@ -21,7 +21,7 @@ const eucharisticMiracle: EucharisticMiracle = {
 			"heading": "What happened",
 			"paragraphs": [
 				"The priest Peter of Prague, troubled by doubts about the Real Presence, was celebrating Mass at Bolsena when the consecrated Host began to bleed onto the corporal. Blood stained the linen in a way witnesses could not explain away as accident.",
-				"Pope Urban IV, then staying at Orvieto, investigated the event. The corporal was enshrined in the Cathedral of Orvieto, where it is still honored. Moved by the sign, the Pope asked St. Thomas Aquinas to compose texts for a new feast."
+				"Pope Urban IV, then staying at Orvieto, investigated the event. The corporal was enshrined in the Cathedral of Orvieto, where it is still honoured. Moved by the sign, the Pope asked St. Thomas Aquinas to compose texts for a new feast."
 			]
 		},
 		{

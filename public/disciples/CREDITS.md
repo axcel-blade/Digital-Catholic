@@ -4,7 +4,7 @@ Images shown on the Disciples pages (`/disciples`). All images are from Wikimedi
 
 ## Miracles and relics section images (`sections/`)
 
-| File | Source | Author | License |
+| File | Source | Author | Licence |
 | --- | --- | --- | --- |
 | andrew-relics.jpg | [Duomo di Amalfi, Cripta 02.jpg](https://commons.wikimedia.org/wiki/File:Duomo_di_Amalfi,_Cripta_02.jpg) | Luciano Tronati | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | bartholomew-relics.jpg | [Interior - Basilica di San Bartolomeo all'Isola - Rome, Italy - DSC00465.jpg](https://commons.wikimedia.org/wiki/File:Interior_-_Basilica_di_San_Bartolomeo_all%27Isola_-_Rome,_Italy_-_DSC00465.jpg) | Daderot | Public domain |

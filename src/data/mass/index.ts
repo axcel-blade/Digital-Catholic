@@ -2,7 +2,7 @@ export { orderOfMassIntro, orderOfMassSections } from './order';
 
 export const massIntro = "The Mass is the central act of Catholic worship — the Eucharistic sacrifice in which Christ offers Himself to the Father through the ministry of the priest. Learn how the celebration unfolds from the Entrance to the Dismissal, and what each object at the altar means.";
 
-export const massItemsIntro = "Every object used at Mass carries meaning rooted in Scripture and centuries of tradition — from the chalice and paten on the altar to the vestments of the priest and the colors of the liturgical year.";
+export const massItemsIntro = "Every object used at Mass carries meaning rooted in Scripture and centuries of tradition — from the chalice and paten on the altar to the vestments of the priest and the colours of the liturgical year.";
 
 export const massPages = [
 	{
@@ -14,7 +14,7 @@ export const massPages = [
 	{
 		href: "/mass/items-used-at-mass",
 		title: "Items Used at Mass",
-		excerpt: "Sacred vessels, altar linens, liturgical books, vestments, liturgical colors, and other sacred items.",
+		excerpt: "Sacred vessels, altar linens, liturgical books, vestments, liturgical colours, and other sacred items.",
 		action: "See the items",
 	},
 ];
@@ -27,7 +27,7 @@ export const massSections = [
 			{ name: "Paten", description: "A small plate, usually matching the chalice, on which the large host consecrated for the priest rests during Mass.", image: "/mass/paten.jpg", imageAlt: "A medieval gilded silver paten, Metropolitan Museum of Art" },
 			{ name: "Ciborium", description: "A covered vessel shaped like a lidded chalice, used to hold the smaller hosts distributed to the faithful at Communion. The reserved Blessed Sacrament is kept in the ciborium inside the tabernacle.", image: "/mass/ciborium.jpg", imageAlt: "A tower-shaped silver-gilt ciborium from Cologne, c. 1400–1450, Museum Schnütgen" },
 			{ name: "Monstrance", description: "An ornate, sun-shaped vessel used to display the consecrated host for adoration and Benediction. Also called an ostensorium.", image: "/mass/monstrance.jpg", imageAlt: "A jewelled gold monstrance made in Cologne in 1657" },
-			{ name: "Pyx", description: "A small, flat, round container used by ministers to carry Holy Communion to the homebound or hospitalized.", image: "/mass/pyx.jpg", imageAlt: "A medieval French enamelled pyx topped with a cross, Walters Art Museum" },
+			{ name: "Pyx", description: "A small, flat, round container used by ministers to carry Holy Communion to the homebound or hospitalised.", image: "/mass/pyx.jpg", imageAlt: "A medieval French enamelled pyx topped with a cross, Walters Art Museum" },
 			{ name: "Cruets", description: "A pair of small pitchers that hold the water and wine brought to the altar at the Offertory.", image: "/mass/cruets.jpg", imageAlt: "A pair of silver altar cruets on a matching tray, Metropolitan Museum of Art" },
 			{ name: "Lavabo dish", description: "A small bowl used with water and towel when the priest washes his hands after the Offertory — a gesture of spiritual purification before the Consecration.", image: "/mass/lavabo-dish.jpg", imageAlt: "A medieval French liturgical basin (gemellion) used for washing hands, Walters Art Museum" },
 		]
@@ -52,15 +52,15 @@ export const massSections = [
 	{
 		heading: "Vestments",
 		items: [
-			{ name: "Alb", description: "A long white garment worn by all ordained ministers and many lay ministers. Its white color symbolizes baptismal grace and the purity of those who serve at the altar.", image: "/mass/alb.jpg", imageAlt: "Line drawing of a priest wearing a long white alb" },
-			{ name: "Stole", description: "A long, narrow strip of cloth worn over the alb. Priests wear it around the neck hanging straight down; deacons wear it over the left shoulder. It is a sign of ordained ministry and matches the liturgical color of the day.", image: "/mass/stole.jpg", imageAlt: "An embroidered 17th-century Genoese stole, Cleveland Museum of Art" },
-			{ name: "Chasuble", description: "The outermost vestment worn by the priest celebrating Mass, coming in liturgical colors: green, purple, white, red, rose, and black.", image: "/mass/chasuble.jpg", imageAlt: "A red chasuble with an embroidered crucifixion orphrey, Victoria and Albert Museum" },
-			{ name: "Dalmatic", description: "The outer vestment of the deacon — shaped like a wide-sleeved tunic — also in the liturgical color of the day.", image: "/mass/dalmatic.jpg", imageAlt: "A deacon vested in a gold dalmatic" },
+			{ name: "Alb", description: "A long white garment worn by all ordained ministers and many lay ministers. Its white colour symbolises baptismal grace and the purity of those who serve at the altar.", image: "/mass/alb.jpg", imageAlt: "Line drawing of a priest wearing a long white alb" },
+			{ name: "Stole", description: "A long, narrow strip of cloth worn over the alb. Priests wear it around the neck hanging straight down; deacons wear it over the left shoulder. It is a sign of ordained ministry and matches the liturgical colour of the day.", image: "/mass/stole.jpg", imageAlt: "An embroidered 17th-century Genoese stole, Cleveland Museum of Art" },
+			{ name: "Chasuble", description: "The outermost vestment worn by the priest celebrating Mass, coming in liturgical colours: green, purple, white, red, rose, and black.", image: "/mass/chasuble.jpg", imageAlt: "A red chasuble with an embroidered crucifixion orphrey, Victoria and Albert Museum" },
+			{ name: "Dalmatic", description: "The outer vestment of the deacon — shaped like a wide-sleeved tunic — also in the liturgical colour of the day.", image: "/mass/dalmatic.jpg", imageAlt: "A deacon vested in a gold dalmatic" },
 			{ name: "Cope", description: "A long, cape-like vestment worn by priests or bishops for solemn processions, Benediction, and other rites outside of Mass.", image: "/mass/cope.jpg", imageAlt: "The back of a brocaded silk cope, Metropolitan Museum of Art" },
 		]
 	},
 	{
-		heading: "Liturgical colors",
+		heading: "Liturgical colours",
 		items: [
 			{ name: "White / Gold", description: "Feasts of Christ, the Blessed Virgin Mary, and non-martyr saints. Used at Christmas, Easter, and celebrations of joy.", color: "#f5f0e0" },
 			{ name: "Red", description: "Pentecost, the feasts of martyrs, and celebrations of the Holy Spirit. Recalls the fire of the Spirit and the blood of witnesses.", color: "#c0392b" },
@@ -73,7 +73,7 @@ export const massSections = [
 	{
 		heading: "Other sacred items",
 		items: [
-			{ name: "Thurible (Censer)", description: "A metal vessel on chains in which incense is burned. The rising smoke symbolizes prayer ascending to God (Psalm 141:2). Used to incense the altar, Book of the Gospels, gifts, priest, and people at solemn Masses.", image: "/mass/thurible.jpg", imageAlt: "A brass thurible (censer) hanging on chains" },
+			{ name: "Thurible (Censer)", description: "A metal vessel on chains in which incense is burned. The rising smoke symbolises prayer ascending to God (Psalm 141:2). Used to incense the altar, Book of the Gospels, gifts, priest, and people at solemn Masses.", image: "/mass/thurible.jpg", imageAlt: "A brass thurible (censer) hanging on chains" },
 			{ name: "Incense boat", description: "A small container holding unburned incense grains, spooned into the thurible by the thurifer (the minister who carries it).", image: "/mass/incense-boat.jpg", imageAlt: "A medieval French enamelled incense boat, Walters Art Museum" },
 			{ name: "Aspergillum", description: "A brush or perforated ball used to sprinkle holy water on the people during the Rite of Blessing and Sprinkling or at funerals.", image: "/mass/aspergillum.jpg", imageAlt: "A metal aspergillum used to sprinkle holy water on the faithful" },
 			{ name: "Sanctus bells", description: "Small bells rung at the epiclesis and at the elevations of the host and chalice during the Eucharistic Prayer, drawing attention to the most sacred moment of the Mass.", image: "/mass/sanctus-bells.jpg", imageAlt: "A set of brass Sanctus bells at St Mel's Cathedral, Longford" },

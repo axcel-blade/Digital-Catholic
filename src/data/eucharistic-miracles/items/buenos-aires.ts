@@ -9,7 +9,7 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"excerpt": "Hosts reserved in the tabernacle appeared as bloody flesh; scientific analysis reported human heart tissue.",
 	"imageAlt": "Eucharistic adoration with the Blessed Sacrament in a monstrance",
 	"churchStatus": "reported",
-	"statusNote": "Laboratory findings were reported, but this article records no formal Church judgment on the events.",
+	"statusNote": "Laboratory findings were reported, but this article records no formal Church judgement on the events.",
 	"lastReviewed": "2026-10-25",
 	"sources": [
 		{ "label": "The Eucharistic Miracles of the World (Carlo Acutis exhibition): Buenos Aires", "url": "https://www.miracolieucaristici.org/en/download/buenosaires.pdf" },

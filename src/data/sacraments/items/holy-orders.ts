@@ -14,7 +14,7 @@ const sacrament: Sacrament = {
 			"heading": "What is Holy Orders?",
 			"paragraphs": [
 				"Holy Orders is the sacrament through which the mission entrusted by Christ to His apostles continues in the Church until the end of time. It includes three degrees: bishop, priest, and deacon.",
-				"Only baptized men who possess the approval of the Church and meet the requirements of law may be ordained. The Church’s discipline reflects the example of Christ, who chose men as apostles."
+				"Only baptised men who possess the approval of the Church and meet the requirements of law may be ordained. The Church’s discipline reflects the example of Christ, who chose men as apostles."
 			]
 		},
 		{

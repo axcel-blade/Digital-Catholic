@@ -1,5 +1,7 @@
 ---
+import RelatedTopics from '../../components/RelatedTopics.astro';
 import SectionLayout from '../../layouts/SectionLayout.astro';
+import ReferenceLine from '../../components/ReferenceLine.astro';
 import { coreBeliefs, coreBeliefsIntro } from '../../data/coreBeliefs';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
@@ -29,9 +31,7 @@ import { withBase } from '../../lib/paths';
 				<div class="numbered-item__body">
 					<h2 class="numbered-item__title">{belief.title}</h2>
 					<blockquote class="numbered-item__quote">{belief.summary}</blockquote>
-					<p class="numbered-item__reference">
-						{belief.scripture} · {belief.catechism}
-					</p>
+					<ReferenceLine scripture={belief.scripture} catechism={belief.catechism} />
 					{belief.meaning.map((paragraph) => (
 						<p class="numbered-item__text">{paragraph}</p>
 					))}
@@ -52,6 +52,8 @@ import { withBase } from '../../lib/paths';
 			</li>
 		))}
 	</ol>
+
+	<RelatedTopics currentPath={Astro.url.pathname} text={coreBeliefs.flatMap((b) => [b.title, b.summary, ...b.meaning]).join(' ')} />
 
 	<p class="section-footer-links">
 		Continue with the <a href={withBase('/holy-trinity')}>Holy Trinity</a>, the

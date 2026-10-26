@@ -20,7 +20,7 @@ const disciple: Disciple = {
 			heading: 'Who was Jude?',
 			paragraphs: [
 				'Jude, also called Thaddeus, is named in the lists of the Twelve. In John’s Gospel he is called Judas (not Iscariot) and asks at the Last Supper how Jesus will manifest Himself to the disciples and not to the world.',
-				'He is widely honored as the author of the short epistle of Jude, which warns against false teachers and exhorts believers to contend for the faith.',
+				'He is widely honoured as the author of the short epistle of Jude, which warns against false teachers and exhorts believers to contend for the faith.',
 			],
 		},
 		{
@@ -39,7 +39,7 @@ const disciple: Disciple = {
 			heading: 'Full biography',
 			paragraphs: [
 				'Jude, also called Thaddeus or Judas son of James, was one of the Twelve. At the Last Supper he asked how Jesus would manifest Himself to the disciples and not to the world—drawing forth Christ’s teaching on the Holy Spirit and love of the Father.',
-				'He is widely honored as author of the brief epistle of Jude, which urges believers to contend for the faith once delivered to the saints and warns against false teachers who distort God’s grace. Because his name resembles Judas Iscariot’s, devotion to him was long neglected—yet his intercession is considered powerful.',
+				'He is widely honoured as author of the brief epistle of Jude, which urges believers to contend for the faith once delivered to the saints and warns against false teachers who distort God’s grace. Because his name resembles Judas Iscariot’s, devotion to him was long neglected—yet his intercession is considered powerful.',
 				'Tradition pairs him with Simon the Zealot in missionary journeys to Mesopotamia and Persia, where they preached Christ, healed the sick, and established Christian communities among peoples who had not heard the Gospel.',
 			],
 		},

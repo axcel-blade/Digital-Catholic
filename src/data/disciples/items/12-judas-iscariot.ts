@@ -47,7 +47,7 @@ const disciple: Disciple = {
 			heading: 'Death and legacy',
 			paragraphs: [
 				'When Judas saw that Jesus was condemned, he repented and returned the thirty pieces to the chief priests, saying, “I have sinned in betraying innocent blood.” They refused the money; he threw it into the Temple and departed. Matthew records that he hanged himself; Acts adds that he fell headlong and burst open in the field bought with the blood money—the Field of Akeldama, “Field of Blood”—about the time of Passover A.D. 30.',
-				'No feast honors Judas. His end contrasts with Peter’s: both sinned gravely against Christ, but Peter wept and was restored while Judas despaired. Scripture preserves his fate so the faithful may flee greed and trust mercy before it is too late.',
+				'No feast honours Judas. His end contrasts with Peter’s: both sinned gravely against Christ, but Peter wept and was restored while Judas despaired. Scripture preserves his fate so the faithful may flee greed and trust mercy before it is too late.',
 			],
 		},
 		{

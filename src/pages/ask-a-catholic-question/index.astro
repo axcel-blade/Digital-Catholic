@@ -1,0 +1,112 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import ReferenceLine from '../../components/ReferenceLine.astro';
+import { faqCategoryLabels, faqCategoryOrder, faqEntries, faqId, faqIntro } from '../../data/faq';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const groups = faqCategoryOrder.map((category) => ({
+	category,
+	label: faqCategoryLabels[category],
+	entries: faqEntries.filter((e) => e.category === category),
+}));
+---
+
+<SectionLayout
+	sectionKey="ask-a-catholic-question"
+	description={PAGE_DESCRIPTIONS.askACatholicQuestion}
+	currentPath={Astro.url.pathname}
+	intro={faqIntro}
+	count={`${faqEntries.length} questions`}
+>
+	<div class="faq-tools" data-faq-tools hidden>
+		<label class="faq-tools__label" for="faq-search">Search the questions</label>
+		<input class="faq-tools__input" id="faq-search" type="search" placeholder="e.g. purgatory, Communion, Galileo" autocomplete="off" />
+		<div class="filter-bar__options" role="group" aria-label="Filter by topic">
+			<button type="button" class="filter-chip" aria-pressed="true" data-category="">All</button>
+			{groups.map((g) => (
+				<button type="button" class="filter-chip" aria-pressed="false" data-category={g.category}>
+					{g.label} <span class="filter-chip__count">{g.entries.length}</span>
+				</button>
+			))}
+		</div>
+		<p class="filter-bar__status" role="status" aria-live="polite" data-faq-status></p>
+	</div>
+
+	{groups.map((g) => (
+		<section class="faq-group" data-faq-group aria-labelledby={`faq-${g.category}`}>
+			<h2 class="faq-group__title" id={`faq-${g.category}`}>{g.label}</h2>
+			{g.entries.map((entry) => (
+				<details class="faq-item" id={faqId(entry.question)} data-faq-item data-category={g.category}>
+					<summary class="faq-item__question">{entry.question}</summary>
+					<div class="faq-item__answer">
+						{entry.answer.map((p) => <p>{p}</p>)}
+						<ReferenceLine scripture={entry.scripture} catechism={entry.catechism} />
+						{entry.link && (
+							<p class="numbered-item__link">
+								<a href={withBase(entry.link.href)}>{entry.link.label} →</a>
+							</p>
+						)}
+					</div>
+				</details>
+			))}
+		</section>
+	))}
+
+	<p class="section-footer-links">
+		For longer answers, see <a href={withBase('/apologetics')}>Catholic Apologetics and FAQ</a>, or look up a term in the
+		<a href={withBase('/glossary')}>Catholic glossary</a>.
+	</p>
+</SectionLayout>
+
+<script>
+	const tools = document.querySelector<HTMLElement>('[data-faq-tools]');
+	if (tools) {
+		tools.hidden = false;
+		const input = tools.querySelector<HTMLInputElement>('#faq-search');
+		const chips = Array.from(tools.querySelectorAll<HTMLButtonElement>('[data-category]'));
+		const status = tools.querySelector<HTMLElement>('[data-faq-status]');
+		const items = Array.from(document.querySelectorAll<HTMLDetailsElement>('[data-faq-item]'));
+		const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-faq-group]'));
+		let category = '';
+
+		const apply = () => {
+			const words = (input?.value ?? '').toLowerCase().trim().split(/\s+/).filter(Boolean);
+			let shown = 0;
+			items.forEach((item) => {
+				const text = item.textContent?.toLowerCase() ?? '';
+				const visible = (!category || item.dataset.category === category) && words.every((w) => text.includes(w));
+				item.hidden = !visible;
+				if (visible) shown += 1;
+				if (words.length && visible) item.open = true;
+			});
+			groups.forEach((group) => {
+				group.hidden = !group.querySelector('[data-faq-item]:not([hidden])');
+			});
+			if (status) {
+				status.textContent =
+					words.length || category ? `${shown} ${shown === 1 ? 'question' : 'questions'} found.` : '';
+			}
+		};
+
+		const openFromHash = () => {
+			const target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+			if (target instanceof HTMLDetailsElement) {
+				target.open = true;
+				// Wait for the opened answer to lay out before scrolling to it.
+				requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+			}
+		};
+		openFromHash();
+		window.addEventListener('hashchange', openFromHash);
+
+		input?.addEventListener('input', apply);
+		chips.forEach((chip) => {
+			chip.addEventListener('click', () => {
+				category = chip.dataset.category ?? '';
+				chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+				apply();
+			});
+		});
+	}
+</script>

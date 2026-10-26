@@ -9,7 +9,7 @@ const eucharisticMiracle: EucharisticMiracle = {
 	"excerpt": "A Host that fell during Communion was preserved and later found to bear tissue resembling heart muscle, in the shape of a cross.",
 	"imageAlt": "Interior of St. Anthony of Padua church in Sokółka, Poland",
 	"churchStatus": "recognized",
-	"statusNote": "The Archbishop of Białystok authorized devotion while leaving final judgment to the faith of the faithful.",
+	"statusNote": "The Archbishop of Białystok authorised devotion while leaving final judgement to the faith of the faithful.",
 	"lastReviewed": "2026-10-25",
 	"sources": [
 		{ "label": "The Eucharistic Miracles of the World (Carlo Acutis exhibition): Sokółka", "url": "https://www.miracolieucaristici.org/en/download/sokolka.pdf" },
@@ -20,7 +20,7 @@ const eucharisticMiracle: EucharisticMiracle = {
 			"heading": "What happened",
 			"paragraphs": [
 				"In October 2008, during Mass at the church of St. Anthony in Sokółka, a consecrated Host fell from a priest’s hands. Following rubrics, it was placed in water; when it did not dissolve as expected, it was dried and secured in the tabernacle.",
-				"Examination by medical professors in 2009 reported that part of the Host had become tissue with characteristics of human heart muscle, arranged in a form suggesting a cross. The Archbishop of Białystok authorized devotion while leaving final judgment to the faith of the faithful."
+				"Examination by medical professors in 2009 reported that part of the Host had become tissue with characteristics of human heart muscle, arranged in a form suggesting a cross. The Archbishop of Białystok authorised devotion while leaving final judgement to the faith of the faithful."
 			]
 		},
 		{

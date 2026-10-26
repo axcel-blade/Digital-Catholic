@@ -24,13 +24,13 @@ const guide: SacramentGuide = {
 			heading: 'What Baptism does',
 			paragraphs: [
 				'Baptism frees us from original sin and from all personal sin, together with all punishment due to sin. It makes us adopted children of God, members of Christ and of His Church, and sharers in His priesthood (CCC 1263–1268).',
-				'Baptism also imprints an indelible spiritual mark, or character, on the soul, so it can never be repeated (CCC 1272). Christ taught that Baptism is necessary for salvation for those to whom the Gospel has been proclaimed (John 3:5; CCC 1257), while the Church also recognizes the baptism of blood (martyrdom) and the baptism of desire (CCC 1258–1260).',
+				'Baptism also imprints an indelible spiritual mark, or character, on the soul, so it can never be repeated (CCC 1272). Christ taught that Baptism is necessary for salvation for those to whom the Gospel has been proclaimed (John 3:5; CCC 1257), while the Church also recognises the baptism of blood (martyrdom) and the baptism of desire (CCC 1258–1260).',
 			],
 		},
 		{
 			heading: 'How Baptism is celebrated',
 			paragraphs: [
-				'The essential rite is triple immersion in water, or pouring water on the head, while saying: “I baptize you in the name of the Father, and of the Son, and of the Holy Spirit” (CCC 1239–1240). The ordinary ministers are bishops, priests, and deacons, but in case of necessity anyone—even a non-baptized person—can baptize, with the right intention and using the Trinitarian formula (CCC 1256).',
+				'The essential rite is triple immersion in water, or pouring water on the head, while saying: “I baptise you in the name of the Father, and of the Son, and of the Holy Spirit” (CCC 1239–1240). The ordinary ministers are bishops, priests, and deacons, but in case of necessity anyone—even a non-baptized person—can baptise, with the right intention and using the Trinitarian formula (CCC 1256).',
 				'The rite is rich with signs: the sign of the cross, the anointing with sacred chrism, the white garment showing that the person has “put on Christ,” and the candle lit from the Easter candle. Parents and godparents profess the faith on behalf of an infant and promise to raise the child in it (CCC 1241–1255).',
 			],
 		},
@@ -38,13 +38,13 @@ const guide: SacramentGuide = {
 			heading: 'What Confirmation does',
 			paragraphs: [
 				'Confirmation brings an increase and deepening of baptismal grace. It roots us more deeply as children of God, unites us more firmly to Christ, increases the gifts of the Holy Spirit in us, binds us more perfectly to the Church, and gives a special strength to spread and defend the faith by word and deed (CCC 1303).',
-				'Like Baptism, Confirmation imprints an indelible character and is received only once (CCC 1304–1305). It is the personal Pentecost of each Christian: as the apostles laid hands on the newly baptized in Samaria so they might receive the Holy Spirit (Acts 8:14–17), so the Church continues to do.',
+				'Like Baptism, Confirmation imprints an indelible character and is received only once (CCC 1304–1305). It is the personal Pentecost of each Christian: as the apostles laid hands on the newly baptised in Samaria so they might receive the Holy Spirit (Acts 8:14–17), so the Church continues to do.',
 			],
 		},
 		{
 			heading: 'How Confirmation is celebrated',
 			paragraphs: [
-				'The essential rite is the anointing with sacred chrism on the forehead, done with the laying on of the hand, and the words: “Be sealed with the Gift of the Holy Spirit” (CCC 1300). The ordinary minister in the Latin Church is the bishop; a priest may confirm with his permission, and always confirms adults he baptizes and anyone in danger of death (CCC 1312–1314).',
+				'The essential rite is the anointing with sacred chrism on the forehead, done with the laying on of the hand, and the words: “Be sealed with the Gift of the Holy Spirit” (CCC 1300). The ordinary minister in the Latin Church is the bishop; a priest may confirm with his permission, and always confirms adults he baptises and anyone in danger of death (CCC 1312–1314).',
 				'Candidates prepare through prayer and instruction, choose a sponsor—ideally one of their baptismal godparents—and should be in the state of grace, normally making a good confession beforehand (CCC 1309–1311).',
 			],
 		},

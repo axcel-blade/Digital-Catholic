@@ -2,7 +2,7 @@
 
 Images shown on the Miracles of Jesus Christ pages (`/miracles`). All images are from Wikimedia Commons, resized to at most 960px.
 
-| File | Source | Author | License |
+| File | Source | Author | Licence |
 | --- | --- | --- | --- |
 | calming-the-storm.jpg | [Rembrandt Christ in the Storm on the Lake of Galilee.jpg](https://commons.wikimedia.org/wiki/File:Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg) | Rembrandt | Public domain |
 | casting-out-legion.jpg | [Mosaic of the exorcism of the Gerasene demoniac from the Basilica of Sant'Apollinare Nuovo.jpg](https://commons.wikimedia.org/wiki/File:Mosaic_of_the_exorcism_of_the_Gerasene_demoniac_from_the_Basilica_of_Sant%27Apollinare_Nuovo.jpg) | Unknown mosaicist, Sant'Apollinare Nuovo, Ravenna (6th century) | Public domain |

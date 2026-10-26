@@ -25,7 +25,7 @@ const marianApparition: MarianApparition = {
 		{
 			"heading": "Church approval and meaning",
 			"paragraphs": [
-				"The Shrine of Our Lady of Good Health at Velankanni has been a center of Catholic life in South India for centuries. Pope John XXIII raised it to a minor basilica in 1962. Millions of pilgrims—Hindus, Muslims, and Christians among them—visit each year, especially during the September festival.",
+				"The Shrine of Our Lady of Good Health at Velankanni has been a centre of Catholic life in South India for centuries. Pope John XXIII raised it to a minor basilica in 1962. Millions of pilgrims—Hindus, Muslims, and Christians among them—visit each year, especially during the September festival.",
 				"Velankanni shows that Mary’s maternal care reaches every nation. She gathers the sick, the poor, and seafarers under her protection and leads them to her Son. The shrine is often called the “Lourdes of the East,” a sign of hope for all India and for the universal Church."
 			]
 		}

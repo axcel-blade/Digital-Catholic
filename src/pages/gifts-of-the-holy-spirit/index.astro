@@ -1,5 +1,6 @@
 ---
 import SectionLayout from '../../layouts/SectionLayout.astro';
+import ReferenceLine from '../../components/ReferenceLine.astro';
 import { giftsIntro, spiritGifts } from '../../data/holySpirit';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
@@ -21,6 +22,8 @@ import { withBase } from '../../lib/paths';
 			</a>
 		))}
 	</nav>
+
+	<ReferenceLine scripture="Isaiah 11:1–3; 1 Corinthians 12:4–11" catechism="CCC 1830–1831" />
 
 	<ol class="numbered-list">
 		{spiritGifts.map((gift) => (

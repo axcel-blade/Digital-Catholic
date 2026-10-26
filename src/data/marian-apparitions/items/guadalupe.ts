@@ -9,7 +9,7 @@ const marianApparition: MarianApparition = {
 	"excerpt": "Mary appeared to St. Juan Diego on Tepeyac Hill and left her image on his tilma—the most visited Marian shrine in the world.",
 	"imageAlt": "Basilica of Our Lady of Guadalupe on Tepeyac Hill in Mexico City, where the tilma is venerated",
 	"churchStatus": "recognized",
-	"statusNote": "Venerated for nearly five centuries; popes have crowned and honored Our Lady of Guadalupe as Patroness of the Americas.",
+	"statusNote": "Venerated for nearly five centuries; popes have crowned and honoured Our Lady of Guadalupe as Patroness of the Americas.",
 	"lastReviewed": "2026-10-25",
 	"sources": [
 		{ "label": "Wikipedia: Our Lady of Guadalupe", "url": "https://en.wikipedia.org/wiki/Our_Lady_of_Guadalupe" }
@@ -25,7 +25,7 @@ const marianApparition: MarianApparition = {
 		{
 			"heading": "Church approval and meaning",
 			"paragraphs": [
-				"The image has been venerated for nearly five centuries; the tilma remains on display in the Basilica of Our Lady of Guadalupe. Popes have crowned and honored Our Lady of Guadalupe as Patroness of the Americas and Star of the New Evangelization.",
+				"The image has been venerated for nearly five centuries; the tilma remains on display in the Basilica of Our Lady of Guadalupe. Popes have crowned and honoured Our Lady of Guadalupe as Patroness of the Americas and Star of the New Evangelisation.",
 				"The apparition united indigenous and Spanish peoples under the Gospel and became a sign of Mary’s maternal love for all the peoples of the Americas. “Am I not here, who am your mother?” she asked Juan Diego—words that still comfort the poor and suffering."
 			]
 		}

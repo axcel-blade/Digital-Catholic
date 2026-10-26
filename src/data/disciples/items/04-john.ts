@@ -21,13 +21,13 @@ const disciple: Disciple = {
 			heading: 'Who was John?',
 			paragraphs: [
 				'John was a fisherman called with his brother James. He reclined next to Jesus at the Last Supper and stood at the foot of the cross, where the dying Lord entrusted His mother Mary to John’s care.',
-				'The Church honors him as the “beloved disciple,” the only apostle not martyred in the usual sense, though tradition says he suffered exile on Patmos.',
+				'The Church honours him as the “beloved disciple,” the only apostle not martyred in the usual sense, though tradition says he suffered exile on Patmos.',
 			],
 		},
 		{
 			heading: 'In the Gospels',
 			paragraphs: [
-				'John’s Gospel emphasizes Christ’s divinity and love: the Word made flesh, the Bread of Life, the Good Shepherd. He records intimate scenes—the wedding at Cana, Nicodemus, the Samaritan woman, Lazarus, and Thomas’s confession “My Lord and my God!”',
+				'John’s Gospel emphasises Christ’s divinity and love: the Word made flesh, the Bread of Life, the Good Shepherd. He records intimate scenes—the wedding at Cana, Nicodemus, the Samaritan woman, Lazarus, and Thomas’s confession “My Lord and my God!”',
 				'At the empty tomb John saw and believed. When the risen Christ appeared at the sea, Peter asked about John’s future; Jesus replied, “If it is my will that he remain until I come, what is that to you?”',
 			],
 		},
@@ -40,7 +40,7 @@ const disciple: Disciple = {
 		{
 			heading: 'Full biography',
 			paragraphs: [
-				'John, son of Zebedee, was a Galilean fisherman called with his brother James. He reclined next to Jesus at the Last Supper and stood at the foot of the cross, where Christ entrusted His mother Mary to John’s care. The Church honors him as the beloved disciple who leaned on the Lord’s breast and ran with Peter to the empty tomb.',
+				'John, son of Zebedee, was a Galilean fisherman called with his brother James. He reclined next to Jesus at the Last Supper and stood at the foot of the cross, where Christ entrusted His mother Mary to John’s care. The Church honours him as the beloved disciple who leaned on the Lord’s breast and ran with Peter to the empty tomb.',
 				'After Pentecost he preached in Jerusalem and, according to tradition, took Mary to Ephesus. He wrote the Fourth Gospel, three epistles, and the Book of Revelation—the last while exiled on the island of Patmos under the Emperor Domitian. His writings stress Christ’s divinity and the command to love one another.',
 				'Early Fathers report that he lived to a great age in Ephesus, cared for churches throughout Asia Minor, and resisted heresies that denied Christ had come in the flesh. When too weak to walk to gatherings, he was carried and simply exhorted, “Little children, love one another.”',
 			],

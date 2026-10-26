@@ -26,7 +26,7 @@ const marianApparition: MarianApparition = {
 		{
 			"heading": "Church approval and meaning",
 			"paragraphs": [
-				"Bishop Bertrand-Sévère Laurence of Tarbes declared in 1862 that the faithful are justified in believing the apparitions authentic. The Church has recognized many healings after careful medical review; Lourdes is one of the greatest centers of pilgrimage in the world.",
+				"Bishop Bertrand-Sévère Laurence of Tarbes declared in 1862 that the faithful are justified in believing the apparitions authentic. The Church has recognised many healings after careful medical review; Lourdes is one of the greatest centres of pilgrimage in the world.",
 				"Our Lady of Lourdes teaches trust in God’s mercy, care for the sick, and the truth of Mary’s Immaculate Conception. “Penance, penance, penance,” she said—and also, through her presence, peace for those who suffer."
 			]
 		}

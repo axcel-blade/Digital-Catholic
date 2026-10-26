@@ -4,6 +4,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ShareLink from '../components/ShareLink.astro';
 import StatusBadge from '../components/StatusBadge.astro';
 import TrustPanel from '../components/TrustPanel.astro';
+import RelatedTopics from '../components/RelatedTopics.astro';
+import { getArticleReferences } from '../lib/references';
 import { getAbsoluteUrl, getCanonicalUrl, SITE, type BreadcrumbItem } from '../lib/seo';
 import { getSection } from '../lib/sections';
 import { withBase } from '../lib/paths';
@@ -41,6 +43,8 @@ interface Props {
 	trust?: TrustInfo;
 	/** Extra crumbs between the section and the article */
 	extraCrumbs?: BreadcrumbItem[];
+	/** Extra text for choosing related topics when the body is not passed as `sections` */
+	relatedText?: string;
 }
 
 const {
@@ -59,6 +63,7 @@ const {
 	related = [],
 	trust,
 	extraCrumbs = [],
+	relatedText = '',
 } = Astro.props;
 
 const section = getSection(sectionKey);
@@ -69,6 +74,9 @@ const breadcrumbs: BreadcrumbItem[] = [
 	...extraCrumbs,
 	{ label: title },
 ];
+
+const topicText = [title, lead ?? '', relatedText, ...sections.flatMap((s) => [s.heading, ...s.paragraphs])].join(' ');
+const alreadyLinked = [prev?.href, next?.href, ...related.map((r) => r.href)].filter((h): h is string => Boolean(h));
 
 const toc = sections.length >= TOC_MIN_SECTIONS ? buildToc(sections) : [];
 const hasAside = Boolean(image) || toc.length > 0;
@@ -169,7 +177,9 @@ const articleJsonLd = {
 					<slot />
 				</div>
 
-				<TrustPanel trust={trust} />
+				<RelatedTopics currentPath={currentPath} text={topicText} exclude={alreadyLinked} />
+
+				<TrustPanel trust={trust} references={getArticleReferences(sectionKey, currentPath)} />
 
 				{(prev || next) && (
 					<nav class="article-pager" aria-label={`More in ${section.title}`}>

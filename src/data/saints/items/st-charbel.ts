@@ -17,14 +17,14 @@ const saint: Saint = {
 			"heading": "Who is St. Charbel?",
 			"paragraphs": [
 				"Saint Charbel Makhlouf was born Youssef Antoun Makhlouf on May 8, 1828, in the mountain village of Beqa-Kafra in northern Lebanon. He entered the Lebanese Maronite Order in 1851, took the religious name Charbel after an early Antiochene martyr, and was ordained a priest in 1859.",
-				"He spent most of his priestly life as a hermit at the Hermitage of Saints Peter and Paul near the Monastery of Saint Maron in Annaya, Lebanon, where he died on Christmas Eve, 1898. Pope Paul VI beatified him in 1965 and canonized him on October 9, 1977. He is the first saint of the Eastern Church canonized in modern times and a spiritual father of the Lebanese people."
+				"He spent most of his priestly life as a hermit at the Hermitage of Saints Peter and Paul near the Monastery of Saint Maron in Annaya, Lebanon, where he died on Christmas Eve, 1898. Pope Paul VI beatified him in 1965 and canonised him on October 9, 1977. He is the first saint of the Eastern Church canonised in modern times and a spiritual father of the Lebanese people."
 			]
 		},
 		{
 			"heading": "His life and miracles",
 			"paragraphs": [
 				"From boyhood, Youssef felt drawn to solitude and prayer. He would slip away to a nearby cave to spend hours before an icon of Our Lady. At twenty-three he left his family and joined the Maronite monastery at Maifouq, later transferring to the Monastery of Saint Maron at Annaya, where he made his religious profession.",
-				"After ordination he lived the common monastic life for sixteen years. In 1875 he received permission to live as a full hermit in the small hermitage a short distance from the monastery. There he followed an austere rule: rising for prayer before dawn, celebrating Mass with extraordinary reverence lasting several hours, fasting severely, sleeping little, and working manual labor. Witnesses described him lost in contemplation during Mass, sometimes appearing to levitate.",
+				"After ordination he lived the common monastic life for sixteen years. In 1875 he received permission to live as a full hermit in the small hermitage a short distance from the monastery. There he followed an austere rule: rising for prayer before dawn, celebrating Mass with extraordinary reverence lasting several hours, fasting severely, sleeping little, and working manual labour. Witnesses described him lost in contemplation during Mass, sometimes appearing to levitate.",
 				"He died on December 24, 1898, after suffering a stroke during the celebration of the Eucharist—the altar being, fittingly, the place where God called him home. His burial was simple, but miraculous lights were reported over his tomb for forty-five nights after his death. When his body was exhumed, it was found incorrupt and exuding a fragrant oil, which has never been fully explained and continues to this day."
 			]
 		},
@@ -37,15 +37,15 @@ const saint: Saint = {
 				"At the hermitage Charbel followed a strict rule of prayer, fasting, penance, and manual work. He celebrated Mass with such concentration and reverence that it often lasted three to four hours. He ate little, wore a rough habit, and slept on a board. Despite his withdrawal from society, pilgrims and curious observers came to seek his blessing, and many reported healing and consolation.",
 				"On December 16, 1898, while celebrating Mass at the words of consecration, he suffered a stroke. He died nine days later on Christmas Eve, December 24, 1898, at the age of seventy. He was buried simply in the monastery cemetery.",
 				"Forty-five nights after his burial, witnesses reported bright lights over his tomb. The monastery community sought permission to open the tomb, and when they did in 1899, they found his body perfectly incorrupt, flexible, and emitting a fragrant liquid. His body has been exhumed and examined several times since, always found incorrupt and always exuding the same oil. Thousands of miraculous cures have been attributed to his intercession, documented and investigated by Church authorities.",
-				"Blessed John XXIII reopened his beatification cause; Pope Paul VI beatified him on December 5, 1965, during the Second Vatican Council—a moment that drew the attention of the whole Church to the Eastern Catholic traditions. He was canonized by the same pope on October 9, 1977."
+				"Blessed John XXIII reopened his beatification cause; Pope Paul VI beatified him on December 5, 1965, during the Second Vatican Council—a moment that drew the attention of the whole Church to the Eastern Catholic traditions. He was canonised by the same pope on October 9, 1977."
 			]
 		},
 		{
 			"heading": "Miracles",
 			"paragraphs": [
-				"The Church approved two miracles for Charbel's beatification and a third for his canonization. Among those approved for his beatification was the healing of Sister Mary Abel Kamari, a nun who had suffered for years from a severe ulcer.",
-				"The miracle approved for his canonization was the healing of Mariam Assaf Awad of Hammana, Lebanon. Between 1963 and 1965 she underwent three operations for cancerous tumors; she then refused further treatment and prayed to Blessed Charbel, and after four days of prayer her tumor disappeared completely.",
-				"Pilgrims continue to report healings through his intercession, and the monastery at Annaya keeps records of thousands of favors attributed to him."
+				"The Church approved two miracles for Charbel's beatification and a third for his canonisation. Among those approved for his beatification was the healing of Sister Mary Abel Kamari, a nun who had suffered for years from a severe ulcer.",
+				"The miracle approved for his canonisation was the healing of Mariam Assaf Awad of Hammana, Lebanon. Between 1963 and 1965 she underwent three operations for cancerous tumours; she then refused further treatment and prayed to Blessed Charbel, and after four days of prayer her tumour disappeared completely.",
+				"Pilgrims continue to report healings through his intercession, and the monastery at Annaya keeps records of thousands of favours attributed to him."
 			]
 		},
 		{
@@ -60,7 +60,7 @@ const saint: Saint = {
 			"heading": "Death and legacy",
 			"paragraphs": [
 				"St. Charbel died on Christmas Eve, 1898, as he had lived—close to the Eucharist. His incorrupt body remains at the Hermitage of Annaya in Lebanon and continues to draw pilgrims from every continent, particularly from Lebanon, the broader Middle East, and diaspora Maronite communities worldwide.",
-				"His canonization was significant beyond Lebanon: he was the first Eastern Catholic saint canonized in the modern era, underscoring the richness and holiness of the Maronite and Eastern traditions within the Catholic Church. Pope Paul VI said of him that he was \"a new brilliant star added to the Church's calendar, which shines in these troubled times as a heavenly sign and a call to all.\"",
+				"His canonisation was significant beyond Lebanon: he was the first Eastern Catholic saint canonised in the modern era, underscoring the richness and holiness of the Maronite and Eastern traditions within the Catholic Church. Pope Paul VI said of him that he was \"a new brilliant star added to the Church's calendar, which shines in these troubled times as a heavenly sign and a call to all.\"",
 				"More than three thousand miraculous cures have been attributed to his intercession, including documented healings of cancer, paralysis, and blindness. His oil, continuously produced by his remains, has been distributed to millions and is reported to bring healing to this day."
 			]
 		},

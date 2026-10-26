@@ -1,0 +1,72 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import { compareCaveat, compareIntro, comparisonRows, traditions } from '../../data/compare-traditions';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<SectionLayout
+	sectionKey="compare-christian-traditions"
+	description={PAGE_DESCRIPTIONS.compareChristianTraditions}
+	currentPath={Astro.url.pathname}
+	intro={compareIntro}
+	count={`${comparisonRows.length} topics`}
+>
+	<p class="compare-caveat">{compareCaveat}</p>
+
+	<div class="compare-table-wrap" role="region" aria-label="Comparison of Christian traditions (scrolls sideways)" tabindex="0">
+		<table class="compare-table">
+			<thead>
+				<tr>
+					<th scope="col">Topic</th>
+					{traditions.map((t) => <th scope="col">{t.name}</th>)}
+				</tr>
+			</thead>
+			<tbody>
+				{comparisonRows.map((row) => (
+					<tr>
+						<th scope="row">
+							{row.link ? <a href={withBase(row.link)}>{row.topic}</a> : row.topic}
+							{row.catechism && <span class="compare-table__ref">{row.catechism}</span>}
+						</th>
+						{traditions.map((t) => (
+							<td data-label={t.name}>{row.values[t.key]}</td>
+						))}
+					</tr>
+				))}
+			</tbody>
+		</table>
+	</div>
+
+	<section class="compare-sources" aria-labelledby="compare-sources-title">
+		<h2 id="compare-sources-title">The traditions and their sources</h2>
+		<div class="compare-sources__grid">
+			{traditions.map((t) => (
+				<div class="compare-source">
+					<h3 class="compare-source__name">{t.name}</h3>
+					<p>{t.summary}</p>
+					<ul class="compare-source__list">
+						{t.sources.map((s) => (
+							<li>
+								{s.url ? (
+									<a href={s.url} rel="noopener noreferrer" target="_blank">
+										{s.label}
+										<span class="visually-hidden"> (opens in a new tab)</span>
+									</a>
+								) : (
+									s.label
+								)}
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	</section>
+
+	<p class="section-footer-links">
+		Read more in <a href={withBase('/the-church#topic-5')}>The Orthodox Churches</a>,
+		<a href={withBase('/the-church#topic-6')}>Eastern Catholic Churches</a>, and
+		<a href={withBase('/the-church#topic-7')}>Ecumenism and Christian unity</a>.
+	</p>
+</SectionLayout>

@@ -16,7 +16,7 @@ const guide: SacramentGuide = {
 			heading: 'Marriage in God’s plan',
 			paragraphs: [
 				'Scripture begins with the creation of man and woman in the image of God and ends with the wedding feast of the Lamb. God Himself is the author of marriage: “a man leaves his father and mother and clings to his wife, and the two of them become one body” (Genesis 2:24; CCC 1602–1605).',
-				'Christ raised marriage between the baptized to the dignity of a sacrament. St. Paul calls it a great mystery that refers to Christ and the Church (Ephesians 5:32). Spouses are called to love one another as Christ loves His Church (CCC 1613–1617).',
+				'Christ raised marriage between the baptised to the dignity of a sacrament. St. Paul calls it a great mystery that refers to Christ and the Church (Ephesians 5:32). Spouses are called to love one another as Christ loves His Church (CCC 1613–1617).',
 			],
 		},
 		{
@@ -37,7 +37,7 @@ const guide: SacramentGuide = {
 			heading: 'Faithful, fruitful love',
 			paragraphs: [
 				'Married love requires fidelity: the spouses give themselves totally and definitively to each other (CCC 1646–1648). It is also open to life. Children are the supreme gift of marriage, and parents are the first educators of their children in the faith (CCC 1652–1653).',
-				'The Christian family is called the “domestic church,” where children first hear the Gospel and learn to pray, and where all members exercise the priesthood of the baptized through prayer, love, and sacrifice (CCC 1656–1657).',
+				'The Christian family is called the “domestic church,” where children first hear the Gospel and learn to pray, and where all members exercise the priesthood of the baptised through prayer, love, and sacrifice (CCC 1656–1657).',
 			],
 		},
 		{

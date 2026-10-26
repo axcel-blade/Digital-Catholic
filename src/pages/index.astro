@@ -13,6 +13,7 @@ const currentPath = Astro.url.pathname;
 
 const pathwayActions: Record<string, { href: string; label: string }> = {
 	learn: { href: '/bible', label: 'Begin with the Holy Bible' },
+	study: { href: '/study-paths', label: 'Follow a study path' },
 	pray: { href: '/rosary', label: 'Learn to pray the Rosary' },
 	explore: { href: '/disciples', label: 'Meet the Twelve Apostles' },
 };
@@ -133,8 +134,8 @@ const websiteJsonLd = {
 				<p class="eyebrow">Guided pathways</p>
 				<h2 class="band__title" id="pathways-title">Find your starting point</h2>
 				<p class="band__intro">
-					Three ways into the library, whether you are studying the faith, deepening your prayer, or
-					simply curious.
+					Four ways into the library, whether you are learning the basics, studying the faith in depth,
+					deepening your prayer, or simply curious.
 				</p>
 			</header>
 
@@ -248,7 +249,7 @@ const websiteJsonLd = {
 				<p>
 					Articles draw on Scripture and the teaching of the Church, and are written to be read on
 					their own or shared with family, students, and anyone seeking Christ. Where the Church has
-					made a judgment about an apparition or a Eucharistic miracle, we say so plainly—and where
+					made a judgement about an apparition or a Eucharistic miracle, we say so plainly—and where
 					it has not, we say that too.
 				</p>
 				<p>

@@ -25,21 +25,21 @@ const disciple: Disciple = {
 			heading: 'In the Gospels',
 			paragraphs: [
 				'As a publican Matthew was despised by many Jews as a collaborator with Rome. His call shows that no one is beyond Christ’s mercy.',
-				'The Church from early times attributed the First Gospel to Matthew, written for a Jewish-Christian audience to show Jesus as the fulfillment of the Law and the prophets.',
+				'The Church from early times attributed the First Gospel to Matthew, written for a Jewish-Christian audience to show Jesus as the fulfilment of the Law and the prophets.',
 			],
 		},
 		{
 			heading: 'After Easter',
 			paragraphs: [
-				'Tradition places Matthew’s preaching in Judea and Ethiopia. He is often depicted with a money bag or writing tools, symbolizing his former trade and his Gospel.',
+				'Tradition places Matthew’s preaching in Judea and Ethiopia. He is often depicted with a money bag or writing tools, symbolising his former trade and his Gospel.',
 			],
 		},
 		{
 			heading: 'Full biography',
 			paragraphs: [
 				'Matthew, also called Levi son of Alphaeus, collected taxes at Capernaum for Herod Antipas—work that made him despised as a collaborator with Rome. Jesus passed his booth and said, “Follow me”; Matthew rose, left everything, and gave a banquet so sinners could meet the Lord.',
-				'As an apostle he heard Christ’s teaching and witnessed the Passion and Resurrection. The Church from the earliest centuries attributed the First Gospel to him, written for Jewish Christians to show Jesus as fulfillment of Moses and the prophets.',
-				'After Pentecost tradition places him preaching first in Judea among his own people, then in Ethiopia and Persia, establishing communities and baptizing converts. He is often shown with a winged man or writing desk, symbols of his Gospel and his new life as evangelist.',
+				'As an apostle he heard Christ’s teaching and witnessed the Passion and Resurrection. The Church from the earliest centuries attributed the First Gospel to him, written for Jewish Christians to show Jesus as fulfilment of Moses and the prophets.',
+				'After Pentecost tradition places him preaching first in Judea among his own people, then in Ethiopia and Persia, establishing communities and baptising converts. He is often shown with a winged man or writing desk, symbols of his Gospel and his new life as evangelist.',
 			],
 		},
 		{
@@ -54,7 +54,7 @@ const disciple: Disciple = {
 			heading: 'Death and legacy',
 			paragraphs: [
 				'Accounts of Matthew’s death vary: some say he was martyred by the sword in Ethiopia; others that he died peacefully in Hierapolis. A widely held tradition reports that he was killed with an axe or halberd while celebrating Mass—around A.D. 90—for refusing to worship idols.',
-				'His feast on September 21 honors the publican who became an apostle and evangelist. Salerno in Italy claims his relics; the Church venerates him as patron of accountants, bankers, and tax collectors who turn from greed to Christ.',
+				'His feast on September 21 honours the publican who became an apostle and evangelist. Salerno in Italy claims his relics; the Church venerates him as patron of accountants, bankers, and tax collectors who turn from greed to Christ.',
 			],
 		},
 		{

@@ -25,7 +25,7 @@ const saint: Saint = {
 			"heading": "Who is St. John Bosco?",
 			"paragraphs": [
 				"Saint John Bosco, affectionately known as Don Bosco, was born Giovanni Melchiorre Bosco on August 16, 1815, in the hamlet of Becchi near Castelnuovo d'Asti in Piedmont, northern Italy. He was ordained a priest in 1841 and devoted his entire life to the education and salvation of young people, especially the poor and neglected boys of industrial Turin.",
-				"He founded the Society of Saint Francis de Sales (the Salesians) in 1859, and with St. Mary Domenica Mazzarello co-founded the Daughters of Mary Help of Christians in 1872. He died in Turin on January 31, 1888. Pope Pius XI, who had known him personally, beatified him in 1929 and canonized him on Easter Sunday, April 1, 1934."
+				"He founded the Society of Saint Francis de Sales (the Salesians) in 1859, and with St. Mary Domenica Mazzarello co-founded the Daughters of Mary Help of Christians in 1872. He died in Turin on January 31, 1888. Pope Pius XI, who had known him personally, beatified him in 1929 and canonised him on Easter Sunday, April 1, 1934."
 			]
 		},
 		{
@@ -42,9 +42,9 @@ const saint: Saint = {
 				"John Bosco's father died when he was two years old, leaving his mother, Margherita Occhiena, to raise three sons in poverty. Mamma Margherita, herself now declared Venerable, formed him in deep faith and practical charity. Because of family hardship and opposition from an older stepbrother, John had to work as a farmhand and pursue his studies in fits and starts, often walking miles to school.",
 				"He entered the seminary at Chieri in 1835 and was ordained on June 5, 1841. Under the guidance of St. Joseph Cafasso, he visited Turin's prisons and was shaken by the number of young men behind bars. He resolved to reach boys before they fell into crime. On December 8, 1841, he began teaching catechism to a young orphan named Bartholomew Garelli, the humble beginning of his Oratory.",
 				"For several years the Oratory had no fixed home, moving between meadows and borrowed rooms. In 1846 Don Bosco settled in the Pinardi shed in the Valdocco district of Turin, which grew into a large complex with a church, boarding house, schools, and workshops teaching trades such as tailoring, shoemaking, bookbinding, and printing. His mother came to live with him and served as a mother to hundreds of boys.",
-				"Don Bosco developed what he called the Preventive System, an approach to education founded on reason, religion, and loving kindness. Rather than relying on punishment, educators were to be constantly present among the young, winning their trust and guiding them toward the good. Among his students was St. Dominic Savio, who died at fourteen and is now a canonized saint.",
+				"Don Bosco developed what he called the Preventive System, an approach to education founded on reason, religion, and loving kindness. Rather than relying on punishment, educators were to be constantly present among the young, winning their trust and guiding them towards the good. Among his students was St. Dominic Savio, who died at fourteen and is now a canonised saint.",
 				"To continue his work, he founded the Salesians in 1859, naming them after St. Francis de Sales, whose gentleness he admired. The congregation received papal approval in 1874. He also founded the Daughters of Mary Help of Christians and the Association of Salesian Cooperators for laypeople. He built the Basilica of Mary Help of Christians in Turin, consecrated in 1868, and sent his first missionaries to Argentina in 1875.",
-				"Worn out by tireless labor, he died in Turin on January 31, 1888. By then the Salesians numbered hundreds of members in many countries, and his body now rests in the Basilica of Mary Help of Christians at Valdocco."
+				"Worn out by tireless labour, he died in Turin on January 31, 1888. By then the Salesians numbered hundreds of members in many countries, and his body now rests in the Basilica of Mary Help of Christians at Valdocco."
 			]
 		},
 		{
@@ -52,7 +52,7 @@ const saint: Saint = {
 			"paragraphs": [
 				"In 1849, Don Bosco promised roasted chestnuts to the boys of the Oratory, but only a small basket had been prepared. Witnesses said he kept drawing ladlefuls from it until about four hundred boys had been served, and the basket still was not empty. Others recalled similar occasions when consecrated hosts and loaves of bread were multiplied so that no one went without.",
 				"His early biographers record many healings attributed to his prayers and blessing, often given with an invitation to receive the sacraments and to pray to Mary Help of Christians. One of the best-known accounts, from 1849, concerns a fifteen-year-old boy named Charles who died while Don Bosco was away from Turin. Arriving afterward, Don Bosco prayed and called him by name; the boy is said to have woken, confessed a serious sin he had hidden out of shame in his last confession, and then died peacefully.",
-				"Before his beatification and canonization, the Church investigated and approved miraculous healings obtained through his intercession, as required for every cause."
+				"Before his beatification and canonisation, the Church investigated and approved miraculous healings obtained through his intercession, as required for every cause."
 			]
 		},
 		{
@@ -62,7 +62,7 @@ const saint: Saint = {
 				"The first came at the age of nine, when he saw fighting boys turned into lambs and was told to win hearts with gentleness. It shaped his whole vocation, and he returned to it throughout his life. In the Dream of the Pergola of Roses (1847), told to his Salesians only in 1864, he walked beneath roses while his feet were pierced by hidden thorns, an image of the sacrifices behind his apostolate to the young.",
 				"Some dreams were warnings. In December 1854 he dreamed of a court herald announcing “great funerals at court” while a law suppressing religious houses was before the Piedmont parliament. He told King Victor Emmanuel II, and early in 1855 the king’s mother, his wife, and his brother died within weeks of one another.",
 				"The most famous is the Dream of the Two Columns, which he described on May 30, 1862. He saw the great ship of the Church, steered by the Pope, attacked by an enemy fleet, until it found safety moored between two pillars rising from the sea: one crowned with the Eucharistic Host, the other with a statue of Mary Help of Christians. The dream became a lasting summary of his spirituality: devotion to the Eucharist and to Our Lady.",
-				"Other dreams guided his congregation. In the Dream of the Ten Diamonds (September 1881), a majestic figure wore diamonds representing faith, hope, charity, work, temperance, obedience, and the other virtues of a Salesian. In his missionary dreams of the 1880s he travelled over South America; in one, dated August 30, 1883, he saw a land of promised riches between the 15th and 20th parallels. Brazilians link it to the founding of Brasília, which honors him as one of its patron saints."
+				"Other dreams guided his congregation. In the Dream of the Ten Diamonds (September 1881), a majestic figure wore diamonds representing faith, hope, charity, work, temperance, obedience, and the other virtues of a Salesian. In his missionary dreams of the 1880s he travelled over South America; in one, dated August 30, 1883, he saw a land of promised riches between the 15th and 20th parallels. Brazilians link it to the founding of Brasília, which honours him as one of its patron saints."
 			]
 		},
 		{
@@ -78,7 +78,7 @@ const saint: Saint = {
 			"heading": "Death and legacy",
 			"paragraphs": [
 				"Don Bosco died at Valdocco surrounded by his spiritual sons. His last words to them included the counsel to love one another as brothers and to spread devotion to Mary Help of Christians and the Blessed Sacrament.",
-				"Today the Salesian Family is one of the largest religious families in the Catholic Church, serving young people in over 130 countries through schools, technical institutes, parishes, youth centers, and missions. His Preventive System remains influential in Catholic education worldwide.",
+				"Today the Salesian Family is one of the largest religious families in the Catholic Church, serving young people in over 130 countries through schools, technical institutes, parishes, youth centres, and missions. His Preventive System remains influential in Catholic education worldwide.",
 				"On the centenary of his death in 1988, Pope St. John Paul II proclaimed him \"Father and Teacher of Youth.\""
 			]
 		},

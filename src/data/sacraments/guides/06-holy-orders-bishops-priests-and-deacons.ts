@@ -15,7 +15,7 @@ const guide: SacramentGuide = {
 		{
 			heading: 'The sacrament of apostolic ministry',
 			paragraphs: [
-				'Holy Orders is the sacrament through which the mission Christ entrusted to His apostles continues to be exercised in the Church until the end of time (CCC 1536). All the baptized share in the common priesthood of the faithful; the ministerial priesthood is at its service, differing in essence and not only in degree (CCC 1547).',
+				'Holy Orders is the sacrament through which the mission Christ entrusted to His apostles continues to be exercised in the Church until the end of time (CCC 1536). All the baptised share in the common priesthood of the faithful; the ministerial priesthood is at its service, differing in essence and not only in degree (CCC 1547).',
 				'The sacrament has three degrees: the episcopate (bishops), the presbyterate (priests), and the diaconate (deacons) (CCC 1554). Each is conferred by the laying on of hands by a bishop and a specific prayer of consecration, and each imprints an indelible character, so it cannot be repeated (CCC 1573, 1582).',
 			],
 		},
@@ -30,20 +30,20 @@ const guide: SacramentGuide = {
 			heading: 'Priests',
 			paragraphs: [
 				'Priests are co-workers of the bishops. United with their bishop, they preach the Gospel, shepherd the faithful, and celebrate divine worship—above all the Eucharist, where they act in the person of Christ the Head (CCC 1562–1566).',
-				'Priests also forgive sins in the Sacrament of Penance, anoint the sick, baptize, and witness marriages. They form one presbyterate with their bishop and promise him respect and obedience (CCC 1567).',
+				'Priests also forgive sins in the Sacrament of Penance, anoint the sick, baptise, and witness marriages. They form one presbyterate with their bishop and promise him respect and obedience (CCC 1567).',
 			],
 		},
 		{
 			heading: 'Deacons',
 			paragraphs: [
-				'Deacons are ordained not for the priesthood but for service (diakonia), following the seven men chosen in Acts 6 to serve the community (CCC 1569). They assist the bishop and priests at the liturgy, proclaim the Gospel, preach, baptize, witness marriages, preside at funerals, and dedicate themselves to works of charity (CCC 1570).',
+				'Deacons are ordained not for the priesthood but for service (diakonia), following the seven men chosen in Acts 6 to serve the community (CCC 1569). They assist the bishop and priests at the liturgy, proclaim the Gospel, preach, baptise, witness marriages, preside at funerals, and dedicate themselves to works of charity (CCC 1570).',
 				'Since the Second Vatican Council, the Latin Church has restored the permanent diaconate, which may be conferred on married men. Men preparing for the priesthood are first ordained as transitional deacons (CCC 1571).',
 			],
 		},
 		{
 			heading: 'Who can be ordained',
 			paragraphs: [
-				'Only a baptized man validly receives sacred ordination. The Lord Jesus chose men to form the college of the twelve apostles, and the apostles did the same when they chose collaborators; the Church recognizes herself bound by this choice made by the Lord (CCC 1577).',
+				'Only a baptised man validly receives sacred ordination. The Lord Jesus chose men to form the college of the twelve apostles, and the apostles did the same when they chose collaborators; the Church recognises herself bound by this choice made by the Lord (CCC 1577).',
 				'No one has a right to receive Holy Orders; one is called by God, and the Church discerns the call (CCC 1578). In the Latin Church, priests are normally chosen from among men who embrace celibacy for the sake of the Kingdom; Eastern Churches may ordain married men as priests, while bishops are chosen from among celibates (CCC 1579–1580).',
 			],
 		},
