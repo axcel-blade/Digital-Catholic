@@ -35,6 +35,15 @@ const sacramentTitle = (slug: string) => sacraments.find((s) => s.slug === slug)
 		</ul>
 	)}
 
+	<nav class="related-topics" aria-label="The seven sacraments">
+		<h2 class="related-topics__title">The seven sacraments</h2>
+		<ul class="related-topics__list">
+			{sacraments.map((s) => (
+				<li><a class="related-topics__link" href={withBase(`/sacraments/${s.slug}`)}>{s.title}</a></li>
+			))}
+		</ul>
+	</nav>
+
 	<p class="section-footer-links">
 		New to the sacraments? Start with <a href={withBase('/sacraments')}>The Seven Sacraments</a>, which introduces each one
 		in the order of the Catechism.

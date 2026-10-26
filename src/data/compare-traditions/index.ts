@@ -15,6 +15,8 @@ export interface ComparisonRow {
 	values: Record<TraditionKey, string>;
 	/** Catholic references for this topic */
 	catechism?: string;
+	/** The page on this site that explains the Catholic teaching */
+	link?: string;
 }
 
 export const compareIntro =
@@ -79,6 +81,7 @@ export const traditions: Tradition[] = [
 export const comparisonRows: ComparisonRow[] = [
 	{
 		topic: 'Source of authority',
+		link: '/bible-and-tradition#topic-1',
 		catechism: 'CCC 80–95',
 		values: {
 			catholic: 'Scripture and Sacred Tradition as one deposit of faith, authentically interpreted by the Magisterium (the Pope and bishops).',
@@ -90,6 +93,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'The Bible',
+		link: '/bible-and-tradition#topic-3',
 		catechism: 'CCC 120',
 		values: {
 			catholic: '73 books, including the Deuterocanonical books.',
@@ -101,6 +105,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Church leadership',
+		link: '/the-church#topic-4',
 		catechism: 'CCC 861–862, 880–896',
 		values: {
 			catholic: 'Bishops in apostolic succession, in communion with the Pope as successor of Peter and visible head of the universal Church.',
@@ -112,6 +117,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'The Pope',
+		link: '/the-church#topic-2',
 		catechism: 'CCC 880–882, 891',
 		values: {
 			catholic: 'The Bishop of Rome has full, supreme, and universal authority and, in solemn definitions, teaches infallibly.',
@@ -123,6 +129,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Sacraments',
+		link: '/sacraments',
 		catechism: 'CCC 1113–1134',
 		values: {
 			catholic: 'Seven sacraments, instituted by Christ, which truly give the grace they signify.',
@@ -134,6 +141,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'The Eucharist',
+		link: '/sacraments/guides/the-real-presence',
 		catechism: 'CCC 1373–1381',
 		values: {
 			catholic: 'Christ is truly, really, and substantially present by transubstantiation; the Mass makes present the one sacrifice of Calvary.',
@@ -145,6 +153,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Salvation and justification',
+		link: '/apologetics#topic-5',
 		catechism: 'CCC 1987–2029',
 		values: {
 			catholic: 'By grace through faith, beginning in Baptism; justification makes us truly righteous and bears fruit in good works done in grace.',
@@ -156,6 +165,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Mary',
+		link: '/mary-and-the-saints',
 		catechism: 'CCC 484–511, 963–975',
 		values: {
 			catholic: 'Mother of God, ever-virgin, immaculately conceived, and assumed body and soul into heaven; honoured above all saints.',
@@ -167,6 +177,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Saints and prayer for the dead',
+		link: '/mary-and-the-saints#topic-5',
 		catechism: 'CCC 956–958, 1030–1032',
 		values: {
 			catholic: 'The saints intercede for us; Catholics pray for the dead, who may be undergoing purification in purgatory.',
@@ -178,6 +189,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Christ’s two natures',
+		link: '/church-history#topic-3',
 		catechism: 'CCC 464–469',
 		values: {
 			catholic: 'One Person in two natures, divine and human (Council of Chalcedon, 451).',
@@ -189,6 +201,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'The Creed and the Holy Spirit',
+		link: '/core-beliefs',
 		catechism: 'CCC 246–248',
 		values: {
 			catholic: 'The Holy Spirit proceeds from the Father and the Son (Filioque), added to the Latin Creed and understood as compatible with the Eastern “through the Son.”',
@@ -200,6 +213,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Married clergy',
+		link: '/sacraments/holy-orders',
 		catechism: 'CCC 1579–1580',
 		values: {
 			catholic: 'Latin Church priests are normally celibate; Eastern Catholic Churches ordain married men as priests. Bishops are celibate.',

@@ -1,0 +1,32 @@
+---
+/**
+ * "Related topics": links to the main pages of topics this page discusses,
+ * chosen from the shared topic map in src/lib/relatedTopics.ts.
+ */
+import { getRelatedTopics } from '../lib/relatedTopics';
+import { withBase } from '../lib/paths';
+
+interface Props {
+	currentPath: string;
+	/** The page's readable text */
+	text: string;
+	/** Pages the page already links to prominently */
+	exclude?: string[];
+}
+
+const { currentPath, text, exclude = [] } = Astro.props;
+const topics = getRelatedTopics(currentPath, text, exclude);
+---
+
+{topics.length > 0 && (
+	<nav class="related-topics" aria-label="Related topics">
+		<h2 class="related-topics__title">Related topics</h2>
+		<ul class="related-topics__list">
+			{topics.map((topic) => (
+				<li>
+					<a class="related-topics__link" href={withBase(topic.href)}>{topic.label}</a>
+				</li>
+			))}
+		</ul>
+	</nav>
+)}

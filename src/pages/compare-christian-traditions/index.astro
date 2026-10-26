@@ -26,7 +26,7 @@ import { withBase } from '../../lib/paths';
 				{comparisonRows.map((row) => (
 					<tr>
 						<th scope="row">
-							{row.topic}
+							{row.link ? <a href={withBase(row.link)}>{row.topic}</a> : row.topic}
 							{row.catechism && <span class="compare-table__ref">{row.catechism}</span>}
 						</th>
 						{traditions.map((t) => (

@@ -35,6 +35,11 @@ const buildIndex = reflectionIndexFor(new Date());
 					<h3 class="daily-gospel__heading">Reflect</h3>
 					<p>{r.question}</p>
 				</div>
+				{r.link && (
+					<p class="numbered-item__link">
+						<a href={withBase(r.link.href)}>Read more: {r.link.label} →</a>
+					</p>
+				)}
 			</article>
 		))}
 

@@ -1,6 +1,7 @@
 ---
 import SectionLayout from '../layouts/SectionLayout.astro';
 import ReferenceLine from './ReferenceLine.astro';
+import RelatedTopics from './RelatedTopics.astro';
 import { getGuide } from '../data/guides';
 import { guideImages } from '../data/guides/images';
 import { getSection } from '../lib/sections';
@@ -17,6 +18,8 @@ const { guideKey, description } = Astro.props;
 const guide = getGuide(guideKey);
 const section = getSection(guideKey);
 const art = guideImages[guideKey];
+const topicText = [guide.intro, ...guide.topics.flatMap((t) => [t.title, t.summary, ...t.meaning, ...(t.points?.items ?? [])])].join(' ');
+const ownLinks = guide.topics.flatMap((t) => t.links?.map((l) => l.href) ?? []);
 const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 ---
 
@@ -78,6 +81,8 @@ const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 			</li>
 		))}
 	</ol>
+
+	<RelatedTopics currentPath={Astro.url.pathname} text={topicText} exclude={ownLinks} />
 
 	<slot />
 </SectionLayout>

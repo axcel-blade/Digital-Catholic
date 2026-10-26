@@ -99,6 +99,7 @@ The Liturgical Calendar computes the current year on `/liturgical-calendar` and 
 | `siteNav.ts` | Builds the navigation (groups and their subgroups) from `sections.ts` and resolves active states |
 | `searchIndex.ts` | `buildSearchIndex()` — flattens every section into `{ title, url, category, excerpt, body }` entries |
 | `references.ts` | Catechism paragraphs, Scripture citations, and verified links to official Church documents. `getArticleReferences()` builds the References block of every article from section defaults, per-article entries, and citations already in the data; `scriptureUrl()` and `documentsMentionedIn()` link the reference lines on topic pages |
+| `relatedTopics.ts` | Shared topic map (each topic’s main page and the phrases that signal it). `getRelatedTopics()` picks the topics a page discusses at least twice, leaving out itself, its parent section, and pages it already links to; rendered by `RelatedTopics.astro` on articles, topic guides, Core Beliefs, and the Commandments |
 | `images.ts` | Reads JPEG/PNG dimensions from `public/` at build time; returns `null` for missing files so pages skip them |
 | `article.ts` | Heading anchors for the “On this page” list, previous/next neighbours, and related-article selection |
 

@@ -30,6 +30,33 @@ const toLink = (g: SacramentGuide): ArticleLink => ({
 });
 
 const { prev, next } = getNeighbors(sacramentGuides, index);
+const relatedTeaching: Record<string, { href: string; title: string }[]> = {
+	'baptism-and-confirmation': [
+		{ href: '/gifts-of-the-holy-spirit', title: 'Gifts of the Holy Spirit' },
+		{ href: '/apologetics#topic-3', title: 'Why the Church baptises infants' },
+	],
+	'the-real-presence': [
+		{ href: '/apologetics#topic-2', title: 'Why Catholics believe in the Real Presence' },
+		{ href: '/eucharistic-miracles', title: 'Eucharistic miracles' },
+	],
+	'transubstantiation-explained': [{ href: '/glossary#term-transubstantiation', title: 'Transubstantiation in the glossary' }],
+	'confession-repentance-and-absolution': [
+		{ href: '/moral-teaching#topic-5', title: 'Mortal and venial sin' },
+		{ href: '/moral-teaching#topic-7', title: 'Forgiveness, mercy, repentance and reconciliation' },
+		{ href: '/living-the-faith#topic-2', title: 'How to go to Confession (quick guide)' },
+	],
+	'the-sacrament-of-marriage': [{ href: '/living-the-faith#topic-5', title: 'Catholic dating, marriage and family life' }],
+	'holy-orders-bishops-priests-and-deacons': [
+		{ href: '/the-church#topic-3', title: 'Bishops, priests, deacons and the laity' },
+		{ href: '/the-church#topic-4', title: 'Apostolic succession' },
+		{ href: '/living-the-faith#topic-4', title: 'Discernment of vocation' },
+	],
+	'state-of-grace-and-worthy-reception': [
+		{ href: '/moral-teaching#topic-5', title: 'Mortal and venial sin' },
+		{ href: '/liturgy-and-worship#topic-8', title: 'Proper reverence and participation at Mass' },
+	],
+};
+const teaching = relatedTeaching[guide.slug] ?? [];
 const relatedSacraments = guide.sacraments
 	.map((slug) => sacraments.find((s) => s.slug === slug))
 	.filter((s): s is NonNullable<typeof s> => Boolean(s));
@@ -62,6 +89,16 @@ const relatedSacraments = guide.sacraments
 				<li>
 					<a href={withBase('/sacraments')}>The Seven Sacraments</a> — all seven sacraments in the order of the Catechism.
 				</li>
+			</ul>
+		</section>
+	)}
+	{teaching.length > 0 && (
+		<section class="article-section">
+			<h2>Related teaching</h2>
+			<ul>
+				{teaching.map((t) => (
+					<li><a href={withBase(t.href)}>{t.title}</a></li>
+				))}
 			</ul>
 		</section>
 	)}

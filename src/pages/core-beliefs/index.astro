@@ -1,4 +1,5 @@
 ---
+import RelatedTopics from '../../components/RelatedTopics.astro';
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import ReferenceLine from '../../components/ReferenceLine.astro';
 import { coreBeliefs, coreBeliefsIntro } from '../../data/coreBeliefs';
@@ -51,6 +52,8 @@ import { withBase } from '../../lib/paths';
 			</li>
 		))}
 	</ol>
+
+	<RelatedTopics currentPath={Astro.url.pathname} text={coreBeliefs.flatMap((b) => [b.title, b.summary, ...b.meaning]).join(' ')} />
 
 	<p class="section-footer-links">
 		Continue with the <a href={withBase('/holy-trinity')}>Holy Trinity</a>, the

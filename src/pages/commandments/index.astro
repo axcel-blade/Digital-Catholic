@@ -1,4 +1,5 @@
 ---
+import RelatedTopics from '../../components/RelatedTopics.astro';
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import ReferenceLine from '../../components/ReferenceLine.astro';
 import { commandments, commandmentsIntro } from '../../data/commandments';
@@ -38,6 +39,8 @@ import { withBase } from '../../lib/paths';
 			</li>
 		))}
 	</ol>
+
+	<RelatedTopics currentPath={Astro.url.pathname} text={commandments.map((c) => `${c.title} ${c.text} ${c.meaning}`).join(' ')} />
 
 	<p class="section-footer-links">
 		Continue with the <a href={withBase('/sacraments/penance')}>sacrament of Penance</a> or the
