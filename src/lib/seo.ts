@@ -18,7 +18,7 @@ export const SITE = {
 export const PAGE_DESCRIPTIONS = {
 	home: SITE.defaultDescription,
 	about:
-		'What Digital Catholic is, who it is for, how its sixteen content areas are organized, and its approach to accuracy and devotion.',
+		'What Digital Catholic is, who it is for, how its seventeen content areas are organized, and its approach to accuracy and devotion.',
 	contact:
 		'Contact Digital Catholic with questions, corrections, or suggestions—by email or by opening an issue in the project’s GitHub repository.',
 	bible:
@@ -41,6 +41,8 @@ export const PAGE_DESCRIPTIONS = {
 		'Parables of Jesus Christ in the Gospels—stories of God’s Kingdom with Scripture references and lessons for discipleship.',
 	commandments:
 		'The Ten Commandments—God’s moral law given to Moses—with the text of each commandment and its meaning for love of God and neighbor.',
+	coreBeliefs:
+		'Core Catholic beliefs—the Holy Trinity, the Incarnation, the Resurrection and Ascension, original sin and grace, the life to come, the Creeds, and the Four Last Things.',
 	holyTrinity:
 		'The Most Holy Trinity—one God in three divine Persons, the Father, the Son, and the Holy Spirit—with Scripture and the teaching of the Catechism.',
 	trinityOldTestament:

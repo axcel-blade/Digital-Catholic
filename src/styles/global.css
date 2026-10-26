@@ -2339,6 +2339,39 @@ mark {
 	color: var(--color-text-muted);
 }
 
+.numbered-item__text + .numbered-item__text {
+	margin-top: var(--space-3);
+}
+
+/* Scripture and Catechism references (Core Catholic Beliefs) */
+.numbered-item__reference {
+	font-size: var(--text-sm);
+	color: var(--color-liturgy);
+	margin: 0 0 var(--space-3);
+}
+
+/* Full text of a creed or prayer within a numbered item */
+.numbered-item__prayer {
+	margin: var(--space-4) 0 0;
+	padding: var(--space-4);
+	border-left: 3px solid var(--color-gold);
+	font-family: var(--font-serif);
+}
+
+.numbered-item__prayer p {
+	margin: 0;
+}
+
+.numbered-item__prayer-title {
+	font-weight: 600;
+	margin-bottom: var(--space-2);
+}
+
+.numbered-item__link {
+	margin: var(--space-3) 0 0;
+	font-size: var(--text-sm);
+}
+
 .prose .numbered-list {
 	margin: var(--space-5) 0;
 	padding: 0;

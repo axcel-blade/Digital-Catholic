@@ -16,7 +16,7 @@ Each pathway is split into subgroups so the dropdown menus stay short: desktop p
 
 | Pathway | Subgroup | Sections |
 |---|---|---|
-| **Learn** | Foundations | Holy Bible, Holy Trinity, Sacraments, Ten Commandments |
+| **Learn** | Foundations | Holy Bible, Core Catholic Beliefs, Holy Trinity, Sacraments, Ten Commandments |
 | | Holy Spirit | Gifts of the Holy Spirit, Fruits of the Holy Spirit |
 | | Holy lives | Saints |
 | **Pray** | Prayer & devotion | Prayers, Rosary |
