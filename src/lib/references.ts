@@ -273,8 +273,10 @@ function merge(...sets: (ReferenceSet | undefined)[]): ReferenceSet {
 /** Resolve the references for an article from its section and URL. */
 export function getArticleReferences(sectionKey: string, currentPath: string): ResolvedReferences {
 	const parts = stripBase(currentPath).split('/').filter(Boolean);
+	// Merged sections list several collections; their references are kept per collection.
+	if (sectionKey === 'learn' || sectionKey === 'study' || sectionKey === 'pray') sectionKey = parts[0] ?? sectionKey;
 	const slug = parts[parts.length - 1] ?? '';
-	const isGuide = sectionKey === 'sacraments-in-depth';
+	const isGuide = sectionKey === 'sacraments' && parts[1] === 'guides';
 
 	let set: ReferenceSet;
 	if (sectionKey === 'sacraments' || isGuide) {

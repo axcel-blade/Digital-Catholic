@@ -11,7 +11,10 @@ const sacramentTitle = (slug: string) => sacraments.find((s) => s.slug === slug)
 ---
 
 <SectionLayout
-	sectionKey="sacraments-in-depth"
+	sectionKey="learn"
+	heading="The Sacraments in Depth"
+	extraCrumbs={[{ label: 'Sacraments', href: withBase('/sacraments') }]}
+	pageCrumb="The Sacraments in Depth"
 	description={PAGE_DESCRIPTIONS.sacramentsInDepth}
 	currentPath={Astro.url.pathname}
 	intro="Guides that go deeper into what the Church teaches about the sacraments and how to live them—from the Real Presence and transubstantiation to making a good Confession and receiving Communion worthily. Each guide links to the sacraments it explains."

@@ -1,32 +1,56 @@
 ---
-import SectionLayout from '../../layouts/SectionLayout.astro';
+import GuidePage from '../../components/GuidePage.astro';
 import EntryCard from '../../components/EntryCard.astro';
 import { massIntro, massPages } from '../../data/mass';
+import { getGuide } from '../../data/guides';
+import { liturgicalCalendarIntro } from '../../data/liturgical-calendar';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
+
+const liturgy = getGuide('mass');
 ---
 
-<SectionLayout
-	sectionKey="mass"
+<GuidePage
+	guideKey="mass"
+	sectionKey="pray"
+	heading="Holy Mass and Liturgy"
 	description={PAGE_DESCRIPTIONS.mass}
-	currentPath={Astro.url.pathname}
-	intro={massIntro}
-	count={`${massPages.length} guides`}
+	intro={`${massIntro} ${liturgy.intro}`}
+	count={`${massPages.length} guides · ${liturgy.topics.length} topics`}
 >
-	<ul class="card-grid card-grid--two">
-		{massPages.map((page) => (
-			<EntryCard
-				href={withBase(page.href)}
-				title={page.title}
-				label="Mass"
-				excerpt={page.excerpt}
-				action={page.action}
-			/>
-		))}
-	</ul>
+	<div slot="lead">
+		<section class="page-section" aria-labelledby="mass-guides">
+			<h2 class="section-title" id="mass-guides">The Mass step by step</h2>
+			<ul class="card-grid card-grid--two">
+				{massPages.map((page) => (
+					<EntryCard
+						href={withBase(page.href)}
+						title={page.title}
+						label="Mass"
+						excerpt={page.excerpt}
+						action={page.action}
+					/>
+				))}
+			</ul>
+		</section>
+		<section class="page-section" aria-labelledby="liturgical-calendar">
+			<h2 class="section-title" id="liturgical-calendar">The Liturgical Calendar</h2>
+			<ul class="card-grid card-grid--two">
+				<EntryCard
+					href={withBase('/liturgical-calendar')}
+					title="Liturgical Calendar"
+					label="Liturgy"
+					excerpt={liturgicalCalendarIntro}
+					action="Open the calendar"
+				/>
+			</ul>
+		</section>
+		<section class="page-section" aria-labelledby="liturgy">
+			<h2 class="section-title" id="liturgy">Understanding the liturgy</h2>
+		</section>
+	</div>
 
 	<p class="section-footer-links">
-		See also the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a> and the
-		<a href={withBase('/liturgical-calendar')}>liturgical calendar</a>, which sets the colour of each day.
+		See also the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a>.
 	</p>
-</SectionLayout>
+</GuidePage>

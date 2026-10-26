@@ -14,14 +14,19 @@ import { getCollectionImage } from '../../lib/images';
 ---
 
 <SectionLayout
-	sectionKey="sacraments"
+	sectionKey="learn"
+	pageCrumb="Sacraments"
 	heading="The Seven Sacraments"
 	title="Sacraments"
 	description={PAGE_DESCRIPTIONS.sacraments}
 	currentPath={Astro.url.pathname}
 	intro="Explore each sacrament—what the Church teaches, how it is celebrated, and why it matters for your life in Christ. They are listed in the order of the Catechism: initiation, healing, and service of communion."
-	count={`${sacraments.length} sacraments`}
+	count={`${sacraments.length} sacraments · ${sacramentGuides.length} in-depth guides`}
 >
+	<nav class="jump-links" aria-label="Jump to a part of this page" slot="header">
+		<a class="jump-links__link" href="#in-depth">The Sacraments in Depth</a>
+	</nav>
+
 	{sacraments.length === 0 ? (
 		<EmptyState />
 	) : (
@@ -40,12 +45,16 @@ import { getCollectionImage } from '../../lib/images';
 		</ul>
 	)}
 
-	<aside class="sacrament-guides" aria-labelledby="sacrament-guides-heading">
-		<h2 id="sacrament-guides-heading">The Sacraments in Depth</h2>
-		<p class="sacrament-guides__intro">
-			Ready to go further? {sacramentGuides.length} in-depth guides explain the Real Presence, transubstantiation,
-			Confession, marriage, Holy Orders, and more.
-		</p>
-		<a class="button button--secondary" href={withBase('/sacraments/guides')}>Explore the Sacraments in Depth</a>
-	</aside>
+	<section class="page-section" aria-labelledby="in-depth">
+		<h2 class="section-title" id="in-depth">The Sacraments in Depth</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/sacraments/guides')}
+				title="The Sacraments in Depth"
+				label="Sacrament guides"
+				excerpt="Guides that go deeper into what the Church teaches about the sacraments and how to live them—from the Real Presence and transubstantiation to making a good Confession and receiving Communion worthily."
+				action={`Read ${sacramentGuides.length} in-depth guides`}
+			/>
+		</ul>
+	</section>
 </SectionLayout>

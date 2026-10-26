@@ -14,7 +14,13 @@ const options = timelineEraOrder.map((era) => ({
 ---
 
 <SectionLayout
-	sectionKey="church-history-timeline"
+	sectionKey="study"
+	heading="Church History Timeline"
+	extraCrumbs={[
+		{ label: 'Scripture, Tradition, and the Church', href: withBase('/bible-and-tradition') },
+		{ label: 'Catholic Church History', href: withBase('/church-history') },
+	]}
+	pageCrumb="Timeline"
 	description={PAGE_DESCRIPTIONS.churchHistoryTimeline}
 	currentPath={Astro.url.pathname}
 	intro={timelineIntro}

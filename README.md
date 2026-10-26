@@ -26,65 +26,29 @@ A static Catholic digital library for learning and sharing the faith — clear r
 
 ## What it covers
 
-The library has thirty-four content areas, grouped into four pathways, each split into smaller subgroups in the menus. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
+The library has three content areas, grouped into three pathways. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
 
 ### Learn
 
 | Section | What you'll find |
 | --- | --- |
-| **Holy Bible** | Summaries of all 73 books of the Catholic canon, including the deuterocanonical books, and how the Bible was formed |
-| **Saints** | Biographies of holy men and women with life dates, feast days, miracles, and relics, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint) |
-| **Sacraments** | All seven sacraments in Catechism order — initiation, healing, and service of communion |
-| **The Sacraments in Depth** | Eight in-depth guides on Baptism and Confirmation, the Real Presence, Transubstantiation, Confession, Marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion, each linked to its sacraments |
-| **Core Catholic Beliefs** | The fundamental doctrines: the Trinity, the Incarnation, the Resurrection and Ascension, original sin and grace, heaven, hell, and purgatory, the Creeds, and the Four Last Things |
-| **Holy Trinity** | One God in three Persons — the Father, the Son, and the Holy Spirit — and how the Trinity appears across the Old and New Testaments |
-| **Ten Commandments** | The text and meaning of each commandment |
-| **Gifts of the Holy Spirit** | The seven gifts and what each one means |
-| **Fruits of the Holy Spirit** | The twelve fruits and how each shapes the Christian life |
-| **Mary and the Communion of Saints** | The Marian doctrines, the intercession and veneration of saints, relics and sacramentals, and angels |
+| **Scripture, Doctrine, and the Saints** | The Holy Bible — summaries of all 73 books of the Catholic canon, including the deuterocanonical books, and how the Bible was formed; core Catholic beliefs — the fundamental doctrines: the Trinity, the Incarnation, the Resurrection and Ascension, original sin and grace, heaven, hell, and purgatory, the Creeds, and the Four Last Things; the Holy Trinity — one God in three Persons — the Father, the Son, and the Holy Spirit — and how the Trinity appears across the Old and New Testaments; the seven gifts and the twelve fruits of the Holy Spirit, and what each means for the Christian life; the Twelve Apostles in traditional order — life, Gospel accounts, miracles, relics, death, and feast days; the parables, filterable by theme; and the miracles, filterable by kind of sign, with the Shroud of Turin and the Veil of Veronica; and marian apparitions (Guadalupe, Lourdes, Fátima, Knock, Velankanni, and others) and Eucharistic miracles from Lanciano to modern events, each labelled with its Church status; and Mary and the saints — biographies of holy men and women with life dates, feast days, miracles, and relics, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint); the Marian doctrines, the intercession and veneration of saints, relics and sacramentals, and angels; and the Sacraments — all seven sacraments in Catechism order — initiation, healing, and service of communion — plus eight in-depth guides on Baptism and Confirmation, the Real Presence, Transubstantiation, Confession, Marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion; and the Ten Commandments — the text and meaning of each commandment |
 
 ### Study
 
 | Section | What you'll find |
 | --- | --- |
-| **The Bible and Catholic Tradition** | Scripture and Tradition, the Magisterium, the 73 books and the Deuterocanonical books, how Catholics interpret Scripture, faith and reason, and the development of doctrine |
-| **The Catholic Church** | The four marks, the Pope, bishops, priests, deacons and laity, apostolic succession, the Orthodox and Eastern Catholic Churches, and ecumenism |
-| **Catholic Church History** | The early Church and Church Fathers, the seven ecumenical councils, the Great Schism, the Reformation and Counter-Reformation, Trent and Vatican II, the papacy, and religious orders |
-| **Church History Timeline** | Milestones from Pentecost to the present, filterable by era |
-| **Compare Christian Traditions** | A sourced, side-by-side comparison of Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, and Protestant beliefs |
-| **Catholic Apologetics and FAQ** | Answers to common questions — Confession, the Real Presence, Mary and the saints, infant baptism, salvation, faith and works, the Pope, science and faith, and misconceptions |
-| **Catholic Moral Teaching** | The capital sins and virtues, the theological and cardinal virtues, the Commandments, the Beatitudes, mortal and venial sin, conscience, mercy, and the Works of Mercy |
-| **Catholic Social Teaching** | Human dignity, the common good, solidarity and subsidiarity, the poor, the dignity of work, family, stewardship of creation, and peace and citizenship |
-| **Living the Catholic Faith** | First Communion and Confirmation, Confession step by step, OCIA, vocations, dating and marriage, Mass for beginners, daily prayer, and faith at university and work |
-| **Catholic Glossary** | Plain-language definitions of Catholic terms, from absolution to viaticum, with Catechism references |
-| **Ask a Catholic Question** | A searchable FAQ on doctrine, worship, morality, and Church history |
-| **Catholic Study Paths** | Guided learning plans for beginners, people becoming Catholic, and practising Catholics |
+| **Study the Faith** | Scripture and Tradition, the Magisterium, the 73 books and the Deuterocanonical books, how Catholics interpret Scripture, faith and reason, and the development of doctrine; and the Church — the four marks, the Pope, bishops, priests, deacons and laity, apostolic succession, the Orthodox and Eastern Catholic Churches, and ecumenism; and Church history — the early Church and Church Fathers, the seven ecumenical councils, the Great Schism, the Reformation and Counter-Reformation, Trent and Vatican II, the papacy, and religious orders; and a timeline of milestones from Pentecost to the present, filterable by era; answers to common questions — Confession, the Real Presence, Mary and the saints, infant baptism, salvation, faith and works, the Pope, science and faith, and misconceptions; and a sourced, side-by-side comparison of Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, and Protestant beliefs; plus a searchable FAQ on doctrine, worship, morality, and Church history; and a glossary — plain-language definitions of Catholic terms, from absolution to viaticum, with Catechism references; and Christian living — the capital sins and virtues, the theological and cardinal virtues, the Commandments, the Beatitudes, mortal and venial sin, conscience, mercy, and the Works of Mercy; and social teaching — human dignity, the common good, solidarity and subsidiarity, the poor, the dignity of work, family, stewardship of creation, and peace and citizenship; and living the faith — first Communion and Confirmation, Confession step by step, OCIA, vocations, dating and marriage, Mass for beginners, daily prayer, and faith at university and work; and study paths — guided learning plans for beginners, people becoming Catholic, and practising Catholics |
 
 ### Pray
 
 | Section | What you'll find |
 | --- | --- |
-| **Prayers** | The Our Father and Hail Mary — full text and explanation |
-| **Rosary** | How to pray it, the traditional prayers, all twenty mysteries, and its origin |
-| **Holy Mass** | The order of Mass step by step, and the items used at Mass: sacred vessels, altar linens, liturgical books, vestments, and liturgical colours |
-| **Liturgical Calendar** | Seasons, solemnities, feasts, and memorials by year, with a “today” view |
-| **Daily Gospel and Reflection** | A Gospel passage each day, with a short explanation and a question for reflection |
-| **Catholic Prayer and Devotions** | The Liturgy of the Hours, Lectio Divina, adoration and Benediction, the Divine Mercy Chaplet, the Angelus, the Stations of the Cross, novenas and litanies, and fasting |
-| **Catholic Liturgy and Worship** | The parts of the Mass, Sunday and holy days of obligation, the liturgical year and its colours, the Real Presence, sacred music, sacred signs, Eastern liturgies, and reverence at Mass |
-
-### Explore
-
-| Section | What you'll find |
-| --- | --- |
-| **Disciples of Jesus** | The Twelve Apostles in traditional order — life, Gospel accounts, miracles, relics, death, and feast days |
-| **Miracles of Jesus** | Gospel accounts with Scripture references and classic artwork, filterable by kind of sign |
-| **Eucharistic Miracles** | Accounts from Lanciano to modern events, each labelled with its Church status |
-| **Marian Apparitions** | Guadalupe, Lourdes, Fátima, Knock, Velankanni, and others, each labelled with its Church status |
-| **Parables of Jesus** | Stories of the Kingdom with classic artwork, filterable by theme |
+| **Prayer and Liturgy** | The Our Father and Hail Mary with full text and explanation; the Rosary — how to pray it, the traditional prayers, all twenty mysteries, and its origin; a Daily Gospel passage with a short explanation and a question for reflection; the Liturgy of the Hours, Lectio Divina, adoration and Benediction, the Divine Mercy Chaplet, the Angelus, the Stations of the Cross, novenas and litanies, and fasting; the Holy Mass — the order of Mass step by step and the items used at Mass; the Liturgical Calendar — seasons, solemnities, feasts, and memorials by year, with a “today” view; the parts of the Mass, Sunday and holy days of obligation, the liturgical year and its colours, the Real Presence, sacred music, sacred signs, Eastern liturgies, and reverence at Mass |
 
 ### Features
 
-- **Guided homepage** with Learn / Pray / Explore pathways, a featured liturgical-calendar panel, and a full library index.
+- **Guided homepage** with Learn / Study / Pray pathways, a featured liturgical-calendar panel, and a full library index.
 - **Article pages** with breadcrumbs, metadata, an “On this page” list for longer articles, previous/next links, related reading, and a copy-link button.
 - **Sources on every article** in an “About this article” panel: Scripture (linked to the USCCB New American Bible), the Catechism, Church documents, and other cited references, with the date each article was last reviewed.
 - **Church status labels** for apparitions and Eucharistic miracles (approved for devotion, recognised or permitted, under investigation, historical tradition, or reported). Labels reflect only what each article states.

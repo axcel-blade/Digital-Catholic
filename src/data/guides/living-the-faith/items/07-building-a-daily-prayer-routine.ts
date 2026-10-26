@@ -22,7 +22,7 @@ const topic: GuideTopic = {
 		],
 	},
 	links: [
-		{ href: '/prayer-and-devotions', label: 'Catholic prayer and devotions' },
+		{ href: '/pray', label: 'Catholic prayer and devotions' },
 		{ href: '/rosary', label: 'Pray the Rosary' },
 	],
 };

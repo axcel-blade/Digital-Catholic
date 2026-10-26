@@ -23,8 +23,8 @@ const topic: GuideTopic = {
 		],
 	},
 	links: [
-		{ href: '/gifts-of-the-holy-spirit', label: 'Gifts of the Holy Spirit' },
-		{ href: '/fruits-of-the-holy-spirit', label: 'Fruits of the Holy Spirit' },
+		{ href: '/holy-spirit#gifts', label: 'Gifts of the Holy Spirit' },
+		{ href: '/holy-spirit#fruits', label: 'Fruits of the Holy Spirit' },
 	],
 };
 

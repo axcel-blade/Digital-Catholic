@@ -21,7 +21,7 @@ const topic: GuideTopic = {
 		],
 	},
 	links: [
-		{ href: '/prayers', label: 'Traditional Catholic prayers' },
+		{ href: '/pray', label: 'Traditional Catholic prayers' },
 	],
 };
 

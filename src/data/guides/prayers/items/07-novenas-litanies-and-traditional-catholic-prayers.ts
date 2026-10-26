@@ -11,7 +11,7 @@ const topic: GuideTopic = {
 		'A litany is a series of invocations with a repeated response, such as “pray for us” or “have mercy on us.” Approved litanies include the Litany of the Saints, the Litany of Loreto (of the Blessed Virgin Mary), and the Litanies of the Sacred Heart, the Holy Name, the Precious Blood, and St. Joseph. Other traditional prayers every Catholic can learn include the Sign of the Cross, the Glory Be, the Memorare, the Hail Holy Queen, the Prayer to St. Michael, and the Act of Contrition.',
 	],
 	links: [
-		{ href: '/prayers', label: 'Read traditional Catholic prayers' },
+		{ href: '/pray', label: 'Read traditional Catholic prayers' },
 		{ href: '/rosary', label: 'Pray the Rosary' },
 	],
 };

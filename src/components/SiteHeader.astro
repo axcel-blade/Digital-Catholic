@@ -27,7 +27,16 @@ const { nav } = Astro.props;
 						aria-current={nav.home.isActive ? 'page' : undefined}>{nav.home.label}</a
 					>
 				</li>
-				{nav.groups.map((group) => (
+				{nav.groups.map((group) => group.items.length === 1 ? (
+					// A pathway with a single page links straight to it rather than opening a menu
+					<li>
+						<a
+							class:list={['primary-nav__link', { 'is-active': group.isActive }]}
+							href={group.items[0].href}
+							aria-current={group.items[0].isActive ? 'page' : undefined}>{group.label}</a
+						>
+					</li>
+				) : (
 					<li class="primary-nav__group" data-nav-group>
 						<button
 							type="button"
@@ -43,8 +52,12 @@ const { nav } = Astro.props;
 							<p class="nav-panel__summary">{group.summary}</p>
 							<div class="nav-panel__columns">
 								{group.subgroups.map((subgroup) => (
-									<section class="nav-panel__column" aria-labelledby={`nav-sub-${group.key}-${subgroup.key}`}>
-										<h3 class="nav-panel__heading" id={`nav-sub-${group.key}-${subgroup.key}`}>{subgroup.label}</h3>
+									<section
+										class="nav-panel__column"
+										aria-labelledby={subgroup.label ? `nav-sub-${group.key}-${subgroup.key}` : undefined}
+										aria-label={subgroup.label ? undefined : group.label}
+									>
+										{subgroup.label && <h3 class="nav-panel__heading" id={`nav-sub-${group.key}-${subgroup.key}`}>{subgroup.label}</h3>}
 										<ul class="nav-panel__list">
 											{subgroup.items.map((item) => (
 												<li>
@@ -123,7 +136,7 @@ const { nav } = Astro.props;
 					<h2 class="mobile-menu__heading" id={`mobile-menu-${group.key}`}>{group.label}</h2>
 					{group.subgroups.map((subgroup) => (
 						<div class="mobile-menu__subgroup">
-							<h3 class="mobile-menu__subheading">{subgroup.label}</h3>
+							{subgroup.label && <h3 class="mobile-menu__subheading">{subgroup.label}</h3>}
 							<ul class="mobile-menu__list">
 								{subgroup.items.map((item) => (
 									<li>

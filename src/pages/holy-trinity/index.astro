@@ -1,12 +1,15 @@
 ---
 import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
 import { trinityIntro, trinityPersons, trinityScripture, trinityScriptureIntro } from '../../data/trinity';
+import { giftsIntro, spiritFruits, spiritGifts } from '../../data/holy-spirit';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 ---
 
 <SectionLayout
-	sectionKey="holy-trinity"
+	sectionKey="learn"
+	pageCrumb="Holy Trinity"
 	heading="The Most Holy Trinity"
 	title="Holy Trinity"
 	description={PAGE_DESCRIPTIONS.holyTrinity}
@@ -22,6 +25,7 @@ import { withBase } from '../../lib/paths';
 		))}
 		<a class="jump-links__link jump-links__link--text" href={withBase('/holy-trinity/old-testament')}>Old Testament</a>
 		<a class="jump-links__link jump-links__link--text" href={withBase('/holy-trinity/new-testament')}>New Testament</a>
+		<a class="jump-links__link jump-links__link--text" href="#holy-spirit">The Holy Spirit</a>
 	</nav>
 
 	<ol class="numbered-list">
@@ -57,8 +61,21 @@ import { withBase } from '../../lib/paths';
 		</ul>
 	</section>
 
+	<section class="page-section" aria-labelledby="holy-spirit">
+		<h2 class="section-title" id="holy-spirit">The Holy Spirit</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/holy-spirit')}
+				title="Gifts and Fruits of the Holy Spirit"
+				label="Holy Spirit"
+				excerpt={giftsIntro}
+				action={`Read the ${spiritGifts.length} gifts and ${spiritFruits.length} fruits`}
+			/>
+		</ul>
+	</section>
+
 	<p class="section-footer-links">
-		Continue with the <a href={withBase('/gifts-of-the-holy-spirit')}>Gifts of the Holy Spirit</a>, or explore the
-		<a href={withBase('/prayers')}>prayers</a> of the Church.
+		Continue with the <a href={withBase('/sacraments/confirmation')}>sacrament of Confirmation</a>, which strengthens
+		the gifts of the Spirit, or explore the <a href={withBase('/pray')}>prayers</a> of the Church.
 	</p>
 </SectionLayout>

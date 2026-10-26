@@ -1,0 +1,133 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { disciples, disciplesIntro } from '../../data/disciples';
+import { parables, parablesIntro } from '../../data/parables';
+import { miracles, miraclesIntro } from '../../data/miracles';
+import { saints } from '../../data/saints';
+import { bibleBooks, bibleIntro } from '../../data/bible';
+import { coreBeliefsIntro } from '../../data/core-beliefs';
+import { trinityIntro } from '../../data/trinity';
+import { commandmentsIntro } from '../../data/commandments';
+import { sacraments, sacramentGuides } from '../../data/sacraments';
+import { marianApparitions } from '../../data/marian-apparitions';
+import { eucharisticMiracles } from '../../data/eucharistic-miracles';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+// Every page with its own URL in this section: the item pages of each collection, plus How the Bible Was Formed and the Shroud and Veil pages.
+const articleCount =
+	bibleBooks.length +
+	1 +
+	sacraments.length +
+	sacramentGuides.length +
+	saints.length +
+	disciples.length +
+	parables.length +
+	miracles.length +
+	2 +
+	marianApparitions.length +
+	eucharisticMiracles.length;
+// The seven doctrine cards plus the three life-of-Jesus cards.
+const areaCount = 10;
+---
+
+<SectionLayout
+	sectionKey="learn"
+	description={PAGE_DESCRIPTIONS.learn}
+	currentPath={Astro.url.pathname}
+	intro="The heart of the Catholic faith: the Word of God, what the Church believes, how God shares His life with us in the sacraments, and the people who have lived it. Begin with the Holy Bible, the core beliefs, the Holy Trinity, and the Ten Commandments; then discover the seven sacraments, follow the life of Jesus through His apostles, parables, and miracles, and meet Mary and the saints."
+	count={`${areaCount} areas · ${articleCount} articles`}
+>
+	<nav class="jump-links" aria-label="Jump to a part of this page" slot="header">
+		<a class="jump-links__link" href="#signs-of-faith">Scripture, Doctrine, and Saints</a>
+		<a class="jump-links__link" href="#jesus">The Life of Jesus</a>
+	</nav>
+
+	<section class="page-section" aria-labelledby="signs-of-faith">
+		<h2 class="section-title" id="signs-of-faith">Scripture, doctrine, the sacraments, and the saints</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/bible')}
+				title="Holy Bible"
+				label="Scripture"
+				excerpt={bibleIntro}
+				action={`Explore all ${bibleBooks.length} books`}
+			/>
+			<EntryCard
+				href={withBase('/core-beliefs')}
+				title="Core Catholic Beliefs"
+				label="Doctrine"
+				excerpt={coreBeliefsIntro}
+				action="Read the core beliefs"
+			/>
+			<EntryCard
+				href={withBase('/holy-trinity')}
+				title="The Most Holy Trinity"
+				label="Doctrine"
+				excerpt={trinityIntro}
+				action="Read about the Trinity and the gifts of the Spirit"
+			/>
+			<EntryCard
+				href={withBase('/commandments')}
+				title="The Ten Commandments"
+				label="Moral life"
+				excerpt={commandmentsIntro}
+				action="Read the Commandments"
+			/>
+			<EntryCard
+				href={withBase('/sacraments')}
+				title="Sacraments"
+				label="Sacraments"
+				excerpt={`The ${sacraments.length} sacraments in the order of the Catechism, with ${sacramentGuides.length} in-depth guides to the Real Presence, Confession, marriage, and more.`}
+				action="Explore the sacraments"
+			/>
+			<EntryCard
+				href={withBase('/saints')}
+				title="Mary and the Saints"
+				label="Saints"
+				excerpt={`${saints.length} saint biographies, with the Church’s teaching on Mary, the communion of saints, relics, and angels.`}
+				action="Meet the saints"
+			/>
+			<EntryCard
+				href={withBase('/signs-and-wonders')}
+				title="Marian and Eucharistic Signs"
+				label="Signs & wonders"
+				excerpt={`${marianApparitions.length} Marian apparitions and ${eucharisticMiracles.length} Eucharistic miracles, from Guadalupe and Lourdes to Lanciano, each with its Church status.`}
+				action="Explore the signs"
+			/>
+		</ul>
+	</section>
+
+	<section class="page-section" aria-labelledby="jesus">
+		<h2 class="section-title" id="jesus">The Life of Jesus</h2>
+		<p class="section-intro">Jesus called twelve apostles to be with Him, taught in parables, and confirmed His teaching with mighty works. The parables reveal the Kingdom of God in stories drawn from everyday life; the miracles are signs that the Kingdom has come in Him (CCC 546–553).</p>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/disciples')}
+				title="The Twelve Apostles"
+				label="Apostles"
+				excerpt={disciplesIntro}
+				action={`Meet all ${disciples.length} apostles`}
+			/>
+			<EntryCard
+				href={withBase('/parables')}
+				title="Parables of Jesus"
+				label="Gospels"
+				excerpt={parablesIntro}
+				action={`Read ${parables.length} parables`}
+			/>
+			<EntryCard
+				href={withBase('/miracles')}
+				title="Miracles of Jesus"
+				label="Gospels"
+				excerpt={miraclesIntro}
+				action={`Read ${miracles.length} miracles`}
+			/>
+		</ul>
+	</section>
+
+	<p class="section-footer-links">
+		Read summaries of the <a href={withBase('/bible')}>Gospels and every book of the Bible</a>.
+	</p>
+</SectionLayout>

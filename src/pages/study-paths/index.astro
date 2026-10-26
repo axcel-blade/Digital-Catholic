@@ -6,7 +6,10 @@ import { withBase } from '../../lib/paths';
 ---
 
 <SectionLayout
-	sectionKey="study-paths"
+	sectionKey="study"
+	extraCrumbs={[{ label: 'Christian Living', href: withBase('/moral-teaching') }]}
+	heading="Catholic Study Paths"
+	pageCrumb="Study Paths"
 	description={PAGE_DESCRIPTIONS.studyPaths}
 	currentPath={Astro.url.pathname}
 	intro={studyPathsIntro}
