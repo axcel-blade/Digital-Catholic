@@ -25,7 +25,7 @@ import {
 	veilOfVeronicaSections,
 } from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
-import { sacraments } from '../data/sacraments';
+import { sacraments, sacramentGuides } from '../data/sacraments';
 import {
 	buildLiturgicalYear,
 	liturgicalCalendarIntro,
@@ -364,6 +364,18 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Sacrament',
 				sacrament.excerpt,
 				[sectionsText(sacrament.sections)]
+			)
+		);
+	}
+
+	for (const guide of sacramentGuides) {
+		items.push(
+			entry(
+				guide.title,
+				withBase(`/sacraments/guides/${guide.slug}`),
+				'Sacrament guide',
+				guide.excerpt,
+				[sectionsText(guide.sections)]
 			)
 		);
 	}

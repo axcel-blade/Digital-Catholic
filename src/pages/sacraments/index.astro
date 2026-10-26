@@ -2,7 +2,13 @@
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import EntryCard from '../../components/EntryCard.astro';
 import EmptyState from '../../components/EmptyState.astro';
-import { sacraments, sacramentGroupLabels, getSacramentImageAlt } from '../../data/sacraments';
+import {
+	sacraments,
+	sacramentGroupLabels,
+	sacramentGuides,
+	getSacramentImageAlt,
+	getSacramentGuideImageAlt,
+} from '../../data/sacraments';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 import { getCollectionImage } from '../../lib/images';
@@ -33,5 +39,27 @@ import { getCollectionImage } from '../../lib/images';
 				/>
 			))}
 		</ul>
+	)}
+
+	{sacramentGuides.length > 0 && (
+		<section class="sacrament-guides" aria-labelledby="sacrament-guides-heading">
+			<h2 id="sacrament-guides-heading">The Sacraments in Depth</h2>
+			<p class="sacrament-guides__intro">
+				Individual guides that go deeper into what the Church teaches and how to live each sacrament.
+			</p>
+			<ul class="card-grid card-grid--media">
+				{sacramentGuides.map((guide) => (
+					<EntryCard
+						href={withBase(`/sacraments/guides/${guide.slug}`)}
+						title={guide.title}
+						label="Sacrament guide"
+						excerpt={guide.excerpt}
+						action="Read guide"
+						headingLevel="h3"
+						image={getCollectionImage('sacraments/guides', guide.slug, getSacramentGuideImageAlt(guide.title))}
+					/>
+				))}
+			</ul>
+		</section>
 	)}
 </SectionLayout>

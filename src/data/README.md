@@ -11,6 +11,7 @@ Content is split into **one file per article** so contributors can add entries w
 | Prayers | `prayers/items/NN-{slug}.ts` | `01-our-father.ts` |
 | Holy Bible | `bible/books/old-testament.ts`, `new-testament.ts` | `genesis` slug per book (73 books) |
 | Sacraments | `sacraments/items/{slug}.ts` | `baptism.ts` |
+| Sacrament guides | `sacraments/guides/{nn}-{slug}.ts` | `01-baptism-and-confirmation.ts` |
 | Miracles of Jesus | `miracles/items/{slug}.ts` | `wedding-at-cana.ts` |
 | Eucharistic miracles | `eucharistic-miracles/items/{slug}.ts` | `lanciano.ts` |
 | Marian apparitions | `marian-apparitions/items/{slug}.ts` | `lourdes.ts` |

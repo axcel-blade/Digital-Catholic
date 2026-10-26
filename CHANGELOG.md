@@ -7,6 +7,7 @@ All notable changes to Digital Catholic are documented here.
 ## [Unreleased]
 
 ### Added
+- The Sacraments in Depth: eight guides at `/sacraments/guides/{slug}`—Baptism and Confirmation, the Real Presence, Transubstantiation, Confession and absolution, Marriage, Holy Orders, Anointing of the Sick and Viaticum, and the state of grace and worthy reception of Holy Communion—with Catechism, Scripture, and Canon Law sources, listed on the Sacraments page, linked from each related sacrament, and included in search
 - Core Catholic Beliefs page (`/core-beliefs`) introducing the fundamental doctrines—the Holy Trinity, the Incarnation and two natures of Christ, the Resurrection and Ascension, original sin, grace and salvation, heaven, hell, purgatory and the resurrection of the dead, the Apostles' and Nicene Creeds (with the text of the Apostles' Creed), and the Four Last Things—with Scripture and Catechism references, listed under Learn → Foundations and included in search
 - Holy Trinity page (`/holy-trinity`, Matthew 28:19, CCC 232–267) covering God the Father, the Son, and the Holy Spirit, with separate articles on the Trinity in the Old Testament (`/holy-trinity/old-testament`) and New Testament (`/holy-trinity/new-testament`), listed under Learn → Foundations and included in search
 - Gifts of the Holy Spirit page (`/gifts-of-the-holy-spirit`, Isaiah 11:2, CCC 1830–1831) and Fruits of the Holy Spirit page (`/fruits-of-the-holy-spirit`, Galatians 5:22–23, CCC 1832), listed under Learn and included in search

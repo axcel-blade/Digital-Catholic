@@ -1,0 +1,49 @@
+---
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import SectionList from '../../../components/SectionList.astro';
+import {
+	sacramentGuides,
+	getSacramentGuideImageAlt,
+	type SacramentGuide,
+} from '../../../data/sacraments';
+import { getCollectionImage } from '../../../lib/images';
+import { withBase } from '../../../lib/paths';
+import { getNeighbors, getRelated, type ArticleLink } from '../../../lib/article';
+
+export function getStaticPaths() {
+	return sacramentGuides.map((guide) => ({ params: { slug: guide.slug } }));
+}
+
+const index = sacramentGuides.findIndex((g) => g.slug === Astro.params.slug);
+const guide = sacramentGuides[index];
+
+if (!guide) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const toLink = (g: SacramentGuide): ArticleLink => ({
+	href: withBase(`/sacraments/guides/${g.slug}`),
+	title: g.title,
+	label: 'Sacrament guide',
+	excerpt: g.excerpt,
+});
+
+const { prev, next } = getNeighbors(sacramentGuides, index);
+---
+
+<ArticleLayout
+	title={guide.title}
+	description={guide.excerpt}
+	currentPath={Astro.url.pathname}
+	sectionKey="sacraments"
+	label="Sacrament guide"
+	lead={guide.excerpt}
+	image={getCollectionImage('sacraments/guides', guide.slug, getSacramentGuideImageAlt(guide.title))}
+	sections={guide.sections}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={getRelated(sacramentGuides, index, 3, (g) => g.sacraments[0]).map(toLink)}
+	trust={guide}
+>
+	<SectionList sections={guide.sections} />
+</ArticleLayout>
