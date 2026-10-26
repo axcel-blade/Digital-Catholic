@@ -17,26 +17,30 @@ const history = getGuide('church-history');
 	description={PAGE_DESCRIPTIONS.bibleAndTradition}
 	count={`${tradition.topics.length} topics on Scripture and Tradition · ${church.topics.length} on the Church · ${history.topics.length} on Church history`}
 >
-	<section slot="lead" aria-labelledby="the-church">
-		<h2 id="the-church">The Church and her history</h2>
-		<ul class="card-grid card-grid--two">
-			<EntryCard
-				href={withBase('/the-church')}
-				title="The Catholic Church"
-				label="Ecclesiology"
-				excerpt={church.intro}
-				action={`Read all ${church.topics.length} topics`}
-			/>
-			<EntryCard
-				href={withBase('/church-history')}
-				title="Catholic Church History"
-				label="History"
-				excerpt={history.intro}
-				action="Read the history and timeline"
-			/>
-		</ul>
-		<h2 id="bible-and-tradition">The Bible and Catholic Tradition</h2>
-	</section>
+	<div slot="lead">
+		<section class="page-section" aria-labelledby="the-church">
+			<h2 class="section-title" id="the-church">The Church and her history</h2>
+			<ul class="card-grid card-grid--two">
+				<EntryCard
+					href={withBase('/the-church')}
+					title="The Catholic Church"
+					label="Ecclesiology"
+					excerpt={church.intro}
+					action={`Read all ${church.topics.length} topics`}
+				/>
+				<EntryCard
+					href={withBase('/church-history')}
+					title="Catholic Church History"
+					label="History"
+					excerpt={history.intro}
+					action="Read the history and timeline"
+				/>
+			</ul>
+		</section>
+		<section class="page-section" aria-labelledby="bible-and-tradition">
+			<h2 class="section-title" id="bible-and-tradition">The Bible and Catholic Tradition</h2>
+		</section>
+	</div>
 
 	<p class="section-footer-links">
 		Continue with the <a href={withBase('/bible')}>Holy Bible</a> or <a href={withBase('/core-beliefs')}>Core Catholic Beliefs</a>.

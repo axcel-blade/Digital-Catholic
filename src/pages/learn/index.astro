@@ -61,8 +61,8 @@ const miracleOptions = categoryOptions(miracles);
 		<a class="jump-links__link" href="#miracles">Miracles of Jesus</a>
 	</nav>
 
-	<section aria-labelledby="signs-of-faith">
-		<h2 id="signs-of-faith">Scripture, doctrine, the sacraments, and the saints</h2>
+	<section class="page-section" aria-labelledby="signs-of-faith">
+		<h2 class="section-title" id="signs-of-faith">Scripture, doctrine, the sacraments, and the saints</h2>
 		<ul class="card-grid card-grid--two">
 			<EntryCard
 				href={withBase('/bible')}
@@ -116,14 +116,14 @@ const miracleOptions = categoryOptions(miracles);
 		</ul>
 	</section>
 
-	<section aria-labelledby="jesus">
-		<h2 id="jesus">The Life of Jesus</h2>
-		<p>Jesus called twelve apostles to be with Him, taught in parables, and confirmed His teaching with mighty works. The parables reveal the Kingdom of God in stories drawn from everyday life; the miracles are signs that the Kingdom has come in Him (CCC 546–553).</p>
+	<section class="page-section" aria-labelledby="jesus">
+		<h2 class="section-title" id="jesus">The Life of Jesus</h2>
+		<p class="section-intro">Jesus called twelve apostles to be with Him, taught in parables, and confirmed His teaching with mighty works. The parables reveal the Kingdom of God in stories drawn from everyday life; the miracles are signs that the Kingdom has come in Him (CCC 546–553).</p>
 	</section>
 
-	<section aria-labelledby="disciples">
-		<h2 id="disciples">The Twelve Apostles</h2>
-		<p>{disciplesIntro}</p>
+	<section class="page-section" aria-labelledby="disciples">
+		<h2 class="section-title" id="disciples">The Twelve Apostles</h2>
+		<p class="section-intro">{disciplesIntro}</p>
 		{disciples.length === 0 ? (
 			<EmptyState />
 		) : (
@@ -144,9 +144,9 @@ const miracleOptions = categoryOptions(miracles);
 		)}
 	</section>
 
-	<section aria-labelledby="parables">
-		<h2 id="parables">Parables of Jesus</h2>
-		<p>{parablesIntro}</p>
+	<section class="page-section" aria-labelledby="parables">
+		<h2 class="section-title" id="parables">Parables of Jesus</h2>
+		<p class="section-intro">{parablesIntro}</p>
 		{parables.length === 0 ? (
 			<EmptyState />
 		) : (
@@ -175,9 +175,9 @@ const miracleOptions = categoryOptions(miracles);
 		)}
 	</section>
 
-	<section aria-labelledby="miracles">
-		<h2 id="miracles">Miracles of Jesus</h2>
-		<p>{miraclesIntro}</p>
+	<section class="page-section" aria-labelledby="miracles">
+		<h2 class="section-title" id="miracles">Miracles of Jesus</h2>
+		<p class="section-intro">{miraclesIntro}</p>
 		{miracles.length === 0 ? (
 			<EmptyState />
 		) : (

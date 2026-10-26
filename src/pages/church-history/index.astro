@@ -23,28 +23,30 @@ const options = timelineEraOrder.map((era) => ({
 	description={PAGE_DESCRIPTIONS.churchHistory}
 	count={`${history.topics.length} topics · ${events.length} milestones`}
 >
-	<section slot="after" aria-labelledby="timeline-title">
-		<h2 id="timeline-title">Timeline of Church History</h2>
-		<p>{timelineIntro}</p>
-		<CardFilter target="timeline" label="Show an era" options={options} noun={{ one: 'milestone', many: 'milestones' }} />
+	<div slot="after">
+		<section class="page-section" aria-labelledby="timeline-title">
+			<h2 class="section-title" id="timeline-title">Timeline of Church History</h2>
+			<p class="section-intro">{timelineIntro}</p>
+			<CardFilter target="timeline" label="Show an era" options={options} noun={{ one: 'milestone', many: 'milestones' }} />
 
-		<ol class="timeline" id="timeline">
-			{events.map((event) => (
-				<li class="timeline__event" data-filter-value={event.era}>
-					<p class="timeline__date">{event.date}</p>
-					<div class="timeline__body">
-						<h3 class="timeline__title">{event.title}</h3>
-						<p class="timeline__text">{event.description}</p>
-						{event.link && (
-							<p class="numbered-item__link">
-								<a href={withBase(event.link.href)}>{event.link.label} →</a>
-							</p>
-						)}
-					</div>
-				</li>
-			))}
-		</ol>
-	</section>
+			<ol class="timeline" id="timeline">
+				{events.map((event) => (
+					<li class="timeline__event" data-filter-value={event.era}>
+						<p class="timeline__date">{event.date}</p>
+						<div class="timeline__body">
+							<h3 class="timeline__title">{event.title}</h3>
+							<p class="timeline__text">{event.description}</p>
+							{event.link && (
+								<p class="numbered-item__link">
+									<a href={withBase(event.link.href)}>{event.link.label} →</a>
+								</p>
+							)}
+						</div>
+					</li>
+				))}
+			</ol>
+		</section>
+	</div>
 
 	<p class="section-footer-links">
 		Continue with <a href={withBase('/the-church')}>The Catholic Church</a> or meet the people behind this history in

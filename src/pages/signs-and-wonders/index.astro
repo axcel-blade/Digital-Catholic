@@ -44,9 +44,9 @@ const miracleOptions = statusOptionsFor(eucharisticMiracles);
 		{statuses.length > 0 && <StatusLegend statuses={statuses} />}
 	</Fragment>
 
-	<section aria-labelledby="marian-apparitions">
-		<h2 id="marian-apparitions">Marian Apparitions</h2>
-		<p>{marianApparitionsIntro}</p>
+	<section class="page-section" aria-labelledby="marian-apparitions">
+		<h2 class="section-title" id="marian-apparitions">Marian Apparitions</h2>
+		<p class="section-intro">{marianApparitionsIntro}</p>
 		{marianApparitions.length === 0 ? (
 			<EmptyState />
 		) : (
@@ -79,9 +79,9 @@ const miracleOptions = statusOptionsFor(eucharisticMiracles);
 		)}
 	</section>
 
-	<section aria-labelledby="eucharistic-miracles">
-		<h2 id="eucharistic-miracles">Eucharistic Miracles</h2>
-		<p>{eucharisticMiraclesIntro}</p>
+	<section class="page-section" aria-labelledby="eucharistic-miracles">
+		<h2 class="section-title" id="eucharistic-miracles">Eucharistic Miracles</h2>
+		<p class="section-intro">{eucharisticMiraclesIntro}</p>
 		{eucharisticMiracles.length === 0 ? (
 			<EmptyState />
 		) : (
