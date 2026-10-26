@@ -18,7 +18,7 @@ export const SITE = {
 export const PAGE_DESCRIPTIONS = {
 	home: SITE.defaultDescription,
 	about:
-		'What Digital Catholic is, who it is for, how its thirteen content areas are organized, and its approach to accuracy and devotion.',
+		'What Digital Catholic is, who it is for, how its fifteen content areas are organized, and its approach to accuracy and devotion.',
 	contact:
 		'Contact Digital Catholic with questions, corrections, or suggestions—by email or by opening an issue in the project’s GitHub repository.',
 	bible:
@@ -41,6 +41,10 @@ export const PAGE_DESCRIPTIONS = {
 		'Parables of Jesus Christ in the Gospels—stories of God’s Kingdom with Scripture references and lessons for discipleship.',
 	commandments:
 		'The Ten Commandments—God’s moral law given to Moses—with the text of each commandment and its meaning for love of God and neighbor.',
+	giftsOfTheHolySpirit:
+		'The seven gifts of the Holy Spirit—wisdom, understanding, counsel, fortitude, knowledge, piety, and fear of the Lord (Isaiah 11:2)—and what each one means.',
+	fruitsOfTheHolySpirit:
+		'The twelve fruits of the Holy Spirit from Galatians 5:22–23—charity, joy, peace, patience, and more—and how each shapes the Christian life.',
 	mass:
 		'The Holy Mass in the Catholic Church—the order of Mass step by step and the sacred vessels, linens, books, vestments, and colors used in its celebration.',
 	massItems:

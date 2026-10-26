@@ -7,6 +7,7 @@ All notable changes to Digital Catholic are documented here.
 ## [Unreleased]
 
 ### Added
+- Gifts of the Holy Spirit page (`/gifts-of-the-holy-spirit`, Isaiah 11:2, CCC 1830–1831) and Fruits of the Holy Spirit page (`/fruits-of-the-holy-spirit`, Galatians 5:22–23, CCC 1832), listed under Learn and included in search
 - Site-wide redesign as a warm, editorial Catholic digital library: paper background, burgundy and gold accents, serif headings and reading text, and matching dark theme
 - Learn / Pray / Explore information architecture, defined once in `src/lib/sections.ts` and used by navigation, homepage, About, and footer
 - Header with grouped dropdown menus, grouped mobile menu (Escape to close, focus management), skip-to-content link, and a new site footer

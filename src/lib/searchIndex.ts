@@ -1,4 +1,5 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
+import { fruitsIntro, giftsIntro, spiritFruits, spiritGifts } from '../data/holySpirit';
 import { massIntro, massItemsIntro, massPages, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
 import {
@@ -213,6 +214,20 @@ export function buildSearchIndex(): SearchEntry[] {
 			[commandmentsIntro, ...commandments.map((c) => joinParts(c.title, c.text, c.meaning))],
 		),
 		entry(
+			'Gifts of the Holy Spirit',
+			withBase('/gifts-of-the-holy-spirit'),
+			'Holy Spirit',
+			giftsIntro,
+			[giftsIntro, ...spiritGifts.map((g) => joinParts(g.title, g.summary, g.meaning))],
+		),
+		entry(
+			'Fruits of the Holy Spirit',
+			withBase('/fruits-of-the-holy-spirit'),
+			'Holy Spirit',
+			fruitsIntro,
+			[fruitsIntro, ...spiritFruits.map((f) => joinParts(f.title, f.meaning))],
+		),
+		entry(
 			'Holy Mass',
 			withBase('/mass'),
 			'Mass',
@@ -385,6 +400,30 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Commandment',
 				commandment.text,
 				[commandment.title, commandment.text, commandment.meaning]
+			)
+		);
+	}
+
+	for (const gift of spiritGifts) {
+		items.push(
+			entry(
+				`Gift of the Holy Spirit: ${gift.title}`,
+				withBase(`/gifts-of-the-holy-spirit#gift-${gift.number}`),
+				'Holy Spirit',
+				gift.summary,
+				[gift.title, gift.summary, gift.meaning]
+			)
+		);
+	}
+
+	for (const fruit of spiritFruits) {
+		items.push(
+			entry(
+				`Fruit of the Holy Spirit: ${fruit.title}`,
+				withBase(`/fruits-of-the-holy-spirit#fruit-${fruit.number}`),
+				'Holy Spirit',
+				fruit.meaning,
+				[fruit.title, fruit.meaning]
 			)
 		);
 	}

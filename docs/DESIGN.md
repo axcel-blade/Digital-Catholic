@@ -14,7 +14,7 @@ All content areas are defined once in `src/lib/sections.ts`. Navigation, the hom
 
 | Pathway | Sections |
 |---|---|
-| **Learn** | Holy Bible, Saints, Sacraments, Ten Commandments |
+| **Learn** | Holy Bible, Saints, Sacraments, Ten Commandments, Gifts of the Holy Spirit, Fruits of the Holy Spirit |
 | **Pray** | Prayers, Rosary, Holy Mass, Liturgical Calendar |
 | **Explore** | Disciples of Jesus, Miracles of Jesus, Eucharistic Miracles, Marian Apparitions, Parables of Jesus |
 
