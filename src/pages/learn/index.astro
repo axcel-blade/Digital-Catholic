@@ -1,0 +1,217 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import CardFilter from '../../components/CardFilter.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { disciples, disciplesIntro, getDiscipleImageAlt } from '../../data/disciples';
+import { parables, parablesIntro } from '../../data/parables';
+import { miracles, miraclesIntro } from '../../data/miracles';
+import { saints } from '../../data/saints';
+import { bibleBooks, bibleIntro } from '../../data/bible';
+import { coreBeliefsIntro } from '../../data/core-beliefs';
+import { trinityIntro } from '../../data/trinity';
+import { commandmentsIntro } from '../../data/commandments';
+import { sacraments, sacramentGuides } from '../../data/sacraments';
+import { marianApparitions } from '../../data/marian-apparitions';
+import { eucharisticMiracles } from '../../data/eucharistic-miracles';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { slugify } from '../../lib/article';
+import { getCollectionImage } from '../../lib/images';
+
+function categoryOptions(items: { category: string }[]) {
+	return [...new Set(items.map((item) => item.category))].map((category) => ({
+		value: slugify(category),
+		label: category,
+		count: items.filter((item) => item.category === category).length,
+	}));
+}
+
+// Every page with its own URL in this section: the item pages of each collection, plus How the Bible Was Formed and the Shroud and Veil pages.
+const articleCount =
+	bibleBooks.length +
+	1 +
+	sacraments.length +
+	sacramentGuides.length +
+	saints.length +
+	disciples.length +
+	parables.length +
+	miracles.length +
+	2 +
+	marianApparitions.length +
+	eucharisticMiracles.length;
+// The seven hub cards plus the life of Jesus on this page.
+const areaCount = 8;
+
+const parableOptions = categoryOptions(parables);
+const miracleOptions = categoryOptions(miracles);
+---
+
+<SectionLayout
+	sectionKey="learn"
+	description={PAGE_DESCRIPTIONS.learn}
+	currentPath={Astro.url.pathname}
+	intro="The heart of the Catholic faith: the Word of God, what the Church believes, how God shares His life with us in the sacraments, and the people who have lived it. Begin with the Holy Bible, the core beliefs, the Holy Trinity, and the Ten Commandments; then discover the seven sacraments, follow the life of Jesus through His apostles, parables, and miracles, and meet Mary and the saints."
+	count={`${areaCount} areas · ${articleCount} articles`}
+>
+	<nav class="jump-links" aria-label="Jump to a part of this page" slot="header">
+		<a class="jump-links__link" href="#signs-of-faith">Scripture, Doctrine, and Saints</a>
+		<a class="jump-links__link" href="#jesus">The Life of Jesus</a>
+		<a class="jump-links__link" href="#parables">Parables of Jesus</a>
+		<a class="jump-links__link" href="#miracles">Miracles of Jesus</a>
+	</nav>
+
+	<section aria-labelledby="signs-of-faith">
+		<h2 id="signs-of-faith">Scripture, doctrine, the sacraments, and the saints</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/bible')}
+				title="Holy Bible"
+				label="Scripture"
+				excerpt={bibleIntro}
+				action={`Explore all ${bibleBooks.length} books`}
+			/>
+			<EntryCard
+				href={withBase('/core-beliefs')}
+				title="Core Catholic Beliefs"
+				label="Doctrine"
+				excerpt={coreBeliefsIntro}
+				action="Read the core beliefs"
+			/>
+			<EntryCard
+				href={withBase('/holy-trinity')}
+				title="The Most Holy Trinity"
+				label="Doctrine"
+				excerpt={trinityIntro}
+				action="Read about the Trinity and the gifts of the Spirit"
+			/>
+			<EntryCard
+				href={withBase('/commandments')}
+				title="The Ten Commandments"
+				label="Moral life"
+				excerpt={commandmentsIntro}
+				action="Read the Commandments"
+			/>
+			<EntryCard
+				href={withBase('/sacraments')}
+				title="Sacraments"
+				label="Sacraments"
+				excerpt={`The ${sacraments.length} sacraments in the order of the Catechism, with ${sacramentGuides.length} in-depth guides to the Real Presence, Confession, marriage, and more.`}
+				action="Explore the sacraments"
+			/>
+			<EntryCard
+				href={withBase('/saints')}
+				title="Mary and the Saints"
+				label="Saints"
+				excerpt={`${saints.length} saint biographies, with the Church’s teaching on Mary, the communion of saints, relics, and angels.`}
+				action="Meet the saints"
+			/>
+			<EntryCard
+				href={withBase('/signs-and-wonders')}
+				title="Marian and Eucharistic Signs"
+				label="Signs & wonders"
+				excerpt={`${marianApparitions.length} Marian apparitions and ${eucharisticMiracles.length} Eucharistic miracles, from Guadalupe and Lourdes to Lanciano, each with its Church status.`}
+				action="Explore the signs"
+			/>
+		</ul>
+	</section>
+
+	<section aria-labelledby="jesus">
+		<h2 id="jesus">The Life of Jesus</h2>
+		<p>Jesus called twelve apostles to be with Him, taught in parables, and confirmed His teaching with mighty works. The parables reveal the Kingdom of God in stories drawn from everyday life; the miracles are signs that the Kingdom has come in Him (CCC 546–553).</p>
+	</section>
+
+	<section aria-labelledby="disciples">
+		<h2 id="disciples">The Twelve Apostles</h2>
+		<p>{disciplesIntro}</p>
+		{disciples.length === 0 ? (
+			<EmptyState />
+		) : (
+			<ul class="card-grid card-grid--media">
+				{disciples.map((disciple, i) => (
+					<EntryCard
+						href={withBase(`/disciples/${disciple.slug}`)}
+						title={disciple.title}
+						label="Apostle"
+						meta={disciple.alsoKnownAs}
+						excerpt={disciple.excerpt}
+						action="Read biography"
+						image={getCollectionImage('disciples', disciple.slug, getDiscipleImageAlt(disciple.title))}
+						eager={i < 3}
+					/>
+				))}
+			</ul>
+		)}
+	</section>
+
+	<section aria-labelledby="parables">
+		<h2 id="parables">Parables of Jesus</h2>
+		<p>{parablesIntro}</p>
+		{parables.length === 0 ? (
+			<EmptyState />
+		) : (
+			<>
+				<CardFilter
+					target="parable-list"
+					label="Filter by theme"
+					options={parableOptions}
+					noun={{ one: 'parable', many: 'parables' }}
+				/>
+				<ul class="card-grid card-grid--media" id="parable-list">
+					{parables.map((parable) => (
+						<EntryCard
+							href={withBase(`/parables/${parable.slug}`)}
+							title={parable.title}
+							label={parable.category}
+							meta={parable.gospelReference}
+							excerpt={parable.excerpt}
+							action="Read article"
+							image={getCollectionImage('parables', parable.slug, parable.imageAlt)}
+							filterValue={slugify(parable.category)}
+						/>
+					))}
+				</ul>
+			</>
+		)}
+	</section>
+
+	<section aria-labelledby="miracles">
+		<h2 id="miracles">Miracles of Jesus</h2>
+		<p>{miraclesIntro}</p>
+		{miracles.length === 0 ? (
+			<EmptyState />
+		) : (
+			<>
+				<CardFilter
+					target="miracle-list"
+					label="Filter by kind of sign"
+					options={miracleOptions}
+					noun={{ one: 'miracle', many: 'miracles' }}
+				/>
+				<ul class="card-grid card-grid--media" id="miracle-list">
+					{miracles.map((miracle) => (
+						<EntryCard
+							href={withBase(`/miracles/${miracle.slug}`)}
+							title={miracle.title}
+							label={miracle.category}
+							meta={miracle.gospelReference}
+							excerpt={miracle.excerpt}
+							action="Read article"
+							image={getCollectionImage('miracles', miracle.slug, miracle.imageAlt)}
+							filterValue={slugify(miracle.category)}
+						/>
+					))}
+				</ul>
+			</>
+		)}
+		<p class="section-footer-links">
+			See also <a href={withBase('/miracles/shroud-of-turin')}>the Shroud of Turin</a>,
+			<a href={withBase('/miracles/veil-of-veronica')}>the Veil of Veronica</a>, and
+			<a href={withBase('/signs-and-wonders#eucharistic-miracles')}>Eucharistic miracles</a>.
+		</p>
+	</section>
+
+	<p class="section-footer-links">
+		Read summaries of the <a href={withBase('/bible')}>Gospels and every book of the Bible</a>.
+	</p>
+</SectionLayout>

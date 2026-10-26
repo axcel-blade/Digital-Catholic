@@ -18,77 +18,57 @@ export const SITE = {
 export const PAGE_DESCRIPTIONS = {
 	home: SITE.defaultDescription,
 	about:
-		'What Digital Catholic is, who it is for, how its thirty-four content areas are organised, and its approach to accuracy and devotion.',
+		'What Digital Catholic is, who it is for, how its three content areas are organised, and its approach to accuracy and devotion.',
 	contact:
 		'Contact Digital Catholic with questions, corrections, or suggestions—by email or by opening an issue in the project’s GitHub repository.',
 	bible:
 		'Summaries of all 73 books of the Catholic Bible—46 Old Testament and 27 New Testament, including the deuterocanonical books—with themes and context for reading.',
-	prayers:
-		'Traditional Catholic prayers—the Our Father and the Hail Mary—with their full text, origins in Scripture, and meaning for daily prayer.',
+	pray:
+		'Pray with the Church: the Our Father and Hail Mary, the Rosary, the Daily Gospel, devotions such as Lectio Divina and adoration, the Mass, and the liturgical year.',
 	saints:
-		'Saint biographies for the Catholic Church—lives from birth to death, feast days, and lessons from Mary, Joseph, Nicholas of Myra, Anthony of Padua, Carlo Acutis, and more.',
-	sacramentsInDepth:
-		'In-depth guides to the sacraments—Baptism and Confirmation, the Real Presence, transubstantiation, Confession, marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion.',
+		'Mary and the saints in the Catholic Church—saint biographies with feast days, the Immaculate Conception, perpetual virginity, Assumption, Mother of God, the intercession and veneration of saints, relics and sacramentals, and angels.',
 	sacraments:
-		'The seven sacraments—Baptism, Confirmation, Eucharist, Penance, Anointing of the Sick, Holy Orders, and Matrimony—what the Church teaches and why they matter.',
-	disciples:
-		'The Twelve Apostles of Jesus Christ—biographies from their call to their deaths, Gospel and Acts accounts, feast days, and lessons for following Christ.',
-	miracles:
-		'Miracles of Jesus Christ in the Gospels of Matthew, Mark, Luke, and John—signs of the Kingdom with Scripture references and reflections for faith.',
-	eucharisticMiracles:
-		'Eucharistic miracles in Catholic history—Lanciano, Bolsena, and more recent events—with a clear note on the Church status of each account.',
-	marianApparitions:
-		'Marian apparitions such as Guadalupe, Lourdes, Fátima, Knock, and Velankanni—what happened, what it means, and the Church status of each.',
-	parables:
-		'Parables of Jesus Christ in the Gospels—stories of God’s Kingdom with Scripture references and lessons for discipleship.',
+		'The seven sacraments of the Catholic Church in the order of the Catechism—what each one is and why it matters—with in-depth guides to Baptism and Confirmation, the Real Presence, transubstantiation, Confession, marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion.',
+	signsAndWonders:
+		'Marian apparitions such as Guadalupe, Lourdes, Fátima, Knock, and Velankanni, and Eucharistic miracles such as Lanciano and Bolsena—what happened, what it means, and the Church status of each.',
+	learn:
+		'Learn the Catholic faith: the Bible, core beliefs, the Holy Trinity, the Ten Commandments, the seven sacraments, the life of Jesus, Mary, and the saints.',
 	commandments:
 		'The Ten Commandments—God’s moral law given to Moses—with the text of each commandment and its meaning for love of God and neighbour.',
 	coreBeliefs:
 		'Core Catholic beliefs—the Holy Trinity, the Incarnation, the Resurrection and Ascension, original sin and grace, the life to come, the Creeds, and the Four Last Things.',
 	bibleAndTradition:
-		'Sacred Scripture and Sacred Tradition, the Magisterium, the 73 books of the Catholic Bible, the Deuterocanonical books, how Catholics interpret Scripture, faith and reason, and the development of doctrine.',
+		'Sacred Scripture and Sacred Tradition, the Magisterium, the 73 books of the Catholic Bible, the Deuterocanonical books, how Catholics interpret Scripture, faith and reason, and the development of doctrine, together with the Catholic Church—her four marks, the Pope and bishops, apostolic succession, and her relationship with other Christians, and her history from the apostles to the present.',
 	theChurch:
 		'The Catholic Church’s identity, structure, and mission—the four marks, the Pope, bishops, priests, deacons and laity, apostolic succession, Eastern Catholic and Orthodox Churches, and ecumenism.',
 	churchHistory:
-		'Catholic Church history—the early Church and Church Fathers, the seven ecumenical councils, the Great Schism, the Reformation and Counter-Reformation, Trent, Vatican II, the papacy, and religious orders.',
-	apologetics:
-		'Answers to common questions about Catholicism—Confession, the Real Presence, Mary and the saints, infant baptism, salvation, faith and works, the Pope, science and faith, and popular misconceptions.',
+		'Catholic Church history—the early Church and Church Fathers, the seven ecumenical councils, the Great Schism, the Reformation and Counter-Reformation, Trent, Vatican II, the papacy, and religious orders, with a timeline of milestones from Pentecost to the present.',
+	study:
+		'Study the Catholic faith in depth: Scripture and Tradition, the Church and her history, moral and social teaching, apologetics, a searchable FAQ, and a glossary.',
 	moralTeaching:
-		'Catholic moral teaching—the capital sins and virtues, the theological and cardinal virtues, the Commandments, the Beatitudes, mortal and venial sin, conscience, mercy, and the Works of Mercy.',
+		'Catholic moral teaching—the capital sins and virtues, the theological and cardinal virtues, the Commandments, the Beatitudes, mortal and venial sin, conscience, mercy, and the Works of Mercy, together with Catholic social teaching on human dignity, the common good, solidarity, work, family, and creation, and practical guides to living the faith—Confession, OCIA, vocations, marriage and family, and daily prayer, with guided study paths for beginners, those becoming Catholic, and practising Catholics.',
 	socialTeaching:
 		'Catholic social teaching—human dignity and the sanctity of life, the common good, solidarity and subsidiarity, the poor, workers’ rights, family, stewardship of creation, peace, and citizenship.',
 	livingTheFaith:
 		'A practical guide to living the Catholic faith—First Communion and Confirmation, how to go to Confession, becoming Catholic through OCIA, vocations, marriage and family, Mass for beginners, daily prayer, and faith at university and work.',
-	maryAndTheSaints:
-		'Mary and the communion of saints—the Immaculate Conception, perpetual virginity, Assumption, Mother of God, the intercession and veneration of saints, relics and sacramentals, and angels.',
-	prayerAndDevotions:
-		'Catholic prayer and devotions—the Liturgy of the Hours, Lectio Divina, Eucharistic adoration, the Divine Mercy Chaplet, the Angelus, the Stations of the Cross, novenas and litanies, and fasting.',
-	liturgyAndWorship:
-		'Catholic liturgy and worship—the parts of the Mass, Sunday and holy days of obligation, the liturgical year and colours, the Real Presence, sacred music, sacred signs, Eastern liturgies, and reverence at Mass.',
 	glossary:
 		'A Catholic glossary explaining key terms—transubstantiation, Magisterium, indulgence, sacramental, apostolic succession, and more—with Catechism references.',
 	askACatholicQuestion:
-		'A searchable FAQ answering common questions about Catholic doctrine, worship, morality, and Church history, with Scripture and Catechism references.',
+		'A searchable FAQ answering common questions about Catholic doctrine, worship, morality, and Church history, with Scripture and Catechism references, with a glossary of Catholic terms in plain language.',
 	studyPaths:
 		'Guided Catholic learning plans for beginners, people preparing to become Catholic through OCIA, and practising Catholics who want to go deeper.',
-	churchHistoryTimeline:
-		'An interactive timeline of Catholic Church history, from Pentecost and the apostles through the councils, the Great Schism, the Reformation, and Vatican II to the present.',
 	compareChristianTraditions:
 		'A careful, sourced comparison of Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, and Protestant beliefs on authority, Scripture, the sacraments, salvation, Mary, and more.',
 	dailyGospel:
 		'A daily Gospel passage with a short explanation and a reflection question, cycling through key scenes from the life of Jesus.',
 	holyTrinity:
-		'The Most Holy Trinity—one God in three divine Persons, the Father, the Son, and the Holy Spirit—with Scripture and the teaching of the Catechism.',
+		'The Most Holy Trinity—one God in three divine Persons, the Father, the Son, and the Holy Spirit—with Scripture, the teaching of the Catechism, and the seven gifts of the Holy Spirit (Isaiah 11:2) and the twelve fruits of the Spirit (Galatians 5:22–23).',
 	trinityOldTestament:
 		'How the Old Testament foreshadows the Holy Trinity—God’s Word, Spirit, and Wisdom at creation, the visitors at Mamre, the thrice-holy God, and the promised Spirit.',
 	trinityNewTestament:
 		'How the New Testament reveals the Holy Trinity—the Annunciation, the Baptism of the Lord, Christ’s promise of the Spirit, Pentecost, and the letters of the apostles.',
-	giftsOfTheHolySpirit:
-		'The seven gifts of the Holy Spirit—wisdom, understanding, counsel, fortitude, knowledge, piety, and fear of the Lord (Isaiah 11:2)—and what each one means.',
-	fruitsOfTheHolySpirit:
-		'The twelve fruits of the Holy Spirit from Galatians 5:22–23—charity, joy, peace, patience, and more—and how each shapes the Christian life.',
 	mass:
-		'The Holy Mass in the Catholic Church—the order of Mass step by step and the sacred vessels, linens, books, vestments, and colours used in its celebration.',
+		'The Holy Mass and Catholic liturgy—the order of Mass step by step, the items used at the altar, the meaning of each part, Sunday and holy days of obligation, the liturgical year and colours, sacred music, and Eastern liturgies.',
 	massItems:
 		'Items used at Mass in the Catholic Church—sacred vessels, altar linens, liturgical books, vestments, liturgical colours, and other objects used in the Eucharist.',
 	orderOfMass:

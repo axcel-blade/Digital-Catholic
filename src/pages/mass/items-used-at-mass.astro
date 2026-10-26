@@ -27,7 +27,8 @@ const itemCount = sections.reduce((sum, s) => sum + s.items.length, 0);
 ---
 
 <SectionLayout
-	sectionKey="mass"
+	sectionKey="pray"
+	extraCrumbs={[{ label: 'Holy Mass and Liturgy', href: withBase('/mass') }]}
 	heading="Items Used at Mass"
 	pageCrumb="Items Used at Mass"
 	description={PAGE_DESCRIPTIONS.massItems}

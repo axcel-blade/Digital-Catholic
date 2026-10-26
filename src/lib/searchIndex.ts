@@ -10,7 +10,7 @@ import { dailyGospelIntro, gospelReflections } from '../data/daily-gospel';
 import { getSection } from './sections';
 import { trinityIntro, trinityPersons, trinityScripture, trinityScriptureIntro } from '../data/trinity';
 import { fruitsIntro, giftsIntro, spiritFruits, spiritGifts } from '../data/holySpirit';
-import { massIntro, massItemsIntro, massPages, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
+import { massItemsIntro, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
 import {
 	mysterySets,
@@ -52,7 +52,7 @@ import {
 	bibleIntro,
 	testamentLabels,
 } from '../data/bible';
-import { prayers, prayersIntro } from '../data/prayers';
+import { prayers } from '../data/prayers';
 import { withBase } from './paths';
 
 export interface SearchEntry {
@@ -117,13 +117,6 @@ export function buildSearchIndex(): SearchEntry[] {
 			],
 		),
 		entry(
-			'Prayers',
-			withBase('/prayers'),
-			'Prayer',
-			prayersIntro,
-			[...prayers.map((p) => joinParts(p.title, p.alsoKnownAs, p.excerpt))],
-		),
-		entry(
 			'About Digital Catholic',
 			withBase('/about'),
 			'About',
@@ -131,13 +124,6 @@ export function buildSearchIndex(): SearchEntry[] {
 			[
 				'learning site Catholic faith biography sacraments knowledge sharing',
 			]
-		),
-		entry(
-			'Saints',
-			withBase('/saints'),
-			'Saints',
-			'Biographies of holy men and women who witness to Christ.',
-			['saint biography holy men women prayer'],
 		),
 		entry(
 			'Sacraments',
@@ -148,7 +134,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Disciples of Jesus',
-			withBase('/disciples'),
+			withBase('/learn#disciples'),
 			'Disciples',
 			disciplesIntro,
 			[
@@ -160,7 +146,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Miracles of Jesus',
-			withBase('/miracles'),
+			withBase('/learn#miracles'),
 			'Miracles',
 			miraclesIntro,
 			[miraclesIntro, ...miracles.map((m) => joinParts(m.title, m.excerpt, m.gospelReference, m.category))],
@@ -187,7 +173,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Eucharistic Miracles',
-			withBase('/eucharistic-miracles'),
+			withBase('/signs-and-wonders#eucharistic-miracles'),
 			'Eucharistic',
 			eucharisticMiraclesIntro,
 			[
@@ -199,7 +185,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Marian Apparitions',
-			withBase('/marian-apparitions'),
+			withBase('/signs-and-wonders#marian-apparitions'),
 			'Marian',
 			marianApparitionsIntro,
 			[
@@ -211,7 +197,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Parables of Jesus',
-			withBase('/parables'),
+			withBase('/learn#parables'),
 			'Parables',
 			parablesIntro,
 			[parablesIntro, ...parables.map((p) => joinParts(p.title, p.excerpt, p.gospelReference, p.category))],
@@ -247,24 +233,17 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 		entry(
 			'Gifts of the Holy Spirit',
-			withBase('/gifts-of-the-holy-spirit'),
+			withBase('/holy-trinity#gifts'),
 			'Holy Spirit',
 			giftsIntro,
 			[giftsIntro, ...spiritGifts.map((g) => joinParts(g.title, g.summary, g.meaning))],
 		),
 		entry(
 			'Fruits of the Holy Spirit',
-			withBase('/fruits-of-the-holy-spirit'),
+			withBase('/holy-trinity#fruits'),
 			'Holy Spirit',
 			fruitsIntro,
 			[fruitsIntro, ...spiritFruits.map((f) => joinParts(f.title, f.meaning))],
-		),
-		entry(
-			'Holy Mass',
-			withBase('/mass'),
-			'Mass',
-			massIntro,
-			[massIntro, ...massPages.map((p) => joinParts(p.title, p.excerpt))],
 		),
 		entry(
 			'Items Used at Mass',
@@ -383,7 +362,7 @@ export function buildSearchIndex(): SearchEntry[] {
 	items.push(
 		entry(
 			'The Sacraments in Depth',
-			withBase('/sacraments/guides'),
+			withBase('/sacraments#in-depth'),
 			'Sacrament guides',
 			'In-depth guides to the sacraments and how to live them.',
 			sacramentGuides.map((g) => joinParts(g.title, g.excerpt))
@@ -502,7 +481,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		items.push(
 			entry(
 				`Gift of the Holy Spirit: ${gift.title}`,
-				withBase(`/gifts-of-the-holy-spirit#gift-${gift.number}`),
+				withBase(`/holy-trinity#gift-${gift.number}`),
 				'Holy Spirit',
 				gift.summary,
 				[gift.title, gift.summary, gift.meaning]
@@ -514,7 +493,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		items.push(
 			entry(
 				`Fruit of the Holy Spirit: ${fruit.title}`,
-				withBase(`/fruits-of-the-holy-spirit#fruit-${fruit.number}`),
+				withBase(`/holy-trinity#fruit-${fruit.number}`),
 				'Holy Spirit',
 				fruit.meaning,
 				[fruit.title, fruit.meaning]
@@ -585,7 +564,7 @@ export function buildSearchIndex(): SearchEntry[] {
 			studyPathsIntro,
 			...studyPaths.map((p) => joinParts(p.title, p.audience, p.summary)),
 		]),
-		entry('Church History Timeline', withBase('/church-history-timeline'), 'Timeline', timelineIntro, [
+		entry('Church History Timeline', withBase('/church-history#timeline-title'), 'Timeline', timelineIntro, [
 			timelineIntro,
 			...timelineEvents.map((e) => joinParts(e.date, e.title, e.description)),
 		]),
@@ -620,8 +599,21 @@ export function buildSearchIndex(): SearchEntry[] {
 		);
 	}
 
+	// Guides shown as sub-pages of another section rather than as a section of their own
+	const guidePages: Record<string, { title: string; href: string; label: string }> = {
+		apologetics: getSection('study'),
+		prayers: getSection('pray'),
+		saints: { title: 'Mary and the Saints', href: '/saints', label: 'Saints' },
+		mass: { title: 'Holy Mass and Liturgy', href: '/mass', label: 'Liturgy' },
+		'moral-teaching': { title: 'Christian Living', href: '/moral-teaching', label: 'Morality' },
+		'living-the-faith': { title: 'Living the Catholic Faith', href: '/living-the-faith', label: 'Practice' },
+		'bible-and-tradition': { title: 'Scripture, Tradition, and the Church', href: '/bible-and-tradition', label: 'Scripture & Tradition' },
+		'church-history': { title: 'Catholic Church History', href: '/church-history', label: 'History' },
+		'the-church': { title: 'The Catholic Church', href: '/the-church', label: 'Ecclesiology' },
+		'social-teaching': { title: 'Catholic Social Teaching', href: '/social-teaching', label: 'Society' },
+	};
 	for (const guide of guides) {
-		const section = getSection(guide.key);
+		const section = guidePages[guide.key] ?? getSection(guide.key);
 		items.push(
 			entry(section.title, withBase(section.href), section.label, guide.intro, [
 				guide.intro,

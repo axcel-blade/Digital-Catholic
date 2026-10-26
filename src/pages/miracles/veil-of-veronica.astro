@@ -24,7 +24,8 @@ const related: ArticleLink[] = miracles.slice(0, 3).map((miracle) => ({
 	title="The Veil of Veronica and the Holy Face"
 	description={PAGE_DESCRIPTIONS.veilOfVeronica}
 	currentPath={Astro.url.pathname}
-	sectionKey="miracles"
+	sectionKey="learn"
+	extraCrumbs={[{ label: 'Miracles of Jesus', href: withBase('/learn#miracles') }]}
 	label="Relics · History"
 	lead={veilOfVeronicaIntro}
 	sections={veilOfVeronicaSections}

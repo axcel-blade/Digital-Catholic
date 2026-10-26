@@ -31,15 +31,15 @@ export const guideImages: Record<string, { alt: string; caption: string }> = {
 		alt: 'A procession of young girls in white veils walking to their First Communion through a village street',
 		caption: 'Jules Breton, The First Communicants at Courrières (1884), Petit Palais. Public domain.',
 	},
-	'mary-and-the-saints': {
+	saints: {
 		alt: 'The Virgin Mary in white and blue robes rising on clouds, surrounded by cherubs, with her hands crossed on her breast',
 		caption: 'Bartolomé Esteban Murillo, The Immaculate Conception of Los Venerables (1678), Prado. Public domain.',
 	},
-	'prayer-and-devotions': {
+	prayers: {
 		alt: 'A farmer and his wife standing with heads bowed in prayer in a field at dusk, a church spire on the horizon',
 		caption: 'Jean-François Millet, The Angelus (1857–1859), Musée d’Orsay. Public domain.',
 	},
-	'liturgy-and-worship': {
+	mass: {
 		alt: 'The open Ghent Altarpiece: God enthroned between Mary and John the Baptist above the Lamb of God on an altar adored by saints, angels, and pilgrims',
 		caption: 'Jan and Hubert van Eyck, The Ghent Altarpiece (1432), St Bavo’s Cathedral, Ghent. Public domain.',
 	},

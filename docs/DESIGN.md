@@ -12,22 +12,15 @@ Logos, the social card, and brand usage rules live in [`docs/assets/`](assets/RE
 
 All content areas are defined once in `src/lib/sections.ts`. Navigation, the homepage library, the About page, breadcrumbs, and the footer read from that registry, so names, descriptions, and counts never drift.
 
-Each pathway is split into subgroups so the dropdown menus stay short: desktop panels show one column per subgroup, and the mobile menu shows each subgroup under a small heading.
+Sections are grouped into three pathways. A pathway with several sections opens a one-column dropdown on desktop; a pathway with a single section is a plain link straight to it. Each section can also own pages that keep their own URLs (listed below the hub that links to them); their menu item stays active on those pages through `alsoActiveOn`.
 
-| Pathway | Subgroup | Sections |
-|---|---|---|
-| **Learn** | Foundations | Holy Bible, Core Catholic Beliefs, Holy Trinity, Sacraments, The Sacraments in Depth, Ten Commandments |
-| **Study** | Church & Tradition | The Bible and Catholic Tradition, The Catholic Church, Catholic Church History, Catholic Apologetics and FAQ, Church History Timeline, Compare Christian Traditions |
-| | Christian living | Catholic Moral Teaching, Catholic Social Teaching, Living the Catholic Faith |
-| | Study tools | Catholic Glossary, Ask a Catholic Question, Catholic Study Paths |
-| | Holy Spirit | Gifts of the Holy Spirit, Fruits of the Holy Spirit |
-| | Holy lives | Saints, Mary and the Communion of Saints |
-| **Pray** | Prayer & devotion | Prayers, Rosary, Catholic Prayer and Devotions, Daily Gospel and Reflection |
-| | Liturgy | Holy Mass, Liturgical Calendar, Catholic Liturgy and Worship |
-| **Explore** | Life of Jesus | Disciples of Jesus, Miracles of Jesus, Parables of Jesus |
-| | Signs & wonders | Eucharistic Miracles, Marian Apparitions |
+| Pathway | Sections (and the pages they include) |
+|---|---|
+| **Learn** | Scripture, Doctrine, and the Saints (Holy Bible; Core Catholic Beliefs; Holy Trinity with the Gifts and Fruits of the Holy Spirit; Ten Commandments; apostles, parables, miracles; Sacraments and The Sacraments in Depth; Mary and the Saints; Marian and Eucharistic Signs) |
+| **Study** | Study the Faith: Scripture, Tradition, and the Church (The Catholic Church, Church History and timeline) · Christian Living (Social Teaching, Living the Faith, Study Paths) · Apologetics, Compare Traditions, Ask a Question, Glossary |
+| **Pray** | Prayer and Liturgy: prayers and devotions · Rosary · Daily Gospel · Holy Mass and Liturgy (Order of Mass, Items Used at Mass, Liturgical Calendar) |
 
-Top-level navigation: Home · Learn ▾ · Study ▾ · Pray ▾ · Explore ▾ · About · Contact · Search · Theme toggle.
+Top-level navigation: Home · Learn · Study · Pray · About · Contact · Search · Theme toggle.
 
 To add a section: add it to `siteSections`, add a description to `PAGE_DESCRIPTIONS` in `src/lib/seo.ts`, and create its pages with `SectionLayout` / `ArticleLayout`.
 
@@ -134,7 +127,7 @@ Church status uses `--status-{approved,recognized,investigation,tradition,report
 ## Principles
 
 1. **Content first.** Prose is set in the reading serif at `--content-width`. Chrome recedes.
-2. **Guided entry.** Visitors start from Learn, Study, Pray, or Explore rather than a flat grid.
+2. **Guided entry.** Visitors start from Learn, Study, or Pray rather than a flat grid.
 3. **Honest trust signals.** Church status, sources, and review dates appear only when the underlying content supports them. Nothing is labelled “approved” unless the article text says so.
 4. **Accessible by default.** One h1 per page, logical heading order, skip link, visible `:focus-visible` outline, 44px targets, labelled icon buttons, `aria-current` on active navigation, and no meaning conveyed by colour alone.
 5. **Theme parity.** Every colour token has a dark counterpart; the brand burgundy stays recognisable in both.

@@ -28,7 +28,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'The dogma that Mary, at the end of her earthly life, was taken up body and soul into heavenly glory. Defined by Pius XII in 1950 and celebrated on August 15.',
 		catechism: 'CCC 966',
-		link: { href: '/mary-and-the-saints#topic-3', label: 'The Assumption of Mary' },
+		link: { href: '/saints#topic-3', label: 'The Assumption of Mary' },
 	},
 	{
 		term: 'Beatification',
@@ -74,7 +74,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'The union of all the faithful in Christ—those on earth, those being purified in purgatory, and the saints in heaven—who share spiritual goods and pray for one another.',
 		catechism: 'CCC 946–962',
-		link: { href: '/mary-and-the-saints', label: 'Mary and the Communion of Saints' },
+		link: { href: '/saints#topic-1', label: 'Mary and the Communion of Saints' },
 	},
 	{
 		term: 'Concupiscence',
@@ -116,7 +116,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'A gathering of the bishops of the whole world with and under the Pope to teach and govern the universal Church. There have been twenty-one, from Nicaea I (325) to Vatican II (1962–1965).',
 		catechism: 'CCC 884',
-		link: { href: '/church-history-timeline', label: 'Church History Timeline' },
+		link: { href: '/church-history#timeline-title', label: 'Church History Timeline' },
 	},
 	{
 		term: 'Ecumenism',
@@ -152,14 +152,14 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'A feast on which Catholics are required to attend Mass, as on Sundays. The list varies by country.',
 		catechism: 'CCC 2177, 2180',
-		link: { href: '/liturgy-and-worship#topic-2', label: 'Holy days of obligation' },
+		link: { href: '/mass#topic-2', label: 'Holy days of obligation' },
 	},
 	{
 		term: 'Immaculate Conception',
 		definition:
 			'The dogma that Mary was preserved from original sin from the first moment of her conception, by a singular grace of God in view of the merits of Christ. It does not refer to the conception of Jesus.',
 		catechism: 'CCC 490–493',
-		link: { href: '/mary-and-the-saints#topic-1', label: 'The Immaculate Conception' },
+		link: { href: '/saints#topic-1', label: 'The Immaculate Conception' },
 	},
 	{
 		term: 'Incarnation',
@@ -190,14 +190,14 @@ export const glossaryTerms: GlossaryTerm[] = [
 		term: 'Lectio Divina',
 		definition: 'Latin for “divine reading”: an ancient, prayerful way of reading Scripture in four steps—reading, meditation, prayer, and contemplation.',
 		catechism: 'CCC 1177, 2708',
-		link: { href: '/prayer-and-devotions#topic-2', label: 'Lectio Divina' },
+		link: { href: '/pray#topic-2', label: 'Lectio Divina' },
 	},
 	{
 		term: 'Liturgy',
 		definition:
 			'The public worship of the Church, above all the Mass, the sacraments, and the Liturgy of the Hours. The word means “public work” or “work of the people.”',
 		catechism: 'CCC 1066–1070',
-		link: { href: '/liturgy-and-worship', label: 'Catholic Liturgy and Worship' },
+		link: { href: '/mass', label: 'Holy Mass and Liturgy' },
 	},
 	{
 		term: 'Magisterium',
@@ -216,7 +216,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 	{
 		term: 'Novena',
 		definition: 'A prayer offered on nine consecutive days, recalling the nine days the apostles and Mary prayed together before Pentecost.',
-		link: { href: '/prayer-and-devotions#topic-7', label: 'Novenas and litanies' },
+		link: { href: '/pray#topic-7', label: 'Novenas and litanies' },
 	},
 	{
 		term: 'Original sin',
@@ -241,14 +241,14 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'The truth that Jesus Christ is truly, really, and substantially present—Body, Blood, soul, and divinity—under the appearances of bread and wine in the Eucharist.',
 		catechism: 'CCC 1373–1381',
-		link: { href: '/apologetics#topic-2', label: 'Why Catholics believe in the Real Presence' },
+		link: { href: '/study#topic-2', label: 'Why Catholics believe in the Real Presence' },
 	},
 	{
 		term: 'Relic',
 		definition:
 			'The physical remains of a saint (first class), an object the saint used (second class), or an object touched to a first-class relic (third class), venerated in honour of the saint.',
 		catechism: 'CCC 1674',
-		link: { href: '/mary-and-the-saints#topic-7', label: 'Saints, relics and sacramentals' },
+		link: { href: '/saints#topic-7', label: 'Saints, relics and sacramentals' },
 	},
 	{
 		term: 'Sacrament',
@@ -262,7 +262,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'A sacred sign instituted by the Church—such as holy water, a blessing, a rosary, or a medal—that prepares us to receive grace and sanctifies ordinary life. Unlike a sacrament, it does not confer grace by itself.',
 		catechism: 'CCC 1667–1679',
-		link: { href: '/mary-and-the-saints#topic-7', label: 'Saints, relics and sacramentals' },
+		link: { href: '/saints#topic-7', label: 'Saints, relics and sacramentals' },
 	},
 	{
 		term: 'Sacred Tradition',
@@ -280,7 +280,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		term: 'Theotokos',
 		definition: 'Greek for “God-bearer”: the title of Mary as Mother of God, affirmed by the Council of Ephesus in 431.',
 		catechism: 'CCC 495',
-		link: { href: '/mary-and-the-saints#topic-4', label: 'Mary as Mother of God' },
+		link: { href: '/saints#topic-4', label: 'Mary as Mother of God' },
 	},
 	{
 		term: 'Transubstantiation',

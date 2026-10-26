@@ -11,7 +11,7 @@ const topic: GuideTopic = {
 		'The Apostolic Fathers are the earliest Christian writers after the New Testament, many of whom knew the apostles or their disciples. Their writings—including the Didache, the Letter of Clement of Rome to the Corinthians, the letters of Ignatius of Antioch, and the letter of Polycarp of Smyrna—already show bishops, priests, and deacons, Sunday Eucharist, and Baptism.',
 	],
 	links: [
-		{ href: '/disciples', label: 'The apostles and disciples' },
+		{ href: '/learn#disciples', label: 'The apostles and disciples' },
 	],
 };
 

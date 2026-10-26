@@ -66,7 +66,7 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 1987–2029',
 		scripture: 'Ephesians 2:8–10; Galatians 5:6',
-		link: { href: '/apologetics#topic-5', label: 'Faith, grace and good works' },
+		link: { href: '/study#topic-5', label: 'Faith, grace and good works' },
 	},
 	{
 		question: 'What is purgatory?',
@@ -104,7 +104,7 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 2174–2183',
 		scripture: 'Acts 20:7; Hebrews 10:25',
-		link: { href: '/liturgy-and-worship#topic-2', label: 'The Sunday obligation' },
+		link: { href: '/mass#topic-2', label: 'The Sunday obligation' },
 	},
 	{
 		question: 'Can non-Catholics receive Communion at Mass?',
@@ -130,7 +130,7 @@ export const faqEntries: FaqEntry[] = [
 		answer: [
 			'The colour of the vestments follows the liturgical year: violet for Advent and Lent, white or gold for Christmas, Easter, and many feasts, red for Pentecost and martyrs, and green for Ordinary Time.',
 		],
-		link: { href: '/liturgy-and-worship#topic-3', label: 'The liturgical year and its colours' },
+		link: { href: '/mass#topic-3', label: 'The liturgical year and its colours' },
 	},
 	{
 		question: 'Why do Catholics use holy water and make the Sign of the Cross?',
@@ -139,7 +139,7 @@ export const faqEntries: FaqEntry[] = [
 			'Holy water recalls our Baptism, and the Sign of the Cross professes faith in the Trinity and in Christ crucified. Christians have made the Sign of the Cross since at least the second century.',
 		],
 		catechism: 'CCC 1668, 2157',
-		link: { href: '/liturgy-and-worship#topic-6', label: 'Incense, holy water and vestments' },
+		link: { href: '/mass#topic-6', label: 'Incense, holy water and vestments' },
 	},
 	{
 		question: 'What is Eucharistic adoration?',
@@ -148,7 +148,7 @@ export const faqEntries: FaqEntry[] = [
 			'Because Christ is truly present in the consecrated Host, Catholics worship Him there outside of Mass, often with the Host exposed in a monstrance. Many parishes offer times for silent prayer before the Blessed Sacrament.',
 		],
 		catechism: 'CCC 1378–1380',
-		link: { href: '/prayer-and-devotions#topic-3', label: 'Eucharistic adoration and Benediction' },
+		link: { href: '/pray#topic-3', label: 'Eucharistic adoration and Benediction' },
 	},
 	// Morality
 	{
@@ -196,7 +196,7 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 1434–1438, 2043',
 		scripture: 'Matthew 6:16–18',
-		link: { href: '/prayer-and-devotions#topic-8', label: 'Fasting, abstinence and penance' },
+		link: { href: '/pray#topic-8', label: 'Fasting, abstinence and penance' },
 	},
 	{
 		question: 'Can a sin be too big to be forgiven?',
@@ -217,7 +217,7 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 763–766',
 		scripture: 'Matthew 16:18; Acts 2:1–47',
-		link: { href: '/church-history-timeline', label: 'Church History Timeline' },
+		link: { href: '/church-history#timeline-title', label: 'Church History Timeline' },
 	},
 	{
 		question: 'Why did the Catholic and Orthodox Churches split?',
@@ -250,6 +250,6 @@ export const faqEntries: FaqEntry[] = [
 			'The Galileo affair was a real mistake, which the Church has acknowledged, but it was not typical. The Church founded universities and supported scientists for centuries; a priest, Georges Lemaître, first proposed the Big Bang theory.',
 		],
 		catechism: 'CCC 159',
-		link: { href: '/apologetics#topic-7', label: 'Science and faith' },
+		link: { href: '/study#topic-7', label: 'Science and faith' },
 	},
 ];

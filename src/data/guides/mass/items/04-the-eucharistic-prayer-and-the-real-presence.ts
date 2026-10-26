@@ -13,7 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/sacraments/guides/the-real-presence', label: 'The Real Presence' },
 		{ href: '/sacraments/guides/transubstantiation-explained', label: 'Transubstantiation explained' },
-		{ href: '/eucharistic-miracles', label: 'Eucharistic miracles' },
+		{ href: '/signs-and-wonders#eucharistic-miracles', label: 'Eucharistic miracles' },
 	],
 };
 

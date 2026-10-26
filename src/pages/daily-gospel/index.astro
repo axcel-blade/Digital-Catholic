@@ -10,7 +10,9 @@ const buildIndex = reflectionIndexFor(new Date());
 ---
 
 <SectionLayout
-	sectionKey="daily-gospel"
+	sectionKey="pray"
+	heading="Daily Gospel and Reflection"
+	pageCrumb="Daily Gospel"
 	description={PAGE_DESCRIPTIONS.dailyGospel}
 	currentPath={Astro.url.pathname}
 	intro={dailyGospelIntro}
@@ -53,7 +55,7 @@ const buildIndex = reflectionIndexFor(new Date());
 	<p class="section-footer-links">
 		For the readings set for Mass today, see the
 		<a href="https://universalis.com/mass.htm" rel="noopener noreferrer" target="_blank">daily Mass readings at Universalis<span class="visually-hidden"> (opens in a new tab)</span></a>.
-		To pray more deeply with a passage, try <a href={withBase('/prayer-and-devotions#topic-2')}>Lectio Divina</a>.
+		To pray more deeply with a passage, try <a href={withBase('/pray#topic-2')}>Lectio Divina</a>.
 	</p>
 </SectionLayout>
 

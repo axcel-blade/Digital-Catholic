@@ -1,11 +1,53 @@
 ---
 import GuidePage from '../../components/GuidePage.astro';
+import CardFilter from '../../components/CardFilter.astro';
+import { getGuide } from '../../data/guides';
+import { timelineEraLabels, timelineEraOrder, timelineEvents, timelineIntro } from '../../data/timeline';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
+
+const history = getGuide('church-history');
+const events = [...timelineEvents].sort((a, b) => a.year - b.year);
+const options = timelineEraOrder.map((era) => ({
+	value: era,
+	label: timelineEraLabels[era],
+	count: events.filter((e) => e.era === era).length,
+}));
 ---
 
-<GuidePage guideKey="church-history" description={PAGE_DESCRIPTIONS.churchHistory}>
+<GuidePage
+	guideKey="church-history"
+	sectionKey="study"
+	extraCrumbs={[{ label: 'Scripture, Tradition, and the Church', href: withBase('/bible-and-tradition') }]}
+	heading="Catholic Church History"
+	description={PAGE_DESCRIPTIONS.churchHistory}
+	count={`${history.topics.length} topics · ${events.length} milestones`}
+>
+	<section slot="after" aria-labelledby="timeline-title">
+		<h2 id="timeline-title">Timeline of Church History</h2>
+		<p>{timelineIntro}</p>
+		<CardFilter target="timeline" label="Show an era" options={options} noun={{ one: 'milestone', many: 'milestones' }} />
+
+		<ol class="timeline" id="timeline">
+			{events.map((event) => (
+				<li class="timeline__event" data-filter-value={event.era}>
+					<p class="timeline__date">{event.date}</p>
+					<div class="timeline__body">
+						<h3 class="timeline__title">{event.title}</h3>
+						<p class="timeline__text">{event.description}</p>
+						{event.link && (
+							<p class="numbered-item__link">
+								<a href={withBase(event.link.href)}>{event.link.label} →</a>
+							</p>
+						)}
+					</div>
+				</li>
+			))}
+		</ol>
+	</section>
+
 	<p class="section-footer-links">
-		Continue with <a href={withBase('/the-church')}>The Catholic Church</a> or the <a href={withBase('/saints')}>Saints</a>.
+		Continue with <a href={withBase('/the-church')}>The Catholic Church</a> or meet the people behind this history in
+		<a href={withBase('/saints')}>Mary and the Saints</a>.
 	</p>
 </GuidePage>

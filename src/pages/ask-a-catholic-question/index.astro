@@ -2,6 +2,8 @@
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import ReferenceLine from '../../components/ReferenceLine.astro';
 import { faqCategoryLabels, faqCategoryOrder, faqEntries, faqId, faqIntro } from '../../data/faq';
+import EntryCard from '../../components/EntryCard.astro';
+import { glossary, glossaryIntro } from '../../data/glossary';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 
@@ -13,11 +15,13 @@ const groups = faqCategoryOrder.map((category) => ({
 ---
 
 <SectionLayout
-	sectionKey="ask-a-catholic-question"
+	sectionKey="study"
+	heading="Ask a Catholic Question"
+	pageCrumb="Ask a Question"
 	description={PAGE_DESCRIPTIONS.askACatholicQuestion}
 	currentPath={Astro.url.pathname}
 	intro={faqIntro}
-	count={`${faqEntries.length} questions`}
+	count={`${faqEntries.length} questions · ${glossary.length} glossary terms`}
 >
 	<div class="faq-tools" data-faq-tools hidden>
 		<label class="faq-tools__label" for="faq-search">Search the questions</label>
@@ -53,9 +57,21 @@ const groups = faqCategoryOrder.map((category) => ({
 		</section>
 	))}
 
+	<section aria-labelledby="glossary">
+		<h2 id="glossary">Catholic Glossary</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/glossary')}
+				title="Catholic Glossary"
+				label="Reference"
+				excerpt={glossaryIntro}
+				action={`Browse ${glossary.length} terms`}
+			/>
+		</ul>
+	</section>
+
 	<p class="section-footer-links">
-		For longer answers, see <a href={withBase('/apologetics')}>Catholic Apologetics and FAQ</a>, or look up a term in the
-		<a href={withBase('/glossary')}>Catholic glossary</a>.
+		For longer answers, see <a href={withBase('/study')}>Catholic Apologetics and FAQ</a>.
 	</p>
 </SectionLayout>
 

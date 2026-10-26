@@ -10,8 +10,8 @@ const topic: GuideTopic = {
 		'Mass usually lasts about an hour. At Communion, Catholics who are prepared come forward to receive. If you are not Catholic, or not ready to receive, you are welcome to remain in your seat in prayer or come forward with arms crossed over your chest to receive a blessing. Afterward, consider introducing yourself to the priest or parish staff.',
 	],
 	links: [
-		{ href: '/mass', label: 'The Holy Mass' },
-		{ href: '/liturgy-and-worship', label: 'The meaning of every part of the Mass' },
+		{ href: '/mass', label: 'Holy Mass and Liturgy' },
+		{ href: '/mass#topic-1', label: 'The meaning of every part of the Mass' },
 	],
 };
 

@@ -11,7 +11,7 @@ const topic: GuideTopic = {
 		'The angel Gabriel greets her as kecharitōmenē, “full of grace” or “highly favoured.” The belief was held for centuries and solemnly defined by Pope Pius IX in 1854. Four years later, at Lourdes, Mary identified herself to St. Bernadette with the words “I am the Immaculate Conception.” The feast is celebrated on December 8.',
 	],
 	links: [
-		{ href: '/marian-apparitions', label: 'Marian apparitions, including Lourdes' },
+		{ href: '/signs-and-wonders#marian-apparitions', label: 'Marian apparitions, including Lourdes' },
 	],
 };
 

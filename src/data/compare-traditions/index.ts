@@ -153,7 +153,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Salvation and justification',
-		link: '/apologetics#topic-5',
+		link: '/study#topic-5',
 		catechism: 'CCC 1987–2029',
 		values: {
 			catholic: 'By grace through faith, beginning in Baptism; justification makes us truly righteous and bears fruit in good works done in grace.',
@@ -165,7 +165,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Mary',
-		link: '/mary-and-the-saints',
+		link: '/saints#topic-1',
 		catechism: 'CCC 484–511, 963–975',
 		values: {
 			catholic: 'Mother of God, ever-virgin, immaculately conceived, and assumed body and soul into heaven; honoured above all saints.',
@@ -177,7 +177,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Saints and prayer for the dead',
-		link: '/mary-and-the-saints#topic-5',
+		link: '/saints#topic-5',
 		catechism: 'CCC 956–958, 1030–1032',
 		values: {
 			catholic: 'The saints intercede for us; Catholics pray for the dead, who may be undergoing purification in purgatory.',

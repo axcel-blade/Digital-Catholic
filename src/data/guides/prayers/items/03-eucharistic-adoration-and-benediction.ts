@@ -11,7 +11,7 @@ const topic: GuideTopic = {
 		'Benediction is a short service that concludes a period of exposition. The priest or deacon incenses the Blessed Sacrament, the hymn Tantum Ergo is sung, and the minister blesses the people with the monstrance, followed by the Divine Praises.',
 	],
 	links: [
-		{ href: '/eucharistic-miracles', label: 'Eucharistic miracles' },
+		{ href: '/signs-and-wonders#eucharistic-miracles', label: 'Eucharistic miracles' },
 		{ href: '/sacraments/eucharist', label: 'The Sacrament of the Eucharist' },
 	],
 };

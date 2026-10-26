@@ -1,0 +1,121 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import CardFilter from '../../components/CardFilter.astro';
+import StatusLegend from '../../components/StatusLegend.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { marianApparitions, marianApparitionsIntro } from '../../data/marian-apparitions';
+import { eucharisticMiracles, eucharisticMiraclesIntro } from '../../data/eucharistic-miracles';
+import { churchStatusLabels, churchStatusOrder, type ChurchStatus } from '../../data/lib/trust';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+
+function statusOptionsFor(items: { churchStatus?: ChurchStatus }[]) {
+	return churchStatusOrder
+		.filter((status) => items.some((item) => item.churchStatus === status))
+		.map((status) => ({
+			value: status,
+			label: churchStatusLabels[status],
+			count: items.filter((item) => item.churchStatus === status).length,
+		}));
+}
+
+const allItems = [...marianApparitions, ...eucharisticMiracles];
+const statuses = churchStatusOrder.filter((status) => allItems.some((item) => item.churchStatus === status));
+const apparitionOptions = statusOptionsFor(marianApparitions);
+const miracleOptions = statusOptionsFor(eucharisticMiracles);
+---
+
+<SectionLayout
+	sectionKey="learn"
+	heading="Marian and Eucharistic Signs"
+	pageCrumb="Marian and Eucharistic Signs"
+	description={PAGE_DESCRIPTIONS.signsAndWonders}
+	currentPath={Astro.url.pathname}
+	intro="The Church weighs reported apparitions of the Blessed Virgin Mary and Eucharistic miracles carefully. None adds to the faith, but those the Church approves can strengthen it. Each account below notes its Church status."
+	count={`${marianApparitions.length} apparitions · ${eucharisticMiracles.length} Eucharistic miracles`}
+>
+	<Fragment slot="header">
+		<nav class="jump-links" aria-label="Jump to a part of this page">
+			<a class="jump-links__link" href="#marian-apparitions">Marian Apparitions</a>
+			<a class="jump-links__link" href="#eucharistic-miracles">Eucharistic Miracles</a>
+		</nav>
+		{statuses.length > 0 && <StatusLegend statuses={statuses} />}
+	</Fragment>
+
+	<section aria-labelledby="marian-apparitions">
+		<h2 id="marian-apparitions">Marian Apparitions</h2>
+		<p>{marianApparitionsIntro}</p>
+		{marianApparitions.length === 0 ? (
+			<EmptyState />
+		) : (
+			<>
+				{apparitionOptions.length > 1 && (
+					<CardFilter
+						target="apparition-list"
+						label="Filter by Church status"
+						options={apparitionOptions}
+						noun={{ one: 'apparition', many: 'apparitions' }}
+					/>
+				)}
+				<ul class="card-grid card-grid--media" id="apparition-list">
+					{marianApparitions.map((apparition, i) => (
+						<EntryCard
+							href={withBase(`/marian-apparitions/${apparition.slug}`)}
+							title={apparition.title}
+							label={apparition.category}
+							meta={`${apparition.location} · ${apparition.date}`}
+							status={apparition.churchStatus}
+							excerpt={apparition.excerpt}
+							action="Read article"
+							image={getCollectionImage('marian-apparitions', apparition.slug, apparition.imageAlt)}
+							filterValue={apparition.churchStatus}
+							eager={i < 3}
+						/>
+					))}
+				</ul>
+			</>
+		)}
+	</section>
+
+	<section aria-labelledby="eucharistic-miracles">
+		<h2 id="eucharistic-miracles">Eucharistic Miracles</h2>
+		<p>{eucharisticMiraclesIntro}</p>
+		{eucharisticMiracles.length === 0 ? (
+			<EmptyState />
+		) : (
+			<>
+				{miracleOptions.length > 1 && (
+					<CardFilter
+						target="eucharistic-list"
+						label="Filter by Church status"
+						options={miracleOptions}
+						noun={{ one: 'account', many: 'accounts' }}
+					/>
+				)}
+				<ul class="card-grid card-grid--media" id="eucharistic-list">
+					{eucharisticMiracles.map((miracle) => (
+						<EntryCard
+							href={withBase(`/eucharistic-miracles/${miracle.slug}`)}
+							title={miracle.title}
+							label={miracle.category}
+							meta={`${miracle.location} · ${miracle.date}`}
+							status={miracle.churchStatus}
+							excerpt={miracle.excerpt}
+							action="Read article"
+							image={getCollectionImage('eucharistic-miracles', miracle.slug, miracle.imageAlt)}
+							filterValue={miracle.churchStatus}
+						/>
+					))}
+				</ul>
+			</>
+		)}
+	</section>
+
+	<p class="section-footer-links">
+		See also the <a href={withBase('/saints/blessed-virgin-mary')}>biography of the Blessed Virgin Mary</a>, the
+		<a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a>, and the
+		<a href={withBase('/learn#miracles')}>miracles of Jesus in the Gospels</a>.
+	</p>
+</SectionLayout>

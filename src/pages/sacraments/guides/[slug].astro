@@ -32,12 +32,12 @@ const toLink = (g: SacramentGuide): ArticleLink => ({
 const { prev, next } = getNeighbors(sacramentGuides, index);
 const relatedTeaching: Record<string, { href: string; title: string }[]> = {
 	'baptism-and-confirmation': [
-		{ href: '/gifts-of-the-holy-spirit', title: 'Gifts of the Holy Spirit' },
-		{ href: '/apologetics#topic-3', title: 'Why the Church baptises infants' },
+		{ href: '/holy-trinity#gifts', title: 'Gifts of the Holy Spirit' },
+		{ href: '/study#topic-3', title: 'Why the Church baptises infants' },
 	],
 	'the-real-presence': [
-		{ href: '/apologetics#topic-2', title: 'Why Catholics believe in the Real Presence' },
-		{ href: '/eucharistic-miracles', title: 'Eucharistic miracles' },
+		{ href: '/study#topic-2', title: 'Why Catholics believe in the Real Presence' },
+		{ href: '/signs-and-wonders#eucharistic-miracles', title: 'Eucharistic miracles' },
 	],
 	'transubstantiation-explained': [{ href: '/glossary#term-transubstantiation', title: 'Transubstantiation in the glossary' }],
 	'confession-repentance-and-absolution': [
@@ -53,7 +53,7 @@ const relatedTeaching: Record<string, { href: string; title: string }[]> = {
 	],
 	'state-of-grace-and-worthy-reception': [
 		{ href: '/moral-teaching#topic-5', title: 'Mortal and venial sin' },
-		{ href: '/liturgy-and-worship#topic-8', title: 'Proper reverence and participation at Mass' },
+		{ href: '/mass#topic-8', title: 'Proper reverence and participation at Mass' },
 	],
 };
 const teaching = relatedTeaching[guide.slug] ?? [];
@@ -66,7 +66,8 @@ const relatedSacraments = guide.sacraments
 	title={guide.title}
 	description={guide.excerpt}
 	currentPath={Astro.url.pathname}
-	sectionKey="sacraments-in-depth"
+	sectionKey="learn"
+	extraCrumbs={[{ label: 'Sacraments', href: withBase('/sacraments') }, { label: 'The Sacraments in Depth', href: withBase('/sacraments#in-depth') }]}
 	label="Sacrament guide"
 	lead={guide.excerpt}
 	image={getCollectionImage('sacraments/guides', guide.slug, getSacramentGuideImageAlt(guide.title))}

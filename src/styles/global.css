@@ -1628,10 +1628,6 @@ mark {
 	border-top-color: var(--color-accent);
 }
 
-.pathway--explore {
-	border-top-color: var(--color-gold);
-}
-
 .pathway:target {
 	box-shadow: 0 0 0 2px var(--color-focus);
 }

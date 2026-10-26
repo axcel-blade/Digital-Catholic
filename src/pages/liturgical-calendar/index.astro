@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths';
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import LiturgicalCalendarView from '../../components/LiturgicalCalendarView.astro';
 import {
@@ -15,7 +16,9 @@ const yearOptions = getLiturgicalYearsRange(defaultYear, 1, 2);
 ---
 
 <SectionLayout
-	sectionKey="liturgical-calendar"
+	sectionKey="pray"
+	extraCrumbs={[{ label: 'Holy Mass and Liturgy', href: withBase('/mass') }]}
+	pageCrumb="Liturgical Calendar"
 	heading={`Catholic Liturgical Calendar ${defaultYear}`}
 	title="Liturgical Calendar"
 	description={PAGE_DESCRIPTIONS.liturgicalCalendar}

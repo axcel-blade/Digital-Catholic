@@ -10,7 +10,7 @@ export interface ResolvedNavItem {
 
 export interface ResolvedNavSubgroup {
 	key: string;
-	label: string;
+	label?: string;
 	items: ResolvedNavItem[];
 }
 
@@ -40,9 +40,9 @@ export function buildSiteNav(currentPath: string): SiteNav {
 
 	// When section URLs nest (/sacraments and /sacraments/guides), only the closest match is active.
 	const bestRoute = siteSections
-		.map((section) => section.href)
-		.filter((route) => isNavActive(route, path))
-		.sort((a, b) => b.length - a.length)[0];
+		.flatMap((section) => [section.href, ...(section.alsoActiveOn ?? [])].map((route) => ({ href: section.href, route })))
+		.filter(({ route }) => isNavActive(route, path))
+		.sort((a, b) => b.route.length - a.route.length)[0]?.href;
 
 	const resolve = (route: string, label: string, _path: string, blurb?: string): ResolvedNavItem => ({
 		href: withBase(route),

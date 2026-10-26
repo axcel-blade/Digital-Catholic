@@ -31,19 +31,19 @@ const mysteryLinks: Record<string, { href: string; label: string }> = {
 	'joyful-3': { href: '/bible/luke', label: 'The Gospel of Luke' },
 	'joyful-4': { href: '/bible/luke', label: 'The Gospel of Luke' },
 	'joyful-5': { href: '/saints/st-joseph', label: 'St. Joseph' },
-	'sorrowful-1': { href: '/prayer-and-devotions#topic-6', label: 'The Stations of the Cross' },
-	'sorrowful-2': { href: '/prayer-and-devotions#topic-6', label: 'The Stations of the Cross' },
-	'sorrowful-3': { href: '/prayer-and-devotions#topic-6', label: 'The Stations of the Cross' },
-	'sorrowful-4': { href: '/prayer-and-devotions#topic-6', label: 'The Stations of the Cross' },
+	'sorrowful-1': { href: '/pray#topic-6', label: 'The Stations of the Cross' },
+	'sorrowful-2': { href: '/pray#topic-6', label: 'The Stations of the Cross' },
+	'sorrowful-3': { href: '/pray#topic-6', label: 'The Stations of the Cross' },
+	'sorrowful-4': { href: '/pray#topic-6', label: 'The Stations of the Cross' },
 	'sorrowful-5': { href: '/core-beliefs', label: 'Core Catholic Beliefs: salvation' },
 	'glorious-1': { href: '/miracles/the-resurrection', label: 'The Resurrection' },
 	'glorious-2': { href: '/core-beliefs', label: 'The Resurrection and Ascension' },
-	'glorious-3': { href: '/gifts-of-the-holy-spirit', label: 'Gifts of the Holy Spirit' },
-	'glorious-4': { href: '/mary-and-the-saints#topic-3', label: 'The Assumption of Mary' },
+	'glorious-3': { href: '/holy-trinity#gifts', label: 'Gifts of the Holy Spirit' },
+	'glorious-4': { href: '/saints#topic-3', label: 'The Assumption of Mary' },
 	'glorious-5': { href: '/saints/blessed-virgin-mary', label: 'The Blessed Virgin Mary' },
 	'luminous-1': { href: '/sacraments/baptism', label: 'The Sacrament of Baptism' },
 	'luminous-2': { href: '/miracles/wedding-at-cana', label: 'The Wedding at Cana' },
-	'luminous-3': { href: '/parables', label: 'The parables of the Kingdom' },
+	'luminous-3': { href: '/learn#parables', label: 'The parables of the Kingdom' },
 	'luminous-4': { href: '/miracles/the-transfiguration', label: 'The Transfiguration' },
 	'luminous-5': { href: '/sacraments/eucharist', label: 'The Sacrament of the Eucharist' },
 };
@@ -56,7 +56,8 @@ const related: ArticleLink[] = [
 	title={set.title}
 	description={set.excerpt}
 	currentPath={Astro.url.pathname}
-	sectionKey="rosary"
+	sectionKey="pray"
+	extraCrumbs={[{ label: 'Rosary', href: withBase('/rosary') }]}
 	label="Rosary"
 	lead={set.intro}
 	meta={[

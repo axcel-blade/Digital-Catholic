@@ -1,0 +1,89 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { prayers, prayersIntro } from '../../data/prayers';
+import { mysterySets, rosaryOriginIntro } from '../../data/rosary';
+import { dailyGospelIntro } from '../../data/daily-gospel';
+import { massIntro } from '../../data/mass';
+import { liturgicalCalendarIntro } from '../../data/liturgical-calendar';
+import { getGuide } from '../../data/guides';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const devotions = getGuide('prayers');
+const mysteryCount = mysterySets.reduce((n, s) => n + s.mysteries.length, 0);
+---
+
+<GuidePage
+	guideKey="prayers"
+	sectionKey="pray"
+	description={PAGE_DESCRIPTIONS.pray}
+	intro={`${prayersIntro} ${devotions.intro}`}
+	count={`${prayers.length} prayers · ${devotions.topics.length} devotions`}
+>
+	<section slot="lead" aria-labelledby="core-prayers">
+		<h2 id="core-prayers">Core prayers</h2>
+		<ul class="prayer-list">
+			{prayers.map((prayer) => (
+				<li class="prayer-card">
+					<h3 class="prayer-card__title">
+						<a class="card__link" href={withBase(`/prayers/${prayer.slug}`)}>{prayer.title}</a>
+					</h3>
+					{prayer.alsoKnownAs && <p class="card__meta">Also called {prayer.alsoKnownAs}</p>}
+					<blockquote class="prayer-text prayer-text--card">{prayer.text}</blockquote>
+					<p class="card__excerpt">{prayer.excerpt}</p>
+					<span class="card__action" aria-hidden="true">Read about this prayer <span class="card__arrow">→</span></span>
+				</li>
+			))}
+		</ul>
+		<h2 id="rosary">The Holy Rosary</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/rosary')}
+				title="How to Pray the Rosary"
+				label="Rosary"
+				excerpt={`Step-by-step instructions, the traditional prayers, and all ${mysteryCount} mysteries, with the day each set is prayed.`}
+				action="Pray the Rosary"
+			/>
+			<EntryCard
+				href={withBase('/rosary/origin')}
+				title="Origin of the Rosary"
+				label="Rosary · History"
+				excerpt={rosaryOriginIntro}
+				action="Read article"
+			/>
+		</ul>
+		<h2 id="daily-gospel">Daily Gospel and Reflection</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/daily-gospel')}
+				title="Today’s Gospel Reflection"
+				label="Daily prayer"
+				excerpt={dailyGospelIntro}
+				action="Read today’s reflection"
+			/>
+		</ul>
+		<h2 id="mass">The Holy Mass and Liturgy</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/mass')}
+				title="Holy Mass and Liturgy"
+				label="Liturgy"
+				excerpt={massIntro}
+				action="Explore the Mass"
+			/>
+			<EntryCard
+				href={withBase('/liturgical-calendar')}
+				title="Liturgical Calendar"
+				label="Liturgy"
+				excerpt={liturgicalCalendarIntro}
+				action="Open the calendar"
+			/>
+		</ul>
+		<h2 id="devotions">Devotions and practices</h2>
+	</section>
+
+	<p class="section-footer-links">
+		See also the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a>.
+	</p>
+</GuidePage>

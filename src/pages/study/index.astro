@@ -1,0 +1,76 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { getGuide } from '../../data/guides';
+import { compareIntro, traditions } from '../../data/compare-traditions';
+import { faqEntries, faqIntro } from '../../data/faq';
+import { glossary, glossaryIntro } from '../../data/glossary';
+import { studyPaths } from '../../data/study-paths';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const apologetics = getGuide('apologetics');
+const moral = getGuide('moral-teaching');
+const tradition = getGuide('bible-and-tradition');
+---
+
+<GuidePage
+	guideKey="apologetics"
+	sectionKey="study"
+	intro="Go deeper into what the Catholic Church believes and why. Begin with Scripture and Tradition, through which God’s revelation is handed on, and the Church that guards and teaches it. Then see how the faith shapes moral and social life, find clear answers to common questions, and follow a study path at your own pace (CCC 74–100)."
+	description={PAGE_DESCRIPTIONS.study}
+	count={`${apologetics.topics.length} questions · ${traditions.length} traditions compared`}
+>
+	<section slot="lead" aria-label="Study the Faith">
+		<h2 id="scripture-tradition-church">Scripture, Tradition, and the Church</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/bible-and-tradition')}
+				title="Scripture, Tradition, and the Church"
+				label="Scripture & Tradition"
+				excerpt={tradition.intro}
+				action="Read about Tradition, the Church, and her history"
+			/>
+		</ul>
+		<h2 id="christian-living">Christian Living</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/moral-teaching')}
+				title="Christian Living"
+				label="Morality"
+				excerpt={moral.intro}
+				action={`Moral and social teaching, living the faith, and ${studyPaths.length} study paths`}
+			/>
+		</ul>
+		<h2 id="compare-traditions">Questions, terms, and other traditions</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/compare-christian-traditions')}
+				title="Compare Christian Traditions"
+				label="Comparison"
+				excerpt={compareIntro}
+				action="See the comparison"
+			/>
+			<EntryCard
+				href={withBase('/ask-a-catholic-question')}
+				title="Ask a Catholic Question"
+				label="FAQ"
+				excerpt={faqIntro}
+				action={`Search ${faqEntries.length} questions`}
+			/>
+			<EntryCard
+				href={withBase('/glossary')}
+				title="Catholic Glossary"
+				label="Reference"
+				excerpt={glossaryIntro}
+				action={`Browse ${glossary.length} terms`}
+			/>
+		</ul>
+		<h2 id="common-questions">Common questions</h2>
+		<p>{apologetics.intro}</p>
+	</section>
+
+	<p class="section-footer-links">
+		Continue with <a href={withBase('/core-beliefs')}>Core Catholic Beliefs</a> or <a href={withBase('/living-the-faith')}>Living the Catholic Faith</a>.
+	</p>
+</GuidePage>

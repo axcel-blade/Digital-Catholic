@@ -18,7 +18,8 @@ const related: ArticleLink[] = mysterySets.slice(0, 3).map((set) => ({
 	title="Origin of the Rosary"
 	description={PAGE_DESCRIPTIONS.rosaryOrigin}
 	currentPath={Astro.url.pathname}
-	sectionKey="rosary"
+	sectionKey="pray"
+	extraCrumbs={[{ label: 'Rosary', href: withBase('/rosary') }]}
 	label="Rosary · History"
 	lead={rosaryOriginIntro}
 	sections={rosaryOriginSections}

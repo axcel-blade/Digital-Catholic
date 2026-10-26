@@ -7,16 +7,27 @@ import { guideImages } from '../data/guides/images';
 import { getSection } from '../lib/sections';
 import { getCollectionImage } from '../lib/images';
 import { withBase } from '../lib/paths';
+import type { BreadcrumbItem } from '../lib/seo';
 
 interface Props {
 	/** Key from src/lib/sections.ts and folder name in src/data/guides */
 	guideKey: string;
 	description: string;
+	/** Overrides the guide intro, for pages that combine a guide with other content */
+	intro?: string;
+	/** Overrides the default “N topics” count */
+	count?: string;
+	/** Section the page belongs to, when the guide is a sub-page of another section */
+	sectionKey?: string;
+	/** Visible h1 and breadcrumb label for a sub-page */
+	heading?: string;
+	/** Crumbs between the section and a sub-page */
+	extraCrumbs?: BreadcrumbItem[];
 }
 
-const { guideKey, description } = Astro.props;
+const { guideKey, description, intro, count, sectionKey = guideKey, heading, extraCrumbs } = Astro.props;
 const guide = getGuide(guideKey);
-const section = getSection(guideKey);
+const section = getSection(sectionKey);
 const art = guideImages[guideKey];
 const topicText = [guide.intro, ...guide.topics.flatMap((t) => [t.title, t.summary, ...t.meaning, ...(t.points?.items ?? [])])].join(' ');
 const ownLinks = guide.topics.flatMap((t) => t.links?.map((l) => l.href) ?? []);
@@ -24,17 +35,22 @@ const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 ---
 
 <SectionLayout
-	sectionKey={guideKey}
+	sectionKey={sectionKey}
+	heading={heading}
+	pageCrumb={heading}
+	extraCrumbs={extraCrumbs}
 	description={description}
 	currentPath={Astro.url.pathname}
-	intro={guide.intro}
-	count={`${guide.topics.length} topics`}
+	intro={intro ?? guide.intro}
+	count={count ?? `${guide.topics.length} topics`}
 >
-	<nav class="jump-links" aria-label={`Jump to a topic in ${section.title}`} slot="header">
+	<nav class="jump-links" aria-label={`Jump to a topic in ${heading ?? section.title}`} slot="header">
 		{guide.topics.map((t) => (
 			<a class="jump-links__link" href={`#topic-${t.number}`}>{t.title}</a>
 		))}
 	</nav>
+
+	<slot name="lead" />
 
 	{image && (
 		<figure class="framed-figure guide-figure">
@@ -81,6 +97,8 @@ const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 			</li>
 		))}
 	</ol>
+
+	<slot name="after" />
 
 	<RelatedTopics currentPath={Astro.url.pathname} text={topicText} exclude={ownLinks} />
 
