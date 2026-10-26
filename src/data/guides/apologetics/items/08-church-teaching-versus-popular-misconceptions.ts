@@ -1,7 +1,7 @@
 import type { GuideTopic } from '../../types';
 
 const topic: GuideTopic = {
-	number: 9,
+	number: 8,
 	title: 'What does the Church actually teach versus popular misconceptions?',
 	summary: 'Many common objections attack positions the Church does not hold.',
 	catechism: 'CCC 846–848, 891, 1030–1032, 1471',
@@ -17,7 +17,7 @@ const topic: GuideTopic = {
 			'“Purgatory is a second chance.” — Purgatory is purification for those who die in God’s friendship, not a chance for those who rejected Him.',
 			'“Indulgences buy forgiveness.” — Indulgences remit temporal punishment for sins already forgiven, and can never be sold.',
 			'“Catholics add works to grace.” — Every good work is itself the fruit of grace.',
-			'“Catholics pray to statues.” — Images are reminders; prayer is directed to the persons they depict.',
+			'“Catholics worship Mary and the saints.” — Worship is given to God alone; Mary and the saints are honoured and asked to pray for us (see Veneration versus adoration).',
 		],
 	},
 };

@@ -1,7 +1,7 @@
 import type { GuideTopic } from '../../types';
 
 const topic: GuideTopic = {
-	number: 7,
+	number: 6,
 	title: 'Why does the Church have a Pope?',
 	summary: 'Because Christ made Peter the rock of His Church and gave him the keys, and Peter’s role continues in his successors.',
 	scripture: 'Matthew 16:18–19; Luke 22:31–32; John 21:15–17; Isaiah 22:20–22',

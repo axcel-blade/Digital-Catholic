@@ -8,7 +8,7 @@ const topic: GuideTopic = {
 	catechism: 'CCC 1450–1460',
 	meaning: [
 		'Catholics must confess any mortal sins at least once a year, and frequent confession is encouraged. Check your parish schedule or make an appointment; you may confess face to face or anonymously behind a screen. If you are nervous or it has been a long time, simply tell the priest—he will gladly help you.',
-		'Begin with an examination of conscience, reflecting on your life in the light of the Ten Commandments and the Beatitudes. Then follow the simple steps below. The priest will speak the words of absolution, and your sins are truly forgiven.',
+		'Begin with an examination of conscience, then follow the simple steps below. The full guide to Confession explains contrition, absolution, and the fruits of the sacrament, and includes an Act of Contrition.',
 	],
 	points: {
 		title: 'Steps of Confession',
@@ -21,13 +21,8 @@ const topic: GuideTopic = {
 			'Complete your penance promptly',
 		],
 	},
-	text: {
-		title: 'An Act of Contrition',
-		lines: [
-			'My God, I am sorry for my sins with all my heart. In choosing to do wrong and failing to do good, I have sinned against you whom I should love above all things. I firmly intend, with your help, to do penance, to sin no more, and to avoid whatever leads me to sin. Our Saviour Jesus Christ suffered and died for us. In his name, my God, have mercy. Amen.',
-		],
-	},
 	links: [
+		{ href: '/sacraments/guides/confession-repentance-and-absolution', label: 'Confession, repentance and absolution: the full guide' },
 		{ href: '/sacraments/penance', label: 'The Sacrament of Penance' },
 	],
 };

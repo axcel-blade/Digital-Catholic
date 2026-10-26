@@ -6,6 +6,11 @@ All notable changes to Digital Catholic are documented here.
 
 ## [Unreleased]
 
+### Changed
+- Removed duplicated content: the Eucharist article no longer repeats the Items used at Mass catalogue (it links there instead), and the Rosary page now takes the Our Father and Hail Mary text from the Prayers section
+- Each overlapping topic now has one main page: “Do Catholics worship Mary or the saints?” is folded into Mary and the Saints → Veneration versus adoration; The Catholic Church no longer repeats the comparison of Christian traditions; Apologetics, Liturgy and Worship (Real Presence), and Living the Faith (Confession) give short answers that link to the full sacrament guides; FAQ answers are kept to one or two sentences
+- Search: the apostle and the Gospel of Matthew now have distinct titles, and each FAQ question has its own anchor, which opens that answer
+
 ### Added
 - Public-domain artwork at the top of each of the ten topic guides (Caravaggio, Perugino, Raphael, Bosch, Millet, Breton, Murillo, van Eyck, and a painting of the Council of Trent), credited in `public/guides/CREDITS.md`
 - Catholic Glossary (`/glossary`): 47 terms from absolution to viaticum, grouped A–Z, with Catechism references, links to fuller explanations, and a search entry per term
@@ -18,9 +23,9 @@ All notable changes to Digital Catholic are documented here.
 - New Study menu (between Learn and Pray) holding the Church & Tradition, Christian living, and Study tools subgroups, so no dropdown has more than three columns; the homepage now shows four pathways
 - Ten topic guides, each a single page of numbered topics with Scripture and Catechism references, jump links, and search entries per topic, built on a shared guide format (`src/data/guides/`, `GuidePage` component):
   - The Bible and Catholic Tradition (`/bible-and-tradition`): Scripture and Tradition, the Magisterium, the 73 books, the Deuterocanonical books, interpreting Scripture, faith and reason, and the development of doctrine
-  - The Catholic Church (`/the-church`): the four marks, the papacy, bishops, priests, deacons and laity, apostolic succession, the Orthodox Churches, Eastern Catholic Churches, Catholic, Orthodox, Anglican and Protestant differences, and ecumenism
+  - The Catholic Church (`/the-church`): the four marks, the papacy, bishops, priests, deacons and laity, apostolic succession, the Orthodox Churches, Eastern Catholic Churches, and ecumenism (the differences between traditions are covered on Compare Christian Traditions)
   - Catholic Church History (`/church-history`): the early Church and Apostolic Fathers, the Church Fathers, the seven ecumenical councils, the Great Schism, the Reformation and Counter-Reformation, Trent and Vatican II, the papacy and religious orders
-  - Catholic Apologetics and FAQ (`/apologetics`): nine common questions, from Confession and the Real Presence to science and faith and popular misconceptions
+  - Catholic Apologetics and FAQ (`/apologetics`): eight common questions, from Confession and the Real Presence to science and faith and popular misconceptions
   - Catholic Moral Teaching (`/moral-teaching`), Catholic Social Teaching (`/social-teaching`), and Living the Catholic Faith (`/living-the-faith`), listed under Study → Christian living
   - Mary and the Communion of Saints (`/mary-and-the-saints`), listed under Learn → Holy lives
   - Catholic Prayer and Devotions (`/prayer-and-devotions`) and Catholic Liturgy and Worship (`/liturgy-and-worship`), listed under Pray

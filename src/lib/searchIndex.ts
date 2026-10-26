@@ -2,7 +2,7 @@ import { commandments, commandmentsIntro } from '../data/commandments';
 import { coreBeliefs, coreBeliefsIntro } from '../data/coreBeliefs';
 import { guides } from '../data/guides';
 import { glossary, glossaryIntro, termId } from '../data/glossary';
-import { faqEntries, faqIntro, faqCategoryLabels } from '../data/faq';
+import { faqEntries, faqIntro, faqCategoryLabels, faqId } from '../data/faq';
 import { studyPaths, studyPathsIntro } from '../data/study-paths';
 import { timelineEvents, timelineIntro } from '../data/timeline';
 import { compareIntro, comparisonRows } from '../data/compare-traditions';
@@ -334,10 +334,14 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 	];
 
+	// A disciple and a Bible book can share a name (Matthew); qualify both so search results are distinct.
+	const bookTitles = new Set(bibleBooks.map((b) => b.title));
+	const discipleTitles = new Set(disciples.map((d) => d.title));
+
 	for (const disciple of disciples) {
 		items.push(
 			entry(
-				disciple.title,
+				bookTitles.has(disciple.title) ? `St. ${disciple.title} the Apostle` : disciple.title,
 				withBase(`/disciples/${disciple.slug}`),
 				'Disciple',
 				disciple.excerpt,
@@ -511,7 +515,9 @@ export function buildSearchIndex(): SearchEntry[] {
 	for (const book of bibleBooks) {
 		items.push(
 			entry(
-				book.title,
+				discipleTitles.has(book.title)
+					? `${book.category === 'gospels' ? 'Gospel' : 'Book'} of ${book.title}`
+					: book.title,
 				withBase(`/bible/${book.slug}`),
 				`Bible · ${testamentLabels[book.testament]}`,
 				book.excerpt,
@@ -595,7 +601,7 @@ export function buildSearchIndex(): SearchEntry[] {
 
 	for (const faq of faqEntries) {
 		items.push(
-			entry(faq.question, withBase('/ask-a-catholic-question'), `FAQ · ${faqCategoryLabels[faq.category]}`, faq.answer[0], [
+			entry(faq.question, withBase(`/ask-a-catholic-question#${faqId(faq.question)}`), `FAQ · ${faqCategoryLabels[faq.category]}`, faq.answer[0], [
 				faq.question,
 				...faq.answer,
 				faq.catechism ?? '',

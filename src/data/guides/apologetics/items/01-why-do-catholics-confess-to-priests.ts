@@ -11,6 +11,7 @@ const topic: GuideTopic = {
 		'The priest acts in persona Christi, in the person of Christ: it is Christ who absolves. Confessing aloud brings the healing of honesty, the assurance of hearing “I absolve you,” spiritual counsel, and reconciliation with the Church, since every sin wounds the Body of Christ. The priest is bound by the absolute seal of confession and may never reveal what he hears.',
 	],
 	links: [
+		{ href: '/sacraments/guides/confession-repentance-and-absolution', label: 'Confession, repentance and absolution in depth' },
 		{ href: '/sacraments/penance', label: 'The Sacrament of Penance' },
 		{ href: '/living-the-faith', label: 'How to go to Confession' },
 	],

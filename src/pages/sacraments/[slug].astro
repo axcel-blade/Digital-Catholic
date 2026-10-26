@@ -33,6 +33,15 @@ const toLink = (s: Sacrament): ArticleLink => ({
 
 const { prev, next } = getNeighbors(sacraments, index);
 const guides = getGuidesForSacrament(sacrament.slug);
+
+// Related pages elsewhere on the site, listed with the in-depth guides
+const otherLinks: Record<string, { href: string; title: string; excerpt: string }[]> = {
+	eucharist: [
+		{ href: '/mass/order-of-mass', title: 'The Order of Mass', excerpt: 'Each part of the Mass, step by step.' },
+		{ href: '/mass/items-used-at-mass', title: 'Items used at Mass', excerpt: 'The sacred vessels, altar linens, liturgical books, vestments, and colours used in celebrating the Eucharist.' },
+	],
+};
+const extra = otherLinks[sacrament.slug] ?? [];
 ---
 
 <ArticleLayout
@@ -50,13 +59,18 @@ const guides = getGuidesForSacrament(sacrament.slug);
 	trust={sacrament}
 >
 	<SectionList sections={sacrament.sections} />
-	{guides.length > 0 && (
+	{(guides.length > 0 || extra.length > 0) && (
 		<section class="article-section">
 			<h2>Go deeper</h2>
 			<ul>
 				{guides.map((guide) => (
 					<li>
 						<a href={withBase(`/sacraments/guides/${guide.slug}`)}>{guide.title}</a> — {guide.excerpt}
+					</li>
+				))}
+				{extra.map((link) => (
+					<li>
+						<a href={withBase(link.href)}>{link.title}</a> — {link.excerpt}
 					</li>
 				))}
 			</ul>

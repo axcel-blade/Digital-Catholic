@@ -1,7 +1,7 @@
 import type { GuideTopic } from '../../types';
 
 const topic: GuideTopic = {
-	number: 4,
+	number: 3,
 	title: 'Why does the Catholic Church baptise infants?',
 	summary: 'Baptism is God’s free gift of grace, and children too are invited into the covenant.',
 	scripture: 'Acts 2:38–39; Acts 16:15, 33; Colossians 2:11–12; Mark 10:14',

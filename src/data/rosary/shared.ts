@@ -1,3 +1,7 @@
+// The Our Father and Hail Mary are kept once, in the Prayers section, and shared here.
+import ourFather from '../prayers/items/01-our-father';
+import hailMary from '../prayers/items/02-hail-mary';
+
 export const rosaryIntro = "The Holy Rosary is a beloved prayer of the Catholic Church. On each bead we meditate on the life of Christ and His Mother while repeating the Our Father, Hail Mary, and Glory Be. The twenty mysteries are grouped into four sets, traditionally prayed on different days of the week.";
 
 export const rosaryOriginIntro = "The Rosary has ancient roots reaching back to the early Church, slowly taking shape over many centuries before becoming the beloved prayer we know today.";
@@ -90,11 +94,11 @@ export const rosaryPrayers = [
 	},
 	{
 		"title": "Our Father",
-		"text": "Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen."
+		"text": ourFather.text
 	},
 	{
 		"title": "Hail Mary",
-		"text": "Hail Mary, full of grace, the Lord is with thee; blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen."
+		"text": hailMary.text
 	},
 	{
 		"title": "Glory Be",

@@ -122,7 +122,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		term: 'Ecumenism',
 		definition: 'The work of restoring unity among all Christians, in obedience to Christ’s prayer “that they may all be one.”',
 		catechism: 'CCC 820–822',
-		link: { href: '/the-church#topic-8', label: 'Ecumenism and Christian unity' },
+		link: { href: '/the-church#topic-7', label: 'Ecumenism and Christian unity' },
 	},
 	{
 		term: 'Encyclical',

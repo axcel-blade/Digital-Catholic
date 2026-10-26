@@ -47,7 +47,7 @@ The library has thirty-three content areas, grouped into four pathways, each spl
 | Section | What you'll find |
 | --- | --- |
 | **The Bible and Catholic Tradition** | Scripture and Tradition, the Magisterium, the 73 books and the Deuterocanonical books, how Catholics interpret Scripture, faith and reason, and the development of doctrine |
-| **The Catholic Church** | The four marks, the Pope, bishops, priests, deacons and laity, apostolic succession, the Orthodox and Eastern Catholic Churches, the differences between Christian traditions, and ecumenism |
+| **The Catholic Church** | The four marks, the Pope, bishops, priests, deacons and laity, apostolic succession, the Orthodox and Eastern Catholic Churches, and ecumenism |
 | **Catholic Church History** | The early Church and Church Fathers, the seven ecumenical councils, the Great Schism, the Reformation and Counter-Reformation, Trent and Vatican II, the papacy, and religious orders |
 | **Church History Timeline** | Milestones from Pentecost to the present, filterable by era |
 | **Compare Christian Traditions** | A sourced, side-by-side comparison of Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, and Protestant beliefs |

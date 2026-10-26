@@ -1,7 +1,7 @@
 ---
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import ReferenceLine from '../../components/ReferenceLine.astro';
-import { faqCategoryLabels, faqCategoryOrder, faqEntries, faqIntro } from '../../data/faq';
+import { faqCategoryLabels, faqCategoryOrder, faqEntries, faqId, faqIntro } from '../../data/faq';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 
@@ -37,7 +37,7 @@ const groups = faqCategoryOrder.map((category) => ({
 		<section class="faq-group" data-faq-group aria-labelledby={`faq-${g.category}`}>
 			<h2 class="faq-group__title" id={`faq-${g.category}`}>{g.label}</h2>
 			{g.entries.map((entry) => (
-				<details class="faq-item" data-faq-item data-category={g.category}>
+				<details class="faq-item" id={faqId(entry.question)} data-faq-item data-category={g.category}>
 					<summary class="faq-item__question">{entry.question}</summary>
 					<div class="faq-item__answer">
 						{entry.answer.map((p) => <p>{p}</p>)}
@@ -88,6 +88,17 @@ const groups = faqCategoryOrder.map((category) => ({
 					words.length || category ? `${shown} ${shown === 1 ? 'question' : 'questions'} found.` : '';
 			}
 		};
+
+		const openFromHash = () => {
+			const target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+			if (target instanceof HTMLDetailsElement) {
+				target.open = true;
+				// Wait for the opened answer to lay out before scrolling to it.
+				requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+			}
+		};
+		openFromHash();
+		window.addEventListener('hashchange', openFromHash);
 
 		input?.addEventListener('input', apply);
 		chips.forEach((chip) => {

@@ -21,6 +21,7 @@ const topic: GuideTopic = {
 		],
 	},
 	links: [
+		{ href: '/mass/items-used-at-mass', label: 'Vestments and liturgical colours at Mass' },
 		{ href: '/liturgical-calendar', label: 'The Liturgical Calendar' },
 	],
 };

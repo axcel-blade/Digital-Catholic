@@ -11,6 +11,7 @@ const topic: GuideTopic = {
 		'The earliest Christians understood this literally. St. Ignatius of Antioch (about 107) wrote that heretics “abstain from the Eucharist because they do not confess that the Eucharist is the flesh of our Saviour,” and St. Justin Martyr (about 155) taught that the Eucharist is “the flesh and blood of that Jesus who was made flesh.” This faith was held universally for a thousand years and is still shared by the Orthodox Churches.',
 	],
 	links: [
+		{ href: '/sacraments/guides/the-real-presence', label: 'The Real Presence in depth' },
 		{ href: '/sacraments/eucharist', label: 'The Sacrament of the Eucharist' },
 		{ href: '/eucharistic-miracles', label: 'Eucharistic miracles' },
 	],

@@ -1,7 +1,7 @@
 import type { GuideTopic } from '../../types';
 
 const topic: GuideTopic = {
-	number: 6,
+	number: 5,
 	title: 'What is the relationship between faith, grace and good works?',
 	summary: 'We are saved by grace through faith, and that living faith bears fruit in good works done in Christ.',
 	scripture: 'Ephesians 2:8–10; Galatians 5:6; James 2:14–26; Romans 2:6–7',

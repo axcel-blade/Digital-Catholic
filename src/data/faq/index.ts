@@ -17,6 +17,11 @@ export const faqCategoryLabels: Record<FaqCategory, string> = {
 	history: 'Church history',
 };
 
+/** Anchor id for a question, e.g. "q-what-is-purgatory" */
+export function faqId(question: string): string {
+	return `q-${question.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
+}
+
 export const faqCategoryOrder: FaqCategory[] = ['doctrine', 'worship', 'morality', 'history'];
 
 export const faqIntro =
@@ -38,7 +43,7 @@ export const faqEntries: FaqEntry[] = [
 		question: 'Do Catholics believe the Bible?',
 		category: 'doctrine',
 		answer: [
-			'Yes. Catholics believe the Bible is the inspired Word of God, without error in what God wished to teach for our salvation. The Church reads it together with Sacred Tradition, and the Magisterium interprets it faithfully.',
+			'Yes: Catholics believe the Bible is the inspired Word of God, without error in what God wished to teach for our salvation. The Church reads it together with Sacred Tradition, as interpreted by the Magisterium.',
 		],
 		catechism: 'CCC 101–108',
 		scripture: '2 Timothy 3:16–17',
@@ -61,13 +66,13 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 1987–2029',
 		scripture: 'Ephesians 2:8–10; Galatians 5:6',
-		link: { href: '/apologetics#topic-6', label: 'Faith, grace and good works' },
+		link: { href: '/apologetics#topic-5', label: 'Faith, grace and good works' },
 	},
 	{
 		question: 'What is purgatory?',
 		category: 'doctrine',
 		answer: [
-			'Purgatory is the final purification of those who die in God’s friendship but are not yet completely purified. It is not a second chance or a place between heaven and hell, but a stage on the way to heaven. The Church prays for the dead because of this belief.',
+			'Purgatory is the final purification of those who die in God’s friendship but are not yet completely purified. It is not a second chance but a stage on the way to heaven, which is why the Church prays for the dead.',
 		],
 		catechism: 'CCC 1030–1032',
 		scripture: '2 Maccabees 12:43–46; 1 Corinthians 3:13–15',
@@ -76,7 +81,7 @@ export const faqEntries: FaqEntry[] = [
 		question: 'Can non-Catholics be saved?',
 		category: 'doctrine',
 		answer: [
-			'The Church teaches that all salvation comes from Christ through His Church. Those who, through no fault of their own, do not know Christ or His Church, but who seek God with a sincere heart and try to do His will as they know it through conscience, may also be saved. Baptised Christians of other traditions are joined to the Church in a real, though imperfect, communion.',
+			'The Church teaches that all salvation comes from Christ through His Church. Those who, through no fault of their own, do not know Christ or His Church, but who seek God with a sincere heart and try to do His will as they know it through conscience, may also be saved; baptised Christians of other traditions are already joined to the Church in a real, though imperfect, communion.',
 		],
 		catechism: 'CCC 838, 846–848',
 		link: { href: '/compare-christian-traditions', label: 'Compare Christian traditions' },
@@ -105,7 +110,7 @@ export const faqEntries: FaqEntry[] = [
 		question: 'Can non-Catholics receive Communion at Mass?',
 		category: 'worship',
 		answer: [
-			'Receiving Communion expresses full unity of faith with the Catholic Church, so non-Catholics are ordinarily asked not to receive. They are warmly welcome at Mass and may come forward with arms crossed for a blessing. Orthodox Christians and some others may receive in certain circumstances under Church law.',
+			'Receiving Communion expresses full unity of faith with the Catholic Church, so non-Catholics are ordinarily asked not to receive. They are warmly welcome at Mass and may come forward with arms crossed for a blessing (Orthodox Christians may receive in certain circumstances under Church law).',
 		],
 		catechism: 'CCC 1398–1401',
 		link: { href: '/living-the-faith#topic-6', label: 'Sunday Mass for beginners' },
@@ -114,7 +119,7 @@ export const faqEntries: FaqEntry[] = [
 		question: 'Why do Catholics pray the Rosary?',
 		category: 'worship',
 		answer: [
-			'The Rosary is a meditation on the life of Christ through the eyes of Mary. While praying the Our Father, Hail Marys, and Glory Be, Catholics reflect on twenty mysteries from the Annunciation to the Resurrection and beyond. It is Christ-centred prayer.',
+			'The Rosary is a meditation on the life of Christ through the eyes of Mary. While praying the Our Father, Hail Marys, and Glory Be, Catholics reflect on twenty mysteries of Christ, from the Annunciation to the Resurrection and beyond.',
 		],
 		catechism: 'CCC 971, 2708',
 		link: { href: '/rosary', label: 'How to pray the Rosary' },
@@ -197,7 +202,7 @@ export const faqEntries: FaqEntry[] = [
 		question: 'Can a sin be too big to be forgiven?',
 		category: 'morality',
 		answer: [
-			'No sin is too great for God’s mercy if we repent. The only thing that can keep us from forgiveness is refusing to accept it. The Sacrament of Penance is always available to anyone who sincerely confesses.',
+			'No sin is too great for God’s mercy if we repent; only refusing His forgiveness can keep us from it. The Sacrament of Penance is always open to anyone who sincerely confesses.',
 		],
 		catechism: 'CCC 982, 1864',
 		scripture: 'Luke 15:11–32',
@@ -245,6 +250,6 @@ export const faqEntries: FaqEntry[] = [
 			'The Galileo affair was a real mistake, which the Church has acknowledged, but it was not typical. The Church founded universities and supported scientists for centuries; a priest, Georges Lemaître, first proposed the Big Bang theory.',
 		],
 		catechism: 'CCC 159',
-		link: { href: '/apologetics#topic-8', label: 'Science and faith' },
+		link: { href: '/apologetics#topic-7', label: 'Science and faith' },
 	},
 ];
