@@ -41,7 +41,7 @@ const disciple: Disciple = {
 			heading: 'Full biography',
 			paragraphs: [
 				'James, son of Zebedee, was a fisherman on the Sea of Galilee, called with his brother John while mending nets with their father. Jesus named the brothers Boanerges—“sons of thunder”—for their fervent spirit. With Peter and John, James belonged to the inner circle who witnessed the raising of Jairus’s daughter, the Transfiguration, and Christ’s agony in Gethsemane.',
-				'He once asked, with John, for places of honor in the Kingdom; Jesus taught that greatness means service and sharing His cup. After the Resurrection James was among the apostles in Jerusalem; at Pentecost he received the Holy Spirit and preached the risen Christ.',
+				'He once asked, with John, for places of honour in the Kingdom; Jesus taught that greatness means service and sharing His cup. After the Resurrection James was among the apostles in Jerusalem; at Pentecost he received the Holy Spirit and preached the risen Christ.',
 				'His ministry in the early Church was cut short, but his witness opened the age of apostolic martyrdom. Spanish tradition later linked his preaching in Iberia with the great shrine at Santiago de Compostela, though details belong to pious legend as well as history.',
 			],
 		},
@@ -50,7 +50,7 @@ const disciple: Disciple = {
 			image: { src: '/disciples/sections/james-the-greater-miracles.jpg', alt: 'The Virgin Mary appearing on a pillar to St. James and his kneeling companions', caption: 'The Apparition of the Virgin to St. James the Great, Nicolas Poussin (Louvre).' },
 			paragraphs: [
 				'James was one of the three apostles Jesus chose to witness the raising of Jairus’s daughter (Mark 5:37–43) and the Transfiguration (Matthew 17:1–8). Scripture says that Jesus gave the Twelve authority to heal every disease (Matthew 10:1), and that after Pentecost “many signs and wonders were done among the people by the hands of the apostles” (Acts 5:12).',
-				'A Spanish tradition holds that while James was preaching in Spain, the Virgin Mary appeared to him at Zaragoza standing on a pillar to encourage him; the Basilica of Our Lady of the Pillar honors this tradition.',
+				'A Spanish tradition holds that while James was preaching in Spain, the Virgin Mary appeared to him at Zaragoza standing on a pillar to encourage him; the Basilica of Our Lady of the Pillar honours this tradition.',
 			],
 		},
 		{

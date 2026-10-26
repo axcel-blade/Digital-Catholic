@@ -50,7 +50,7 @@ export const veilOfVeronicaSections = [
 	{
 		heading: 'What the Church says',
 		paragraphs: [
-			'The Church has made no definitive judgment on the authenticity of the Veronica, the Manoppello veil, or the Sudarium of Oviedo. Like other relics, they are not objects of faith in themselves; Catholic belief rests on Scripture and Tradition, not on any cloth.',
+			'The Church has made no definitive judgement on the authenticity of the Veronica, the Manoppello veil, or the Sudarium of Oviedo. Like other relics, they are not objects of faith in themselves; Catholic belief rests on Scripture and Tradition, not on any cloth.',
 			'Yet the Church warmly encourages devotion to the Holy Face, because it draws the faithful to Christ Himself. As the Psalmist prays, “Your face, Lord, do I seek; hide not your face from me” (Psalm 27:8–9). Veronica’s simple act of mercy reminds us that every kindness shown to the suffering is shown to Christ (Matthew 25:40).',
 		],
 	},

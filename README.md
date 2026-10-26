@@ -26,42 +26,32 @@ A static Catholic digital library for learning and sharing the faith — clear r
 
 ## What it covers
 
-The library has thirteen content areas, grouped into three pathways. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
+The library has three content areas, grouped into three pathways. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
 
 ### Learn
 
 | Section | What you'll find |
 | --- | --- |
-| **Holy Bible** | Summaries of all 73 books of the Catholic canon, including the deuterocanonical books, and how the Bible was formed |
-| **Saints** | Biographies of holy men and women with life dates, feast days, miracles, and relics, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint) |
-| **Sacraments** | All seven sacraments in Catechism order — initiation, healing, and service of communion |
-| **Ten Commandments** | The text and meaning of each commandment |
+| **Scripture, Doctrine, and the Saints** | The Holy Bible — summaries of all 73 books of the Catholic canon, including the deuterocanonical books, and how the Bible was formed; core Catholic beliefs — the fundamental doctrines: the Trinity, the Incarnation, the Resurrection and Ascension, original sin and grace, heaven, hell, and purgatory, the Creeds, and the Four Last Things; the Holy Trinity — one God in three Persons — the Father, the Son, and the Holy Spirit — and how the Trinity appears across the Old and New Testaments; the seven gifts and the twelve fruits of the Holy Spirit, and what each means for the Christian life; the Twelve Apostles in traditional order — life, Gospel accounts, miracles, relics, death, and feast days; the parables, filterable by theme; and the miracles, filterable by kind of sign, with the Shroud of Turin and the Veil of Veronica; and marian apparitions (Guadalupe, Lourdes, Fátima, Knock, Velankanni, and others) and Eucharistic miracles from Lanciano to modern events, each labelled with its Church status; and Mary and the saints — biographies of holy men and women with life dates, feast days, miracles, and relics, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint); the Marian doctrines, the intercession and veneration of saints, relics and sacramentals, and angels; and the Sacraments — all seven sacraments in Catechism order — initiation, healing, and service of communion — plus eight in-depth guides on Baptism and Confirmation, the Real Presence, Transubstantiation, Confession, Marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion; and the Ten Commandments — the text and meaning of each commandment |
+
+### Study
+
+| Section | What you'll find |
+| --- | --- |
+| **Study the Faith** | Scripture and Tradition, the Magisterium, the 73 books and the Deuterocanonical books, how Catholics interpret Scripture, faith and reason, and the development of doctrine; and the Church — the four marks, the Pope, bishops, priests, deacons and laity, apostolic succession, the Orthodox and Eastern Catholic Churches, and ecumenism; and Church history — the early Church and Church Fathers, the seven ecumenical councils, the Great Schism, the Reformation and Counter-Reformation, Trent and Vatican II, the papacy, and religious orders; and a timeline of milestones from Pentecost to the present, filterable by era; answers to common questions — Confession, the Real Presence, Mary and the saints, infant baptism, salvation, faith and works, the Pope, science and faith, and misconceptions; and a sourced, side-by-side comparison of Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, and Protestant beliefs; plus a searchable FAQ on doctrine, worship, morality, and Church history; and a glossary — plain-language definitions of Catholic terms, from absolution to viaticum, with Catechism references; and Christian living — the capital sins and virtues, the theological and cardinal virtues, the Commandments, the Beatitudes, mortal and venial sin, conscience, mercy, and the Works of Mercy; and social teaching — human dignity, the common good, solidarity and subsidiarity, the poor, the dignity of work, family, stewardship of creation, and peace and citizenship; and living the faith — first Communion and Confirmation, Confession step by step, OCIA, vocations, dating and marriage, Mass for beginners, daily prayer, and faith at university and work; and study paths — guided learning plans for beginners, people becoming Catholic, and practising Catholics |
 
 ### Pray
 
 | Section | What you'll find |
 | --- | --- |
-| **Prayers** | The Our Father and Hail Mary — full text and explanation |
-| **Rosary** | How to pray it, the traditional prayers, all twenty mysteries, and its origin |
-| **Holy Mass** | The order of Mass step by step, and the items used at Mass: sacred vessels, altar linens, liturgical books, vestments, and liturgical colors |
-| **Liturgical Calendar** | Seasons, solemnities, feasts, and memorials by year, with a “today” view |
-
-### Explore
-
-| Section | What you'll find |
-| --- | --- |
-| **Disciples of Jesus** | The Twelve Apostles in traditional order — life, Gospel accounts, miracles, relics, death, and feast days |
-| **Miracles of Jesus** | Gospel accounts with Scripture references and classic artwork, filterable by kind of sign |
-| **Eucharistic Miracles** | Accounts from Lanciano to modern events, each labeled with its Church status |
-| **Marian Apparitions** | Guadalupe, Lourdes, Fátima, Knock, Velankanni, and others, each labeled with its Church status |
-| **Parables of Jesus** | Stories of the Kingdom with classic artwork, filterable by theme |
+| **Prayer and Liturgy** | The Our Father and Hail Mary with full text and explanation; the Rosary — how to pray it, the traditional prayers, all twenty mysteries, and its origin; a Daily Gospel passage with a short explanation and a question for reflection; the Liturgy of the Hours, Lectio Divina, adoration and Benediction, the Divine Mercy Chaplet, the Angelus, the Stations of the Cross, novenas and litanies, and fasting; the Holy Mass — the order of Mass step by step and the items used at Mass; the Liturgical Calendar — seasons, solemnities, feasts, and memorials by year, with a “today” view; the parts of the Mass, Sunday and holy days of obligation, the liturgical year and its colours, the Real Presence, sacred music, sacred signs, Eastern liturgies, and reverence at Mass |
 
 ### Features
 
-- **Guided homepage** with Learn / Pray / Explore pathways, a featured liturgical-calendar panel, and a full library index.
+- **Guided homepage** with Learn / Study / Pray pathways, a featured liturgical-calendar panel, and a full library index.
 - **Article pages** with breadcrumbs, metadata, an “On this page” list for longer articles, previous/next links, related reading, and a copy-link button.
 - **Sources on every article** in an “About this article” panel: Scripture (linked to the USCCB New American Bible), the Catechism, Church documents, and other cited references, with the date each article was last reviewed.
-- **Church status labels** for apparitions and Eucharistic miracles (approved for devotion, recognized or permitted, under investigation, historical tradition, or reported). Labels reflect only what each article states.
+- **Church status labels** for apparitions and Eucharistic miracles (approved for devotion, recognised or permitted, under investigation, historical tradition, or reported). Labels reflect only what each article states.
 - **Site search** from any page (press `/`), with category labels, highlighted excerpts, and full keyboard support.
 - **Light and dark themes**, a responsive layout, and accessibility built in: skip link, visible focus, 44px touch targets, and ARIA on every interactive control.
 - **SEO**: a unique description per page, canonical URLs, Open Graph and Twitter cards with a branded social image, JSON-LD (WebSite, Organization, Article, BreadcrumbList), and a sitemap.
@@ -157,7 +147,7 @@ docker-compose.yml    Local container setup on port 8080
 
 - How the site is built and deployed: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - Add or edit content: [src/data/README.md](src/data/README.md)
-- Section names, pathways, and menu descriptions: `src/lib/sections.ts`
+- Section names, pathways, menu subgroups, and menu descriptions: `src/lib/sections.ts`
 - Page titles and meta descriptions: `src/lib/seo.ts`
 - Design tokens and component rules: [docs/DESIGN.md](docs/DESIGN.md)
 - Logos and brand usage: [docs/assets/](docs/assets/README.md)
@@ -175,8 +165,8 @@ docker-compose.yml    Local container setup on port 8080
 
 ## Sources and image credits
 
-Each article lists its sources — Scripture, the Catechism, Church documents, and other checked references — in its “About this article” panel. Images come from Wikimedia Commons; most are public domain, and some photos are under Creative Commons licenses that require attribution. The source, author, and license of every image is recorded in the `CREDITS.md` file of its folder (for example [public/saints/CREDITS.md](public/saints/CREDITS.md)), and attribution-required photos are also credited in their captions.
+Each article lists its sources — Scripture, the Catechism, Church documents, and other checked references — in its “About this article” panel. Images come from Wikimedia Commons; most are public domain, and some photos are under Creative Commons licences that require attribution. The source, author, and licence of every image is recorded in the `CREDITS.md` file of its folder (for example [public/saints/CREDITS.md](public/saints/CREDITS.md)), and attribution-required photos are also credited in their captions.
 
-## License
+## Licence
 
-The code is released under the [MIT License](LICENSE.md). Images keep their own licenses, as listed in each folder's `CREDITS.md`.
+The code is released under the [MIT License](LICENSE.md). Images keep their own licences, as listed in each folder's `CREDITS.md`.

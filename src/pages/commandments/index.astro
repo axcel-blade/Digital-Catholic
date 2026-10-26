@@ -1,12 +1,15 @@
 ---
+import RelatedTopics from '../../components/RelatedTopics.astro';
 import SectionLayout from '../../layouts/SectionLayout.astro';
+import ReferenceLine from '../../components/ReferenceLine.astro';
 import { commandments, commandmentsIntro } from '../../data/commandments';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 ---
 
 <SectionLayout
-	sectionKey="commandments"
+	sectionKey="learn"
+	pageCrumb="Ten Commandments"
 	heading="The Ten Commandments"
 	title="Ten Commandments"
 	description={PAGE_DESCRIPTIONS.commandments}
@@ -31,11 +34,14 @@ import { withBase } from '../../lib/paths';
 						<span class="visually-hidden">Commandment {commandment.number}: </span>{commandment.title}
 					</h2>
 					<blockquote class="numbered-item__quote">“{commandment.text}”</blockquote>
+					<ReferenceLine scripture={commandment.scripture} catechism={commandment.catechism} />
 					<p class="numbered-item__text">{commandment.meaning}</p>
 				</div>
 			</li>
 		))}
 	</ol>
+
+	<RelatedTopics currentPath={Astro.url.pathname} text={commandments.map((c) => `${c.title} ${c.text} ${c.meaning}`).join(' ')} />
 
 	<p class="section-footer-links">
 		Continue with the <a href={withBase('/sacraments/penance')}>sacrament of Penance</a> or the

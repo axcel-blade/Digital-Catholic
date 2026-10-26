@@ -13,7 +13,7 @@ const sacrament: Sacrament = {
 		{
 			"heading": "What is Penance?",
 			"paragraphs": [
-				"The sacrament of Penance (or Reconciliation, or Confession) is the means by which the baptized obtain forgiveness for sins committed after Baptism and are reconciled with God and the Church.",
+				"The sacrament of Penance (or Reconciliation, or Confession) is the means by which the baptised obtain forgiveness for sins committed after Baptism and are reconciled with God and the Church.",
 				"Christ entrusted the ministry of reconciliation to the apostles: “Whose sins you forgive are forgiven them.” The priest acts in the person of Christ when he absolves in God’s name."
 			]
 		},

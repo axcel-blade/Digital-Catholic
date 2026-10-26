@@ -1,0 +1,17 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<GuidePage
+	guideKey="living-the-faith"
+	sectionKey="study"
+	extraCrumbs={[{ label: 'Christian Living', href: withBase('/moral-teaching') }]}
+	heading="Living the Catholic Faith"
+	description={PAGE_DESCRIPTIONS.livingTheFaith}
+>
+	<p class="section-footer-links">
+		Continue with the <a href={withBase('/sacraments')}>Sacraments</a> or <a href={withBase('/pray')}>Prayer and Liturgy</a>.
+	</p>
+</GuidePage>

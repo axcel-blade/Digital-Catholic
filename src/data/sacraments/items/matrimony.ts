@@ -13,15 +13,15 @@ const sacrament: Sacrament = {
 		{
 			"heading": "What is Matrimony?",
 			"paragraphs": [
-				"The sacrament of Matrimony is the covenant by which a man and a woman establish a partnership of the whole of life, ordered toward the good of the spouses and the procreation and education of children.",
-				"Christ raised marriage between the baptized to the dignity of a sacrament. Husband and wife confer the sacrament on each other before the Church and her minister."
+				"The sacrament of Matrimony is the covenant by which a man and a woman establish a partnership of the whole of life, ordered towards the good of the spouses and the procreation and education of children.",
+				"Christ raised marriage between the baptised to the dignity of a sacrament. Husband and wife confer the sacrament on each other before the Church and her minister."
 			]
 		},
 		{
 			"heading": "Properties of marriage",
 			"paragraphs": [
-				"Catholic marriage is characterized by unity (one man, one woman) and indissolubility (until death). It is also open to life—children are the supreme gift of marriage and a natural fruit of conjugal love.",
-				"Preparation programs, the wedding liturgy, and ongoing formation help couples live their vows in faith, hope, and love."
+				"Catholic marriage is characterised by unity (one man, one woman) and indissolubility (until death). It is also open to life—children are the supreme gift of marriage and a natural fruit of conjugal love.",
+				"Preparation programmes, the wedding liturgy, and ongoing formation help couples live their vows in faith, hope, and love."
 			]
 		},
 		{

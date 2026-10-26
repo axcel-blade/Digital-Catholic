@@ -17,7 +17,7 @@ const miracle: Miracle = {
 		{
 			"heading": "The sign",
 			"paragraphs": [
-				"Friends lower a paralyzed man through the roof before Jesus in a crowded house. Seeing their faith, Jesus first forgives the man’s sins. Scribes charge Him with blasphemy, so He heals the body to show He has authority on earth to forgive sins: the paralytic rises and walks home glorifying God."
+				"Friends lower a paralysed man through the roof before Jesus in a crowded house. Seeing their faith, Jesus first forgives the man’s sins. Scribes charge Him with blasphemy, so He heals the body to show He has authority on earth to forgive sins: the paralytic rises and walks home glorifying God."
 			]
 		},
 		{

@@ -11,7 +11,7 @@ const mysterySet: MysterySet = {
 			"number": 1,
 			"title": "The Baptism of Jesus in the Jordan",
 			"fruit": "Openness to the Holy Spirit",
-			"meditation": "John baptizes Jesus in the Jordan. The heavens open, the Spirit descends like a dove, and the Father declares, “This is my beloved Son.” We recall our own Baptism and call on the Spirit."
+			"meditation": "John baptises Jesus in the Jordan. The heavens open, the Spirit descends like a dove, and the Father declares, “This is my beloved Son.” We recall our own Baptism and call on the Spirit."
 		},
 		{
 			"number": 2,
@@ -23,7 +23,7 @@ const mysterySet: MysterySet = {
 			"number": 3,
 			"title": "The Proclamation of the Kingdom",
 			"fruit": "Conversion",
-			"meditation": "Jesus preaches repentance and the coming of God’s Kingdom. He calls sinners to mercy and sends disciples to heal and proclaim the Gospel. We ask for hearts turned toward God."
+			"meditation": "Jesus preaches repentance and the coming of God’s Kingdom. He calls sinners to mercy and sends disciples to heal and proclaim the Gospel. We ask for hearts turned towards God."
 		},
 		{
 			"number": 4,

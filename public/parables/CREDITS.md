@@ -2,7 +2,7 @@
 
 Images shown on the Parables of Jesus Christ pages (`/parables`). All images are from Wikimedia Commons, resized to at most 960px.
 
-| File | Source | Author | License |
+| File | Source | Author | Licence |
 | --- | --- | --- | --- |
 | the-good-samaritan.jpg | [Vincent van Gogh - The Good Samaritan, 1890 - Google Art Project.jpg](https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_The_Good_Samaritan,_1890_-_Google_Art_Project.jpg) | Vincent van Gogh (after Eugène Delacroix) | Public domain |
 | the-good-shepherd.jpg | [Bernhard Plockhorst - Good Shephard.jpg](https://commons.wikimedia.org/wiki/File:Bernhard_Plockhorst_-_Good_Shephard.jpg) | Bernhard Plockhorst | Public domain |

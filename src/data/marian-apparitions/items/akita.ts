@@ -9,7 +9,7 @@ const marianApparition: MarianApparition = {
 	"excerpt": "Mary appeared to Sister Agnes Sasagawa; a wooden statue in the chapel wept, perspired, and echoed her call to prayer and penance.",
 	"imageAlt": "Yuzawadai Catholic church in Akita, Japan, where the weeping statue of Our Lady of Akita is venerated",
 	"churchStatus": "approved",
-	"statusNote": "Bishop John Shojiro Ito of Niigata declared in 1984 that the events may be believed and promoted; the Holy See did not overturn his judgment.",
+	"statusNote": "Bishop John Shojiro Ito of Niigata declared in 1984 that the events may be believed and promoted; the Holy See did not overturn his judgement.",
 	"lastReviewed": "2026-10-25",
 	"sources": [
 		{ "label": "Wikipedia: Our Lady of Akita", "url": "https://en.wikipedia.org/wiki/Our_Lady_of_Akita" }
@@ -25,7 +25,7 @@ const marianApparition: MarianApparition = {
 		{
 			"heading": "Church approval and meaning",
 			"paragraphs": [
-				"After years of investigation, Bishop John Shojiro Ito of Niigata declared in 1984 that the events of Akita may be believed and promoted for the spiritual good of the faithful. The Holy See did not overturn his judgment.",
+				"After years of investigation, Bishop John Shojiro Ito of Niigata declared in 1984 that the events of Akita may be believed and promoted for the spiritual good of the faithful. The Holy See did not overturn his judgement.",
 				"Akita echoes Fátima’s call to the Rosary and reparation and speaks especially to a secular age tempted to forget God. Mary’s tears are a sign of her love and a summons to conversion before it is too late."
 			]
 		}

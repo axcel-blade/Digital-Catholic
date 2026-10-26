@@ -23,7 +23,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Themes and key points',
 				paragraphs: [
 					'Creation is good and ordered; the Sabbath rest reflects God’s lordship. Marriage, family, and work appear within God’s design. The promise to Abraham (Gn 12, 15, 17) is central: faith, not merit alone, makes one righteous.',
-					'Read Genesis as theology in narrative form: who God is, who we are, and how sin and grace shape every generation until Christ, the new Adam, fulfills the promise.',
+					'Read Genesis as theology in narrative form: who God is, who we are, and how sin and grace shape every generation until Christ, the new Adam, fulfils the promise.',
 				],
 			},
 		],
@@ -49,7 +49,7 @@ export const oldTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Themes and key points',
 				paragraphs: [
-					'Liberation from Egypt prefigures baptism and Easter: “out of Egypt I called my son.” The Passover lamb and unleavened bread point toward Christ’s sacrifice and the Eucharist.',
+					'Liberation from Egypt prefigures baptism and Easter: “out of Egypt I called my son.” The Passover lamb and unleavened bread point towards Christ’s sacrifice and the Eucharist.',
 					'The Law expresses God’s will for justice, worship, and mercy. Exodus teaches that true freedom is obedience to the God who saves.',
 				],
 			},
@@ -69,7 +69,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Summary',
 				paragraphs: [
 					'Leviticus takes its name from the tribe of Levi and the priestly ministry at the tabernacle. It details sacrifices, rituals of purification, and the Day of Atonement, by which sin is expiated and the community restored.',
-					'The holiness code (especially Lev 17–26) commands love of neighbor, care for the poor, and separation from pagan practices. Feasts such as Passover, Pentecost, and the Day of Atonement structure Israel’s liturgical year.',
+					'The holiness code (especially Lev 17–26) commands love of neighbour, care for the poor, and separation from pagan practices. Feasts such as Passover, Pentecost, and the Day of Atonement structure Israel’s liturgical year.',
 					'Priests and people alike are called to be holy, for the Lord their God is holy. The book shows that access to God requires sacrifice, repentance, and a life conformed to His will.',
 				],
 			},
@@ -90,7 +90,7 @@ export const oldTestamentBooks: BibleBook[] = [
 		testament: 'old',
 		category: 'pentateuch',
 		excerpt:
-			'Israel’s forty years in the wilderness: census, rebellion, and God’s guidance toward the promised land.',
+			'Israel’s forty years in the wilderness: census, rebellion, and God’s guidance towards the promised land.',
 		sections: [
 			{
 				heading: 'Summary',
@@ -130,7 +130,7 @@ export const oldTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Themes and key points',
 				paragraphs: [
-					'Central to Deuteronomy is the command to love God and neighbor, including the stranger. A future prophet like Moses (Dt 18) points to Christ.',
+					'Central to Deuteronomy is the command to love God and neighbour, including the stranger. A future prophet like Moses (Dt 18) points to Christ.',
 					'Jesus quotes Deuteronomy in the desert and names it among the greatest commandments. The book shapes Israel’s identity and the Church’s understanding of covenant fidelity.',
 				],
 			},
@@ -311,9 +311,9 @@ export const oldTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Summary',
 				paragraphs: [
-					'Elijah is taken up; Elisha receives a double portion of his spirit and performs signs of healing and judgment. Northern kings continue in evil until Assyria destroys Samaria (722 BC).',
+					'Elijah is taken up; Elisha receives a double portion of his spirit and performs signs of healing and judgement. Northern kings continue in evil until Assyria destroys Samaria (722 BC).',
 					'In Judah, Hezekiah and Josiah reform worship, but most kings fail. The Babylonian exile comes: Jerusalem and the temple fall (587 BC).',
-					'The book ends in Babylon with Jehoiachin favored at the king’s table—a small sign that God has not forgotten His promises.',
+					'The book ends in Babylon with Jehoiachin favoured at the king’s table—a small sign that God has not forgotten His promises.',
 				],
 			},
 			{
@@ -333,14 +333,14 @@ export const oldTestamentBooks: BibleBook[] = [
 		testament: 'old',
 		category: 'historical',
 		excerpt:
-			'Genealogies and David’s reign retold for Israel after exile, emphasizing worship and the temple.',
+			'Genealogies and David’s reign retold for Israel after exile, emphasising worship and the temple.',
 		sections: [
 			{
 				heading: 'Summary',
 				paragraphs: [
 					'Extensive genealogies link all Israel from Adam to the post-exilic community, affirming identity and continuity with the fathers.',
-					'David’s reign is retold with focus on bringing the ark to Jerusalem, preparing for the temple, and organizing Levites, priests, and musicians for liturgical service.',
-					'David’s prayer and census in 1 Chr 21–22 show repentance and the transfer of plans to Solomon. The book idealizes worship as the heart of national life.',
+					'David’s reign is retold with focus on bringing the ark to Jerusalem, preparing for the temple, and organising Levites, priests, and musicians for liturgical service.',
+					'David’s prayer and census in 1 Chr 21–22 show repentance and the transfer of plans to Solomon. The book idealises worship as the heart of national life.',
 				],
 			},
 			{
@@ -367,7 +367,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				paragraphs: [
 					'Solomon builds and dedicates the temple; the queen of Sheba visits. After the kingdom divides, Chronicles follows Judah alone, judging kings by their fidelity to God and the temple.',
 					'Reforms under Asa, Jehoshaphat, Hezekiah, and Josiah alternate with apostasy. The fall of Jerusalem is recounted with emphasis on sin against the Lord and His prophets.',
-					'The book ends with Cyrus permitting return to Judah to rebuild the temple—hope after judgment.',
+					'The book ends with Cyrus permitting return to Judah to rebuild the temple—hope after judgement.',
 				],
 			},
 			{
@@ -419,8 +419,8 @@ export const oldTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Summary',
 				paragraphs: [
-					'Nehemiah, cupbearer to the Persian king, learns Jerusalem lies in ruins. He prays, gains permission, and organizes the people to rebuild the walls despite mockery and threat.',
-					'Armed guards and shared labor complete the work. Ezra reads the Law publicly; the people weep and rejoice. Covenant obligations are renewed.',
+					'Nehemiah, cupbearer to the Persian king, learns Jerusalem lies in ruins. He prays, gains permission, and organises the people to rebuild the walls despite mockery and threat.',
+					'Armed guards and shared labour complete the work. Ezra reads the Law publicly; the people weep and rejoice. Covenant obligations are renewed.',
 					'Nehemiah corrects abuse of the poor, Sabbath breaking, and mixed marriages. He prays, “Remember me, O my God, for good.”',
 				],
 			},
@@ -456,7 +456,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Themes and key points',
 				paragraphs: [
 					'Angels, prayer, almsgiving, and marriage are central. The Church reads Tobit in light of God’s care for the suffering and the sanctity of family life.',
-					'Raphael’s name means “God heals”; the book encourages trust in Providence and works of mercy, especially toward the dead and the poor.',
+					'Raphael’s name means “God heals”; the book encourages trust in Providence and works of mercy, especially towards the dead and the poor.',
 				],
 			},
 		],
@@ -476,8 +476,8 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Summary',
 				paragraphs: [
 					'Nebuchadnezzar’s general Holofernes besieges Jewish towns. Judith, a wealthy widow, fasts and prays, then goes to the enemy camp with a plan blessed by the elders.',
-					'She gains Holofernes’ trust; when he falls drunk, she beheads him. The Israelites rout the Assyrians. Judith is honored with praise and a hymn to God.',
-					'The story is set in a stylized historical frame to teach that God saves through the humble and chaste, not military might alone.',
+					'She gains Holofernes’ trust; when he falls drunk, she beheads him. The Israelites rout the Assyrians. Judith is honoured with praise and a hymn to God.',
+					'The story is set in a stylised historical frame to teach that God saves through the humble and chaste, not military might alone.',
 				],
 			},
 			{
@@ -539,7 +539,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Themes and key points',
 				paragraphs: [
 					'Martyrdom and liturgical fidelity are inseparable. The feast of the Dedication appears in John 10. The narratives shaped Jewish hope before Christ.',
-					'Catholics honor the Maccabean martyrs as witnesses that faith is worth more than life—a prelude to Christ’s passion and the martyrs of the Church.',
+					'Catholics honour the Maccabean martyrs as witnesses that faith is worth more than life—a prelude to Christ’s passion and the martyrs of the Church.',
 				],
 			},
 		],
@@ -553,7 +553,7 @@ export const oldTestamentBooks: BibleBook[] = [
 		category: 'historical',
 		deuterocanonical: true,
 		excerpt:
-			'A theological retelling of the persecution emphasizing resurrection, prayer for the dead, and martyrdom.',
+			'A theological retelling of the persecution emphasising resurrection, prayer for the dead, and martyrdom.',
 		sections: [
 			{
 				heading: 'Summary',
@@ -567,7 +567,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Themes and key points',
 				paragraphs: [
 					'2 Maccabees is foundational for Catholic doctrine on resurrection, intercession for the dead, and the communion of saints. Purgatory is foreshadowed in prayers for the fallen.',
-					'The temple and suffering are read in light of Christ, who fulfills sacrifice and opens the way to eternal life.',
+					'The temple and suffering are read in light of Christ, who fulfils sacrifice and opens the way to eternal life.',
 				],
 			},
 		],
@@ -621,7 +621,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Themes and key points',
 				paragraphs: [
 					'The Psalter is Christ’s prayer in us through the Holy Spirit. “My God, my God, why have you forsaken me?” unites suffering with hope.',
-					'Catholics memorize psalms for personal prayer and find in them the vocabulary of praise, reparation, and trust in divine mercy.',
+					'Catholics memorise psalms for personal prayer and find in them the vocabulary of praise, reparation, and trust in divine mercy.',
 				],
 			},
 		],
@@ -634,20 +634,20 @@ export const oldTestamentBooks: BibleBook[] = [
 		testament: 'old',
 		category: 'wisdom',
 		excerpt:
-			'Practical wisdom for daily life, centered on fear of the Lord and personified Wisdom.',
+			'Practical wisdom for daily life, centred on fear of the Lord and personified Wisdom.',
 		sections: [
 			{
 				heading: 'Summary',
 				paragraphs: [
 					'Short sayings and longer poems teach prudence in speech, work, family, and justice. “The fear of the Lord is the beginning of wisdom” (Prv 1:7) frames the collection.',
-					'Chapters 1–9 personify Wisdom as a woman calling disciples to her feast, opposed by the foolish woman. Later chapters address kings, children, and neighbors.',
+					'Chapters 1–9 personify Wisdom as a woman calling disciples to her feast, opposed by the foolish woman. Later chapters address kings, children, and neighbours.',
 					'Agur and Lemuel close the book with reflections on God’s word and the valiant wife. Proverbs trains character, not merely intellect.',
 				],
 			},
 			{
 				heading: 'Themes and key points',
 				paragraphs: [
-					'Wisdom in Proverbs is fulfilled in Christ, “the power of God and the wisdom of God” (1 Cor 1:24). Mary is honored as seat of Wisdom in tradition.',
+					'Wisdom in Proverbs is fulfilled in Christ, “the power of God and the wisdom of God” (1 Cor 1:24). Mary is honoured as seat of Wisdom in tradition.',
 					'The book complements moral teaching in the Catechism: virtue grows through habit, grace, and reverence for God.',
 				],
 			},
@@ -668,14 +668,14 @@ export const oldTestamentBooks: BibleBook[] = [
 				paragraphs: [
 					'“Vanity of vanities!”—human toil, pleasure, wisdom, and wealth pass like wind. The preacher tests all things under the sun and finds death makes equal the wise and the fool.',
 					'Yet there is a time for everything; gifts of food, drink, and love are from God. Fear God and keep His commandments, for this is the whole duty of man.',
-					'The tone is sober, almost skeptical, yet faith anchors hope beyond mere earthly success.',
+					'The tone is sober, almost sceptical, yet faith anchors hope beyond mere earthly success.',
 				],
 			},
 			{
 				heading: 'Themes and key points',
 				paragraphs: [
 					'Ecclesiastes corrects idolatry of progress and materialism. Eternal life gives ultimate meaning to what “under the sun” cannot satisfy.',
-					'The Church reads it cautiously with Christ’s resurrection in view: only in Him does labor in the Lord prove not in vain.',
+					'The Church reads it cautiously with Christ’s resurrection in view: only in Him does labour in the Lord prove not in vain.',
 				],
 			},
 		],
@@ -701,7 +701,7 @@ export const oldTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Themes and key points',
 				paragraphs: [
-					'The Song honors conjugal love within God’s plan and lifts it as a sign of covenant fidelity. Canticle antiphons appear in the Liturgy of the Hours.',
+					'The Song honours conjugal love within God’s plan and lifts it as a sign of covenant fidelity. Canticle antiphons appear in the Liturgy of the Hours.',
 					'Read in the Spirit, it teaches longing for God, purity of heart, and the joy of union with Christ in sacrament and prayer.',
 				],
 			},
@@ -750,7 +750,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Summary',
 				paragraphs: [
 					'Also called Ecclesiasticus, Sirach compiles wisdom on friendship, speech, poverty, wealth, women, physicians, and death. Praise of the fathers from Enoch to Simon the high priest crowns the work.',
-					'The author, a scribe in Jerusalem (c. 190 BC), urges study of the Law, honor of parents, and reverence in the temple. A grandson later translated it into Greek.',
+					'The author, a scribe in Jerusalem (c. 190 BC), urges study of the Law, honour of parents, and reverence in the temple. A grandson later translated it into Greek.',
 					'Hymn to creation (Sir 42–43) and prayer for Israel (Sir 36) show deep piety rooted in tradition.',
 				],
 			},
@@ -771,7 +771,7 @@ export const oldTestamentBooks: BibleBook[] = [
 		testament: 'old',
 		category: 'prophetic',
 		excerpt:
-			'The great prophet of the Messiah: judgment, comfort, and the suffering Servant who bears our sins.',
+			'The great prophet of the Messiah: judgement, comfort, and the suffering Servant who bears our sins.',
 		sections: [
 			{
 				heading: 'Summary',
@@ -831,7 +831,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Summary',
 				paragraphs: [
 					'Five acrostic poems grieve the holy city become a widow, children starving, priests and prophets fallen. The Lord has become like an enemy because of sin.',
-					'Yet “The steadfast love of the Lord never ceases; his mercies never come to an end” (Lam 3:22–23) stands at the center. Repentance and hope thread through tears.',
+					'Yet “The steadfast love of the Lord never ceases; his mercies never come to an end” (Lam 3:22–23) stands at the centre. Repentance and hope thread through tears.',
 					'The book gives voice to communal trauma after 587 BC and teaches how to pray in catastrophe.',
 				],
 			},
@@ -858,7 +858,7 @@ export const oldTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Summary',
 				paragraphs: [
-					'Baruch, Jeremiah’s secretary, sends a scroll to Jerusalem: confession of sin, acknowledgment of just punishment, and prayer for restoration.',
+					'Baruch, Jeremiah’s secretary, sends a scroll to Jerusalem: confession of sin, acknowledgement of just punishment, and prayer for restoration.',
 					'Exhortation to seek wisdom (Bar 3–4) echoes Deuteronomy: wisdom is found in the Law, not among the stars alone. Jerusalem is comforted as a mother mourning her children.',
 					'The letter of Jeremiah (often Baruch 6) warns against idolatry. The book unites penitence, wisdom, and hope for the diaspora.',
 				],
@@ -880,7 +880,7 @@ export const oldTestamentBooks: BibleBook[] = [
 		testament: 'old',
 		category: 'prophetic',
 		excerpt:
-			'Visions of God’s glory, judgment on Israel and nations, and the promise of a new heart and temple.',
+			'Visions of God’s glory, judgement on Israel and nations, and the promise of a new heart and temple.',
 		sections: [
 			{
 				heading: 'Summary',
@@ -921,7 +921,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Themes and key points',
 				paragraphs: [
 					'Daniel is read in eschatological and moral keys: constancy in persecution, angelic intercession, and hope for resurrection (Dn 12).',
-					'“Son of man” becomes Jesus’ favorite self-title. The additions affirm Providence and the defeat of false religion without a separate deuterocanonical book.',
+					'“Son of man” becomes Jesus’ favourite self-title. The additions affirm Providence and the defeat of false religion without a separate deuterocanonical book.',
 				],
 			},
 		],
@@ -934,13 +934,13 @@ export const oldTestamentBooks: BibleBook[] = [
 		testament: 'old',
 		category: 'prophetic',
 		excerpt:
-			'God’s faithful love pursues an unfaithful people, symbolized by Hosea’s marriage to Gomer.',
+			'God’s faithful love pursues an unfaithful people, symbolised by Hosea’s marriage to Gomer.',
 		sections: [
 			{
 				heading: 'Summary',
 				paragraphs: [
 					'Hosea marries a wife who prostitutes herself, yet he redeems her—an image of the Lord and adulterous Israel. The northern kingdom’s idolatry under Jeroboam II is denounced.',
-					'“I desire steadfast love and not sacrifice” (Hos 6:6) sums up prophetic religion. Judgment will come, but “I will betroth you to me forever” promises restoration.',
+					'“I desire steadfast love and not sacrifice” (Hos 6:6) sums up prophetic religion. Judgement will come, but “I will betroth you to me forever” promises restoration.',
 					'The book alternates harsh oracles and tender appeals, revealing a God who cannot abandon His covenant.',
 				],
 			},
@@ -966,7 +966,7 @@ export const oldTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Summary',
 				paragraphs: [
-					'A devastating locust invasion symbolizes the day of the Lord—darkness, army, and judgment. The priests are told to blow the trumpet and gather a solemn assembly.',
+					'A devastating locust invasion symbolises the day of the Lord—darkness, army, and judgement. The priests are told to blow the trumpet and gather a solemn assembly.',
 					'“Return to me with all your heart” invites fasting and interior conversion. God will restore the years the locusts ate and pour out His Spirit on all flesh.',
 					'Sons and daughters will prophesy; wonders in heaven and earth precede the Lord’s coming to Zion.',
 				],
@@ -974,7 +974,7 @@ export const oldTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Themes and key points',
 				paragraphs: [
-					'Peter quotes Joel at Pentecost (Acts 2:16–21): the Spirit given to the Church fulfills the prophecy. Lenten readings use Joel’s call to rend the heart, not garments.',
+					'Peter quotes Joel at Pentecost (Acts 2:16–21): the Spirit given to the Church fulfils the prophecy. Lenten readings use Joel’s call to rend the heart, not garments.',
 					'The book links ecological disaster, liturgical response, and messianic hope in one movement of repentance and grace.',
 				],
 			},
@@ -994,7 +994,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Summary',
 				paragraphs: [
 					'Amos from Judah prophesies in Bethel against the luxury of the northern elite who crush the poor. “Let justice roll down like waters” (Am 5:24) is his cry.',
-					'Oracles against surrounding nations precede judgment on Israel for covenant violations. Feasts and sacrifices are rejected without righteousness.',
+					'Oracles against surrounding nations precede judgement on Israel for covenant violations. Feasts and sacrifices are rejected without righteousness.',
 					'Five visions of locusts, fire, plumb line, summer fruit, and altar destruction announce exile. Yet David’s tent will be restored.',
 				],
 			},
@@ -1015,20 +1015,20 @@ export const oldTestamentBooks: BibleBook[] = [
 		testament: 'old',
 		category: 'prophetic',
 		excerpt:
-			'Judgment on Edom for violence against Judah and the coming kingdom of the Lord.',
+			'Judgement on Edom for violence against Judah and the coming kingdom of the Lord.',
 		sections: [
 			{
 				heading: 'Summary',
 				paragraphs: [
 					'The shortest Old Testament book, one chapter, condemns Edom for gloating when Jerusalem fell and for joining plunderers.',
 					'“The day of the Lord is near upon all nations.” Edom will be brought low; survivors of Jacob will possess their inheritance and the kingdom shall be the Lord’s.',
-					'Obadiah assumes the solidarity of brother peoples and God’s defense of Zion.',
+					'Obadiah assumes the solidarity of brother peoples and God’s defence of Zion.',
 				],
 			},
 			{
 				heading: 'Themes and key points',
 				paragraphs: [
-					'Pride and betrayal of kinship bring judgment. The Church sees a warning against schism and indifference to the suffering of God’s people.',
+					'Pride and betrayal of kinship bring judgement. The Church sees a warning against schism and indifference to the suffering of God’s people.',
 					'Final victory belongs to the Lord—a hope that sustains persecuted communities.',
 				],
 			},
@@ -1074,9 +1074,9 @@ export const oldTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Summary',
 				paragraphs: [
-					'Micah denounces corrupt leaders, false prophets, and oppression in Judah and Samaria. Zion shall become a plowed field, yet from Bethlehem Ephrathah shall come one to shepherd Israel.',
+					'Micah denounces corrupt leaders, false prophets, and oppression in Judah and Samaria. Zion shall become a ploughed field, yet from Bethlehem Ephrathah shall come one to shepherd Israel.',
 					'“What does the Lord require of you but to do justice, love kindness, and walk humbly with your God?” (Mi 6:8). Nations will beat swords into plowshares.',
-					'The book moves from judgment to hope for the remnant and God’s pardon.',
+					'The book moves from judgement to hope for the remnant and God’s pardon.',
 				],
 			},
 			{
@@ -1155,7 +1155,7 @@ export const oldTestamentBooks: BibleBook[] = [
 			{
 				heading: 'Summary',
 				paragraphs: [
-					'Zephaniah prophesies in Josiah’s reign, announcing universal judgment: Judah, Jerusalem, nations, and the proud will fall on the day of the Lord.',
+					'Zephaniah prophesies in Josiah’s reign, announcing universal judgement: Judah, Jerusalem, nations, and the proud will fall on the day of the Lord.',
 					'Seek the Lord, seek righteousness and humility; perhaps you may be hidden on the day of anger. Oracles against Philistia, Moab, Ammon, and Assyria follow.',
 					'The book closes with joy: the Lord will renew His people, gather the lame, and restore praise in Zion.',
 				],
@@ -1183,7 +1183,7 @@ export const oldTestamentBooks: BibleBook[] = [
 				heading: 'Summary',
 				paragraphs: [
 					'In 520 BC, Haggai challenges those who live in paneled houses while the temple lies in ruins. “Consider your ways”—drought and want follow misplaced priorities.',
-					'Zerubbabel and Joshua lead the work; God encourages: “I am with you.” The latter splendor of this house shall exceed the former; to the treasures of nations shall come.',
+					'Zerubbabel and Joshua lead the work; God encourages: “I am with you.” The latter splendour of this house shall exceed the former; to the treasures of nations shall come.',
 					'Zerubbabel is God’s signet ring, chosen leader in the restored community.',
 				],
 			},

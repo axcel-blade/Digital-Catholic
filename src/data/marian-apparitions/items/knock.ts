@@ -18,7 +18,7 @@ const marianApparition: MarianApparition = {
 		{
 			"heading": "What happened",
 			"paragraphs": [
-				"On a rainy evening in August 1879, several men, women, and children of the village of Knock saw figures of surpassing brightness against the south gable of the parish church. They recognized the Blessed Virgin Mary in prayer, St. Joseph to her right, and St. John the Evangelist preaching from a book.",
+				"On a rainy evening in August 1879, several men, women, and children of the village of Knock saw figures of surpassing brightness against the south gable of the parish church. They recognised the Blessed Virgin Mary in prayer, St. Joseph to her right, and St. John the Evangelist preaching from a book.",
 				"To the left they saw an altar with a cross and a lamb, as at Mass. The vision lasted about two hours; no words were spoken. Witnesses prayed the Rosary in the rain while the figures remained silent and motionless."
 			]
 		},

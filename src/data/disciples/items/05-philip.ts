@@ -40,7 +40,7 @@ const disciple: Disciple = {
 			paragraphs: [
 				'Philip came from Bethsaida, the same town as Andrew and Peter. Jesus found him and said, “Follow me.” He immediately sought Nathanael and testified that they had found the one Moses and the prophets wrote about—showing his instinct to lead others to Christ.',
 				'During Jesus’ public ministry Philip appeared at the multiplication of loaves and when Greeks asked to see Jesus at Passover—signs of the Gospel reaching the nations. After the Resurrection he was in the upper room at Pentecost and then carried the faith into Asia Minor.',
-				'Tradition holds that he preached in Phrygia and Hierapolis, healed the sick, and drove out idols. He is distinct from Philip the deacon who baptized the Ethiopian eunuch in Acts 8.',
+				'Tradition holds that he preached in Phrygia and Hierapolis, healed the sick, and drove out idols. He is distinct from Philip the deacon who baptised the Ethiopian eunuch in Acts 8.',
 			],
 		},
 		{
@@ -55,7 +55,7 @@ const disciple: Disciple = {
 			heading: 'Death and legacy',
 			paragraphs: [
 				'At Hierapolis in Phrygia, Philip is said to have converted many and enraged the pagan authorities. He was arrested with Bartholomew and other companions, scourged, and crucified upside down around A.D. 80, continuing to preach from the cross until he died.',
-				'His feast is shared with James the Less on May 3. The Church remembers him as an apostle who bridged Jewish discipleship and the Gentile world, always pointing others toward Jesus.',
+				'His feast is shared with James the Less on May 3. The Church remembers him as an apostle who bridged Jewish discipleship and the Gentile world, always pointing others towards Jesus.',
 			],
 		},
 		{

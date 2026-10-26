@@ -43,3 +43,4 @@ export function getSacramentImageSrc(slug: string): string {
 export function getSacramentImageAlt(title: string): string {
 	return `Sacred art depicting the sacrament of ${title}`;
 }
+export * from './guides';

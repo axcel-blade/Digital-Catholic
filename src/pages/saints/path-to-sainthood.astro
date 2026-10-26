@@ -23,8 +23,9 @@ const related: ArticleLink[] = saints.slice(0, 3).map((saint) => ({
 	title="The Path to Sainthood"
 	description={PAGE_DESCRIPTIONS.pathToSainthood}
 	currentPath={Astro.url.pathname}
-	sectionKey="saints"
-	label="Saints · Canonization"
+	sectionKey="learn"
+	extraCrumbs={[{ label: 'Mary and the Saints', href: withBase('/saints') }]}
+	label="Saints · Canonisation"
 	lead={pathToSainthoodIntro}
 	sections={pathToSainthoodSections}
 	related={related}

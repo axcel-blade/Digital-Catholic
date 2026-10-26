@@ -9,7 +9,7 @@ const marianApparition: MarianApparition = {
 	"excerpt": "Mary appeared to two shepherd children on a mountain, weeping for those who neglect Sunday Mass and the name of her Son.",
 	"imageAlt": "Basilica of Our Lady of La Salette in the French Alps, above the apparition site",
 	"churchStatus": "approved",
-	"statusNote": "Bishop Philibert de Bruillard of Grenoble authorized public devotion and a shrine in 1851.",
+	"statusNote": "Bishop Philibert de Bruillard of Grenoble authorised public devotion and a shrine in 1851.",
 	"lastReviewed": "2026-10-25",
 	"sources": [
 		{ "label": "Wikipedia: Our Lady of La Salette", "url": "https://en.wikipedia.org/wiki/Our_Lady_of_La_Salette" }
@@ -25,7 +25,7 @@ const marianApparition: MarianApparition = {
 		{
 			"heading": "Church approval and meaning",
 			"paragraphs": [
-				"Bishop Philibert de Bruillard of Grenoble authorized public devotion and the building of a shrine in 1851. The message of La Salette calls Catholics to take Sunday seriously, to receive the Eucharist with reverence, and to repent before it is too late.",
+				"Bishop Philibert de Bruillard of Grenoble authorised public devotion and the building of a shrine in 1851. The message of La Salette calls Catholics to take Sunday seriously, to receive the Eucharist with reverence, and to repent before it is too late.",
 				"La Salette reminds us that Mary’s tears are for sinners she wishes to lead back to her Son. The Missionaries of Our Lady of La Salette continue her call to reconciliation and hope."
 			]
 		}

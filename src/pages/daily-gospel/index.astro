@@ -1,0 +1,94 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import { dailyGospelIntro, gospelReflections, reflectionIndexFor } from '../../data/daily-gospel';
+import { scriptureUrl } from '../../lib/references';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+// The build date's reflection is the no-JavaScript fallback; the script below picks today's.
+const buildIndex = reflectionIndexFor(new Date());
+---
+
+<SectionLayout
+	sectionKey="pray"
+	heading="Daily Gospel and Reflection"
+	pageCrumb="Daily Gospel"
+	description={PAGE_DESCRIPTIONS.dailyGospel}
+	currentPath={Astro.url.pathname}
+	intro={dailyGospelIntro}
+	count={`${gospelReflections.length} reflections`}
+>
+	<div class="daily-gospel" data-daily-gospel>
+		{gospelReflections.map((r, i) => (
+			<article class="daily-gospel__card" hidden={i !== buildIndex} aria-labelledby={`reflection-${i}`}>
+				<p class="daily-gospel__label" data-today-label>Today’s Gospel reflection</p>
+				<h2 class="daily-gospel__title" id={`reflection-${i}`}>{r.title}</h2>
+				<p class="daily-gospel__reference">
+					<a href={scriptureUrl(r.reference)} rel="noopener noreferrer" target="_blank">
+						Read {r.reference}
+						<span class="visually-hidden"> (opens in a new tab)</span>
+					</a>
+				</p>
+				<h3 class="daily-gospel__heading">The passage</h3>
+				<p>{r.passage}</p>
+				<h3 class="daily-gospel__heading">What it means</h3>
+				<p>{r.explanation}</p>
+				<div class="daily-gospel__question">
+					<h3 class="daily-gospel__heading">Reflect</h3>
+					<p>{r.question}</p>
+				</div>
+				{r.link && (
+					<p class="numbered-item__link">
+						<a href={withBase(r.link.href)}>Read more: {r.link.label} →</a>
+					</p>
+				)}
+			</article>
+		))}
+
+		<div class="daily-gospel__nav" data-nav hidden>
+			<button type="button" class="filter-chip" data-step="-1">← Previous</button>
+			<button type="button" class="filter-chip" data-step="0">Today</button>
+			<button type="button" class="filter-chip" data-step="1">Next →</button>
+		</div>
+	</div>
+
+	<p class="section-footer-links">
+		For the readings set for Mass today, see the
+		<a href="https://universalis.com/mass.htm" rel="noopener noreferrer" target="_blank">daily Mass readings at Universalis<span class="visually-hidden"> (opens in a new tab)</span></a>.
+		To pray more deeply with a passage, try <a href={withBase('/pray#topic-2')}>Lectio Divina</a>.
+	</p>
+</SectionLayout>
+
+<script>
+	const root = document.querySelector<HTMLElement>('[data-daily-gospel]');
+	if (root) {
+		const cards = Array.from(root.querySelectorAll<HTMLElement>('.daily-gospel__card'));
+		const count = cards.length;
+		const now = new Date();
+		const start = Date.UTC(now.getFullYear(), 0, 0);
+		const day = Math.floor((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - start) / 86_400_000);
+		const today = day % count;
+		let current = today;
+
+		const show = (index: number) => {
+			current = (index + count) % count;
+			cards.forEach((card, i) => {
+				card.hidden = i !== current;
+				const label = card.querySelector<HTMLElement>('[data-today-label]');
+				if (label) label.textContent = i === today ? 'Today’s Gospel reflection' : `Gospel reflection ${i + 1} of ${count}`;
+			});
+		};
+
+		show(today);
+		const nav = root.querySelector<HTMLElement>('[data-nav]');
+		if (nav) {
+			nav.hidden = false;
+			nav.querySelectorAll<HTMLButtonElement>('[data-step]').forEach((button) => {
+				button.addEventListener('click', () => {
+					const step = Number(button.dataset.step);
+					show(step === 0 ? today : current + step);
+				});
+			});
+		}
+	}
+</script>

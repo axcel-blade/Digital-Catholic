@@ -1,0 +1,56 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { getGuide } from '../../data/guides';
+import { studyPaths, studyPathsIntro } from '../../data/study-paths';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const moral = getGuide('moral-teaching');
+const social = getGuide('social-teaching');
+const living = getGuide('living-the-faith');
+---
+
+<GuidePage
+	guideKey="moral-teaching"
+	sectionKey="study"
+	heading="Christian Living"
+	description={PAGE_DESCRIPTIONS.moralTeaching}
+	count={`${moral.topics.length} moral · ${social.topics.length} social · ${living.topics.length} practical topics`}
+>
+	<div slot="lead">
+		<section class="page-section" aria-labelledby="christian-living-guides">
+			<h2 class="section-title" id="christian-living-guides">Social teaching, the life of faith, and study paths</h2>
+			<ul class="card-grid card-grid--two">
+				<EntryCard
+					href={withBase('/social-teaching')}
+					title="Catholic Social Teaching"
+					label="Social teaching"
+					excerpt={social.intro}
+					action={`Read all ${social.topics.length} topics`}
+				/>
+				<EntryCard
+					href={withBase('/living-the-faith')}
+					title="Living the Catholic Faith"
+					label="Practice"
+					excerpt={living.intro}
+					action={`Read all ${living.topics.length} topics`}
+				/>
+				<EntryCard
+					href={withBase('/study-paths')}
+					title="Catholic Study Paths"
+					label="Learning plans"
+					excerpt={studyPathsIntro}
+					action={`Choose from ${studyPaths.length} paths`}
+				/>
+			</ul>
+		</section>
+		<section class="page-section" aria-labelledby="moral-teaching">
+			<h2 class="section-title" id="moral-teaching">Moral teaching</h2>
+		</section>
+	</div>
+
+	<p class="section-footer-links">
+		Continue with the <a href={withBase('/commandments')}>Ten Commandments</a> or the <a href={withBase('/sacraments')}>Sacraments</a>.
+	</p>
+</GuidePage>

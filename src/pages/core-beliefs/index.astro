@@ -1,0 +1,64 @@
+---
+import RelatedTopics from '../../components/RelatedTopics.astro';
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import ReferenceLine from '../../components/ReferenceLine.astro';
+import { coreBeliefs, coreBeliefsIntro } from '../../data/coreBeliefs';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<SectionLayout
+	sectionKey="learn"
+	pageCrumb="Core Beliefs"
+	heading="Core Catholic Beliefs"
+	title="Core Catholic Beliefs"
+	description={PAGE_DESCRIPTIONS.coreBeliefs}
+	currentPath={Astro.url.pathname}
+	intro={coreBeliefsIntro}
+	count={`${coreBeliefs.length} doctrines`}
+>
+	<nav class="jump-links jump-links--numbers" aria-label="Jump to a doctrine" slot="header">
+		{coreBeliefs.map((b) => (
+			<a class="jump-links__link" href={`#belief-${b.number}`}>
+				<span class="visually-hidden">Doctrine </span>{b.number}
+			</a>
+		))}
+	</nav>
+
+	<ol class="numbered-list">
+		{coreBeliefs.map((belief) => (
+			<li class="numbered-item" id={`belief-${belief.number}`}>
+				<span class="numbered-item__number" aria-hidden="true">{belief.number}</span>
+				<div class="numbered-item__body">
+					<h2 class="numbered-item__title">{belief.title}</h2>
+					<blockquote class="numbered-item__quote">{belief.summary}</blockquote>
+					<ReferenceLine scripture={belief.scripture} catechism={belief.catechism} />
+					{belief.meaning.map((paragraph) => (
+						<p class="numbered-item__text">{paragraph}</p>
+					))}
+					{belief.text && (
+						<figure class="numbered-item__prayer">
+							<figcaption class="numbered-item__prayer-title">{belief.text.title}</figcaption>
+							{belief.text.lines.map((line) => (
+								<p>{line}</p>
+							))}
+						</figure>
+					)}
+					{belief.link && (
+						<p class="numbered-item__link">
+							<a href={withBase(belief.link.href)}>{belief.link.label} →</a>
+						</p>
+					)}
+				</div>
+			</li>
+		))}
+	</ol>
+
+	<RelatedTopics currentPath={Astro.url.pathname} text={coreBeliefs.flatMap((b) => [b.title, b.summary, ...b.meaning]).join(' ')} />
+
+	<p class="section-footer-links">
+		Continue with the <a href={withBase('/holy-trinity')}>Holy Trinity</a>, the
+		<a href={withBase('/sacraments')}>Sacraments</a>, or the
+		<a href={withBase('/commandments')}>Ten Commandments</a>, which show how these beliefs are lived.
+	</p>
+</SectionLayout>

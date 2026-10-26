@@ -1,8 +1,8 @@
 # Design — Design System & Principles
 
-This document is the single source of truth for the visual language and interaction design of Digital Catholic. Every value in `src/styles/global.css` comes from the tokens below; components never hard-code colors.
+This document is the single source of truth for the visual language and interaction design of Digital Catholic. Every value in `src/styles/global.css` comes from the tokens below; components never hard-code colours.
 
-The site should feel like a **calm, reverent, trustworthy Catholic digital library**: warm paper, editorial serif headings, restrained color, and the reading experience first.
+The site should feel like a **calm, reverent, trustworthy Catholic digital library**: warm paper, editorial serif headings, restrained colour, and the reading experience first.
 
 Logos, the social card, and brand usage rules live in [`docs/assets/`](assets/README.md).
 
@@ -12,13 +12,15 @@ Logos, the social card, and brand usage rules live in [`docs/assets/`](assets/RE
 
 All content areas are defined once in `src/lib/sections.ts`. Navigation, the homepage library, the About page, breadcrumbs, and the footer read from that registry, so names, descriptions, and counts never drift.
 
-| Pathway | Sections |
-|---|---|
-| **Learn** | Holy Bible, Saints, Sacraments, Ten Commandments |
-| **Pray** | Prayers, Rosary, Holy Mass, Liturgical Calendar |
-| **Explore** | Disciples of Jesus, Miracles of Jesus, Eucharistic Miracles, Marian Apparitions, Parables of Jesus |
+Sections are grouped into three pathways. A pathway with several sections opens a one-column dropdown on desktop; a pathway with a single section is a plain link straight to it. Each section can also own pages that keep their own URLs (listed below the hub that links to them); their menu item stays active on those pages through `alsoActiveOn`.
 
-Top-level navigation: Home · Learn ▾ · Pray ▾ · Explore ▾ · About · Contact · Search · Theme toggle.
+| Pathway | Sections (and the pages they include) |
+|---|---|
+| **Learn** | Scripture, Doctrine, and the Saints (Holy Bible; Core Catholic Beliefs; Holy Trinity with the Gifts and Fruits of the Holy Spirit; Ten Commandments; apostles, parables, miracles; Sacraments and The Sacraments in Depth; Mary and the Saints; Marian and Eucharistic Signs) |
+| **Study** | Study the Faith: Scripture, Tradition, and the Church (The Catholic Church, Church History and timeline) · Christian Living (Social Teaching, Living the Faith, Study Paths) · Apologetics, Compare Traditions, Ask a Question, Glossary |
+| **Pray** | Prayer and Liturgy: prayers and devotions · Rosary · Daily Gospel · Holy Mass and Liturgy (Order of Mass, Items Used at Mass, Liturgical Calendar) |
+
+Top-level navigation: Home · Learn · Study · Pray · About · Contact · Search · Theme toggle.
 
 To add a section: add it to `siteSections`, add a description to `PAGE_DESCRIPTIONS` in `src/lib/seo.ts`, and create its pages with `SectionLayout` / `ArticleLayout`.
 
@@ -48,7 +50,7 @@ No web fonts are loaded; all stacks are local system fonts.
 
 ---
 
-## Color
+## Colour
 
 ### Dark theme (`:root`)
 
@@ -70,11 +72,11 @@ The site ships a single dark theme; there is no light mode or theme toggle.
 
 All text/background pairs meet WCAG AA (≥ 4.5:1); the lowest pair is gold text on gold-soft at 5.4:1.
 
-### Liturgical and status colors
+### Liturgical and status colours
 
 `--liturgical-{white,red,green,purple,rose}` are used only for small swatches, always next to a text label.
 
-Church status uses `--status-{approved,recognized,investigation,tradition,reported}` with `-soft` fills. Each status also has a distinct icon (check, cross, magnifier, bookmark, exclamation), and “reported” uses a dashed border, so meaning never depends on color.
+Church status uses `--status-{approved,recognized,investigation,tradition,reported}` with `-soft` fills. Each status also has a distinct icon (check, cross, magnifier, bookmark, exclamation), and “reported” uses a dashed border, so meaning never depends on colour.
 
 ---
 
@@ -98,7 +100,7 @@ Church status uses `--status-{approved,recognized,investigation,tradition,report
 |---|---|
 | `36rem` | Previous/next article links side by side |
 | `48rem` | Footer shows four columns; calendar summary cards side by side |
-| `52rem` | Hero art appears; pathways and library become three columns |
+| `52rem` | Hero art appears; pathways become two columns and the library three |
 | `56rem` | Featured calendar becomes two columns |
 | `60rem` | Desktop navigation replaces the menu button; article sidebar (image + sticky “On this page”) appears; About/Contact become two columns |
 | `64rem` | Footer brand column sits beside the link columns |
@@ -109,7 +111,7 @@ Church status uses `--status-{approved,recognized,investigation,tradition,report
 
 | Component | File | Notes |
 |---|---|---|
-| Header | `SiteHeader.astro` | Disclosure menus (`aria-expanded`, `aria-controls`), close on Escape/outside click/focus leaving; mobile panel with grouped links, focus moves in on open and back to the button on Escape |
+| Header | `SiteHeader.astro` | Disclosure menus (`aria-expanded`, `aria-controls`), close on Escape/outside click/focus leaving; dropdown panels lay subgroups out as columns (centred under the nav, never wider than the viewport); mobile panel with links under subgroup headings, focus moves in on open and back to the button on Escape |
 | Search | `SiteSearch.astro` | Panel + ARIA combobox/listbox; index fetched lazily from `/search-index.json`; arrow keys, Home/End, Enter, Escape; `/` opens it; live result count and no-results state |
 | Page header | `PageHeader.astro` | Breadcrumbs, eyebrow, h1, intro, count, link back to its pathway |
 | Card | `EntryCard.astro` | Whole card clickable via a stretched link; focus ring on `:focus-within`; hover changes border **and** shadow |
@@ -125,10 +127,10 @@ Church status uses `--status-{approved,recognized,investigation,tradition,report
 ## Principles
 
 1. **Content first.** Prose is set in the reading serif at `--content-width`. Chrome recedes.
-2. **Guided entry.** Visitors start from Learn, Pray, or Explore rather than a flat grid.
-3. **Honest trust signals.** Church status, sources, and review dates appear only when the underlying content supports them. Nothing is labeled “approved” unless the article text says so.
-4. **Accessible by default.** One h1 per page, logical heading order, skip link, visible `:focus-visible` outline, 44px targets, labeled icon buttons, `aria-current` on active navigation, and no meaning conveyed by color alone.
-5. **Theme parity.** Every color token has a dark counterpart; the brand burgundy stays recognizable in both.
-6. **Restraint in motion.** Short color/border/shadow transitions only; `prefers-reduced-motion` disables them and smooth scrolling.
+2. **Guided entry.** Visitors start from Learn, Study, or Pray rather than a flat grid.
+3. **Honest trust signals.** Church status, sources, and review dates appear only when the underlying content supports them. Nothing is labelled “approved” unless the article text says so.
+4. **Accessible by default.** One h1 per page, logical heading order, skip link, visible `:focus-visible` outline, 44px targets, labelled icon buttons, `aria-current` on active navigation, and no meaning conveyed by colour alone.
+5. **Theme parity.** Every colour token has a dark counterpart; the brand burgundy stays recognisable in both.
+6. **Restraint in motion.** Short colour/border/shadow transitions only; `prefers-reduced-motion` disables them and smooth scrolling.
 7. **Static and fast.** No framework or web fonts. Images are local, carry intrinsic `width`/`height` (read at build time by `src/lib/images.ts`), and lazy-load below the fold. Missing images are skipped instead of rendering broken.
 8. **Base-path safe.** Every internal URL goes through `withBase()` so the site works under `/Digital-Catholic/` on GitHub Pages.

@@ -2,7 +2,7 @@
 
 Images shown on the Saints pages (`/saints`). All images are from Wikimedia Commons, resized to at most 960px.
 
-| File | Source | Author | License |
+| File | Source | Author | Licence |
 | --- | --- | --- | --- |
 | archbishop-fulton-j-sheen.jpg | [Fulton J. Sheen NYWTS.jpg](https://commons.wikimedia.org/wiki/File:Fulton_J._Sheen_NYWTS.jpg) (cropped) | Fred Palumbo, New York World-Telegram & Sun (Library of Congress) | Public domain |
 | blessed-virgin-mary.jpg | [Murillo immaculate conception.jpg](https://commons.wikimedia.org/wiki/File:Murillo_immaculate_conception.jpg) | Bartolomé Esteban Murillo | Public domain |
@@ -15,7 +15,7 @@ Images shown on the Saints pages (`/saints`). All images are from Wikimedia Comm
 
 ## Miracles and relics section images (`sections/`)
 
-| File | Source | Author | License |
+| File | Source | Author | Licence |
 | --- | --- | --- | --- |
 | archbishop-fulton-j-sheen-relics.jpg | [Fulton Sheen tomb.jpg](https://commons.wikimedia.org/wiki/File:Fulton_Sheen_tomb.jpg) | Farragutful | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | blessed-virgin-mary-relics.jpg | [Ostensione della sacra cintola.jpg](https://commons.wikimedia.org/wiki/File:Ostensione_della_sacra_cintola.jpg) | Giacomo Boschi | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |

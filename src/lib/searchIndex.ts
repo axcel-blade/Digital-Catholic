@@ -1,5 +1,16 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
-import { massIntro, massItemsIntro, massPages, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
+import { coreBeliefs, coreBeliefsIntro } from '../data/coreBeliefs';
+import { guides } from '../data/guides';
+import { glossary, glossaryIntro, termId } from '../data/glossary';
+import { faqEntries, faqIntro, faqCategoryLabels, faqId } from '../data/faq';
+import { studyPaths, studyPathsIntro } from '../data/study-paths';
+import { timelineEvents, timelineIntro } from '../data/timeline';
+import { compareIntro, comparisonRows } from '../data/compare-traditions';
+import { dailyGospelIntro, gospelReflections } from '../data/daily-gospel';
+import { getSection } from './sections';
+import { trinityIntro, trinityPersons, trinityScripture, trinityScriptureIntro } from '../data/trinity';
+import { fruitsIntro, giftsIntro, spiritFruits, spiritGifts } from '../data/holySpirit';
+import { massItemsIntro, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
 import {
 	mysterySets,
@@ -22,7 +33,7 @@ import {
 	veilOfVeronicaSections,
 } from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
-import { sacraments } from '../data/sacraments';
+import { sacraments, sacramentGuides } from '../data/sacraments';
 import {
 	buildLiturgicalYear,
 	liturgicalCalendarIntro,
@@ -41,7 +52,7 @@ import {
 	bibleIntro,
 	testamentLabels,
 } from '../data/bible';
-import { prayers, prayersIntro } from '../data/prayers';
+import { prayers } from '../data/prayers';
 import { withBase } from './paths';
 
 export interface SearchEntry {
@@ -106,27 +117,13 @@ export function buildSearchIndex(): SearchEntry[] {
 			],
 		),
 		entry(
-			'Prayers',
-			withBase('/prayers'),
-			'Prayer',
-			prayersIntro,
-			[...prayers.map((p) => joinParts(p.title, p.alsoKnownAs, p.excerpt))],
-		),
-		entry(
 			'About Digital Catholic',
 			withBase('/about'),
 			'About',
-			'What Digital Catholic is, who it is for, and how its content is organized.',
+			'What Digital Catholic is, who it is for, and how its content is organised.',
 			[
 				'learning site Catholic faith biography sacraments knowledge sharing',
 			]
-		),
-		entry(
-			'Saints',
-			withBase('/saints'),
-			'Saints',
-			'Biographies of holy men and women who witness to Christ.',
-			['saint biography holy men women prayer'],
 		),
 		entry(
 			'Sacraments',
@@ -213,11 +210,40 @@ export function buildSearchIndex(): SearchEntry[] {
 			[commandmentsIntro, ...commandments.map((c) => joinParts(c.title, c.text, c.meaning))],
 		),
 		entry(
-			'Holy Mass',
-			withBase('/mass'),
-			'Mass',
-			massIntro,
-			[massIntro, ...massPages.map((p) => joinParts(p.title, p.excerpt))],
+			'Core Catholic Beliefs',
+			withBase('/core-beliefs'),
+			'Doctrine',
+			coreBeliefsIntro,
+			[
+				coreBeliefsIntro,
+				...coreBeliefs.map((b) => joinParts(b.title, b.summary, b.scripture, b.catechism, ...b.meaning)),
+			],
+		),
+		entry(
+			'Holy Trinity',
+			withBase('/holy-trinity'),
+			'Doctrine',
+			trinityIntro,
+			[
+				trinityIntro,
+				...trinityPersons.map((p) => joinParts(p.title, p.summary, p.meaning, p.scripture)),
+				trinityScriptureIntro,
+				...trinityScripture.flatMap((t) => t.passages.map((p) => joinParts(p.reference, p.title, p.meaning))),
+			],
+		),
+		entry(
+			'Gifts of the Holy Spirit',
+			withBase('/holy-spirit#gifts'),
+			'Holy Spirit',
+			giftsIntro,
+			[giftsIntro, ...spiritGifts.map((g) => joinParts(g.title, g.summary, g.meaning))],
+		),
+		entry(
+			'Fruits of the Holy Spirit',
+			withBase('/holy-spirit#fruits'),
+			'Holy Spirit',
+			fruitsIntro,
+			[fruitsIntro, ...spiritFruits.map((f) => joinParts(f.title, f.meaning))],
 		),
 		entry(
 			'Items Used at Mass',
@@ -245,7 +271,7 @@ export function buildSearchIndex(): SearchEntry[] {
 			'Saints',
 			pathToSainthoodIntro,
 			[
-				'canonization beatification miracle heroic virtue cause',
+				'canonisation beatification miracle heroic virtue cause',
 				...pathToSainthoodSections.flatMap((s) => [s.heading, ...s.paragraphs]),
 			],
 		),
@@ -287,10 +313,14 @@ export function buildSearchIndex(): SearchEntry[] {
 		),
 	];
 
+	// A disciple and a Bible book can share a name (Matthew); qualify both so search results are distinct.
+	const bookTitles = new Set(bibleBooks.map((b) => b.title));
+	const discipleTitles = new Set(disciples.map((d) => d.title));
+
 	for (const disciple of disciples) {
 		items.push(
 			entry(
-				disciple.title,
+				bookTitles.has(disciple.title) ? `St. ${disciple.title} the Apostle` : disciple.title,
 				withBase(`/disciples/${disciple.slug}`),
 				'Disciple',
 				disciple.excerpt,
@@ -325,6 +355,28 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Sacrament',
 				sacrament.excerpt,
 				[sectionsText(sacrament.sections)]
+			)
+		);
+	}
+
+	items.push(
+		entry(
+			'The Sacraments in Depth',
+			withBase('/sacraments/guides'),
+			'Sacrament guides',
+			'In-depth guides to the sacraments and how to live them.',
+			sacramentGuides.map((g) => joinParts(g.title, g.excerpt))
+		)
+	);
+
+	for (const guide of sacramentGuides) {
+		items.push(
+			entry(
+				guide.title,
+				withBase(`/sacraments/guides/${guide.slug}`),
+				'Sacrament guide',
+				guide.excerpt,
+				[sectionsText(guide.sections)]
 			)
 		);
 	}
@@ -389,10 +441,72 @@ export function buildSearchIndex(): SearchEntry[] {
 		);
 	}
 
+	for (const person of trinityPersons) {
+		items.push(
+			entry(
+				`Holy Trinity: ${person.title}`,
+				withBase(`/holy-trinity#person-${person.number}`),
+				'Doctrine',
+				person.summary,
+				[person.title, person.summary, person.meaning, person.scripture]
+			)
+		);
+	}
+
+	for (const belief of coreBeliefs) {
+		items.push(
+			entry(
+				`Core Beliefs: ${belief.title}`,
+				withBase(`/core-beliefs#belief-${belief.number}`),
+				'Doctrine',
+				belief.summary,
+				[belief.title, belief.summary, belief.scripture, belief.catechism, ...belief.meaning, ...(belief.text?.lines ?? [])]
+			)
+		);
+	}
+
+	for (const testament of trinityScripture) {
+		items.push(
+			entry(
+				`Holy Trinity: ${testament.title}`,
+				withBase(`/holy-trinity/${testament.id}`),
+				'Doctrine',
+				testament.intro,
+				[testament.title, testament.intro, ...testament.passages.map((p) => joinParts(p.reference, p.title, p.meaning))]
+			)
+		);
+	}
+
+	for (const gift of spiritGifts) {
+		items.push(
+			entry(
+				`Gift of the Holy Spirit: ${gift.title}`,
+				withBase(`/holy-spirit#gift-${gift.number}`),
+				'Holy Spirit',
+				gift.summary,
+				[gift.title, gift.summary, gift.meaning]
+			)
+		);
+	}
+
+	for (const fruit of spiritFruits) {
+		items.push(
+			entry(
+				`Fruit of the Holy Spirit: ${fruit.title}`,
+				withBase(`/holy-spirit#fruit-${fruit.number}`),
+				'Holy Spirit',
+				fruit.meaning,
+				[fruit.title, fruit.meaning]
+			)
+		);
+	}
+
 	for (const book of bibleBooks) {
 		items.push(
 			entry(
-				book.title,
+				discipleTitles.has(book.title)
+					? `${book.category === 'gospels' ? 'Gospel' : 'Book'} of ${book.title}`
+					: book.title,
 				withBase(`/bible/${book.slug}`),
 				`Bible · ${testamentLabels[book.testament]}`,
 				book.excerpt,
@@ -432,6 +546,96 @@ export function buildSearchIndex(): SearchEntry[] {
 					'Rosary mystery',
 					mystery.meditation.slice(0, 120) + (mystery.meditation.length > 120 ? '…' : ''),
 					[mystery.title, mystery.fruit, mystery.meditation, set.title]
+				)
+			);
+		}
+	}
+
+	items.push(
+		entry('Catholic Glossary', withBase('/glossary'), 'Reference', glossaryIntro, [
+			glossaryIntro,
+			...glossary.map((t) => t.term),
+		]),
+		entry('Ask a Catholic Question', withBase('/ask-a-catholic-question'), 'FAQ', faqIntro, [
+			faqIntro,
+			...faqEntries.map((f) => f.question),
+		]),
+		entry('Catholic Study Paths', withBase('/study-paths'), 'Learning plans', studyPathsIntro, [
+			studyPathsIntro,
+			...studyPaths.map((p) => joinParts(p.title, p.audience, p.summary)),
+		]),
+		entry('Church History Timeline', withBase('/church-history-timeline'), 'Timeline', timelineIntro, [
+			timelineIntro,
+			...timelineEvents.map((e) => joinParts(e.date, e.title, e.description)),
+		]),
+		entry('Compare Christian Traditions', withBase('/compare-christian-traditions'), 'Comparison', compareIntro, [
+			compareIntro,
+			...comparisonRows.map((r) => joinParts(r.topic, ...Object.values(r.values))),
+		]),
+		entry('Daily Gospel and Reflection', withBase('/daily-gospel'), 'Daily prayer', dailyGospelIntro, [
+			dailyGospelIntro,
+			...gospelReflections.map((r) => joinParts(r.reference, r.title)),
+		])
+	);
+
+	for (const term of glossary) {
+		items.push(
+			entry(`Glossary: ${term.term}`, withBase(`/glossary#${termId(term.term)}`), 'Reference', term.definition, [
+				term.term,
+				term.definition,
+				term.catechism ?? '',
+			])
+		);
+	}
+
+	for (const faq of faqEntries) {
+		items.push(
+			entry(faq.question, withBase(`/ask-a-catholic-question#${faqId(faq.question)}`), `FAQ · ${faqCategoryLabels[faq.category]}`, faq.answer[0], [
+				faq.question,
+				...faq.answer,
+				faq.catechism ?? '',
+				faq.scripture ?? '',
+			])
+		);
+	}
+
+	// Guides shown as sub-pages of another section rather than as a section of their own
+	const guidePages: Record<string, { title: string; href: string; label: string }> = {
+		apologetics: getSection('study'),
+		prayers: getSection('pray'),
+		saints: { title: 'Mary and the Saints', href: '/saints', label: 'Saints' },
+		mass: { title: 'Holy Mass and Liturgy', href: '/mass', label: 'Liturgy' },
+		'moral-teaching': { title: 'Christian Living', href: '/moral-teaching', label: 'Morality' },
+		'living-the-faith': { title: 'Living the Catholic Faith', href: '/living-the-faith', label: 'Practice' },
+		'bible-and-tradition': { title: 'Scripture, Tradition, and the Church', href: '/bible-and-tradition', label: 'Scripture & Tradition' },
+		'church-history': { title: 'Catholic Church History', href: '/church-history', label: 'History' },
+		'the-church': { title: 'The Catholic Church', href: '/the-church', label: 'Ecclesiology' },
+		'social-teaching': { title: 'Catholic Social Teaching', href: '/social-teaching', label: 'Society' },
+	};
+	for (const guide of guides) {
+		const section = guidePages[guide.key] ?? getSection(guide.key);
+		items.push(
+			entry(section.title, withBase(section.href), section.label, guide.intro, [
+				guide.intro,
+				...guide.topics.map((t) => joinParts(t.title, t.summary)),
+			])
+		);
+		for (const topic of guide.topics) {
+			items.push(
+				entry(
+					`${section.title}: ${topic.title}`,
+					withBase(`${section.href}#topic-${topic.number}`),
+					section.label,
+					topic.summary,
+					[
+						topic.title,
+						topic.summary,
+						topic.scripture,
+						topic.catechism,
+						...topic.meaning,
+						...(topic.points?.items ?? []),
+						...(topic.text?.lines ?? []),
+					].filter((part): part is string => Boolean(part))
 				)
 			);
 		}

@@ -1,4 +1,4 @@
-export const pathToSainthoodIntro = "Every saint in heaven is known to God, but the Church formally recognizes some holy men and women through a careful process called canonization. A cause usually moves through four stages—Servant of God, Venerable, Blessed, and Saint—each marking a further step in the Church’s judgment that the person lived a life of heroic holiness and now enjoys the vision of God.";
+export const pathToSainthoodIntro = "Every saint in heaven is known to God, but the Church formally recognises some holy men and women through a careful process called canonisation. A cause usually moves through four stages—Servant of God, Venerable, Blessed, and Saint—each marking a further step in the Church’s judgement that the person lived a life of heroic holiness and now enjoys the vision of God.";
 
 export const pathToSainthoodSections = [
 	{
@@ -11,8 +11,8 @@ export const pathToSainthoodSections = [
 	{
 		heading: "Venerable",
 		paragraphs: [
-			"A person is declared Venerable when the Vatican recognizes that they lived a life of heroic virtue—practicing faith, hope, and charity, along with prudence, justice, fortitude, and temperance, to an extraordinary degree. After theologians and cardinals study the evidence, the Pope approves a decree of heroic virtue.",
-			"For a martyr, the Church instead recognizes that the person was killed out of hatred for the faith. Catholics may pray privately for a Venerable’s intercession, but public liturgical veneration is not yet permitted.",
+			"A person is declared Venerable when the Vatican recognises that they lived a life of heroic virtue—practising faith, hope, and charity, along with prudence, justice, fortitude, and temperance, to an extraordinary degree. After theologians and cardinals study the evidence, the Pope approves a decree of heroic virtue.",
+			"For a martyr, the Church instead recognises that the person was killed out of hatred for the faith. Catholics may pray privately for a Venerable’s intercession, but public liturgical veneration is not yet permitted.",
 		]
 	},
 	{
@@ -25,15 +25,15 @@ export const pathToSainthoodSections = [
 	{
 		heading: "Saint",
 		paragraphs: [
-			"Canonization is the final stage. It requires a second verified miracle that takes place after beatification. The Pope then solemnly declares the person a Saint, usually during a Mass in Rome.",
-			"A canonized saint may be venerated by the universal Church: churches may be dedicated in their honor, and their feast may be celebrated throughout the world. Canonization does not make someone a saint—it recognizes with certainty that they are already with God in heaven and offers their life as a model for all the faithful.",
+			"Canonisation is the final stage. It requires a second verified miracle that takes place after beatification. The Pope then solemnly declares the person a Saint, usually during a Mass in Rome.",
+			"A canonised saint may be venerated by the universal Church: churches may be dedicated in their honour, and their feast may be celebrated throughout the world. Canonisation does not make someone a saint—it recognises with certainty that they are already with God in heaven and offers their life as a model for all the faithful.",
 		]
 	},
 	{
-		heading: "Why the Church recognizes saints",
+		heading: "Why the Church recognises saints",
 		paragraphs: [
-			"The saints show that holiness is possible in every age, place, and walk of life. By recognizing them, the Church gives us trustworthy examples to imitate and friends in heaven to ask for their prayers—always pointing us beyond themselves to Jesus Christ, the source of all holiness.",
-			"Most saints will never be formally canonized. The Church honors all of them together on All Saints’ Day, November 1, and every Christian is called to the same holiness through Baptism.",
+			"The saints show that holiness is possible in every age, place, and walk of life. By recognising them, the Church gives us trustworthy examples to imitate and friends in heaven to ask for their prayers—always pointing us beyond themselves to Jesus Christ, the source of all holiness.",
+			"Most saints will never be formally canonised. The Church honours all of them together on All Saints’ Day, November 1, and every Christian is called to the same holiness through Baptism.",
 		]
 	},
 ];

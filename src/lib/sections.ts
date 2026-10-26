@@ -4,7 +4,7 @@
  * so section names, descriptions, and counts never drift apart.
  */
 
-export type SectionGroupKey = 'learn' | 'pray' | 'explore';
+export type SectionGroupKey = 'learn' | 'study' | 'pray';
 
 export interface SectionGroup {
 	key: SectionGroupKey;
@@ -12,15 +12,22 @@ export interface SectionGroup {
 	summary: string;
 	/** Anchor on the homepage that introduces this pathway */
 	anchor: string;
+	/** Sub-headings that keep navigation menus short and scannable */
+	/** Menu columns; a column without a label is shown without a heading */
+	subgroups: { key: string; label?: string }[];
 }
 
 export interface SiteSection {
 	key: string;
 	href: string;
+	/** Other URL prefixes that belong to this section, so its menu item is marked active there */
+	alsoActiveOn?: string[];
 	title: string;
 	/** Short label for navigation menus */
 	navLabel: string;
 	group: SectionGroupKey;
+	/** Key of a subgroup within the group, used to organise menus */
+	subgroup: string;
 	/** Category label shown above section titles */
 	label: string;
 	/** One-line description for menus and the library list */
@@ -32,8 +39,21 @@ export const sectionGroups: SectionGroup[] = [
 		key: 'learn',
 		label: 'Learn',
 		summary:
-			'Start with the Bible, sacraments, saints, commandments, and the foundations of Catholic faith.',
+			'Start with the Bible, the sacraments, the saints, and the foundations of the faith; meet the apostles, read the parables, and explore Marian and Eucharistic signs.',
 		anchor: 'learn',
+		subgroups: [
+			{ key: 'all' },
+		],
+	},
+	{
+		key: 'study',
+		label: 'Study',
+		summary:
+			'Go deeper into Tradition, Church history, and moral and social teaching, with a glossary, FAQ, and study paths.',
+		anchor: 'study',
+		subgroups: [
+			{ key: 'all' },
+		],
 	},
 	{
 		key: 'pray',
@@ -41,133 +61,71 @@ export const sectionGroups: SectionGroup[] = [
 		summary:
 			'Pray the Rosary, discover traditional prayers, and follow the seasons and feasts of the Church.',
 		anchor: 'pray',
-	},
-	{
-		key: 'explore',
-		label: 'Explore',
-		summary:
-			'Meet the apostles, read the parables, and explore miracles and Marian apparitions with context.',
-		anchor: 'explore',
+		subgroups: [
+			{ key: 'all' },
+		],
 	},
 ];
 
 export const siteSections: SiteSection[] = [
 	{
-		key: 'bible',
-		href: '/bible',
-		title: 'Holy Bible',
-		navLabel: 'Holy Bible',
-		group: 'learn',
-		label: 'Scripture',
-		blurb: 'Summaries of all 73 books of the Catholic canon.',
+		key: 'study',
+		href: '/study',
+		alsoActiveOn: [
+			'/compare-christian-traditions',
+			'/ask-a-catholic-question',
+			'/glossary',
+			'/moral-teaching',
+			'/social-teaching',
+			'/living-the-faith',
+			'/study-paths',
+			'/bible-and-tradition',
+			'/the-church',
+			'/church-history',
+			'/church-history-timeline',
+		],
+		title: 'Study the Faith',
+		navLabel: 'Study the Faith',
+		group: 'study',
+		subgroup: 'all',
+		label: 'Study',
+		blurb: 'Scripture, Tradition, and the Church; apologetics and FAQ; and Christian living.',
 	},
 	{
-		key: 'saints',
-		href: '/saints',
-		title: 'Saints',
-		navLabel: 'Saints',
-		group: 'learn',
-		label: 'Saints',
-		blurb: 'Lives of holy men and women, with feast days.',
-	},
-	{
-		key: 'sacraments',
-		href: '/sacraments',
-		title: 'Sacraments',
-		navLabel: 'Sacraments',
-		group: 'learn',
-		label: 'Sacraments',
-		blurb: 'The seven sacraments and what the Church teaches.',
-	},
-	{
-		key: 'commandments',
-		href: '/commandments',
-		title: 'Ten Commandments',
-		navLabel: 'Ten Commandments',
-		group: 'learn',
-		label: 'Moral life',
-		blurb: 'God’s law given to Moses and its meaning today.',
-	},
-	{
-		key: 'prayers',
-		href: '/prayers',
-		title: 'Prayers',
-		navLabel: 'Prayers',
+		key: 'pray',
+		href: '/pray',
+		alsoActiveOn: ['/prayers', '/rosary', '/daily-gospel', '/mass', '/liturgical-calendar'],
+		title: 'Prayer and Liturgy',
+		navLabel: 'Prayer & Liturgy',
 		group: 'pray',
+		subgroup: 'all',
 		label: 'Prayer',
-		blurb: 'The Our Father, the Hail Mary, and their meaning.',
+		blurb: 'Prayers and devotions, the Rosary, the Daily Gospel, the Holy Mass, and the liturgical calendar.',
 	},
 	{
-		key: 'rosary',
-		href: '/rosary',
-		title: 'Rosary',
-		navLabel: 'Rosary',
-		group: 'pray',
-		label: 'Prayer',
-		blurb: 'How to pray it, its prayers, and the twenty mysteries.',
-	},
-	{
-		key: 'mass',
-		href: '/mass',
-		title: 'Holy Mass',
-		navLabel: 'Holy Mass',
-		group: 'pray',
-		label: 'Liturgy',
-		blurb: 'The order of Mass and the items used at the altar.',
-	},
-	{
-		key: 'liturgical-calendar',
-		href: '/liturgical-calendar',
-		title: 'Liturgical Calendar',
-		navLabel: 'Liturgical Calendar',
-		group: 'pray',
-		label: 'Liturgy',
-		blurb: 'Seasons, solemnities, feasts, and memorials of the year.',
-	},
-	{
-		key: 'disciples',
-		href: '/disciples',
-		title: 'Disciples of Jesus',
-		navLabel: 'Disciples of Jesus',
-		group: 'explore',
-		label: 'Gospels',
-		blurb: 'The Twelve Apostles, from their call to their deaths.',
-	},
-	{
-		key: 'miracles',
-		href: '/miracles',
-		title: 'Miracles of Jesus',
-		navLabel: 'Miracles of Jesus',
-		group: 'explore',
-		label: 'Gospels',
-		blurb: 'Signs in the Gospels that reveal who Christ is.',
-	},
-	{
-		key: 'eucharistic-miracles',
-		href: '/eucharistic-miracles',
-		title: 'Eucharistic Miracles',
-		navLabel: 'Eucharistic Miracles',
-		group: 'explore',
-		label: 'Eucharist',
-		blurb: 'Reported signs of the Real Presence, with Church status.',
-	},
-	{
-		key: 'marian-apparitions',
-		href: '/marian-apparitions',
-		title: 'Marian Apparitions',
-		navLabel: 'Marian Apparitions',
-		group: 'explore',
-		label: 'Blessed Virgin Mary',
-		blurb: 'Guadalupe, Lourdes, Fátima, and more, with Church status.',
-	},
-	{
-		key: 'parables',
-		href: '/parables',
-		title: 'Parables of Jesus',
-		navLabel: 'Parables of Jesus',
-		group: 'explore',
-		label: 'Gospels',
-		blurb: 'Stories of the Kingdom and what they teach.',
+		key: 'learn',
+		href: '/learn',
+		alsoActiveOn: [
+			'/disciples',
+			'/parables',
+			'/miracles',
+			'/signs-and-wonders',
+			'/marian-apparitions',
+			'/eucharistic-miracles',
+			'/saints',
+			'/sacraments',
+			'/holy-trinity',
+			'/holy-spirit',
+			'/commandments',
+			'/core-beliefs',
+			'/bible',
+		],
+		title: 'Scripture, Doctrine, and the Saints',
+		navLabel: 'Scripture, Doctrine & Saints',
+		group: 'learn',
+		subgroup: 'all',
+		label: 'Doctrine',
+		blurb: 'The Bible, core beliefs, the Trinity, the Commandments, the sacraments, Jesus, and the saints.',
 	},
 ];
 

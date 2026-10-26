@@ -19,7 +19,7 @@ const eucharisticMiracle: EucharisticMiracle = {
 		{
 			"heading": "What happened",
 			"paragraphs": [
-				"On Christmas Day 2013, at St. Hyacinth church in Legnica, a Host fell to the corporal during distribution of Communion. It was placed in water and later showed a red stain spreading through the center.",
+				"On Christmas Day 2013, at St. Hyacinth church in Legnica, a Host fell to the corporal during distribution of Communion. It was placed in water and later showed a red stain spreading through the centre.",
 				"The parish followed Church procedures for investigation. In 2014, forensic medicine specialists reported that fragments contained tissue consistent with human heart muscle, with signs of distress. The bishop permitted public veneration in the parish."
 			]
 		},

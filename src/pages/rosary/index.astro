@@ -13,8 +13,10 @@ import { withBase } from '../../lib/paths';
 ---
 
 <SectionLayout
-	sectionKey="rosary"
+	sectionKey="pray"
 	heading="Mysteries of the Rosary"
+	title="Rosary"
+	pageCrumb="Rosary"
 	description={PAGE_DESCRIPTIONS.rosary}
 	currentPath={Astro.url.pathname}
 	intro={rosaryIntro}
@@ -78,4 +80,15 @@ import { withBase } from '../../lib/paths';
 			))}
 		</ul>
 	</section>
+
+	<nav class="related-topics" aria-label="Related to the Rosary">
+		<h2 class="related-topics__title">Related topics</h2>
+		<ul class="related-topics__list">
+			<li><a class="related-topics__link" href={withBase('/prayers/our-father')}>The Our Father</a></li>
+			<li><a class="related-topics__link" href={withBase('/prayers/hail-mary')}>The Hail Mary</a></li>
+			<li><a class="related-topics__link" href={withBase('/saints/blessed-virgin-mary')}>The Blessed Virgin Mary</a></li>
+			<li><a class="related-topics__link" href={withBase('/rosary/origin')}>The origin of the Rosary</a></li>
+			<li><a class="related-topics__link" href={withBase('/marian-apparitions/fatima')}>Our Lady of Fátima</a></li>
+		</ul>
+	</nav>
 </SectionLayout>

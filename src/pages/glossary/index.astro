@@ -1,0 +1,56 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import { glossary, glossaryIntro, termId } from '../../data/glossary';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const letters = [...new Set(glossary.map((t) => t.term[0].toUpperCase()))];
+const byLetter = letters.map((letter) => ({
+	letter,
+	terms: glossary.filter((t) => t.term[0].toUpperCase() === letter),
+}));
+---
+
+<SectionLayout
+	sectionKey="study"
+	heading="Catholic Glossary"
+	pageCrumb="Glossary"
+	description={PAGE_DESCRIPTIONS.glossary}
+	currentPath={Astro.url.pathname}
+	intro={glossaryIntro}
+	count={`${glossary.length} terms`}
+>
+	<nav class="jump-links jump-links--numbers" aria-label="Jump to a letter" slot="header">
+		{letters.map((letter) => (
+			<a class="jump-links__link" href={`#letter-${letter}`}>{letter}</a>
+		))}
+	</nav>
+
+	{byLetter.map((group) => (
+		<section class="glossary-group" aria-labelledby={`letter-${group.letter}`}>
+			<h2 class="glossary-group__letter" id={`letter-${group.letter}`}>{group.letter}</h2>
+			<dl class="glossary">
+				{group.terms.map((t) => (
+					<div class="glossary__entry" id={termId(t.term)}>
+						<dt class="glossary__term">{t.term}</dt>
+						<dd class="glossary__definition">
+							<p>{t.definition}</p>
+							{(t.catechism || t.link) && (
+								<p class="glossary__meta">
+									{t.catechism}
+									{t.catechism && t.link && ' · '}
+									{t.link && <a href={withBase(t.link.href)}>{t.link.label} →</a>}
+								</p>
+							)}
+						</dd>
+					</div>
+				))}
+			</dl>
+		</section>
+	))}
+
+	<p class="section-footer-links">
+		Have a question rather than a word? Try <a href={withBase('/ask-a-catholic-question')}>Ask a Catholic question</a>
+		or follow one of the <a href={withBase('/study-paths')}>study paths</a>.
+	</p>
+</SectionLayout>

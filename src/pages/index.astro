@@ -13,8 +13,8 @@ const currentPath = Astro.url.pathname;
 
 const pathwayActions: Record<string, { href: string; label: string }> = {
 	learn: { href: '/bible', label: 'Begin with the Holy Bible' },
+	study: { href: '/study-paths', label: 'Follow a study path' },
 	pray: { href: '/rosary', label: 'Learn to pray the Rosary' },
-	explore: { href: '/disciples', label: 'Meet the Twelve Apostles' },
 };
 
 const pathways = sectionGroups.map((group) => ({
@@ -133,15 +133,15 @@ const websiteJsonLd = {
 				<p class="eyebrow">Guided pathways</p>
 				<h2 class="band__title" id="pathways-title">Find your starting point</h2>
 				<p class="band__intro">
-					Three ways into the library, whether you are studying the faith, deepening your prayer, or
-					simply curious.
+					Three ways into the library, whether you are learning the basics, studying the faith in depth,
+					or deepening your prayer.
 				</p>
 			</header>
 
 			<ul class="pathways">
 				{pathways.map((pathway) => (
 					<li class={`pathway pathway--${pathway.key}`} id={pathway.anchor}>
-						<p class="pathway__kicker">{pathway.sections.length} sections</p>
+						<p class="pathway__kicker">{pathway.sections.length} {pathway.sections.length === 1 ? 'section' : 'sections'}</p>
 						<h3 class="pathway__title">{pathway.label}</h3>
 						<p class="pathway__summary">{pathway.summary}</p>
 						<ul class="pathway__links">
@@ -248,7 +248,7 @@ const websiteJsonLd = {
 				<p>
 					Articles draw on Scripture and the teaching of the Church, and are written to be read on
 					their own or shared with family, students, and anyone seeking Christ. Where the Church has
-					made a judgment about an apparition or a Eucharistic miracle, we say so plainly—and where
+					made a judgement about an apparition or a Eucharistic miracle, we say so plainly—and where
 					it has not, we say that too.
 				</p>
 				<p>

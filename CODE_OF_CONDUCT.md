@@ -15,7 +15,7 @@ Digital Catholic is a resource for learning and sharing the Catholic faith. Ever
 
 **Unacceptable behaviour:**
 
-- Disrespectful, abusive, or demeaning language toward any person
+- Disrespectful, abusive, or demeaning language towards any person
 - Content that contradicts or undermines Catholic doctrine
 - Plagiarism or submission of copyrighted material without proper attribution
 - Spam, self-promotion, or off-topic content

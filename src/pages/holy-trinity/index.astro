@@ -1,0 +1,81 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { trinityIntro, trinityPersons, trinityScripture, trinityScriptureIntro } from '../../data/trinity';
+import { giftsIntro, spiritFruits, spiritGifts } from '../../data/holy-spirit';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<SectionLayout
+	sectionKey="learn"
+	pageCrumb="Holy Trinity"
+	heading="The Most Holy Trinity"
+	title="Holy Trinity"
+	description={PAGE_DESCRIPTIONS.holyTrinity}
+	currentPath={Astro.url.pathname}
+	intro={trinityIntro}
+	count={`One God in ${trinityPersons.length} Persons`}
+>
+	<nav class="jump-links jump-links--numbers" aria-label="Jump to a divine Person" slot="header">
+		{trinityPersons.map((p) => (
+			<a class="jump-links__link" href={`#person-${p.number}`}>
+				<span class="visually-hidden">Person </span>{p.number}
+			</a>
+		))}
+		<a class="jump-links__link jump-links__link--text" href={withBase('/holy-trinity/old-testament')}>Old Testament</a>
+		<a class="jump-links__link jump-links__link--text" href={withBase('/holy-trinity/new-testament')}>New Testament</a>
+		<a class="jump-links__link jump-links__link--text" href="#holy-spirit">The Holy Spirit</a>
+	</nav>
+
+	<ol class="numbered-list">
+		{trinityPersons.map((person) => (
+			<li class="numbered-item" id={`person-${person.number}`}>
+				<span class="numbered-item__number" aria-hidden="true">{person.number}</span>
+				<div class="numbered-item__body">
+					<h2 class="numbered-item__title">{person.title}</h2>
+					<blockquote class="numbered-item__quote">{person.summary}</blockquote>
+					<p class="numbered-item__text">{person.meaning}</p>
+					<p class="numbered-item__text"><strong>Scripture:</strong> {person.scripture}</p>
+				</div>
+			</li>
+		))}
+	</ol>
+
+	<section class="bible-testament" id="trinity-in-scripture" aria-labelledby="trinity-in-scripture-title">
+		<h2 id="trinity-in-scripture-title">The Trinity Throughout the Bible</h2>
+		<p>{trinityScriptureIntro}</p>
+
+		<ul class="book-list">
+			{trinityScripture.map((testament) => (
+				<li class="book-item" id={testament.id}>
+					<span class="book-item__abbr" aria-hidden="true">{testament.id === 'old-testament' ? 'OT' : 'NT'}</span>
+					<div class="book-item__body">
+						<h3 class="book-item__title">
+							<a class="book-item__link" href={withBase(`/holy-trinity/${testament.id}`)}>{testament.title}</a>
+						</h3>
+						<p class="book-item__excerpt">{testament.intro}</p>
+					</div>
+				</li>
+			))}
+		</ul>
+	</section>
+
+	<section class="page-section" aria-labelledby="holy-spirit">
+		<h2 class="section-title" id="holy-spirit">The Holy Spirit</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/holy-spirit')}
+				title="Gifts and Fruits of the Holy Spirit"
+				label="Holy Spirit"
+				excerpt={giftsIntro}
+				action={`Read the ${spiritGifts.length} gifts and ${spiritFruits.length} fruits`}
+			/>
+		</ul>
+	</section>
+
+	<p class="section-footer-links">
+		Continue with the <a href={withBase('/sacraments/confirmation')}>sacrament of Confirmation</a>, which strengthens
+		the gifts of the Spirit, or explore the <a href={withBase('/pray')}>prayers</a> of the Church.
+	</p>
+</SectionLayout>

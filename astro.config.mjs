@@ -35,6 +35,17 @@ const base = process.env.ASTRO_BASE
 export default defineConfig({
 	site: process.env.ASTRO_SITE || 'https://axcel-blade.github.io',
 	base,
+	redirects: {
+		// Merged sections
+		'/life-of-jesus': '/learn',
+		'/apologetics': '/study',
+		'/prayers': '/pray',
+		'/prayer-and-devotions': '/pray',
+		'/liturgy-and-worship': '/mass',
+		'/mary-and-the-saints': '/saints',
+		'/gifts-of-the-holy-spirit': '/holy-spirit#gifts',
+		'/fruits-of-the-holy-spirit': '/holy-spirit#fruits',
+	},
 	integrations: [
 		sitemap({
 			// The search index is a data file, not a page.

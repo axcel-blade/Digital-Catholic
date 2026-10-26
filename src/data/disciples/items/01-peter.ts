@@ -21,7 +21,7 @@ const disciple: Disciple = {
 			heading: 'Who was Peter?',
 			paragraphs: [
 				'Simon, son of Jonah, was a fisherman on the Sea of Galilee. Jesus called him and his brother Andrew, promising to make them fishers of men. Jesus gave him the name Peter—rock—and he became the spokesman of the apostles.',
-				'Impulsive, loyal, and deeply human, Peter walked on water toward Christ, drew the sword in Gethsemane, and swore he would never deny his Lord—yet did so three times before dawn.',
+				'Impulsive, loyal, and deeply human, Peter walked on water towards Christ, drew the sword in Gethsemane, and swore he would never deny his Lord—yet did so three times before dawn.',
 			],
 		},
 		{
@@ -34,7 +34,7 @@ const disciple: Disciple = {
 		{
 			heading: 'After Easter',
 			paragraphs: [
-				'Peter preached at Pentecost and received the first Gentile convert, Cornelius, into the Church. He led the apostles in Jerusalem, traveled widely, and according to tradition was martyred in Rome under Nero, crucified head downward.',
+				'Peter preached at Pentecost and received the first Gentile convert, Cornelius, into the Church. He led the apostles in Jerusalem, travelled widely, and according to tradition was martyred in Rome under Nero, crucified head downward.',
 				'His two New Testament letters and the Gospel of Mark—traditionally linked to his preaching—continue to strengthen the faithful.',
 			],
 		},
@@ -51,7 +51,7 @@ const disciple: Disciple = {
 			image: { src: '/disciples/sections/peter-miracles.jpg', alt: 'St. Peter walking along a street as sick and crippled people are healed by his shadow', caption: 'St. Peter Healing the Sick with His Shadow, Masaccio (Brancacci Chapel, Florence).' },
 			paragraphs: [
 				'The Acts of the Apostles records many miracles worked through Peter. With John he healed a man lame from birth at the Temple’s Beautiful Gate (Acts 3:1–10). The sick were carried into the streets so that even his shadow might fall on them (Acts 5:15).',
-				'At Lydda he healed Aeneas, who had been paralyzed for eight years, and at Joppa he raised the disciple Tabitha (Dorcas) from the dead (Acts 9:32–42). When Herod imprisoned him, an angel led him out of his chains and through the prison gates (Acts 12:6–11).',
+				'At Lydda he healed Aeneas, who had been paralysed for eight years, and at Joppa he raised the disciple Tabitha (Dorcas) from the dead (Acts 9:32–42). When Herod imprisoned him, an angel led him out of his chains and through the prison gates (Acts 12:6–11).',
 			],
 		},
 		{
@@ -66,7 +66,7 @@ const disciple: Disciple = {
 			heading: 'Death and legacy',
 			paragraphs: [
 				'Under the Emperor Nero, after the fire of Rome in A.D. 64, Peter was arrested and condemned to crucifixion. Ancient tradition holds that he asked to be nailed to the cross upside down, deeming himself unworthy to die as his Lord had. He was martyred at the Vatican hill around A.D. 64–68.',
-				'His tomb lies beneath St. Peter’s Basilica in Rome. The Church honors him as first among the apostles and the rock on which Christ built His Church; his feast with St. Paul on June 29 marks the foundation of the Roman Church.',
+				'His tomb lies beneath St. Peter’s Basilica in Rome. The Church honours him as first among the apostles and the rock on which Christ built His Church; his feast with St. Paul on June 29 marks the foundation of the Roman Church.',
 			],
 		},
 		{

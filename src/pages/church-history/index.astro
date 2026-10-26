@@ -1,0 +1,37 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { getGuide } from '../../data/guides';
+import { timelineEvents, timelineIntro } from '../../data/timeline';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const history = getGuide('church-history');
+---
+
+<GuidePage
+	guideKey="church-history"
+	sectionKey="study"
+	extraCrumbs={[{ label: 'Scripture, Tradition, and the Church', href: withBase('/bible-and-tradition') }]}
+	heading="Catholic Church History"
+	description={PAGE_DESCRIPTIONS.churchHistory}
+	count={`${history.topics.length} topics · ${timelineEvents.length} milestones`}
+>
+	<section slot="after" class="page-section" aria-labelledby="timeline-title">
+		<h2 class="section-title" id="timeline-title">Timeline of Church History</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/church-history-timeline')}
+				title="Church History Timeline"
+				label="Timeline"
+				excerpt={timelineIntro}
+				action={`See ${timelineEvents.length} milestones by era`}
+			/>
+		</ul>
+	</section>
+
+	<p class="section-footer-links">
+		Continue with <a href={withBase('/the-church')}>The Catholic Church</a> or meet the people behind this history in
+		<a href={withBase('/saints')}>Mary and the Saints</a>.
+	</p>
+</GuidePage>

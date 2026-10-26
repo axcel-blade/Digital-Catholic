@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/paths';
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import LiturgicalCalendarView from '../../components/LiturgicalCalendarView.astro';
 import {
@@ -22,7 +23,8 @@ const yearOptions = getLiturgicalYearsRange(defaultYear, 1, 2);
 ---
 
 <SectionLayout
-	sectionKey="liturgical-calendar"
+	sectionKey="pray"
+	extraCrumbs={[{ label: 'Holy Mass and Liturgy', href: withBase('/mass') }, { label: 'Liturgical Calendar', href: withBase('/liturgical-calendar') }]}
 	heading={`Catholic Liturgical Calendar ${year}`}
 	title={`Liturgical Calendar ${year}`}
 	description={`The Catholic liturgical calendar for ${year}—the date of Easter, the seasons of the Church year, and the solemnities, feasts, and memorials of the General Roman Calendar.`}

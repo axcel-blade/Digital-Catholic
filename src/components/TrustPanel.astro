@@ -8,12 +8,15 @@ import type { SourceReference, TrustInfo } from '../data/lib/trust';
 import { churchStatusDescriptions } from '../data/lib/trust';
 import StatusBadge from './StatusBadge.astro';
 import Disclaimer from './Disclaimer.astro';
+import type { ResolvedReferences } from '../lib/references';
 
 interface Props {
 	trust?: TrustInfo;
+	/** Catechism, Scripture, and Church documents for this article */
+	references?: ResolvedReferences;
 }
 
-const { trust = {} } = Astro.props;
+const { trust = {}, references } = Astro.props;
 
 const lists: { title: string; items?: SourceReference[] }[] = [
 	{ title: 'Sources', items: trust.sources },
@@ -45,6 +48,42 @@ const reviewed = trust.lastReviewed
 		</div>
 	)}
 
+	{references && (
+		<div class="trust-panel__block trust-panel__references">
+			<h3 class="trust-panel__subtitle">References</h3>
+			<dl class="trust-panel__refs">
+				{references.catechism && (
+					<div>
+						<dt>Catechism</dt>
+						<dd>{references.catechism}</dd>
+					</div>
+				)}
+				{references.scripture.length > 0 && (
+					<div>
+						<dt>Scripture</dt>
+						<dd>
+							{references.scripture.map((ref, i) => (
+								<>{i > 0 && '; '}<a href={ref.url} rel="noopener noreferrer" target="_blank">{ref.label}<span class="visually-hidden"> (opens in a new tab)</span></a></>
+							))}
+						</dd>
+					</div>
+				)}
+				<div>
+					<dt>Church documents</dt>
+					<dd>
+						<ul class="trust-panel__list">
+							{references.documents.map((doc) => (
+								<li>
+									<a href={doc.url} rel="noopener noreferrer" target="_blank">{doc.label}<span class="visually-hidden"> (opens in a new tab)</span></a>
+								</li>
+							))}
+						</ul>
+					</dd>
+				</div>
+			</dl>
+		</div>
+	)}
+
 	{lists.map(
 		(list) =>
 			list.items &&
@@ -55,10 +94,7 @@ const reviewed = trust.lastReviewed
 						{list.items.map((item) => (
 							<li>
 								{item.url ? (
-									<a href={item.url} rel="noopener noreferrer" target="_blank">
-										{item.label}
-										<span class="visually-hidden"> (opens in a new tab)</span>
-									</a>
+									<a href={item.url} rel="noopener noreferrer" target="_blank">{item.label}<span class="visually-hidden"> (opens in a new tab)</span></a>
 								) : (
 									item.label
 								)}

@@ -76,7 +76,7 @@ const celebrations = yearData.months.flatMap((m) =>
 	</div>
 
 	<div class="calendar-legend">
-		<p class="calendar-legend__label" id="calendar-legend-label">Liturgical colors</p>
+		<p class="calendar-legend__label" id="calendar-legend-label">Liturgical colours</p>
 		<ul class="calendar-legend__colors" aria-labelledby="calendar-legend-label">
 			{Object.entries(colorLabels).map(([key, label]) => (
 				<li><span class={`color-dot color-dot--${key}`} aria-hidden="true"></span>{label}</li>
@@ -109,7 +109,7 @@ const celebrations = yearData.months.flatMap((m) =>
 								<span class="calendar-day__rank">{rankLabels[day.rank]}</span>
 								<span class="calendar-day__color">
 									<span class={`color-dot color-dot--${day.color}`} aria-hidden="true"></span>
-									<span class="visually-hidden">Liturgical color: </span>{colorLabels[day.color]}
+									<span class="visually-hidden">Liturgical colour: </span>{colorLabels[day.color]}
 								</span>
 								<span class="calendar-day__today-label">Today</span>
 							</p>

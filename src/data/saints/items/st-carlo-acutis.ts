@@ -17,14 +17,14 @@ const saint: Saint = {
 			"heading": "Who is St. Carlo Acutis?",
 			"paragraphs": [
 				"Saint Carlo Acutis was born in London on May 3, 1991, and grew up in Milan, Italy. From childhood he loved God with unusual depth: he asked to receive First Communion at age seven, went to Mass often, prayed the Rosary, and cared for the poor and lonely around him.",
-				"Carlo died of leukemia on October 12, 2006, at the age of fifteen. Pope Francis beatified him in Assisi on October 10, 2020, and Pope Leo XIV canonized him on September 7, 2025. He is often called the first millennial saint and a model for young Catholics today."
+				"Carlo died of leukemia on October 12, 2006, at the age of fifteen. Pope Francis beatified him in Assisi on October 10, 2020, and Pope Leo XIV canonised him on September 7, 2025. He is often called the first millennial saint and a model for young Catholics today."
 			]
 		},
 		{
 			"heading": "His life and mission",
 			"paragraphs": [
-				"Though his parents were not deeply religious at first, Carlo’s faith was joyful and natural. He defended classmates who were bullied, visited elderly neighbors, and gave his savings to help the homeless. He said, “To be always united with Jesus, this is my life’s plan.”",
-				"Carlo taught himself computer programming and built a website documenting Eucharistic miracles from around the world, hoping to lead people to adore Christ in the Blessed Sacrament. He also recorded parish events and supported friends in learning the faith online—using technology not for vanity, but for evangelization.",
+				"Though his parents were not deeply religious at first, Carlo’s faith was joyful and natural. He defended classmates who were bullied, visited elderly neighbours, and gave his savings to help the homeless. He said, “To be always united with Jesus, this is my life’s plan.”",
+				"Carlo taught himself computer programming and built a website documenting Eucharistic miracles from around the world, hoping to lead people to adore Christ in the Blessed Sacrament. He also recorded parish events and supported friends in learning the faith online—using technology not for vanity, but for evangelisation.",
 				"When he became ill, he offered his suffering for the Pope and the Church. He was buried in Assisi, a city he loved because of St. Francis, whose simplicity and love of Christ he sought to imitate."
 			]
 		},
@@ -38,8 +38,8 @@ const saint: Saint = {
 		{
 			"heading": "Full biography",
 			"paragraphs": [
-				"Carlo Acutis was born in London on May 3, 1991, to Italian parents and grew up in Milan. Baptized shortly after birth, he received First Communion at age seven and soon asked to visit churches daily, attend Mass, and pray the Rosary. His parents were not deeply practicing at first; Carlo’s faith was joyful and drew them toward the Church.",
-				"At school he defended classmates bullied for their faith, helped disabled neighbors, and gave his savings to the homeless. He taught himself programming and built a website cataloging Eucharistic miracles worldwide, hoping to lead others to adore Christ in the Blessed Sacrament. He recorded parish events and encouraged friends to use technology for evangelization, not vanity.",
+				"Carlo Acutis was born in London on May 3, 1991, to Italian parents and grew up in Milan. Baptised shortly after birth, he received First Communion at age seven and soon asked to visit churches daily, attend Mass, and pray the Rosary. His parents were not deeply practising at first; Carlo’s faith was joyful and drew them towards the Church.",
+				"At school he defended classmates bullied for their faith, helped disabled neighbours, and gave his savings to the homeless. He taught himself programming and built a website cataloging Eucharistic miracles worldwide, hoping to lead others to adore Christ in the Blessed Sacrament. He recorded parish events and encouraged friends to use technology for evangelisation, not vanity.",
 				"When leukemia was diagnosed in 2006, Carlo offered his suffering for the Pope and the Church. He died in Monza on October 12, 2006, at fifteen, and was buried in Assisi, a city he loved for its link to St. Francis."
 			]
 		},
@@ -47,7 +47,7 @@ const saint: Saint = {
 			"heading": "Miracles",
 			"paragraphs": [
 				"The miracle approved for Carlo's beatification was the healing of Matheus Vianna, a young Brazilian boy who suffered from a rare congenital disease of the pancreas. He was cured after touching a relic, a piece of a shirt bearing traces of Carlo's blood.",
-				"The miracle approved for his canonization was the recovery of Valeria Valverde, a young Costa Rican student who suffered a severe head injury in a bicycle accident in Florence. Her mother went to pray at Carlo's tomb in Assisi, and soon afterward Valeria began to recover. Pope Leo XIV canonized him on September 7, 2025."
+				"The miracle approved for his canonisation was the recovery of Valeria Valverde, a young Costa Rican student who suffered a severe head injury in a bicycle accident in Florence. Her mother went to pray at Carlo's tomb in Assisi, and soon afterward Valeria began to recover. Pope Leo XIV canonised him on September 7, 2025."
 			]
 		},
 		{
@@ -61,7 +61,7 @@ const saint: Saint = {
 		{
 			"heading": "Death and legacy",
 			"paragraphs": [
-				"Carlo died peacefully on October 12, 2006, after telling his parents he would die because his leukemia could not be cured in this world. Pope Francis beatified him in Assisi on October 10, 2020; Pope Leo XIV canonized him on September 7, 2025. His feast is celebrated on the anniversary of his death.",
+				"Carlo died peacefully on October 12, 2006, after telling his parents he would die because his leukemia could not be cured in this world. Pope Francis beatified him in Assisi on October 10, 2020; Pope Leo XIV canonised him on September 7, 2025. His feast is celebrated on the anniversary of his death.",
 				"His tomb in the Sanctuary of the Spoliation in Assisi draws pilgrims worldwide. He is invoked as patron of youth and of those who work with computers and digital media, and as an intercessor for the sick—proof that holiness is possible in an ordinary school, home, and online life."
 			]
 		},

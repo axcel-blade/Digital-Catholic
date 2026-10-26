@@ -1,0 +1,17 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<GuidePage
+	guideKey="the-church"
+	sectionKey="study"
+	extraCrumbs={[{ label: 'Scripture, Tradition, and the Church', href: withBase('/bible-and-tradition') }]}
+	heading="The Catholic Church"
+	description={PAGE_DESCRIPTIONS.theChurch}
+>
+	<p class="section-footer-links">
+		Continue with <a href={withBase('/church-history')}>Church History</a> or <a href={withBase('/study')}>Apologetics and FAQ</a>.
+	</p>
+</GuidePage>

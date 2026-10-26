@@ -2,7 +2,7 @@
 
 Images shown on the Items Used at Mass page (`/mass/items-used-at-mass`). All images are from Wikimedia Commons, resized to at most 960px.
 
-| File | Source | Author | License |
+| File | Source | Author | Licence |
 | --- | --- | --- | --- |
 | alb.jpg | [Catholic Picture Dictionary (Pfeiffer) - Alb.jpg](https://commons.wikimedia.org/wiki/File:Catholic_Picture_Dictionary_(Pfeiffer)_-_Alb.jpg) | R. and K. Wood | Public domain |
 | book-of-the-gospels.jpg | [Einband-Theophanu-Evangeliar-Domschatz-Essen-2025.jpg](https://commons.wikimedia.org/wiki/File:Einband-Theophanu-Evangeliar-Domschatz-Essen-2025.jpg) | Tuxyso | CC BY-SA 4.0 |

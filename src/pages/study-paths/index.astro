@@ -1,0 +1,45 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import { studyPaths, studyPathsIntro } from '../../data/study-paths';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<SectionLayout
+	sectionKey="study"
+	extraCrumbs={[{ label: 'Christian Living', href: withBase('/moral-teaching') }]}
+	heading="Catholic Study Paths"
+	pageCrumb="Study Paths"
+	description={PAGE_DESCRIPTIONS.studyPaths}
+	currentPath={Astro.url.pathname}
+	intro={studyPathsIntro}
+	count={`${studyPaths.length} paths`}
+>
+	<nav class="jump-links" aria-label="Jump to a study path" slot="header">
+		{studyPaths.map((p) => (
+			<a class="jump-links__link" href={`#path-${p.slug}`}>{p.title}</a>
+		))}
+	</nav>
+
+	{studyPaths.map((path) => (
+		<section class="study-path" id={`path-${path.slug}`} aria-labelledby={`path-${path.slug}-title`}>
+			<p class="study-path__audience">{path.audience}</p>
+			<h2 class="study-path__title" id={`path-${path.slug}-title`}>{path.title}</h2>
+			<p class="study-path__summary">{path.summary}</p>
+			<p class="study-path__pace">{path.pace}</p>
+			<ol class="study-path__steps">
+				{path.steps.map((step) => (
+					<li class="study-path__step">
+						<a class="study-path__link" href={withBase(step.href)}>{step.title}</a>
+						<p class="study-path__note">{step.note}</p>
+					</li>
+				))}
+			</ol>
+		</section>
+	))}
+
+	<p class="section-footer-links">
+		Unsure where to begin? Start with <a href={withBase('/core-beliefs')}>Core Catholic Beliefs</a>, and keep the
+		<a href={withBase('/glossary')}>glossary</a> to hand.
+	</p>
+</SectionLayout>

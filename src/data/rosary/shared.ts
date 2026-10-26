@@ -1,3 +1,7 @@
+// The Our Father and Hail Mary are kept once, in the Prayers section, and shared here.
+import ourFather from '../prayers/items/01-our-father';
+import hailMary from '../prayers/items/02-hail-mary';
+
 export const rosaryIntro = "The Holy Rosary is a beloved prayer of the Catholic Church. On each bead we meditate on the life of Christ and His Mother while repeating the Our Father, Hail Mary, and Glory Be. The twenty mysteries are grouped into four sets, traditionally prayed on different days of the week.";
 
 export const rosaryOriginIntro = "The Rosary has ancient roots reaching back to the early Church, slowly taking shape over many centuries before becoming the beloved prayer we know today.";
@@ -14,13 +18,13 @@ export const rosaryOriginSections = [
 		heading: "St. Dominic and the Dominican tradition",
 		paragraphs: [
 			"A beloved tradition holds that Our Lady appeared to St. Dominic of Guzman (1170–1221), founder of the Order of Preachers (Dominicans), and gave him the Rosary as a spiritual weapon against the Albigensian heresy. While historians note that the Rosary developed gradually, St. Dominic's order became its greatest champion and helped spread this prayer across the Christian world.",
-			"Blessed Alan de la Roche (1428–1475), a Dominican friar, revived and popularized Rosary devotion in the fifteenth century. He founded Rosary confraternities that spread from the Low Countries throughout Europe, cementing the Dominican Order's role in promoting this prayer.",
+			"Blessed Alan de la Roche (1428–1475), a Dominican friar, revived and popularised Rosary devotion in the fifteenth century. He founded Rosary confraternities that spread from the Low Countries throughout Europe, cementing the Dominican Order's role in promoting this prayer.",
 		]
 	},
 	{
 		heading: "Pope Pius V and the Battle of Lepanto",
 		paragraphs: [
-			"Pope Pius V (a Dominican) standardized the Rosary in its essentially modern form with his 1569 apostolic constitution Consueverunt Romani Pontifices. Two years later, on October 7, 1571, the Christian fleet defeated the Ottoman navy at the Battle of Lepanto. Pius V attributed this decisive victory to Our Lady of the Rosary and established October 7 as the feast of Our Lady of Victory, later renamed Our Lady of the Rosary.",
+			"Pope Pius V (a Dominican) standardised the Rosary in its essentially modern form with his 1569 apostolic constitution Consueverunt Romani Pontifices. Two years later, on October 7, 1571, the Christian fleet defeated the Ottoman navy at the Battle of Lepanto. Pius V attributed this decisive victory to Our Lady of the Rosary and established October 7 as the feast of Our Lady of Victory, later renamed Our Lady of the Rosary.",
 			"This feast remains in the universal Roman Calendar today. Every October is dedicated to the Rosary in the Church's tradition.",
 		]
 	},
@@ -90,11 +94,11 @@ export const rosaryPrayers = [
 	},
 	{
 		"title": "Our Father",
-		"text": "Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen."
+		"text": ourFather.text
 	},
 	{
 		"title": "Hail Mary",
-		"text": "Hail Mary, full of grace, the Lord is with thee; blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen."
+		"text": hailMary.text
 	},
 	{
 		"title": "Glory Be",
@@ -106,7 +110,7 @@ export const rosaryPrayers = [
 	},
 	{
 		"title": "Hail Holy Queen",
-		"text": "Hail, holy Queen, Mother of Mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve; to thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us, and after this our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary. Pray for us, O holy Mother of God, that we may be made worthy of the promises of Christ."
+		"text": "Hail, holy Queen, Mother of Mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve; to thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy towards us, and after this our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary. Pray for us, O holy Mother of God, that we may be made worthy of the promises of Christ."
 	},
 	{
 		"title": "Concluding prayer",

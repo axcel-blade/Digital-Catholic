@@ -1,0 +1,41 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { marianApparitions, marianApparitionsIntro } from '../../data/marian-apparitions';
+import { eucharisticMiracles, eucharisticMiraclesIntro } from '../../data/eucharistic-miracles';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+---
+
+<SectionLayout
+	sectionKey="learn"
+	heading="Marian and Eucharistic Signs"
+	pageCrumb="Marian and Eucharistic Signs"
+	description={PAGE_DESCRIPTIONS.signsAndWonders}
+	currentPath={Astro.url.pathname}
+	intro="The Church weighs reported apparitions of the Blessed Virgin Mary and Eucharistic miracles carefully. None adds to the faith, but those the Church approves can strengthen it. Each account notes its Church status."
+	count={`${marianApparitions.length} apparitions · ${eucharisticMiracles.length} Eucharistic miracles`}
+>
+	<ul class="card-grid card-grid--two">
+		<EntryCard
+			href={withBase('/marian-apparitions')}
+			title="Marian Apparitions"
+			label="Blessed Virgin Mary"
+			excerpt={marianApparitionsIntro}
+			action={`See ${marianApparitions.length} apparitions`}
+		/>
+		<EntryCard
+			href={withBase('/eucharistic-miracles')}
+			title="Eucharistic Miracles"
+			label="Eucharist"
+			excerpt={eucharisticMiraclesIntro}
+			action={`See ${eucharisticMiracles.length} accounts`}
+		/>
+	</ul>
+
+	<p class="section-footer-links">
+		See also the <a href={withBase('/saints/blessed-virgin-mary')}>biography of the Blessed Virgin Mary</a>, the
+		<a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a>, and the
+		<a href={withBase('/miracles')}>miracles of Jesus in the Gospels</a>.
+	</p>
+</SectionLayout>

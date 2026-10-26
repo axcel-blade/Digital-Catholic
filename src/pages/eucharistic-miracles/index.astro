@@ -21,7 +21,9 @@ const statusOptions = statuses.map((status) => ({
 ---
 
 <SectionLayout
-	sectionKey="eucharistic-miracles"
+	sectionKey="learn"
+	extraCrumbs={[{ label: 'Marian and Eucharistic Signs', href: withBase('/signs-and-wonders') }]}
+	pageCrumb="Eucharistic Miracles"
 	heading="Eucharistic Miracles"
 	description={PAGE_DESCRIPTIONS.eucharisticMiracles}
 	currentPath={Astro.url.pathname}
