@@ -26,7 +26,7 @@ A static Catholic digital library for learning and sharing the faith — clear r
 
 ## What it covers
 
-The library has thirty-three content areas, grouped into four pathways, each split into smaller subgroups in the menus. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
+The library has thirty-four content areas, grouped into four pathways, each split into smaller subgroups in the menus. The same grouping drives the site navigation, the homepage, and the About page (see `src/lib/sections.ts`).
 
 ### Learn
 
@@ -34,7 +34,8 @@ The library has thirty-three content areas, grouped into four pathways, each spl
 | --- | --- |
 | **Holy Bible** | Summaries of all 73 books of the Catholic canon, including the deuterocanonical books, and how the Bible was formed |
 | **Saints** | Biographies of holy men and women with life dates, feast days, miracles, and relics, plus the path to sainthood (Servant of God, Venerable, Blessed, Saint) |
-| **Sacraments** | All seven sacraments in Catechism order — initiation, healing, and service of communion — plus eight in-depth guides (The Sacraments in Depth) on Baptism and Confirmation, the Real Presence, Transubstantiation, Confession, Marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion |
+| **Sacraments** | All seven sacraments in Catechism order — initiation, healing, and service of communion |
+| **The Sacraments in Depth** | Eight in-depth guides on Baptism and Confirmation, the Real Presence, Transubstantiation, Confession, Marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion, each linked to its sacraments |
 | **Core Catholic Beliefs** | The fundamental doctrines: the Trinity, the Incarnation, the Resurrection and Ascension, original sin and grace, heaven, hell, and purgatory, the Creeds, and the Four Last Things |
 | **Holy Trinity** | One God in three Persons — the Father, the Son, and the Holy Spirit — and how the Trinity appears across the Old and New Testaments |
 | **Ten Commandments** | The text and meaning of each commandment |

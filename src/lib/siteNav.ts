@@ -35,12 +35,21 @@ function isNavActive(route: string, path: string): boolean {
 	return path === route || path.startsWith(`${route}/`);
 }
 
-function resolve(route: string, label: string, path: string, blurb?: string): ResolvedNavItem {
-	return { href: withBase(route), label, blurb, isActive: isNavActive(route, path) };
-}
-
 export function buildSiteNav(currentPath: string): SiteNav {
 	const path = stripBase(currentPath).replace(/(.)\/$/, '$1');
+
+	// When section URLs nest (/sacraments and /sacraments/guides), only the closest match is active.
+	const bestRoute = siteSections
+		.map((section) => section.href)
+		.filter((route) => isNavActive(route, path))
+		.sort((a, b) => b.length - a.length)[0];
+
+	const resolve = (route: string, label: string, _path: string, blurb?: string): ResolvedNavItem => ({
+		href: withBase(route),
+		label,
+		blurb,
+		isActive: siteSections.some((s) => s.href === route) ? route === bestRoute : isNavActive(route, path),
+	});
 
 	const groups = sectionGroups.map((group) => {
 		const sections = siteSections.filter((section) => section.group === group.key);

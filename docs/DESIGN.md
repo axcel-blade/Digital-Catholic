@@ -16,7 +16,7 @@ Each pathway is split into subgroups so the dropdown menus stay short: desktop p
 
 | Pathway | Subgroup | Sections |
 |---|---|---|
-| **Learn** | Foundations | Holy Bible, Core Catholic Beliefs, Holy Trinity, Sacraments, Ten Commandments |
+| **Learn** | Foundations | Holy Bible, Core Catholic Beliefs, Holy Trinity, Sacraments, The Sacraments in Depth, Ten Commandments |
 | **Study** | Church & Tradition | The Bible and Catholic Tradition, The Catholic Church, Catholic Church History, Catholic Apologetics and FAQ, Church History Timeline, Compare Christian Traditions |
 | | Christian living | Catholic Moral Teaching, Catholic Social Teaching, Living the Catholic Faith |
 | | Study tools | Catholic Glossary, Ask a Catholic Question, Catholic Study Paths |

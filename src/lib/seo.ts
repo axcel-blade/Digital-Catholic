@@ -18,7 +18,7 @@ export const SITE = {
 export const PAGE_DESCRIPTIONS = {
 	home: SITE.defaultDescription,
 	about:
-		'What Digital Catholic is, who it is for, how its thirty-three content areas are organised, and its approach to accuracy and devotion.',
+		'What Digital Catholic is, who it is for, how its thirty-four content areas are organised, and its approach to accuracy and devotion.',
 	contact:
 		'Contact Digital Catholic with questions, corrections, or suggestions—by email or by opening an issue in the project’s GitHub repository.',
 	bible:
@@ -27,6 +27,8 @@ export const PAGE_DESCRIPTIONS = {
 		'Traditional Catholic prayers—the Our Father and the Hail Mary—with their full text, origins in Scripture, and meaning for daily prayer.',
 	saints:
 		'Saint biographies for the Catholic Church—lives from birth to death, feast days, and lessons from Mary, Joseph, Nicholas of Myra, Anthony of Padua, Carlo Acutis, and more.',
+	sacramentsInDepth:
+		'In-depth guides to the sacraments—Baptism and Confirmation, the Real Presence, transubstantiation, Confession, marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion.',
 	sacraments:
 		'The seven sacraments—Baptism, Confirmation, Eucharist, Penance, Anointing of the Sick, Holy Orders, and Matrimony—what the Church teaches and why they matter.',
 	disciples:

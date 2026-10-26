@@ -1,0 +1,42 @@
+---
+import SectionLayout from '../../../layouts/SectionLayout.astro';
+import EntryCard from '../../../components/EntryCard.astro';
+import EmptyState from '../../../components/EmptyState.astro';
+import { sacraments, sacramentGuides, getSacramentGuideImageAlt } from '../../../data/sacraments';
+import { PAGE_DESCRIPTIONS } from '../../../lib/seo';
+import { withBase } from '../../../lib/paths';
+import { getCollectionImage } from '../../../lib/images';
+
+const sacramentTitle = (slug: string) => sacraments.find((s) => s.slug === slug)?.title ?? slug;
+---
+
+<SectionLayout
+	sectionKey="sacraments-in-depth"
+	description={PAGE_DESCRIPTIONS.sacramentsInDepth}
+	currentPath={Astro.url.pathname}
+	intro="Guides that go deeper into what the Church teaches about the sacraments and how to live them—from the Real Presence and transubstantiation to making a good Confession and receiving Communion worthily. Each guide links to the sacraments it explains."
+	count={`${sacramentGuides.length} guides`}
+>
+	{sacramentGuides.length === 0 ? (
+		<EmptyState />
+	) : (
+		<ul class="card-grid card-grid--media">
+			{sacramentGuides.map((guide, i) => (
+				<EntryCard
+					href={withBase(`/sacraments/guides/${guide.slug}`)}
+					title={guide.title}
+					label={guide.sacraments.map(sacramentTitle).join(' · ')}
+					excerpt={guide.excerpt}
+					action="Read guide"
+					image={getCollectionImage('sacraments/guides', guide.slug, getSacramentGuideImageAlt(guide.title))}
+					eager={i < 3}
+				/>
+			))}
+		</ul>
+	)}
+
+	<p class="section-footer-links">
+		New to the sacraments? Start with <a href={withBase('/sacraments')}>The Seven Sacraments</a>, which introduces each one
+		in the order of the Catechism.
+	</p>
+</SectionLayout>

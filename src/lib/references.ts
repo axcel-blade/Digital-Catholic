@@ -274,10 +274,10 @@ function merge(...sets: (ReferenceSet | undefined)[]): ReferenceSet {
 export function getArticleReferences(sectionKey: string, currentPath: string): ResolvedReferences {
 	const parts = stripBase(currentPath).split('/').filter(Boolean);
 	const slug = parts[parts.length - 1] ?? '';
-	const isGuide = sectionKey === 'sacraments' && parts.includes('guides');
+	const isGuide = sectionKey === 'sacraments-in-depth';
 
 	let set: ReferenceSet;
-	if (sectionKey === 'sacraments') {
+	if (sectionKey === 'sacraments' || isGuide) {
 		const related = isGuide
 			? (sacramentGuides.find((g) => g.slug === slug)?.sacraments ?? [])
 			: [slug];

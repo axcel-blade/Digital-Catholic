@@ -7,6 +7,7 @@ All notable changes to Digital Catholic are documented here.
 ## [Unreleased]
 
 ### Changed
+- The Sacraments in Depth is now its own section at `/sacraments/guides`, listed under Learn → Foundations, with its own page and breadcrumbs; the Seven Sacraments page links to it, each guide links back to the sacraments it explains, and each sacrament still lists its guides
 - Removed duplicated content: the Eucharist article no longer repeats the Items used at Mass catalogue (it links there instead), and the Rosary page now takes the Our Father and Hail Mary text from the Prayers section
 - Each overlapping topic now has one main page: “Do Catholics worship Mary or the saints?” is folded into Mary and the Saints → Veneration versus adoration; The Catholic Church no longer repeats the comparison of Christian traditions; Apologetics, Liturgy and Worship (Real Presence), and Living the Faith (Confession) give short answers that link to the full sacrament guides; FAQ answers are kept to one or two sentences
 - Search: the apostle and the Gospel of Matthew now have distinct titles, and each FAQ question has its own anchor, which opens that answer

@@ -380,6 +380,16 @@ export function buildSearchIndex(): SearchEntry[] {
 		);
 	}
 
+	items.push(
+		entry(
+			'The Sacraments in Depth',
+			withBase('/sacraments/guides'),
+			'Sacrament guides',
+			'In-depth guides to the sacraments and how to live them.',
+			sacramentGuides.map((g) => joinParts(g.title, g.excerpt))
+		)
+	);
+
 	for (const guide of sacramentGuides) {
 		items.push(
 			entry(

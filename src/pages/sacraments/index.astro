@@ -7,7 +7,6 @@ import {
 	sacramentGroupLabels,
 	sacramentGuides,
 	getSacramentImageAlt,
-	getSacramentGuideImageAlt,
 } from '../../data/sacraments';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
@@ -41,25 +40,12 @@ import { getCollectionImage } from '../../lib/images';
 		</ul>
 	)}
 
-	{sacramentGuides.length > 0 && (
-		<section class="sacrament-guides" aria-labelledby="sacrament-guides-heading">
-			<h2 id="sacrament-guides-heading">The Sacraments in Depth</h2>
-			<p class="sacrament-guides__intro">
-				Individual guides that go deeper into what the Church teaches and how to live each sacrament.
-			</p>
-			<ul class="card-grid card-grid--media">
-				{sacramentGuides.map((guide) => (
-					<EntryCard
-						href={withBase(`/sacraments/guides/${guide.slug}`)}
-						title={guide.title}
-						label="Sacrament guide"
-						excerpt={guide.excerpt}
-						action="Read guide"
-						headingLevel="h3"
-						image={getCollectionImage('sacraments/guides', guide.slug, getSacramentGuideImageAlt(guide.title))}
-					/>
-				))}
-			</ul>
-		</section>
-	)}
+	<aside class="sacrament-guides" aria-labelledby="sacrament-guides-heading">
+		<h2 id="sacrament-guides-heading">The Sacraments in Depth</h2>
+		<p class="sacrament-guides__intro">
+			Ready to go further? {sacramentGuides.length} in-depth guides explain the Real Presence, transubstantiation,
+			Confession, marriage, Holy Orders, and more.
+		</p>
+		<a class="button button--secondary" href={withBase('/sacraments/guides')}>Explore the Sacraments in Depth</a>
+	</aside>
 </SectionLayout>

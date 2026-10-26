@@ -132,6 +132,16 @@ export const siteSections: SiteSection[] = [
 		blurb: 'The seven sacraments and what the Church teaches.',
 	},
 	{
+		key: 'sacraments-in-depth',
+		href: '/sacraments/guides',
+		title: 'The Sacraments in Depth',
+		navLabel: 'Sacraments in Depth',
+		group: 'learn',
+		subgroup: 'foundations',
+		label: 'Sacrament guides',
+		blurb: 'In-depth guides to the Real Presence, Confession, marriage, and more.',
+	},
+	{
 		key: 'commandments',
 		href: '/commandments',
 		title: 'Ten Commandments',
