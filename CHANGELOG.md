@@ -7,6 +7,7 @@ All notable changes to Digital Catholic are documented here.
 ## [Unreleased]
 
 ### Added
+- Public-domain artwork at the top of each of the ten topic guides (Caravaggio, Perugino, Raphael, Bosch, Millet, Breton, Murillo, van Eyck, and a painting of the Council of Trent), credited in `public/guides/CREDITS.md`
 - Catholic Glossary (`/glossary`): 47 terms from absolution to viaticum, grouped A–Z, with Catechism references, links to fuller explanations, and a search entry per term
 - Daily Gospel and Reflection (`/daily-gospel`): 32 Gospel scenes, each with the passage in brief, an explanation, and a reflection question; the page shows a different one each day, with previous/next navigation and a link to the day’s Mass readings
 - Ask a Catholic Question (`/ask-a-catholic-question`): a searchable FAQ of 24 questions organised by doctrine, worship, morality, and Church history

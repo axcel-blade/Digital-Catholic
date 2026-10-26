@@ -2,7 +2,9 @@
 import SectionLayout from '../layouts/SectionLayout.astro';
 import ReferenceLine from './ReferenceLine.astro';
 import { getGuide } from '../data/guides';
+import { guideImages } from '../data/guides/images';
 import { getSection } from '../lib/sections';
+import { getCollectionImage } from '../lib/images';
 import { withBase } from '../lib/paths';
 
 interface Props {
@@ -14,6 +16,8 @@ interface Props {
 const { guideKey, description } = Astro.props;
 const guide = getGuide(guideKey);
 const section = getSection(guideKey);
+const art = guideImages[guideKey];
+const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 ---
 
 <SectionLayout
@@ -28,6 +32,13 @@ const section = getSection(guideKey);
 			<a class="jump-links__link" href={`#topic-${t.number}`}>{t.title}</a>
 		))}
 	</nav>
+
+	{image && (
+		<figure class="framed-figure guide-figure">
+			<img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="eager" decoding="async" />
+			<figcaption>{art.caption}</figcaption>
+		</figure>
+	)}
 
 	<ol class="numbered-list">
 		{guide.topics.map((topic) => (
