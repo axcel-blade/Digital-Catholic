@@ -1,6 +1,6 @@
 # Image credits — Topic guides
 
-Artwork shown at the top of each topic guide (`/{guide-key}`). All are public-domain paintings from Wikimedia Commons, downloaded at 960px wide (the Council of Trent at its original 750px). Alt text and captions are in `src/data/guides/images.ts`.
+Artwork shown at the top of each topic guide (`/{guide-key}`). All are public-domain paintings from Wikimedia Commons, downloaded at 960px wide (the Council of Trent at its original 750px, recompressed at JPEG quality 82). Alt text and captions are in `src/data/guides/images.ts`.
 
 | File | Source | Author | Licence |
 | --- | --- | --- | --- |
