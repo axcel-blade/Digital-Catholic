@@ -17,7 +17,7 @@ Content is split into **one file per article** so contributors can add entries w
 | Marian apparitions | `marian-apparitions/items/{slug}.ts` | `lourdes.ts` |
 | Parables | `parables/items/{slug}.ts` | `the-prodigal-son.ts` |
 | Commandments | `commandments/items/NN-short-name.ts` | `03-keep-the-lord-s-day-holy.ts` |
-| Core Catholic Beliefs | `core-beliefs/items/NN-{slug}.ts` | `01-the-holy-trinity.ts` |
+| Core Catholic Beliefs | `core-beliefs/items/NN-{slug}.ts` | `01-the-holy-trinity.ts` (each belief becomes its own article at `/core-beliefs/{slug}`; optional artwork at `public/core-beliefs/{slug}.jpg` plus an `image: { alt, caption }` field) |
 | Catholic Glossary | `glossary/terms.ts` | add a `{ term, definition, catechism?, link? }` entry; the page sorts and groups by letter |
 | Daily Gospel | `daily-gospel/index.ts` | add to `gospelReflections`; the page cycles through them by day of the year |
 | Ask a Catholic Question | `faq/index.ts` | add to `faqEntries` with a `category` of doctrine, worship, morality, or history |
@@ -28,7 +28,7 @@ Content is split into **one file per article** so contributors can add entries w
 | Holy Trinity | `trinity/persons/NN-{slug}.ts` | `01-god-the-father.ts` |
 | Gifts and Fruits of the Holy Spirit | `holy-spirit/gifts/NN-{slug}.ts`, `holy-spirit/fruits/NN-{slug}.ts` | `01-wisdom.ts`, `01-charity.ts` |
 | Rosary mystery sets | `rosary/mystery-sets/NN-{slug}.ts` | `01-joyful.ts` (order fixed in `rosary/index.ts`) |
-| Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates |
+| Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates; a fixed feast can set `rank: 'commemoration'` and a `noteLink: { href, label }` shown after its note |
 | Holy Mass | `mass/index.ts` | add an entry to the relevant group in `massSections` (Items Used at Mass); the Order of Mass text lives in `mass/order.ts`; a new Mass sub-page also needs an entry in `massPages` |
 
 Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, parables in `public/parables/{slug}.jpg`, miracles of Jesus in `public/miracles/{slug}.jpg`, Mass items in `public/mass/{name}.jpg`, and Bible page art in `public/bible/` (Wikimedia Commons–licensed art preferred). Record the source, author, and licence of every image in that folder's `CREDITS.md`, and give each parable and miracle an `imageAlt` describing the artwork.
