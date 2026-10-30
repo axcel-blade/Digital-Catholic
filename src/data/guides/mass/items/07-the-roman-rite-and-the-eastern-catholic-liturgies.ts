@@ -12,6 +12,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/the-church', label: 'Eastern Catholic Churches' },
 	],
+	image: { alt: 'Carved and painted royal doors from an iconostasis showing the Annunciation and the four Evangelists', caption: 'Royal Doors from Pskov (17th century). Public domain.' },
 };
 
 export default topic;

@@ -10,6 +10,7 @@ const topic: GuideTopic = {
 		'Solidarity, St. John Paul II wrote, is not a vague feeling of compassion but “a firm and persevering determination to commit oneself to the common good.” It recognises that we are one human family, with duties towards the poor, the stranger, and future generations.',
 		'Subsidiarity holds that a larger community should not take over what a smaller one, such as a family or local association, can do for itself; rather, it should support and help it. The principle guards against both excessive state control and neglect. Moses delegating judgement to leaders of thousands, hundreds, and tens is a biblical example.',
 	],
+	image: { alt: 'Peasants resting and eating together under a tree beside a golden wheat field during the harvest', caption: 'Pieter Bruegel the Elder, The Harvesters (1565), Metropolitan Museum of Art. Public domain.' },
 };
 
 export default topic;

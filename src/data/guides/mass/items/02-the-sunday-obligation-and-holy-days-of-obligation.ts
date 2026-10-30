@@ -28,6 +28,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/commandments', label: 'The Third Commandment' },
 	],
+	image: { alt: 'A village procession with priest, banners, and girls in white winding through a wheat field', caption: 'Jules Breton, The Blessing of the Wheat in Artois (1857), Musée d’Orsay. Public domain.' },
 };
 
 export default topic;

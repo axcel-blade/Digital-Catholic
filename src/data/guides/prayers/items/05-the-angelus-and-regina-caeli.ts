@@ -23,6 +23,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/pray', label: 'Traditional Catholic prayers' },
 	],
+	image: { alt: 'The angel Gabriel bowing before Mary seated in a simple loggia', caption: 'Fra Angelico, The Annunciation (c. 1440), San Marco, Florence. Public domain.' },
 };
 
 export default topic;

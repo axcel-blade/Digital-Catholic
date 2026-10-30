@@ -14,6 +14,7 @@ const topic: GuideTopic = {
 		{ href: '/sacraments/matrimony', label: 'The Sacrament of Matrimony' },
 		{ href: '/living-the-faith', label: 'Catholic marriage and family life' },
 	],
+	image: { alt: 'St. Joseph holding the Child Jesus, who shows a small bird to a dog, while Mary pauses at her spinning', caption: 'Bartolomé Esteban Murillo, The Holy Family with a Little Bird (c. 1650), Prado. Public domain.' },
 };
 
 export default topic;

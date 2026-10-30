@@ -20,6 +20,7 @@ const topic: GuideTopic = {
 			'Stay until the end and give thanks after Communion',
 		],
 	},
+	image: { alt: 'Three women of different ages in traditional Bavarian dress kneeling in a church pew, absorbed in their prayer books', caption: 'Wilhelm Leibl, Three Women in Church (1878–1882), Hamburger Kunsthalle. Public domain.' },
 };
 
 export default topic;

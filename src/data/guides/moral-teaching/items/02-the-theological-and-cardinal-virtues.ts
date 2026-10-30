@@ -26,6 +26,7 @@ const topic: GuideTopic = {
 		{ href: '/holy-spirit#gifts', label: 'Gifts of the Holy Spirit' },
 		{ href: '/holy-spirit#fruits', label: 'Fruits of the Holy Spirit' },
 	],
+	image: { alt: 'Three women personifying Fortitude, Prudence and Temperance seated in a lunette with cherubs above', caption: 'Raphael, The Cardinal and Theological Virtues (1511), Vatican. Public domain.' },
 };
 
 export default topic;

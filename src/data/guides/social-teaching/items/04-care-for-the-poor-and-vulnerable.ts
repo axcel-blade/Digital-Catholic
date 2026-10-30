@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/moral-teaching', label: 'The Works of Mercy' },
 	],
+	image: { alt: 'St. Elizabeth of Hungary washing the head of a sick boy, with the poor gathered around her', caption: 'Bartolomé Esteban Murillo, St. Elizabeth of Hungary Tending the Sick (1672), Hospital de la Caridad, Seville. Public domain.' },
 };
 
 export default topic;

@@ -1,0 +1,11 @@
+---
+import GuideArticle from '../../../components/GuideArticle.astro';
+import { getGuide } from '../../../data/guides';
+import { slugify } from '../../../lib/article';
+
+export function getStaticPaths() {
+	return getGuide('saints').topics.map((topic) => ({ params: { slug: slugify(topic.title) } }));
+}
+---
+
+<GuideArticle guideKey="saints" slug={Astro.params.slug!} />

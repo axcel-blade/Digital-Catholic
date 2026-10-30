@@ -12,6 +12,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/saints', label: 'Read the lives of the saints' },
 	],
+	image: { alt: 'The four Latin Church Fathers, Jerome, Augustine, Gregory and Ambrose, each enthroned beneath a gilded Gothic canopy', caption: 'Michael Pacher, Altarpiece of the Church Fathers (1483), Alte Pinakothek, Munich. Public domain.' },
 };
 
 export default topic;

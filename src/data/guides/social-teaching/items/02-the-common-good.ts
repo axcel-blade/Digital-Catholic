@@ -10,6 +10,7 @@ const topic: GuideTopic = {
 		'Human beings are social by nature; we flourish not alone but in families, communities, and nations. The common good is not simply the sum of individual interests but the whole set of conditions—peace and security, justice, access to food, housing, education, healthcare, and freedom—that enable everyone to flourish.',
 		'Every person and institution shares responsibility for the common good, and public authority exists to serve it. Today it has a global dimension, calling nations to cooperate for the good of the whole human family.',
 	],
+	image: { alt: 'A busy medieval city with merchants, builders at work, and dancers in the street', caption: 'Ambrogio Lorenzetti, The Effects of Good Government in the City (1338–1339), Palazzo Pubblico, Siena. Public domain.' },
 };
 
 export default topic;

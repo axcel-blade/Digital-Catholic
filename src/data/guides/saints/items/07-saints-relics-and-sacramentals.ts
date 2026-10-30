@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/saints/path-to-sainthood', label: 'The path to sainthood' },
 	],
+	image: { alt: 'A procession with the relic of the True Cross on a Venetian canal by the Rialto bridge, crowded with gondolas', caption: 'Vittore Carpaccio, The Miracle of the Relic of the True Cross at the Rialto (1496), Gallerie dell’Accademia, Venice. Public domain.' },
 };
 
 export default topic;

@@ -11,6 +11,7 @@ const belief: CoreBelief = {
 		'The Persons are really distinct from one another by their relations: the Father begets, the Son is begotten, and the Holy Spirit proceeds. We could never discover this by reason alone; it was revealed by Jesus Christ, who commanded His disciples to baptise “in the name of the Father and of the Son and of the Holy Spirit.”',
 	],
 	link: { href: '/holy-trinity', label: 'Read more about the Holy Trinity' },
+	image: { alt: 'God the Father standing behind the crucified Christ with the dove of the Holy Spirit between them, beneath a painted barrel vault, with Mary and St. John at the foot of the cross', caption: 'Masaccio, The Holy Trinity (1425–1428), Santa Maria Novella, Florence. Public domain.' },
 };
 
 export default belief;

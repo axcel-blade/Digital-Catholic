@@ -19,6 +19,7 @@ const topic: GuideTopic = {
 			'Contemplatio (contemplate): rest quietly in God’s presence',
 		],
 	},
+	image: { alt: 'Mary Magdalen in a green dress seated on the floor absorbed in reading a book', caption: 'Rogier van der Weyden, The Magdalen Reading (before 1438), National Gallery, London. Public domain.' },
 };
 
 export default topic;

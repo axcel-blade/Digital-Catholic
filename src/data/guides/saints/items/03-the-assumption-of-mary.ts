@@ -10,6 +10,7 @@ const topic: GuideTopic = {
 		'Pope Pius XII solemnly defined the Assumption in 1950, declaring that the Immaculate Mother of God, having completed the course of her earthly life, was assumed body and soul into heavenly glory. The definition leaves open whether Mary died before being assumed; Eastern Christians celebrate the same mystery as the Dormition, or “falling asleep,” of the Mother of God.',
 		'The Assumption is a singular share in her Son’s Resurrection and an anticipation of the resurrection of all Christians. The feast is celebrated on August 15 and is a holy day of obligation in many countries.',
 	],
+	image: { alt: 'Mary rising into heaven on clouds held by angels as the apostles reach up from below', caption: 'Titian, The Assumption of the Virgin (1516–1518), Basilica dei Frari, Venice. Public domain.' },
 };
 
 export default topic;

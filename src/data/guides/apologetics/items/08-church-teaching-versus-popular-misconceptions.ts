@@ -20,6 +20,7 @@ const topic: GuideTopic = {
 			'“Catholics worship Mary and the saints.” — Worship is given to God alone; Mary and the saints are honoured and asked to pray for us (see Veneration versus adoration).',
 		],
 	},
+	image: { alt: 'The young Jesus surrounded by elderly scholars crowding in with books and arguments', caption: 'Albrecht Dürer, Jesus among the Doctors (1506), Thyssen-Bornemisza Museum. Public domain.' },
 };
 
 export default topic;

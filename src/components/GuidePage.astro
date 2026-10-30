@@ -1,12 +1,14 @@
 ---
 import SectionLayout from '../layouts/SectionLayout.astro';
-import ReferenceLine from './ReferenceLine.astro';
+import EntryCard from './EntryCard.astro';
 import RelatedTopics from './RelatedTopics.astro';
 import { getGuide } from '../data/guides';
+import { getGuidePage } from '../data/guides/pages';
 import { guideImages } from '../data/guides/images';
 import { getSection } from '../lib/sections';
 import { getCollectionImage } from '../lib/images';
 import { withBase } from '../lib/paths';
+import { slugify } from '../lib/article';
 import type { BreadcrumbItem } from '../lib/seo';
 
 interface Props {
@@ -26,11 +28,20 @@ interface Props {
 }
 
 const { guideKey, description, intro, count, sectionKey = guideKey, heading, extraCrumbs } = Astro.props;
+const { articleBase } = getGuidePage(guideKey);
 const guide = getGuide(guideKey);
 const section = getSection(sectionKey);
 const art = guideImages[guideKey];
 const topicText = [guide.intro, ...guide.topics.flatMap((t) => [t.title, t.summary, ...t.meaning, ...(t.points?.items ?? [])])].join(' ');
 const ownLinks = guide.topics.flatMap((t) => t.links?.map((l) => l.href) ?? []);
+const articleHref = (title: string) => withBase(`${articleBase}/${slugify(title)}`);
+// Old in-page anchors (#slug or #topic-N) from when every topic was on this page
+const legacyAnchors = Object.fromEntries(
+	guide.topics.flatMap((t) => [
+		[slugify(t.title), articleHref(t.title)],
+		[`topic-${t.number}`, articleHref(t.title)],
+	])
+);
 const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 ---
 
@@ -46,7 +57,7 @@ const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 >
 	<nav class="jump-links" aria-label={`Jump to a topic in ${heading ?? section.title}`} slot="header">
 		{guide.topics.map((t) => (
-			<a class="jump-links__link" href={`#topic-${t.number}`}>{t.title}</a>
+			<a class="jump-links__link" href={articleHref(t.title)}>{t.title}</a>
 		))}
 	</nav>
 
@@ -59,44 +70,22 @@ const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 		</figure>
 	)}
 
-	<ol class="numbered-list">
+	<script is:inline define:vars={{ legacyAnchors }}>
+		const target = legacyAnchors[location.hash.slice(1)];
+		if (target) location.replace(target);
+	</script>
+
+	<ul class="card-grid card-grid--two">
 		{guide.topics.map((topic) => (
-			<li class="numbered-item" id={`topic-${topic.number}`}>
-				<span class="numbered-item__number" aria-hidden="true">{topic.number}</span>
-				<div class="numbered-item__body">
-					<h2 class="numbered-item__title">{topic.title}</h2>
-					<blockquote class="numbered-item__quote">{topic.summary}</blockquote>
-					<ReferenceLine scripture={topic.scripture} catechism={topic.catechism} />
-					{topic.meaning.map((paragraph) => (
-						<p class="numbered-item__text">{paragraph}</p>
-					))}
-					{topic.points && (
-						<div class="numbered-item__points">
-							<p class="numbered-item__points-title">{topic.points.title}</p>
-							<ul>
-								{topic.points.items.map((item) => (
-									<li>{item}</li>
-								))}
-							</ul>
-						</div>
-					)}
-					{topic.text && (
-						<figure class="numbered-item__prayer">
-							<figcaption class="numbered-item__prayer-title">{topic.text.title}</figcaption>
-							{topic.text.lines.map((line) => (
-								<p>{line}</p>
-							))}
-						</figure>
-					)}
-					{topic.links?.map((link) => (
-						<p class="numbered-item__link">
-							<a href={withBase(link.href)}>{link.label} →</a>
-						</p>
-					))}
-				</div>
-			</li>
+			<EntryCard
+				href={articleHref(topic.title)}
+				title={topic.title}
+				label={`Topic ${topic.number}`}
+				excerpt={topic.summary}
+				action="Read the article"
+			/>
 		))}
-	</ol>
+	</ul>
 
 	<slot name="after" />
 

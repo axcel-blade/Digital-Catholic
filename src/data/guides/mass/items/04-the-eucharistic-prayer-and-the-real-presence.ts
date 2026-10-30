@@ -15,6 +15,7 @@ const topic: GuideTopic = {
 		{ href: '/sacraments/guides/transubstantiation-explained', label: 'Transubstantiation explained' },
 		{ href: '/eucharistic-miracles', label: 'Eucharistic miracles' },
 	],
+	image: { alt: 'A priest at an altar staring at a bleeding Host, with Pope Julius II kneeling opposite and Swiss Guards below', caption: 'Raphael, The Mass at Bolsena (1512), Vatican. Public domain.' },
 };
 
 export default topic;

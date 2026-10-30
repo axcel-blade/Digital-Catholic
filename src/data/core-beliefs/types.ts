@@ -18,4 +18,6 @@ export interface CoreBelief {
 	text?: { title: string; lines: string[] };
 	/** Optional link to a fuller page on the site */
 	link?: CoreBeliefLink;
+	/** Optional artwork for the article, stored as `public/core-beliefs/{slug}.jpg` */
+	image?: { alt: string; caption: string };
 }

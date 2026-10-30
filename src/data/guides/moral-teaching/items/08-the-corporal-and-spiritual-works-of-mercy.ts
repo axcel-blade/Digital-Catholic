@@ -17,6 +17,7 @@ const topic: GuideTopic = {
 			'Spiritual: instruct the ignorant; counsel the doubtful; admonish sinners; bear wrongs patiently; forgive offences willingly; comfort the afflicted; pray for the living and the dead',
 		],
 	},
+	image: { alt: 'Townspeople in a Dutch street giving bread to the hungry, watched by Christ standing among the poor', caption: 'Master of Alkmaar, The Seven Works of Mercy (1504), Rijksmuseum. Public domain.' },
 };
 
 export default topic;

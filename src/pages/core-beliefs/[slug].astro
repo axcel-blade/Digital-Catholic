@@ -1,0 +1,11 @@
+---
+import GuideArticle from '../../components/GuideArticle.astro';
+import { coreBeliefTopics, coreBeliefsPage } from '../../data/coreBeliefs';
+import { slugify } from '../../lib/article';
+
+export function getStaticPaths() {
+	return coreBeliefTopics.map((topic) => ({ params: { slug: slugify(topic.title) } }));
+}
+---
+
+<GuideArticle topics={coreBeliefTopics} page={coreBeliefsPage} imageFolder="core-beliefs" slug={Astro.params.slug!} />

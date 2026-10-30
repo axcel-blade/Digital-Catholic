@@ -14,6 +14,7 @@ const topic: GuideTopic = {
 		{ href: '/sacraments/holy-orders', label: 'Holy Orders' },
 		{ href: '/sacraments/matrimony', label: 'Matrimony' },
 	],
+	image: { alt: 'Christ pointing across a dim room at Matthew, who sits counting coins at a table with others', caption: 'Caravaggio, The Calling of Saint Matthew (1599–1600), San Luigi dei Francesi, Rome. Public domain.' },
 };
 
 export default topic;

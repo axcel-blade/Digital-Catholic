@@ -11,8 +11,9 @@ const topic: GuideTopic = {
 		'This is not a cause for anxiety but for trust and perseverance. Catholics have a confident hope of salvation—a “moral certainty” grounded in God’s faithfulness—and the Sacrament of Penance restores anyone who has fallen. No sin is too great for God’s mercy if we repent.',
 	],
 	links: [
-		{ href: '/moral-teaching#topic-5', label: 'Mortal and venial sin' },
+		{ href: '/moral-teaching/mortal-and-venial-sin', label: 'Mortal and venial sin' },
 	],
+	image: { alt: 'A ragged young man kneeling with his head against his father’s chest as the old father lays his hands on his back', caption: 'Rembrandt, The Return of the Prodigal Son (c. 1668), Hermitage. Public domain.' },
 };
 
 export default topic;

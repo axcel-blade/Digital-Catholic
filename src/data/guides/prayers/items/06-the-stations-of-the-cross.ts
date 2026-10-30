@@ -29,6 +29,7 @@ const topic: GuideTopic = {
 			'Jesus is laid in the tomb',
 		],
 	},
+	image: { alt: 'Christ fallen under the cross on the road to Calvary as Mary reaches out to him', caption: 'Raphael, Christ Falls on the Way to Calvary (1516), Prado. Public domain.' },
 };
 
 export default topic;

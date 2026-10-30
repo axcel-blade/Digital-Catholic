@@ -2996,7 +2996,8 @@ mark {
 	font-weight: 600;
 }
 
-.calendar-day--solemnity .calendar-day__rank {
+.calendar-day--solemnity .calendar-day__rank,
+.calendar-day--commemoration .calendar-day__rank {
 	color: var(--color-accent);
 }
 

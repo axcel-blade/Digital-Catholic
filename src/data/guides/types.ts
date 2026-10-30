@@ -20,6 +20,11 @@ export interface GuideTopic {
 	text?: { title: string; lines: string[] };
 	/** Optional links to fuller pages on the site */
 	links?: GuideLink[];
+	/**
+	 * Optional artwork for this topic's article, stored as `public/guides/{guide}/{slug}.jpg`.
+	 * Without it, the article shows its guide's artwork.
+	 */
+	image?: { alt: string; caption: string };
 }
 
 export interface Guide {

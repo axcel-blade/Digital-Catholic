@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/saints', label: 'Read the lives of the saints' },
 	],
+	image: { alt: 'Mary and the Child enthroned in a garden, surrounded by angels and saints, with Sts. Cosmas and Damian kneeling in front', caption: 'Fra Angelico, The San Marco Altarpiece (c. 1440), Museo di San Marco, Florence. Public domain.' },
 };
 
 export default topic;

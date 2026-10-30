@@ -22,6 +22,7 @@ const topic: GuideTopic = {
 			'Sloth (acedia) — Diligence',
 		],
 	},
+	image: { alt: 'A crowned woman personifying Charity holding a bowl of fruit and flowers and handing her heart up to God', caption: 'Giotto, Charity (c. 1306), Scrovegni Chapel, Padua. Public domain.' },
 };
 
 export default topic;

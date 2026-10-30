@@ -56,7 +56,7 @@ export const faqEntries: FaqEntry[] = [
 			'The Catholic Old Testament includes seven books—Tobit, Judith, 1 and 2 Maccabees, Wisdom, Sirach, and Baruch—plus parts of Esther and Daniel. These were read by the early Church and confirmed by councils, but most Protestant Bibles omitted them after the Reformation.',
 		],
 		catechism: 'CCC 120',
-		link: { href: '/bible-and-tradition#topic-4', label: 'The Deuterocanonical books' },
+		link: { href: '/bible-and-tradition/the-deuterocanonical-books', label: 'The Deuterocanonical books' },
 	},
 	{
 		question: 'Do Catholics believe they are saved by works?',
@@ -66,7 +66,7 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 1987–2029',
 		scripture: 'Ephesians 2:8–10; Galatians 5:6',
-		link: { href: '/study#topic-5', label: 'Faith, grace and good works' },
+		link: { href: '/study/what-is-the-relationship-between-faith-grace-and-good-works', label: 'Faith, grace and good works' },
 	},
 	{
 		question: 'What is purgatory?',
@@ -93,7 +93,7 @@ export const faqEntries: FaqEntry[] = [
 			'No. Infallibility applies only when the Pope, as supreme teacher, solemnly defines a doctrine of faith or morals for the whole Church. It does not cover his personal opinions, scientific views, or prudential decisions, and it does not mean he is sinless.',
 		],
 		catechism: 'CCC 889–891',
-		link: { href: '/the-church#topic-2', label: 'The Pope and the papacy' },
+		link: { href: '/the-church/the-pope-and-the-papacy', label: 'The Pope and the papacy' },
 	},
 	// Worship
 	{
@@ -104,7 +104,7 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 2174–2183',
 		scripture: 'Acts 20:7; Hebrews 10:25',
-		link: { href: '/mass#topic-2', label: 'The Sunday obligation' },
+		link: { href: '/mass/the-sunday-obligation-and-holy-days-of-obligation', label: 'The Sunday obligation' },
 	},
 	{
 		question: 'Can non-Catholics receive Communion at Mass?',
@@ -113,7 +113,7 @@ export const faqEntries: FaqEntry[] = [
 			'Receiving Communion expresses full unity of faith with the Catholic Church, so non-Catholics are ordinarily asked not to receive. They are warmly welcome at Mass and may come forward with arms crossed for a blessing (Orthodox Christians may receive in certain circumstances under Church law).',
 		],
 		catechism: 'CCC 1398–1401',
-		link: { href: '/living-the-faith#topic-6', label: 'Sunday Mass for beginners' },
+		link: { href: '/living-the-faith/sunday-mass-for-beginners', label: 'Sunday Mass for beginners' },
 	},
 	{
 		question: 'Why do Catholics pray the Rosary?',
@@ -130,7 +130,7 @@ export const faqEntries: FaqEntry[] = [
 		answer: [
 			'The colour of the vestments follows the liturgical year: violet for Advent and Lent, white or gold for Christmas, Easter, and many feasts, red for Pentecost and martyrs, and green for Ordinary Time.',
 		],
-		link: { href: '/mass#topic-3', label: 'The liturgical year and its colours' },
+		link: { href: '/mass/the-liturgical-year-and-its-colours', label: 'The liturgical year and its colours' },
 	},
 	{
 		question: 'Why do Catholics use holy water and make the Sign of the Cross?',
@@ -139,7 +139,7 @@ export const faqEntries: FaqEntry[] = [
 			'Holy water recalls our Baptism, and the Sign of the Cross professes faith in the Trinity and in Christ crucified. Christians have made the Sign of the Cross since at least the second century.',
 		],
 		catechism: 'CCC 1668, 2157',
-		link: { href: '/mass#topic-6', label: 'Incense, holy water and vestments' },
+		link: { href: '/mass/incense-holy-water-vestments-and-sacred-vessels', label: 'Incense, holy water and vestments' },
 	},
 	{
 		question: 'What is Eucharistic adoration?',
@@ -148,7 +148,7 @@ export const faqEntries: FaqEntry[] = [
 			'Because Christ is truly present in the consecrated Host, Catholics worship Him there outside of Mass, often with the Host exposed in a monstrance. Many parishes offer times for silent prayer before the Blessed Sacrament.',
 		],
 		catechism: 'CCC 1378–1380',
-		link: { href: '/pray#topic-3', label: 'Eucharistic adoration and Benediction' },
+		link: { href: '/pray/eucharistic-adoration-and-benediction', label: 'Eucharistic adoration and Benediction' },
 	},
 	// Morality
 	{
@@ -159,7 +159,7 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 1857–1861',
 		scripture: '1 John 5:16–17',
-		link: { href: '/moral-teaching#topic-5', label: 'Mortal and venial sin' },
+		link: { href: '/moral-teaching/mortal-and-venial-sin', label: 'Mortal and venial sin' },
 	},
 	{
 		question: 'Should Catholics always follow their conscience?',
@@ -168,7 +168,7 @@ export const faqEntries: FaqEntry[] = [
 			'Yes—a person must always obey the certain judgement of their conscience. But conscience must be well formed through Scripture, prayer, Church teaching, and good counsel, because it can be mistaken.',
 		],
 		catechism: 'CCC 1776–1802',
-		link: { href: '/moral-teaching#topic-6', label: 'Conscience and free will' },
+		link: { href: '/moral-teaching/conscience-free-will-and-moral-responsibility', label: 'Conscience and free will' },
 	},
 	{
 		question: 'Why does the Church teach about social and economic questions?',
@@ -186,7 +186,7 @@ export const faqEntries: FaqEntry[] = [
 			'Every human life is sacred from conception to natural death. The Church teaches that the direct taking of innocent human life, including abortion and euthanasia, is always gravely wrong, and calls Christians to defend the dignity of the poor, the sick, migrants, and prisoners alike.',
 		],
 		catechism: 'CCC 2258–2283',
-		link: { href: '/social-teaching#topic-1', label: 'Human dignity and the sanctity of human life' },
+		link: { href: '/social-teaching/human-dignity-and-the-sanctity-of-human-life', label: 'Human dignity and the sanctity of human life' },
 	},
 	{
 		question: 'Why do Catholics fast and abstain from meat?',
@@ -196,7 +196,7 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 1434–1438, 2043',
 		scripture: 'Matthew 6:16–18',
-		link: { href: '/pray#topic-8', label: 'Fasting, abstinence and penance' },
+		link: { href: '/pray/fasting-abstinence-and-the-practice-of-penance', label: 'Fasting, abstinence and penance' },
 	},
 	{
 		question: 'Can a sin be too big to be forgiven?',
@@ -206,7 +206,7 @@ export const faqEntries: FaqEntry[] = [
 		],
 		catechism: 'CCC 982, 1864',
 		scripture: 'Luke 15:11–32',
-		link: { href: '/living-the-faith#topic-2', label: 'How to go to Confession' },
+		link: { href: '/living-the-faith/how-to-go-to-confession', label: 'How to go to Confession' },
 	},
 	// History
 	{
@@ -225,7 +225,7 @@ export const faqEntries: FaqEntry[] = [
 		answer: [
 			'Centuries of growing distance between East and West—over language, culture, politics, papal authority, and the Filioque in the Creed—led to mutual excommunications in 1054. Dialogue towards reunion continues today.',
 		],
-		link: { href: '/church-history#topic-4', label: 'The Great Schism of 1054' },
+		link: { href: '/church-history/the-great-schism-of-1054', label: 'The Great Schism of 1054' },
 	},
 	{
 		question: 'What happened at the Reformation?',
@@ -233,7 +233,7 @@ export const faqEntries: FaqEntry[] = [
 		answer: [
 			'In the sixteenth century Martin Luther and other reformers protested against abuses and rejected key Catholic teachings and papal authority, dividing Western Christianity. The Catholic Church responded with the Council of Trent and a great renewal of holiness and mission.',
 		],
-		link: { href: '/church-history#topic-5', label: 'The Reformation and Counter-Reformation' },
+		link: { href: '/church-history/the-protestant-reformation-and-the-catholic-counter-reformation', label: 'The Reformation and Counter-Reformation' },
 	},
 	{
 		question: 'What was the Second Vatican Council?',
@@ -241,7 +241,7 @@ export const faqEntries: FaqEntry[] = [
 		answer: [
 			'Vatican II (1962–1965) was the twenty-first ecumenical council. It renewed the liturgy, emphasised the universal call to holiness and the role of the laity, and opened dialogue with other Christians, other religions, and the modern world, without changing the Church’s doctrine.',
 		],
-		link: { href: '/church-history#topic-6', label: 'The Council of Trent and the Second Vatican Council' },
+		link: { href: '/church-history/the-council-of-trent-and-the-second-vatican-council', label: 'The Council of Trent and the Second Vatican Council' },
 	},
 	{
 		question: 'Was the Church against science, as in the Galileo affair?',
@@ -250,6 +250,6 @@ export const faqEntries: FaqEntry[] = [
 			'The Galileo affair was a real mistake, which the Church has acknowledged, but it was not typical. The Church founded universities and supported scientists for centuries; a priest, Georges Lemaître, first proposed the Big Bang theory.',
 		],
 		catechism: 'CCC 159',
-		link: { href: '/study#topic-7', label: 'Science and faith' },
+		link: { href: '/study/how-do-catholics-understand-science-and-faith', label: 'Science and faith' },
 	},
 ];

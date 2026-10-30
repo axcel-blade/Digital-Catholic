@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/disciples', label: 'The apostles and disciples' },
 	],
+	image: { alt: 'St. Peter being raised upside down on a cross by three labourers', caption: 'Caravaggio, The Crucifixion of Saint Peter (1600–1601), Santa Maria del Popolo, Rome. Public domain.' },
 };
 
 export default topic;
