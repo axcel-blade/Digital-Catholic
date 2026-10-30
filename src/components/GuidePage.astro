@@ -1,6 +1,7 @@
 ---
 import SectionLayout from '../layouts/SectionLayout.astro';
 import ReferenceLine from './ReferenceLine.astro';
+import EntryCard from './EntryCard.astro';
 import RelatedTopics from './RelatedTopics.astro';
 import { getGuide } from '../data/guides';
 import { guideImages } from '../data/guides/images';
@@ -24,14 +25,21 @@ interface Props {
 	heading?: string;
 	/** Crumbs between the section and a sub-page */
 	extraCrumbs?: BreadcrumbItem[];
+	/** When set, each topic is its own article at `{articleBase}/{slug}` and this page lists them as cards */
+	articleBase?: string;
 }
 
-const { guideKey, description, intro, count, sectionKey = guideKey, heading, extraCrumbs } = Astro.props;
+const { guideKey, description, intro, count, sectionKey = guideKey, heading, extraCrumbs, articleBase } = Astro.props;
 const guide = getGuide(guideKey);
 const section = getSection(sectionKey);
 const art = guideImages[guideKey];
 const topicText = [guide.intro, ...guide.topics.flatMap((t) => [t.title, t.summary, ...t.meaning, ...(t.points?.items ?? [])])].join(' ');
 const ownLinks = guide.topics.flatMap((t) => t.links?.map((l) => l.href) ?? []);
+const articleHref = (title: string) => withBase(`${articleBase}/${slugify(title)}`);
+// Old in-page anchors (#slug or #topic-N) for topics that now have their own article
+const legacyAnchors = articleBase
+	? Object.fromEntries(guide.topics.flatMap((t) => [[slugify(t.title), articleHref(t.title)], [`topic-${t.number}`, articleHref(t.title)]]))
+	: null;
 const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 ---
 
@@ -47,7 +55,7 @@ const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 >
 	<nav class="jump-links" aria-label={`Jump to a topic in ${heading ?? section.title}`} slot="header">
 		{guide.topics.map((t) => (
-			<a class="jump-links__link" href={`#${slugify(t.title)}`}>{t.title}</a>
+			<a class="jump-links__link" href={articleBase ? articleHref(t.title) : `#${slugify(t.title)}`}>{t.title}</a>
 		))}
 	</nav>
 
@@ -60,6 +68,26 @@ const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 		</figure>
 	)}
 
+	{legacyAnchors && (
+		<script is:inline define:vars={{ legacyAnchors }}>
+			const target = legacyAnchors[location.hash.slice(1)];
+			if (target) location.replace(target);
+		</script>
+	)}
+
+	{articleBase ? (
+		<ul class="card-grid card-grid--two">
+			{guide.topics.map((topic) => (
+				<EntryCard
+					href={articleHref(topic.title)}
+					title={topic.title}
+					label={`Topic ${topic.number}`}
+					excerpt={topic.summary}
+					action="Read the article"
+				/>
+			))}
+		</ul>
+	) : (
 	<ol class="numbered-list">
 		{guide.topics.map((topic) => (
 			<li class="numbered-item" id={slugify(topic.title)}>
@@ -100,6 +128,7 @@ const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 			</li>
 		))}
 	</ol>
+	)}
 
 	<slot name="after" />
 

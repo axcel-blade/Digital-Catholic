@@ -1,0 +1,80 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ReferenceLine from '../../components/ReferenceLine.astro';
+import { getGuide, type GuideTopic } from '../../data/guides';
+import { withBase } from '../../lib/paths';
+import { getNeighbors, getRelated, slugify, type ArticleLink } from '../../lib/article';
+
+const topics = getGuide('church-history').topics;
+
+export function getStaticPaths() {
+	return getGuide('church-history').topics.map((topic) => ({ params: { slug: slugify(topic.title) } }));
+}
+
+const index = topics.findIndex((t) => slugify(t.title) === Astro.params.slug);
+const topic = topics[index];
+
+if (!topic) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const toLink = (t: GuideTopic): ArticleLink => ({
+	href: withBase(`/church-history/${slugify(t.title)}`),
+	title: t.title,
+	label: 'Church history',
+	excerpt: t.summary,
+});
+
+const { prev, next } = getNeighbors(topics, index);
+const relatedText = [...topic.meaning, ...(topic.points?.items ?? [])].join(' ');
+---
+
+<ArticleLayout
+	title={topic.title}
+	description={topic.summary}
+	currentPath={Astro.url.pathname}
+	sectionKey="study"
+	extraCrumbs={[
+		{ label: 'Scripture, Tradition, and the Church', href: withBase('/bible-and-tradition') },
+		{ label: 'Catholic Church History', href: withBase('/church-history') },
+	]}
+	label="Church history"
+	lead={topic.summary}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={getRelated(topics, index, 3).map(toLink)}
+	relatedText={relatedText}
+>
+	<ReferenceLine scripture={topic.scripture} catechism={topic.catechism} />
+	{topic.meaning.map((paragraph) => (
+		<p>{paragraph}</p>
+	))}
+	{topic.points && (
+		<section class="article-section">
+			<h2>{topic.points.title}</h2>
+			<ul>
+				{topic.points.items.map((item) => (
+					<li>{item}</li>
+				))}
+			</ul>
+		</section>
+	)}
+	{topic.text && (
+		<section class="article-section">
+			<h2>{topic.text.title}</h2>
+			{topic.text.lines.map((line) => (
+				<p>{line}</p>
+			))}
+		</section>
+	)}
+	{topic.links && (
+		<section class="article-section">
+			<h2>Read more</h2>
+			<ul>
+				{topic.links.map((link) => (
+					<li><a href={withBase(link.href)}>{link.label}</a></li>
+				))}
+			</ul>
+		</section>
+	)}
+</ArticleLayout>

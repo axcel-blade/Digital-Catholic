@@ -625,7 +625,11 @@ export function buildSearchIndex(): SearchEntry[] {
 			items.push(
 				entry(
 					`${section.title}: ${topic.title}`,
-					withBase(`${section.href}#${slugify(topic.title)}`),
+					withBase(
+						guide.key === 'church-history'
+							? `${section.href}/${slugify(topic.title)}`
+							: `${section.href}#${slugify(topic.title)}`
+					),
 					section.label,
 					topic.summary,
 					[

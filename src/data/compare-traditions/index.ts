@@ -189,7 +189,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Christ’s two natures',
-		link: '/church-history#the-seven-ecumenical-councils-of-the-first-millennium',
+		link: '/church-history/the-seven-ecumenical-councils-of-the-first-millennium',
 		catechism: 'CCC 464–469',
 		values: {
 			catholic: 'One Person in two natures, divine and human (Council of Chalcedon, 451).',

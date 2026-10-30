@@ -225,7 +225,7 @@ export const faqEntries: FaqEntry[] = [
 		answer: [
 			'Centuries of growing distance between East and West—over language, culture, politics, papal authority, and the Filioque in the Creed—led to mutual excommunications in 1054. Dialogue towards reunion continues today.',
 		],
-		link: { href: '/church-history#the-great-schism-of-1054', label: 'The Great Schism of 1054' },
+		link: { href: '/church-history/the-great-schism-of-1054', label: 'The Great Schism of 1054' },
 	},
 	{
 		question: 'What happened at the Reformation?',
@@ -233,7 +233,7 @@ export const faqEntries: FaqEntry[] = [
 		answer: [
 			'In the sixteenth century Martin Luther and other reformers protested against abuses and rejected key Catholic teachings and papal authority, dividing Western Christianity. The Catholic Church responded with the Council of Trent and a great renewal of holiness and mission.',
 		],
-		link: { href: '/church-history#the-protestant-reformation-and-the-catholic-counter-reformation', label: 'The Reformation and Counter-Reformation' },
+		link: { href: '/church-history/the-protestant-reformation-and-the-catholic-counter-reformation', label: 'The Reformation and Counter-Reformation' },
 	},
 	{
 		question: 'What was the Second Vatican Council?',
@@ -241,7 +241,7 @@ export const faqEntries: FaqEntry[] = [
 		answer: [
 			'Vatican II (1962–1965) was the twenty-first ecumenical council. It renewed the liturgy, emphasised the universal call to holiness and the role of the laity, and opened dialogue with other Christians, other religions, and the modern world, without changing the Church’s doctrine.',
 		],
-		link: { href: '/church-history#the-council-of-trent-and-the-second-vatican-council', label: 'The Council of Trent and the Second Vatican Council' },
+		link: { href: '/church-history/the-council-of-trent-and-the-second-vatican-council', label: 'The Council of Trent and the Second Vatican Council' },
 	},
 	{
 		question: 'Was the Church against science, as in the Galileo affair?',
