@@ -19,6 +19,7 @@ const topic: GuideTopic = {
 			'Chaldean (East Syriac): Chaldean and Syro-Malabar Catholic Churches',
 		],
 	},
+	image: { alt: 'A mosaic of St. John Chrysostom in white vestments holding a jewelled Gospel book', caption: 'St. John Chrysostom, mosaic in Hagia Sophia (9th century). Public domain.' },
 };
 
 export default topic;

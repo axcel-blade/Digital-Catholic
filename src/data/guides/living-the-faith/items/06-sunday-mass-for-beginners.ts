@@ -11,8 +11,9 @@ const topic: GuideTopic = {
 	],
 	links: [
 		{ href: '/mass', label: 'Holy Mass and Liturgy' },
-		{ href: '/mass#topic-1', label: 'The meaning of every part of the Mass' },
+		{ href: '/mass/the-meaning-of-every-part-of-the-mass', label: 'The meaning of every part of the Mass' },
 	],
+	image: { alt: 'Villagers seated on rocks by the sea listening to a pastor in an open-air service', caption: 'Albert Edelfelt, Divine Service in the Uusimaa Archipelago (1881), Ateneum, Helsinki. Public domain.' },
 };
 
 export default topic;

@@ -10,6 +10,7 @@ const topic: GuideTopic = {
 		'Catholics do not believe they can earn salvation. Justification is a free gift of God’s grace, received through faith and Baptism; no one can merit the first grace of conversion. St. Paul says we are saved “by grace through faith, and this is not from you; it is the gift of God.”',
 		'But St. Paul continues: we are “created in Christ Jesus for the good works that God has prepared.” Saving faith is “faith working through love.” St. James teaches that “faith without works is dead.” Good works do not compete with grace; they are grace bearing fruit in us. The 1999 Joint Declaration on Justification with the Lutheran World Federation recognised a basic consensus on these truths.',
 	],
+	image: { alt: 'A crowded night street scene in Naples showing people feeding the hungry, clothing the naked, and burying the dead, beneath Mary and the Child carried by angels', caption: 'Caravaggio, The Seven Works of Mercy (1607), Pio Monte della Misericordia, Naples. Public domain.' },
 };
 
 export default topic;

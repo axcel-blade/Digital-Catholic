@@ -15,6 +15,7 @@ const topic: GuideTopic = {
 		{ href: '/sacraments/eucharist', label: 'The Sacrament of the Eucharist' },
 		{ href: '/eucharistic-miracles', label: 'Eucharistic miracles' },
 	],
+	image: { alt: 'Christ at the centre of a long table holding up the consecrated Host, surrounded by the twelve apostles', caption: 'Juan de Juanes, The Last Supper (c. 1562), Prado. Public domain.' },
 };
 
 export default topic;

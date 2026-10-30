@@ -10,6 +10,7 @@ const topic: GuideTopic = {
 		'God created human beings free, able to choose the good and to love. Freedom reaches its perfection when it is directed towards God; choosing evil is an abuse of freedom that leads to slavery to sin. Responsibility for an act can be lessened by ignorance, fear, habit, or other psychological or social factors.',
 		'Conscience is a judgement of reason by which a person recognises the moral quality of an act. A person must always obey the certain judgement of conscience, but conscience must also be formed—through Scripture, prayer, the teaching of the Church, the advice of wise people, and examination of one’s life. A well-formed conscience is upright and truthful; an unformed or neglected one can err.',
 	],
+	image: { alt: 'Adam reaching to stop Eve as she takes the fruit from a child-serpent in the tree', caption: 'Titian, Adam and Eve (c. 1550), Prado. Public domain.' },
 };
 
 export default topic;

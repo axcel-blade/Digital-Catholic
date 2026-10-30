@@ -24,6 +24,7 @@ const topic: GuideTopic = {
 		{ href: '/bible', label: 'Browse all 73 books' },
 		{ href: '/bible/how-the-bible-was-formed', label: 'How the Bible was formed' },
 	],
+	image: { alt: 'An open printed Gutenberg Bible displayed on a stand, its two columns of Latin text visible', caption: 'The Gutenberg Bible at the Library of Congress, photographed in 1944. Public domain.' },
 };
 
 export default topic;

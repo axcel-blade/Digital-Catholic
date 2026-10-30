@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/sacraments/baptism', label: 'The Sacrament of Baptism' },
 	],
+	image: { alt: 'A priest pouring water over a baby held above a font, with family members gathered around in an eighteenth-century Venetian interior', caption: 'Pietro Longhi, The Baptism (c. 1755), Fondazione Querini Stampalia, Venice. Public domain.' },
 };
 
 export default topic;

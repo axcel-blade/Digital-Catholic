@@ -23,6 +23,7 @@ const topic: GuideTopic = {
 		{ href: '/mass/order-of-mass', label: 'Walk through the Order of Mass' },
 		{ href: '/mass', label: 'The Holy Mass' },
 	],
+	image: { alt: 'A pope celebrating Mass at an altar as Christ appears above it, surrounded by clergy and kneeling faithful', caption: 'Master of the Mass of St. Gregory, The Mass of St. Gregory (c. 1500). Public domain.' },
 };
 
 export default topic;

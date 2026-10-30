@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/sacraments/holy-orders', label: 'The Sacrament of Holy Orders' },
 	],
+	image: { alt: 'Saints Stephen and Augustine lowering a knight in armour into his tomb before a line of mourners, as heaven opens above', caption: 'El Greco, The Burial of the Count of Orgaz (1586), Santo Tomé, Toledo. Public domain.' },
 };
 
 export default topic;

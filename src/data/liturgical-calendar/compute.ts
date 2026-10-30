@@ -187,6 +187,7 @@ function fixedFeastsForYear(year: number): LiturgicalDayEntry[] {
 		rank: feast.rank,
 		color: feast.color,
 		note: feast.note,
+		noteLink: feast.noteLink,
 		saintSlug: feast.saintSlug,
 	}));
 }
@@ -201,6 +202,7 @@ function mergeDays(entries: LiturgicalDayEntry[]): LiturgicalDayEntry[] {
 
 	const rankOrder = {
 		solemnity: 0,
+		commemoration: 0,
 		feast: 1,
 		'season': 2,
 		memorial: 3,

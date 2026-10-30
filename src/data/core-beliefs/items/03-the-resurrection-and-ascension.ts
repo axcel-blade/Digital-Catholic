@@ -11,6 +11,7 @@ const belief: CoreBelief = {
 		'Forty days later, Christ ascended into heaven, where He is seated at the right hand of the Father. His humanity has entered God’s glory, opening the way for us to follow; from there He intercedes for us, sends the Holy Spirit, and will come again in glory to judge the living and the dead.',
 	],
 	link: { href: '/rosary', label: 'Meditate on these events in the Glorious Mysteries of the Rosary' },
+	image: { alt: 'The risen Christ stepping from his tomb holding a banner, while four Roman soldiers sleep below', caption: 'Piero della Francesca, The Resurrection (c. 1463), Museo Civico, Sansepolcro. Public domain.' },
 };
 
 export default belief;

@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/core-beliefs', label: 'The Incarnation in Core Catholic Beliefs' },
 	],
+	image: { alt: 'Mary holding the Christ Child on clouds between St. Sixtus and St. Barbara, with two cherubs leaning below', caption: 'Raphael, The Sistine Madonna (1512), Gemäldegalerie, Dresden. Public domain.' },
 };
 
 export default topic;

@@ -20,6 +20,7 @@ const topic: GuideTopic = {
 			'Night Prayer (Compline): before sleep, with the Nunc Dimittis',
 		],
 	},
+	image: { alt: 'Capuchin friars in brown habits standing in their choir stalls to pray the Divine Office in a dim church', caption: 'François-Marius Granet, The Choir of the Capuchin Church in Rome (1814–1815), Metropolitan Museum of Art. Public domain.' },
 };
 
 export default topic;

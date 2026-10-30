@@ -15,6 +15,7 @@ const topic: GuideTopic = {
 		{ href: '/sacraments/penance', label: 'The Sacrament of Penance' },
 		{ href: '/living-the-faith', label: 'How to go to Confession' },
 	],
+	image: { alt: 'A woman kneeling at a wooden confessional, her face close to the grille, as a priest inside listens', caption: 'Giuseppe Molteni, The Confession (1838), Fondazione Cariplo, Milan. Public domain.' },
 };
 
 export default topic;

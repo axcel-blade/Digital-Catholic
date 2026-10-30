@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/bible/how-the-bible-was-formed', label: 'How the Bible was formed' },
 	],
+	image: { alt: 'The blind old Tobit and his wife Anna in a dim room with a young goat at her feet', caption: 'Rembrandt, Tobit and Anna with the Kid (1626), Rijksmuseum. Public domain.' },
 };
 
 export default topic;

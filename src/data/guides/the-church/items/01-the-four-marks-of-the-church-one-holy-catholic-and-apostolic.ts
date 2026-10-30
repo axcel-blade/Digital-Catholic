@@ -19,6 +19,7 @@ const topic: GuideTopic = {
 			'Apostolic: founded on and faithful to the apostles',
 		],
 	},
+	image: { alt: 'The apostles seated in a room as the Holy Spirit descends on them in rays of light', caption: 'Giotto, Pentecost (c. 1305), Scrovegni Chapel, Padua. Public domain.' },
 };
 
 export default topic;

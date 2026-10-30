@@ -11,8 +11,9 @@ const topic: GuideTopic = {
 		'The Church teaches that the creation accounts in Genesis convey religious truths—that God created everything good, that human beings are made in His image, and that sin entered through human disobedience—without being scientific textbooks. Catholics may accept evolutionary science regarding the physical development of life, while holding that each human soul is created directly by God. The Galileo affair is often cited as proof of conflict, but it was a complex episode that the Church itself has acknowledged as a mistake.',
 	],
 	links: [
-		{ href: '/bible-and-tradition#topic-6', label: 'Faith and reason' },
+		{ href: '/bible-and-tradition/the-relationship-between-faith-and-reason', label: 'Faith and reason' },
 	],
+	image: { alt: 'Ancient philosophers and scientists gathered in a vast arched hall, with Plato and Aristotle walking at the centre', caption: 'Raphael, The School of Athens (1509–1511), Vatican. Public domain.' },
 };
 
 export default topic;

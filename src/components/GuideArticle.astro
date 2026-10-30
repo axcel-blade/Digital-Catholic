@@ -1,0 +1,96 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import ReferenceLine from './ReferenceLine.astro';
+import { getGuide, type GuideTopic } from '../data/guides';
+import { getGuidePage, type GuidePageConfig } from '../data/guides/pages';
+import { guideImages } from '../data/guides/images';
+import { getCollectionImage } from '../lib/images';
+import { withBase } from '../lib/paths';
+import { getNeighbors, getRelated, slugify, type ArticleLink } from '../lib/article';
+
+type Props = { slug: string } & (
+	| {
+			/** Folder name in src/data/guides */
+			guideKey: string;
+	  }
+	| {
+			/** For collections outside src/data/guides that share the topic shape */
+			topics: GuideTopic[];
+			page: GuidePageConfig;
+			/** Folder under public/ holding `{slug}.jpg` artwork */
+			imageFolder: string;
+	  }
+);
+
+const { slug } = Astro.props;
+const guideKey = 'guideKey' in Astro.props ? Astro.props.guideKey : undefined;
+const page = 'page' in Astro.props ? Astro.props.page : getGuidePage(guideKey!);
+const topics = 'topics' in Astro.props ? Astro.props.topics : getGuide(guideKey!).topics;
+const imageFolder = 'imageFolder' in Astro.props ? Astro.props.imageFolder : `guides/${guideKey}`;
+const index = topics.findIndex((t) => slugify(t.title) === slug);
+const topic = topics[index];
+
+const toLink = (t: GuideTopic): ArticleLink => ({
+	href: withBase(`${page.articleBase}/${slugify(t.title)}`),
+	title: t.title,
+	label: page.label,
+	excerpt: t.summary,
+});
+
+const ownImage = topic.image && getCollectionImage(imageFolder, slug, topic.image.alt);
+const guideArt = guideKey ? guideImages[guideKey] : undefined;
+const image = ownImage || (guideArt && guideKey ? getCollectionImage('guides', guideKey, guideArt.alt) : null);
+const imageCaption = ownImage ? topic.image?.caption : guideArt?.caption;
+
+const { prev, next } = getNeighbors(topics, index);
+const relatedText = [...topic.meaning, ...(topic.points?.items ?? []), ...(topic.text?.lines ?? [])].join(' ');
+---
+
+<ArticleLayout
+	title={topic.title}
+	description={topic.summary}
+	currentPath={Astro.url.pathname}
+	sectionKey={page.sectionKey}
+	extraCrumbs={page.crumbs.map((c) => ({ label: c.label, href: withBase(c.href) }))}
+	label={page.label}
+	lead={topic.summary}
+	image={image}
+	imageCaption={imageCaption}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={getRelated(topics, index, 3).map(toLink)}
+	relatedText={relatedText}
+>
+	<ReferenceLine scripture={topic.scripture} catechism={topic.catechism} />
+	{topic.meaning.map((paragraph) => (
+		<p>{paragraph}</p>
+	))}
+	{topic.points && (
+		<section class="article-section">
+			<h2>{topic.points.title}</h2>
+			<ul>
+				{topic.points.items.map((item) => (
+					<li>{item}</li>
+				))}
+			</ul>
+		</section>
+	)}
+	{topic.text && (
+		<figure class="numbered-item__prayer">
+			<figcaption class="numbered-item__prayer-title">{topic.text.title}</figcaption>
+			{topic.text.lines.map((line) => (
+				<p>{line}</p>
+			))}
+		</figure>
+	)}
+	{topic.links && (
+		<section class="article-section">
+			<h2>Read more</h2>
+			<ul>
+				{topic.links.map((link) => (
+					<li><a href={withBase(link.href)}>{link.label}</a></li>
+				))}
+			</ul>
+		</section>
+	)}
+</ArticleLayout>

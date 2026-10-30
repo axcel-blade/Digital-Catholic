@@ -11,6 +11,7 @@ const belief: CoreBelief = {
 		'Purgatory is the final purification of those who die in God’s friendship but are still imperfectly purified. It is not a second chance but a merciful cleansing, so that they may enter the joy of heaven. The Church has always prayed for the dead, especially by offering the Eucharistic sacrifice, so that they may be loosed from their sins.',
 		'At the end of time, all the dead will rise. Our bodies, which decay at death, will be raised incorrupt and reunited with our souls by the power of Christ’s own Resurrection—to the resurrection of life for those who have done good, and of judgement for those who have done evil (John 5:29).',
 	],
+	image: { alt: 'The dead rising from the earth in their bodies at the sound of two angels’ trumpets', caption: 'Luca Signorelli, The Resurrection of the Flesh (1499–1502), Orvieto Cathedral. Public domain.' },
 };
 
 export default belief;

@@ -61,7 +61,7 @@ export const gospelReflections: GospelReflection[] = [
 		passage: 'On the mountain Jesus proclaims who is truly blessed: the poor in spirit, those who mourn, the meek, the merciful, the pure in heart, the peacemakers, and the persecuted.',
 		explanation: 'The Beatitudes turn worldly values upside down and describe the face of Christ Himself. They show the path to real happiness.',
 		question: 'Which Beatitude challenges me most right now, and why?',
-		link: { href: '/moral-teaching#topic-4', label: 'The Beatitudes and the Sermon on the Mount' },
+		link: { href: '/moral-teaching/the-beatitudes-and-the-sermon-on-the-mount', label: 'The Beatitudes and the Sermon on the Mount' },
 	},
 	{
 		reference: 'Matthew 6:5–15',

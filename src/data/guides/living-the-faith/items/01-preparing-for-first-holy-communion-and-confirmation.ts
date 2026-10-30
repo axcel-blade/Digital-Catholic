@@ -23,6 +23,7 @@ const topic: GuideTopic = {
 		{ href: '/sacraments/eucharist', label: 'The Eucharist' },
 		{ href: '/sacraments/confirmation', label: 'Confirmation' },
 	],
+	image: { alt: 'Girls in white veils and dresses gathered in a Paris church for their First Communion', caption: 'Louis Béroud, First Communion (1886). Public domain.' },
 };
 
 export default topic;

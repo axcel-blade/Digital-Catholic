@@ -12,6 +12,7 @@ const belief: CoreBelief = {
 		'Salvation comes through Jesus Christ alone, who by His Death and Resurrection reconciled humanity to the Father. The Church is the ordinary means by which Christ gives this grace to the world, above all through the sacraments.',
 	],
 	link: { href: '/sacraments/baptism', label: 'Learn about the sacrament of Baptism' },
+	image: { alt: 'Adam covering his face and Eve crying out in grief as they are driven from the Garden of Eden by an angel with a sword', caption: 'Masaccio, The Expulsion from the Garden of Eden (c. 1425), Brancacci Chapel, Florence. Public domain.' },
 };
 
 export default belief;

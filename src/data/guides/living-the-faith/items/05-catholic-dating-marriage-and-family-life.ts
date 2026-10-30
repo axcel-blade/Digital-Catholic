@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/sacraments/matrimony', label: 'The Sacrament of Matrimony' },
 	],
+	image: { alt: 'A priest joining the hands of Mary and Joseph as Joseph places a ring on her finger, before a domed temple', caption: 'Raphael, The Marriage of the Virgin (1504), Pinacoteca di Brera, Milan. Public domain.' },
 };
 
 export default topic;

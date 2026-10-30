@@ -25,6 +25,7 @@ const belief: CoreBelief = {
 		],
 	},
 	link: { href: '/mass/order-of-mass', label: 'See where the Creed is professed in the Order of Mass' },
+	image: { alt: 'Mary and the apostles gathered in astonishment as tongues of fire descend on them beneath the dove of the Holy Spirit', caption: 'El Greco, Pentecost (c. 1600), Prado. Public domain.' },
 };
 
 export default belief;

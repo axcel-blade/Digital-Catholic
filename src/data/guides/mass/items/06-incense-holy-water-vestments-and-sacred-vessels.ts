@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/mass/items-used-at-mass', label: 'Items used at Mass' },
 	],
+	image: { alt: 'A bishop in a richly embroidered chasuble raising the Host at a jewelled golden altar', caption: 'Master of Saint Giles, The Mass of St. Giles (detail, c. 1500), National Gallery, London. Public domain.' },
 };
 
 export default topic;
