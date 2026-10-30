@@ -172,6 +172,7 @@ export const fixedFeasts: LiturgicalCelebration[] = [
 		title: 'All Saints',
 		rank: 'solemnity',
 		color: 'white',
+		note: 'A holy day of obligation in many countries. The evening before, 31 October, is All Hallows’ Eve (Halloween), the feast’s vigil.',
 	},
 	{
 		month: 11,
@@ -179,6 +180,7 @@ export const fixedFeasts: LiturgicalCelebration[] = [
 		title: 'The Commemoration of All the Faithful Departed (All Souls)',
 		rank: 'memorial',
 		color: 'purple',
+		note: 'Ranks with the solemnities in precedence and is kept even when it falls on a Sunday. Black or white vestments may also be worn. The faithful pray for the dead throughout November.',
 	},
 	{
 		month: 11,
