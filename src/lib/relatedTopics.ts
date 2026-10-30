@@ -41,9 +41,9 @@ const topics: Topic[] = [
 	{ href: '/pray', label: 'Prayers and Devotions', patterns: [/\bliturgy of the hours\b/g, /\blectio divina\b/g, /\bdivine mercy\b/g, /\bstations of the cross\b/g, /\bnovenas?\b/g, /\bangelus\b/g, /\beucharistic adoration\b/g, /\bfasting\b/g] },
 	// Mary and the saints
 	{ href: '/saints/blessed-virgin-mary', label: 'The Blessed Virgin Mary', patterns: [/\bvirgin mary\b/g, /\bblessed virgin\b/g, /\bmother of god\b/g, /\btheotokos\b/g] },
-	{ href: '/saints#topic-1', label: 'Mary and the Communion of Saints', patterns: [/\bcommunion of saints\b/g, /\bintercession of (?:the )?saints\b/g, /\bimmaculate conception\b/g, /\bassumption of mary\b/g, /\bperpetual virginity\b/g] },
-	{ href: '/saints#topic-7', label: 'Saints, relics and sacramentals', patterns: [/\brelics?\b/g, /\bsacramentals?\b/g] },
-	{ href: '/saints#topic-5', label: 'Why Catholics ask saints to intercede', patterns: [/\b(?:his|her|their) intercession\b/g, /\bintercessor\b/g] },
+	{ href: '/saints#the-immaculate-conception', label: 'Mary and the Communion of Saints', patterns: [/\bcommunion of saints\b/g, /\bintercession of (?:the )?saints\b/g, /\bimmaculate conception\b/g, /\bassumption of mary\b/g, /\bperpetual virginity\b/g] },
+	{ href: '/saints#saints-relics-and-sacramentals', label: 'Saints, relics and sacramentals', patterns: [/\brelics?\b/g, /\bsacramentals?\b/g] },
+	{ href: '/saints#why-catholics-ask-saints-to-intercede', label: 'Why Catholics ask saints to intercede', patterns: [/\b(?:his|her|their) intercession\b/g, /\bintercessor\b/g] },
 	{ href: '/marian-apparitions', label: 'Marian Apparitions', patterns: [/\bapparitions?\b/g] },
 	{ href: '/eucharistic-miracles', label: 'Eucharistic Miracles', patterns: [/\beucharistic miracles?\b/g] },
 	{ href: '/saints/path-to-sainthood', label: 'The path to sainthood', patterns: [/\bcanonis(?:ed|ation)\b/g, /\bbeatifi(?:ed|cation)\b/g] },

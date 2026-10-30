@@ -7,6 +7,7 @@ import { guideImages } from '../data/guides/images';
 import { getSection } from '../lib/sections';
 import { getCollectionImage } from '../lib/images';
 import { withBase } from '../lib/paths';
+import { slugify } from '../lib/article';
 import type { BreadcrumbItem } from '../lib/seo';
 
 interface Props {
@@ -46,7 +47,7 @@ const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 >
 	<nav class="jump-links" aria-label={`Jump to a topic in ${heading ?? section.title}`} slot="header">
 		{guide.topics.map((t) => (
-			<a class="jump-links__link" href={`#topic-${t.number}`}>{t.title}</a>
+			<a class="jump-links__link" href={`#${slugify(t.title)}`}>{t.title}</a>
 		))}
 	</nav>
 
@@ -61,7 +62,9 @@ const image = art ? getCollectionImage('guides', guideKey, art.alt) : null;
 
 	<ol class="numbered-list">
 		{guide.topics.map((topic) => (
-			<li class="numbered-item" id={`topic-${topic.number}`}>
+			<li class="numbered-item" id={slugify(topic.title)}>
+				{/* Keeps older #topic-N links working */}
+				<span class="numbered-item__legacy-anchor" id={`topic-${topic.number}`} aria-hidden="true"></span>
 				<span class="numbered-item__number" aria-hidden="true">{topic.number}</span>
 				<div class="numbered-item__body">
 					<h2 class="numbered-item__title">{topic.title}</h2>

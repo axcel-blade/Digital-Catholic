@@ -49,7 +49,7 @@ const seasonColor: Record<string, string> = {
 	'Ordinary Time (late)': 'green',
 };
 const celebrations = allDays
-	.filter((d) => d.rank === 'solemnity' || d.rank === 'feast')
+	.filter((d) => d.rank === 'solemnity' || d.rank === 'commemoration' || d.rank === 'feast')
 	.map((d) => ({ date: d.date, title: d.title, rank: d.rank }));
 
 const websiteJsonLd = {

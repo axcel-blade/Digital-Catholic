@@ -1,5 +1,7 @@
 export type LiturgicalRank =
 	| 'solemnity'
+	/** All Souls: not a solemnity, but takes precedence with them (Universal Norms, Table of Liturgical Days, no. 3) */
+	| 'commemoration'
 	| 'feast'
 	| 'memorial'
 	| 'optional-memorial'
@@ -16,6 +18,8 @@ export interface LiturgicalCelebration {
 	rank: LiturgicalRank;
 	color: LiturgicalColor;
 	note?: string;
+	/** Optional link shown after the note, such as a related guide topic */
+	noteLink?: { href: string; label: string };
 	/** Link to a saint biography on this site */
 	saintSlug?: string;
 }
@@ -27,6 +31,8 @@ export interface LiturgicalDayEntry {
 	rank: LiturgicalRank;
 	color: LiturgicalColor;
 	note?: string;
+	/** Optional link shown after the note, such as a related guide topic */
+	noteLink?: { href: string; label: string };
 	saintSlug?: string;
 }
 

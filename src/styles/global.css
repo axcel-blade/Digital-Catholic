@@ -2359,9 +2359,18 @@ mark {
 	border: 1px solid var(--color-border);
 	border-radius: var(--radius-lg);
 	scroll-margin-top: calc(var(--header-height) + var(--space-4));
+	position: relative;
 }
 
-.numbered-item:target {
+.numbered-item__legacy-anchor {
+	position: absolute;
+	top: 0;
+	left: 0;
+	scroll-margin-top: calc(var(--header-height) + var(--space-4));
+}
+
+.numbered-item:target,
+.numbered-item:has(> .numbered-item__legacy-anchor:target) {
 	border-color: var(--color-accent);
 	box-shadow: 0 0 0 2px var(--color-focus);
 }
@@ -2996,7 +3005,8 @@ mark {
 	font-weight: 600;
 }
 
-.calendar-day--solemnity .calendar-day__rank {
+.calendar-day--solemnity .calendar-day__rank,
+.calendar-day--commemoration .calendar-day__rank {
 	color: var(--color-accent);
 }
 

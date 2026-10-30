@@ -21,14 +21,14 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'The unbroken handing on of the apostles’ mission and authority to the bishops through the laying on of hands. It guarantees that the Church’s teaching and sacraments come down from the apostles.',
 		catechism: 'CCC 77, 861–862',
-		link: { href: '/the-church#topic-4', label: 'Apostolic succession in The Catholic Church' },
+		link: { href: '/the-church#apostolic-succession', label: 'Apostolic succession in The Catholic Church' },
 	},
 	{
 		term: 'Assumption',
 		definition:
 			'The dogma that Mary, at the end of her earthly life, was taken up body and soul into heavenly glory. Defined by Pius XII in 1950 and celebrated on August 15.',
 		catechism: 'CCC 966',
-		link: { href: '/saints#topic-3', label: 'The Assumption of Mary' },
+		link: { href: '/saints#the-assumption-of-mary', label: 'The Assumption of Mary' },
 	},
 	{
 		term: 'Beatification',
@@ -41,7 +41,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'The list of books the Church recognises as inspired by God: 46 in the Old Testament and 27 in the New, 73 in all.',
 		catechism: 'CCC 120',
-		link: { href: '/bible-and-tradition#topic-3', label: 'The 73 books of the Catholic Bible' },
+		link: { href: '/bible-and-tradition#the-73-books-of-the-catholic-bible', label: 'The 73 books of the Catholic Bible' },
 	},
 	{
 		term: 'Canonisation',
@@ -61,7 +61,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'An unbaptised person preparing to enter the Church through Baptism, Confirmation, and the Eucharist, usually through the Order of Christian Initiation of Adults (OCIA).',
 		catechism: 'CCC 1248–1249',
-		link: { href: '/living-the-faith#topic-3', label: 'How to become Catholic through OCIA' },
+		link: { href: '/living-the-faith#how-to-become-catholic-through-ocia', label: 'How to become Catholic through OCIA' },
 	},
 	{
 		term: 'Charism',
@@ -74,7 +74,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'The union of all the faithful in Christ—those on earth, those being purified in purgatory, and the saints in heaven—who share spiritual goods and pray for one another.',
 		catechism: 'CCC 946–962',
-		link: { href: '/saints#topic-1', label: 'Mary and the Communion of Saints' },
+		link: { href: '/saints#the-immaculate-conception', label: 'Mary and the Communion of Saints' },
 	},
 	{
 		term: 'Concupiscence',
@@ -98,7 +98,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		term: 'Deuterocanonical books',
 		definition:
 			'Seven Old Testament books (Tobit, Judith, 1 and 2 Maccabees, Wisdom, Sirach, Baruch) and parts of Esther and Daniel, included in Catholic and Orthodox Bibles but usually omitted from Protestant ones.',
-		link: { href: '/bible-and-tradition#topic-4', label: 'The Deuterocanonical books' },
+		link: { href: '/bible-and-tradition#the-deuterocanonical-books', label: 'The Deuterocanonical books' },
 	},
 	{
 		term: 'Doctor of the Church',
@@ -122,7 +122,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		term: 'Ecumenism',
 		definition: 'The work of restoring unity among all Christians, in obedience to Christ’s prayer “that they may all be one.”',
 		catechism: 'CCC 820–822',
-		link: { href: '/the-church#topic-7', label: 'Ecumenism and Christian unity' },
+		link: { href: '/the-church#ecumenism-and-christian-unity', label: 'Ecumenism and Christian unity' },
 	},
 	{
 		term: 'Encyclical',
@@ -152,14 +152,14 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'A feast on which Catholics are required to attend Mass, as on Sundays. The list varies by country.',
 		catechism: 'CCC 2177, 2180',
-		link: { href: '/mass#topic-2', label: 'Holy days of obligation' },
+		link: { href: '/mass#the-sunday-obligation-and-holy-days-of-obligation', label: 'Holy days of obligation' },
 	},
 	{
 		term: 'Immaculate Conception',
 		definition:
 			'The dogma that Mary was preserved from original sin from the first moment of her conception, by a singular grace of God in view of the merits of Christ. It does not refer to the conception of Jesus.',
 		catechism: 'CCC 490–493',
-		link: { href: '/saints#topic-1', label: 'The Immaculate Conception' },
+		link: { href: '/saints#the-immaculate-conception', label: 'The Immaculate Conception' },
 	},
 	{
 		term: 'Incarnation',
@@ -178,7 +178,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'The gift of the Holy Spirit by which the Church, the Pope, and the bishops in union with him are preserved from error when they definitively teach a doctrine of faith or morals. It does not mean the Pope cannot sin.',
 		catechism: 'CCC 889–891',
-		link: { href: '/the-church#topic-2', label: 'The Pope and the papacy' },
+		link: { href: '/the-church#the-pope-and-the-papacy', label: 'The Pope and the papacy' },
 	},
 	{
 		term: 'Laity',
@@ -190,7 +190,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		term: 'Lectio Divina',
 		definition: 'Latin for “divine reading”: an ancient, prayerful way of reading Scripture in four steps—reading, meditation, prayer, and contemplation.',
 		catechism: 'CCC 1177, 2708',
-		link: { href: '/pray#topic-2', label: 'Lectio Divina' },
+		link: { href: '/pray#lectio-divina-praying-with-scripture', label: 'Lectio Divina' },
 	},
 	{
 		term: 'Liturgy',
@@ -204,19 +204,19 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'The living teaching office of the Church, exercised by the Pope and the bishops in communion with him, which authentically interprets the Word of God in Scripture and Tradition.',
 		catechism: 'CCC 85–90',
-		link: { href: '/bible-and-tradition#topic-2', label: 'The Magisterium' },
+		link: { href: '/bible-and-tradition#the-magisterium-the-church-s-teaching-authority', label: 'The Magisterium' },
 	},
 	{
 		term: 'Mortal sin',
 		definition:
 			'A sin of grave matter committed with full knowledge and deliberate consent. It destroys charity in the heart and, unrepented, separates a person from God.',
 		catechism: 'CCC 1855–1861',
-		link: { href: '/moral-teaching#topic-5', label: 'Mortal and venial sin' },
+		link: { href: '/moral-teaching#mortal-and-venial-sin', label: 'Mortal and venial sin' },
 	},
 	{
 		term: 'Novena',
 		definition: 'A prayer offered on nine consecutive days, recalling the nine days the apostles and Mary prayed together before Pentecost.',
-		link: { href: '/pray#topic-7', label: 'Novenas and litanies' },
+		link: { href: '/pray#novenas-litanies-and-traditional-catholic-prayers', label: 'Novenas and litanies' },
 	},
 	{
 		term: 'Original sin',
@@ -241,14 +241,14 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'The truth that Jesus Christ is truly, really, and substantially present—Body, Blood, soul, and divinity—under the appearances of bread and wine in the Eucharist.',
 		catechism: 'CCC 1373–1381',
-		link: { href: '/study#topic-2', label: 'Why Catholics believe in the Real Presence' },
+		link: { href: '/study#why-do-catholics-believe-in-the-real-presence', label: 'Why Catholics believe in the Real Presence' },
 	},
 	{
 		term: 'Relic',
 		definition:
 			'The physical remains of a saint (first class), an object the saint used (second class), or an object touched to a first-class relic (third class), venerated in honour of the saint.',
 		catechism: 'CCC 1674',
-		link: { href: '/saints#topic-7', label: 'Saints, relics and sacramentals' },
+		link: { href: '/saints#saints-relics-and-sacramentals', label: 'Saints, relics and sacramentals' },
 	},
 	{
 		term: 'Sacrament',
@@ -262,14 +262,14 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'A sacred sign instituted by the Church—such as holy water, a blessing, a rosary, or a medal—that prepares us to receive grace and sanctifies ordinary life. Unlike a sacrament, it does not confer grace by itself.',
 		catechism: 'CCC 1667–1679',
-		link: { href: '/saints#topic-7', label: 'Saints, relics and sacramentals' },
+		link: { href: '/saints#saints-relics-and-sacramentals', label: 'Saints, relics and sacramentals' },
 	},
 	{
 		term: 'Sacred Tradition',
 		definition:
 			'The living transmission of the Gospel by the apostles and their successors, through preaching, worship, and life, which together with Sacred Scripture forms one deposit of faith.',
 		catechism: 'CCC 75–83',
-		link: { href: '/bible-and-tradition#topic-1', label: 'Sacred Scripture and Sacred Tradition' },
+		link: { href: '/bible-and-tradition#sacred-scripture-and-sacred-tradition', label: 'Sacred Scripture and Sacred Tradition' },
 	},
 	{
 		term: 'State of grace',
@@ -280,7 +280,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		term: 'Theotokos',
 		definition: 'Greek for “God-bearer”: the title of Mary as Mother of God, affirmed by the Council of Ephesus in 431.',
 		catechism: 'CCC 495',
-		link: { href: '/saints#topic-4', label: 'Mary as Mother of God' },
+		link: { href: '/saints#mary-as-mother-of-god', label: 'Mary as Mother of God' },
 	},
 	{
 		term: 'Transubstantiation',
@@ -294,7 +294,7 @@ export const glossaryTerms: GlossaryTerm[] = [
 		definition:
 			'A less serious sin that weakens charity but does not destroy friendship with God: either the matter is not grave, or it lacks full knowledge or complete consent.',
 		catechism: 'CCC 1862–1864',
-		link: { href: '/moral-teaching#topic-5', label: 'Mortal and venial sin' },
+		link: { href: '/moral-teaching#mortal-and-venial-sin', label: 'Mortal and venial sin' },
 	},
 	{
 		term: 'Viaticum',

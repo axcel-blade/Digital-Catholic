@@ -10,7 +10,7 @@ const topic: GuideTopic = {
 		'The Eastern Orthodox Churches, including the patriarchates of Constantinople, Antioch, Jerusalem, and Alexandria (Greek Orthodox) and the Russian, Serbian, Romanian, and other Churches, have been divided from Rome since the Great Schism of 1054. The Catholic Church teaches that they are true particular Churches with valid sacraments and apostolic succession, in a communion that is “very deep” though not yet full. The chief obstacle is the role of the Bishop of Rome.',
 	],
 	links: [
-		{ href: '/church-history#topic-4', label: 'The Great Schism in Church History' },
+		{ href: '/church-history#the-great-schism-of-1054', label: 'The Great Schism in Church History' },
 		{ href: '/compare-christian-traditions', label: 'Compare Christian traditions' },
 	],
 };

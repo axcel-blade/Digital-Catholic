@@ -13,6 +13,7 @@ interface Props {
 const { yearData, yearOptions, defaultYear } = Astro.props;
 const rankLabels: Record<string, string> = {
 	solemnity: 'Solemnity',
+	commemoration: 'Commemoration',
 	feast: 'Feast',
 	memorial: 'Memorial',
 	'optional-memorial': 'Optional memorial',
@@ -113,7 +114,12 @@ const celebrations = yearData.months.flatMap((m) =>
 								</span>
 								<span class="calendar-day__today-label">Today</span>
 							</p>
-							{day.note && <p class="calendar-day__note">{day.note}</p>}
+							{day.note && (
+								<p class="calendar-day__note">
+									{day.note}
+									{day.noteLink && <> <a href={withBase(day.noteLink.href)}>{day.noteLink.label}</a></>}
+								</p>
+							)}
 						</div>
 					</li>
 				))}

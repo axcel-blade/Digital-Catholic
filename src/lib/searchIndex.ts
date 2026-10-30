@@ -1,6 +1,7 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
 import { coreBeliefs, coreBeliefsIntro } from '../data/coreBeliefs';
 import { guides } from '../data/guides';
+import { slugify } from './article';
 import { glossary, glossaryIntro, termId } from '../data/glossary';
 import { faqEntries, faqIntro, faqCategoryLabels, faqId } from '../data/faq';
 import { studyPaths, studyPathsIntro } from '../data/study-paths';
@@ -624,7 +625,7 @@ export function buildSearchIndex(): SearchEntry[] {
 			items.push(
 				entry(
 					`${section.title}: ${topic.title}`,
-					withBase(`${section.href}#topic-${topic.number}`),
+					withBase(`${section.href}#${slugify(topic.title)}`),
 					section.label,
 					topic.summary,
 					[

@@ -33,27 +33,27 @@ const { prev, next } = getNeighbors(sacramentGuides, index);
 const relatedTeaching: Record<string, { href: string; title: string }[]> = {
 	'baptism-and-confirmation': [
 		{ href: '/holy-spirit#gifts', title: 'Gifts of the Holy Spirit' },
-		{ href: '/study#topic-3', title: 'Why the Church baptises infants' },
+		{ href: '/study#why-does-the-catholic-church-baptise-infants', title: 'Why the Church baptises infants' },
 	],
 	'the-real-presence': [
-		{ href: '/study#topic-2', title: 'Why Catholics believe in the Real Presence' },
+		{ href: '/study#why-do-catholics-believe-in-the-real-presence', title: 'Why Catholics believe in the Real Presence' },
 		{ href: '/eucharistic-miracles', title: 'Eucharistic miracles' },
 	],
 	'transubstantiation-explained': [{ href: '/glossary#term-transubstantiation', title: 'Transubstantiation in the glossary' }],
 	'confession-repentance-and-absolution': [
-		{ href: '/moral-teaching#topic-5', title: 'Mortal and venial sin' },
-		{ href: '/moral-teaching#topic-7', title: 'Forgiveness, mercy, repentance and reconciliation' },
-		{ href: '/living-the-faith#topic-2', title: 'How to go to Confession (quick guide)' },
+		{ href: '/moral-teaching#mortal-and-venial-sin', title: 'Mortal and venial sin' },
+		{ href: '/moral-teaching#forgiveness-mercy-repentance-and-reconciliation', title: 'Forgiveness, mercy, repentance and reconciliation' },
+		{ href: '/living-the-faith#how-to-go-to-confession', title: 'How to go to Confession (quick guide)' },
 	],
-	'the-sacrament-of-marriage': [{ href: '/living-the-faith#topic-5', title: 'Catholic dating, marriage and family life' }],
+	'the-sacrament-of-marriage': [{ href: '/living-the-faith#catholic-dating-marriage-and-family-life', title: 'Catholic dating, marriage and family life' }],
 	'holy-orders-bishops-priests-and-deacons': [
-		{ href: '/the-church#topic-3', title: 'Bishops, priests, deacons and the laity' },
-		{ href: '/the-church#topic-4', title: 'Apostolic succession' },
-		{ href: '/living-the-faith#topic-4', title: 'Discernment of vocation' },
+		{ href: '/the-church#bishops-priests-deacons-and-the-laity', title: 'Bishops, priests, deacons and the laity' },
+		{ href: '/the-church#apostolic-succession', title: 'Apostolic succession' },
+		{ href: '/living-the-faith#discernment-of-vocation-and-religious-life', title: 'Discernment of vocation' },
 	],
 	'state-of-grace-and-worthy-reception': [
-		{ href: '/moral-teaching#topic-5', title: 'Mortal and venial sin' },
-		{ href: '/mass#topic-8', title: 'Proper reverence and participation at Mass' },
+		{ href: '/moral-teaching#mortal-and-venial-sin', title: 'Mortal and venial sin' },
+		{ href: '/mass#proper-reverence-and-participation-at-mass', title: 'Proper reverence and participation at Mass' },
 	],
 };
 const teaching = relatedTeaching[guide.slug] ?? [];

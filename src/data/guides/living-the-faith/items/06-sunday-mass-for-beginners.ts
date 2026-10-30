@@ -11,7 +11,7 @@ const topic: GuideTopic = {
 	],
 	links: [
 		{ href: '/mass', label: 'Holy Mass and Liturgy' },
-		{ href: '/mass#topic-1', label: 'The meaning of every part of the Mass' },
+		{ href: '/mass#the-meaning-of-every-part-of-the-mass', label: 'The meaning of every part of the Mass' },
 	],
 };
 
