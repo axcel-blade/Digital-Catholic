@@ -2,21 +2,31 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import ReferenceLine from './ReferenceLine.astro';
 import { getGuide, type GuideTopic } from '../data/guides';
-import { getGuidePage } from '../data/guides/pages';
+import { getGuidePage, type GuidePageConfig } from '../data/guides/pages';
 import { guideImages } from '../data/guides/images';
 import { getCollectionImage } from '../lib/images';
 import { withBase } from '../lib/paths';
 import { getNeighbors, getRelated, slugify, type ArticleLink } from '../lib/article';
 
-interface Props {
-	/** Folder name in src/data/guides */
-	guideKey: string;
-	slug: string;
-}
+type Props = { slug: string } & (
+	| {
+			/** Folder name in src/data/guides */
+			guideKey: string;
+	  }
+	| {
+			/** For collections outside src/data/guides that share the topic shape */
+			topics: GuideTopic[];
+			page: GuidePageConfig;
+			/** Folder under public/ holding `{slug}.jpg` artwork */
+			imageFolder: string;
+	  }
+);
 
-const { guideKey, slug } = Astro.props;
-const page = getGuidePage(guideKey);
-const topics = getGuide(guideKey).topics;
+const { slug } = Astro.props;
+const guideKey = 'guideKey' in Astro.props ? Astro.props.guideKey : undefined;
+const page = 'page' in Astro.props ? Astro.props.page : getGuidePage(guideKey!);
+const topics = 'topics' in Astro.props ? Astro.props.topics : getGuide(guideKey!).topics;
+const imageFolder = 'imageFolder' in Astro.props ? Astro.props.imageFolder : `guides/${guideKey}`;
 const index = topics.findIndex((t) => slugify(t.title) === slug);
 const topic = topics[index];
 
@@ -27,9 +37,9 @@ const toLink = (t: GuideTopic): ArticleLink => ({
 	excerpt: t.summary,
 });
 
-const ownImage = topic.image && getCollectionImage(`guides/${guideKey}`, slug, topic.image.alt);
-const guideArt = guideImages[guideKey];
-const image = ownImage || (guideArt ? getCollectionImage('guides', guideKey, guideArt.alt) : null);
+const ownImage = topic.image && getCollectionImage(imageFolder, slug, topic.image.alt);
+const guideArt = guideKey ? guideImages[guideKey] : undefined;
+const image = ownImage || (guideArt && guideKey ? getCollectionImage('guides', guideKey, guideArt.alt) : null);
 const imageCaption = ownImage ? topic.image?.caption : guideArt?.caption;
 
 const { prev, next } = getNeighbors(topics, index);

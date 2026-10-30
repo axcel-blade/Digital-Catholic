@@ -11,6 +11,7 @@ const belief: CoreBelief = {
 		'Jesus Christ is one divine Person with two natures, divine and human, united without confusion, change, division, or separation, as the Council of Chalcedon (451) taught. He is not part God and part man, nor a mixture of the two: He is truly God and truly man, like us in all things but sin. Because He is one Person, Mary is rightly called the Mother of God (Council of Ephesus, 431).',
 	],
 	link: { href: '/miracles', label: 'See His divinity revealed in the Miracles of Jesus' },
+	image: { alt: 'Shepherds crowding around the newborn Christ Child, whose light illuminates the faces of Mary and the onlookers', caption: 'Gerard van Honthorst, The Adoration of the Shepherds (1622), Wallraf-Richartz-Museum, Cologne. Public domain.' },
 };
 
 export default belief;

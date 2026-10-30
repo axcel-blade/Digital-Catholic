@@ -1,10 +1,15 @@
 ---
 import RelatedTopics from '../../components/RelatedTopics.astro';
 import SectionLayout from '../../layouts/SectionLayout.astro';
-import ReferenceLine from '../../components/ReferenceLine.astro';
+import EntryCard from '../../components/EntryCard.astro';
 import { coreBeliefs, coreBeliefsIntro } from '../../data/coreBeliefs';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
+import { slugify } from '../../lib/article';
+
+const articleHref = (title: string) => withBase(`/core-beliefs/${slugify(title)}`);
+// Old in-page anchors from when every doctrine was on this page
+const legacyAnchors = Object.fromEntries(coreBeliefs.map((b) => [`belief-${b.number}`, articleHref(b.title)]));
 ---
 
 <SectionLayout
@@ -17,42 +22,28 @@ import { withBase } from '../../lib/paths';
 	intro={coreBeliefsIntro}
 	count={`${coreBeliefs.length} doctrines`}
 >
-	<nav class="jump-links jump-links--numbers" aria-label="Jump to a doctrine" slot="header">
+	<nav class="jump-links" aria-label="Jump to a doctrine" slot="header">
 		{coreBeliefs.map((b) => (
-			<a class="jump-links__link" href={`#belief-${b.number}`}>
-				<span class="visually-hidden">Doctrine </span>{b.number}
-			</a>
+			<a class="jump-links__link" href={articleHref(b.title)}>{b.title}</a>
 		))}
 	</nav>
 
-	<ol class="numbered-list">
+	<script is:inline define:vars={{ legacyAnchors }}>
+		const target = legacyAnchors[location.hash.slice(1)];
+		if (target) location.replace(target);
+	</script>
+
+	<ul class="card-grid card-grid--two">
 		{coreBeliefs.map((belief) => (
-			<li class="numbered-item" id={`belief-${belief.number}`}>
-				<span class="numbered-item__number" aria-hidden="true">{belief.number}</span>
-				<div class="numbered-item__body">
-					<h2 class="numbered-item__title">{belief.title}</h2>
-					<blockquote class="numbered-item__quote">{belief.summary}</blockquote>
-					<ReferenceLine scripture={belief.scripture} catechism={belief.catechism} />
-					{belief.meaning.map((paragraph) => (
-						<p class="numbered-item__text">{paragraph}</p>
-					))}
-					{belief.text && (
-						<figure class="numbered-item__prayer">
-							<figcaption class="numbered-item__prayer-title">{belief.text.title}</figcaption>
-							{belief.text.lines.map((line) => (
-								<p>{line}</p>
-							))}
-						</figure>
-					)}
-					{belief.link && (
-						<p class="numbered-item__link">
-							<a href={withBase(belief.link.href)}>{belief.link.label} →</a>
-						</p>
-					)}
-				</div>
-			</li>
+			<EntryCard
+				href={articleHref(belief.title)}
+				title={belief.title}
+				label={`Doctrine ${belief.number}`}
+				excerpt={belief.summary}
+				action="Read the article"
+			/>
 		))}
-	</ol>
+	</ul>
 
 	<RelatedTopics currentPath={Astro.url.pathname} text={coreBeliefs.flatMap((b) => [b.title, b.summary, ...b.meaning]).join(' ')} />
 

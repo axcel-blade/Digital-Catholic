@@ -459,7 +459,7 @@ export function buildSearchIndex(): SearchEntry[] {
 		items.push(
 			entry(
 				`Core Beliefs: ${belief.title}`,
-				withBase(`/core-beliefs#belief-${belief.number}`),
+				withBase(`/core-beliefs/${slugify(belief.title)}`),
 				'Doctrine',
 				belief.summary,
 				[belief.title, belief.summary, belief.scripture, belief.catechism, ...belief.meaning, ...(belief.text?.lines ?? [])]
