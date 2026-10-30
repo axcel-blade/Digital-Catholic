@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/bible', label: 'Explore the books of the Bible' },
 	],
+	image: { alt: 'St. Matthew in a red cloak leaning over a desk to write as an angel above counts points on his fingers', caption: 'Caravaggio, The Inspiration of Saint Matthew (1602), San Luigi dei Francesi, Rome. Public domain.' },
 };
 
 export default topic;

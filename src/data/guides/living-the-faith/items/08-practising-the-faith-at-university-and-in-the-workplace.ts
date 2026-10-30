@@ -23,6 +23,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/social-teaching', label: 'Workers’ rights and the dignity of work' },
 	],
+	image: { alt: 'A farmer striding across a ploughed field scattering seed', caption: 'Vincent van Gogh, The Sower, after Millet (1889). Public domain.' },
 };
 
 export default topic;

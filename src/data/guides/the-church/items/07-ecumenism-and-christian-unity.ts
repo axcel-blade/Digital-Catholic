@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/compare-christian-traditions', label: 'Compare Catholic, Orthodox, Anglican and Protestant beliefs' },
 	],
+	image: { alt: 'Christ transfigured in light above the mountain with Moses and Elijah, while the apostles below meet a possessed boy', caption: 'Raphael, The Transfiguration (1516–1520), Vatican. Public domain.' },
 };
 
 export default topic;

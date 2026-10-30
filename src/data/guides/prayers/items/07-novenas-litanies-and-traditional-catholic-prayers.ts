@@ -14,6 +14,7 @@ const topic: GuideTopic = {
 		{ href: '/pray', label: 'Read traditional Catholic prayers' },
 		{ href: '/rosary', label: 'Pray the Rosary' },
 	],
+	image: { alt: 'Mary in white holding the Christ Child, both holding lilies, with angels behind', caption: 'William-Adolphe Bouguereau, The Virgin of the Lilies (1899). Public domain.' },
 };
 
 export default topic;

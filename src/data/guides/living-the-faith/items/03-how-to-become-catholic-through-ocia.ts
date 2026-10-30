@@ -21,6 +21,7 @@ const topic: GuideTopic = {
 			'Mystagogy: continued formation after reception',
 		],
 	},
+	image: { alt: 'Pope Sylvester baptising the kneeling emperor Constantine in a Roman baptistery crowded with onlookers', caption: 'School of Raphael, The Baptism of Constantine (1520–1524), Vatican. Public domain.' },
 };
 
 export default topic;

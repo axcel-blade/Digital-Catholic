@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/commandments', label: 'Read each of the Ten Commandments' },
 	],
+	image: { alt: 'Moses raising the two stone tablets of the Law above his head', caption: 'Rembrandt, Moses with the Ten Commandments (1659), Gemäldegalerie, Berlin. Public domain.' },
 };
 
 export default topic;

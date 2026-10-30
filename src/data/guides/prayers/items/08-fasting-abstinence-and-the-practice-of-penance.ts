@@ -18,6 +18,7 @@ const topic: GuideTopic = {
 			'Other Fridays of the year: abstinence or another penance, as set by the local bishops’ conference',
 		],
 	},
+	image: { alt: 'A crowded town square where a fat figure of Carnival on a barrel jousts with a thin figure of Lent', caption: 'Pieter Bruegel the Elder, The Fight Between Carnival and Lent (1559), Kunsthistorisches Museum, Vienna. Public domain.' },
 };
 
 export default topic;

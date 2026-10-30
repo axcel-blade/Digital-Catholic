@@ -10,6 +10,7 @@ const topic: GuideTopic = {
 		'Jesus gave Simon the name Peter (“rock”), promised to build His Church upon him, gave him the keys of the kingdom, and charged him to strengthen his brothers and feed His sheep. Peter led the apostles in Jerusalem and died as a martyr in Rome, where his successors have served as bishop ever since.',
 		'The Pope exercises full, supreme, and universal authority in the Church as Vicar of Christ and pastor of the whole flock. Papal infallibility is limited: it applies only when the Pope, as supreme teacher, solemnly defines a doctrine of faith or morals to be held by the whole Church. It does not mean the Pope is sinless or that every opinion he expresses is infallible.',
 	],
+	image: { alt: 'Portrait of the elderly bearded Pope Julius II seated in a red cape', caption: 'Raphael, Portrait of Pope Julius II (1511), National Gallery, London. Public domain.' },
 };
 
 export default topic;

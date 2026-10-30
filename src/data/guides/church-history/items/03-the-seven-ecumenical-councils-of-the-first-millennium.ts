@@ -20,6 +20,7 @@ const topic: GuideTopic = {
 			'Nicaea II (787): the veneration of holy images is lawful',
 		],
 	},
+	image: { alt: 'Bishops in robes gathered in a domed hall around an open Gospel book at the Council of Chalcedon', caption: 'Vasily Surikov, The Fourth Ecumenical Council of Chalcedon (1876), Cathedral of Christ the Saviour, Moscow. Public domain.' },
 };
 
 export default topic;

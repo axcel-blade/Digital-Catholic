@@ -14,6 +14,7 @@ const topic: GuideTopic = {
 		{ href: '/sacraments/penance', label: 'The Sacrament of Penance' },
 		{ href: '/parables', label: 'The Parable of the Prodigal Son and other parables' },
 	],
+	image: { alt: 'A father embracing his kneeling son, who has returned home in rags', caption: 'Pompeo Batoni, The Return of the Prodigal Son (1773), Kunsthistorisches Museum, Vienna. Public domain.' },
 };
 
 export default topic;

@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 		{ href: '/church-history/the-great-schism-of-1054', label: 'The Great Schism in Church History' },
 		{ href: '/compare-christian-traditions', label: 'Compare Christian traditions' },
 	],
+	image: { alt: 'Three angels seated around a table with a chalice, representing the Holy Trinity', caption: 'Andrei Rublev, The Trinity (1411 or 1425–1427), Tretyakov Gallery. Public domain.' },
 };
 
 export default topic;

@@ -25,6 +25,7 @@ const topic: GuideTopic = {
 		{ href: '/pray', label: 'Catholic prayer and devotions' },
 		{ href: '/rosary', label: 'Pray the Rosary' },
 	],
+	image: { alt: 'An old woman with folded hands saying grace over a simple meal, a cat pulling at the tablecloth', caption: 'Nicolaes Maes, Old Woman Praying (c. 1655), Rijksmuseum. Public domain.' },
 };
 
 export default topic;

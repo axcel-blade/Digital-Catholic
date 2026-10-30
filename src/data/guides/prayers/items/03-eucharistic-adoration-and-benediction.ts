@@ -14,6 +14,7 @@ const topic: GuideTopic = {
 		{ href: '/eucharistic-miracles', label: 'Eucharistic miracles' },
 		{ href: '/sacraments/eucharist', label: 'The Sacrament of the Eucharist' },
 	],
+	image: { alt: 'A triptych centred on Christ at the Last Supper blessing the bread, with Old Testament scenes on the side panels', caption: 'Dieric Bouts, Altarpiece of the Holy Sacrament (1464–1467), St. Peter’s Church, Leuven. Public domain.' },
 };
 
 export default topic;

@@ -23,6 +23,7 @@ const topic: GuideTopic = {
 			'Blessed are they who are persecuted for the sake of righteousness, for theirs is the kingdom of heaven.',
 		],
 	},
+	image: { alt: 'Christ seated on a hillside teaching a crowd of men, women and children gathered around him', caption: 'Carl Bloch, The Sermon on the Mount (1877), Frederiksborg Palace. Public domain.' },
 };
 
 export default topic;

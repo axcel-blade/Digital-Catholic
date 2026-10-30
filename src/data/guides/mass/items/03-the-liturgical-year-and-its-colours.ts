@@ -24,6 +24,7 @@ const topic: GuideTopic = {
 		{ href: '/mass/items-used-at-mass', label: 'Vestments and liturgical colours at Mass' },
 		{ href: '/liturgical-calendar', label: 'The Liturgical Calendar' },
 	],
+	image: { alt: 'A calendar page of peasants mowing hay before the towers of Paris, beneath a blue arc with the zodiac signs of June', caption: 'Limbourg brothers, June from the Très Riches Heures du duc de Berry (c. 1416), Musée Condé, Chantilly. Public domain.' },
 };
 
 export default topic;

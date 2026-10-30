@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/the-church', label: 'The Pope and the papacy' },
 	],
+	image: { alt: 'The risen Christ handing two large keys to the kneeling St. Peter', caption: 'Peter Paul Rubens, Christ Giving the Keys to St. Peter (1612), Gemäldegalerie, Berlin. Public domain.' },
 };
 
 export default topic;

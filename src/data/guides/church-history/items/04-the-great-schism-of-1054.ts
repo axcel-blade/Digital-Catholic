@@ -12,6 +12,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/the-church', label: 'The Orthodox Churches today' },
 	],
+	image: { alt: 'The vast nave of Hagia Sophia beneath its great dome, with worshippers on the floor below', caption: 'Gaspare Fossati and Louis Haghe, The Nave of Hagia Sophia (1852). Public domain.' },
 };
 
 export default topic;

@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/bible-and-tradition/the-relationship-between-faith-and-reason', label: 'Faith and reason' },
 	],
+	image: { alt: 'Ancient philosophers and scientists gathered in a vast arched hall, with Plato and Aristotle walking at the centre', caption: 'Raphael, The School of Athens (1509–1511), Vatican. Public domain.' },
 };
 
 export default topic;

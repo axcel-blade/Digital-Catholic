@@ -27,6 +27,7 @@ const topic: GuideTopic = {
 		{ href: '/saints', label: 'Mary and the Saints' },
 		{ href: '/liturgical-calendar', label: 'Liturgical calendar' },
 	],
+	image: { alt: 'The risen Christ holding a white banner with a red cross, surrounded by ranks of gold-haloed angels playing trumpets and other instruments', caption: 'Fra Angelico, Christ Glorified in the Court of Heaven (c. 1423–1424), predella of the Fiesole altarpiece, National Gallery, London. Public domain.' },
 };
 
 export default topic;

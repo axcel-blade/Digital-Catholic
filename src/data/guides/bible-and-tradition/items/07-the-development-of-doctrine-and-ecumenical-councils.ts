@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/church-history', label: 'Read about the councils in Church History' },
 	],
+	image: { alt: 'An icon of the First Council of Nicaea, with the emperor Constantine enthroned among the bishops and the heretic Arius beneath them', caption: 'Michael Damaskinos, The First Council of Nicaea (1591), Heraklion. Public domain.' },
 };
 
 export default topic;

@@ -21,6 +21,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/sacraments/penance', label: 'The Sacrament of Penance' },
 	],
+	image: { alt: 'Eve reaching for the forbidden fruit beside Adam, as a lizard-like serpent watches from the tree', caption: 'Hugo van der Goes, The Fall of Man (c. 1479), Kunsthistorisches Museum, Vienna. Public domain.' },
 };
 
 export default topic;

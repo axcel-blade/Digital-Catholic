@@ -20,6 +20,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/rosary', label: 'Rosary beads and the Rosary' },
 	],
+	image: { alt: 'The risen Christ guiding the doubting Thomas’s finger into the wound in his side', caption: 'Caravaggio, The Incredulity of Saint Thomas (1601–1602), Sanssouci, Potsdam. Public domain.' },
 };
 
 export default topic;

@@ -18,6 +18,7 @@ const topic: GuideTopic = {
 			'St. Raphael (“God heals”): guide and healer of Tobias (Tobit 5–12)',
 		],
 	},
+	image: { alt: 'The archangel Michael in armour raising his sword over a dragon-like demon', caption: 'Raphael, St. Michael and the Dragon (c. 1504), Louvre. Public domain.' },
 };
 
 export default topic;

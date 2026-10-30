@@ -13,6 +13,7 @@ const topic: GuideTopic = {
 	links: [
 		{ href: '/marian-apparitions', label: 'Marian apparitions, including Lourdes' },
 	],
+	image: { alt: 'Mary in white and blue standing on a crescent moon and a globe with a serpent, surrounded by cherubs', caption: 'Giovanni Battista Tiepolo, The Immaculate Conception (1767–1769), Prado. Public domain.' },
 };
 
 export default topic;

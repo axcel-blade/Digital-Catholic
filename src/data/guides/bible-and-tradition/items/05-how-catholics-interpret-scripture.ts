@@ -19,6 +19,7 @@ const topic: GuideTopic = {
 			'Anagogical: how realities point towards our eternal destiny',
 		],
 	},
+	image: { alt: 'St. Jerome reading at a desk in a raised wooden study set inside a great Gothic hall, with a lion in the shadows behind', caption: 'Antonello da Messina, St. Jerome in his Study (c. 1475), National Gallery, London. Public domain.' },
 };
 
 export default topic;

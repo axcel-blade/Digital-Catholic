@@ -25,6 +25,7 @@ const topic: GuideTopic = {
 		{ href: '/sacraments/guides/confession-repentance-and-absolution', label: 'Confession, repentance and absolution: the full guide' },
 		{ href: '/sacraments/penance', label: 'The Sacrament of Penance' },
 	],
+	image: { alt: 'A penitent kneeling at a confessional in a dark church while the priest leans to listen', caption: 'Giuseppe Maria Crespi, Confession (c. 1712), Gemäldegalerie, Dresden. Public domain.' },
 };
 
 export default topic;
