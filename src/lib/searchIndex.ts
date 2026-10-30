@@ -1,6 +1,7 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
 import { coreBeliefs, coreBeliefsIntro } from '../data/coreBeliefs';
 import { guides } from '../data/guides';
+import { getGuidePage } from '../data/guides/pages';
 import { slugify } from './article';
 import { glossary, glossaryIntro, termId } from '../data/glossary';
 import { faqEntries, faqIntro, faqCategoryLabels, faqId } from '../data/faq';
@@ -625,11 +626,7 @@ export function buildSearchIndex(): SearchEntry[] {
 			items.push(
 				entry(
 					`${section.title}: ${topic.title}`,
-					withBase(
-						guide.key === 'church-history'
-							? `${section.href}/${slugify(topic.title)}`
-							: `${section.href}#${slugify(topic.title)}`
-					),
+					withBase(`${getGuidePage(guide.key).articleBase}/${slugify(topic.title)}`),
 					section.label,
 					topic.summary,
 					[

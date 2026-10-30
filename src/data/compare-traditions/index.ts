@@ -81,7 +81,7 @@ export const traditions: Tradition[] = [
 export const comparisonRows: ComparisonRow[] = [
 	{
 		topic: 'Source of authority',
-		link: '/bible-and-tradition#sacred-scripture-and-sacred-tradition',
+		link: '/bible-and-tradition/sacred-scripture-and-sacred-tradition',
 		catechism: 'CCC 80–95',
 		values: {
 			catholic: 'Scripture and Sacred Tradition as one deposit of faith, authentically interpreted by the Magisterium (the Pope and bishops).',
@@ -93,7 +93,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'The Bible',
-		link: '/bible-and-tradition#the-73-books-of-the-catholic-bible',
+		link: '/bible-and-tradition/the-73-books-of-the-catholic-bible',
 		catechism: 'CCC 120',
 		values: {
 			catholic: '73 books, including the Deuterocanonical books.',
@@ -105,7 +105,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Church leadership',
-		link: '/the-church#apostolic-succession',
+		link: '/the-church/apostolic-succession',
 		catechism: 'CCC 861–862, 880–896',
 		values: {
 			catholic: 'Bishops in apostolic succession, in communion with the Pope as successor of Peter and visible head of the universal Church.',
@@ -117,7 +117,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'The Pope',
-		link: '/the-church#the-pope-and-the-papacy',
+		link: '/the-church/the-pope-and-the-papacy',
 		catechism: 'CCC 880–882, 891',
 		values: {
 			catholic: 'The Bishop of Rome has full, supreme, and universal authority and, in solemn definitions, teaches infallibly.',
@@ -153,7 +153,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Salvation and justification',
-		link: '/study#what-is-the-relationship-between-faith-grace-and-good-works',
+		link: '/study/what-is-the-relationship-between-faith-grace-and-good-works',
 		catechism: 'CCC 1987–2029',
 		values: {
 			catholic: 'By grace through faith, beginning in Baptism; justification makes us truly righteous and bears fruit in good works done in grace.',
@@ -165,7 +165,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Mary',
-		link: '/saints#the-immaculate-conception',
+		link: '/saints/topics/the-immaculate-conception',
 		catechism: 'CCC 484–511, 963–975',
 		values: {
 			catholic: 'Mother of God, ever-virgin, immaculately conceived, and assumed body and soul into heaven; honoured above all saints.',
@@ -177,7 +177,7 @@ export const comparisonRows: ComparisonRow[] = [
 	},
 	{
 		topic: 'Saints and prayer for the dead',
-		link: '/saints#why-catholics-ask-saints-to-intercede',
+		link: '/saints/topics/why-catholics-ask-saints-to-intercede',
 		catechism: 'CCC 956–958, 1030–1032',
 		values: {
 			catholic: 'The saints intercede for us; Catholics pray for the dead, who may be undergoing purification in purgatory.',
