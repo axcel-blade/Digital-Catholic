@@ -14,6 +14,9 @@ All notable changes to Digital Catholic are documented here.
 - Search: the apostle and the Gospel of Matthew now have distinct titles, and each FAQ question has its own anchor, which opens that answer
 
 ### Added
+- Every topic in the ten topic guides and every Core Catholic Belief now has its own article (`/{guide}/{slug}`, `/core-beliefs/{slug}`) rendered by the shared `GuideArticle` component, with previous/next links and search entries pointing to the article; topics can carry their own public-domain artwork (`public/guides/{guide}/{slug}.jpg`, `public/core-beliefs/{slug}.jpg`), credited in `public/guides/CREDITS.md` and `public/core-beliefs/CREDITS.md`, and otherwise show the guide's artwork
+- Catholic Church History: new topic “Halloween and its Catholic history”, linked from All Saints and All Souls on the Liturgical Calendar
+- Liturgical Calendar: a `commemoration` rank (used for All Souls) and an optional `noteLink` on fixed feasts, shown after the day's note
 - Public-domain artwork at the top of each of the ten topic guides (Caravaggio, Perugino, Raphael, Bosch, Millet, Breton, Murillo, van Eyck, and a painting of the Council of Trent), credited in `public/guides/CREDITS.md`
 - Catholic Glossary (`/glossary`): 47 terms from absolution to viaticum, grouped A–Z, with Catechism references, links to fuller explanations, and a search entry per term
 - Daily Gospel and Reflection (`/daily-gospel`): 32 Gospel scenes, each with the passage in brief, an explanation, and a reflection question; the page shows a different one each day, with previous/next navigation and a link to the day’s Mass readings
