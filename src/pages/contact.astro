@@ -6,7 +6,7 @@ import { PAGE_DESCRIPTIONS, SITE, type BreadcrumbItem } from '../lib/seo';
 import { withBase } from '../lib/paths';
 import { getPublicImage } from '../lib/images';
 
-const contactEmail = 'srikanthfernando3@gmail.com';
+const contactEmail = SITE.contactEmail;
 const emailSubject = 'Digital Catholic enquiry';
 // Web compose link, so the button works even when no desktop mail app is set up.
 const gmailComposeHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent(emailSubject)}`;

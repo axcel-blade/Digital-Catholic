@@ -1,10 +1,19 @@
 ---
 import { withBase } from '../lib/paths';
+import { SITE } from '../lib/seo';
 
 const indexUrl = withBase('/search-index.json');
 ---
 
-<div class="search-panel" id="site-search-panel" hidden data-search-panel data-index-url={indexUrl}>
+<div
+	class="search-panel"
+	id="site-search-panel"
+	hidden
+	data-search-panel
+	data-index-url={indexUrl}
+	data-repo-url={SITE.repoUrl}
+	data-contact-email={SITE.contactEmail}
+>
 	<div class="search-panel__inner">
 		<form class="search-panel__form" role="search" action="#" data-search-form>
 			<label class="search-panel__label" for="site-search-input">Search Digital Catholic</label>
@@ -57,6 +66,8 @@ const indexUrl = withBase('/search-index.json');
 		const form = panel.querySelector<HTMLFormElement>('[data-search-form]')!;
 		const closeButton = panel.querySelector<HTMLButtonElement>('[data-search-close]')!;
 		const indexUrl = panel.dataset.indexUrl ?? '';
+		const repoUrl = panel.dataset.repoUrl ?? '';
+		const contactEmail = panel.dataset.contactEmail ?? '';
 
 		const MIN_QUERY = 2;
 		const MAX_RESULTS = 12;
@@ -166,6 +177,56 @@ const indexUrl = withBase('/search-index.json');
 			activeIndex = -1;
 		}
 
+		/** Invites the reader to request an article on a topic the site does not cover yet. */
+		function requestPrompt(query: string) {
+			const wrapper = document.createElement('span');
+			wrapper.className = 'search-request';
+
+			const text = document.createElement('span');
+			text.className = 'search-request__text';
+			text.textContent = 'Can’t find what you’re looking for? Suggest it as a new article.';
+			wrapper.append(text);
+
+			const actions = document.createElement('span');
+			actions.className = 'search-request__actions';
+
+			if (repoUrl) {
+				const params = new URLSearchParams({
+					template: 'content_request.md',
+					title: `[Content] ${query}`,
+					labels: 'content',
+				});
+				const github = document.createElement('a');
+				github.className = 'search-request__link';
+				github.href = `${repoUrl}/issues/new?${params}`;
+				github.target = '_blank';
+				github.rel = 'noopener noreferrer';
+				github.textContent = 'Request on GitHub';
+				actions.append(github);
+			}
+
+			if (contactEmail) {
+				// Web compose link, matching the contact page, so it works without a desktop mail app.
+				const params = new URLSearchParams({
+					view: 'cm',
+					fs: '1',
+					to: contactEmail,
+					su: `Article request: ${query}`,
+					body: `Hello,\n\nI searched Digital Catholic for “${query}” and found nothing. Could you consider adding an article on this topic?\n\n`,
+				});
+				const email = document.createElement('a');
+				email.className = 'search-request__link';
+				email.href = `https://mail.google.com/mail/?${params}`;
+				email.target = '_blank';
+				email.rel = 'noopener noreferrer';
+				email.textContent = 'Email the maintainer';
+				actions.append(email);
+			}
+
+			wrapper.append(actions);
+			return wrapper;
+		}
+
 		function render(matches: SearchEntry[], terms: string[], query: string) {
 			list.replaceChildren();
 			activeIndex = -1;
@@ -178,6 +239,7 @@ const indexUrl = withBase('/search-index.json');
 				const strong = document.createElement('strong');
 				strong.textContent = `No results for “${query}”.`;
 				status.append(strong, ' Try a shorter word, a saint’s name, or a topic such as “Rosary” or “Baptism”.');
+				status.append(requestPrompt(query));
 				status.classList.add('is-empty');
 				return;
 			}
