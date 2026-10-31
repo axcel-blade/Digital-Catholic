@@ -47,6 +47,7 @@ const topics: Topic[] = [
 	{ href: '/marian-apparitions', label: 'Marian Apparitions', patterns: [/\bapparitions?\b/g] },
 	{ href: '/eucharistic-miracles', label: 'Eucharistic Miracles', patterns: [/\beucharistic miracles?\b/g] },
 	{ href: '/saints/path-to-sainthood', label: 'The path to sainthood', patterns: [/\bcanonis(?:ed|ation)\b/g, /\bbeatifi(?:ed|cation)\b/g] },
+	{ href: '/prayers/memorare', label: 'The Memorare', patterns: [/\bmemorare\b/g] },
 	{ href: '/prayers/prayer-to-st-michael', label: 'Prayer to St. Michael', patterns: [/\bprayer to st\. michael\b/g, /\bst\. michael prayer\b/g] },
 	{ href: '/saints/st-joseph', label: 'St. Joseph', patterns: [/\bst\. joseph\b/g] },
 	{ href: '/disciples/peter', label: 'St. Peter', patterns: [/\bst\. peter\b/g, /\bsimon peter\b/g] },

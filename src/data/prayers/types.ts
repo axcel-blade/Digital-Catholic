@@ -12,5 +12,7 @@ export interface Prayer extends TrustInfo {
 	excerpt: string;
 	/** Full text of the prayer */
 	text: string;
+	/** Slug of a saint page to show as a related link */
+	relatedSaint?: string;
 	sections: PrayerSection[];
 }

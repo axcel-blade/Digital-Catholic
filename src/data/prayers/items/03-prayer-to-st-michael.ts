@@ -7,6 +7,7 @@ const prayer: Prayer = {
 	excerpt:
 		'Short prayer composed by Pope Leo XIII asking St. Michael to defend us in spiritual battle against the wickedness and snares of the devil.',
 	text: 'St. Michael the Archangel, defend us in battle. Be our protection against the wickedness and snares of the devil. May God rebuke him, we humbly pray; and do thou, O Prince of the heavenly host, by the power of God, cast into hell Satan and all the evil spirits who prowl about the world seeking the ruin of souls. Amen.',
+	relatedSaint: 'st-michael-the-archangel',
 	lastReviewed: '2026-10-31',
 	sources: [
 		{ label: 'Wikipedia: Prayer to Saint Michael', url: 'https://en.wikipedia.org/wiki/Prayer_to_Saint_Michael' },
@@ -24,7 +25,7 @@ const prayer: Prayer = {
 			heading: 'When Catholics pray it',
 			paragraphs: [
 				'Many Catholics pray it daily, and a growing number of parishes recite it again after Mass. It is a fitting prayer in times of temptation, fear, or spiritual struggle, and for the protection of the Church and of families.',
-				'The prayer is not an exorcism; it is a simple petition any Christian may offer, trusting that God’s power is far greater than any evil. Learn more about St. Michael on his saint page.',
+				'The prayer is not an exorcism; it is a simple petition any Christian may offer, trusting that God’s power is far greater than any evil.',
 			],
 		},
 	],

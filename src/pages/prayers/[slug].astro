@@ -2,6 +2,7 @@
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import SectionList from '../../components/SectionList.astro';
 import { prayers, type Prayer } from '../../data/prayers';
+import { getSaint } from '../../data/saints';
 import { withBase } from '../../lib/paths';
 import { getNeighbors, getRelated, type ArticleLink } from '../../lib/article';
 
@@ -24,7 +25,11 @@ const toLink = (p: Prayer): ArticleLink => ({
 });
 
 const { prev, next } = getNeighbors(prayers, index);
+const saint = prayer.relatedSaint ? getSaint(prayer.relatedSaint) : undefined;
 const related: ArticleLink[] = [
+	...(saint
+		? [{ href: withBase(`/saints/${saint.slug}`), title: saint.title, label: 'Saint', excerpt: saint.excerpt }]
+		: []),
 	...getRelated(prayers, index).map(toLink),
 	{
 		href: withBase('/rosary'),
