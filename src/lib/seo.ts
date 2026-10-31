@@ -9,6 +9,7 @@ export const SITE = {
 	productionOrigin: 'https://axcel-blade.github.io',
 	productionBase: '/Digital-Catholic/',
 	repoUrl: 'https://github.com/axcel-blade/Digital-Catholic',
+	contactEmail: 'srikanthfernando3@gmail.com',
 	/** Branded 1200×630 social image in /public */
 	ogImagePath: 'og-image.png',
 	ogImageAlt: 'Digital Catholic — Learn the faith. Pray with the Church. Live it daily.',
