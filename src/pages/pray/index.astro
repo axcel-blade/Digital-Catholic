@@ -1,5 +1,6 @@
 ---
-import GuidePage from '../../components/GuidePage.astro';
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import LegacyTopicRedirect from '../../components/LegacyTopicRedirect.astro';
 import EntryCard from '../../components/EntryCard.astro';
 import { prayers, prayersIntro } from '../../data/prayers';
 import { mysterySets, rosaryOriginIntro } from '../../data/rosary';
@@ -14,86 +15,102 @@ const devotions = getGuide('prayers');
 const mysteryCount = mysterySets.reduce((n, s) => n + s.mysteries.length, 0);
 ---
 
-<GuidePage
-	guideKey="prayers"
+<SectionLayout
 	sectionKey="pray"
 	description={PAGE_DESCRIPTIONS.pray}
-	intro={`${prayersIntro} ${devotions.intro}`}
+	intro={prayersIntro}
 	count={`${prayers.length} prayers · ${devotions.topics.length} devotions`}
+	currentPath={Astro.url.pathname}
 >
-	<div slot="lead">
-		<section class="page-section" aria-labelledby="core-prayers">
-			<h2 class="section-title" id="core-prayers">Core prayers</h2>
-			<ul class="prayer-list">
-				{prayers.map((prayer) => (
-					<li class="prayer-card">
-						<h3 class="prayer-card__title">
-							<a class="card__link" href={withBase(`/prayers/${prayer.slug}`)}>{prayer.title}</a>
-						</h3>
-						{prayer.alsoKnownAs && <p class="card__meta">Also called {prayer.alsoKnownAs}</p>}
-						<blockquote class="prayer-text prayer-text--card">{prayer.text}</blockquote>
-						<p class="card__excerpt">{prayer.excerpt}</p>
-						<span class="card__action" aria-hidden="true">Read about this prayer <span class="card__arrow">→</span></span>
-					</li>
-				))}
-			</ul>
-		</section>
-		<section class="page-section" aria-labelledby="rosary">
-			<h2 class="section-title" id="rosary">The Holy Rosary</h2>
-			<ul class="card-grid card-grid--two">
-				<EntryCard
-					href={withBase('/rosary')}
-					title="How to Pray the Rosary"
-					label="Rosary"
-					excerpt={`Step-by-step instructions, the traditional prayers, and all ${mysteryCount} mysteries, with the day each set is prayed.`}
-					action="Pray the Rosary"
-				/>
-				<EntryCard
-					href={withBase('/rosary/origin')}
-					title="Origin of the Rosary"
-					label="Rosary · History"
-					excerpt={rosaryOriginIntro}
-					action="Read article"
-				/>
-			</ul>
-		</section>
-		<section class="page-section" aria-labelledby="daily-gospel">
-			<h2 class="section-title" id="daily-gospel">Daily Gospel and Reflection</h2>
-			<ul class="card-grid card-grid--two">
-				<EntryCard
-					href={withBase('/daily-gospel')}
-					title="Today’s Gospel Reflection"
-					label="Daily prayer"
-					excerpt={dailyGospelIntro}
-					action="Read today’s reflection"
-				/>
-			</ul>
-		</section>
-		<section class="page-section" aria-labelledby="mass">
-			<h2 class="section-title" id="mass">The Holy Mass and Liturgy</h2>
-			<ul class="card-grid card-grid--two">
-				<EntryCard
-					href={withBase('/mass')}
-					title="Holy Mass and Liturgy"
-					label="Liturgy"
-					excerpt={massIntro}
-					action="Explore the Mass"
-				/>
-				<EntryCard
-					href={withBase('/liturgical-calendar')}
-					title="Liturgical Calendar"
-					label="Liturgy"
-					excerpt={liturgicalCalendarIntro}
-					action="Open the calendar"
-				/>
-			</ul>
-		</section>
-		<section class="page-section" aria-labelledby="devotions">
-			<h2 class="section-title" id="devotions">Devotions and practices</h2>
-		</section>
-	</div>
+	<nav class="jump-links" aria-label="Jump to a section" slot="header">
+		<a class="jump-links__link" href="#core-prayers">Core prayers</a>
+		<a class="jump-links__link" href="#rosary">The Holy Rosary</a>
+		<a class="jump-links__link" href="#daily-gospel">Daily Gospel</a>
+		<a class="jump-links__link" href="#mass">Mass and Liturgy</a>
+		<a class="jump-links__link" href="#devotions">Devotions and practices</a>
+	</nav>
+
+	<LegacyTopicRedirect guideKey="prayers" />
+	<section class="page-section" aria-labelledby="core-prayers">
+		<h2 class="section-title" id="core-prayers">Core prayers</h2>
+		<ul class="prayer-list">
+			{prayers.map((prayer) => (
+				<li class="prayer-card">
+					<h3 class="prayer-card__title">
+						<a class="card__link" href={withBase(`/prayers/${prayer.slug}`)}>{prayer.title}</a>
+					</h3>
+					{prayer.alsoKnownAs && <p class="card__meta">Also called {prayer.alsoKnownAs}</p>}
+					<blockquote class="prayer-text prayer-text--card">{prayer.text}</blockquote>
+					<p class="card__excerpt">{prayer.excerpt}</p>
+					<span class="card__action" aria-hidden="true">Read about this prayer <span class="card__arrow">→</span></span>
+				</li>
+			))}
+		</ul>
+	</section>
+	<section class="page-section" aria-labelledby="rosary">
+		<h2 class="section-title" id="rosary">The Holy Rosary</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/rosary')}
+				title="How to Pray the Rosary"
+				label="Rosary"
+				excerpt={`Step-by-step instructions, the traditional prayers, and all ${mysteryCount} mysteries, with the day each set is prayed.`}
+				action="Pray the Rosary"
+			/>
+			<EntryCard
+				href={withBase('/rosary/origin')}
+				title="Origin of the Rosary"
+				label="Rosary · History"
+				excerpt={rosaryOriginIntro}
+				action="Read article"
+			/>
+		</ul>
+	</section>
+	<section class="page-section" aria-labelledby="daily-gospel">
+		<h2 class="section-title" id="daily-gospel">Daily Gospel and Reflection</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/daily-gospel')}
+				title="Today’s Gospel Reflection"
+				label="Daily prayer"
+				excerpt={dailyGospelIntro}
+				action="Read today’s reflection"
+			/>
+		</ul>
+	</section>
+	<section class="page-section" aria-labelledby="mass">
+		<h2 class="section-title" id="mass">The Holy Mass and Liturgy</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/mass')}
+				title="Holy Mass and Liturgy"
+				label="Liturgy"
+				excerpt={massIntro}
+				action="Explore the Mass"
+			/>
+			<EntryCard
+				href={withBase('/liturgical-calendar')}
+				title="Liturgical Calendar"
+				label="Liturgy"
+				excerpt={liturgicalCalendarIntro}
+				action="Open the calendar"
+			/>
+		</ul>
+	</section>
+	<section class="page-section" aria-labelledby="devotions">
+		<h2 class="section-title" id="devotions">Devotions and practices</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/pray/topics')}
+				title="Devotions and Practices"
+				label="Devotion"
+				excerpt={devotions.intro}
+				action={`Read all ${devotions.topics.length} topics`}
+			/>
+		</ul>
+	</section>
 
 	<p class="section-footer-links">
 		See also the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a>.
 	</p>
-</GuidePage>
+</SectionLayout>

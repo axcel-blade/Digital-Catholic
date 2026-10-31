@@ -1,0 +1,17 @@
+---
+import GuidePage from '../../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../../lib/seo';
+import { withBase } from '../../../lib/paths';
+---
+
+<GuidePage
+	guideKey="bible-and-tradition"
+	sectionKey="study"
+	heading="The Bible and Catholic Tradition"
+	extraCrumbs={[{ label: 'Scripture, Tradition, and the Church', href: withBase('/bible-and-tradition') }]}
+	description={PAGE_DESCRIPTIONS.bibleAndTradition}
+>
+	<p class="section-footer-links">
+		Back to <a href={withBase('/bible-and-tradition')}>Scripture, Tradition, and the Church</a>, or open the <a href={withBase('/bible')}>Holy Bible</a>.
+	</p>
+</GuidePage>

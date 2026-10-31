@@ -1,0 +1,17 @@
+---
+import GuidePage from '../../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../../lib/seo';
+import { withBase } from '../../../lib/paths';
+---
+
+<GuidePage
+	guideKey="moral-teaching"
+	sectionKey="study"
+	heading="Moral Teaching"
+	extraCrumbs={[{ label: 'Christian Living', href: withBase('/moral-teaching') }]}
+	description={PAGE_DESCRIPTIONS.moralTeaching}
+>
+	<p class="section-footer-links">
+		Back to <a href={withBase('/moral-teaching')}>Christian Living</a>, or continue with the <a href={withBase('/commandments')}>Ten Commandments</a>.
+	</p>
+</GuidePage>

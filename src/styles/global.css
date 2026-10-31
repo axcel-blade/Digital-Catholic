@@ -284,6 +284,15 @@ mark {
 	margin-top: var(--space-7);
 }
 
+/* Combined hub pages: more air between distinct sections */
+.page-section + .page-section {
+	margin-top: var(--space-8);
+}
+
+.page-section .section-intro {
+	margin: 0 0 var(--space-5);
+}
+
 .section-footer-links {
 	margin-top: var(--space-7);
 	padding-top: var(--space-5);
@@ -1293,6 +1302,15 @@ mark {
 	font-size: var(--text-base);
 	color: var(--color-text-muted);
 	line-height: 1.6;
+}
+
+/* Keep image-card grids scannable: trim long excerpts so cards stay even */
+.card-grid--media .card__excerpt {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	overflow: hidden;
 }
 
 .card__action {

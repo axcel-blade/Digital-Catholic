@@ -1,0 +1,17 @@
+---
+import GuidePage from '../../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../../lib/seo';
+import { withBase } from '../../../lib/paths';
+---
+
+<GuidePage
+	guideKey="mass"
+	sectionKey="pray"
+	heading="Understanding the Liturgy"
+	extraCrumbs={[{ label: 'Holy Mass and Liturgy', href: withBase('/mass') }]}
+	description={PAGE_DESCRIPTIONS.mass}
+>
+	<p class="section-footer-links">
+		Back to <a href={withBase('/mass')}>Holy Mass and Liturgy</a>, or see the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a>.
+	</p>
+</GuidePage>
