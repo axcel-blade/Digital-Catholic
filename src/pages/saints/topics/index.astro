@@ -1,0 +1,18 @@
+---
+import GuidePage from '../../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../../lib/seo';
+import { withBase } from '../../../lib/paths';
+---
+
+<GuidePage
+	guideKey="saints"
+	sectionKey="learn"
+	heading="Mary and the Communion of Saints"
+	extraCrumbs={[{ label: 'Mary and the Saints', href: withBase('/saints') }]}
+	description={PAGE_DESCRIPTIONS.saints}
+>
+	<p class="section-footer-links">
+		Read the <a href={withBase('/saints')}>lives of the saints</a>, or continue with
+		<a href={withBase('/marian-apparitions')}>Marian Apparitions</a> or the <a href={withBase('/rosary')}>Rosary</a>.
+	</p>
+</GuidePage>

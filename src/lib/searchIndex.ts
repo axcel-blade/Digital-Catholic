@@ -1,6 +1,6 @@
 import { commandments, commandmentsIntro } from '../data/commandments';
 import { coreBeliefs, coreBeliefsIntro } from '../data/coreBeliefs';
-import { guides } from '../data/guides';
+import { getGuide, guides } from '../data/guides';
 import { getGuidePage } from '../data/guides/pages';
 import { slugify } from './article';
 import { glossary, glossaryIntro, termId } from '../data/glossary';
@@ -12,7 +12,7 @@ import { dailyGospelIntro, gospelReflections } from '../data/daily-gospel';
 import { getSection } from './sections';
 import { trinityIntro, trinityPersons, trinityScripture, trinityScriptureIntro } from '../data/trinity';
 import { fruitsIntro, giftsIntro, spiritFruits, spiritGifts } from '../data/holySpirit';
-import { massItemsIntro, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
+import { massIntro, massItemsIntro, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
 import {
 	mysterySets,
@@ -601,15 +601,23 @@ export function buildSearchIndex(): SearchEntry[] {
 		);
 	}
 
+	// Hub pages whose guide topics now live on their own /topics page
+	const hubs = [
+		{ title: 'Holy Mass and Liturgy', href: '/mass', label: 'Liturgy', excerpt: massIntro },
+		{ title: 'Christian Living', href: '/moral-teaching', label: 'Morality', excerpt: getGuide('moral-teaching').intro },
+		{ title: 'Scripture, Tradition, and the Church', href: '/bible-and-tradition', label: 'Scripture & Tradition', excerpt: getGuide('bible-and-tradition').intro },
+	];
+	for (const hub of hubs) items.push(entry(hub.title, withBase(hub.href), hub.label, hub.excerpt, [hub.excerpt]));
+
 	// Guides shown as sub-pages of another section rather than as a section of their own
 	const guidePages: Record<string, { title: string; href: string; label: string }> = {
-		apologetics: getSection('study'),
-		prayers: getSection('pray'),
-		saints: { title: 'Mary and the Saints', href: '/saints', label: 'Saints' },
-		mass: { title: 'Holy Mass and Liturgy', href: '/mass', label: 'Liturgy' },
-		'moral-teaching': { title: 'Christian Living', href: '/moral-teaching', label: 'Morality' },
+		apologetics: { title: 'Common Questions', href: '/study/topics', label: 'Apologetics' },
+		prayers: { title: 'Devotions and Practices', href: '/pray/topics', label: 'Devotion' },
+		saints: { title: 'Mary and the Communion of Saints', href: '/saints/topics', label: 'Saints' },
+		mass: { title: 'Understanding the Liturgy', href: '/mass/topics', label: 'Liturgy' },
+		'moral-teaching': { title: 'Moral Teaching', href: '/moral-teaching/topics', label: 'Morality' },
 		'living-the-faith': { title: 'Living the Catholic Faith', href: '/living-the-faith', label: 'Practice' },
-		'bible-and-tradition': { title: 'Scripture, Tradition, and the Church', href: '/bible-and-tradition', label: 'Scripture & Tradition' },
+		'bible-and-tradition': { title: 'The Bible and Catholic Tradition', href: '/bible-and-tradition/topics', label: 'Scripture & Tradition' },
 		'church-history': { title: 'Catholic Church History', href: '/church-history', label: 'History' },
 		'the-church': { title: 'The Catholic Church', href: '/the-church', label: 'Ecclesiology' },
 		'social-teaching': { title: 'Catholic Social Teaching', href: '/social-teaching', label: 'Society' },

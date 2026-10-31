@@ -1,5 +1,6 @@
 ---
-import GuidePage from '../../components/GuidePage.astro';
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import LegacyTopicRedirect from '../../components/LegacyTopicRedirect.astro';
 import EntryCard from '../../components/EntryCard.astro';
 import { massIntro, massPages } from '../../data/mass';
 import { getGuide } from '../../data/guides';
@@ -10,47 +11,62 @@ import { withBase } from '../../lib/paths';
 const liturgy = getGuide('mass');
 ---
 
-<GuidePage
-	guideKey="mass"
+<SectionLayout
 	sectionKey="pray"
 	heading="Holy Mass and Liturgy"
 	description={PAGE_DESCRIPTIONS.mass}
-	intro={`${massIntro} ${liturgy.intro}`}
+	intro={massIntro}
 	count={`${massPages.length} guides · ${liturgy.topics.length} topics`}
+	pageCrumb="Holy Mass and Liturgy"
+	currentPath={Astro.url.pathname}
 >
-	<div slot="lead">
-		<section class="page-section" aria-labelledby="mass-guides">
-			<h2 class="section-title" id="mass-guides">The Mass step by step</h2>
-			<ul class="card-grid card-grid--two">
-				{massPages.map((page) => (
-					<EntryCard
-						href={withBase(page.href)}
-						title={page.title}
-						label="Mass"
-						excerpt={page.excerpt}
-						action={page.action}
-					/>
-				))}
-			</ul>
-		</section>
-		<section class="page-section" aria-labelledby="liturgical-calendar">
-			<h2 class="section-title" id="liturgical-calendar">The Liturgical Calendar</h2>
-			<ul class="card-grid card-grid--two">
+	<nav class="jump-links" aria-label="Jump to a section" slot="header">
+		<a class="jump-links__link" href="#mass-guides">The Mass step by step</a>
+		<a class="jump-links__link" href="#liturgical-calendar">Liturgical Calendar</a>
+		<a class="jump-links__link" href="#liturgy">Understanding the liturgy</a>
+	</nav>
+
+	<LegacyTopicRedirect guideKey="mass" />
+	<section class="page-section" aria-labelledby="mass-guides">
+		<h2 class="section-title" id="mass-guides">The Mass step by step</h2>
+		<ul class="card-grid card-grid--two">
+			{massPages.map((page) => (
 				<EntryCard
-					href={withBase('/liturgical-calendar')}
-					title="Liturgical Calendar"
-					label="Liturgy"
-					excerpt={liturgicalCalendarIntro}
-					action="Open the calendar"
+					href={withBase(page.href)}
+					title={page.title}
+					label="Mass"
+					excerpt={page.excerpt}
+					action={page.action}
 				/>
-			</ul>
-		</section>
-		<section class="page-section" aria-labelledby="liturgy">
-			<h2 class="section-title" id="liturgy">Understanding the liturgy</h2>
-		</section>
-	</div>
+			))}
+		</ul>
+	</section>
+	<section class="page-section" aria-labelledby="liturgical-calendar">
+		<h2 class="section-title" id="liturgical-calendar">The Liturgical Calendar</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/liturgical-calendar')}
+				title="Liturgical Calendar"
+				label="Liturgy"
+				excerpt={liturgicalCalendarIntro}
+				action="Open the calendar"
+			/>
+		</ul>
+	</section>
+	<section class="page-section" aria-labelledby="liturgy">
+		<h2 class="section-title" id="liturgy">Understanding the liturgy</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/mass/topics')}
+				title="Understanding the Liturgy"
+				label="Liturgy"
+				excerpt={liturgy.intro}
+				action={`Read all ${liturgy.topics.length} topics`}
+			/>
+		</ul>
+	</section>
 
 	<p class="section-footer-links">
 		See also the <a href={withBase('/sacraments/eucharist')}>sacrament of the Eucharist</a>.
 	</p>
-</GuidePage>
+</SectionLayout>

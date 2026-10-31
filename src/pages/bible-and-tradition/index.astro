@@ -1,5 +1,6 @@
 ---
-import GuidePage from '../../components/GuidePage.astro';
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import LegacyTopicRedirect from '../../components/LegacyTopicRedirect.astro';
 import EntryCard from '../../components/EntryCard.astro';
 import { getGuide } from '../../data/guides';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
@@ -10,39 +11,54 @@ const church = getGuide('the-church');
 const history = getGuide('church-history');
 ---
 
-<GuidePage
-	guideKey="bible-and-tradition"
+<SectionLayout
 	sectionKey="study"
 	heading="Scripture, Tradition, and the Church"
 	description={PAGE_DESCRIPTIONS.bibleAndTradition}
 	count={`${tradition.topics.length} topics on Scripture and Tradition · ${church.topics.length} on the Church · ${history.topics.length} on Church history`}
+	pageCrumb="Scripture, Tradition, and the Church"
+	intro={tradition.intro}
+	currentPath={Astro.url.pathname}
 >
-	<div slot="lead">
-		<section class="page-section" aria-labelledby="the-church">
-			<h2 class="section-title" id="the-church">The Church and her history</h2>
-			<ul class="card-grid card-grid--two">
-				<EntryCard
-					href={withBase('/the-church')}
-					title="The Catholic Church"
-					label="Ecclesiology"
-					excerpt={church.intro}
-					action={`Read all ${church.topics.length} topics`}
-				/>
-				<EntryCard
-					href={withBase('/church-history')}
-					title="Catholic Church History"
-					label="History"
-					excerpt={history.intro}
-					action="Read the history and timeline"
-				/>
-			</ul>
-		</section>
-		<section class="page-section" aria-labelledby="bible-and-tradition">
-			<h2 class="section-title" id="bible-and-tradition">The Bible and Catholic Tradition</h2>
-		</section>
-	</div>
+	<nav class="jump-links" aria-label="Jump to a section" slot="header">
+		<a class="jump-links__link" href="#the-church">The Church and her history</a>
+		<a class="jump-links__link" href="#bible-and-tradition">The Bible and Catholic Tradition</a>
+	</nav>
+
+	<LegacyTopicRedirect guideKey="bible-and-tradition" />
+	<section class="page-section" aria-labelledby="the-church">
+		<h2 class="section-title" id="the-church">The Church and her history</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/the-church')}
+				title="The Catholic Church"
+				label="Ecclesiology"
+				excerpt={church.intro}
+				action={`Read all ${church.topics.length} topics`}
+			/>
+			<EntryCard
+				href={withBase('/church-history')}
+				title="Catholic Church History"
+				label="History"
+				excerpt={history.intro}
+				action="Read the history and timeline"
+			/>
+		</ul>
+	</section>
+	<section class="page-section" aria-labelledby="bible-and-tradition">
+		<h2 class="section-title" id="bible-and-tradition">The Bible and Catholic Tradition</h2>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/bible-and-tradition/topics')}
+				title="The Bible and Catholic Tradition"
+				label="Scripture & Tradition"
+				excerpt={tradition.intro}
+				action={`Read all ${tradition.topics.length} topics`}
+			/>
+		</ul>
+	</section>
 
 	<p class="section-footer-links">
 		Continue with the <a href={withBase('/bible')}>Holy Bible</a> or <a href={withBase('/core-beliefs')}>Core Catholic Beliefs</a>.
 	</p>
-</GuidePage>
+</SectionLayout>

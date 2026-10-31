@@ -1,0 +1,17 @@
+---
+import GuidePage from '../../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../../lib/seo';
+import { withBase } from '../../../lib/paths';
+---
+
+<GuidePage
+	guideKey="prayers"
+	sectionKey="pray"
+	heading="Devotions and Practices"
+	extraCrumbs={[]}
+	description={PAGE_DESCRIPTIONS.pray}
+>
+	<p class="section-footer-links">
+		Back to <a href={withBase('/pray')}>Prayer and Liturgy</a>, or <a href={withBase('/rosary')}>pray the Rosary</a>.
+	</p>
+</GuidePage>
