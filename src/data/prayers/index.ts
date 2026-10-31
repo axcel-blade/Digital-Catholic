@@ -18,6 +18,7 @@ const prayerOrder = [
 	'angelus',
 	'regina-caeli',
 	'hail-holy-queen',
+	'rosary-concluding-prayer',
 ] as const;
 
 export const prayers = loadCollection<Prayer>(modules).sort(

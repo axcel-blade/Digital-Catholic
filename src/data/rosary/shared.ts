@@ -121,6 +121,7 @@ export const rosaryPrayers = [
 	},
 	{
 		"title": "Concluding prayer",
+		"slug": "rosary-concluding-prayer",
 		"text": "O God, whose only-begotten Son, by his life, death, and resurrection, has purchased for us the rewards of eternal life, grant, we beseech thee, that while meditating on these mysteries of the most holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen."
 	}
 ];

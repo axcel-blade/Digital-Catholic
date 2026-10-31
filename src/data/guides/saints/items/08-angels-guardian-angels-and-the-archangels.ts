@@ -18,6 +18,12 @@ const topic: GuideTopic = {
 			'St. Raphael (“God heals”): guide and healer of Tobias (Tobit 5–12)',
 		],
 	},
+	links: [
+		{ href: '/saints/topics/the-nine-choirs-of-angels', label: 'The nine choirs of angels' },
+		{ href: '/saints/st-michael-the-archangel', label: 'St. Michael the Archangel' },
+		{ href: '/saints/st-gabriel-the-archangel', label: 'St. Gabriel the Archangel' },
+		{ href: '/saints/st-raphael-the-archangel', label: 'St. Raphael the Archangel' },
+	],
 	image: { alt: 'The archangel Michael in armour raising his sword over a dragon-like demon', caption: 'Raphael, St. Michael and the Dragon (c. 1504), Louvre. Public domain.' },
 };
 

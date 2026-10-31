@@ -42,6 +42,7 @@ const topics: Topic[] = [
 	// Mary and the saints
 	{ href: '/saints/blessed-virgin-mary', label: 'The Blessed Virgin Mary', patterns: [/\bvirgin mary\b/g, /\bblessed virgin\b/g, /\bmother of god\b/g, /\btheotokos\b/g] },
 	{ href: '/saints/topics/the-immaculate-conception', label: 'Mary and the Communion of Saints', patterns: [/\bcommunion of saints\b/g, /\bintercession of (?:the )?saints\b/g, /\bimmaculate conception\b/g, /\bassumption of mary\b/g, /\bperpetual virginity\b/g] },
+	{ href: '/saints/topics/the-nine-choirs-of-angels', label: 'The nine choirs of angels', patterns: [/\bchoirs? of angels\b/g, /\bseraphim\b/g, /\bcherubim\b/g] },
 	{ href: '/saints/topics/saints-relics-and-sacramentals', label: 'Saints, relics and sacramentals', patterns: [/\brelics?\b/g, /\bsacramentals?\b/g] },
 	{ href: '/saints/topics/why-catholics-ask-saints-to-intercede', label: 'Why Catholics ask saints to intercede', patterns: [/\b(?:his|her|their) intercession\b/g, /\bintercessor\b/g] },
 	{ href: '/marian-apparitions', label: 'Marian Apparitions', patterns: [/\bapparitions?\b/g] },
