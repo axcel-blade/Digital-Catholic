@@ -5,7 +5,20 @@ export { prayersIntro } from './intro';
 export type * from './types';
 
 const modules = import.meta.glob('./items/*.ts', { eager: true });
-const prayerOrder = ['our-father', 'hail-mary'] as const;
+const prayerOrder = [
+	'sign-of-the-cross',
+	'our-father',
+	'hail-mary',
+	'glory-be',
+	'apostles-creed',
+	'fatima-prayer',
+	'prayer-to-st-michael',
+	'memorare',
+	'guardian-angel-prayer',
+	'angelus',
+	'regina-caeli',
+	'hail-holy-queen',
+] as const;
 
 export const prayers = loadCollection<Prayer>(modules).sort(
 	(a, b) =>

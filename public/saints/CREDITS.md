@@ -14,6 +14,7 @@ Images shown on the Saints pages (`/saints`). All images are from Wikimedia Comm
 | st-christopher.jpg | [Jheronimus Bosch - Saint Christopher - Google Art ProjectFXD (Cropped).jpg](https://commons.wikimedia.org/wiki/File:Jheronimus_Bosch_-_Saint_Christopher_-_Google_Art_ProjectFXD_(Cropped).jpg) | Hieronymus Bosch | Public domain |
 | st-clare-of-assisi.jpg | [SDamiano-Clara.jpg](https://commons.wikimedia.org/wiki/File:SDamiano-Clara.jpg) | Unknown (fresco, San Damiano, Assisi) | Public domain |
 | st-francis-of-assisi.jpg | [StFrancis part.jpg](https://commons.wikimedia.org/wiki/File:StFrancis_part.jpg) | Cimabue (detail) | Public domain |
+| st-gabriel-the-archangel.jpg | [Ghent Altarpiece - Angel of the Annunciation.jpg](https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Angel_of_the_Annunciation.jpg) | Jan van Eyck | Public domain |
 | st-joan-of-arc.jpg | [Joan of Arc miniature graded.jpg](https://commons.wikimedia.org/wiki/File:Joan_of_Arc_miniature_graded.jpg) | Unknown (15th-century miniature) | Public domain |
 | st-john-bosco.jpg | [Don Bosco @ Torino, 1880 (original).jpg](https://commons.wikimedia.org/wiki/File:Don_Bosco_@_Torino,_1880_(original).jpg) | Attributed to Carlo Felice Deasti | Public domain |
 | st-joseph-of-cupertino.jpg | [A Miracle of Saint Joseph of Cupertino (1603–1663) MET DP-12357-001 (cropped).jpg](https://commons.wikimedia.org/wiki/File:A_Miracle_of_Saint_Joseph_of_Cupertino_(1603%E2%80%931663)_MET_DP-12357-001_(cropped).jpg) | Placido Costanzi | CC0 (Metropolitan Museum of Art) |
@@ -24,6 +25,7 @@ Images shown on the Saints pages (`/saints`). All images are from Wikimedia Comm
 | st-patrick.jpg | [Our Lady's Island Church of the Assumption East Aisle Window Saint Patrick 2010 09 26.jpg](https://commons.wikimedia.org/wiki/File:Our_Lady%27s_Island_Church_of_the_Assumption_East_Aisle_Window_Saint_Patrick_2010_09_26.jpg) | Andreas F. Borchert | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
 | st-paul-the-apostle.jpg | [Fresco of Saint Paul at Ephesus.jpg](https://commons.wikimedia.org/wiki/File:Fresco_of_Saint_Paul_at_Ephesus.jpg) | Unknown (ancient fresco, Grotto of St. Paul, Ephesus) | Public domain |
 | st-philip-neri.jpg | [Guido Reni - St Filippo Neri in Ecstasy - WGA19295.jpg](https://commons.wikimedia.org/wiki/File:Guido_Reni_-_St_Filippo_Neri_in_Ecstasy_-_WGA19295.jpg) | Guido Reni | Public domain |
+| st-raphael-the-archangel.jpg | [Saint Raphael.JPG](https://commons.wikimedia.org/wiki/File:Saint_Raphael.JPG) | Bartolomé Esteban Murillo | Public domain |
 | st-rita-of-cascia.jpg | [Santa Rita da Cascia.jpg](https://commons.wikimedia.org/wiki/File:Santa_Rita_da_Cascia.jpg) | Unknown | Public domain |
 | st-teresa-of-calcutta.jpg | [Mother Teresa 1.jpg](https://commons.wikimedia.org/wiki/File:Mother_Teresa_1.jpg) | Kingkongphoto & www.celebrity-photos.com | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) |
 | st-therese-of-lisieux.jpg | [Teresa-de-Lisieux.jpg](https://commons.wikimedia.org/wiki/File:Teresa-de-Lisieux.jpg) | Céline Martin | Public domain |
