@@ -1,0 +1,31 @@
+---
+import { getGuide } from '../data/guides';
+import { getGuidePage } from '../data/guides/pages';
+import { withBase } from '../lib/paths';
+import { slugify } from '../lib/article';
+
+interface Props {
+	/** Guide whose topics used to be listed on this hub page */
+	guideKey: string;
+	/** Old section anchor (e.g. #communion-of-saints) that now lives on the guide's own page */
+	sectionId?: string;
+}
+
+const { guideKey, sectionId } = Astro.props;
+const guide = getGuide(guideKey);
+const { href, articleBase } = getGuidePage(guideKey);
+const articleHref = (title: string) => withBase(`${articleBase}/${slugify(title)}`);
+// Old in-page anchors (#slug, #topic-N, or the section id) from when the topics were on the hub page
+const legacyAnchors = Object.fromEntries([
+	...(sectionId ? [[sectionId, withBase(href)]] : []),
+	...guide.topics.flatMap((t) => [
+		[slugify(t.title), articleHref(t.title)],
+		[`topic-${t.number}`, articleHref(t.title)],
+	]),
+]);
+---
+
+<script is:inline define:vars={{ legacyAnchors }}>
+	const target = legacyAnchors[location.hash.slice(1)];
+	if (target) location.replace(target);
+</script>

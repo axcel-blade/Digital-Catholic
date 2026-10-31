@@ -1,0 +1,17 @@
+---
+import GuidePage from '../../../components/GuidePage.astro';
+import { PAGE_DESCRIPTIONS } from '../../../lib/seo';
+import { withBase } from '../../../lib/paths';
+---
+
+<GuidePage
+	guideKey="apologetics"
+	sectionKey="study"
+	heading="Common Questions"
+	extraCrumbs={[]}
+	description={PAGE_DESCRIPTIONS.study}
+>
+	<p class="section-footer-links">
+		Back to <a href={withBase('/study')}>Study the Faith</a>, or <a href={withBase('/ask-a-catholic-question')}>ask a Catholic question</a>.
+	</p>
+</GuidePage>
