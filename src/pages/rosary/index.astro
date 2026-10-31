@@ -55,7 +55,9 @@ import { withBase } from '../../lib/paths';
 		<ul class="prayer-list">
 			{rosaryPrayers.map((prayer) => (
 				<li class="prayer-card prayer-card--static">
-					<h3 class="prayer-card__title">{prayer.title}</h3>
+					<h3 class="prayer-card__title">
+						{'slug' in prayer ? <a href={withBase(`/prayers/${prayer.slug}`)}>{prayer.title}</a> : prayer.title}
+					</h3>
 					<blockquote class="prayer-text prayer-text--card">{prayer.text}</blockquote>
 				</li>
 			))}

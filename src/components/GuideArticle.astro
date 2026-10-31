@@ -5,6 +5,8 @@ import { getGuide, type GuideTopic } from '../data/guides';
 import { getGuidePage, type GuidePageConfig } from '../data/guides/pages';
 import { guideImages } from '../data/guides/images';
 import { getCollectionImage } from '../lib/images';
+import { prayers } from '../data/prayers';
+import { resolveGuideTopic } from '../lib/guideTopics';
 import { withBase } from '../lib/paths';
 import { getNeighbors, getRelated, slugify, type ArticleLink } from '../lib/article';
 
@@ -58,7 +60,12 @@ const relatedText = [...topic.meaning, ...(topic.points?.items ?? []), ...(topic
 	imageCaption={imageCaption}
 	prev={prev && toLink(prev)}
 	next={next && toLink(next)}
-	related={getRelated(topics, index, 3).map(toLink)}
+	related={[
+		...prayers
+			.filter((p) => p.relatedGuideTopic && resolveGuideTopic(p.relatedGuideTopic)?.path === `${page.articleBase}/${slug}`)
+			.map((p) => ({ href: withBase(`/prayers/${p.slug}`), title: p.title, label: 'Prayer', excerpt: p.excerpt })),
+		...getRelated(topics, index, 3).map(toLink),
+	]}
 	relatedText={relatedText}
 >
 	<ReferenceLine scripture={topic.scripture} catechism={topic.catechism} />

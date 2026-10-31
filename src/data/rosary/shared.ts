@@ -86,34 +86,42 @@ export const rosaryHowToSteps = [
 export const rosaryPrayers = [
 	{
 		"title": "Sign of the Cross",
+		"slug": "sign-of-the-cross",
 		"text": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen."
 	},
 	{
 		"title": "Apostles’ Creed",
+		"slug": "apostles-creed",
 		"text": "I believe in God, the Father almighty, Creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried; he descended into hell; on the third day he rose again from the dead; he ascended into heaven, and is seated at the right hand of God the Father almighty; from there he will come to judge the living and the dead. I believe in the Holy Spirit, the holy catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."
 	},
 	{
 		"title": "Our Father",
+		"slug": "our-father",
 		"text": ourFather.text
 	},
 	{
 		"title": "Hail Mary",
+		"slug": "hail-mary",
 		"text": hailMary.text
 	},
 	{
 		"title": "Glory Be",
+		"slug": "glory-be",
 		"text": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen."
 	},
 	{
 		"title": "Fatima Prayer (after each decade)",
+		"slug": "fatima-prayer",
 		"text": "O my Jesus, forgive us our sins, save us from the fires of hell; lead all souls to heaven, especially those in most need of thy mercy."
 	},
 	{
 		"title": "Hail Holy Queen",
+		"slug": "hail-holy-queen",
 		"text": "Hail, holy Queen, Mother of Mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve; to thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy towards us, and after this our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary. Pray for us, O holy Mother of God, that we may be made worthy of the promises of Christ."
 	},
 	{
 		"title": "Concluding prayer",
+		"slug": "rosary-concluding-prayer",
 		"text": "O God, whose only-begotten Son, by his life, death, and resurrection, has purchased for us the rewards of eternal life, grant, we beseech thee, that while meditating on these mysteries of the most holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen."
 	}
 ];
