@@ -73,29 +73,29 @@ All content lives in TypeScript modules under `src/data/` — one file per artic
 
 ## Running locally
 
-**Requires:** Node.js 22.12 or newer
+**Requires:** Node.js 22.12 or newer, and [pnpm](https://pnpm.io) 12
 
 ```sh
 git clone https://github.com/axcel-blade/Digital-Catholic.git
 cd Digital-Catholic
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 Open [http://localhost:4321](http://localhost:4321).
 
 | Command | What it does |
 | --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Production build to `dist/` |
-| `npm run preview` | Serve the production build locally |
+| `pnpm run dev` | Start the development server |
+| `pnpm run build` | Production build to `dist/` |
+| `pnpm run preview` | Serve the production build locally |
 
 ### GitHub Pages base path
 
 The live site is served from `/Digital-Catholic/`. The deploy workflow sets `ASTRO_SITE` and `ASTRO_BASE` automatically. To reproduce the production build:
 
 ```sh
-ASTRO_SITE=https://axcel-blade.github.io ASTRO_BASE=/Digital-Catholic/ npm run build
+ASTRO_SITE=https://axcel-blade.github.io ASTRO_BASE=/Digital-Catholic/ pnpm run build
 ```
 
 > **Windows note:** with Astro 6.3.3, building with a non-root `ASTRO_BASE` on Windows fails with `Missing parameter: slug`. The same build succeeds on Linux (including CI). On Windows, build at the root path, or run the base-path build in Docker (below) or WSL.
@@ -114,7 +114,7 @@ docker compose up --build
 
 Open [http://localhost:8080](http://localhost:8080).
 
-The image is a multi-stage build: Node 22 runs `npm ci` and `npm run build`, and the static output in `dist/` is served by nginx (config in `docker/nginx.conf`). To build and run the image without Compose:
+The image is a multi-stage build: Node 22 runs `pnpm install --frozen-lockfile` and `pnpm run build`, and the static output in `dist/` is served by nginx (config in `docker/nginx.conf`). To build and run the image without Compose:
 
 ```sh
 docker build -t digital-catholic .
