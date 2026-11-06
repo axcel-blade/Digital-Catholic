@@ -13,7 +13,7 @@
 ## Checklist
 
 - [ ] Branch is based on `develop` (not `main`)
-- [ ] `npm run build` passes without errors
+- [ ] `pnpm run build` passes without errors
 - [ ] Content is accurate and aligned with Catholic teaching
 - [ ] Any Church status or source is supported by the article text or a checked reference
 - [ ] New pages checked with the keyboard, on mobile, and in light and dark themes
