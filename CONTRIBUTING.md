@@ -43,7 +43,7 @@ git checkout develop
 git pull origin develop
 git checkout -b feature/your-topic
 # edit src/data/, src/pages/, etc.
-npm run build
+pnpm run build
 git add <files>
 git commit -m "feat: describe your change"
 git push -u origin feature/your-topic
@@ -121,7 +121,7 @@ For an overview of how content, pages, search, and deployment fit together, read
 - **Search:** new items in existing sections are picked up automatically. Update `src/lib/searchIndex.ts` only if you add a wholly new section or page type.
 - **Markdown files:** always update relevant `.md` files (README, CHANGELOG, etc.) when making structural or content changes.
 
-Keep copy accurate, respectful, and aligned with Catholic teaching. Run `npm run build` before submitting a pull request, and check new pages with the keyboard and in both light and dark themes.
+Keep copy accurate, respectful, and aligned with Catholic teaching. Run `pnpm run build` before submitting a pull request, and check new pages with the keyboard and in both light and dark themes.
 
 > **Windows:** building with `ASTRO_BASE=/Digital-Catholic/` fails locally with Astro 6.3.3 (`Missing parameter: slug`) but works on Linux and in CI. Build at the root path, or use Docker or WSL for a base-path build.
 

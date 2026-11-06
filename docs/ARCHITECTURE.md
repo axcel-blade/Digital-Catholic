@@ -150,9 +150,9 @@ All content is readable without JavaScript. Scripts add:
 
 ## Build and development
 
-- `npm run dev` — Astro dev server. A small Vite plugin in `astro.config.mjs` restarts the server whenever `src/data/` changes, so new items get their `getStaticPaths()` routes without a manual restart.
-- `npm run build` — static output in `dist/`.
-- `npm run preview` — serve `dist/` locally.
+- `pnpm run dev` — Astro dev server. A small Vite plugin in `astro.config.mjs` restarts the server whenever `src/data/` changes, so new items get their `getStaticPaths()` routes without a manual restart.
+- `pnpm run build` — static output in `dist/`.
+- `pnpm run preview` — serve `dist/` locally.
 - On Windows, a build with a non-root `ASTRO_BASE` fails with Astro 6.3.3 (`Missing parameter: slug`); the same build succeeds on Linux and in CI. Use Docker or WSL to reproduce the GitHub Pages build locally.
 - `scripts/split-data.ts` — one-off script that split the old single-file data modules into per-item files. It is not part of the build.
 
@@ -164,8 +164,8 @@ All content is readable without JavaScript. Scripts add:
 
 `.github/workflows/cd.yml` runs on every push to `main`:
 
-1. `npm ci`
-2. `npm run build` with `ASTRO_SITE=https://<owner>.github.io` and `ASTRO_BASE=/<repo>/`
+1. `pnpm install --frozen-lockfile`
+2. `pnpm run build` with `ASTRO_SITE=https://<owner>.github.io` and `ASTRO_BASE=/<repo>/`
 3. Upload `dist/` as a Pages artifact and deploy it
 
 `.github/workflows/ci.yml` runs the same build as a check. `.github/workflows/pr-base-branch.yml` rejects pull requests into `main` that do not come from the integration branch.
@@ -174,7 +174,7 @@ All content is readable without JavaScript. Scripts add:
 
 A multi-stage `Dockerfile`:
 
-1. **Build stage** (`node:22-alpine`): `npm ci` and `npm run build`. The build arguments `ASTRO_SITE` and `ASTRO_BASE` (default `/`) are passed through.
+1. **Build stage** (`node:22-alpine`): `pnpm install --frozen-lockfile` and `pnpm run build`. The build arguments `ASTRO_SITE` and `ASTRO_BASE` (default `/`) are passed through.
 2. **Runtime stage** (`nginx:1.27-alpine`): serves `dist/` using `docker/nginx.conf`:
    - `try_files $uri $uri/ $uri.html` resolves Astro's directory-style routes
    - gzip for text assets

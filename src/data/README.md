@@ -47,7 +47,7 @@ Each folder has:
 1. Copy an existing file in `saints/items/`, e.g. `st-joseph.ts`, and rename it to your slug: `st-francis-of-assisi.ts`.
 2. Edit the object: `slug`, `title`, `excerpt`, optional `status` (`Servant of God`, `Venerable`, `Blessed`, or `Saint`; defaults to `Saint`), `lifeDates`, `feastDays`, and `sections` (include **Full biography** and **Death and legacy** before any closing lesson section). Add **Miracles** and **Relics** sections, before Death and legacy, only when the saint has documented miracles or known relics, and cite them in `sources`.
 3. Add a photo at `public/saints/st-francis-of-assisi.jpg`.
-4. Run `npm run build`.
+4. Run `pnpm run build`.
 
 The new saint appears on `/saints` and in search automatically—no need to edit `index.ts`. Do not use the slug `path-to-sainthood`; it is reserved for the page explaining each stage, whose text lives in `saints/path.ts`.
 

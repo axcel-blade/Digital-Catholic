@@ -24,4 +24,4 @@ The maintainer will acknowledge your report within 7 days and aim to resolve con
 
 This project intentionally uses minimal dependencies. No open-source UI libraries, authentication packages, or data-fetching libraries are included. The only runtime dependencies are `astro` and `@astrojs/sitemap`.
 
-Keep dependencies up to date by running `npm audit` periodically and updating `package.json` as needed. The Docker image builds on `node:22-alpine` and `nginx:1.27-alpine`; bump these base image tags in the `Dockerfile` when security updates are released.
+Keep dependencies up to date by running `pnpm audit` periodically and updating `package.json` as needed. The Docker image builds on `node:22-alpine` and `nginx:1.27-alpine`; bump these base image tags in the `Dockerfile` when security updates are released.
