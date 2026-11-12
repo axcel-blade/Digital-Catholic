@@ -6,12 +6,21 @@ import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 import type { ArticleLink } from '../../lib/article';
 
-const related: ArticleLink[] = mysterySets.slice(0, 3).map((set) => ({
-	href: withBase(`/rosary/${set.slug}`),
-	title: set.title,
-	label: `Prayed on ${set.days}`,
-	excerpt: set.excerpt,
-}));
+const related: ArticleLink[] = [
+	{
+		href: withBase('/rosary/promises'),
+		title: 'The 15 Promises of the Rosary',
+		label: 'Rosary · Devotion',
+		excerpt:
+			'Traditional spiritual blessings reportedly given by the Blessed Virgin Mary to Saint Dominic and Blessed Alan de la Roche.',
+	},
+	...mysterySets.slice(0, 2).map((set) => ({
+		href: withBase(`/rosary/${set.slug}`),
+		title: set.title,
+		label: `Prayed on ${set.days}`,
+		excerpt: set.excerpt,
+	})),
+];
 ---
 
 <ArticleLayout

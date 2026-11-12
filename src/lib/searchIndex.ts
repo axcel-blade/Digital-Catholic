@@ -22,6 +22,8 @@ import {
 	rosaryMysterySchedule,
 	rosaryOriginIntro,
 	rosaryOriginSections,
+	rosaryPromises,
+	rosaryPromisesIntro,
 	rosaryPrayers,
 } from '../data/rosary';
 import { eucharisticMiracles, eucharisticMiraclesIntro } from '../data/eucharisticMiracles';
@@ -334,6 +336,16 @@ export function buildSearchIndex(): SearchEntry[] {
 			[
 				rosaryOriginIntro,
 				...rosaryOriginSections.flatMap((s) => [s.heading, ...s.paragraphs]),
+			],
+		),
+		entry(
+			'The 15 Promises of the Rosary',
+			withBase('/rosary/promises'),
+			'Rosary',
+			rosaryPromisesIntro,
+			[
+				rosaryPromisesIntro,
+				...rosaryPromises.map((p) => p.text),
 			],
 		),
 		entry(

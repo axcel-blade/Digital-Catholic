@@ -230,6 +230,7 @@ const articleRefs: Record<string, ReferenceSet> = {
 	'prayers/our-father': { catechism: 'CCC 2759–2865', scripture: ['Matthew 6:9–13', 'Luke 11:2–4'] },
 	'prayers/hail-mary': { catechism: 'CCC 2676–2678', scripture: ['Luke 1:28', 'Luke 1:42'] },
 	'rosary/origin': { catechism: 'CCC 971, 2708' },
+	'rosary/promises': { catechism: 'CCC 971, 2678, 2708' },
 	'mass/order-of-mass': { catechism: 'CCC 1345–1390' },
 	'miracles/shroud-of-turin': { catechism: 'CCC 1674–1676', scripture: ['Mark 15:46', 'John 20:5–7'] },
 	'miracles/veil-of-veronica': { catechism: 'CCC 1674–1676', scripture: ['Luke 23:27–31'] },
