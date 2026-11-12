@@ -1,0 +1,89 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import { getLegalPage, legalHref } from '../../lib/legal';
+import { SITE } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const page = getLegalPage('disclaimer')!;
+---
+
+<LegalLayout
+	page={page}
+	intro="Please read this disclaimer alongside the Terms of Use and Copyright Policy."
+>
+	<div class="callout">
+		<p>
+			This disclaimer explains the independent and educational nature of Digital Catholic. It is
+			<strong>not</strong> permission to publish inaccurate Catholic doctrine, and it does not reduce
+			our responsibility to correct errors when they are identified.
+		</p>
+	</div>
+
+	<h2>1. Independent resource</h2>
+	<p>
+		Digital Catholic is an <strong>independent</strong> Catholic educational and devotional resource. It
+		is not an official publication of the Holy See, the Vatican, a diocese, a parish, a religious order,
+		or any other ecclesiastical authority, unless a specific affiliation is expressly stated and verified
+		on the relevant page.
+	</p>
+
+	<h2>2. No implied ecclesiastical endorsement</h2>
+	<p>
+		References to Scripture, the Catechism, councils, popes, saints, apparitions, or liturgical practice
+		do not imply that any Church authority has reviewed, approved, or endorsed this Website as a whole.
+		Church status labels on individual articles (where present) reflect only what that article reports
+		about a particular event or devotion.
+	</p>
+
+	<h2>3. Educational and devotional purpose</h2>
+	<p>
+		Content is offered to support learning, prayer, catechesis, and informed curiosity about the Catholic
+		faith. It is written to be accessible, not to replace formal theological study or sacramental life in
+		the Church.
+	</p>
+
+	<h2>4. Not a substitute for Church teaching or pastoral care</h2>
+	<p>
+		Nothing on Digital Catholic replaces the Magisterium of the Catholic Church, the guidance of your
+		bishop or parish priest, the Sacrament of Reconciliation, spiritual direction, or professional advice
+		(including legal, medical, or counselling advice). For matters of conscience, doctrine, or pastoral
+		need, consult competent Church authority and, where appropriate, qualified professionals.
+	</p>
+
+	<h2>5. Scripture and doctrinal references</h2>
+	<p>
+		Scripture citations, Catechism paragraph numbers, and summaries of doctrine should be checked against
+		authoritative editions and translations approved for your region. Brief quotations and paraphrases on
+		this site are aids to reading, not critical editions.
+	</p>
+
+	<h2>6. History, apparitions, and miracles</h2>
+	<p>
+		Historical narratives and reports of apparitions or miracles may carry different levels of
+		ecclesiastical recognition. Where articles include a Church status note, read it carefully. The Church
+		does not require belief in private revelations. Always distinguish public revelation and defined
+		doctrine from private revelation and pious tradition.
+	</p>
+
+	<h2>7. Liturgical calendars and local practice</h2>
+	<p>
+		Liturgical calendars, feast ranks, readings, and customs can vary by rite, particular calendar, and
+		local diocesan practice. Information on this Website may follow the General Roman Calendar or other
+		stated conventions and may not match every parish schedule.
+	</p>
+
+	<h2>8. Accuracy and currency</h2>
+	<p>
+		We aim for accuracy and reverence, but we do not guarantee that every page is complete, error-free, or
+		up to date. Theology, historical scholarship, and liturgical norms can be nuanced; summaries may omit
+		detail.
+	</p>
+
+	<h2>9. Corrections welcome</h2>
+	<p>
+		If you find an error or have a doctrinal, historical, or attribution concern, please tell us using the
+		<a href={legalHref('corrections')}>Content Corrections &amp; Copyright Requests</a> procedure or the
+		<a href={withBase('/contact')}>Contact</a> page
+		(<a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>).
+	</p>
+</LegalLayout>

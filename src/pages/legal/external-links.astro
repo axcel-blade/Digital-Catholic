@@ -1,0 +1,72 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import { getLegalPage, legalHref } from '../../lib/legal';
+import { SITE } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const page = getLegalPage('external-links')!;
+---
+
+<LegalLayout
+	page={page}
+	intro="Links help readers go deeper. They do not transfer control or automatic endorsement."
+>
+	<h2>1. Links to external Catholic resources</h2>
+	<p>
+		Digital Catholic may link to catechetical materials, Scripture resources, liturgical references,
+		historical sources, and other Catholic educational sites to help readers verify and deepen what they
+		read here.
+	</p>
+
+	<h2>2. Official Church resources</h2>
+	<p>
+		Links to websites of the Holy See, bishops’ conferences, dioceses, religious orders, or similar bodies
+		are provided for convenience and reference. Those organisations speak for themselves. A link does not
+		make Digital Catholic an official channel of that body.
+	</p>
+
+	<h2>3. Third-party websites</h2>
+	<p>
+		The Website also links to non-Church third parties where useful for the project—for example the
+		public GitHub repository at
+		<a href={SITE.repoUrl} rel="noopener noreferrer" target="_blank">{SITE.repoUrl}<span class="visually-hidden"> (opens in a new tab)</span></a>,
+		image source pages, or email compose services you choose to open from the
+		<a href={withBase('/contact')}>Contact</a> page.
+	</p>
+
+	<h2>4. Independent ownership</h2>
+	<p>
+		External websites are owned and operated by their respective publishers. Digital Catholic does not
+		control their content, availability, policies, or security practices.
+	</p>
+
+	<h2>5. No guarantee of availability or accuracy</h2>
+	<p>
+		External pages may move, change, or go offline without notice. We do not guarantee that linked content
+		remains accurate, complete, orthodox, or appropriate. Readers should exercise discernment and prefer
+		authoritative editions for doctrine and liturgy.
+	</p>
+
+	<h2>6. Links are not automatic endorsement</h2>
+	<p>
+		A hyperlink does not by itself mean that Digital Catholic endorses every statement, product, fundraising
+		appeal, or theological opinion on the destination site. Conversely, the absence of a link does not
+		imply disapproval.
+	</p>
+
+	<h2>7. Security and privacy when visiting external sites</h2>
+	<p>
+		When you leave Digital Catholic, the destination site may set cookies, collect personal information, or
+		serve different security configurations. Review that site’s privacy notice and use caution with
+		downloads, forms, and payments. See also our
+		<a href={legalHref('privacy-policy')}>Privacy Policy</a>
+		for practices on this Website itself.
+	</p>
+
+	<h2>8. Reporting problematic links</h2>
+	<p>
+		If a link is broken, misleading, or points to harmful material, please report it via
+		<a href={legalHref('corrections')}>Content Corrections</a>
+		or <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.
+	</p>
+</LegalLayout>

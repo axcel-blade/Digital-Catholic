@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import LegalDocNav from '../../components/LegalDocNav.astro';
+import {
+	LEGAL_LAST_UPDATED,
+	LEGAL_LAST_UPDATED_ISO,
+	legalHref,
+	legalPages,
+} from '../../lib/legal';
+import { PAGE_DESCRIPTIONS, type BreadcrumbItem } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const breadcrumbs: BreadcrumbItem[] = [
+	{ label: 'Home', href: withBase('/') },
+	{ label: 'Legal & Policies' },
+];
+---
+
+<BaseLayout
+	title="Legal & Policies"
+	description={PAGE_DESCRIPTIONS.legal}
+	currentPath={Astro.url.pathname}
+	breadcrumbs={breadcrumbs}
+>
+	<div class="container section-page legal-page">
+		<PageHeader
+			breadcrumbs={breadcrumbs}
+			label="Legal & Policies"
+			title="Legal & Policies"
+			intro="Terms, privacy, copyright, disclaimers, and how to request corrections for Digital Catholic."
+		/>
+
+		<div class="legal-layout">
+			<aside class="legal-layout__aside">
+				<LegalDocNav />
+			</aside>
+
+			<div class="legal-layout__body">
+				<p class="legal-landing__lede">
+					Digital Catholic is an independent Catholic educational and devotional resource. The documents
+					below explain how you may use the site, how visitor information is handled, and the limits of
+					our content. They are drafts prepared for transparency and should be reviewed by an Australian
+					legal professional before being relied upon as formal legal advice.
+				</p>
+
+				<p class="legal-nav__updated legal-landing__updated">
+					Documents last updated:
+					<time datetime={LEGAL_LAST_UPDATED_ISO}>{LEGAL_LAST_UPDATED}</time>
+				</p>
+
+				<ul class="legal-doc-list">
+					{legalPages.map((page) => (
+						<li class="legal-doc-list__item">
+							<h2 class="legal-doc-list__title">
+								<a href={legalHref(page.slug)}>{page.title}</a>
+							</h2>
+							<p class="legal-doc-list__summary">{page.summary}</p>
+							<a class="legal-doc-list__action" href={legalHref(page.slug)}>
+								Read {page.navLabel}<span aria-hidden="true"> →</span>
+							</a>
+						</li>
+					))}
+				</ul>
+
+				<div class="callout">
+					<p>
+						Questions about these documents, or requests for correction, can be sent through the
+						<a href={withBase('/contact')}>Contact</a> page or the
+						<a href={legalHref('corrections')}>Content Corrections</a> procedure.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</BaseLayout>

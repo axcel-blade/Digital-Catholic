@@ -1,0 +1,114 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import { getLegalPage, legalHref } from '../../lib/legal';
+import { SITE } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const page = getLegalPage('terms-of-use')!;
+---
+
+<LegalLayout page={page} intro="Please read these terms before using Digital Catholic.">
+	<h2>1. Acceptance of terms</h2>
+	<p>
+		By accessing or using Digital Catholic (the “Website”), you agree to these Terms of Use. If you do
+		not agree, please do not use the Website. These terms should be read together with our
+		<a href={legalHref('privacy-policy')}>Privacy Policy</a>,
+		<a href={legalHref('disclaimer')}>Religious &amp; Educational Disclaimer</a>,
+		<a href={legalHref('copyright')}>Copyright &amp; Intellectual Property Policy</a>, and
+		<a href={legalHref('external-links')}>External Links Disclaimer</a>.
+	</p>
+
+	<h2>2. Website purpose and permitted usage</h2>
+	<p>
+		Digital Catholic is a free, static educational and devotional library that presents Catholic teaching,
+		Scripture-related resources, prayer, liturgy, and related topics in accessible language. You may:
+	</p>
+	<ul>
+		<li>Browse, read, and privately share links to pages for personal, educational, catechetical, or pastoral use.</li>
+		<li>Quote short excerpts with clear attribution to Digital Catholic and the page URL, subject to third-party rights described in the Copyright Policy.</li>
+		<li>Use the Website in a manner consistent with applicable law and these terms.</li>
+	</ul>
+
+	<h2>3. User responsibilities</h2>
+	<p>When using the Website, you agree to:</p>
+	<ul>
+		<li>Use the content lawfully and respectfully.</li>
+		<li>Not misrepresent Digital Catholic as an official Church publication or claim ecclesiastical endorsement that does not exist.</li>
+		<li>Check important doctrinal, liturgical, or pastoral matters against authoritative Church sources and competent pastoral guidance.</li>
+		<li>Provide accurate information if you contact us, and not submit unlawful, abusive, or infringing material.</li>
+	</ul>
+
+	<h2>4. Prohibited activities</h2>
+	<p>You must not:</p>
+	<ul>
+		<li>Attempt to disrupt, scrape aggressively, overload, or interfere with the Website or its hosting infrastructure.</li>
+		<li>Use the Website to distribute malware, phishing content, or other harmful material.</li>
+		<li>Reproduce substantial portions of the Website’s original content for commercial publication without permission, except as permitted by law or an applicable licence.</li>
+		<li>Remove or obscure copyright, attribution, or licence notices associated with content or images.</li>
+		<li>Impersonate the maintainer, claim false affiliation with the Catholic Church, or use the Website to deceive others.</li>
+	</ul>
+
+	<h2>5. Intellectual property ownership</h2>
+	<p>
+		Original text, site design, branding, and compilation on Digital Catholic are protected by copyright
+		and related rights. Third-party images, Scripture translations, prayers, and Church documents remain
+		subject to their own ownership and licences. See the
+		<a href={legalHref('copyright')}>Copyright &amp; Intellectual Property Policy</a> for details.
+	</p>
+
+	<h2>6. Third-party content and resources</h2>
+	<p>
+		Some pages summarise, quote, or link to Scripture, Catechism references, historical sources, and other
+		materials. Inclusion does not transfer ownership of those materials to Digital Catholic, and accuracy
+		should be verified against authoritative editions.
+	</p>
+
+	<h2>7. External website links</h2>
+	<p>
+		The Website may link to official Church websites, GitHub, and other independent resources. Those sites
+		are not controlled by Digital Catholic. See the
+		<a href={legalHref('external-links')}>External Links Disclaimer</a>.
+	</p>
+
+	<h2>8. Website availability and maintenance</h2>
+	<p>
+		The Website is provided on an “as available” basis. It may be updated, corrected, suspended, or
+		withdrawn at any time for maintenance, security, hosting changes, or content review. We do not
+		guarantee uninterrupted access or that every page will remain permanently available at the same URL.
+	</p>
+
+	<h2>9. Limitation of liability</h2>
+	<p>
+		To the fullest extent permitted by law, Digital Catholic and its maintainer are not liable for loss or
+		damage arising from your use of, or inability to use, the Website, including reliance on educational or
+		devotional content, downtime, or third-party sites.
+	</p>
+	<p>
+		Nothing in these terms excludes, restricts, or modifies any consumer guarantee, right, or remedy that
+		cannot be excluded under the Australian Consumer Law or other applicable mandatory law. Where liability
+		cannot be excluded but can be limited, liability is limited to re-supply of the relevant services or
+		payment of the cost of re-supply, as permitted by law.
+	</p>
+
+	<h2>10. Changes to the terms</h2>
+	<p>
+		We may update these Terms of Use from time to time. The “Last updated” date on this page will change
+		when revisions are published. Continued use of the Website after changes are posted constitutes
+		acceptance of the updated terms, to the extent permitted by law.
+	</p>
+
+	<h2>11. Governing law</h2>
+	<p>
+		These terms are governed by the laws of Western Australia and the applicable laws of the Commonwealth
+		of Australia. Subject to any non-excludable rights you may have, courts in Western Australia will have
+		non-exclusive jurisdiction over disputes arising from these terms or your use of the Website.
+	</p>
+
+	<h2>12. Contact information</h2>
+	<p>
+		For questions about these terms, email
+		<a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>
+		or use the <a href={withBase('/contact')}>Contact</a> page. Copyright and correction requests should
+		follow the <a href={legalHref('corrections')}>Content Corrections &amp; Copyright Requests</a> procedure.
+	</p>
+</LegalLayout>

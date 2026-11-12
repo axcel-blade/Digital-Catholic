@@ -1,0 +1,51 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import LegalDocNav from '../components/LegalDocNav.astro';
+import { legalHref, type LegalPageMeta } from '../lib/legal';
+import { withBase } from '../lib/paths';
+import type { BreadcrumbItem } from '../lib/seo';
+
+interface Props {
+	page: LegalPageMeta;
+	/** Optional intro under the title; defaults to the page summary */
+	intro?: string;
+}
+
+const { page, intro = page.summary } = Astro.props;
+
+const breadcrumbs: BreadcrumbItem[] = [
+	{ label: 'Home', href: withBase('/') },
+	{ label: 'Legal & Policies', href: legalHref() },
+	{ label: page.title },
+];
+---
+
+<BaseLayout
+	title={page.title}
+	description={page.description}
+	currentPath={Astro.url.pathname}
+	breadcrumbs={breadcrumbs}
+>
+	<div class="container section-page legal-page">
+		<PageHeader
+			breadcrumbs={breadcrumbs}
+			label="Legal & Policies"
+			title={page.title}
+			intro={intro}
+		/>
+
+		<div class="legal-layout">
+			<aside class="legal-layout__aside">
+				<LegalDocNav currentSlug={page.slug} />
+			</aside>
+			<div class="prose legal-layout__body">
+				<slot />
+				<p class="legal-advice-note">
+					This page provides general information only and is not legal advice. For advice about your
+					situation, consult a qualified legal practitioner in your jurisdiction.
+				</p>
+			</div>
+		</div>
+	</div>
+</BaseLayout>

@@ -1,0 +1,115 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import { getLegalPage, legalHref } from '../../lib/legal';
+import { SITE } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const page = getLegalPage('copyright')!;
+---
+
+<LegalLayout
+	page={page}
+	intro="How ownership, attribution, and third-party rights work on Digital Catholic."
+>
+	<h2>1. Ownership of original Digital Catholic content</h2>
+	<p>
+		Unless otherwise stated, original prose written for Digital Catholic, the site’s compilation and
+		arrangement of educational materials, and original branding elements (including the Digital Catholic
+		name presentation and site design as published) are owned by the project maintainer / copyright
+		holders identified in the repository licence files, subject to third-party rights noted below.
+	</p>
+	<p>
+		The software that builds the Website is separately licensed under the MIT Licence described in
+		<code>LICENSE.md</code> in the public repository. That software licence does not automatically place
+		all article text, images, or third-party materials into the public domain or under MIT terms.
+	</p>
+
+	<h2>2. Copyright protection for original articles and design</h2>
+	<p>
+		Original articles, page copy, and the expressive design of Digital Catholic are protected by the
+		Copyright Act 1968 (Cth) and, where applicable, the laws of other countries. Unauthorised commercial
+		reproduction of substantial original content may infringe copyright, except where a statutory
+		exception (such as fair dealing for criticism, review, or reporting) or an express licence applies.
+	</p>
+
+	<h2>3. Third-party images, illustrations, and artwork</h2>
+	<p>
+		Many illustrations are historical artworks used under public-domain status, Creative Commons licences,
+		or other stated permissions. Digital Catholic does <strong>not</strong> claim ownership of third-party
+		images. Captions, figure notes, and credit files (for example under <code>public/**/CREDITS.md</code>)
+		identify sources where recorded. If an attribution is missing or incorrect, please report it.
+	</p>
+
+	<h2>4. Scripture translation copyright</h2>
+	<p>
+		Bible translations are typically protected by copyright held by publishers or rights organisations,
+		even when individual verses are quoted for educational discussion. Digital Catholic does not claim
+		ownership of any modern Scripture translation. Short quotations used for commentary should not be
+		taken as a licence to reproduce an entire translation. Prefer official editions for liturgy and study.
+	</p>
+
+	<h2>5. Traditional and modern prayer attribution</h2>
+	<p>
+		Traditional prayers may be ancient or of uncertain authorship; modern prayers, translations, and
+		devotional texts may remain under copyright. We do not assume that every prayer text on the internet
+		is public domain. Where a specific modern text is used, attribution and licence terms should be
+		respected. If you believe a prayer text is misattributed or used beyond its licence, contact us.
+	</p>
+
+	<h2>6. Public-domain content</h2>
+	<p>
+		Some materials (for example many older artworks, or texts whose copyright has expired) may be in the
+		public domain in Australia or elsewhere. Public-domain status can differ by country and by the
+		particular edition or translation. We do not assert that every religious text or Church-related
+		document is public domain.
+	</p>
+
+	<h2>7. Creative Commons licensing</h2>
+	<p>
+		Where an image or text is used under a Creative Commons licence, the terms of that licence (including
+		attribution, share-alike, or non-commercial conditions) continue to apply. Reusers should follow the
+		licence named in the credit line or source page, not assume Digital Catholic can re-licence that work.
+	</p>
+
+	<h2>8. Attribution requirements</h2>
+	<p>When quoting or republishing material from Digital Catholic, please:</p>
+	<ul>
+		<li>Identify Digital Catholic as the source of original site prose you reproduce.</li>
+		<li>Link to the specific page URL where practicable.</li>
+		<li>Retain third-party credit lines for images and licensed texts.</li>
+		<li>Do not imply Church endorsement or authorship that does not exist.</li>
+	</ul>
+
+	<h2>9. Reproduction and redistribution permissions</h2>
+	<p>
+		Non-commercial sharing of links, and short quotations with attribution for teaching or personal study,
+		are welcome. For republication of substantial original Digital Catholic articles (for example in a
+		book, paid course, or mirrored site), please request permission via
+		<a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>
+		before proceeding, unless a statutory exception clearly applies.
+	</p>
+
+	<h2>10. Copyright infringement reporting</h2>
+	<p>
+		If you believe content on Digital Catholic infringes your copyright or related rights, follow the
+		procedure on
+		<a href={legalHref('corrections')}>Content Corrections &amp; Copyright Requests</a>.
+		Include identification of the work, the URL of the allegedly infringing material, your contact
+		details, and a good-faith statement of your rights.
+	</p>
+
+	<h2>11. Content removal and correction</h2>
+	<p>
+		We may remove, revise, or replace content to correct errors, improve attribution, respond to valid
+		rights complaints, or reflect updated Church or historical information. See also the
+		<a href={legalHref('disclaimer')}>Religious &amp; Educational Disclaimer</a>.
+	</p>
+
+	<h2>12. Contact</h2>
+	<p>
+		Copyright questions:
+		<a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>
+		· <a href={withBase('/contact')}>Contact</a>
+		· <a href={SITE.repoUrl} rel="noopener noreferrer" target="_blank">GitHub repository<span class="visually-hidden"> (opens in a new tab)</span></a>
+	</p>
+</LegalLayout>

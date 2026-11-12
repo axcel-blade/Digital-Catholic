@@ -13,7 +13,8 @@ ENV ASTRO_SITE=${ASTRO_SITE} \
 
 RUN corepack enable
 
-COPY package.json pnpm-lock.yaml ./
+# pnpm-workspace.yaml carries allowBuilds for esbuild/sharp; must be present before install.
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile
 
 COPY . .
