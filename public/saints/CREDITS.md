@@ -5,6 +5,7 @@ Images shown on the Saints pages (`/saints`). All images are from Wikimedia Comm
 | File | Source | Author | Licence |
 | --- | --- | --- | --- |
 | archbishop-fulton-j-sheen.jpg | [Fulton J. Sheen NYWTS.jpg](https://commons.wikimedia.org/wiki/File:Fulton_J._Sheen_NYWTS.jpg) (cropped) | Fred Palumbo, New York World-Telegram & Sun (Library of Congress) | Public domain |
+| blessed-alan-de-la-roche.jpg | [Alanus de Rupe (cropped).jpg](https://commons.wikimedia.org/wiki/File:Alanus_de_Rupe_(cropped).jpg) | Unknown (historical print) | Public domain |
 | blessed-virgin-mary.jpg | [Murillo immaculate conception.jpg](https://commons.wikimedia.org/wiki/File:Murillo_immaculate_conception.jpg) | Bartolomé Esteban Murillo | Public domain |
 | st-anthony-of-padua.jpg | [Saint Anthony of Padua with the Child.jpg](https://commons.wikimedia.org/wiki/File:Saint_Anthony_of_Padua_with_the_Child.jpg) | Bartolomé Esteban Murillo | Public domain |
 | st-augustine-of-hippo.jpg | [Saint Augustine by Philippe de Champaigne.jpg](https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg) | Philippe de Champaigne | Public domain |
@@ -13,6 +14,7 @@ Images shown on the Saints pages (`/saints`). All images are from Wikimedia Comm
 | st-charbel.jpg | [Charbel.jpg](https://commons.wikimedia.org/wiki/File:Charbel.jpg) | Unknown (old photograph) | Public domain |
 | st-christopher.jpg | [Jheronimus Bosch - Saint Christopher - Google Art ProjectFXD (Cropped).jpg](https://commons.wikimedia.org/wiki/File:Jheronimus_Bosch_-_Saint_Christopher_-_Google_Art_ProjectFXD_(Cropped).jpg) | Hieronymus Bosch | Public domain |
 | st-clare-of-assisi.jpg | [SDamiano-Clara.jpg](https://commons.wikimedia.org/wiki/File:SDamiano-Clara.jpg) | Unknown (fresco, San Damiano, Assisi) | Public domain |
+| st-dominic.jpg | [SaintDominic.jpg](https://commons.wikimedia.org/wiki/File:SaintDominic.jpg) | Claudio Coello | Public domain |
 | st-francis-of-assisi.jpg | [StFrancis part.jpg](https://commons.wikimedia.org/wiki/File:StFrancis_part.jpg) | Cimabue (detail) | Public domain |
 | st-gabriel-the-archangel.jpg | [Ghent Altarpiece - Angel of the Annunciation.jpg](https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Angel_of_the_Annunciation.jpg) | Jan van Eyck | Public domain |
 | st-joan-of-arc.jpg | [Joan of Arc miniature graded.jpg](https://commons.wikimedia.org/wiki/File:Joan_of_Arc_miniature_graded.jpg) | Unknown (15th-century miniature) | Public domain |

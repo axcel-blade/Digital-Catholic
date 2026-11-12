@@ -1,0 +1,58 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { rosaryPromises, rosaryPromisesIntro } from '../../data/rosary';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import type { ArticleLink } from '../../lib/article';
+
+const related: ArticleLink[] = [
+	{
+		href: withBase('/rosary/origin'),
+		title: 'Origin of the Rosary',
+		label: 'Rosary · History',
+		excerpt: 'From early monastic prayer through St. Dominic, Lepanto, and the Luminous Mysteries.',
+	},
+	{
+		href: withBase('/saints/st-dominic'),
+		title: 'St. Dominic',
+		label: 'Saint',
+		excerpt: 'Founder of the Dominicans and champion of the Holy Rosary.',
+	},
+	{
+		href: withBase('/saints/blessed-alan-de-la-roche'),
+		title: 'Blessed Alan de la Roche',
+		label: 'Blessed',
+		excerpt: 'Dominican apostle of the Rosary who revived the devotion and its confraternities.',
+	},
+];
+---
+
+<ArticleLayout
+	title="The 15 Promises of the Rosary"
+	description={PAGE_DESCRIPTIONS.rosaryPromises}
+	currentPath={Astro.url.pathname}
+	sectionKey="pray"
+	extraCrumbs={[{ label: 'Rosary', href: withBase('/rosary') }]}
+	label="Rosary · Devotion"
+	lead={rosaryPromisesIntro}
+	relatedText={rosaryPromises.map((p) => p.text).join(' ')}
+	related={related}
+>
+	<ol class="numbered-list numbered-list--prose">
+		{rosaryPromises.map((promise) => (
+			<li class="numbered-item" id={`promise-${promise.number}`}>
+				<span class="numbered-item__number" aria-hidden="true">{promise.number}</span>
+				<div class="numbered-item__body">
+					<p class="numbered-item__text">
+						<span class="visually-hidden">Promise {promise.number}: </span>
+						{promise.text}
+					</p>
+				</div>
+			</li>
+		))}
+	</ol>
+	<p class="callout callout--liturgy">
+		Ready to pray? See <a href={withBase('/rosary')}>the mysteries, prayers, and how to recite the Rosary</a>,
+		or read the <a href={withBase('/rosary/origin')}>origin of the Rosary</a>.
+	</p>
+</ArticleLayout>

@@ -100,6 +100,8 @@ export const PAGE_DESCRIPTIONS = {
 		'How the Bible was formed—divine inspiration, oral tradition, the Septuagint, the writing of the New Testament, the canon of seventy-three books, St. Jerome, and the Council of Trent.',
 	rosaryOrigin:
 		'The origin of the Holy Rosary—from early monastic prayer through St. Dominic, the Battle of Lepanto, the Rosary popes, and the Luminous Mysteries.',
+	rosaryPromises:
+		'The 15 Promises of the Rosary—traditional spiritual blessings the Blessed Virgin Mary reportedly gave to Saint Dominic and Blessed Alan de la Roche for those who faithfully pray the Holy Rosary.',
 	rosary:
 		'How to pray the Holy Rosary, its traditional prayers, and the twenty mysteries—Joyful, Sorrowful, Glorious, and Luminous—for meditation.',
 	liturgicalCalendar:

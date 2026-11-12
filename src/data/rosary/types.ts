@@ -13,3 +13,8 @@ export interface MysterySet {
 	intro: string;
 	mysteries: RosaryMystery[];
 }
+
+export interface RosaryPromise {
+	number: number;
+	text: string;
+}

@@ -5,6 +5,8 @@ export {
 	rosaryIntro,
 	rosaryOriginIntro,
 	rosaryOriginSections,
+	rosaryPromisesIntro,
+	rosaryPromises,
 	rosaryHowToIntro,
 	rosaryHowToSteps,
 	rosaryMysterySchedule,
