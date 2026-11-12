@@ -1,6 +1,7 @@
 ---
 import type { SiteNav } from '../lib/siteNav';
 import { SITE } from '../lib/seo';
+import { legalHref, legalPages } from '../lib/legal';
 import BrandMark from './BrandMark.astro';
 import Disclaimer from './Disclaimer.astro';
 
@@ -9,6 +10,7 @@ interface Props {
 }
 
 const { nav } = Astro.props;
+const copyrightYear = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
@@ -38,6 +40,7 @@ const { nav } = Astro.props;
 				<ul class="site-footer__list">
 					<li><a href={nav.about.href}>About</a></li>
 					<li><a href={nav.contact.href}>Contact</a></li>
+					<li><a href={legalHref()}>Legal &amp; Policies</a></li>
 					<li>
 						<a href={SITE.repoUrl} rel="noopener noreferrer" target="_blank">
 							GitHub<span class="visually-hidden"> (opens in a new tab)</span>
@@ -45,7 +48,25 @@ const { nav } = Astro.props;
 					</li>
 				</ul>
 			</div>
+			<div class="site-footer__col site-footer__col--legal">
+				<h2 class="site-footer__heading">Legal &amp; Policies</h2>
+				<ul class="site-footer__list">
+					{legalPages.map((page) => (
+						<li><a href={legalHref(page.slug)}>{page.navLabel}</a></li>
+					))}
+				</ul>
+			</div>
 		</nav>
 	</div>
-	<p class="site-footer__legal">Free to read and share. Made for prayer, catechesis, and study.</p>
+	<div class="site-footer__legal">
+		<p class="site-footer__independence">
+			Digital Catholic is an independent Catholic educational and devotional resource. It is not an
+			official publication of the Catholic Church or any ecclesiastical authority.
+		</p>
+		<p class="site-footer__copyright">
+			© {copyrightYear} Digital Catholic. All rights reserved, subject to applicable third-party
+			licences.
+		</p>
+		<p class="site-footer__tagline-legal">Free to read and share. Made for prayer, catechesis, and study.</p>
+	</div>
 </footer>

@@ -1,0 +1,108 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import { getLegalPage, legalContactMailto } from '../../lib/legal';
+import { SITE } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const page = getLegalPage('corrections')!;
+const contactEmail = SITE.contactEmail;
+const githubIssues = `${SITE.repoUrl}/issues`;
+---
+
+<LegalLayout
+	page={page}
+	intro="Help us keep Digital Catholic accurate, properly attributed, and respectful of rights."
+>
+	<p>
+		Prefer email for private or rights-sensitive matters. Use GitHub issues for public technical or
+		factual reports that can be discussed openly.
+	</p>
+
+	<ul class="contact-options">
+		<li class="contact-option">
+			<h2 class="contact-option__title">Email the maintainer</h2>
+			<p>Private corrections, doctrinal concerns, and copyright complaints.</p>
+			<a
+				class="button button--primary"
+				href={legalContactMailto('Digital Catholic — content correction or copyright request')}
+				rel="noopener noreferrer"
+				target="_blank"
+			>
+				Email {contactEmail}<span class="visually-hidden"> in Gmail (opens in a new tab)</span>
+			</a>
+		</li>
+		<li class="contact-option">
+			<h2 class="contact-option__title">GitHub issues</h2>
+			<p>Broken links, public factual notes, and improvement ideas.</p>
+			<a class="button button--secondary" href={githubIssues} rel="noopener noreferrer" target="_blank">
+				Open an issue<span class="visually-hidden"> on GitHub (opens in a new tab)</span>
+			</a>
+		</li>
+	</ul>
+
+	<h2>1. Reporting factual inaccuracies</h2>
+	<p>Please include:</p>
+	<ul>
+		<li>The page URL and the exact statement you believe is wrong.</li>
+		<li>What you believe the correct information is.</li>
+		<li>A reliable source (Scripture, Catechism, Church document, academic or historical reference).</li>
+	</ul>
+
+	<h2>2. Reporting theological or doctrinal concerns</h2>
+	<p>Please include:</p>
+	<ul>
+		<li>The page URL and quotation of the concerning passage.</li>
+		<li>Why you believe it conflicts with Catholic teaching.</li>
+		<li>References to the Catechism, conciliar texts, papal documents, or other Magisterial sources.</li>
+	</ul>
+	<p>
+		Reports are reviewed in good faith. Disagreement about theological emphasis is not automatically an
+		error, but clear misstatements of defined doctrine will be prioritised for correction.
+	</p>
+
+	<h2>3. Reporting incorrect liturgical information</h2>
+	<p>Please include:</p>
+	<ul>
+		<li>The feast, season, rank, colour, reading, or calendar entry at issue.</li>
+		<li>Whether your concern relates to the General Roman Calendar, a particular calendar, or a local practice.</li>
+		<li>A citation to an official calendar, ordo, or liturgical book where possible.</li>
+	</ul>
+
+	<h2>4. Reporting missing or incorrect attributions</h2>
+	<p>Please include:</p>
+	<ul>
+		<li>The page or image URL.</li>
+		<li>The credit you believe is correct (author, title, licence, source URL).</li>
+		<li>Any CREDITS file entry that should be updated, if known.</li>
+	</ul>
+
+	<h2>5. Submitting copyright infringement complaints</h2>
+	<p>Please email {contactEmail} with:</p>
+	<ul>
+		<li>A description of the copyrighted work and evidence of your ownership or authority to act.</li>
+		<li>The exact URL(s) of the material on Digital Catholic.</li>
+		<li>Your name, mailing address, telephone number, and email address.</li>
+		<li>A statement that you have a good-faith belief that the use is not authorised by the owner, its agent, or the law.</li>
+		<li>A statement that the information in the complaint is accurate, and (under penalty of perjury where applicable in your jurisdiction) that you are authorised to act.</li>
+		<li>Your physical or electronic signature (typing your full legal name is acceptable for email).</li>
+	</ul>
+	<p>
+		We may remove or disable access to material while a complaint is assessed. Abuse of this process
+		(for example knowingly false claims) may be documented and disregarded.
+	</p>
+
+	<h2>6. Requesting content review or removal</h2>
+	<p>
+		You may request review or removal for pastoral sensitivity, privacy concerns about living persons,
+		or other serious reasons. Explain the harm or risk, the URL, and the outcome you seek (correction,
+		clarification, or removal). We will consider requests carefully; removal is not guaranteed where
+		content is lawful, properly sourced public information.
+	</p>
+
+	<h2>7. What happens next</h2>
+	<p>
+		Feedback is read in good faith. Response times depend on maintainer availability. Complex doctrinal
+		or legal questions may take longer. You can also use the general
+		<a href={withBase('/contact')}>Contact</a> page for non-urgent enquiries.
+	</p>
+</LegalLayout>

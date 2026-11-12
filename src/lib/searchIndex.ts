@@ -128,6 +128,55 @@ export function buildSearchIndex(): SearchEntry[] {
 			]
 		),
 		entry(
+			'Legal & Policies',
+			withBase('/legal'),
+			'Legal',
+			'Terms of use, privacy policy, religious disclaimer, copyright, external links, and content corrections.',
+			['legal terms privacy copyright disclaimer corrections policies compliance']
+		),
+		entry(
+			'Terms of Use',
+			withBase('/legal/terms-of-use'),
+			'Legal',
+			'Terms governing use of Digital Catholic, including permitted use and liability under Australian law.',
+			['terms of use conditions liability western australia']
+		),
+		entry(
+			'Privacy Policy',
+			withBase('/legal/privacy-policy'),
+			'Legal',
+			'How Digital Catholic handles visitor information, hosting logs, and contact emails—without analytics tracking.',
+			['privacy policy cookies analytics github pages personal information']
+		),
+		entry(
+			'Religious & Educational Disclaimer',
+			withBase('/legal/disclaimer'),
+			'Legal',
+			'Digital Catholic is an independent educational resource, not an official Church publication.',
+			['disclaimer independent church magisterium doctrine apparitions']
+		),
+		entry(
+			'Copyright & Intellectual Property Policy',
+			withBase('/legal/copyright'),
+			'Legal',
+			'Copyright, attribution, Scripture and prayer rights, and infringement reporting for Digital Catholic.',
+			['copyright intellectual property attribution creative commons scripture']
+		),
+		entry(
+			'External Links Disclaimer',
+			withBase('/legal/external-links'),
+			'Legal',
+			'How Digital Catholic treats links to official Church and other third-party websites.',
+			['external links endorsement third party privacy security']
+		),
+		entry(
+			'Content Corrections & Copyright Requests',
+			withBase('/legal/corrections'),
+			'Legal',
+			'How to report factual, theological, or liturgical errors and copyright concerns.',
+			['corrections copyright takedown doctrinal liturgical attribution']
+		),
+		entry(
 			'Sacraments',
 			withBase('/sacraments'),
 			'Sacraments',
