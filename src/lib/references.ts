@@ -226,6 +226,8 @@ const articleRefs: Record<string, ReferenceSet> = {
 		documents: ['munificentissimusDeus', 'ineffabilisDeus'],
 	},
 	'saints/st-joseph': { scripture: ['Matthew 1:18–25', 'Matthew 2:13–23', 'Luke 2:41–52'] },
+	'saints/st-dominic': { catechism: 'CCC 971, 2678, 2708' },
+	'saints/blessed-alan-de-la-roche': { catechism: 'CCC 971, 2678, 2708' },
 	'saints/path-to-sainthood': { catechism: 'CCC 828, 956–957, 2030' },
 	'prayers/our-father': { catechism: 'CCC 2759–2865', scripture: ['Matthew 6:9–13', 'Luke 11:2–4'] },
 	'prayers/hail-mary': { catechism: 'CCC 2676–2678', scripture: ['Luke 1:28', 'Luke 1:42'] },

@@ -1,33 +1,29 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {
-	mysterySets,
-	rosaryPromises,
-	rosaryPromisesIntro,
-} from '../../data/rosary';
+import { rosaryPromises, rosaryPromisesIntro } from '../../data/rosary';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 import type { ArticleLink } from '../../lib/article';
 
 const related: ArticleLink[] = [
 	{
-		href: withBase('/rosary'),
-		title: 'How to Pray the Rosary',
-		label: 'Rosary',
-		excerpt: 'Step-by-step instructions, the traditional prayers, and the twenty mysteries.',
-	},
-	{
 		href: withBase('/rosary/origin'),
 		title: 'Origin of the Rosary',
 		label: 'Rosary · History',
 		excerpt: 'From early monastic prayer through St. Dominic, Lepanto, and the Luminous Mysteries.',
 	},
-	...mysterySets.slice(0, 1).map((set) => ({
-		href: withBase(`/rosary/${set.slug}`),
-		title: set.title,
-		label: `Prayed on ${set.days}`,
-		excerpt: set.excerpt,
-	})),
+	{
+		href: withBase('/saints/st-dominic'),
+		title: 'St. Dominic',
+		label: 'Saint',
+		excerpt: 'Founder of the Dominicans and champion of the Holy Rosary.',
+	},
+	{
+		href: withBase('/saints/blessed-alan-de-la-roche'),
+		title: 'Blessed Alan de la Roche',
+		label: 'Blessed',
+		excerpt: 'Dominican apostle of the Rosary who revived the devotion and its confraternities.',
+	},
 ];
 ---
 

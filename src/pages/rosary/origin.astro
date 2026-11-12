@@ -1,7 +1,7 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import SectionList from '../../components/SectionList.astro';
-import { mysterySets, rosaryOriginIntro, rosaryOriginSections } from '../../data/rosary';
+import { rosaryOriginIntro, rosaryOriginSections } from '../../data/rosary';
 import { PAGE_DESCRIPTIONS } from '../../lib/seo';
 import { withBase } from '../../lib/paths';
 import type { ArticleLink } from '../../lib/article';
@@ -14,12 +14,18 @@ const related: ArticleLink[] = [
 		excerpt:
 			'Traditional spiritual blessings reportedly given by the Blessed Virgin Mary to Saint Dominic and Blessed Alan de la Roche.',
 	},
-	...mysterySets.slice(0, 2).map((set) => ({
-		href: withBase(`/rosary/${set.slug}`),
-		title: set.title,
-		label: `Prayed on ${set.days}`,
-		excerpt: set.excerpt,
-	})),
+	{
+		href: withBase('/saints/st-dominic'),
+		title: 'St. Dominic',
+		label: 'Saint',
+		excerpt: 'Founder of the Dominicans and champion of the Holy Rosary.',
+	},
+	{
+		href: withBase('/saints/blessed-alan-de-la-roche'),
+		title: 'Blessed Alan de la Roche',
+		label: 'Blessed',
+		excerpt: 'Dominican apostle of the Rosary who revived the devotion and its confraternities.',
+	},
 ];
 ---
 
