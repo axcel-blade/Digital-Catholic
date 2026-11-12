@@ -115,6 +115,14 @@ export const fixedFeasts: LiturgicalCelebration[] = [
 	},
 	{
 		month: 8,
+		day: 8,
+		title: 'St. Dominic',
+		rank: 'memorial',
+		color: 'white',
+		saintSlug: 'st-dominic',
+	},
+	{
+		month: 8,
 		day: 15,
 		title: 'The Assumption of the Blessed Virgin Mary',
 		rank: 'solemnity',

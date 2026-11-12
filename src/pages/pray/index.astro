@@ -3,7 +3,7 @@ import SectionLayout from '../../layouts/SectionLayout.astro';
 import LegacyTopicRedirect from '../../components/LegacyTopicRedirect.astro';
 import EntryCard from '../../components/EntryCard.astro';
 import { prayers, prayersIntro } from '../../data/prayers';
-import { mysterySets, rosaryOriginIntro } from '../../data/rosary';
+import { mysterySets, rosaryOriginIntro, rosaryPromisesIntro } from '../../data/rosary';
 import { dailyGospelIntro } from '../../data/daily-gospel';
 import { massIntro } from '../../data/mass';
 import { liturgicalCalendarIntro } from '../../data/liturgical-calendar';
@@ -62,6 +62,13 @@ const mysteryCount = mysterySets.reduce((n, s) => n + s.mysteries.length, 0);
 				title="Origin of the Rosary"
 				label="Rosary · History"
 				excerpt={rosaryOriginIntro}
+				action="Read article"
+			/>
+			<EntryCard
+				href={withBase('/rosary/promises')}
+				title="The 15 Promises of the Rosary"
+				label="Rosary · Devotion"
+				excerpt={rosaryPromisesIntro}
 				action="Read article"
 			/>
 		</ul>
