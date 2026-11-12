@@ -104,6 +104,8 @@ export const PAGE_DESCRIPTIONS = {
 		'How to pray the Holy Rosary, its traditional prayers, and the twenty mysteries—Joyful, Sorrowful, Glorious, and Luminous—for meditation.',
 	liturgicalCalendar:
 		'The Catholic liturgical calendar—solemnities, feasts, and memorials of the General Roman Calendar, moveable celebrations from Easter, and the seasons of the Church year.',
+	legal:
+		'Legal and policy documents for Digital Catholic—terms of use, privacy, religious disclaimer, copyright, external links, and content corrections.',
 	notFound: 'The page you were looking for could not be found on Digital Catholic.',
 } as const;
 

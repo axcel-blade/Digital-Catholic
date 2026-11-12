@@ -1,0 +1,169 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import { getLegalPage, legalHref } from '../../lib/legal';
+import { SITE } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+
+const page = getLegalPage('privacy-policy')!;
+---
+
+<LegalLayout
+	page={page}
+	intro="This policy describes practices verified against the current Digital Catholic codebase and public hosting setup."
+>
+	<div class="callout">
+		<p>
+			Digital Catholic is a fully static website. As of the last update of this policy, the project does
+			<strong>not</strong> use analytics services, advertising trackers, or first-party tracking cookies.
+			We have not added a cookie consent banner because no non-essential tracking cookies are set by the
+			site itself.
+		</p>
+	</div>
+
+	<h2>1. Who we are</h2>
+	<p>
+		Digital Catholic (“we”, “us”) is an independent educational and devotional website maintained as an
+		open project. Contact:
+		<a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>
+		(also listed on the <a href={withBase('/contact')}>Contact</a> page).
+	</p>
+
+	<h2>2. Information collected from visitors</h2>
+	<p>
+		The Website does not provide user accounts, comment forms, newsletter signup forms, or other
+		server-side forms that store personal information in a Digital Catholic database. We do not operate
+		a first-party database of visitors.
+	</p>
+	<p>Personal information may reach us only if you choose to provide it, for example by:</p>
+	<ul>
+		<li>Sending an email to the maintainer address published on the Contact page.</li>
+		<li>Opening a public issue or pull request on the project’s GitHub repository.</li>
+		<li>Using a web-based email compose link (such as Gmail) that you choose to open from the Contact or search interfaces.</li>
+	</ul>
+
+	<h2>3. Automatically collected technical information</h2>
+	<p>
+		When you visit a static website, your browser typically sends technical data such as IP address, user
+		agent, requested URL, referrer (if any), and timing information to the host that serves the files.
+		Digital Catholic does not run its own application server that logs or analyses this data for marketing
+		purposes.
+	</p>
+
+	<h2>4. IP addresses and hosting logs</h2>
+	<p>
+		The production site is deployed to <strong>GitHub Pages</strong>. GitHub, as the hosting provider, may
+		process technical request data (including IP addresses) in accordance with its own privacy policy and
+		security practices. Digital Catholic’s maintainers do not operate a separate analytics product on top
+		of those logs. For GitHub’s practices, see GitHub’s published privacy documentation.
+	</p>
+	<p>
+		If the project is also run from a Docker/nginx or similar self-hosted mirror, that host’s access logs
+		may similarly record standard web-server request metadata under the operator’s control.
+	</p>
+
+	<h2>5. Contact email information</h2>
+	<p>
+		If you email us, we receive the content of your message, your email address, and any details you
+		include. We use that information only to respond to your enquiry, assess corrections or copyright
+		requests, or administer the project. We do not sell contact details.
+	</p>
+
+	<h2>6. GitHub Pages hosting considerations</h2>
+	<p>
+		Pages are built ahead of time and served as static files. There is no Digital Catholic login system and
+		no server-side session for browsing. Deployment configuration for GitHub Pages is part of the public
+		repository workflows. Visitors should also review GitHub’s terms and privacy notices for the platform
+		that hosts the live site and the source repository.
+	</p>
+
+	<h2>7. Analytics and cookies</h2>
+	<p>
+		<strong>Analytics:</strong> The codebase does not integrate Google Analytics, Plausible, Umami, Meta
+		Pixel, tag managers, or similar products.
+	</p>
+	<p>
+		<strong>Cookies:</strong> The site does not intentionally set first-party cookies for tracking. The
+		client-side search feature fetches a local <code>search-index.json</code> file from the same origin; that
+		request does not require a consent cookie. Essential browser or CDN/platform cookies, if any, would be
+		controlled by the hosting platform rather than by Digital Catholic application code.
+	</p>
+	<p>
+		If analytics or non-essential cookies are introduced in the future, this Privacy Policy will be updated
+		and any legally required consent mechanism will be considered before activation.
+	</p>
+
+	<h2>8. Third-party services</h2>
+	<p>Depending on how you use the site, third parties may include:</p>
+	<ul>
+		<li><strong>GitHub / GitHub Pages</strong> — hosting of the live site and the public source repository.</li>
+		<li><strong>Email providers</strong> — if you contact us by email (for example Gmail or your own mail client).</li>
+		<li><strong>External linked websites</strong> — Church, educational, or other sites you choose to open; their practices are their own (see the <a href={legalHref('external-links')}>External Links Disclaimer</a>).</li>
+	</ul>
+	<p>
+		Fonts are served from system font stacks bundled in site CSS; the project does not load Google Fonts or
+		other remote font CDNs. Images and scripts for pages are served from the site’s own static assets,
+		aside from destinations you deliberately navigate to.
+	</p>
+
+	<h2>9. Data storage and retention</h2>
+	<p>
+		Email and GitHub correspondence are retained only as long as reasonably needed to handle your request
+		and maintain the project, unless a longer period is required by law or dispute resolution. We do not
+		maintain a marketing list from Website visits.
+	</p>
+
+	<h2>10. International data handling</h2>
+	<p>
+		GitHub and common email providers may process data in multiple countries. If you contact us or visit
+		the GitHub-hosted site from outside Australia, your information may be handled in those locations
+		subject to the providers’ terms. We do not claim that a particular cross-border transfer mechanism
+		applies beyond what those providers publish.
+	</p>
+
+	<h2>11. Privacy and data protection rights</h2>
+	<p>
+		Australian privacy law, including the Privacy Act 1988 (Cth) and the Australian Privacy Principles,
+		may apply depending on the circumstances of the organisation or individual operating the project
+		(including thresholds and exemptions). This policy does <strong>not</strong> assert that the Privacy
+		Act does or does not apply to Digital Catholic in every case.
+	</p>
+	<p>
+		Regardless of formal applicability, you may ask us what personal information we hold about you from
+		direct correspondence, request correction of inaccurate contact details we hold, or ask us to delete
+		emails where practicable. We will respond in good faith within a reasonable time.
+	</p>
+	<p>
+		We do not claim GDPR certification or compliance in this policy. If you are in a jurisdiction with
+		specific privacy rights, tell us which rights you wish to exercise when you contact us.
+	</p>
+
+	<h2>12. Privacy complaints</h2>
+	<p>
+		If you have a privacy concern, please contact
+		<a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>
+		first so we can try to resolve it. You may also have the right to lodge a complaint with the Office of
+		the Australian Information Commissioner (OAIC) or another competent regulator, depending on your
+		circumstances.
+	</p>
+
+	<h2>13. Children’s privacy</h2>
+	<p>
+		The Website is a general educational resource. We do not knowingly collect personal information from
+		children through site forms, because we do not operate such forms. Pastoral and parental guidance
+		should accompany children’s use of online religious materials.
+	</p>
+
+	<h2>14. Changes to this policy</h2>
+	<p>
+		We may update this Privacy Policy when hosting, contact methods, or site features change. The “Last
+		updated” date will be revised when changes are published.
+	</p>
+
+	<h2>15. Contact</h2>
+	<p>
+		Privacy questions:
+		<a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>
+		· <a href={withBase('/contact')}>Contact page</a>
+		· Repository: <a href={SITE.repoUrl} rel="noopener noreferrer" target="_blank">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+	</p>
+</LegalLayout>

@@ -1,0 +1,32 @@
+---
+import { LEGAL_LAST_UPDATED, LEGAL_LAST_UPDATED_ISO, legalHref, legalPages } from '../lib/legal';
+
+interface Props {
+	/** Current document slug; omit on the legal landing page */
+	currentSlug?: string;
+}
+
+const { currentSlug } = Astro.props;
+---
+
+<nav class="legal-nav" aria-label="Legal documents">
+	<p class="legal-nav__updated">
+		Last updated:
+		<time datetime={LEGAL_LAST_UPDATED_ISO}>{LEGAL_LAST_UPDATED}</time>
+	</p>
+	<ul class="legal-nav__list">
+		<li>
+			<a href={legalHref()} aria-current={!currentSlug ? 'page' : undefined}>Legal &amp; Policies</a>
+		</li>
+		{legalPages.map((page) => (
+			<li>
+				<a
+					href={legalHref(page.slug)}
+					aria-current={currentSlug === page.slug ? 'page' : undefined}
+				>
+					{page.navLabel}
+				</a>
+			</li>
+		))}
+	</ul>
+</nav>
