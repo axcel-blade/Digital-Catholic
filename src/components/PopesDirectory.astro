@@ -1,0 +1,105 @@
+---
+import SectionLayout from '../layouts/SectionLayout.astro';
+import EntryCard from './EntryCard.astro';
+import EmptyState from './EmptyState.astro';
+import PaginationNav from './PaginationNav.astro';
+import {
+	popes,
+	popesIntro,
+	getPopeImageAlt,
+	getPopesPage,
+	getPopesPagePath,
+} from '../data/popes';
+import { PAGE_DESCRIPTIONS } from '../lib/seo';
+import { withBase } from '../lib/paths';
+import { getCollectionImage } from '../lib/images';
+
+interface Props {
+	page: number;
+	currentPath: string;
+}
+
+const { page, currentPath } = Astro.props;
+const { items, totalPages, firstNumber, lastNumber } = getPopesPage(page);
+
+const rangeLabel =
+	firstNumber && lastNumber
+		? firstNumber === lastNumber
+			? `Pontiff ${firstNumber}`
+			: `Pontiffs ${firstNumber}–${lastNumber}`
+		: 'Popes';
+
+const pageCrumb = page <= 1 ? 'Popes' : `Popes · page ${page}`;
+const title = page <= 1 ? 'Popes of the Catholic Church' : `Popes of the Catholic Church · page ${page}`;
+const count =
+	totalPages > 1
+		? `${popes.length} biographies · page ${page} of ${totalPages} · ${rangeLabel}`
+		: `${popes.length} biographies · ${rangeLabel}`;
+
+function neighborRange(n: number): string {
+	const neighbor = getPopesPage(n);
+	if (!neighbor.firstNumber) return `Page ${n}`;
+	return neighbor.firstNumber === neighbor.lastNumber
+		? `Pontiff ${neighbor.firstNumber}`
+		: `Pontiffs ${neighbor.firstNumber}–${neighbor.lastNumber}`;
+}
+---
+
+<SectionLayout
+	sectionKey="learn"
+	heading="Popes of the Catholic Church"
+	title={title}
+	pageCrumb={pageCrumb}
+	extraCrumbs={page > 1 ? [{ label: 'Popes', href: withBase('/popes') }] : []}
+	description={PAGE_DESCRIPTIONS.popes}
+	currentPath={currentPath}
+	intro={popesIntro}
+	count={count}
+>
+	<p class="section-intro">
+		For the teaching on the office itself, see
+		<a href={withBase('/the-church/the-pope-and-the-papacy')}>The Pope and the papacy</a>.
+		Canonised and beatified popes may also have a fuller life among
+		<a href={withBase('/saints')}>Mary and the Saints</a>.
+	</p>
+
+	{totalPages > 1 && (
+		<p class="section-intro" aria-live="polite">
+			Showing {rangeLabel.toLowerCase()} on this page.
+		</p>
+	)}
+
+	{items.length === 0 ? (
+		<EmptyState />
+	) : (
+		<ul class="card-grid card-grid--media">
+			{items.map((pope, i) => (
+				<EntryCard
+					href={withBase(`/popes/${pope.slug}`)}
+					title={pope.title}
+					label={`#${pope.papalNumber} · ${pope.pontificate}`}
+					meta={pope.birthName ?? pope.lifeDates}
+					excerpt={pope.excerpt}
+					action="Read biography"
+					image={getCollectionImage('popes', pope.slug, getPopeImageAlt(pope.title))}
+					eager={i < 3}
+				/>
+			))}
+		</ul>
+	)}
+
+	<PaginationNav
+		page={page}
+		totalPages={totalPages}
+		hrefForPage={getPopesPagePath}
+		label="Popes directory pages"
+		prevLabel={page > 1 ? neighborRange(page - 1) : undefined}
+		nextLabel={page < totalPages ? neighborRange(page + 1) : undefined}
+	/>
+
+	<p class="section-footer-links">
+		Continue with <a href={withBase('/the-church')}>The Catholic Church</a>,
+		<a href={withBase('/church-history')}>Church History</a>, or
+		<a href={withBase('/saints')}>Mary and the Saints</a>.
+	</p>
+</SectionLayout>

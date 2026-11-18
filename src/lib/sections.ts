@@ -39,7 +39,7 @@ export const sectionGroups: SectionGroup[] = [
 		key: 'learn',
 		label: 'Learn',
 		summary:
-			'Start with the Bible, the sacraments, the saints, and the foundations of the faith; meet the apostles, read the parables, and explore Marian and Eucharistic signs.',
+			'Start with the Bible, the sacraments, the saints, and the foundations of the faith; meet the apostles and people of both Testaments, read the parables, and explore Marian and Eucharistic signs.',
 		anchor: 'learn',
 		subgroups: [
 			{ key: 'all' },
@@ -107,12 +107,16 @@ export const siteSections: SiteSection[] = [
 		href: '/learn',
 		alsoActiveOn: [
 			'/disciples',
+			'/old-testament-people',
+			'/new-testament-people',
+			'/bible-stories',
 			'/parables',
 			'/miracles',
 			'/signs-and-wonders',
 			'/marian-apparitions',
 			'/eucharistic-miracles',
 			'/saints',
+			'/popes',
 			'/sacraments',
 			'/holy-trinity',
 			'/holy-spirit',
@@ -125,7 +129,7 @@ export const siteSections: SiteSection[] = [
 		group: 'learn',
 		subgroup: 'all',
 		label: 'Doctrine',
-		blurb: 'The Bible, core beliefs, the Trinity, the Commandments, the sacraments, Jesus, and the saints.',
+		blurb: 'The Bible, core beliefs, the Trinity, the Commandments, the sacraments, Jesus, the Old Testament, the saints, and the popes.',
 	},
 ];
 

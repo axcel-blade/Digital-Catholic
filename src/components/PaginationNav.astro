@@ -1,0 +1,58 @@
+---
+import { withBase } from '../lib/paths';
+
+interface Props {
+	/** 1-based current page */
+	page: number;
+	totalPages: number;
+	/** Build a root-relative path for a page number (without site base) */
+	hrefForPage: (page: number) => string;
+	/** Accessible name for the nav, e.g. "Popes pages" */
+	label: string;
+	/** Optional short labels for previous / next ranges */
+	prevLabel?: string;
+	nextLabel?: string;
+}
+
+const { page, totalPages, hrefForPage, label, prevLabel, nextLabel } = Astro.props;
+const hasPrev = page > 1;
+const hasNext = page < totalPages;
+---
+
+{
+	totalPages > 1 && (
+		<nav class="pagination" aria-label={label}>
+			<div class="article-pager">
+				{hasPrev ? (
+					<a class="article-pager__link article-pager__link--prev" href={withBase(hrefForPage(page - 1))} rel="prev">
+						<span class="article-pager__dir">Previous</span>
+						<span class="article-pager__title">{prevLabel ?? `Page ${page - 1}`}</span>
+					</a>
+				) : (
+					<span />
+				)}
+				{hasNext ? (
+					<a class="article-pager__link article-pager__link--next" href={withBase(hrefForPage(page + 1))} rel="next">
+						<span class="article-pager__dir">Next</span>
+						<span class="article-pager__title">{nextLabel ?? `Page ${page + 1}`}</span>
+					</a>
+				) : null}
+			</div>
+
+			<ul class="jump-links jump-links--numbers pagination__pages" role="list">
+				{Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+					<li>
+						<a
+							class="jump-links__link"
+							href={withBase(hrefForPage(n))}
+							aria-current={n === page ? 'page' : undefined}
+							aria-label={`Page ${n} of ${totalPages}`}
+						>
+							{n}
+						</a>
+					</li>
+				))}
+			</ul>
+		</nav>
+	)
+}

@@ -20,6 +20,10 @@ const topic: GuideTopic = {
 			'Missionaries of Charity (1950): service of the poorest of the poor',
 		],
 	},
+	links: [
+		{ href: '/popes', label: 'Popes of the Catholic Church' },
+		{ href: '/the-church/the-pope-and-the-papacy', label: 'The Pope and the papacy' },
+	],
 	image: { alt: 'St. Francis and his brothers kneeling before Pope Innocent III, who approves their rule', caption: 'Giotto (attributed), Confirmation of the Rule, Upper Basilica of St. Francis, Assisi (c. 1297). Public domain.' },
 };
 

@@ -11,7 +11,8 @@ const topic: GuideTopic = {
 		'A visible Church needs a visible principle of unity. From the first century, the Church of Rome exercised a special role: St. Clement wrote to correct the Corinthians around AD 96, and St. Irenaeus said every church must agree with Rome “on account of its preeminent authority.” The Pope serves as the “servant of the servants of God,” guarding the unity of faith and communion.',
 	],
 	links: [
-		{ href: '/the-church', label: 'The Pope and the papacy' },
+		{ href: '/the-church/the-pope-and-the-papacy', label: 'The Pope and the papacy' },
+		{ href: '/popes', label: 'Popes of the Catholic Church' },
 	],
 	image: { alt: 'The risen Christ handing two large keys to the kneeling St. Peter', caption: 'Peter Paul Rubens, Christ Giving the Keys to St. Peter (1612), Gemäldegalerie, Berlin. Public domain.' },
 };
