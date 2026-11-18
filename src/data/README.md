@@ -9,7 +9,8 @@ Content is split into **one file per article** so contributors can add entries w
 | Saints | `saints/items/{slug}.ts` | `st-joseph.ts` |
 | Popes | `popes/items/{slug}.ts` | `leo-xiii.ts` (sorted by `reignStart` / `papalNumber`) |
 | Disciples of Jesus | `disciples/items/NN-{slug}.ts` | `01-peter.ts` (order field sets list order) |
-| People of the Old Testament | `old-testament-people/items/NN-{slug}.ts` | `01-abraham.ts` (roles: patriarch, leader, woman-of-faith, king, prophet, major-prophet, minor-prophet; optional `keyMoments` / `prophecies`) |
+| People of the Old Testament | `old-testament-people/items/NN-{slug}.ts` | `01-noah.ts` (roles: patriarch, leader, judge, woman-of-faith, king, prophet, major-prophet, minor-prophet; optional `keyMoments` / `prophecies`) |
+| People of the New Testament | `new-testament-people/items/NN-{slug}.ts` | `07-john-the-baptist.ts` (roles: holy-family, forerunner, woman-disciple, witness, apostle, evangelist, martyr, coworker; the Twelve live under `disciples/`) |
 | Prayers | `prayers/items/NN-{slug}.ts` | `01-our-father.ts` |
 | Holy Bible | `bible/books/old-testament.ts`, `new-testament.ts` | `genesis` slug per book (73 books) |
 | Sacraments | `sacraments/items/{slug}.ts` | `baptism.ts` |
@@ -33,7 +34,7 @@ Content is split into **one file per article** so contributors can add entries w
 | Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates; a fixed feast can set `rank: 'commemoration'` and a `noteLink: { href, label }` shown after its note |
 | Holy Mass | `mass/index.ts` | add an entry to the relevant group in `massSections` (Items Used at Mass); the Order of Mass text lives in `mass/order.ts`; a new Mass sub-page also needs an entry in `massPages` |
 
-Images live under `public/`: saints in `public/saints/{slug}.jpg`, popes in `public/popes/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, Old Testament people in `public/old-testament-people/{slug}.jpg`, parables in `public/parables/{slug}.jpg`, miracles of Jesus in `public/miracles/{slug}.jpg`, Mass items in `public/mass/{name}.jpg`, and Bible page art in `public/bible/` (Wikimedia Commons–licensed art preferred). Record the source, author, and licence of every image in that folder's `CREDITS.md`, and give each parable and miracle an `imageAlt` describing the artwork.
+Images live under `public/`: saints in `public/saints/{slug}.jpg`, popes in `public/popes/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, Old Testament people in `public/old-testament-people/{slug}.jpg`, New Testament people in `public/new-testament-people/{slug}.jpg`, parables in `public/parables/{slug}.jpg`, miracles of Jesus in `public/miracles/{slug}.jpg`, Mass items in `public/mass/{name}.jpg`, and Bible page art in `public/bible/` (Wikimedia Commons–licensed art preferred). Record the source, author, and licence of every image in that folder's `CREDITS.md`, and give each parable and miracle an `imageAlt` describing the artwork.
 
 Saint and disciple sections can also carry an image, such as a painting of a miracle or a photo of a relic or tomb: add `image: { src, alt, caption }` to the section, with `src` pointing to a file in a `sections/` subfolder (for example `/saints/sections/st-nicholas-relics.jpg`). When the licence requires attribution (CC BY, CC BY-SA), name the photographer and licence in the caption as well as in `CREDITS.md`.
 

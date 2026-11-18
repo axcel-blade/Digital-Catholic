@@ -8,6 +8,7 @@ import { withBase } from '../../lib/paths';
 import { getCollectionImage } from '../../lib/images';
 ---
 
+
 <SectionLayout
 	sectionKey="learn"
 	pageCrumb="The Twelve Apostles"
@@ -36,4 +37,9 @@ import { getCollectionImage } from '../../lib/images';
 			))}
 		</ul>
 	)}
+
+	<p class="section-footer-links">
+		Meet more <a href={withBase('/new-testament-people')}>People of the New Testament</a> or
+		<a href={withBase('/old-testament-people')}>People of the Old Testament</a>.
+	</p>
 </SectionLayout>

@@ -35,9 +35,11 @@ export const PAGE_DESCRIPTIONS = {
 	signsAndWonders:
 		'Marian apparitions such as Guadalupe, Lourdes, Fátima, Knock, and Velankanni, and Eucharistic miracles such as Lanciano and Bolsena—what happened, what it means, and the Church status of each.',
 	learn:
-		'Learn the Catholic faith: the Bible, core beliefs, the Holy Trinity, the Ten Commandments, the seven sacraments, the life of Jesus, people of the Old Testament, Mary and the saints, and the popes.',
+		'Learn the Catholic faith: the Bible, core beliefs, the Holy Trinity, the Ten Commandments, the seven sacraments, the life of Jesus, people of the Old and New Testaments, Mary and the saints, and the popes.',
 	oldTestamentPeople:
 		'People of the Old Testament—patriarchs, matriarchs, judges, kings, prophets, and women of faith from Noah and Abraham to Esther, Ezra, and the writing prophets, with key moments and prophecies fulfilled in Christ.',
+	newTestamentPeople:
+		'People of the New Testament—the Holy Family, John the Baptist, Mary Magdalene, Paul, Stephen, and other witnesses of the Gospel and Acts (the Twelve Apostles have their own hub).',
 	commandments:
 		'The Ten Commandments—God’s moral law given to Moses—with the text of each commandment and its meaning for love of God and neighbour.',
 	coreBeliefs:

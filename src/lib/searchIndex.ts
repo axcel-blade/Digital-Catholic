@@ -20,6 +20,11 @@ import {
 	oldTestamentRoleLabels,
 } from '../data/old-testament-people';
 import {
+	newTestamentPeople,
+	newTestamentPeopleIntro,
+	newTestamentRoleLabels,
+} from '../data/new-testament-people';
+import {
 	mysterySets,
 	rosaryHowToIntro,
 	rosaryHowToSteps,
@@ -221,6 +226,27 @@ export function buildSearchIndex(): SearchEntry[] {
 						p.feastDays ?? '',
 						...(p.keyMoments?.map((m) => joinParts(m.title, m.reference, m.summary)) ?? []),
 						...(p.prophecies?.map((m) => joinParts(m.title, m.reference, m.summary)) ?? [])
+					)
+				),
+			],
+		),
+		entry(
+			'People of the New Testament',
+			withBase('/new-testament-people'),
+			'New Testament',
+			newTestamentPeopleIntro,
+			[
+				newTestamentPeopleIntro,
+				'mary joseph john baptist magdalene paul stephen barnabas',
+				...newTestamentPeople.map((p) =>
+					joinParts(
+						p.title,
+						p.alsoKnownAs,
+						p.excerpt,
+						newTestamentRoleLabels[p.role],
+						p.scriptureReference,
+						p.feastDays ?? '',
+						...(p.keyMoments?.map((m) => joinParts(m.title, m.reference, m.summary)) ?? [])
 					)
 				),
 			],
@@ -450,6 +476,28 @@ export function buildSearchIndex(): SearchEntry[] {
 				bookTitles.has(person.title) ? `${person.title} (${oldTestamentRoleLabels[person.role]})` : person.title,
 				withBase(`/old-testament-people/${person.slug}`),
 				oldTestamentRoleLabels[person.role],
+				person.excerpt,
+				[
+					person.alsoKnownAs ?? '',
+					person.lifeDates ?? '',
+					person.scriptureReference,
+					person.feastDays ?? '',
+					highlightsText,
+					sectionsText(person.sections),
+				]
+			)
+		);
+	}
+
+	for (const person of newTestamentPeople) {
+		const highlightsText = (person.keyMoments ?? [])
+			.map((m) => joinParts(m.title, m.reference, m.summary))
+			.join(' ');
+		items.push(
+			entry(
+				person.title,
+				withBase(`/new-testament-people/${person.slug}`),
+				newTestamentRoleLabels[person.role],
 				person.excerpt,
 				[
 					person.alsoKnownAs ?? '',

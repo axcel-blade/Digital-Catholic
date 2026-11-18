@@ -3,6 +3,7 @@ import SectionLayout from '../../layouts/SectionLayout.astro';
 import EntryCard from '../../components/EntryCard.astro';
 import { disciples, disciplesIntro } from '../../data/disciples';
 import { oldTestamentPeople, oldTestamentPeopleIntro } from '../../data/old-testament-people';
+import { newTestamentPeople, newTestamentPeopleIntro } from '../../data/new-testament-people';
 import { parables, parablesIntro } from '../../data/parables';
 import { miracles, miraclesIntro } from '../../data/miracles';
 import { saints } from '../../data/saints';
@@ -27,25 +28,27 @@ const articleCount =
 	popes.length +
 	disciples.length +
 	oldTestamentPeople.length +
+	newTestamentPeople.length +
 	parables.length +
 	miracles.length +
 	2 +
 	marianApparitions.length +
 	eucharisticMiracles.length;
-// The eight doctrine cards plus the life-of-Jesus and Old Testament cards.
-const areaCount = 12;
+// The eight doctrine cards plus life-of-Jesus and Scripture-people cards.
+const areaCount = 13;
 ---
 
 <SectionLayout
 	sectionKey="learn"
 	description={PAGE_DESCRIPTIONS.learn}
 	currentPath={Astro.url.pathname}
-	intro="The heart of the Catholic faith: the Word of God, what the Church believes, how God shares His life with us in the sacraments, and the people who have lived it. Begin with the Holy Bible, the core beliefs, the Holy Trinity, and the Ten Commandments; then discover the seven sacraments, meet the kings and prophets, follow the life of Jesus through His apostles, parables, and miracles, and meet Mary, the saints, and the popes."
+	intro="The heart of the Catholic faith: the Word of God, what the Church believes, how God shares His life with us in the sacraments, and the people who have lived it. Begin with the Holy Bible, the core beliefs, the Holy Trinity, and the Ten Commandments; then discover the seven sacraments, meet the people of both Testaments, follow the life of Jesus through His apostles, parables, and miracles, and meet Mary, the saints, and the popes."
 	count={`${areaCount} areas · ${articleCount} articles`}
 >
 	<nav class="jump-links" aria-label="Jump to a part of this page" slot="header">
 		<a class="jump-links__link" href="#signs-of-faith">Scripture, Doctrine, and Saints</a>
-		<a class="jump-links__link" href="#old-testament">Kings and Prophets</a>
+		<a class="jump-links__link" href="#old-testament">Old Testament</a>
+		<a class="jump-links__link" href="#new-testament">New Testament</a>
 		<a class="jump-links__link" href="#jesus">The Life of Jesus</a>
 	</nav>
 
@@ -125,10 +128,17 @@ const areaCount = 12;
 		</ul>
 	</section>
 
-	<section class="page-section" aria-labelledby="jesus">
-		<h2 class="section-title" id="jesus">The Life of Jesus</h2>
-		<p class="section-intro">Jesus called twelve apostles to be with Him, taught in parables, and confirmed His teaching with mighty works. The parables reveal the Kingdom of God in stories drawn from everyday life; the miracles are signs that the Kingdom has come in Him (CCC 546–553).</p>
+	<section class="page-section" aria-labelledby="new-testament">
+		<h2 class="section-title" id="new-testament">The New Testament</h2>
+		<p class="section-intro">In the fullness of time God sent His Son. Around Jesus stand the Holy Family, the forerunner, women disciples, witnesses of the Passion and Resurrection, and the first generation of the Church (CCC 422–429, 551–553).</p>
 		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/new-testament-people')}
+				title="People of the New Testament"
+				label="New Testament"
+				excerpt={newTestamentPeopleIntro}
+				action={`Meet all ${newTestamentPeople.length} figures`}
+			/>
 			<EntryCard
 				href={withBase('/disciples')}
 				title="The Twelve Apostles"
@@ -136,6 +146,13 @@ const areaCount = 12;
 				excerpt={disciplesIntro}
 				action={`Meet all ${disciples.length} apostles`}
 			/>
+		</ul>
+	</section>
+
+	<section class="page-section" aria-labelledby="jesus">
+		<h2 class="section-title" id="jesus">The Life of Jesus</h2>
+		<p class="section-intro">Jesus taught in parables and confirmed His teaching with mighty works. The parables reveal the Kingdom of God in stories drawn from everyday life; the miracles are signs that the Kingdom has come in Him (CCC 546–553).</p>
+		<ul class="card-grid card-grid--two">
 			<EntryCard
 				href={withBase('/parables')}
 				title="Parables of Jesus"

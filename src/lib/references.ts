@@ -9,6 +9,7 @@
 import { bibleBooks } from '../data/bible';
 import { disciples } from '../data/disciples';
 import { oldTestamentPeople } from '../data/old-testament-people';
+import { newTestamentPeople } from '../data/new-testament-people';
 import { miracles } from '../data/miracles';
 import { parables } from '../data/parables';
 import { sacramentGuides } from '../data/sacraments';
@@ -184,6 +185,7 @@ const sectionDefaults: Record<string, ReferenceSet> = {
 	popes: { catechism: 'CCC 880–882, 891', scripture: ['Matthew 16:18–19', 'John 21:15–17'], documents: ['lumenGentium'] },
 	disciples: { catechism: 'CCC 551–553, 857–862', documents: ['lumenGentium'] },
 	'old-testament-people': { catechism: 'CCC 59–64, 145–147, 702–716', scripture: ['Hebrews 11:1–40', 'Luke 24:27'], documents: ['deiVerbum'] },
+	'new-testament-people': { catechism: 'CCC 422–455, 551–553, 857–865', scripture: ['Luke 1–2', 'Acts 1–2'], documents: ['deiVerbum', 'lumenGentium'] },
 	sacraments: { catechism: 'CCC 1113–1134', documents: ['sacrosanctumConcilium', 'canonLaw'] },
 	parables: { catechism: 'CCC 546', documents: ['deiVerbum'] },
 	miracles: { catechism: 'CCC 547–550', documents: ['deiVerbum'] },
@@ -255,6 +257,8 @@ function itemScripture(sectionKey: string, slug: string): string[] {
 			return splitCitations(find(disciples)?.gospelReference ?? '');
 		case 'old-testament-people':
 			return splitCitations(find(oldTestamentPeople)?.scriptureReference ?? '');
+		case 'new-testament-people':
+			return splitCitations(find(newTestamentPeople)?.scriptureReference ?? '');
 		case 'bible': {
 			const book = find(bibleBooks);
 			return book ? [book.title] : [];

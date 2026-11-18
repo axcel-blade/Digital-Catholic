@@ -39,7 +39,7 @@ export const sectionGroups: SectionGroup[] = [
 		key: 'learn',
 		label: 'Learn',
 		summary:
-			'Start with the Bible, the sacraments, the saints, and the foundations of the faith; meet the apostles and people of the Old Testament, read the parables, and explore Marian and Eucharistic signs.',
+			'Start with the Bible, the sacraments, the saints, and the foundations of the faith; meet the apostles and people of both Testaments, read the parables, and explore Marian and Eucharistic signs.',
 		anchor: 'learn',
 		subgroups: [
 			{ key: 'all' },
@@ -108,6 +108,7 @@ export const siteSections: SiteSection[] = [
 		alsoActiveOn: [
 			'/disciples',
 			'/old-testament-people',
+			'/new-testament-people',
 			'/parables',
 			'/miracles',
 			'/signs-and-wonders',

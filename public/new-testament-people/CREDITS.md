@@ -1,0 +1,36 @@
+# Image credits — People of the New Testament
+
+Images shown on the People of the New Testament pages (`/new-testament-people`). All images are from Wikimedia Commons (or copied from `public/saints` when noted), resized to at most 960px.
+
+| File | Source | Author | Licence |
+| --- | --- | --- | --- |
+| anna-the-prophetess.jpg | [Anna the Prophetess Fresco.jpg](https://commons.wikimedia.org/wiki/File%3AAnna_the_Prophetess_Fresco.jpg) | Unknown author Unknown author | Public domain |
+| apollos.jpg | [Edward John Poynter (1836-1919) - Paul and Apollos - N03320 - National Gallery.jpg](https://commons.wikimedia.org/wiki/File%3AEdward_John_Poynter_(1836-1919)_-_Paul_and_Apollos_-_N03320_-_National_Gallery.jpg) | Edward Poynter | Public domain |
+| barnabas.jpg | [St. Barnabas-Ikone (1).jpg](https://commons.wikimedia.org/wiki/File%3ASt._Barnabas-Ikone_(1).jpg) | Gerhard Haubold | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) |
+| blessed-virgin-mary.jpg | [blessed-virgin-mary.jpg (from public/saints)](/saints/blessed-virgin-mary) | See public/saints/CREDITS.md | See saints credits |
+| cleopas.jpg | [Caravaggio - Cena in Emmaus.jpg](https://commons.wikimedia.org/wiki/File%3ACaravaggio_-_Cena_in_Emmaus.jpg) | Caravaggio | Public domain |
+| cornelius.jpg | [Gerbrand van den Eeckhout - Vision of Cornelius the Centurion - Walters 372492.jpg](https://commons.wikimedia.org/wiki/File%3AGerbrand_van_den_Eeckhout_-_Vision_of_Cornelius_the_Centurion_-_Walters_372492.jpg) | Gerbrand van den Eeckhout | Public domain |
+| elizabeth.jpg | [Albertinelli Visitation.jpg](https://commons.wikimedia.org/wiki/File%3AAlbertinelli_Visitation.jpg) | Mariotto Albertinelli | Public domain |
+| james-of-jerusalem.jpg | [James the Just - icon.jpeg](https://commons.wikimedia.org/wiki/File%3AJames_the_Just_-_icon.jpeg) | Unknown Russian icon painter of 1809 | Public domain |
+| john-the-baptist.jpg | [Leonardo da Vinci - Saint John the Baptist C2RMF retouched.jpg](https://commons.wikimedia.org/wiki/File%3ALeonardo_da_Vinci_-_Saint_John_the_Baptist_C2RMF_retouched.jpg) | Leonardo da Vinci | Public domain |
+| joseph-of-arimathea.jpg | [The Entombment of Christ-Caravaggio (c.1602-3).jpg](https://commons.wikimedia.org/wiki/File%3AThe_Entombment_of_Christ-Caravaggio_(c.1602-3).jpg) | Caravaggio | Public domain |
+| lazarus.jpg | [Rembrandt Harmensz. van Rijn - The Raising of Lazarus - Google Art Project.jpg](https://commons.wikimedia.org/wiki/File%3ARembrandt_Harmensz._van_Rijn_-_The_Raising_of_Lazarus_-_Google_Art_Project.jpg) | Rembrandt | Public domain |
+| luke.jpg | [St. Luke the Evangelist - Pacecco de Rosa.jpg](https://commons.wikimedia.org/wiki/File%3ASt._Luke_the_Evangelist_-_Pacecco_de_Rosa.jpg) | Pacecco De Rosa | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| lydia.jpg | [1861 Ellenrieder Die Taufe der Lydia anagoria.JPG](https://commons.wikimedia.org/wiki/File%3A1861_Ellenrieder_Die_Taufe_der_Lydia_anagoria.JPG) | Marie Ellenrieder | Public domain |
+| mark.jpg | [Pietro della Vecchia - St Mark the Evangelist.jpg](https://commons.wikimedia.org/wiki/File%3APietro_della_Vecchia_-_St_Mark_the_Evangelist.jpg) | Pietro della Vecchia | Public domain |
+| martha-of-bethany.jpg | [Christ in the House of Martha and Mary - Tintoretto.jpg](https://commons.wikimedia.org/wiki/File%3AChrist_in_the_House_of_Martha_and_Mary_-_Tintoretto.jpg) | GoldenArtists | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+| mary-magdalene.jpg | [La Tour - La Madeleine à la veilleuse dite La Madeleine Terff, vers 1642 - 1644, RF 1949 11.jpg](https://commons.wikimedia.org/wiki/File%3ALa_Tour_-_La_Madeleine_%C3%A0_la_veilleuse_dite_La_Madeleine_Terff%2C_vers_1642_-_1644%2C_RF_1949_11.jpg) | Georges de La Tour | Public domain |
+| mary-of-bethany.jpg | [Christ in the House of Martha and Mary - Tintoretto.jpg](https://commons.wikimedia.org/wiki/File%3AChrist_in_the_House_of_Martha_and_Mary_-_Tintoretto.jpg) | GoldenArtists | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+| matthias.jpg | [Rubens apostle Matthias grt.jpg](https://commons.wikimedia.org/wiki/File%3ARubens_apostle_Matthias_grt.jpg) | Peter Paul Rubens | Public domain |
+| nicodemus.jpg | [Hendrick van Steenwijck the younger (c.1580-1649) - Christ with Nicodemus - 486225 - National Trust.jpg](https://commons.wikimedia.org/wiki/File%3AHendrick_van_Steenwijck_the_younger_(c.1580-1649)_-_Christ_with_Nicodemus_-_486225_-_National_Trust.jpg) | Hendrik van Steenwijk II | Public domain |
+| paul.jpg | [st-paul-the-apostle.jpg (from public/saints)](/saints/st-paul-the-apostle) | See public/saints/CREDITS.md | See saints credits |
+| philip-the-evangelist.jpg | [Seekatz St. Philip baptising the servant.jpg](https://commons.wikimedia.org/wiki/File%3ASeekatz_St._Philip_baptising_the_servant.jpg) | Johann Conrad Seekatz | Public domain |
+| priscilla-and-aquila.jpg | [Sint-Paulus bij de heiligen Aquila en Priscilla, onbekend, schilderij, Museum Plantin-Moretus (Antwerpen) - MPM V IV 118.jpg](https://commons.wikimedia.org/wiki/File%3ASint-Paulus_bij_de_heiligen_Aquila_en_Priscilla%2C_onbekend%2C_schilderij%2C_Museum_Plantin-Moretus_(Antwerpen)_-_MPM_V_IV_118.jpg) | Unknown author Unknown author | Public domain |
+| silas.jpg | [Michael Václav Halbax - St Paul and Silas in Prison - O 2303 - National Gallery Prague.jpg](https://commons.wikimedia.org/wiki/File%3AMichael_V%C3%A1clav_Halbax_-_St_Paul_and_Silas_in_Prison_-_O_2303_-_National_Gallery_Prague.jpg) | Michael Václav Halbax | Public domain |
+| simeon.jpg | [Hans Holbein d. Ä. - Kaisheimer Altar, Darbringung im Tempel - 723 - Bavarian State Painting Collections.jpg](https://commons.wikimedia.org/wiki/File%3AHans_Holbein_d._%C3%84._-_Kaisheimer_Altar%2C_Darbringung_im_Tempel_-_723_-_Bavarian_State_Painting_Collections.jpg) | Hans Holbein the Elder | Public domain |
+| st-joseph.jpg | [st-joseph.jpg (from public/saints)](/saints/st-joseph) | See public/saints/CREDITS.md | See saints credits |
+| stephen.jpg | [The Martyrdom of St Stephen Tobias Pock (1640).jpg](https://commons.wikimedia.org/wiki/File%3AThe_Martyrdom_of_St_Stephen_Tobias_Pock_(1640).jpg) | Christian Iconography (The image was painted by Tobias Pock) | Public domain |
+| timothy.jpg | [Saint Timothy.jpg](https://commons.wikimedia.org/wiki/File%3ASaint_Timothy.jpg) | Unknown author Unknown author | Public domain |
+| titus.jpg | [Saint Titus (Kosovo, 14th c. Pech Patriarch., S. Nicholas church).jpg](https://commons.wikimedia.org/wiki/File%3ASaint_Titus_(Kosovo%2C_14th_c._Pech_Patriarch.%2C_S._Nicholas_church).jpg) | Anonymous Unknown author | Public domain |
+| zacchaeus.jpg | [Jacopo Palma il giovane (1544-1548-1628) - Christ Calling Zacchaeus - 108 - Fitzwilliam Museum.jpg](https://commons.wikimedia.org/wiki/File%3AJacopo_Palma_il_giovane_(1544-1548-1628)_-_Christ_Calling_Zacchaeus_-_108_-_Fitzwilliam_Museum.jpg) | Palma il Giovane | Public domain |
+| zechariah.jpg | [The Angel Appearing to Zacharias MET DP164838.jpg](https://commons.wikimedia.org/wiki/File%3AThe_Angel_Appearing_to_Zacharias_MET_DP164838.jpg) | William Blake | Public domain |
