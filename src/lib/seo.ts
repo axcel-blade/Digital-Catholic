@@ -2,7 +2,7 @@ export const SITE = {
 	name: 'Digital Catholic',
 	defaultTitle: 'Digital Catholic — Learn the Faith, Pray with the Church',
 	defaultDescription:
-		'Clear Catholic resources for Scripture, saints, sacraments, prayer, and the liturgical year—with apostle biographies, Gospel miracles and parables, Marian apparitions, Eucharistic miracles, and the Rosary.',
+		'Clear Catholic resources for Scripture, saints, sacraments, prayer, and the liturgical year—with apostle biographies, kings and prophets, Gospel miracles and parables, Marian apparitions, Eucharistic miracles, and the Rosary.',
 	tagline: 'Learn the faith. Pray with the Church. Live it daily.',
 	locale: 'en_US',
 	themeColor: '#1b1614',
@@ -28,12 +28,18 @@ export const PAGE_DESCRIPTIONS = {
 		'Pray with the Church: the Our Father and Hail Mary, the Rosary, the Daily Gospel, devotions such as Lectio Divina and adoration, the Mass, and the liturgical year.',
 	saints:
 		'Mary and the saints in the Catholic Church—saint biographies with feast days, the Immaculate Conception, perpetual virginity, Assumption, Mother of God, the intercession and veneration of saints, relics and sacramentals, and angels.',
+	popes:
+		'All 267 popes of the Catholic Church in traditional order—from St. Peter to Pope Leo XIV—with pontificate dates and biographies, alongside teaching on the papacy and Church history.',
 	sacraments:
 		'The seven sacraments of the Catholic Church in the order of the Catechism—what each one is and why it matters—with in-depth guides to Baptism and Confirmation, the Real Presence, transubstantiation, Confession, marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion.',
 	signsAndWonders:
 		'Marian apparitions such as Guadalupe, Lourdes, Fátima, Knock, and Velankanni, and Eucharistic miracles such as Lanciano and Bolsena—what happened, what it means, and the Church status of each.',
 	learn:
-		'Learn the Catholic faith: the Bible, core beliefs, the Holy Trinity, the Ten Commandments, the seven sacraments, the life of Jesus, Mary, and the saints.',
+		'Learn the Catholic faith: the Bible, core beliefs, the Holy Trinity, the Ten Commandments, the seven sacraments, the life of Jesus, people of the Old and New Testaments, Mary and the saints, and the popes.',
+	oldTestamentPeople:
+		'People of the Old Testament—patriarchs, matriarchs, judges, kings, prophets, and women of faith from Noah and Abraham to Esther, Ezra, and the writing prophets, with key moments and prophecies fulfilled in Christ.',
+	newTestamentPeople:
+		'People of the New Testament—the Holy Family, John the Baptist, Mary Magdalene, Paul, Stephen, and other witnesses of the Gospel and Acts (the Twelve Apostles have their own hub).',
 	commandments:
 		'The Ten Commandments—God’s moral law given to Moses—with the text of each commandment and its meaning for love of God and neighbour.',
 	coreBeliefs:
@@ -68,12 +74,15 @@ export const PAGE_DESCRIPTIONS = {
 		'An interactive timeline of Catholic Church history, from Pentecost and the apostles through the councils, the Great Schism, the Reformation, and Vatican II to the present.',
 	disciples:
 		'The Twelve Apostles of Jesus Christ—biographies from their call to their deaths, Gospel and Acts accounts, feast days, and lessons for following Christ.',
+
 	eucharisticMiracles:
 		'Eucharistic miracles in Catholic history—Lanciano, Bolsena, and more recent events—with a clear note on the Church status of each account.',
 	marianApparitions:
 		'Marian apparitions such as Guadalupe, Lourdes, Fátima, Knock, and Velankanni—what happened, what it means, and the Church status of each.',
 	miracles:
 		'Miracles of Jesus Christ in the Gospels of Matthew, Mark, Luke, and John—signs of the Kingdom with Scripture references and reflections for faith.',
+	bibleStories:
+		'Bible stories of the Old Testament in order—Creation, Adam and Eve, Cain and Abel, Noah’s Ark, Abraham, the Exodus, forty years in the wilderness, David and Goliath, Jonah, Daniel, and more.',
 	parables:
 		'Parables of Jesus Christ in the Gospels—stories of God’s Kingdom with Scripture references and lessons for discipleship.',
 	sacramentsInDepth:

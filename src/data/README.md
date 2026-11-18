@@ -7,7 +7,10 @@ Content is split into **one file per article** so contributors can add entries w
 | Folder | Add a file in | Example |
 | --- | --- | --- |
 | Saints | `saints/items/{slug}.ts` | `st-joseph.ts` |
+| Popes | `popes/items/{slug}.ts` | `leo-xiii.ts` (sorted by `reignStart` / `papalNumber`) |
 | Disciples of Jesus | `disciples/items/NN-{slug}.ts` | `01-peter.ts` (order field sets list order) |
+| People of the Old Testament | `old-testament-people/items/NN-{slug}.ts` | `01-noah.ts` (roles: patriarch, leader, judge, woman-of-faith, king, prophet, major-prophet, minor-prophet; optional `keyMoments` / `prophecies`) |
+| People of the New Testament | `new-testament-people/items/NN-{slug}.ts` | `07-john-the-baptist.ts` (roles: holy-family, forerunner, woman-disciple, witness, apostle, evangelist, martyr, coworker; the Twelve live under `disciples/`) |
 | Prayers | `prayers/items/NN-{slug}.ts` | `01-our-father.ts` |
 | Holy Bible | `bible/books/old-testament.ts`, `new-testament.ts` | `genesis` slug per book (73 books) |
 | Sacraments | `sacraments/items/{slug}.ts` | `baptism.ts` |
@@ -31,7 +34,7 @@ Content is split into **one file per article** so contributors can add entries w
 | Liturgical calendar | `liturgical-calendar/fixed-feasts.ts`, `compute.ts` | fixed solemnities plus Easter-derived dates; a fixed feast can set `rank: 'commemoration'` and a `noteLink: { href, label }` shown after its note |
 | Holy Mass | `mass/index.ts` | add an entry to the relevant group in `massSections` (Items Used at Mass); the Order of Mass text lives in `mass/order.ts`; a new Mass sub-page also needs an entry in `massPages` |
 
-Images live under `public/`: saints in `public/saints/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, parables in `public/parables/{slug}.jpg`, miracles of Jesus in `public/miracles/{slug}.jpg`, Mass items in `public/mass/{name}.jpg`, and Bible page art in `public/bible/` (Wikimedia Commons–licensed art preferred). Record the source, author, and licence of every image in that folder's `CREDITS.md`, and give each parable and miracle an `imageAlt` describing the artwork.
+Images live under `public/`: saints in `public/saints/{slug}.jpg`, popes in `public/popes/{slug}.jpg`, disciple portraits in `public/disciples/{slug}.jpg`, Old Testament people in `public/old-testament-people/{slug}.jpg`, New Testament people in `public/new-testament-people/{slug}.jpg`, parables in `public/parables/{slug}.jpg`, miracles of Jesus in `public/miracles/{slug}.jpg`, Mass items in `public/mass/{name}.jpg`, and Bible page art in `public/bible/` (Wikimedia Commons–licensed art preferred). Record the source, author, and licence of every image in that folder's `CREDITS.md`, and give each parable and miracle an `imageAlt` describing the artwork.
 
 Saint and disciple sections can also carry an image, such as a painting of a miracle or a photo of a relic or tomb: add `image: { src, alt, caption }` to the section, with `src` pointing to a file in a `sections/` subfolder (for example `/saints/sections/st-nicholas-relics.jpg`). When the licence requires attribution (CC BY, CC BY-SA), name the photographer and licence in the caption as well as in `CREDITS.md`.
 
@@ -50,6 +53,17 @@ Each folder has:
 4. Run `pnpm run build`.
 
 The new saint appears on `/saints` and in search automatically—no need to edit `index.ts`. Do not use the slug `path-to-sainthood`; it is reserved for the page explaining each stage, whose text lives in `saints/path.ts`.
+
+## Adding a pope (example)
+
+1. Copy an existing file in `popes/items/`, e.g. `leo-xiii.ts`, and rename it to your slug: `pius-xi.ts`.
+2. Edit the object: `slug`, `title`, `papalNumber`, `pontificate`, `reignStart`, `excerpt`, optional `birthName`, `lifeDates`, `feastDays`, and `relatedSaintSlug` (if the same person also has a saints biography). Include sections on who he was, life before the papacy, the pontificate, and—when applicable—death and legacy, plus a closing lesson section.
+3. Add a portrait at `public/popes/pius-xi.jpg` and record it in `public/popes/CREDITS.md`.
+4. Run `pnpm run build`.
+
+The new pope appears on `/popes` and in search automatically. Canonised or beatified popes may live in both collections; use `relatedSaintSlug` to cross-link the saint biography.
+
+The collection already includes all **267** traditional pontiffs (St. Peter–Leo XIV). Most entries are concise chronological notices; a few modern popes have fuller biographies. To regenerate missing stubs without touching existing files, run `node scripts/generate-popes.mjs` (it skips any `papalNumber` that already has an item).
 
 ## Trust and source fields (optional)
 

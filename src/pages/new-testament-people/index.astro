@@ -1,0 +1,73 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import {
+	getNewTestamentPersonImageAlt,
+	newTestamentIndexGroups,
+	newTestamentPeople,
+	newTestamentPeopleIntro,
+	newTestamentRoleLabels,
+} from '../../data/new-testament-people';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+
+const groups = newTestamentIndexGroups
+	.map((group) => ({
+		...group,
+		items: newTestamentPeople.filter((p) => group.roles.includes(p.role)),
+	}))
+	.filter((group) => group.items.length > 0);
+---
+
+<SectionLayout
+	sectionKey="learn"
+	pageCrumb="People of the New Testament"
+	heading="People of the New Testament"
+	title="People of the New Testament"
+	description={PAGE_DESCRIPTIONS.newTestamentPeople}
+	currentPath={Astro.url.pathname}
+	intro={newTestamentPeopleIntro}
+	count={`${newTestamentPeople.length} biographies · plus the Twelve Apostles in their own hub`}
+>
+	<nav class="jump-links" aria-label="Jump to a group" slot="header">
+		{groups.map((group) => (
+			<a class="jump-links__link" href={`#${group.id}`}>{group.title}</a>
+		))}
+	</nav>
+
+	{newTestamentPeople.length === 0 ? (
+		<EmptyState />
+	) : (
+		groups.map((group) => (
+			<section class="page-section" aria-labelledby={group.id}>
+				<h2 class="section-title" id={group.id}>{group.title}</h2>
+				<ul class="card-grid card-grid--media">
+					{group.items.map((person, i) => (
+						<EntryCard
+							href={withBase(`/new-testament-people/${person.slug}`)}
+							title={person.title}
+							label={newTestamentRoleLabels[person.role]}
+							meta={person.alsoKnownAs}
+							excerpt={person.excerpt}
+							action={person.keyMoments?.length ? 'Read biography & key moments' : 'Read biography'}
+							image={getCollectionImage(
+								'new-testament-people',
+								person.slug,
+								getNewTestamentPersonImageAlt(person.title)
+							)}
+							eager={i < 2}
+						/>
+					))}
+				</ul>
+			</section>
+		))
+	)}
+
+	<p class="section-footer-links">
+		Meet <a href={withBase('/disciples')}>the Twelve Apostles</a>, explore
+		<a href={withBase('/old-testament-people')}>People of the Old Testament</a>, or read the
+		<a href={withBase('/bible')}>Holy Bible</a>.
+	</p>
+</SectionLayout>

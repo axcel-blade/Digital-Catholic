@@ -15,6 +15,16 @@ import { fruitsIntro, giftsIntro, spiritFruits, spiritGifts } from '../data/holy
 import { massIntro, massItemsIntro, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
 import {
+	oldTestamentPeople,
+	oldTestamentPeopleIntro,
+	oldTestamentRoleLabels,
+} from '../data/old-testament-people';
+import {
+	newTestamentPeople,
+	newTestamentPeopleIntro,
+	newTestamentRoleLabels,
+} from '../data/new-testament-people';
+import {
 	mysterySets,
 	rosaryHowToIntro,
 	rosaryHowToSteps,
@@ -37,6 +47,7 @@ import {
 	veilOfVeronicaSections,
 } from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
+import { bibleStories, bibleStoriesIntro } from '../data/bible-stories';
 import { sacraments, sacramentGuides } from '../data/sacraments';
 import {
 	buildLiturgicalYear,
@@ -49,6 +60,7 @@ import {
 	pathToSainthoodIntro,
 	pathToSainthoodSections,
 } from '../data/saints';
+import { popes, popesIntro } from '../data/popes';
 import {
 	bibleBooks,
 	bibleFormationIntro,
@@ -198,6 +210,61 @@ export function buildSearchIndex(): SearchEntry[] {
 			],
 		),
 		entry(
+			'People of the Old Testament',
+			withBase('/old-testament-people'),
+			'Old Testament',
+			oldTestamentPeopleIntro,
+			[
+				oldTestamentPeopleIntro,
+				'kings prophets david solomon abraham moses elijah ruth',
+				...oldTestamentPeople.map((p) =>
+					joinParts(
+						p.title,
+						p.alsoKnownAs,
+						p.excerpt,
+						oldTestamentRoleLabels[p.role],
+						p.scriptureReference,
+						p.feastDays ?? '',
+						...(p.keyMoments?.map((m) => joinParts(m.title, m.reference, m.summary)) ?? []),
+						...(p.prophecies?.map((m) => joinParts(m.title, m.reference, m.summary)) ?? [])
+					)
+				),
+			],
+		),
+		entry(
+			'People of the New Testament',
+			withBase('/new-testament-people'),
+			'New Testament',
+			newTestamentPeopleIntro,
+			[
+				newTestamentPeopleIntro,
+				'mary joseph john baptist magdalene paul stephen barnabas',
+				...newTestamentPeople.map((p) =>
+					joinParts(
+						p.title,
+						p.alsoKnownAs,
+						p.excerpt,
+						newTestamentRoleLabels[p.role],
+						p.scriptureReference,
+						p.feastDays ?? '',
+						...(p.keyMoments?.map((m) => joinParts(m.title, m.reference, m.summary)) ?? [])
+					)
+				),
+			],
+		),
+		entry(
+			'Popes of the Catholic Church',
+			withBase('/popes'),
+			'Popes',
+			popesIntro,
+			[
+				popesIntro,
+				...popes.map((p) =>
+					joinParts(p.title, p.birthName, p.excerpt, p.pontificate, p.lifeDates ?? '', p.feastDays ?? '')
+				),
+			],
+		),
+		entry(
 			'Miracles of Jesus',
 			withBase('/miracles'),
 			'Miracles',
@@ -247,6 +314,13 @@ export function buildSearchIndex(): SearchEntry[] {
 					joinParts(a.title, a.excerpt, a.location, a.date, a.category)
 				),
 			],
+		),
+		entry(
+			'Bible Stories',
+			withBase('/bible-stories'),
+			'Bible Stories',
+			bibleStoriesIntro,
+			[bibleStoriesIntro, ...bibleStories.map((s) => joinParts(s.title, s.excerpt, s.scriptureReference, s.era))],
 		),
 		entry(
 			'Parables of Jesus',
@@ -398,6 +472,53 @@ export function buildSearchIndex(): SearchEntry[] {
 		);
 	}
 
+	for (const person of oldTestamentPeople) {
+		const highlightsText = [
+			...(person.keyMoments ?? []),
+			...(person.prophecies ?? []),
+		]
+			.map((m) => joinParts(m.title, m.reference, m.summary))
+			.join(' ');
+		items.push(
+			entry(
+				bookTitles.has(person.title) ? `${person.title} (${oldTestamentRoleLabels[person.role]})` : person.title,
+				withBase(`/old-testament-people/${person.slug}`),
+				oldTestamentRoleLabels[person.role],
+				person.excerpt,
+				[
+					person.alsoKnownAs ?? '',
+					person.lifeDates ?? '',
+					person.scriptureReference,
+					person.feastDays ?? '',
+					highlightsText,
+					sectionsText(person.sections),
+				]
+			)
+		);
+	}
+
+	for (const person of newTestamentPeople) {
+		const highlightsText = (person.keyMoments ?? [])
+			.map((m) => joinParts(m.title, m.reference, m.summary))
+			.join(' ');
+		items.push(
+			entry(
+				person.title,
+				withBase(`/new-testament-people/${person.slug}`),
+				newTestamentRoleLabels[person.role],
+				person.excerpt,
+				[
+					person.alsoKnownAs ?? '',
+					person.lifeDates ?? '',
+					person.scriptureReference,
+					person.feastDays ?? '',
+					highlightsText,
+					sectionsText(person.sections),
+				]
+			)
+		);
+	}
+
 	for (const saint of saints) {
 		items.push(
 			entry(
@@ -406,6 +527,25 @@ export function buildSearchIndex(): SearchEntry[] {
 				getSaintStatus(saint),
 				saint.excerpt,
 				[saint.lifeDates ?? '', saint.feastDays ?? '', sectionsText(saint.sections)]
+			)
+		);
+	}
+
+	for (const pope of popes) {
+		items.push(
+			entry(
+				pope.title,
+				withBase(`/popes/${pope.slug}`),
+				'Pope',
+				pope.excerpt,
+				[
+					pope.birthName ?? '',
+					pope.pontificate,
+					pope.lifeDates ?? '',
+					pope.feastDays ?? '',
+					String(pope.papalNumber),
+					sectionsText(pope.sections),
+				]
 			)
 		);
 	}
@@ -476,6 +616,18 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Marian apparition',
 				apparition.excerpt,
 				[apparition.location, apparition.date, apparition.category, sectionsText(apparition.sections)]
+			)
+		);
+	}
+
+	for (const story of bibleStories) {
+		items.push(
+			entry(
+				story.title,
+				withBase(`/bible-stories/${story.slug}`),
+				'Bible story',
+				story.excerpt,
+				[story.scriptureReference, story.era, sectionsText(story.sections)]
 			)
 		);
 	}

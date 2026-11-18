@@ -1,0 +1,89 @@
+---
+import ArticleLayout, { type ArticleMeta } from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import {
+	getNewTestamentPersonImageAlt,
+	newTestamentPeople,
+	newTestamentRoleLabels,
+	type NewTestamentPerson,
+} from '../../data/new-testament-people';
+import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+import { getNeighbors, getRelated, type ArticleLink, type ArticleSection } from '../../lib/article';
+
+export function getStaticPaths() {
+	return newTestamentPeople.map((person) => ({ params: { slug: person.slug } }));
+}
+
+const index = newTestamentPeople.findIndex((p) => p.slug === Astro.params.slug);
+const person = newTestamentPeople[index];
+
+if (!person) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const toLink = (p: NewTestamentPerson): ArticleLink => ({
+	href: withBase(`/new-testament-people/${p.slug}`),
+	title: p.title,
+	label: newTestamentRoleLabels[p.role],
+	excerpt: p.excerpt,
+});
+
+function withKeyMoments(p: NewTestamentPerson): ArticleSection[] {
+	if (!p.keyMoments?.length) return p.sections;
+	const momentsSection: ArticleSection = {
+		heading: 'Key moments',
+		paragraphs: p.keyMoments.map((m) => `${m.title} (${m.reference}). ${m.summary}`),
+	};
+	const insertAt = p.sections.findIndex((s) => /^death and legacy$/i.test(s.heading));
+	if (insertAt === -1) return [...p.sections, momentsSection];
+	return [...p.sections.slice(0, insertAt), momentsSection, ...p.sections.slice(insertAt)];
+}
+
+const sections = withKeyMoments(person);
+const { prev, next } = getNeighbors(newTestamentPeople, index);
+const meta: ArticleMeta[] = [
+	{ term: 'Role', value: newTestamentRoleLabels[person.role] },
+	...(person.alsoKnownAs ? [{ term: 'Also known as', value: person.alsoKnownAs }] : []),
+	...(person.lifeDates ? [{ term: 'Life', value: person.lifeDates }] : []),
+	...(person.feastDays ? [{ term: 'Feast days', value: person.feastDays }] : []),
+	{ term: 'Scripture', value: person.scriptureReference },
+	...(person.relatedHref && person.relatedLabel
+		? [{ term: 'See also', value: person.relatedLabel }]
+		: []),
+];
+
+function relatedGroup(p: NewTestamentPerson): string {
+	if (p.role === 'apostle' || p.role === 'evangelist') return 'apostle';
+	if (p.role === 'martyr' || p.role === 'coworker') return 'early-church';
+	return p.role;
+}
+---
+
+<ArticleLayout
+	title={person.title}
+	description={person.excerpt}
+	currentPath={Astro.url.pathname}
+	sectionKey="learn"
+	extraCrumbs={[{ label: 'People of the New Testament', href: withBase('/new-testament-people') }]}
+	label={`${newTestamentRoleLabels[person.role]} · New Testament`}
+	lead={person.excerpt}
+	meta={meta}
+	image={getCollectionImage(
+		'new-testament-people',
+		person.slug,
+		getNewTestamentPersonImageAlt(person.title)
+	)}
+	sections={sections}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={getRelated(newTestamentPeople, index, 3, relatedGroup).map(toLink)}
+	trust={person}
+>
+	{person.relatedHref && person.relatedLabel && (
+		<p class="section-footer-links" style="margin-top: 0; margin-bottom: 1.25rem;">
+			<a href={withBase(person.relatedHref)}>{person.relatedLabel}</a>
+		</p>
+	)}
+	<SectionList sections={sections} />
+</ArticleLayout>

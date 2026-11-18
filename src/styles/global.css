@@ -1337,6 +1337,25 @@ mark {
 	font-size: var(--text-md);
 }
 
+.jump-links--numbers .jump-links__link[aria-current='page'] {
+	background: var(--color-accent);
+	border-color: var(--color-accent);
+	color: var(--color-on-accent);
+}
+
+.pagination {
+	display: grid;
+	gap: var(--space-5);
+	margin-top: var(--space-8);
+}
+
+.pagination__pages {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+}
+
 /* Word links (e.g. "Old Testament") placed among number links */
 .jump-links--numbers .jump-links__link--text {
 	padding: 0 var(--space-4);

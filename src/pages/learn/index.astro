@@ -2,9 +2,13 @@
 import SectionLayout from '../../layouts/SectionLayout.astro';
 import EntryCard from '../../components/EntryCard.astro';
 import { disciples, disciplesIntro } from '../../data/disciples';
+import { oldTestamentPeople, oldTestamentPeopleIntro } from '../../data/old-testament-people';
+import { newTestamentPeople, newTestamentPeopleIntro } from '../../data/new-testament-people';
 import { parables, parablesIntro } from '../../data/parables';
+import { bibleStories, bibleStoriesIntro } from '../../data/bible-stories';
 import { miracles, miraclesIntro } from '../../data/miracles';
 import { saints } from '../../data/saints';
+import { popes, popesIntro } from '../../data/popes';
 import { bibleBooks, bibleIntro } from '../../data/bible';
 import { coreBeliefsIntro } from '../../data/core-beliefs';
 import { trinityIntro } from '../../data/trinity';
@@ -22,25 +26,31 @@ const articleCount =
 	sacraments.length +
 	sacramentGuides.length +
 	saints.length +
+	popes.length +
 	disciples.length +
+	oldTestamentPeople.length +
+	newTestamentPeople.length +
+	bibleStories.length +
 	parables.length +
 	miracles.length +
 	2 +
 	marianApparitions.length +
 	eucharisticMiracles.length;
-// The seven doctrine cards plus the three life-of-Jesus cards.
-const areaCount = 10;
+// The eight doctrine cards plus life-of-Jesus and Scripture-people cards.
+const areaCount = 13;
 ---
 
 <SectionLayout
 	sectionKey="learn"
 	description={PAGE_DESCRIPTIONS.learn}
 	currentPath={Astro.url.pathname}
-	intro="The heart of the Catholic faith: the Word of God, what the Church believes, how God shares His life with us in the sacraments, and the people who have lived it. Begin with the Holy Bible, the core beliefs, the Holy Trinity, and the Ten Commandments; then discover the seven sacraments, follow the life of Jesus through His apostles, parables, and miracles, and meet Mary and the saints."
+	intro="The heart of the Catholic faith: the Word of God, what the Church believes, how God shares His life with us in the sacraments, and the people who have lived it. Begin with the Holy Bible, the core beliefs, the Holy Trinity, and the Ten Commandments; then discover the seven sacraments, meet the people of both Testaments, follow the life of Jesus through His apostles, parables, and miracles, and meet Mary, the saints, and the popes."
 	count={`${areaCount} areas · ${articleCount} articles`}
 >
 	<nav class="jump-links" aria-label="Jump to a part of this page" slot="header">
 		<a class="jump-links__link" href="#signs-of-faith">Scripture, Doctrine, and Saints</a>
+		<a class="jump-links__link" href="#old-testament">Old Testament</a>
+		<a class="jump-links__link" href="#new-testament">New Testament</a>
 		<a class="jump-links__link" href="#jesus">The Life of Jesus</a>
 	</nav>
 
@@ -90,6 +100,13 @@ const areaCount = 10;
 				action="Meet the saints"
 			/>
 			<EntryCard
+				href={withBase('/popes')}
+				title="Popes of the Catholic Church"
+				label="Papacy"
+				excerpt={popesIntro}
+				action={`Read ${popes.length} papal biographies`}
+			/>
+			<EntryCard
 				href={withBase('/signs-and-wonders')}
 				title="Marian and Eucharistic Signs"
 				label="Signs & wonders"
@@ -99,10 +116,31 @@ const areaCount = 10;
 		</ul>
 	</section>
 
-	<section class="page-section" aria-labelledby="jesus">
-		<h2 class="section-title" id="jesus">The Life of Jesus</h2>
-		<p class="section-intro">Jesus called twelve apostles to be with Him, taught in parables, and confirmed His teaching with mighty works. The parables reveal the Kingdom of God in stories drawn from everyday life; the miracles are signs that the Kingdom has come in Him (CCC 546–553).</p>
+	<section class="page-section" aria-labelledby="old-testament">
+		<h2 class="section-title" id="old-testament">The Old Testament</h2>
+		<p class="section-intro">Before the Gospel, God called patriarchs, leaders, women of faith, kings, and prophets whose lives and oracles prepare the way for Christ (CCC 64, 702–716).</p>
 		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/old-testament-people')}
+				title="People of the Old Testament"
+				label="Old Testament"
+				excerpt={oldTestamentPeopleIntro}
+				action={`Meet all ${oldTestamentPeople.length} figures`}
+			/>
+		</ul>
+	</section>
+
+	<section class="page-section" aria-labelledby="new-testament">
+		<h2 class="section-title" id="new-testament">The New Testament</h2>
+		<p class="section-intro">In the fullness of time God sent His Son. Around Jesus stand the Holy Family, the forerunner, women disciples, witnesses of the Passion and Resurrection, and the first generation of the Church (CCC 422–429, 551–553).</p>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/new-testament-people')}
+				title="People of the New Testament"
+				label="New Testament"
+				excerpt={newTestamentPeopleIntro}
+				action={`Meet all ${newTestamentPeople.length} figures`}
+			/>
 			<EntryCard
 				href={withBase('/disciples')}
 				title="The Twelve Apostles"
@@ -110,6 +148,27 @@ const areaCount = 10;
 				excerpt={disciplesIntro}
 				action={`Meet all ${disciples.length} apostles`}
 			/>
+		</ul>
+	</section>
+
+	<section class="page-section" aria-labelledby="bible-stories">
+		<h2 class="section-title" id="bible-stories">Stories of the Old Testament</h2>
+		<p class="section-intro">From Creation and the Fall to Noah’s Ark, the Exodus, and the return from exile—the great stories of salvation history that prepare for Christ.</p>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/bible-stories')}
+				title="Bible Stories"
+				label="Old Testament"
+				excerpt={bibleStoriesIntro}
+				action={`Read ${bibleStories.length} stories`}
+			/>
+		</ul>
+	</section>
+
+	<section class="page-section" aria-labelledby="jesus">
+		<h2 class="section-title" id="jesus">The Life of Jesus</h2>
+		<p class="section-intro">Jesus taught in parables and confirmed His teaching with mighty works. The parables reveal the Kingdom of God in stories drawn from everyday life; the miracles are signs that the Kingdom has come in Him (CCC 546–553).</p>
+		<ul class="card-grid card-grid--two">
 			<EntryCard
 				href={withBase('/parables')}
 				title="Parables of Jesus"

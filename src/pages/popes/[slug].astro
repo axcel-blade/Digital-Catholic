@@ -1,0 +1,74 @@
+---
+import ArticleLayout, { type ArticleMeta } from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import { popes, getPopeImageAlt, type Pope } from '../../data/popes';
+import { getSaint } from '../../data/saints';
+import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+import { getNeighbors, getRelated, type ArticleLink } from '../../lib/article';
+
+export function getStaticPaths() {
+	return popes.map((pope) => ({ params: { slug: pope.slug } }));
+}
+
+const index = popes.findIndex((p) => p.slug === Astro.params.slug);
+const pope = popes[index];
+
+if (!pope) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const toLink = (p: Pope): ArticleLink => ({
+	href: withBase(`/popes/${p.slug}`),
+	title: p.title,
+	label: `Pope · ${p.pontificate}`,
+	excerpt: p.excerpt,
+});
+
+const { prev, next } = getNeighbors(popes, index);
+const relatedSaint = pope.relatedSaintSlug ? getSaint(pope.relatedSaintSlug) : undefined;
+const meta: ArticleMeta[] = [
+	...(pope.birthName ? [{ term: 'Birth name', value: pope.birthName }] : []),
+	{ term: 'Pontificate', value: pope.pontificate },
+	...(pope.lifeDates ? [{ term: 'Life', value: pope.lifeDates }] : []),
+	...(pope.feastDays ? [{ term: 'Feast days', value: pope.feastDays }] : []),
+	{ term: 'Papal number', value: String(pope.papalNumber) },
+];
+---
+
+<ArticleLayout
+	title={pope.title}
+	description={pope.excerpt}
+	currentPath={Astro.url.pathname}
+	sectionKey="learn"
+	extraCrumbs={[{ label: 'Popes', href: withBase('/popes') }]}
+	label={`Pope · ${pope.pontificate}`}
+	lead={pope.excerpt}
+	meta={meta}
+	image={getCollectionImage('popes', pope.slug, getPopeImageAlt(pope.title))}
+	sections={pope.sections}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={[
+		...(relatedSaint
+			? [
+					{
+						href: withBase(`/saints/${relatedSaint.slug}`),
+						title: relatedSaint.title,
+						label: 'Saint biography',
+						excerpt: relatedSaint.excerpt,
+					},
+				]
+			: []),
+		{
+			href: withBase('/the-church/the-pope-and-the-papacy'),
+			title: 'The Pope and the papacy',
+			label: 'The Church',
+			excerpt: 'The Bishop of Rome, successor of St. Peter, and the visible foundation of the Church’s unity.',
+		},
+		...getRelated(popes, index).map(toLink),
+	]}
+	trust={pope}
+>
+	<SectionList sections={pope.sections} />
+</ArticleLayout>

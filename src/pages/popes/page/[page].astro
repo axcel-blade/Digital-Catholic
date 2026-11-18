@@ -1,0 +1,19 @@
+---
+import PopesDirectory from '../../../components/PopesDirectory.astro';
+import { getPopesPageCount } from '../../../data/popes';
+
+export function getStaticPaths() {
+	const totalPages = getPopesPageCount();
+	// Page 1 lives at /popes; only emit /popes/page/2…
+	return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => ({
+		params: { page: String(i + 2) },
+	}));
+}
+
+const page = Number(Astro.params.page);
+if (!Number.isFinite(page) || page < 2 || page > getPopesPageCount()) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+---
+
+<PopesDirectory page={page} currentPath={Astro.url.pathname} />
