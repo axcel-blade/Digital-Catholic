@@ -81,6 +81,8 @@ export const PAGE_DESCRIPTIONS = {
 		'Marian apparitions such as Guadalupe, Lourdes, Fátima, Knock, and Velankanni—what happened, what it means, and the Church status of each.',
 	miracles:
 		'Miracles of Jesus Christ in the Gospels of Matthew, Mark, Luke, and John—signs of the Kingdom with Scripture references and reflections for faith.',
+	bibleStories:
+		'Bible stories of the Old Testament in order—Creation, Adam and Eve, Cain and Abel, Noah’s Ark, Abraham, the Exodus, forty years in the wilderness, David and Goliath, Jonah, Daniel, and more.',
 	parables:
 		'Parables of Jesus Christ in the Gospels—stories of God’s Kingdom with Scripture references and lessons for discipleship.',
 	sacramentsInDepth:

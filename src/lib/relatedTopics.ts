@@ -127,6 +127,7 @@ const topics: Topic[] = [
 	{ href: '/the-church', label: 'The Catholic Church', patterns: [/\bapostolic succession\b/g, /\bpapacy\b/g, /\bfour marks\b/g, /\becumenism\b/g] },
 	{ href: '/church-history', label: 'Catholic Church History', patterns: [/\bcouncil of trent\b/g, /\bvatican ii\b/g, /\bsecond vatican council\b/g, /\bgreat schism\b/g, /\breformation\b/g, /\becumenical councils?\b/g] },
 	{ href: '/compare-christian-traditions', label: 'Compare Christian Traditions', patterns: [/\borthodox\b/g, /\bprotestants?\b/g, /\banglicans?\b/g] },
+	{ href: '/bible-stories', label: 'Bible Stories', patterns: [/bible stor(y|ies)/g] },
 	{ href: '/parables', label: 'Parables of Jesus', patterns: [/\bparables?\b/g] },
 	{ href: '/living-the-faith', label: 'Living the Catholic Faith', patterns: [/\bocia\b/g, /\bfirst (?:holy )?communion\b/g, /\bvocations?\b/g] },
 ];

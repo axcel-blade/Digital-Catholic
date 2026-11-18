@@ -1,0 +1,61 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import CardFilter from '../../components/CardFilter.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { bibleStories, bibleStoriesIntro } from '../../data/bible-stories';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { slugify } from '../../lib/article';
+import { getCollectionImage } from '../../lib/images';
+
+const eras = [...new Set(bibleStories.map((s) => s.era))].map((era) => ({
+	value: slugify(era),
+	label: era,
+	count: bibleStories.filter((s) => s.era === era).length,
+}));
+---
+
+<SectionLayout
+	sectionKey="learn"
+	pageCrumb="Bible Stories"
+	heading="Stories of the Old Testament"
+	title="Bible Stories"
+	description={PAGE_DESCRIPTIONS.bibleStories}
+	currentPath={Astro.url.pathname}
+	intro={bibleStoriesIntro}
+	count={`${bibleStories.length} stories`}
+>
+	{bibleStories.length === 0 ? (
+		<EmptyState />
+	) : (
+		<>
+			<CardFilter
+				target="story-list"
+				label="Filter by era"
+				options={eras}
+				noun={{ one: 'story', many: 'stories' }}
+			/>
+			<ul class="card-grid card-grid--media" id="story-list">
+				{bibleStories.map((story, i) => (
+					<EntryCard
+						href={withBase(`/bible-stories/${story.slug}`)}
+						title={story.title}
+						label={story.era}
+						meta={story.scriptureReference}
+						excerpt={story.excerpt}
+						action="Read the story"
+						image={getCollectionImage('bible-stories', story.slug, story.imageAlt)}
+						filterValue={slugify(story.era)}
+						eager={i < 3}
+					/>
+				))}
+			</ul>
+		</>
+	)}
+	<p class="section-footer-links">
+		Meet the <a href={withBase('/old-testament-people')}>people of the Old Testament</a>, read the
+		<a href={withBase('/parables')}>parables of Jesus</a>, and see summaries of
+		<a href={withBase('/bible')}>every book of the Bible</a>.
+	</p>
+</SectionLayout>

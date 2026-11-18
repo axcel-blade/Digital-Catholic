@@ -109,6 +109,7 @@ export const siteSections: SiteSection[] = [
 			'/disciples',
 			'/old-testament-people',
 			'/new-testament-people',
+			'/bible-stories',
 			'/parables',
 			'/miracles',
 			'/signs-and-wonders',

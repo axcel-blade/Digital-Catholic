@@ -5,6 +5,7 @@ import { disciples, disciplesIntro } from '../../data/disciples';
 import { oldTestamentPeople, oldTestamentPeopleIntro } from '../../data/old-testament-people';
 import { newTestamentPeople, newTestamentPeopleIntro } from '../../data/new-testament-people';
 import { parables, parablesIntro } from '../../data/parables';
+import { bibleStories, bibleStoriesIntro } from '../../data/bible-stories';
 import { miracles, miraclesIntro } from '../../data/miracles';
 import { saints } from '../../data/saints';
 import { popes, popesIntro } from '../../data/popes';
@@ -29,6 +30,7 @@ const articleCount =
 	disciples.length +
 	oldTestamentPeople.length +
 	newTestamentPeople.length +
+	bibleStories.length +
 	parables.length +
 	miracles.length +
 	2 +
@@ -145,6 +147,20 @@ const areaCount = 13;
 				label="Apostles"
 				excerpt={disciplesIntro}
 				action={`Meet all ${disciples.length} apostles`}
+			/>
+		</ul>
+	</section>
+
+	<section class="page-section" aria-labelledby="bible-stories">
+		<h2 class="section-title" id="bible-stories">Stories of the Old Testament</h2>
+		<p class="section-intro">From Creation and the Fall to Noah’s Ark, the Exodus, and the return from exile—the great stories of salvation history that prepare for Christ.</p>
+		<ul class="card-grid card-grid--two">
+			<EntryCard
+				href={withBase('/bible-stories')}
+				title="Bible Stories"
+				label="Old Testament"
+				excerpt={bibleStoriesIntro}
+				action={`Read ${bibleStories.length} stories`}
 			/>
 		</ul>
 	</section>

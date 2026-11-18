@@ -47,6 +47,7 @@ import {
 	veilOfVeronicaSections,
 } from '../data/miracles';
 import { parables, parablesIntro } from '../data/parables';
+import { bibleStories, bibleStoriesIntro } from '../data/bible-stories';
 import { sacraments, sacramentGuides } from '../data/sacraments';
 import {
 	buildLiturgicalYear,
@@ -313,6 +314,13 @@ export function buildSearchIndex(): SearchEntry[] {
 					joinParts(a.title, a.excerpt, a.location, a.date, a.category)
 				),
 			],
+		),
+		entry(
+			'Bible Stories',
+			withBase('/bible-stories'),
+			'Bible Stories',
+			bibleStoriesIntro,
+			[bibleStoriesIntro, ...bibleStories.map((s) => joinParts(s.title, s.excerpt, s.scriptureReference, s.era))],
 		),
 		entry(
 			'Parables of Jesus',
@@ -608,6 +616,18 @@ export function buildSearchIndex(): SearchEntry[] {
 				'Marian apparition',
 				apparition.excerpt,
 				[apparition.location, apparition.date, apparition.category, sectionsText(apparition.sections)]
+			)
+		);
+	}
+
+	for (const story of bibleStories) {
+		items.push(
+			entry(
+				story.title,
+				withBase(`/bible-stories/${story.slug}`),
+				'Bible story',
+				story.excerpt,
+				[story.scriptureReference, story.era, sectionsText(story.sections)]
 			)
 		);
 	}

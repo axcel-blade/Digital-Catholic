@@ -12,6 +12,7 @@ import { oldTestamentPeople } from '../data/old-testament-people';
 import { newTestamentPeople } from '../data/new-testament-people';
 import { miracles } from '../data/miracles';
 import { parables } from '../data/parables';
+import { bibleStories } from '../data/bible-stories';
 import { sacramentGuides } from '../data/sacraments';
 import { stripBase } from './paths';
 
@@ -187,6 +188,7 @@ const sectionDefaults: Record<string, ReferenceSet> = {
 	'old-testament-people': { catechism: 'CCC 59–64, 145–147, 702–716', scripture: ['Hebrews 11:1–40', 'Luke 24:27'], documents: ['deiVerbum'] },
 	'new-testament-people': { catechism: 'CCC 422–455, 551–553, 857–865', scripture: ['Luke 1–2', 'Acts 1–2'], documents: ['deiVerbum', 'lumenGentium'] },
 	sacraments: { catechism: 'CCC 1113–1134', documents: ['sacrosanctumConcilium', 'canonLaw'] },
+	'bible-stories': { catechism: 'CCC 128–130', documents: ['deiVerbum'] },
 	parables: { catechism: 'CCC 546', documents: ['deiVerbum'] },
 	miracles: { catechism: 'CCC 547–550', documents: ['deiVerbum'] },
 	'eucharistic-miracles': {
@@ -249,6 +251,8 @@ const articleRefs: Record<string, ReferenceSet> = {
 function itemScripture(sectionKey: string, slug: string): string[] {
 	const find = <T extends { slug: string }>(items: T[]) => items.find((item) => item.slug === slug);
 	switch (sectionKey) {
+		case 'bible-stories':
+			return splitCitations(find(bibleStories)?.scriptureReference ?? '');
 		case 'parables':
 			return splitCitations(find(parables)?.gospelReference ?? '');
 		case 'miracles':
