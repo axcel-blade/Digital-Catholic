@@ -88,6 +88,12 @@ const topics: Topic[] = [
 	// Scripture, Tradition, and the Church
 	{ href: '/bible/how-the-bible-was-formed', label: 'How the Bible was formed', patterns: [/\bdeuterocanonical\b/g, /\bseptuagint\b/g, /\bvulgate\b/g, /\bcanon of scripture\b/g] },
 	{ href: '/bible-and-tradition', label: 'The Bible and Catholic Tradition', patterns: [/\bsacred tradition\b/g, /\bmagisterium\b/g] },
+	{ href: '/popes', label: 'Popes of the Catholic Church', patterns: [/\bpontificates?\b/g, /\bbishop of rome\b/g, /\bsuccessors? of (?:st\. )?peter\b/g] },
+	{ href: '/popes/leo-xiii', label: 'Pope Leo XIII', patterns: [/\bleo xiii\b/g, /\brosary pope\b/g] },
+	{ href: '/popes/pius-xii', label: 'Pope Pius XII', patterns: [/\bpius xii\b/g] },
+	{ href: '/popes/benedict-xvi', label: 'Pope Benedict XVI', patterns: [/\bbenedict xvi\b/g, /\bjoseph ratzinger\b/g] },
+	{ href: '/popes/francis', label: 'Pope Francis', patterns: [/\bpope francis\b/g, /\bjorge mario bergoglio\b/g] },
+	{ href: '/popes/leo-xiv', label: 'Pope Leo XIV', patterns: [/\bleo xiv\b/g, /\brobert (?:francis )?prevost\b/g] },
 	{ href: '/the-church', label: 'The Catholic Church', patterns: [/\bapostolic succession\b/g, /\bpapacy\b/g, /\bfour marks\b/g, /\becumenism\b/g] },
 	{ href: '/church-history', label: 'Catholic Church History', patterns: [/\bcouncil of trent\b/g, /\bvatican ii\b/g, /\bsecond vatican council\b/g, /\bgreat schism\b/g, /\breformation\b/g, /\becumenical councils?\b/g] },
 	{ href: '/compare-christian-traditions', label: 'Compare Christian Traditions', patterns: [/\borthodox\b/g, /\bprotestants?\b/g, /\banglicans?\b/g] },

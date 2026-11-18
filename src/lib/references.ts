@@ -180,6 +180,7 @@ export function splitCitations(text: string): string[] {
 const sectionDefaults: Record<string, ReferenceSet> = {
 	bible: { catechism: 'CCC 101–141', documents: ['deiVerbum', 'verbumDomini'] },
 	saints: { catechism: 'CCC 828, 946–962, 2683–2684', scripture: ['Hebrews 12:1'], documents: ['lumenGentium'] },
+	popes: { catechism: 'CCC 880–882, 891', scripture: ['Matthew 16:18–19', 'John 21:15–17'], documents: ['lumenGentium'] },
 	disciples: { catechism: 'CCC 551–553, 857–862', documents: ['lumenGentium'] },
 	sacraments: { catechism: 'CCC 1113–1134', documents: ['sacrosanctumConcilium', 'canonLaw'] },
 	parables: { catechism: 'CCC 546', documents: ['deiVerbum'] },

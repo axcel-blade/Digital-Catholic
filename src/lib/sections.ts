@@ -113,6 +113,7 @@ export const siteSections: SiteSection[] = [
 			'/marian-apparitions',
 			'/eucharistic-miracles',
 			'/saints',
+			'/popes',
 			'/sacraments',
 			'/holy-trinity',
 			'/holy-spirit',
@@ -125,7 +126,7 @@ export const siteSections: SiteSection[] = [
 		group: 'learn',
 		subgroup: 'all',
 		label: 'Doctrine',
-		blurb: 'The Bible, core beliefs, the Trinity, the Commandments, the sacraments, Jesus, and the saints.',
+		blurb: 'The Bible, core beliefs, the Trinity, the Commandments, the sacraments, Jesus, the saints, and the popes.',
 	},
 ];
 

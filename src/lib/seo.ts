@@ -28,12 +28,14 @@ export const PAGE_DESCRIPTIONS = {
 		'Pray with the Church: the Our Father and Hail Mary, the Rosary, the Daily Gospel, devotions such as Lectio Divina and adoration, the Mass, and the liturgical year.',
 	saints:
 		'Mary and the saints in the Catholic Church—saint biographies with feast days, the Immaculate Conception, perpetual virginity, Assumption, Mother of God, the intercession and veneration of saints, relics and sacramentals, and angels.',
+	popes:
+		'Biographies of the popes of the Catholic Church—their lives and pontificates from Leo XIII and Pius XII to Benedict XVI, Francis, and Leo XIV—alongside teaching on the papacy and Church history.',
 	sacraments:
 		'The seven sacraments of the Catholic Church in the order of the Catechism—what each one is and why it matters—with in-depth guides to Baptism and Confirmation, the Real Presence, transubstantiation, Confession, marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion.',
 	signsAndWonders:
 		'Marian apparitions such as Guadalupe, Lourdes, Fátima, Knock, and Velankanni, and Eucharistic miracles such as Lanciano and Bolsena—what happened, what it means, and the Church status of each.',
 	learn:
-		'Learn the Catholic faith: the Bible, core beliefs, the Holy Trinity, the Ten Commandments, the seven sacraments, the life of Jesus, Mary, and the saints.',
+		'Learn the Catholic faith: the Bible, core beliefs, the Holy Trinity, the Ten Commandments, the seven sacraments, the life of Jesus, Mary and the saints, and the popes.',
 	commandments:
 		'The Ten Commandments—God’s moral law given to Moses—with the text of each commandment and its meaning for love of God and neighbour.',
 	coreBeliefs:

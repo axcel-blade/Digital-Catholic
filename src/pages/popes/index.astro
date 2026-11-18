@@ -1,0 +1,53 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { popes, popesIntro, getPopeImageAlt } from '../../data/popes';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+
+const biographies = `${popes.length} ${popes.length === 1 ? 'biography' : 'biographies'}`;
+---
+
+<SectionLayout
+	sectionKey="learn"
+	heading="Popes of the Catholic Church"
+	pageCrumb="Popes"
+	description={PAGE_DESCRIPTIONS.popes}
+	currentPath={Astro.url.pathname}
+	intro={popesIntro}
+	count={`${biographies}, in chronological order`}
+>
+	<p class="section-intro">
+		For the teaching on the office itself, see
+		<a href={withBase('/the-church/the-pope-and-the-papacy')}>The Pope and the papacy</a>.
+		Canonised and beatified popes also appear among
+		<a href={withBase('/saints')}>Mary and the Saints</a>.
+	</p>
+
+	{popes.length === 0 ? (
+		<EmptyState />
+	) : (
+		<ul class="card-grid card-grid--media">
+			{popes.map((pope, i) => (
+				<EntryCard
+					href={withBase(`/popes/${pope.slug}`)}
+					title={pope.title}
+					label={`Pope · ${pope.pontificate}`}
+					meta={pope.birthName ?? pope.lifeDates}
+					excerpt={pope.excerpt}
+					action="Read biography"
+					image={getCollectionImage('popes', pope.slug, getPopeImageAlt(pope.title))}
+					eager={i < 3}
+				/>
+			))}
+		</ul>
+	)}
+
+	<p class="section-footer-links">
+		Continue with <a href={withBase('/the-church')}>The Catholic Church</a>,
+		<a href={withBase('/church-history')}>Church History</a>, or
+		<a href={withBase('/saints')}>Mary and the Saints</a>.
+	</p>
+</SectionLayout>

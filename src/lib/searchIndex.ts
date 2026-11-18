@@ -49,6 +49,7 @@ import {
 	pathToSainthoodIntro,
 	pathToSainthoodSections,
 } from '../data/saints';
+import { popes, popesIntro } from '../data/popes';
 import {
 	bibleBooks,
 	bibleFormationIntro,
@@ -194,6 +195,18 @@ export function buildSearchIndex(): SearchEntry[] {
 				disciplesIntro,
 				...disciples.map((d) =>
 					joinParts(d.title, d.alsoKnownAs, d.excerpt, d.gospelReference, d.feastDays ?? '')
+				),
+			],
+		),
+		entry(
+			'Popes of the Catholic Church',
+			withBase('/popes'),
+			'Popes',
+			popesIntro,
+			[
+				popesIntro,
+				...popes.map((p) =>
+					joinParts(p.title, p.birthName, p.excerpt, p.pontificate, p.lifeDates ?? '', p.feastDays ?? '')
 				),
 			],
 		),
@@ -406,6 +419,25 @@ export function buildSearchIndex(): SearchEntry[] {
 				getSaintStatus(saint),
 				saint.excerpt,
 				[saint.lifeDates ?? '', saint.feastDays ?? '', sectionsText(saint.sections)]
+			)
+		);
+	}
+
+	for (const pope of popes) {
+		items.push(
+			entry(
+				pope.title,
+				withBase(`/popes/${pope.slug}`),
+				'Pope',
+				pope.excerpt,
+				[
+					pope.birthName ?? '',
+					pope.pontificate,
+					pope.lifeDates ?? '',
+					pope.feastDays ?? '',
+					String(pope.papalNumber),
+					sectionsText(pope.sections),
+				]
 			)
 		);
 	}
