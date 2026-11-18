@@ -1,0 +1,93 @@
+---
+import ArticleLayout, { type ArticleMeta } from '../../layouts/ArticleLayout.astro';
+import SectionList from '../../components/SectionList.astro';
+import {
+	getOldTestamentPersonImageAlt,
+	oldTestamentPeople,
+	oldTestamentRoleLabels,
+	type OldTestamentPerson,
+} from '../../data/old-testament-people';
+import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+import { getNeighbors, getRelated, type ArticleLink, type ArticleSection } from '../../lib/article';
+
+export function getStaticPaths() {
+	return oldTestamentPeople.map((person) => ({ params: { slug: person.slug } }));
+}
+
+const index = oldTestamentPeople.findIndex((p) => p.slug === Astro.params.slug);
+const person = oldTestamentPeople[index];
+
+if (!person) {
+	return new Response(null, { status: 404, statusText: 'Not found' });
+}
+
+const toLink = (p: OldTestamentPerson): ArticleLink => ({
+	href: withBase(`/old-testament-people/${p.slug}`),
+	title: p.title,
+	label: oldTestamentRoleLabels[p.role],
+	excerpt: p.excerpt,
+});
+
+function insertBeforeDeath(sections: ArticleSection[], extra: ArticleSection): ArticleSection[] {
+	const insertAt = sections.findIndex((s) => /^death and legacy$/i.test(s.heading));
+	if (insertAt === -1) return [...sections, extra];
+	return [...sections.slice(0, insertAt), extra, ...sections.slice(insertAt)];
+}
+
+function withHighlights(p: OldTestamentPerson): ArticleSection[] {
+	let sections = [...p.sections];
+	if (p.keyMoments?.length) {
+		sections = insertBeforeDeath(sections, {
+			heading: 'Key moments',
+			paragraphs: p.keyMoments.map((m) => `${m.title} (${m.reference}). ${m.summary}`),
+		});
+	}
+	if (p.prophecies?.length) {
+		sections = insertBeforeDeath(sections, {
+			heading: 'Key prophecies',
+			paragraphs: p.prophecies.map((m) => `${m.title} (${m.reference}). ${m.summary}`),
+		});
+	}
+	return sections;
+}
+
+const sections = withHighlights(person);
+const { prev, next } = getNeighbors(oldTestamentPeople, index);
+const meta: ArticleMeta[] = [
+	{ term: 'Role', value: oldTestamentRoleLabels[person.role] },
+	...(person.alsoKnownAs ? [{ term: 'Also known as', value: person.alsoKnownAs }] : []),
+	...(person.lifeDates ? [{ term: 'Life', value: person.lifeDates }] : []),
+	...(person.feastDays ? [{ term: 'Feast days', value: person.feastDays }] : []),
+	{ term: 'Scripture', value: person.scriptureReference },
+];
+
+/** Related: prefer same broad family (kings together, prophets together, etc.). */
+function relatedGroup(p: OldTestamentPerson): string {
+	if (p.role === 'major-prophet' || p.role === 'minor-prophet' || p.role === 'prophet') return 'prophet';
+	return p.role;
+}
+---
+
+<ArticleLayout
+	title={person.title}
+	description={person.excerpt}
+	currentPath={Astro.url.pathname}
+	sectionKey="learn"
+	extraCrumbs={[{ label: 'People of the Old Testament', href: withBase('/old-testament-people') }]}
+	label={`${oldTestamentRoleLabels[person.role]} · Old Testament`}
+	lead={person.excerpt}
+	meta={meta}
+	image={getCollectionImage(
+		'old-testament-people',
+		person.slug,
+		getOldTestamentPersonImageAlt(person.title)
+	)}
+	sections={sections}
+	prev={prev && toLink(prev)}
+	next={next && toLink(next)}
+	related={getRelated(oldTestamentPeople, index, 3, relatedGroup).map(toLink)}
+	trust={person}
+>
+	<SectionList sections={sections} />
+</ArticleLayout>

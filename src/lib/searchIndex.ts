@@ -15,6 +15,11 @@ import { fruitsIntro, giftsIntro, spiritFruits, spiritGifts } from '../data/holy
 import { massIntro, massItemsIntro, massSections, orderOfMassIntro, orderOfMassSections } from '../data/mass';
 import { disciples, disciplesIntro } from '../data/disciples';
 import {
+	oldTestamentPeople,
+	oldTestamentPeopleIntro,
+	oldTestamentRoleLabels,
+} from '../data/old-testament-people';
+import {
 	mysterySets,
 	rosaryHowToIntro,
 	rosaryHowToSteps,
@@ -195,6 +200,28 @@ export function buildSearchIndex(): SearchEntry[] {
 				disciplesIntro,
 				...disciples.map((d) =>
 					joinParts(d.title, d.alsoKnownAs, d.excerpt, d.gospelReference, d.feastDays ?? '')
+				),
+			],
+		),
+		entry(
+			'People of the Old Testament',
+			withBase('/old-testament-people'),
+			'Old Testament',
+			oldTestamentPeopleIntro,
+			[
+				oldTestamentPeopleIntro,
+				'kings prophets david solomon abraham moses elijah ruth',
+				...oldTestamentPeople.map((p) =>
+					joinParts(
+						p.title,
+						p.alsoKnownAs,
+						p.excerpt,
+						oldTestamentRoleLabels[p.role],
+						p.scriptureReference,
+						p.feastDays ?? '',
+						...(p.keyMoments?.map((m) => joinParts(m.title, m.reference, m.summary)) ?? []),
+						...(p.prophecies?.map((m) => joinParts(m.title, m.reference, m.summary)) ?? [])
+					)
 				),
 			],
 		),
@@ -406,6 +433,31 @@ export function buildSearchIndex(): SearchEntry[] {
 					disciple.gospelReference,
 					disciple.feastDays ?? '',
 					sectionsText(disciple.sections),
+				]
+			)
+		);
+	}
+
+	for (const person of oldTestamentPeople) {
+		const highlightsText = [
+			...(person.keyMoments ?? []),
+			...(person.prophecies ?? []),
+		]
+			.map((m) => joinParts(m.title, m.reference, m.summary))
+			.join(' ');
+		items.push(
+			entry(
+				bookTitles.has(person.title) ? `${person.title} (${oldTestamentRoleLabels[person.role]})` : person.title,
+				withBase(`/old-testament-people/${person.slug}`),
+				oldTestamentRoleLabels[person.role],
+				person.excerpt,
+				[
+					person.alsoKnownAs ?? '',
+					person.lifeDates ?? '',
+					person.scriptureReference,
+					person.feastDays ?? '',
+					highlightsText,
+					sectionsText(person.sections),
 				]
 			)
 		);

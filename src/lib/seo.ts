@@ -2,7 +2,7 @@ export const SITE = {
 	name: 'Digital Catholic',
 	defaultTitle: 'Digital Catholic — Learn the Faith, Pray with the Church',
 	defaultDescription:
-		'Clear Catholic resources for Scripture, saints, sacraments, prayer, and the liturgical year—with apostle biographies, Gospel miracles and parables, Marian apparitions, Eucharistic miracles, and the Rosary.',
+		'Clear Catholic resources for Scripture, saints, sacraments, prayer, and the liturgical year—with apostle biographies, kings and prophets, Gospel miracles and parables, Marian apparitions, Eucharistic miracles, and the Rosary.',
 	tagline: 'Learn the faith. Pray with the Church. Live it daily.',
 	locale: 'en_US',
 	themeColor: '#1b1614',
@@ -35,7 +35,9 @@ export const PAGE_DESCRIPTIONS = {
 	signsAndWonders:
 		'Marian apparitions such as Guadalupe, Lourdes, Fátima, Knock, and Velankanni, and Eucharistic miracles such as Lanciano and Bolsena—what happened, what it means, and the Church status of each.',
 	learn:
-		'Learn the Catholic faith: the Bible, core beliefs, the Holy Trinity, the Ten Commandments, the seven sacraments, the life of Jesus, Mary and the saints, and the popes.',
+		'Learn the Catholic faith: the Bible, core beliefs, the Holy Trinity, the Ten Commandments, the seven sacraments, the life of Jesus, people of the Old Testament, Mary and the saints, and the popes.',
+	oldTestamentPeople:
+		'People of the Old Testament—biographies of Abraham, Moses, Ruth, Elijah, King David, King Solomon, and the major and minor prophets, with key moments and prophecies fulfilled in Christ.',
 	commandments:
 		'The Ten Commandments—God’s moral law given to Moses—with the text of each commandment and its meaning for love of God and neighbour.',
 	coreBeliefs:
@@ -70,6 +72,7 @@ export const PAGE_DESCRIPTIONS = {
 		'An interactive timeline of Catholic Church history, from Pentecost and the apostles through the councils, the Great Schism, the Reformation, and Vatican II to the present.',
 	disciples:
 		'The Twelve Apostles of Jesus Christ—biographies from their call to their deaths, Gospel and Acts accounts, feast days, and lessons for following Christ.',
+
 	eucharisticMiracles:
 		'Eucharistic miracles in Catholic history—Lanciano, Bolsena, and more recent events—with a clear note on the Church status of each account.',
 	marianApparitions:

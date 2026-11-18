@@ -1,0 +1,81 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import {
+	getOldTestamentPersonImageAlt,
+	oldTestamentIndexGroups,
+	oldTestamentPeople,
+	oldTestamentPeopleIntro,
+	oldTestamentRoleLabels,
+} from '../../data/old-testament-people';
+import { PAGE_DESCRIPTIONS } from '../../lib/seo';
+import { withBase } from '../../lib/paths';
+import { getCollectionImage } from '../../lib/images';
+
+const groups = oldTestamentIndexGroups
+	.map((group) => ({
+		...group,
+		items: oldTestamentPeople.filter((p) => group.roles.includes(p.role)),
+	}))
+	.filter((group) => group.items.length > 0);
+
+const kingsCount = oldTestamentPeople.filter((p) => p.role === 'king').length;
+const prophetsCount = oldTestamentPeople.filter((p) =>
+	p.role === 'prophet' || p.role === 'major-prophet' || p.role === 'minor-prophet'
+).length;
+---
+
+<SectionLayout
+	sectionKey="learn"
+	pageCrumb="People of the Old Testament"
+	heading="People of the Old Testament"
+	title="People of the Old Testament"
+	description={PAGE_DESCRIPTIONS.oldTestamentPeople}
+	currentPath={Astro.url.pathname}
+	intro={oldTestamentPeopleIntro}
+	count={`${oldTestamentPeople.length} biographies · including ${kingsCount} kings and ${prophetsCount} prophets`}
+>
+	<nav class="jump-links" aria-label="Jump to a group" slot="header">
+		{groups.map((group) => (
+			<a class="jump-links__link" href={`#${group.id}`}>{group.title}</a>
+		))}
+	</nav>
+
+	{oldTestamentPeople.length === 0 ? (
+		<EmptyState />
+	) : (
+		groups.map((group) => (
+			<section class="page-section" aria-labelledby={group.id}>
+				<h2 class="section-title" id={group.id}>{group.title}</h2>
+				<ul class="card-grid card-grid--media">
+					{group.items.map((person, i) => (
+						<EntryCard
+							href={withBase(`/old-testament-people/${person.slug}`)}
+							title={person.title}
+							label={oldTestamentRoleLabels[person.role]}
+							meta={person.alsoKnownAs}
+							excerpt={person.excerpt}
+							action={
+								person.prophecies?.length || person.keyMoments?.length
+									? 'Read biography & key passages'
+									: 'Read biography'
+							}
+							image={getCollectionImage(
+								'old-testament-people',
+								person.slug,
+								getOldTestamentPersonImageAlt(person.title)
+							)}
+							eager={i < 2}
+						/>
+					))}
+				</ul>
+			</section>
+		))
+	)}
+
+	<p class="section-footer-links">
+		Continue with the <a href={withBase('/bible')}>Holy Bible</a> or the
+		<a href={withBase('/disciples')}>Twelve Apostles</a>.
+	</p>
+</SectionLayout>
