@@ -65,6 +65,7 @@ const meta: ArticleMeta[] = [
 /** Related: prefer same broad family (kings together, prophets together, etc.). */
 function relatedGroup(p: OldTestamentPerson): string {
 	if (p.role === 'major-prophet' || p.role === 'minor-prophet' || p.role === 'prophet') return 'prophet';
+	if (p.role === 'judge' || p.role === 'leader') return 'leader';
 	return p.role;
 }
 ---

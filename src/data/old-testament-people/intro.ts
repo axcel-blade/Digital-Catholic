@@ -1,2 +1,2 @@
 export const oldTestamentPeopleIntro =
-	'From Abraham and Moses to David, Solomon, and the prophets, these pages recount the lives of the great figures of the Old Testament—patriarchs, leaders, women of faith, kings, and prophets—whose stories prepare the way for Christ.';
+	'From Noah and the patriarchs through the judges, kings, and prophets—and the women of faith who shaped Israel’s story—these pages recount the great figures of the Old Testament whose lives prepare the way for Christ.';

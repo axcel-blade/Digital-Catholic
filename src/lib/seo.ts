@@ -37,7 +37,7 @@ export const PAGE_DESCRIPTIONS = {
 	learn:
 		'Learn the Catholic faith: the Bible, core beliefs, the Holy Trinity, the Ten Commandments, the seven sacraments, the life of Jesus, people of the Old Testament, Mary and the saints, and the popes.',
 	oldTestamentPeople:
-		'People of the Old Testament—biographies of Abraham, Moses, Ruth, Elijah, King David, King Solomon, and the major and minor prophets, with key moments and prophecies fulfilled in Christ.',
+		'People of the Old Testament—patriarchs, matriarchs, judges, kings, prophets, and women of faith from Noah and Abraham to Esther, Ezra, and the writing prophets, with key moments and prophecies fulfilled in Christ.',
 	commandments:
 		'The Ten Commandments—God’s moral law given to Moses—with the text of each commandment and its meaning for love of God and neighbour.',
 	coreBeliefs:

@@ -4,6 +4,7 @@ import type { SectionImage } from '../../lib/article';
 export type OldTestamentRole =
 	| 'patriarch'
 	| 'leader'
+	| 'judge'
 	| 'woman-of-faith'
 	| 'king'
 	| 'prophet'
