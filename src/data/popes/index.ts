@@ -5,9 +5,9 @@ export { popesIntro } from './intro';
 export type * from './types';
 
 const modules = import.meta.glob('./items/*.ts', { eager: true });
-/** Chronological order by start of pontificate */
+/** Newest first: current pontiff down to St. Peter */
 export const popes = loadCollection<Pope>(modules).sort(
-	(a, b) => a.reignStart - b.reignStart || a.papalNumber - b.papalNumber
+	(a, b) => b.reignStart - a.reignStart || b.papalNumber - a.papalNumber
 );
 
 /** Popes shown on each directory page */
