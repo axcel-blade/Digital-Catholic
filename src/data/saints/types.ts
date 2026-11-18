@@ -22,11 +22,6 @@ export interface Saint extends TrustInfo {
 	title: string;
 	/** Defaults to "Saint" (canonized) when omitted */
 	status?: SaintStatus;
-	/**
-	 * Display label when the person is not (yet) on the path to sainthood
-	 * (e.g. a living or recently deceased pope). Overrides `status` in the UI.
-	 */
-	roleLabel?: string;
 	excerpt: string;
 	/** Approximate birth and death, when known from history or tradition */
 	lifeDates?: string;
