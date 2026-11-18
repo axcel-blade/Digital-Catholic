@@ -61,6 +61,8 @@ The new saint appears on `/saints` and in search automatically—no need to edit
 
 The new pope appears on `/popes` and in search automatically. Canonised or beatified popes may live in both collections; use `relatedSaintSlug` to cross-link the saint biography.
 
+The collection already includes all **267** traditional pontiffs (St. Peter–Leo XIV). Most entries are concise chronological notices; a few modern popes have fuller biographies. To regenerate missing stubs without touching existing files, run `node scripts/generate-popes.mjs` (it skips any `papalNumber` that already has an item).
+
 ## Trust and source fields (optional)
 
 Every article type accepts the optional fields in `lib/trust.ts`. Pages show each one only when it is present:

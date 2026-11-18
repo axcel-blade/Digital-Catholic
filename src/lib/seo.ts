@@ -29,7 +29,7 @@ export const PAGE_DESCRIPTIONS = {
 	saints:
 		'Mary and the saints in the Catholic Church—saint biographies with feast days, the Immaculate Conception, perpetual virginity, Assumption, Mother of God, the intercession and veneration of saints, relics and sacramentals, and angels.',
 	popes:
-		'Biographies of the popes of the Catholic Church—their lives and pontificates from Leo XIII and Pius XII to Benedict XVI, Francis, and Leo XIV—alongside teaching on the papacy and Church history.',
+		'All 267 popes of the Catholic Church in traditional order—from St. Peter to Pope Leo XIV—with pontificate dates and biographies, alongside teaching on the papacy and Church history.',
 	sacraments:
 		'The seven sacraments of the Catholic Church in the order of the Catechism—what each one is and why it matters—with in-depth guides to Baptism and Confirmation, the Real Presence, transubstantiation, Confession, marriage, Holy Orders, Anointing and Viaticum, and worthy reception of Holy Communion.',
 	signsAndWonders:
