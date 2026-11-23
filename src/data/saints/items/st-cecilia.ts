@@ -30,6 +30,7 @@ const saint: Saint = {
 		},
 		{
 			"heading": "Patron of music",
+			"image": { "src": "/saints/sections/st-cecilia-music.jpg", "alt": "St. Cecilia holding a small organ and gazing up at a choir of angels, surrounded by saints, with broken musical instruments at her feet", "caption": "The Ecstasy of St. Cecilia, Raphael (Pinacoteca Nazionale, Bologna)." },
 			"paragraphs": [
 				"Her Acts say that as the musical instruments played at her wedding, Cecilia “sang in her heart to the Lord alone.” From this line she came to be seen as the patron of music, and from the late Middle Ages artists began to paint her with an organ or other instruments.",
 				"Musical academies, choirs, and societies around the world bear her name, including Rome’s Accademia Nazionale di Santa Cecilia. Composers such as Purcell, Handel, and Gounod wrote works in her honour, and many parish choirs celebrate her feast each November."
@@ -37,6 +38,7 @@ const saint: Saint = {
 		},
 		{
 			"heading": "Her relics",
+			"image": { "src": "/saints/sections/st-cecilia-relics.jpg", "alt": "White marble statue of St. Cecilia lying on her side with her face turned away, beneath an altar", "caption": "St. Cecilia by Stefano Maderno, Basilica of Santa Cecilia in Trastevere, Rome. Photo: Jacek Durski, CC BY-SA 4.0." },
 			"paragraphs": [
 				"In the ninth century Pope Paschal I moved her remains, along with those of Valerian, Tiburtius, and others, from the catacombs to the Basilica of Santa Cecilia in Trastevere, built on the traditional site of her home.",
 				"In 1599, during restoration of the basilica, Cardinal Paolo Emilio Sfondrato opened her tomb. Witnesses reported that her body was found lying on its side in a remarkable state of preservation. The sculptor Stefano Maderno carved a marble statue of her in that position, with her face turned away and the wound visible on her neck; it lies beneath the high altar of the basilica today."
