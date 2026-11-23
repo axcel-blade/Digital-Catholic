@@ -167,6 +167,8 @@ function moveableFeasts(year: number, easter: Date): LiturgicalDayEntry[] {
 			title: 'Our Lord Jesus Christ, King of the Universe',
 			rank: 'solemnity',
 			color: 'white',
+			note: 'The last Sunday of the liturgical year, instituted by Pope Pius XI in 1925.',
+			noteLink: { href: '/church-history/the-solemnity-of-christ-the-king', label: 'The Solemnity of Christ the King' },
 		},
 		{
 			date: isoFromDate(advent1),
