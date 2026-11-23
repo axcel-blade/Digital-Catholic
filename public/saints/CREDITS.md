@@ -11,6 +11,7 @@ Images shown on the Saints pages (`/saints`). All images are from Wikimedia Comm
 | st-augustine-of-hippo.jpg | [Saint Augustine by Philippe de Champaigne.jpg](https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg) | Philippe de Champaigne | Public domain |
 | st-carlo-acutis.jpg | [Covent Garden, Corpus Christi Catholic Church, Carlo Acutis memorial.jpg](https://commons.wikimedia.org/wiki/File:Covent_Garden,_Corpus_Christi_Catholic_Church,_Carlo_Acutis_memorial.jpg) | AndyScott | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | st-catherine-of-siena.jpg | [Giovanni Battista Tiepolo 096.jpg](https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Tiepolo_096.jpg) | Giovanni Battista Tiepolo | Public domain |
+| st-cecilia.jpg | [Guido Reni - Saint Cecilia.jpg](https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_Cecilia.jpg) | Guido Reni | Public domain |
 | st-charbel.jpg | [Charbel.jpg](https://commons.wikimedia.org/wiki/File:Charbel.jpg) | Unknown (old photograph) | Public domain |
 | st-christopher.jpg | [Jheronimus Bosch - Saint Christopher - Google Art ProjectFXD (Cropped).jpg](https://commons.wikimedia.org/wiki/File:Jheronimus_Bosch_-_Saint_Christopher_-_Google_Art_ProjectFXD_(Cropped).jpg) | Hieronymus Bosch | Public domain |
 | st-clare-of-assisi.jpg | [SDamiano-Clara.jpg](https://commons.wikimedia.org/wiki/File:SDamiano-Clara.jpg) | Unknown (fresco, San Damiano, Assisi) | Public domain |
