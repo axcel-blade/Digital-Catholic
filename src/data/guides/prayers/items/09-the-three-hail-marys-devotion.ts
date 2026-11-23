@@ -25,6 +25,7 @@ const topic: GuideTopic = {
 		{ href: '/rosary', label: 'The Hail Mary and the Rosary' },
 		{ href: '/pray', label: 'Traditional Catholic prayers' },
 	],
+	image: { alt: 'The Father and the Son placing a crown of flowers on Mary’s head beneath the dove of the Holy Spirit', caption: 'Diego Velázquez, The Coronation of the Virgin (c. 1635–1636), Museo del Prado, Madrid. Public domain.' },
 };
 
 export default topic;
