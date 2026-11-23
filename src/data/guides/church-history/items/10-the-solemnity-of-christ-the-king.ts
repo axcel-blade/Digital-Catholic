@@ -28,6 +28,7 @@ const topic: GuideTopic = {
 		{ href: '/liturgical-calendar', label: 'Liturgical calendar' },
 		{ href: '/mass/the-liturgical-year-and-its-colours', label: 'The liturgical year and its colours' },
 	],
+	image: { alt: 'Mosaic of Christ with a golden halo and a blue mantle, raising his right hand in blessing and holding a jewelled book of the Gospels, against a gold background', caption: 'Christ Pantocrator, detail of the Deësis mosaic (13th century), Hagia Sophia, Istanbul. Public domain.' },
 };
 
 export default topic;
