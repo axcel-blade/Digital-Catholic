@@ -14,6 +14,9 @@ All notable changes to Digital Catholic are documented here.
 - Search: the apostle and the Gospel of Matthew now have distinct titles, and each FAQ question has its own anchor, which opens that answer
 
 ### Added
+- Saints: St. Cecilia, with artwork credited in `public/saints/CREDITS.md`, and her memorial (22 November) on the Liturgical Calendar
+- Catholic Church History: three new topics: “The Solemnity of Christ the King”, linked from that Sunday on the Liturgical Calendar; “The Presentation of the Blessed Virgin Mary”, with artwork credited in `public/guides/CREDITS.md` and its memorial (21 November) added to the Liturgical Calendar; and “‘God bless you’ and Pope St. Gregory the Great”
+- Catholic Prayer and Devotions: new topic “The Three Hail Marys devotion”
 - Saints: St. Joseph of Cupertino and St. Philip Neri added, each with Miracles and Relics sections and artwork credited in `public/saints/CREDITS.md`
 - Every topic in the ten topic guides and every Core Catholic Belief now has its own article (`/{guide}/{slug}`, `/core-beliefs/{slug}`) rendered by the shared `GuideArticle` component, with previous/next links and search entries pointing to the article; topics can carry their own public-domain artwork (`public/guides/{guide}/{slug}.jpg`, `public/core-beliefs/{slug}.jpg`), credited in `public/guides/CREDITS.md` and `public/core-beliefs/CREDITS.md`, and otherwise show the guide's artwork
 - Catholic Church History: new topic “Halloween and its Catholic history”, linked from All Saints and All Souls on the Liturgical Calendar

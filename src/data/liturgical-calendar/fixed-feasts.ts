@@ -201,6 +201,23 @@ export const fixedFeasts: LiturgicalCelebration[] = [
 	},
 	{
 		month: 11,
+		day: 21,
+		title: 'The Presentation of the Blessed Virgin Mary',
+		rank: 'memorial',
+		color: 'white',
+		note: 'Recalls Mary’s dedication to God in the Temple as a child. Also Pro Orantibus Day, for cloistered contemplatives.',
+		noteLink: { href: '/church-history/the-presentation-of-the-blessed-virgin-mary', label: 'The Presentation of the Blessed Virgin Mary' },
+	},
+	{
+		month: 11,
+		day: 22,
+		title: 'St. Cecilia',
+		rank: 'memorial',
+		color: 'red',
+		saintSlug: 'st-cecilia',
+	},
+	{
+		month: 11,
 		day: 30,
 		title: 'St. Andrew the Apostle',
 		rank: 'feast',
