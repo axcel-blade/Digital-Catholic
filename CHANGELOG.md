@@ -6,6 +6,17 @@ All notable changes to Digital Catholic are documented here.
 
 ## [Unreleased]
 
+---
+
+## [1.1.0] — 2026-11-25
+
+### Added
+- Mary and the Saints: new topic “Marian prophecies”, on Mary’s messages at Church-approved apparitions
+
+---
+
+## [1.0.0] — 2026-11-23
+
 ### Changed
 - Related pages now link to each other: an automatic “Related topics” block (from a shared topic map in `src/lib/relatedTopics.ts`) on every article, topic guide, Core Beliefs, and the Ten Commandments; plus hand-written links from each Daily Gospel scene to its parable or miracle, each Rosary mystery to its event or teaching, each Compare row to the Catholic explanation, timeline milestones to the papacy and Marian dogmas, sacraments and sacrament guides to related moral and Church teaching, Deuterocanonical books to the canon pages, and the Rosary to its prayers
 - The Sacraments in Depth is now its own section at `/sacraments/guides`, listed under Learn → Foundations, with its own page and breadcrumbs; the Seven Sacraments page links to it, each guide links back to the sacraments it explains, and each sacrament still lists its guides
