@@ -29,7 +29,7 @@ const topic: GuideTopic = {
 		{ href: '/saints/topics/veneration-versus-adoration', label: 'Veneration versus adoration' },
 		{ href: '/saints/topics/why-catholics-ask-saints-to-intercede', label: 'Why Catholics ask saints to intercede' },
 	],
-	image: { alt: 'Cardinal Bessarion and two kneeling confraternity brothers praying before an ornate gold reliquary of the True Cross', caption: 'Gentile Bellini, Cardinal Bessarion and Two Members of the Scuola della Carità in Prayer with the Bessarion Reliquary (c. 1472–73), National Gallery, London. Public domain.' },
+	image: { alt: 'A medieval gilded reliquary set with enamels and jewels, with a cross-shaped fragment of the True Cross at its centre', caption: 'Reliquary of the True Cross, Musée du Louvre, Paris (OA 8099). Photo: Marie-Lan Nguyen. Public domain.' },
 };
 
 export default topic;
