@@ -9,19 +9,15 @@ Thank you for helping improve this site. This project follows **Git Flow** — p
 | Branch | Purpose |
 |---|---|
 | `main` | Always reflects production-ready code. Deployed to GitHub Pages. |
-| `develop` | Latest development work for the next release. All features merge here. |
+| `develop` | Latest development work. All features merge here, and `develop` is merged into `main` when ready to deploy. |
 | `feature/*` | New features; branched from `develop`, merged back when complete. |
-| `release/*` | Prepares a production release; allows final testing and minor bug fixes. |
 | `hotfix/*` | Quickly patches production issues; branched from `main`. |
 
 ### Process
 
 1. Create a `feature/*` branch from `develop` to build new functionality.
-2. When `develop` is ready for a release, cut a `release/*` branch from `develop`. Development continues on `develop` uninterrupted.
-3. Bug fixes go into the release branch; major features wait for a future release.
-4. Merge the release branch into `main` and tag with a version number.
-5. Merge the same release branch back into `develop` to keep branches in sync.
-6. For critical production bugs, create a `hotfix/*` branch from `main`. Merge it into both `main` and `develop` when fixed.
+2. When `develop` is ready, merge it into `main`. Every push to `main` deploys the site to GitHub Pages; there are no versioned releases or tags.
+3. For critical production bugs, create a `hotfix/*` branch from `main`. Merge it into both `main` and `develop` when fixed.
 
 ---
 
@@ -59,35 +55,6 @@ docker compose up --build   # then open http://localhost:8080
 
 ---
 
-## Maintainers: cutting a release
-
-```sh
-git checkout develop
-git pull origin develop
-git checkout -b release/1.x.0
-
-# final testing and minor fixes only
-git add <files>
-git commit -m "chore: bump version to 1.x.0"
-
-# merge into main and tag
-git checkout main
-git merge release/1.x.0
-git tag v1.x.0
-git push origin main --tags
-
-# keep develop in sync
-git checkout develop
-git merge release/1.x.0
-git push origin develop
-
-# clean up
-git branch -d release/1.x.0
-git push origin --delete release/1.x.0
-```
-
----
-
 ## Maintainers: hotfix
 
 ```sh
@@ -97,10 +64,9 @@ git checkout -b hotfix/describe-issue
 # fix the bug
 git checkout main
 git merge hotfix/describe-issue
-git tag v1.x.1
 git checkout develop
 git merge hotfix/describe-issue
-git push origin main develop --tags
+git push origin main develop
 ```
 
 ---
