@@ -29,7 +29,7 @@ const topic: GuideTopic = {
 		{ href: '/saints/topics/veneration-versus-adoration', label: 'Veneration versus adoration' },
 		{ href: '/saints/topics/why-catholics-ask-saints-to-intercede', label: 'Why Catholics ask saints to intercede' },
 	],
-	image: { alt: 'A medieval gilded reliquary set with enamels and jewels, with a cross-shaped fragment of the True Cross at its centre', caption: 'Reliquary of the True Cross, Musée du Louvre, Paris (OA 8099). Photo: Marie-Lan Nguyen. Public domain.' },
+	image: { alt: 'A medieval gilded reliquary set with enamels and jewels, with a cross-shaped fragment of the True Cross at its centre', caption: 'Reliquary of the True Cross, Musée du Louvre, Paris (OA 8099). Photo: Marie-Lan Nguyen / Wikimedia Commons, CC BY 2.5.' },
 };
 
 export default topic;
